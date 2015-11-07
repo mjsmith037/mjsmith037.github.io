@@ -29,7 +29,7 @@
 }
 
 .jumbotron p {
-  font-size: 20px;
+  font-size: 24px;
   color: #0f0e0e;
 }
 
@@ -53,17 +53,17 @@
   color: #00b0ff;
 }
 
-.neighborhood-guides {
+.projects {
     background-color: #efefef;
     border-bottom: 1px solid #dbdbdb;
 }
 
-.neighborhood-guides h2 {
+.projects h2 {
     color: #393c3d;
     font-size: 24px;
 }
 
-.neighborhood-guides p {
+.projects p {
     font-size: 15px;
     margin-bottom: 13px;
 }
