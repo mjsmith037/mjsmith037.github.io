@@ -11,7 +11,7 @@
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="main.css">
+    <link type="text/css" rel="stylesheet" href="main.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,10 +25,15 @@
     <div class="nav">
       <div class="container">
         <ul class="pull-left">
-          <li> Matthew J Michalska-Smith </li>
+          <li>
+            Matthew J Michalska-Smith
+            <a href="mailto:mjsmith@uchicago.edu"><i class="fa fa-envelope"></i></a>
+            <a href="http://www.bitbucket.org/mjsmith037"><i class="fa fa-bitbucket"></i></a>
+            <a href="http://www.github.com/mjsmith037"><i class="fa fa-github"></i></a>
+          </li>
         </ul>
         <ul class="pull-right">
-          <li><a href="/Documents/DATE.pdf">CV</a></li>
+          <li><a href="Documents/11-2015_CV.pdf">CV</a></li>
           <li><a href="https://scholar.google.com/citations?user=mVBo9jwAAAAJ&hl=en">Google Scholar</a></li>
           <li><a href="http://allesinalab.uchicago.edu/">Allesina Lab</a></li>
         </ul>
@@ -43,43 +48,62 @@
     </div> 
 
     <ul class="nav nav-tabs">
-      <li class="active"><a href="#">Projects</a></li>
-      <li><a href="#">Publications</a></li>
-      <li><a href="#">Menu 2</a></li>
-      <li><a href="#">Menu 3</a></li>
+      <li class="active"; style="padding-left: 100px"><a href="#about">About Me</a></li>
+      <li><a href="#proj">Projects</a></li>
+      <li><a href="#pubs">Publications</a></li>
     </ul>
-
-    <div class="projects">
-      <div class="container">
-        <h1> Interests </h1>
+    
+    <div class="tab-content">
+      <div id="about" class="tab-pane fade in active">
         <div class="row">
-          <div class="col-sm-4">
-            <h3> Structure </h3>
-            <div class="thumbnail">
-              <a href="#">
-                <img src="#" >
-              </a>
-            </div>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-6">
+            <p>I am a third year Ph.D. student in the department of Ecology & Evolution at the University of Chicago. Working in <a href="http://allesinalab.uchicago.edu">Stefano Allesina's lab</a>, I have been exposed to the powerful perspective of seeing the complexity of nature as a network of connected pieces. I have been particulary captivated by the interaction between the dynamics of ecological systems (i.e. the stability and feasibility of equilibria and the role of transient dynamics) and the structures (both local and global) found in network representations of those systems.</p>
+            <p>Though I have worked primarily with food-webs, I have long marvelled at the generality of mathematics, and have applied network- and matrix-based methods to a host of systems. I am driven by the development of methods and the ways in which they can be used to detect patterns within and between data of varying type.</p>
           </div>
           <div class="col-sm-4">
-            <h3> Stability  </h3>
-            <div class="thumbnail">
-              <a href="#">
-                <img src="#" >
-              </a>
-            </div>
-          <div class="col-sm-4">
-            <h3> Science of science  </h3>
-            <div class="thumbnail">
-              <a href="#">
-                <img src="#" >
-              </a>
+            <img src="#"/>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+      </div>
+      <div id="proj" class="tab-pane fade">
+        <div class="projects">
+          <div class="container">
+            <h1> Interests </h1>
+            <div class="row">
+              <div class="col-sm-4">
+                <h3> Structure </h3>
+                <div class="thumbnail">
+                  <a href="#">
+                    <img src="#"/>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <h3> Stability  </h3>
+                <div class="thumbnail">
+                  <a href="#">
+                    <img src="#"/>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <h3> Science of science  </h3>
+                <div class="thumbnail">
+                  <a href="#">
+                    <img src="Images/cclineplot.png"/>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div id="pubs" class="tab-pane fade">
+      </div>
     </div>
-
+   
     <div class="learn-more">
 	  <div class="container">
         <div class="row">
@@ -102,7 +126,8 @@
 	  </div>
 	</div>
     
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

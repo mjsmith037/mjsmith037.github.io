@@ -13,6 +13,11 @@
   text-transform: uppercase;
 }
 
+.nav .fa {
+  color: black;
+  padding-left: 10px;
+}
+
 .jumbotron {
   background:url('Images/j-modaxis.png') center center;
   height: 400px;
