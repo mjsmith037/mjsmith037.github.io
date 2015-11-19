@@ -1,3 +1,7 @@
+a:hover {
+  font-weight: bold;
+}
+
 .nav li {
   display: inline-block;
   color: #0f0e0e;
