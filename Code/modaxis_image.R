@@ -81,7 +81,7 @@ p <- ggplot(LinePlotData, aes(x=nswap, y=eig, colour=ll)) +
     geom_point(alpha=.05) +
     geom_smooth(size=1) +
     ylab(expression(lambda)) +
-    xlab(paste0("Modularity <",  paste(rep.int("-", 100), collapse='-'), "> Bipartism")) +
+    xlab(paste0("Modularity <",  paste(rep.int("-", 10), collapse='-'), "> Bipartism")) +
     theme(legend.position="none",
           axis.text.x=element_blank(),
           axis.ticks.x=element_blank(),
@@ -89,10 +89,10 @@ p <- ggplot(LinePlotData, aes(x=nswap, y=eig, colour=ll)) +
           axis.text.y=element_text(size=20),
           axis.title=element_text(size=20))
 
-vp1 <- viewport(width = 0.1, height = 0.3, x = 0.085, y = 0.81)
-vp2 <- viewport(width = 0.1, height = 0.3, x = 0.935, y = 0.205)
-png("../images/j-modaxis.png", width=1800, height=600)
+vp1 <- viewport(width = 0.08, height = 0.3, x = 0.085, y = 0.8)
+vp2 <- viewport(width = 0.08, height = 0.3, x = 0.935, y = 0.215)
+png("../Images/modaxis.png", width=400, height=250)
 print(p)
-print(q1, vp = vp1)
-print(q2, vp = vp2)
+# print(q1, vp = vp1)
+# print(q2, vp = vp2)
 dev.off()

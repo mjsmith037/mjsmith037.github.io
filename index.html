@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <title>Michalska-Smith</title>
 
-    <!-- Bootstrap -->
-    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Alegreya:700|Alegreya+Sans+SC:800|Alegreya+Sans:800,700italic,500,500italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="main.css">
@@ -27,8 +26,14 @@
         <ul class="pull-left">
           <li>
             Matthew J Michalska-Smith
+          </li>
+          <li>
             <a href="mailto:mjsmith@uchicago.edu"><i class="fa fa-envelope"></i></a>
+          </li>
+          <li>
             <a href="http://www.bitbucket.org/mjsmith037"><i class="fa fa-bitbucket"></i></a>
+          </li>
+          <li>
             <a href="http://www.github.com/mjsmith037"><i class="fa fa-github"></i></a>
           </li>
         </ul>
@@ -47,85 +52,63 @@
       </div>
     </div> 
 
-    <ul class="nav nav-tabs">
-      <li class="active"; style="padding-left: 100px"><a href="#about">About Me</a></li>
-      <li><a href="#proj">Projects</a></li>
-      <li><a href="#pubs">Publications</a></li>
-    </ul>
+    <div class="tabs">
+      <ul class="nav nav-tabs" id="myTab">
+        <li class="active"><a href="#about">About Me</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#publications">Publications</a></li>
+      </ul>
     
-    <div class="tab-content">
-      <div id="about" class="tab-pane fade in active">
-        <div class="row">
-          <div class="col-sm-1"></div>
-          <div class="col-sm-6">
-            <p>I am a third year Ph.D. student in the department of Ecology & Evolution at the University of Chicago. Working in <a href="http://allesinalab.uchicago.edu">Stefano Allesina's lab</a>, I have been exposed to the powerful perspective of seeing the complexity of nature as a network of connected pieces. I have been particulary captivated by the interaction between the dynamics of ecological systems (i.e. the stability and feasibility of equilibria and the role of transient dynamics) and the structures (both local and global) found in network representations of those systems.</p>
-            <p>Though I have worked primarily with food-webs, I have long marvelled at the generality of mathematics, and have applied network- and matrix-based methods to a host of systems. I am driven by the development of methods and the ways in which they can be used to detect patterns within and between data of varying type.</p>
+      <div class="tab-content">
+        <div id="about" class="tab-pane fade in active">
+          <div class="row">
+            <div class="col-sm-7">
+              <p>I am a third year Ph.D. student in the department of Ecology & Evolution at the University of Chicago. Working in <a href="http://allesinalab.uchicago.edu">Stefano Allesina's lab</a>, I have been exposed to the powerful perspective of seeing the complexity of nature as a network of connected pieces. I have been particulary captivated by the interaction between the dynamics of ecological systems (i.e. the stability and feasibility of equilibria and the role of transient dynamics) and the structures (both local and global) found in network representations of those systems.</p>
+              <p>Though I have worked primarily with food-webs, many of my projects exploit the extreme generality of mathematical models, and have applied network- and matrix-based methods to a host of systems. I am driven by the development of methods and the ways in which they can be used to detect patterns within and between data of varying type.</p>
+            </div>
+            <div class="col-sm-5">
+              <img src="Images/me.jpg" style="height: 400px"/>
+            </div>
           </div>
-          <div class="col-sm-4">
-            <img src="#"/>
-          </div>
-          <div class="col-sm-1"></div>
         </div>
-      </div>
-      <div id="proj" class="tab-pane fade">
-        <div class="projects">
-          <div class="container">
-            <h1> Interests </h1>
-            <div class="row">
-              <div class="col-sm-4">
-                <h3> Structure </h3>
-                <div class="thumbnail">
-                  <a href="#">
-                    <img src="#"/>
-                  </a>
+        <div id="interests" class="tab-pane fade">
+          <div class="projects">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4">
+                  <h3> Structure </h3>
+                  <div class="thumbnail">
+                    <a href="#">
+                      <img src="Images/modaxis.png"/>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div class="col-sm-4">
-                <h3> Stability  </h3>
-                <div class="thumbnail">
-                  <a href="#">
-                    <img src="#"/>
-                  </a>
+                <div class="col-sm-4">
+                  <h3> Stability  </h3>
+                  <div class="thumbnail">
+                    <a href="#">
+                      <img src="#"/>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div class="col-sm-4">
-                <h3> Science of science  </h3>
-                <div class="thumbnail">
-                  <a href="#">
-                    <img src="Images/cclineplot.png"/>
-                  </a>
+                <div class="col-sm-4">
+                  <h3> Science of Science  </h3>
+                  <div class="thumbnail">
+                    <a href="#">
+                      <img src="Images/cclineplot.png"/>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+ <!--                   <p> In addition to my central focus on ecology, I have also been interested in studying the process of doing science, especially aspects related to publication and evaluating performance. For instance, <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0109195">one project</a> I have worked on looked at the influence of multinational affiliation lists on the success of publications. We confirmed a historical result that more countries improves both the quality of journal a paper is published into and the number of citations (compared to peer publications) it receives once published. Furthermore, we showed that the benefit differs according to which countries are in the affiliations -- some collaborations show much greater improvements than others and some actually decrease the expected number of citations! </p>
+-->
         </div>
-      </div>
-      <div id="pubs" class="tab-pane fade">
-      </div>
-    </div>
-   
-    <div class="learn-more">
-	  <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <h3> </h3>
-			<p>  </p>
-		    <p><a href="#">  </a></p>
-	      </div>
-          <div class="col-sm-4">
-            <h3>  </h3>
-		    <p>  </p>
-		    <p><a href="#">  </a></p>
-		  </div>
-          <div class="col-sm-4">
-            <h3>  </h3>
-    	    <p>  </p>
-		    <p><a href="#">  </a></p>
-		  </div>
-	    </div>
-	  </div>
-	</div>
-    
+        <div id="publications" class="tab-pane fade">
+        </div>
+      </div> 
+    </div> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
