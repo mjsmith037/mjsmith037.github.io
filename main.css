@@ -102,11 +102,12 @@ a:hover {
   padding: 2px 5px;
 }
 
-.biblinks p {
-  margin: 3px;
+.biblinks a {
+  padding: 0px 20px;
 }
 
 .publication {
+  height: 75px;
   padding-left: 2em;
   text-indent: -2em;
 }
@@ -114,8 +115,14 @@ a:hover {
 .pubnumber {
   color: #757575;
   font-weight: bold;
+  font-family: 'Alegreya', serif;
+  font-size: 20px;
   float: left;
   width: 2em;
+}
+
+.pubyear {
+  padding-left: 1em;
 }
 
 .pi {
