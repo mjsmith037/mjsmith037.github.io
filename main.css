@@ -8,6 +8,7 @@ a {
 
 a:hover {
   text-decoration: none;
+  color: #125454;
 }
 
 .nav .container {
@@ -36,6 +37,10 @@ a:hover {
 
 .nav .fa {
   color: black;
+}
+
+.nav .fa:hover {
+  color: #125454;
 }
 
 .jumbotron {
@@ -89,3 +94,31 @@ a:hover {
     font-size: 15px;
     margin-bottom: 13px;
 }*/
+
+/* Bibliography */
+.biblinks .label {
+  color: #0d0c0c;
+  font-size: 14px;
+  padding: 2px 5px;
+}
+
+.biblinks p {
+  margin: 3px;
+}
+
+.publication {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+
+.pubnumber {
+  color: #757575;
+  font-weight: bold;
+  float: left;
+  width: 2em;
+}
+
+.pi {
+  font-weight: bold;
+}
+

@@ -13,5 +13,7 @@ $(document).ready(function(){
     // on load of the page: switch to the currently selected tab
     var hash = window.location.hash;
     $('#myTab a[href="' + hash + '"]').tab('show');
+
+    $("#importBib").load("bib.html"); 
 });
 
