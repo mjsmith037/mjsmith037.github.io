@@ -102,8 +102,8 @@ a:hover {
   padding: 2px 5px;
 }
 
-.biblinks a {
-  padding: 0px 20px;
+.biblinks p {
+  margin: 3px;
 }
 
 .publication {

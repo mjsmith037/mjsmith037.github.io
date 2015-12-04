@@ -50,26 +50,25 @@ for bibitem in biblist:
             jrnlink = info[1].strip(' {},')
     #### create the html bibentries
     bibhtml = ['<div class="row publication">',
-               '  <div class="col-xs-1"></div>',
-               '  <div class="col-xs-8"><a name="'+ bibID + '"></a>',
+               '  <div class="col-xs-10"><a name="'+ bibID + '"></a>',
                '    <span class="pubnumber">' + str(nn) +'</span>',
                '    <span class="pubtitle">' + title + '</span><br>',
                ## the author list needs to be parsed and my name accented
                '    ' + ', '.join([parseauth(auth)  for auth in authlist]) + ';',
                '    <span class="pubyear">' + year + '</span>',
                '  </div>',
-               '  <div class="col-xs-2 col-xs-offset-1 text-right biblinks">']
+               '  <div class="col-xs-2 text-right biblinks">']
     if prelink:
-        bibhtml = bibhtml + ['    <a href="' + prelink + '">',
+        bibhtml = bibhtml + ['    <p><a href="' + prelink + '">',
                              '      <span class="label label-info">Citable preprint</span>',
-                             '    </a><br>']
-    bibhtml = bibhtml + ['    <a href="/pdfs/' + bibID + '">',
+                             '    </a></p>']
+    bibhtml = bibhtml + ['    <p><a href="/pdfs/' + bibID + '">',
                          '      <span class="label label-success">Full text PDF</span>',
-                         '    </a><br>']
+                         '    </a></p>']
     if jrnlink:
-        bibhtml = bibhtml + ['    <a href="' + jrnlink + '" title="' + journal + '">',
+        bibhtml = bibhtml + ['    <p><a href="' + jrnlink + '" title="' + journal + '">',
                              '      <span class="label label-warning">Journal version</span>',
-                             '    </a>']
+                             '    </a></p>']
     bibhtml = bibhtml + ['  </div>',
                          '</div>']
     htmllist.append('\n'.join(bibhtml))
