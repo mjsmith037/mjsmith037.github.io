@@ -33,9 +33,9 @@
           <li>
             <a href="http://www.bitbucket.org/mjsmith037"><i class="fa fa-bitbucket"></i></a>
           </li>
-          <li>
+          <!--<li>
             <a href="http://www.github.com/mjsmith037"><i class="fa fa-github"></i></a>
-          </li>
+          </li>-->
         </ul>
         <ul class="pull-right">
           <li><a href="Documents/11-2015_CV.pdf">CV</a></li>
@@ -63,11 +63,17 @@
         <div id="about" class="tab-pane fade in active">
           <div class="row">
             <div class="col-xs-7">
-              <p>I am a third year Ph.D. student in the department of Ecology & Evolution at the University of Chicago. Working in <a href="http://allesinalab.uchicago.edu">Stefano Allesina's lab</a>, I have been exposed to the powerful perspective of seeing the complexity of nature as a network of connected pieces. I have been particulary captivated by the interaction between the dynamics of ecological systems (i.e. the stability and feasibility of equilibria and the role of transient dynamics) and the structures (both local and global) found in network representations of those systems.</p>
-              <p>Though I have worked primarily with food-webs, many of my projects exploit the extreme generality of mathematical models, and have applied network- and matrix-based methods to a host of systems. I am driven by the development of methods and the ways in which they can be used to detect patterns within and between data of varying type.</p>
+              <p>
+                I am a third year Ph.D. student in the department of Ecology & Evolution at the University of Chicago.
+                Working in <a href="http://allesinalab.uchicago.edu">Stefano Allesina's lab</a>, I have been exposed to the powerful perspective of seeing the complexity of nature as a network of connected pieces.
+                I have been particulary captivated by the interaction between the dynamics of ecological systems (i.e. the stability and feasibility of equilibria and the role of transient dynamics) and the structures (both local and global) found in network representations of those systems.
+              </p>
+              <p>
+                Though I have worked primarily with food-webs, many of my projects exploit the extreme generality of mathematical models, and have applied network- and matrix-based methods to a host of systems.
+                I am driven by the development of methods and the ways in which they can be used to detect patterns within and between data of varying type.</p>
             </div>
             <div class="col-xs-5">
-              <img src="Images/me.jpg" style="height: 400px"/>
+              <img src="Images/me.jpg" id="MyPic"/>
             </div>
           </div>
         </div>
@@ -75,27 +81,40 @@
           <div class="projects">
             <div class="row">
               <div class="col-xs-4">
-                <h3> Structure </h3>
-                <div class="thumbnail">
-                  <img src="Images/modaxis.png"/>
-                </div>
-              </div>
-              <div class="col-xs-4">
                 <h3> Stability  </h3>
                 <div class="thumbnail">
                   <img src="#"/>
                 </div>
+                <p class="description">
+                  More than 40 years ago, <a href="https://scholar.google.com/citations?user=ScXat-4AAAAJ&hl=en&oi=ao">Robert May</a> introduced random matrices to ecology in a famous demonstration of the relationship between complexity and stability which was counter to the prevailing view of the time (<a href="http://www.nature.com/nature/journal/v238/n5364/abs/238413a0.html">May 1972</a>).
+                  Following a long hiatus, random matrices have recently re-emerged as the impetus behind several important advances in our understanding of complex ecological systems, spearheaded by <a href="https://scholar.google.com/citations?user=eQunDs0AAAAJ&hl=en&oi=ao">Si Tang</a> and <a href="https://scholar.google.com/citations?user=14DTOacAAAAJ&hl=en&oi=ao">Stefano Allesina</a> (<a href="http://www.nature.com/nature/journal/v483/n7388/abs/nature10832.html">Allesina &amp; Tang 2012</a>; <a href="http://journal.frontiersin.org/article/10.3389/fevo.2014.00021/full">Tang &amp; Allesina 2014</a>; <a href="http://onlinelibrary.wiley.com/doi/10.1111/ele.12312/full">Tang, Pawar, &amp; Allesina 2014</a>).
+                </p>
+              </div>
+              <div class="col-xs-4">
+                <h3> Structure </h3>
+                <div class="thumbnail">
+                  <img src="Images/modaxis.png"/>
+                </div>
+                <p class="description">
+                  Random matrices <a href="http://www.nature.com/nature/journal/v238/n5364/abs/238413a0.html">&agrave; la May</a> look for patterns in matrix ensembles which randomize matrix elements.
+                  Advances since then have explored alternative modes of randomization (<a href="http://onlinelibrary.wiley.com/doi/10.1111/ele.12312/full">Tang, Pawar, &amp; Allesina 2014</a>), yet these still tend to focus on node degree and interaction strength correlation.
+                  An alternative form of randomization would be to preserve small network structures such as motifs or global network structures such as nestedness and modularity.
+                </p>
               </div>
               <div class="col-xs-4">
                 <h3> Science of Science  </h3>
                 <div class="thumbnail">
                   <img src="Images/cclineplot.png"/>
                 </div>
-              </div>
+                <p class="description">
+                  In addition to my central focus on ecology, I have also been interested in studying the process of doing science, especially aspects related to publication and evaluating performance.
+                  For instance, <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0109195">one project</a> I have worked on looked at the influence of multinational affiliation lists on the success of publications.
+                  We confirmed a historical result that more countries improves both the quality of journal a paper is published into and the number of citations (compared to peer publications) it receives once published.
+                  Furthermore, we showed that the benefit differs according to which countries are in the affiliations -- some collaborations show much greater improvements than others and some actually decrease the expected number of citations!
+                 </p>
+               </div>
             </div>
           </div>
- <!--                   <p> In addition to my central focus on ecology, I have also been interested in studying the process of doing science, especially aspects related to publication and evaluating performance. For instance, <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0109195">one project</a> I have worked on looked at the influence of multinational affiliation lists on the success of publications. We confirmed a historical result that more countries improves both the quality of journal a paper is published into and the number of citations (compared to peer publications) it receives once published. Furthermore, we showed that the benefit differs according to which countries are in the affiliations -- some collaborations show much greater improvements than others and some actually decrease the expected number of citations! </p>
--->
         </div>
         <div id="publications" class="tab-pane fade">
           <div id="importBib"></div>

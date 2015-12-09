@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    // random banner
+//    $('#header').css({'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')'});
+//    $('<img src="images/' + images[Math.floor(Math.random() * images.length)] + '">').appendTo('#banner');
+
     $('#myTab a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
@@ -17,11 +21,12 @@ $(document).ready(function(){
     $("#importBib").load("bib.html"); 
     
     // when a project is selected, center it and remove the others
-    // add a back button for return
-//    $(".projects .thumbnail").click(function(){
-//        $(this).parent().siblings().children().toggle();
-//        $(this).parent().toggleClass("col-xs-4").toggleClass("col-xs-12");
-//    });
+    $(".projects .thumbnail").click(function(){
+        $(this).parent().siblings().children("h3").toggle();
+        $(this).parent().siblings().children(".thumbnail").toggle();
+        $(this).parent().toggleClass("col-xs-4").toggleClass("col-xs-12");
+        $(this).next().toggle();
+    });
 
 });
 
