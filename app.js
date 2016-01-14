@@ -21,12 +21,12 @@ $(document).ready(function(){
     $("#importBib").load("bib.html"); 
     
     // when a project is selected, center it and remove the others
-    $(".projects .thumbnail").click(function(){
+    /*$(".projects .thumbnail").click(function(){
         $(this).parent().siblings().children("h3").toggle();
         $(this).parent().siblings().children(".thumbnail").toggle();
         $(this).parent().toggleClass("col-xs-4").toggleClass("col-xs-12");
         $(this).next().toggle();
-    });
+    });*/
 
 });
 
