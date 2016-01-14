@@ -118,31 +118,12 @@ a:hover {
 }
 
 /* Project Descriptions */
-/*.projects {
-    background-color: #efefef;
-    border-bottom: 1px solid #dbdbdb;
+.projects .row {
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    align-items: center;
 }
-
-.projects h2 {
-    color: #393c3d;
-    font-size: 24px;
-}
-
-.projects p {
-    font-size: 15px;
-    margin-bottom: 13px;
-}*/
-
-.projects .thumbnail {
-    margin: auto;
-    max-width: 400px;
-}
-
-/*.projects .description {
-    padding-top: 10px;
-    display: none;
-    max-width: 1000px;
-}*/
 
 /* Bibliography */
 .biblinks .label {
