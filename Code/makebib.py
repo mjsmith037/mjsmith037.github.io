@@ -34,6 +34,7 @@ for bibitem in biblist:
     ## initialize the links since they are optional
     prelink = ''
     jrnlink = ''
+    OA = False
     for info in tmp:
         infotype = info[0].strip().lower()
         if infotype == 'title':
@@ -45,30 +46,41 @@ for bibitem in biblist:
         if infotype == 'journal':
             journal = info[1].strip(' {},')
         if infotype == 'doi':
-            prelink = info[1].strip(' {},')
+            prelink = info[1].strip(' {}e,')
         if infotype == 'url':
             jrnlink = info[1].strip(' {},')
+        if infotype == 'note':
+            if info[1].strip(' {},') == "Open Access":
+                OA = True
     #### create the html bibentries
     bibhtml = ['<div class="row publication">',
-               '  <div class="col-xs-10"><a name="'+ bibID + '"></a>',
+               '  <div class="col-xs-11"><a name="'+ bibID + '"></a>',
                '    <span class="pubnumber">' + str(nn) +'</span>',
                '    <span class="pubtitle">' + title + '</span><br>',
                ## the author list needs to be parsed and my name accented
                '    ' + ', '.join([parseauth(auth)  for auth in authlist]) + ';',
                '    <span class="pubyear">' + year + '</span>',
                '  </div>',
-               '  <div class="col-xs-2 text-right biblinks">']
-    if prelink:
-        bibhtml = bibhtml + ['    <p><a href="' + prelink + '">',
-                             '      <span class="label label-info">Citable preprint</span>',
+               '  <div class="col-xs-1 text-right biblinks">']
+    if OA:
+        if jrnlink:
+            bibhtml = bibhtml + ['    <p><a href="' + jrnlink + '" title="' + journal + '">',
+                                 '      <button type="button" class="btn btn-openaccess">Open Access</button>',
+                                 '    </a></p>']
+    else:
+        if jrnlink:
+            bibhtml = bibhtml + ['    <p><a href="' + jrnlink + '" title="' + journal + '">',
+                                 '      <button type="button" class="btn btn-journal">Journal version</button>',
+                                 '    </a></p>']
+        if prelink:
+            bibhtml = bibhtml + ['    <p><a href="' + prelink + '">',
+                                 '      <button type="button" class="btn btn-preprint">Citable Preprint</button>',
+                                 '    </a></p>']
+        bibhtml = bibhtml + ['    <p><a href="pdfs/' + bibID + '.pdf">',
+                             '      <button type="button" class="btn btn-mycopy">Full text PDF</button>',
                              '    </a></p>']
-    bibhtml = bibhtml + ['    <p><a href="/pdfs/' + bibID + '">',
-                         '      <span class="label label-success">Full text PDF</span>',
-                         '    </a></p>']
-    if jrnlink:
-        bibhtml = bibhtml + ['    <p><a href="' + jrnlink + '" title="' + journal + '">',
-                             '      <span class="label label-warning">Journal version</span>',
-                             '    </a></p>']
+
+    
     bibhtml = bibhtml + ['  </div>',
                          '</div>']
     htmllist.append('\n'.join(bibhtml))

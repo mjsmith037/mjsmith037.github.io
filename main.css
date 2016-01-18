@@ -126,10 +126,27 @@ a:hover {
 }
 
 /* Bibliography */
-.biblinks .label {
+.biblinks .btn {
   color: #0d0c0c;
   font-size: 14px;
-  padding: 2px 5px;
+  padding: 0px 10px;
+  width: 110px;
+}
+
+.btn-openaccess {
+  background-color: #1FBF8B;
+}
+
+.btn-journal {
+  background-color: #C02D48;
+}
+
+.btn-mycopy {
+  background-color: #5894C2;
+}
+
+.btn-preprint {
+  background-color: #A460D8;
 }
 
 .biblinks p {
