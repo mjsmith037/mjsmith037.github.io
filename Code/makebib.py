@@ -76,11 +76,12 @@ for bibitem in biblist:
             bibhtml = bibhtml + ['    <p><a href="' + prelink + '">',
                                  '      <button type="button" class="btn btn-preprint">Citable Preprint</button>',
                                  '    </a></p>']
-        bibhtml = bibhtml + ['    <p><a href="pdfs/' + bibID + '.pdf">',
-                             '      <button type="button" class="btn btn-mycopy">Full text PDF</button>',
-                             '    </a></p>']
+        else:
+            if bibID != "whirlingdisease":
+                bibhtml = bibhtml + ['    <p><a href="pdfs/' + bibID + '.pdf">',
+                                     '      <button type="button" class="btn btn-mycopy">Full text PDF</button>',
+                                     '    </a></p>']
 
-    
     bibhtml = bibhtml + ['  </div>',
                          '</div>']
     htmllist.append('\n'.join(bibhtml))

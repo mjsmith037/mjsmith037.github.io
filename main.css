@@ -134,29 +134,30 @@ a:hover {
 }
 
 .btn-openaccess {
-  background-color: #1FBF8B;
+  background-color: #1FBF8B; /* green-ish */
 }
 
 .btn-journal {
-  background-color: #C02D48;
+  background-color: #C02D48; /* red-ish */
 }
 
 .btn-mycopy {
-  background-color: #5894C2;
+  background-color: #5894C2; /* blue-ish */
 }
 
 .btn-preprint {
-  background-color: #A460D8;
+  background-color: #A460D8; /* purple-ish */
 }
 
 .biblinks p {
-  margin: 3px;
+  margin: 0px;
 }
 
 .publication {
   height: 60px;
   padding-left: 2em;
   text-indent: -2em;
+  margin-bottom: 5px;
 }
 
 .pubnumber {
