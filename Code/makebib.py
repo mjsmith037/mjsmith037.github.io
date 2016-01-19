@@ -54,7 +54,7 @@ for bibitem in biblist:
                 OA = True
     #### create the html bibentries
     bibhtml = ['<div class="row publication">',
-               '  <div class="col-xs-11"><a name="'+ bibID + '"></a>',
+               '  <div class="col-xs-11">',
                '    <span class="pubnumber">' + str(nn) +'</span>',
                '    <span class="pubtitle">' + title + '</span><br>',
                ## the author list needs to be parsed and my name accented
@@ -64,22 +64,22 @@ for bibitem in biblist:
                '  <div class="col-xs-1 text-right biblinks">']
     if OA:
         if jrnlink:
-            bibhtml = bibhtml + ['    <p><a href="' + jrnlink + '" title="' + journal + '">',
+            bibhtml = bibhtml + ['    <p><a target="_blank"  href="' + jrnlink + '" title="' + journal + '">',
                                  '      <button type="button" class="btn btn-openaccess">Open Access</button>',
                                  '    </a></p>']
     else:
         if jrnlink:
-            bibhtml = bibhtml + ['    <p><a href="' + jrnlink + '" title="' + journal + '">',
-                                 '      <button type="button" class="btn btn-journal">Journal version</button>',
+            bibhtml = bibhtml + ['    <p><a target="_blank"  href="' + jrnlink + '" title="' + journal + '">',
+                                 '      <button type="button" class="btn btn-journal">Journal Version</button>',
                                  '    </a></p>']
         if prelink:
-            bibhtml = bibhtml + ['    <p><a href="' + prelink + '">',
+            bibhtml = bibhtml + ['    <p><a target="_blank"  href="' + prelink + '">',
                                  '      <button type="button" class="btn btn-preprint">Citable Preprint</button>',
                                  '    </a></p>']
         else:
             if bibID != "whirlingdisease":
-                bibhtml = bibhtml + ['    <p><a href="pdfs/' + bibID + '.pdf">',
-                                     '      <button type="button" class="btn btn-mycopy">Full text PDF</button>',
+                bibhtml = bibhtml + ['    <p><a target="_blank"  href="pdfs/' + bibID + '.pdf">',
+                                     '      <button type="button" class="btn btn-mycopy">Full-Text PDF</button>',
                                      '    </a></p>']
 
     bibhtml = bibhtml + ['  </div>',

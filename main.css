@@ -125,12 +125,17 @@ a:hover {
     align-items: center;
 }
 
+.projtitle {
+  margin-bottom: -10px;
+}
+
 /* Bibliography */
 .biblinks .btn {
   color: #0d0c0c;
   font-size: 14px;
   padding: 0px 10px;
   width: 110px;
+  border-radius: 15px 1px 15px 1px;
 }
 
 .btn-openaccess {
@@ -150,14 +155,13 @@ a:hover {
 }
 
 .biblinks p {
-  margin: 0px;
+  margin: -1px;
 }
 
 .publication {
   height: 60px;
   padding-left: 2em;
   text-indent: -2em;
-  margin-bottom: 5px;
 }
 
 .pubnumber {

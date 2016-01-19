@@ -20,6 +20,9 @@ $(document).ready(function(){
     // import the bibliography
     $("#importBib").load("bib.html"); 
     
+    // import the project descriptions
+    $("#importProj").load("projects.html"); 
+    
     // when a project is selected, center it and remove the others
     /*$(".projects .thumbnail").click(function(){
         $(this).parent().siblings().children("h3").toggle();
