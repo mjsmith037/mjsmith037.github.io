@@ -84,14 +84,11 @@ p <- ggplot(LinePlotData, aes(x=nswap, y=eig, colour=ll)) +
     xlab(paste0("Modularity <",  paste(rep.int("-", 10), collapse='-'), "> Bipartism")) +
     theme(legend.position="none",
           axis.text.x=element_blank(),
-          axis.ticks.x=element_blank(),
-          axis.ticks.y=element_line(size=2),
-          axis.text.y=element_text(size=20),
-          axis.title=element_text(size=20))
+          axis.ticks.x=element_blank())
 
 vp1 <- viewport(width = 0.08, height = 0.3, x = 0.085, y = 0.8)
 vp2 <- viewport(width = 0.08, height = 0.3, x = 0.935, y = 0.215)
-png("../Images/modaxis.png", width=400, height=250)
+png("../Images/modaxis.png", width=4, height=2.7, units='in', res=300)
 print(p)
 # print(q1, vp = vp1)
 # print(q2, vp = vp2)

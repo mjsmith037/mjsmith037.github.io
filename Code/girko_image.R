@@ -52,4 +52,4 @@ ggplot() +
     xlim(c(2 * min(PointData$Imaginary), max(PointData$Imaginary))) +
     theme_bw() +
     theme(plot.margin=unit(c(0,0,0,0), 'in'))
-ggsave(file='../Images/ellipse.png', width=4, height=2.5, units='in')
+ggsave(file='../Images/ellipse.png', width=4, height=2.7)

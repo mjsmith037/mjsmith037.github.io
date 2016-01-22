@@ -54,14 +54,14 @@ for bibitem in biblist:
                 OA = True
     #### create the html bibentries
     bibhtml = ['<div class="row publication">',
-               '  <div class="col-xs-11">',
+               '  <div class="col-xs-12 col-sm-10 bibinfo">',
                '    <span class="pubnumber">' + str(nn) +'</span>',
                '    <span class="pubtitle">' + title + '</span><br>',
                ## the author list needs to be parsed and my name accented
                '    ' + ', '.join([parseauth(auth)  for auth in authlist]) + ';',
                '    <span class="pubyear">' + year + '</span>',
                '  </div>',
-               '  <div class="col-xs-1 text-right biblinks">']
+               '  <div class="col-xs-12 col-sm-1 text-right biblinks">']
     if OA:
         if jrnlink:
             bibhtml = bibhtml + ['    <p><a target="_blank"  href="' + jrnlink + '" title="' + journal + '">',

@@ -1,4 +1,8 @@
-/* General */
+/*////////////////////////////////// General /////////////////////////////////*/
+body {
+  min-width: 400px;
+}
+
 p {
     font-family: 'Alegreya Sans', sans-serif;
 }
@@ -12,12 +16,9 @@ a:hover {
   color: #125454;
 }
 
-/* NavBar */
-.nav .container {
-    min-width: 900px;
-    width: 75%;
-    margin-top: 5px;
-    /*border-bottom: 2px solid rgba(0,0,0,.3);*/
+/*////////////////////////////////// NavBar //////////////////////////////////*/
+.nav {
+    width: 100%;
 }
 
 .nav li {
@@ -26,9 +27,24 @@ a:hover {
   font-size: 16px;
   padding-top: 10px;
   font-weight: bold;
-  padding-left: 7px;
-  padding-right: 7px;
   font-variant: small-caps;
+}
+
+.nav .pull-right li {
+  padding-left: 15px;
+}
+
+.nav .pull-left li {
+  padding-right: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav .pull-right li {
+    padding-top: 0;
+  }
+  .nav .pull-right li {
+    margin-top: -20px;
+  }
 }
 
 .nav li a {
@@ -46,34 +62,85 @@ a:hover {
   color: #125454;
 }
 
-/* Jumbotron */
+/*///////////////////////////////// Jumbotron ////////////////////////////////*/
 .jumbotron {
   background: url('Images/MatBanner.png') center center no-repeat;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,1))),
-              url('Images/MatBanner.png') center center no-repeat;
-  background: -webkit-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1)),
-              url('Images/MatBanner.png') center center no-repeat;
-  background: -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1)),
-              url('Images/MatBanner.png') center center no-repeat;
-  background: -ms-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1)),
-              url('Images/MatBanner.png') center center no-repeat;
-  background: -o-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1)),
-              url('Images/MatBanner.png') center center no-repeat;
-  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1)),
-              url('Images/MatBanner.png') center center no-repeat;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,0)', endColorstr='rgba(255,255,255,1)'), url('Images/MatBanner.png') center center no-repeat;
-  zoom: 1;
   height: 260px;
+  margin-top: -10px;
 }
 
-/*.jumbotron {
-  background: url('Images/MatBanner.png') center center no-repeat;
-  height: 260px;
-}*/
+.jumbotron .overlay-top {
+  height: 75px;
+  position: relative;
+  top: -48px;
+  
+  background: rgba(255,255,255,0);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
+  background: -webkit-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+  background: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+  background: -ms-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+  background: -o-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+  background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,1)', endColorstr='rgba(255,255,255,0)');
+}
+
+.jumbotron .overlay-bottom {
+  height: 75px;
+  position: relative;
+  top: 62px;
+  
+  background: rgba(255,255,255,0);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  background: -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1));
+  background: -ms-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  background: -o-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,0)', endColorstr='rgba(255,255,255,1)');
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron .overlay-top {
+    height: 75px;
+    position: relative;
+    top: -30px;
+    
+    background: rgba(255,255,255,0);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -ms-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -o-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,1)', endColorstr='rgba(255,255,255,0)');
+  }
+
+  .jumbotron .overlay-bottom {
+    height: 75px;
+    position: relative;
+    top: 80px;
+      
+    background: rgba(255,255,255,0);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    background: -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1));
+    background: -ms-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    background: -o-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,0)', endColorstr='rgba(255,255,255,1)');
+  }
+}
+
+.jumbotron .container {
+  max-width: 925px;
+  position: relative;
+  top: -130px;
+  background: rgba(255,255,255,0.85);
+}
 
 .jumbotron h1 {
   color: #0d0c0c;
-  font-size: 48px;  
+  font-size: 40px;  
   font-family: 'Alegreya', serif;
   font-weight: bold;
 }
@@ -84,52 +151,42 @@ a:hover {
   color: #0d0c0c;
 }
 
-.jumbotron .container {
-  background: rgba(255,255,255,0.8);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
-  background: -webkit-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
-  background: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
-  background: -ms-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
-  background: -o-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
-  background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,1)', endColorstr='rgba(255,255,255,0)');
-  zoom: 1;
-  max-width: 900px;
-}
-
+/*///////////////////////////////// Tabs Pane ////////////////////////////////*/
 .tabs {
   margin: auto;
-  min-width: 800px;
-  width: 75%;
+/*  min-width: 800px;*/
+  width: 90%;
   margin-top: -60px;
 }
 
 .tab-content {
-    font-size: 16px;
+  font-size: 16px;
 }
 
+/*///////////////////////////////// About Me /////////////////////////////////*/
 #MyPic {
-    height: 400px;
-    float: right;
+  width: 100%;
+  max-height: 450px;
+  max-width: 338px;
 }
 
+/*/////////////////////////// Project Descriptions ///////////////////////////*/
 .projects h3 {
   font-family: 'Alegreya Sans SC', sans-serif;
 }
 
-/* Project Descriptions */
-.projects .row {
+/*.projects .row {
     display: -webkit-flex; /* Safari */
-    -webkit-align-items: center; /* Safari 7.0+ */
-    display: flex;
+/*    -webkit-align-items: center; /* Safari 7.0+ */
+/*    display: flex;
     align-items: center;
-}
+}*/
 
 .projtitle {
   margin-bottom: -10px;
 }
 
-/* Bibliography */
+/*/////////////////////////////// Bibliography ///////////////////////////////*/
 .biblinks .btn {
   color: #0d0c0c;
   font-size: 14px;
@@ -160,6 +217,9 @@ a:hover {
 
 .publication {
   height: 60px;
+}
+
+.bibinfo {
   padding-left: 2em;
   text-indent: -2em;
 }
@@ -181,3 +241,8 @@ a:hover {
   font-weight: bold;
 }
 
+@media screen and (max-width: 720px) {
+  .biblinks p {
+    display: inline-block;
+  }
+}
