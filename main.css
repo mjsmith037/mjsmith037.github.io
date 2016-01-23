@@ -4,11 +4,11 @@ body {
 }
 
 p {
-    font-family: 'Alegreya Sans', sans-serif;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
 a {
-    color: #080076;
+  color: #080076;
 }
 
 a:hover {
@@ -17,56 +17,39 @@ a:hover {
 }
 
 /*////////////////////////////////// NavBar //////////////////////////////////*/
-.nav {
-    width: 100%;
-}
-
-.nav li {
-  display: inline-block;
-  color: #0d0c0c;
-  font-size: 16px;
-  padding-top: 10px;
-  font-weight: bold;
+.navbar-brand {
   font-variant: small-caps;
+  font-weight: bold;
 }
 
-.nav .pull-right li {
-  padding-left: 15px;
+.navbar {
+  background-color: transparent;
+  border: 0;
 }
 
-.nav .pull-left li {
-  padding-right: 15px;
-}
-
-@media screen and (max-width: 768px) {
-  .nav .pull-right li {
-    padding-top: 0;
-  }
-  .nav .pull-right li {
-    margin-top: -20px;
-  }
-}
-
-.nav li a {
-  font-size: 12px;
+#navbar a {
+  font-size: 13px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.nav .fa {
-  color: black;
-  font-size: 16px;
+.navbar a {
+  color: #0d0c0c !important;
 }
 
-.nav .fa:hover {
-  color: #125454;
+#navbar a:hover {
+  color: #125454 !important;
+}
+
+.navbar .fa {
+  font-size: 16px;
 }
 
 /*///////////////////////////////// Jumbotron ////////////////////////////////*/
 .jumbotron {
   background: url('Images/MatBanner.png') center center no-repeat;
   height: 260px;
-  margin-top: -10px;
+  margin-top: -30px;
 }
 
 .jumbotron .overlay-top {
@@ -152,11 +135,17 @@ a:hover {
 }
 
 /*///////////////////////////////// Tabs Pane ////////////////////////////////*/
+.nav-tabs li a {
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .tabs {
   margin: auto;
 /*  min-width: 800px;*/
   width: 90%;
-  margin-top: -60px;
+  margin-top: -40px;
 }
 
 .tab-content {
@@ -188,7 +177,7 @@ a:hover {
 
 /*/////////////////////////////// Bibliography ///////////////////////////////*/
 .biblinks .btn {
-  color: #0d0c0c;
+  color: black;
   font-size: 14px;
   padding: 0px 10px;
   width: 110px;
@@ -212,7 +201,7 @@ a:hover {
 }
 
 .biblinks p {
-  margin: -1px;
+  margin: 0px;
 }
 
 .publication {
