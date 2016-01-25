@@ -16,6 +16,17 @@ a:hover {
   color: #125454;
 }
 
+div #license {
+  position: absolute;
+  bottom: 20px;
+  margin-left: 50%;
+  height: 15px;
+}
+
+#license {
+  height: 15px;
+}
+
 /*////////////////////////////////// NavBar //////////////////////////////////*/
 .navbar-brand {
   font-variant: small-caps;
