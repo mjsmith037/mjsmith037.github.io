@@ -1,0 +1,6 @@
+#!/bin/bash
+
+scp ../*.html mjsmith@webspace.uchicago.edu:public_html/
+scp ../main.css mjsmith@webspace.uchicago.edu:public_html/
+scp ../app.js mjsmith@webspace.uchicago.edu:public_html/
+
