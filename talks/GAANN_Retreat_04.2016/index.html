@@ -60,7 +60,7 @@
                 <h4 style="position:relative; top:-50px">Using graph spectra to identify<br>
                     differences in network structure</h4>
                 <a href="http://bitbucket.org/mjsmith037" style="font-family: 'Alegreya SC'">Matt Michalska-Smith</a>
-                <ul style="list-style-type: none; position: absolute; bottom:0px; left:0px">
+                <ul style="list-style-type: none; position: absolute; bottom:5%; left:0px">
                     <li>Stefano Allesina</li>
                     <li>Jacopo Grilli</li>
                 </ul>
@@ -185,10 +185,15 @@
                 <section data-background="Figures/OldData_NewMetrics_PCA.svg"></section>
             </section>
                 
-            <section data-background="Figures/NewBiologicalData.svg"></section>
-            <section data-background="Figures/NewBiologicalData_wLabels.svg"></section>
+            <section>
+                <section data-background="Figures/NewBiologicalData.svg"></section>
+                <section data-background="Figures/NewBiologicalData_PCA.svg"></section>
+            </section>
             
-            <section data-background="Figures/AllTypes.svg"></section>
+            <section>
+                <section data-background="Figures/AllTypes.svg"></section>
+                <section data-background="Figures/AllTypes_PCA.svg"></section>
+            </section>
             
             <section>
                 <h1 style="font-size: 2.3em">Some more things to do...</h1>
@@ -229,6 +234,7 @@
                     { src: 'plugin/math/math.js', async: true }
                 ]
 			});
+            Reveal.configure({ slideNumber: true });
 		</script>
 	</body>
 </html>
