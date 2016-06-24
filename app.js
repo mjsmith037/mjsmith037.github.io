@@ -3,19 +3,29 @@ $(document).ready(function(){
 //    $('#header').css({'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')'});
 //    $('<img src="images/' + images[Math.floor(Math.random() * images.length)] + '">').appendTo('#banner');
 
-    $('#myTab a').click(function (e) {
-        e.preventDefault();
+
+/////////////////////////////////// NAV TABS ///////////////////////////////////
+    // show a tab when clicked and save in history
+    $('#myTabs a').click(function (e) {
         $(this).tab('show');
+        history.pushState(null, null, $(e.target).attr("href"));
+    });
+    // store the currently selected tab in the hash value
+    $('#myTabs a').on("shown.bs.tab", function (e) {
+        location.hash = $(e.target).attr("href").substr(1);
+    });
+    // show active tab on reload
+    if (location.hash !== '') $('a[href="' + location.hash + '"]').tab('show');
+    // navigate to a tab when the history changes
+    window.addEventListener("popstate", function(e) {
+        var activeTab = $('[href=' + location.hash + ']');
+        if (activeTab.length) {
+            activeTab.tab('show');
+        } else { /*This part still not working*/
+            $('#myTabs a:first').tab('show') 
+        }
     });
 
-    // store the currently selected tab in the hash value
-    $("ul.nav-tabs > li > a").on("shown.bs.tab", function (e) {
-        var id = $(e.target).attr("href").substr(1);
-        window.location.hash = id;
-    });
-    // on load of the page: switch to the currently selected tab
-    var hash = window.location.hash;
-    $('#myTab a[href="' + hash + '"]').tab('show');
 
     // import the bibliography
     $("#importBib").load("bib.html"); 
@@ -44,3 +54,5 @@ $(document).ready(function(){
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-73376463-1', 'auto');
 ga('send', 'pageview');
+
+
