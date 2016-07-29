@@ -31,7 +31,10 @@ $(document).ready(function(){
     $("#importBib").load("bib.html"); 
     
     // import the project descriptions
-    $("#importProj").load("projects.html"); 
+    $("#importProj").load("projects.html");
+    
+    // import the project descriptions
+    $("#importBlog").load("blog/index.html"); 
     
     // when a project is selected, center it and remove the others
     /*$(".projects .thumbnail").click(function(){

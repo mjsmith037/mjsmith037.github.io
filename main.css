@@ -249,3 +249,28 @@ div #license {
     display: inline-block;
   }
 }
+
+
+/*/////////////////////////////////// Blog ///////////////////////////////////*/
+.single-post {
+
+}
+
+.post-title {
+  font-family: 'Alegreya', serif;
+}
+
+.post-details {
+  font-weight: bold;
+}
+
+.post-button {
+  color: black;
+  font-size: 20px;
+  padding: 0px 20px;
+  border-radius: 15px 1px 15px 1px;
+  background-color: #1FBF8B; /* green-ish */
+}
+
+
+
