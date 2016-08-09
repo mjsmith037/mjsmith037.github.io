@@ -1,0 +1,153 @@
+
+/*////////////////////////////// Background //////////////////////////////////*/
+.reveal {
+  background-color: rgba(255,255,255,0.7);
+}
+
+/*/////////////////////////////////// Font ///////////////////////////////////*/
+.reveal {
+  font-family: "Alegreya", "Palatino Linotype", "Book Antiqua", "Palatino", "FreeSerif", serif;
+  font-size: 4vh;
+}
+
+.reveal h1,
+.reveal p {
+  font-family: "Alegreya", "Palatino Linotype", "Book Antiqua", "Palatino", "FreeSerif", serif;
+  text-transform: none;
+}
+
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Alegreya SC", "Palatino Linotype", "Book Antiqua", "Palatino", "FreeSerif", serif;
+  text-transform: none;
+}
+
+/*///////////////////////////////// Matrices /////////////////////////////////*/
+.matrix {
+  display:inline-table;
+  padding:50px;
+}
+
+.matrix td {
+  border-style:solid;
+  border-width:1px;
+  width: 0.75em;
+  height: 0.75em;
+  font-size: 110%;
+}
+
+.matrix th {
+  border:0;
+}
+
+.matrix tr:last-child td:not(:first-child) {
+  border-bottom:1px solid black !important;
+}
+
+.matrix td:first-child,
+.matrix th:first-child {
+  border:0;
+}
+
+.matimg {
+  max-width:0.75em !important;
+  max-height:0.75em !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+
+
+.full {
+    height:100%;
+    width:100%;
+}
+
+img {
+  max-width:100vw;
+  max-height:100vh;
+}
+
+img .plain {
+  background-color: transparent !important;
+}
+
+#citation {
+  bottom:0px;
+  right:0px;
+  position:absolute;
+  font-size:70%;
+}
+
+#header {
+  top:0px;
+  left:0px;
+  position:absolute;
+  font-size:90%;
+}
+
+.parasite {
+  color:red;
+  text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
+  border-color:black !important;
+}
+
+.category {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-weight:bold;
+}
+
+.pp {
+  color:#abdda4;
+  border-color:black !important;
+}
+.hb {
+  color:#2b83ba;
+  border-color:black !important;
+}
+.pa {
+  color:#d7191c;
+  border-color:black !important;
+}
+.pr {
+  color:#fdae61;
+  border-color:black !important;
+}
+
+.nsig {
+  background-color:#333333;
+  color:#333333;
+}
+.sig1 {
+  background-color:#dcc200;
+  color:#dcc200;
+}
+.sig2 {
+  background-color:#dc5400;
+  color:#dc5400;
+}
+.sig3 {
+  background-color:#dc001a;
+  color:#dc001a;
+}
+
+#gbr {
+  border-top-width: 5px;
+}
+
+#gbc {
+  border-left: 5px solid black;
+}
+
+table td {
+  border-bottom: 0 !important;
+}
+
+
+body {
+  margin:0;
+  padding:0;
+}
