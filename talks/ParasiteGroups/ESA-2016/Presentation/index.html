@@ -134,8 +134,8 @@
 					<!-- TODO: fix alignment! -->
 					<!-- TODO: add concom links to fw and reveal/highlight -->
 					<h4 id="header">introduction: Food-Webs</h4>
-					<img class="plain fragment fade-out" data-fragment-index="1" style="position:absolute; display:block;" src="../../Figures/FoodWeb_animals.png">
-					<img class="plain fragment" data-fragment-index="1" style="position:absolute; display:block;" src="../../Figures/FoodWeb_dots.png">
+					<img class="plain fragment fade-out" data-fragment-index="1" style="position:absolute; display:block; padding-left:20vw;" src="../../Figures/FoodWeb_animals.png">
+					<img class="plain fragment" data-fragment-index="1" style="position:absolute; display:block; padding-left:20vw;" src="../../Figures/FoodWeb_dots.png">
 					<aside class="notes">
 						This is a toy example of a food-web. Note that the links point from
 						prey to predator. This allows us to distinguish between in-degree --
@@ -276,7 +276,7 @@
 					<!-- TODO: overlay groups with C values -->
 					<!-- TODO: breaks into header row -->
 					<h4 id="header">methods: Group Model</h4>
-					<table style="margin-top:5vh; position:absolute; left:0;" class='matrix fragment fade-out' data-fragment-index="1">
+					<table style="margin-top:5vh; position:absolute; left:15vw;" class='matrix fragment fade-out' data-fragment-index="1">
 						<tr>
 							<th></th>
 							<th><img style="vertical-align: bottom;" class="plain matimg" src="../../Images/animals/grass.svg"></th>
@@ -302,7 +302,7 @@
 						<tr> <td><img style="float:right;" class="plain matimg" src="../../Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
 					</table>
 
-					<table style="margin-top:5vh; position:absolute; left:0;" class='matrix fragment fade-in' data-fragment-index="1">
+					<table style="margin-top:5vh; position:absolute; left:15vw;" class='matrix fragment fade-in' data-fragment-index="1">
 						<tr>
 							<th></th>
 							<th><img style="vertical-align: bottom;" class="plain matimg" src="../../Images/animals/grass.svg"></th>
@@ -455,7 +455,7 @@
 						<tr class="fragment fade-in" data-fragment-index="2"> <td class="category pr">Predators</td> <td>0.533</td> <td>0.644</td> </tr>
 						<tr class="fragment fade-in" data-fragment-index="2"> <td class="category hb">Herbivores</td> <td>0.8</td> <td>0.048</td> </tr>
 						<tr class="fragment fade-in" data-fragment-index="2"> <td class="category pp">Primary Producers</td> <td>1.0</td> <td>0.022</td> </tr>
-						<tr class="fragment fade-in" data-fragment-index="2"> <td class="category">Overall</td> <td>0.533</td> <td>0.005</td> </tr>
+						<tr class="fragment fade-in" data-fragment-index="2"> <td style="font-weight:bold;">Overall</td> <td>0.533</td> <td>0.005</td> </tr>
 					</table>
 					<table class="fragment fade-in" data-fragment-index="2" style="margin-top:50vh; width:90vw; position:absolute;">
 						<tr>
@@ -476,7 +476,7 @@
 						<tr class="fragment fade-in" data-fragment-index="2"> <td class="category pr">Predators</td> <td>0.25</td> <td>1.0</td> </tr>
 						<tr class="fragment fade-in" data-fragment-index="2"> <td class="category hb">Herbivores</td> <td>0.25</td> <td>0.619</td> </tr>
 						<tr class="fragment fade-in" data-fragment-index="2"> <td class="category pp">Primary Producers</td> <td>0.25</td> <td>1.0</td> </tr>
-						<tr class="fragment fade-in" data-fragment-index="2"> <td class="category">Overall</td> <td>0.063</td> <td>0.695</td> </tr>
+						<tr class="fragment fade-in" data-fragment-index="2"> <td style="font-weight:bold;">Overall</td> <td>0.063</td> <td>0.695</td> </tr>
 					</table>
 
 
@@ -524,7 +524,7 @@
 					</aside>
 				</section>
 
-				<!-- <section class="full"> -->
+				<section class="full">
 					<section class="full">
 						<h4 id="header">methods: Data</h4>
 						<img class="plain" src="../../Figures/DegreeBoxPlot_PuntaBanda_all.svg">
@@ -534,7 +534,7 @@
 							Also note that parasites stick out in 3/4
 						</aside>
 					</section>
-					<!-- <section class="full">
+					<section class="full">
 						<h4 id="header">results</h4>
 						<img class="plain" src="../../Figures/DegreeBoxPlot_all_Par.svg">
 					</section>
@@ -542,7 +542,7 @@
 						<h4 id="header">results</h4>
 						<img class="plain" src="../../Figures/DegreeBoxPlot_all_ParCon.svg">
 					</section>
-				</section> -->
+				</section>
 
 				<section>
 					<h4 id="header">results: Imbalance</h4>
@@ -702,7 +702,7 @@
 				<section>
 					<!-- TODO: fix link to slides -->
 					<h1 style="font-size:120px">Questions?</h1>
-					<p style="position=relative; margin-top:30vh; font-size:24px;"><a href="http://michalska-smith.com/talks/ESA-2016/">Slides available on Michalska-Smith.com</a></p>
+					<p style="position=relative; margin-top:30vh; font-size:24px;"><a href="http://michalska-smith.com/talks/ParasiteGroups/ESA-2016/Presentation/">Slides available on Michalska-Smith.com</a></p>
 					<p style="position=relative; font-size:24px;">
 						<a href="http://www.freepik.com/free-vector/hand-drawn-forest-animal-collection_843677.htm">Background</a>
 						and food-web animals (
@@ -732,7 +732,7 @@
 				center: true,
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 		    parallaxBackgroundImage: '../../Images/background.svg',
-		    parallaxBackgroundSize: '5000px 1500px',
+		    parallaxBackgroundSize: '5000px 1460px',
 
 				// Optional reveal.js plugins
 				dependencies: [
