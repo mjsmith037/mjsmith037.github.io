@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
 
     <!-- font-linking -->
-    <link href='https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
       rel="stylesheet"
       integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
@@ -31,11 +31,11 @@
 
     <!-- Printing and PDF exports -->
     <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
+      var link = document.createElement( "link" );
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match( /print-pdf/gi ) ? "../reveal.js/css/print/pdf.css" : "../reveal.js/css/print/paper.css";
+      document.getElementsByTagName( "head" )[0].appendChild( link );
     </script>
   </head>
   <body>
@@ -44,7 +44,9 @@
       <div class="slides">
         <section class="center">
           <div class="wnotes">
-            <img class="plain" src="Images/oldtitle.svg" style="width:100%; max-height:50vh !important;">
+            <!-- <h1>Identifying unique species roles</h1>
+		        <p>by characterizing differences in ecological network structure</p> -->
+            <img class="plain" src="Images/oldtitle.png" style="width:100%; max-height:50vh !important;">
             <h5 style="margin:5vh auto;">Matt Michalska-Smith</h5>
           </div>
           <aside class="notes">
@@ -69,7 +71,11 @@
 
         <section class="center">
           <div class="wnotes">
-            <img class="plain" src="Images/newtitle.svg" style="width:100%; max-height:50vh !important;">
+  					<!-- <h1 style="font-size:300%; margin-bottom:-25px;">Understanding</h1>
+  					<h1 style="font-size:80%; margin-top:-25px; display:inline-block; line-height:85%;">the<br>role<br>of</h1>
+  					<h1 style="font-size:300%; margin-top:-25px; display:inline-block;">Parasites</h1>
+  					<p style="font-size:135%; margin-top:-40px;"> in food webs using the group model</p> -->
+            <img class="plain" src="Images/newtitle.png" style="width:100%; max-height:50vh !important;">
             <p style="position:relative; text-align:left; margin:5vh 5vw;">
               <b>Matt Michalska-Smith</b><br>
               Liz Sander<br>
@@ -242,7 +248,7 @@
           "<th>(\w+)</th>" => "<th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/$1.svg"></th>"
           "<td>(\D+2?)</td>" =>  "<td><img style="float:right;" class="plain matimg" src="Images/animals/$1.svg"></td>"
           -->
-          <table style="margin-top:5vh;" class='matrix wnotes'>
+          <table style="margin-top:5vh;" class="matrix wnotes">
             <tr>
               <th></th>
               <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></th>
@@ -291,7 +297,7 @@
             "<th>(\w+)</th>" => "<th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/$1.svg"></th>"
             "<td>(\D+2?)</td>" =>  "<td><img style="float:right;" class="plain matimg" src="Images/animals/$1.svg"></td>"
             -->
-            <table style="margin-top:5vh;" class='matrix wnotes'>
+            <table style="margin-top:5vh;" class="matrix wnotes">
               <tr>
                 <th></th>
                 <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></th>
@@ -907,17 +913,17 @@
         slideNumber: true,
         history: true,
         center: true,
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
-        parallaxBackgroundImage: 'Images/background.svg',
-        parallaxBackgroundSize: '5000px 1460px',
+        transition: "slide", // none/fade/slide/convex/concave/zoom
+        parallaxBackgroundImage: "Images/background.svg",
+        parallaxBackgroundSize: "5000px 1460px",
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: '../reveal.js/plugin/markdown/marked.js' },
-          { src: '../reveal.js/plugin/markdown/markdown.js' },
-          { src: '../reveal.js/plugin/notes/notes.js', async: true },
-          { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: '../reveal.js/plugin/math/math.js', async: true }
+          { src: "../reveal.js/plugin/markdown/marked.js" },
+          { src: "../reveal.js/plugin/markdown/markdown.js" },
+          { src: "../reveal.js/plugin/notes/notes.js", async: true },
+          { src: "../reveal.js/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: "../reveal.js/plugin/math/math.js", async: true }
         ]
       });
     </script>
