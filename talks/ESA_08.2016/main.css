@@ -1,18 +1,18 @@
 
-/*////////////////////////////// Background //////////////////////////////////*/
+/*////////////////////////////////// Background //////////////////////////////////////*/
 .reveal {
   background-color: rgba(255,255,255,0.7);
 }
 
-/*/////////////////////////////////// Font ///////////////////////////////////*/
+/*/////////////////////////////////////// Font ///////////////////////////////////////*/
 .reveal {
-  font-family: "Alegreya", "Palatino Linotype", "Book Antiqua", "Palatino", "FreeSerif", serif;
+  font-family: "Alegreya", "Palatino Linotype", "Palatino", "FreeSerif", serif;
   font-size: 4vh;
 }
 
 .reveal h1,
 .reveal p {
-  font-family: "Alegreya", "Palatino Linotype", "Book Antiqua", "Palatino", "FreeSerif", serif;
+  font-family: "Alegreya", "Palatino Linotype", "Palatino", "FreeSerif", serif;
   text-transform: none;
 }
 
@@ -21,26 +21,29 @@
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-  font-family: "Alegreya SC", "Palatino Linotype", "Book Antiqua", "Palatino", "FreeSerif", serif;
+  font-family: "Alegreya SC", "Palatino Linotype", "Palatino", "FreeSerif", serif;
   text-transform: none;
 }
 
-/*///////////////////////////////// Matrices /////////////////////////////////*/
+/*///////////////////////////////////// Matrices /////////////////////////////////////*/
 .matrix {
   display:inline-table;
   padding:50px;
+  table-layout:fixed;
 }
 
 .matrix td {
   border-style:solid;
   border-width:1px;
-  width: 0.75em;
-  height: 0.75em;
+  width: 4vmin;
+  height: 4vmin;
   font-size: 110%;
+  text-align: center;
 }
 
 .matrix th {
   border:0;
+  text-align: center;
 }
 
 .matrix tr:last-child td:not(:first-child) {
@@ -53,33 +56,30 @@
 }
 
 .matimg {
-  max-width:0.75em !important;
-  max-height:0.75em !important;
+  max-width: 4vmin !important;
+  max-height: 4vmin !important;
   padding:0 !important;
-  margin:0 !important;
+  margin:0 auto !important;
 }
 
-
-
-.full {
-    height:100%;
-    width:100%;
+#gbr {
+  border-top-width: 5px;
 }
 
-img {
-  max-width:100vw;
-  max-height:100vh;
+#gbc {
+  border-left: 5px solid black;
 }
 
-img .plain {
-  background-color: transparent !important;
-}
-
+/*////////////////////////////////// Header/Footer ///////////////////////////////////*/
 #citation {
-  bottom:0px;
-  right:0px;
+  bottom:0;
+  right:0;
   position:absolute;
   font-size:70%;
+}
+
+#citation.citwnotes {
+  right:35vw;
 }
 
 #header {
@@ -89,17 +89,51 @@ img .plain {
   font-size:90%;
 }
 
-.parasite {
-  color:red;
-  text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
-  border-color:black !important;
+/*/////////////////////////////////// Slide Notes ////////////////////////////////////*/
+.reveal aside.hidden {
+  display:none !important;
 }
 
-.category {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  font-weight:bold;
+.wnotes {
+  width:50vw;
+  position:absolute;
+  left:0;
 }
 
+.reveal aside.notes {
+  display:block;
+  position:absolute;
+  text-align:left;
+  background-color: rgba(255, 255, 255, 0.8);
+  right:0;
+  top: 5vh;
+  width:33vw;
+  height:85vh;
+  font-size:60%;
+  line-height: 120%;
+  overflow:auto;
+}
+
+span.key {
+  border: 4px solid black;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-family: "Alegreya SC";
+  padding: 0px 10px 0px 10px;
+  margin: 0 10px;
+  font-size: 75%;
+}
+
+#ns {
+  font-family: "Alegreya SC";
+  font-weight: bold;
+}
+
+.matrix.wnotes {
+  table-layout:fixed;
+}
+
+/*////////////////////////////////////// Colors //////////////////////////////////////*/
 .pp {
   color:#abdda4;
   border-color:black !important;
@@ -119,27 +153,41 @@ img .plain {
 
 .nsig {
   background-color:#333333;
-  color:#333333;
+  color: rgba(0,0,0,0);
 }
 .sig1 {
   background-color:#dcc200;
-  color:#dcc200;
+  color: rgba(0,0,0,0);
 }
 .sig2 {
   background-color:#dc5400;
-  color:#dc5400;
+  color: rgba(0,0,0,0);
 }
 .sig3 {
   background-color:#dc001a;
-  color:#dc001a;
+  color: rgba(0,0,0,0);
 }
 
-#gbr {
-  border-top-width: 5px;
+/*////////////////////////////////////// Other ///////////////////////////////////////*/
+.full {
+    height:100%;
+    width:100%;
 }
 
-#gbc {
-  border-left: 5px solid black;
+img {
+  max-width:90vw !important;
+  max-height:90vh !important;
+}
+
+.parasite {
+  color:red;
+  text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
+  border-color:black !important;
+}
+
+.category {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-weight:bold;
 }
 
 table td {
