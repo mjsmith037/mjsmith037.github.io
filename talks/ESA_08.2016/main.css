@@ -1,0 +1,201 @@
+
+/*////////////////////////////////// Background //////////////////////////////////////*/
+.reveal {
+  background-color: rgba(255,255,255,0.7);
+}
+
+/*/////////////////////////////////////// Font ///////////////////////////////////////*/
+.reveal {
+  font-family: "Alegreya", "Palatino Linotype", "Palatino", "FreeSerif", serif;
+  font-size: 4vh;
+}
+
+.reveal h1,
+.reveal p {
+  font-family: "Alegreya", "Palatino Linotype", "Palatino", "FreeSerif", serif;
+  text-transform: none;
+}
+
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Alegreya SC", "Palatino Linotype", "Palatino", "FreeSerif", serif;
+  text-transform: none;
+}
+
+/*///////////////////////////////////// Matrices /////////////////////////////////////*/
+.matrix {
+  display:inline-table;
+  padding:50px;
+  table-layout:fixed;
+}
+
+.matrix td {
+  border-style:solid;
+  border-width:1px;
+  width: 4vmin;
+  height: 4vmin;
+  font-size: 110%;
+  text-align: center;
+}
+
+.matrix th {
+  border:0;
+  text-align: center;
+}
+
+.matrix tr:last-child td:not(:first-child) {
+  border-bottom:1px solid black !important;
+}
+
+.matrix td:first-child,
+.matrix th:first-child {
+  border:0;
+}
+
+.matimg {
+  max-width: 4vmin !important;
+  max-height: 4vmin !important;
+  padding:0 !important;
+  margin:0 auto !important;
+}
+
+#gbr {
+  border-top-width: 5px;
+}
+
+#gbc {
+  border-left: 5px solid black;
+}
+
+/*////////////////////////////////// Header/Footer ///////////////////////////////////*/
+#citation {
+  bottom:0;
+  right:0;
+  position:absolute;
+  font-size:70%;
+}
+
+#citation.citwnotes {
+  right:35vw;
+}
+
+#header {
+  top:0px;
+  left:0px;
+  position:absolute;
+  font-size:90%;
+}
+
+/*/////////////////////////////////// Slide Notes ////////////////////////////////////*/
+.reveal aside.hidden {
+  display:none !important;
+}
+
+.wnotes {
+  width:50vw;
+  position:absolute;
+  left:0;
+}
+
+.reveal aside.notes {
+  display:block;
+  position:absolute;
+  text-align:left;
+  background-color: rgba(255, 255, 255, 0.8);
+  right:0;
+  top: 5vh;
+  width:33vw;
+  height:85vh;
+  font-size:60%;
+  line-height: 120%;
+  overflow:auto;
+}
+
+span.key {
+  border: 4px solid black;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-family: "Alegreya SC";
+  padding: 0px 10px 0px 10px;
+  margin: 0 10px;
+  font-size: 75%;
+}
+
+#ns {
+  font-family: "Alegreya SC";
+  font-weight: bold;
+}
+
+.matrix.wnotes {
+  table-layout:fixed;
+}
+
+/*////////////////////////////////////// Colors //////////////////////////////////////*/
+.pp {
+  color:#abdda4;
+  border-color:black !important;
+}
+.hb {
+  color:#2b83ba;
+  border-color:black !important;
+}
+.pa {
+  color:#d7191c;
+  border-color:black !important;
+}
+.pr {
+  color:#fdae61;
+  border-color:black !important;
+}
+
+.nsig {
+  background-color:#333333;
+  color: rgba(0,0,0,0);
+}
+.sig1 {
+  background-color:#dcc200;
+  color: rgba(0,0,0,0);
+}
+.sig2 {
+  background-color:#dc5400;
+  color: rgba(0,0,0,0);
+}
+.sig3 {
+  background-color:#dc001a;
+  color: rgba(0,0,0,0);
+}
+
+/*////////////////////////////////////// Other ///////////////////////////////////////*/
+.full {
+    height:100%;
+    width:100%;
+}
+
+img {
+  max-width:90vw !important;
+  max-height:90vh !important;
+}
+
+.parasite {
+  color:red;
+  text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
+  border-color:black !important;
+}
+
+.category {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-weight:bold;
+}
+
+table td {
+  border-bottom: 0 !important;
+}
+
+
+body {
+  margin:0;
+  padding:0;
+}

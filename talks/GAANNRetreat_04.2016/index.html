@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>GAANN Retreat, April 2016</title>
+
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="theme.css" id="theme">
+
+    <!-- personal css file -->
+    <link rel="stylesheet" href="main.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <!-- font-linking -->
+    <link href='https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- file partitioning -->
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+        <div class="reveal"><div class="slides">
+
+            <section>
+                <h2 style="position: relative; right: 220px">Learning from </h2>
+                <h2 style="position: relative; left: 100px; top:-55px; font-family: 'Alegreya SC'"><span style="color: #E40045">success</span> &amp <span style="color: #4B08AE">failure</span>:</h2>
+                <h4 style="position:relative; top:-50px">Using graph spectra to identify<br>
+                    differences in network structure</h4>
+                <a href="http://Michalska-Smith.com" style="font-family: 'Alegreya SC'">Matt Michalska-Smith</a>
+                <ul style="list-style-type: none; position: absolute; bottom:5%; left:0px">
+                    <li>Stefano Allesina</li>
+                    <li>Jacopo Grilli</li>
+                </ul>
+            </section>
+
+            <!--Probably not enough time to talk about this-->
+<!--
+            <section>
+                <section data-background="Figures/Spectra_Circle.png"></section>
+                <section data-background="Figures/Spectra_Circle_wline.png"></section>
+                <section data-background="Figures/Spectra_Ellipse.png"></section>
+                <section data-background="Figures/Spectra_Eyeball.png"></section>
+                <section data-background="Figures/Spectra_Empirical.png"></section>
+            </section>
+-->
+
+            <section>
+                <h2>The Question:</h2>
+                <p>
+                    Is it possible to distinguish networks of differing
+                    <span class="fragment highlight" data-fragment-index="1">types</span>
+                    by their <span class="fragment highlight" data-fragment-index="2">
+                    structure</span>?
+                </p>
+                <dl>
+                    <dt class="fragment" data-fragment-index="1">Interaction Type:</dt>
+                    <dd class="fragment" data-fragment-index="1">the real-world-event being depicted by a network link</dd>
+
+                    <dt class="fragment" data-fragment-index="2">Network Structure:</dt>
+                    <dd class="fragment" data-fragment-index="2">the arrangement of connections within a network</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>Previous Attempt:</h2>
+                <ul>
+                    <li>Many (&gt; 300) biological networks</li>
+                    <li>Vast diversity of type and structure</li>
+                    <li>Many (36) metrics of structure for each network</li>
+                    <ul style="list-style-type: none"><li>&ndash; Each compared to two distributions from randomized networks</li></ul>
+                    <li>Principal Component Analysis</li>
+                </ul>
+                <h2 class="fragment"><br>$\Rightarrow$ No discernable clustering</h2>
+            </section>
+
+            <section>
+                <section data-background="Figures/OldResults_pvalue.svg"></section>
+                <section data-background="Figures/OldResults_zscore.svg"></section>
+                <section data-background="Figures/OldResults_overunder.svg"></section>
+            </section>
+
+            <section>
+                <p style="font-family: 'Alegreya SC'; font-size: 3em">Reassessment</p>
+                <p class="fragment" style="font-family: 'Alegreya SC'; font-size: 2em">Method $\Leftrightarrow$ Data</p>
+            </section>
+
+            <section><p style="font-family: 'Alegreya SC'; font-size: 3em">Method<p></section>
+
+            <section>
+                <div style="position: relative; top:25px">
+                    <div style="margin-right:70%">
+                        $$B_{ij} = \{0,1\}$$
+                    </div>
+                    <div class="fragment" style="margin-right:10%">
+                        $$B_{ij}^{(ER)} = \mathcal{B}(1, C)$$
+                    </div>
+                    <div class="fragment" style="margin-left:55%">
+                        $$B_{ij}^{(CM)} = d_id_j / L$$
+                    </div>
+                </div>
+                <p class="fragment" style="position: relative; top:50px">Where $d_i$ is the degree of node $i$, L is the number of links in the network, and $C = L / (nm)$, with $n$, $m$ being the number of rows, columns respectively</p>
+            </section>
+
+            <section>
+                <div>
+                    $$\scriptsize \lambda_1^{(ER)} = \left(\mathbb{E}[d_r] + \frac{(m - 1) C_r (1 - C_r)}{\mathbb{E}[d_r]}\right) \left(\mathbb{E}[d_c] + \frac{(n - 1) C_c (1 - C_c)}{\mathbb{E}[d_c]}\right)$$
+                </div>
+                <div style="height:50px"></div>
+                <div>
+                    $$\scriptsize \lambda_1^{(CM)} = \frac{\mathbb{E}[d_c^2]}{\mathbb{E}[d_c]} \frac{\mathbb{E}[d_r^2]}{\mathbb{E}[d_r]}$$
+                </div>
+                <p>Where $d_r$, $d_c$ are vectors of the row, column node degrees respectively, and $C_r$, $C_c$ are connectance values corrected for the constraint of a connected network</p>
+            </section>
+
+            <section>
+                <h3>Taking the ratio of the empirically observed $\lambda_1$ to these expectations allows us to "account" for less informative variation.</h3>
+            </section>
+
+            <section><p style="font-family: 'Alegreya SC'; font-size: 3em">Data<p></section>
+
+            <section>
+                <h2>Current Attempt</h2>
+                <ul>
+                    <li>Very many (&gt; 2000) nonbiological networks</li>
+                    <li>Less diversity of type and structure</li>
+                    <ul style="list-style-type: none"><li>&ndash; Especially within network types</li></ul>
+                    <li>Few (2-6) metrics of structure for each network</li>
+                    <li>Principal Component Analysis <span class="fragment">(?)</span></li>
+                </ul>
+            </section>
+
+            <section>
+                <section data-background="Figures/NewData_NewMetrics_0.svg"></section>
+                <section data-background="Figures/NewData_NewMetrics_1.svg"></section>
+                <section data-background="Figures/NewData_NewMetrics_2.svg"></section>
+                <section data-background="Figures/NewData_NewMetrics_3.svg"></section>
+                <section data-background="Figures/NewData_NewMetrics_4.svg"></section>
+                <section data-background="Figures/NewData_NewMetrics_5.svg"></section>
+            </section>
+
+            <section data-background="Figures/NewData_NewMetrics_6.svg"></section>
+
+            <section data-background="Figures/NewData_NewMetrics_Raw.svg"></section>
+
+            <section>
+                <section data-background="Figures/ERData_Raw.svg"></section>
+                <section data-background="Figures/CMData_Raw.svg"></section>
+            </section>
+
+            <section>
+                <section data-background="Figures/OldData_NewMetrics_Raw.svg"></section>
+                <section data-background="Figures/OldData_NewMetrics_PCA.svg"></section>
+            </section>
+
+            <section>
+                <section data-background="Figures/NewBiologicalData.svg"></section>
+                <section data-background="Figures/NewBiologicalData_PCA.svg"></section>
+            </section>
+
+            <section>
+                <section data-background="Figures/AllTypes.svg"></section>
+                <section data-background="Figures/AllTypes_PCA.svg"></section>
+            </section>
+
+            <section>
+                <h1 style="font-size: 2.3em">Some more things to do...</h1>
+                <ul>
+                    <li>More Biological Data</li>
+                    <ul style="list-style-type: none"><li>&ndash; Genetics?</li></ul>
+                    <li>Additional metrics?</li>
+                    <ul style="list-style-type: none"><li>&ndash; $\mathbb{E}[\lambda_1]$ for random graphs with additional constraints?</li></ul>
+                </ul>
+            </section>
+
+            <section>
+                <p style="font-family: Alegreya SC; font-size: 3em; font-weight: bold">Thank you!</p>
+								<img class="plain" src="../DeptofEd.png" style="width:33vw; height:33vh; margin:auto;">
+            </section>
+
+            </div>
+        </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classLisst; } },
+          { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../reveal.js/plugin/math/math.js', async: true }
+        ]
+      });
+            Reveal.configure({ slideNumber: true });
+    </script>
+  </body>
+</html>
