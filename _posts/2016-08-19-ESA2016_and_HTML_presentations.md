@@ -47,7 +47,7 @@ the first place and decided to give it at least one more go.
 
 HTML and LaTeX are both of the [WYSIWYM](https://en.wikipedia.org/wiki/WYSIWYM
 "what you see is what you mean") school of document preparation, both look
-professional out of the box{% sidenote '1' 'Note that HTML *per se* does not look good without some effort, but when using a package of css and javascript, such as reveal.js, it is more comparable.'%}, and both are pretty easy to do
+professional out of the box{% sidenote 'One' 'Note that HTML *per se* does not look good without some effort, but when using a package of css and javascript, such as reveal.js, it is more comparable.'%}, and both are pretty easy to do
 simple presentations in. The biggest advantage of Beamer presentations is that
 they easily compile into PDFs which are supremely portable, with consistent
 (identical, really) display on any device or resolution. While HTML slides

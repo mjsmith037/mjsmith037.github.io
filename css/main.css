@@ -276,3 +276,8 @@ div #license {
   color: black;
   font-weight: bold;
 }
+
+label {
+  font-weight: normal;
+  color:  #a00000;
+}

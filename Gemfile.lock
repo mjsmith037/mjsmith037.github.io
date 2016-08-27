@@ -58,6 +58,7 @@ GEM
     rouge (1.9.1)
     safe_yaml (1.0.4)
     sass (3.4.16)
+    sidenote (0.0.1)
     timers (4.0.4)
       hitimes
     toml (0.1.2)
@@ -70,6 +71,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   rouge
+  sidenote
 
 BUNDLED WITH
    1.12.5
