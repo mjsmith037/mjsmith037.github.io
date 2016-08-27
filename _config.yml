@@ -6,16 +6,27 @@
 
 #description: >
 #  enter a (multiline) descrition here
-destination:      "blog"
-source:           "jekyll"
+# Where things are
+source:           ./jekyll
+destination:      ./blog
+plugins_dir:      _plugins
+layouts_dir:      _layouts
+data_dir:         _data
+includes_dir:     _includes
+
 baseurl:          "./blog"
-url:              "http://michalska-smith.com"
+url:              "http://michalska-smith.com/blog"
 
 github_username:  mjsmith037
 
 # Build settings
 markdown:         kramdown
 
-# gems:
+gems:
+  - jekyll-paginate
 #   - jekyll-feed
   # - jekyll-redirect-from
+
+
+paginate: 5
+paginate_path: blog/page:num

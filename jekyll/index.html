@@ -18,7 +18,7 @@ layout: default
                 {{post.excerpt | length: 140 }}
             </p>
 
-            <a class="post-button pi-big pi-retro pi-flat" href="{{ post.url }}">More</a>
+            <a class="post-button pi-big pi-retro pi-flat" href="{{ post.url | prepend: site.baseurl }}">More</a>
 
         </div>
     </div>

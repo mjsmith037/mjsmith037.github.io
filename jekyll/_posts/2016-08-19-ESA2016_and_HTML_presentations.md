@@ -3,6 +3,7 @@ title: "ESA2016 & HTML presentations"
 author: "Matthew J. Michalska-Smith"
 date: "2016-08-19"
 categories: site_update presentation methods
+layout: post
 ---
 
 Welcome to the site!
