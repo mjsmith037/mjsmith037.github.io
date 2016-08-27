@@ -1,0 +1,278 @@
+/*////////////////////////////////// General /////////////////////////////////*/
+body {
+  min-width: 400px;
+}
+
+p {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+a {
+  color: #080076;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #125454;
+}
+
+div #license {
+  position: absolute;
+  bottom: 20px;
+  margin-left: 50%;
+  height: 15px;
+}
+
+#license {
+  height: 15px;
+}
+
+/*////////////////////////////////// NavBar //////////////////////////////////*/
+.navbar-brand {
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+.navbar {
+  background-color: transparent;
+  border: 0;
+  max-width: 1370px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#navbar a {
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar a {
+  color: #0d0c0c !important;
+}
+
+#navbar a:hover {
+  color: #125454 !important;
+}
+
+.navbar .fa {
+  font-size: 16px;
+}
+
+/*///////////////////////////////// Jumbotron ////////////////////////////////*/
+.jumbotron {
+  background: url('../Images/MatBanner.png') center center no-repeat;
+  height: 260px;
+  margin-top: -30px;
+}
+
+.jumbotron .overlay-top {
+  height: 75px;
+  position: relative;
+  top: -48px;
+
+  background: rgba(255,255,255,0);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
+  background: -webkit-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+  background: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+  background: -ms-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+  background: -o-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+  background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,1)', endColorstr='rgba(255,255,255,0)');
+}
+
+.jumbotron .overlay-bottom {
+  height: 75px;
+  position: relative;
+  top: 62px;
+
+  background: rgba(255,255,255,0);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  background: -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1));
+  background: -ms-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  background: -o-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,0)', endColorstr='rgba(255,255,255,1)');
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron .overlay-top {
+    height: 75px;
+    position: relative;
+    top: -30px;
+
+    background: rgba(255,255,255,0);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -ms-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -o-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,1)', endColorstr='rgba(255,255,255,0)');
+  }
+
+  .jumbotron .overlay-bottom {
+    height: 75px;
+    position: relative;
+    top: 80px;
+
+    background: rgba(255,255,255,0);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    background: -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1));
+    background: -ms-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    background: -o-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,0)', endColorstr='rgba(255,255,255,1)');
+  }
+}
+
+.jumbotron .container {
+  max-width: 925px;
+  position: relative;
+  top: -130px;
+  background: rgba(255,255,255,0.85);
+}
+
+.jumbotron h1 {
+  color: #0d0c0c;
+  font-size: 40px;
+  font-family: 'Alegreya', serif;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-family: 'Alegreya', serif;
+  font-size: 24px;
+  color: #0d0c0c;
+}
+
+/*///////////////////////////////// Tabs Pane ////////////////////////////////*/
+.nav-tabs li a {
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.tabs {
+  margin: auto;
+  width: 90%;
+  margin-top: -40px;
+  max-width: 1370px;
+}
+
+.tab-content {
+  font-size: 16px;
+}
+
+/*///////////////////////////////// About Me /////////////////////////////////*/
+#MyPic {
+  width: 100%;
+  max-height: 450px;
+  max-width: 338px;
+}
+
+/*/////////////////////////// Project Descriptions ///////////////////////////*/
+.projects h3 {
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.project-image {
+  margin-top: 10px;
+}
+
+/*.projects .row {
+    display: -webkit-flex; /* Safari */
+/*    -webkit-align-items: center; /* Safari 7.0+ */
+/*    display: flex;
+    align-items: center;
+}*/
+
+/*/////////////////////////////// Bibliography ///////////////////////////////*/
+.biblinks .btn {
+  color: black;
+  font-size: 14px;
+  padding: 0px 10px;
+  width: 110px;
+  border-radius: 15px 1px 15px 1px;
+}
+
+.btn-openaccess {
+  background-color: #1FBF8B; /* green-ish */
+  font-weight: bold;
+}
+
+.btn-journal {
+  background-color: #CF304D; /* red-ish */
+  font-weight: bold;
+}
+
+.btn-mycopy {
+  background-color: #5894C2; /* blue-ish */
+  font-weight: bold;
+}
+
+.btn-preprint {
+  background-color: #A460D8; /* purple-ish */
+  font-weight: bold;
+}
+
+.biblinks p {
+  margin: 0px;
+}
+
+.publication {
+  height: 60px;
+}
+
+.bibinfo {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+
+.pubnumber {
+  color: #757575;
+  font-weight: bold;
+  font-family: 'Alegreya', serif;
+  font-size: 20px;
+  float: left;
+  width: 2em;
+}
+
+.pubyear {
+  padding-left: 1em;
+}
+
+.pi {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 720px) {
+  .biblinks p {
+    display: inline-block;
+  }
+}
+
+
+/*/////////////////////////////////// Blog ///////////////////////////////////*/
+.post-title {
+  font-family: 'Alegreya', serif;
+}
+
+.post-details {
+  font-weight: bold;
+}
+
+.post-button {
+  font-family: "Alegreya SC";
+  color: black;
+  font-size: 20px;
+  padding: 0px 20px;
+  border-radius: 15px 1px 15px 1px;
+  background-color: #1FBF8B; /* green-ish */
+}
+.post-button a {
+  color: black;
+  font-weight: bold;
+}

@@ -88,6 +88,6 @@ for bibitem in biblist:
     nn = nn + 1
 
 #### write to file
-with open('../bib.html', 'w') as htmlfile:
+with open('../_includes/bib.html', 'w') as htmlfile:
     htmlfile.write('\n\n'.join(htmllist))
     
