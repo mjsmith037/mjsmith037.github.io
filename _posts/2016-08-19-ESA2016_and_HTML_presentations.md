@@ -47,14 +47,14 @@ the first place and decided to give it at least one more go.
 
 HTML and LaTeX are both of the [WYSIWYM](https://en.wikipedia.org/wiki/WYSIWYM
 "what you see is what you mean") school of document preparation, both look
-professional out of the box{% sidenote 'One' 'Note that HTML *per se* does not look good without some effort, but when using a package of css and javascript, such as reveal.js, it is more comparable.'%}, and both are pretty easy to do
+professional out of the box<sup><label for="One" class="margin-toggle sidenote-number"></label></sup><input type="checkbox" id="One" class="margin-toggle" /><span class="sidenote">Note that HTML *per se* does not look good without some effort, but when using a package of css and javascript, such as reveal.js, it is more comparable.</span>, and both are pretty easy to do
 simple presentations in. The biggest advantage of Beamer presentations is that
 they easily compile into PDFs which are supremely portable, with consistent
 (identical, really) display on any device or resolution. While HTML slides
 (there are several options out there to make HTML slides, but I am only familiar
 with reveal.js) have the capability to export as PDFs, I have not been
 successful in getting this to work for anything but very simple slide
-constructions{% sidenote '2' 'An alternative to the built-in PDF rendering of reveal.js is a third party program called [DeckTape](https://github.com/astefanutti/decktape). In my experience, this produced better results (more specifically, it worked, while the other did not), but still failed on the more complicated slides.'%}.
+constructions<sup><label for="Two" class="margin-toggle sidenote-number"></label></sup><input type="checkbox" id="One" class="margin-toggle" /><span class="sidenote">An alternative to the built-in PDF rendering of reveal.js is a third party program called [DeckTape](https://github.com/astefanutti/decktape). In my experience, this produced better results (more specifically, it worked, while the other did not), but still failed on the more complicated slides.</span>.
 
 So what is it about HTML that keeps me coming back?
 
