@@ -1,11 +1,11 @@
 # baseurl: /tufte-jekyll
 title: Matthew J Michalska-Smith's Personal Blog
 author: Matthew J Michalska-Smith
-description:
+#description:
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 permalink: /articles/:short_year/:title
 timezone: America/Chicago
 excerpt_separator: <!--more-->
 exclude: ['Gemfile', 'Gemfile.lock']
-gems: ['sidenote']
+gems: ['github-pages', 'sidenote']

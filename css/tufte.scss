@@ -38,17 +38,13 @@ html{
 
   }
 
-@media screen and (min-width: 800px){ html{ font-size: 12px;} }
+@media screen and (min-width: 800px){ html{ font-size: 14px;} }
 
-@media screen and (min-width: 900px){ html{ font-size: 13px;} }
+@media screen and (min-width: 900px){ html{ font-size: 16px;} }
 
-@media screen and (min-width: 1000px){ html{ font-size: 14px;} }
+@media screen and (min-width: 1000px){ html{ font-size: 18px;} }
 
-@media screen and (min-width: 1100px){ html{ font-size: 15px; } }
-
-@media screen and (min-width: 1200px){ html{ font-size: 16px; } }
-
-@media screen and (min-width: 1300px){ html{ font-size: 17px; } }
+@media screen and (min-width: 1100px){ html{ font-size: 20px; } }
 
 // sets link style according to values in _settings.scss
 .mathblock{
@@ -203,7 +199,6 @@ img { max-width: 100%; }
                          margin-top: 0;
                          margin-bottom: 1.96rem;
                          font-size: .9rem;
-                        //  line-height: 1.96; //changed to bring line heights into rational pattern
                          vertical-align: baseline;
                          position: relative; }
 
@@ -226,7 +221,7 @@ blockquote .sidenote, blockquote .marginnote { margin-right: -95% }
                    color: $contrast-color;
                    top: 0rem; } //removed superscripting for numerical reference in sidenote
 
-p, footer, div.table-wrapper, div.mathblock{ width: 70%; }
+.post p, .post div.table-wrapper, .post div.mathblock{ width: 70%; }
 
 div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
 
@@ -322,12 +317,13 @@ ul.footer-links li{
 
 //Full width page styling stuff
 
-div.full-width, .content-listing, ul.content-listing li.listing{ width: 90%;
-       margin-left: auto;
-       margin-right: auto;
-       padding: 0% 5%;
-
+div.full-width, .content-listing, ul.content-listing li.listing{
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 0% 5%;
 }
+
 .full-width article p{
   width: 90%;
 }

@@ -6,7 +6,7 @@ date: "2016-08-19"
 categories: site_update presentation methods
 ---
 
-#Welcome to the site!
+# Welcome to the site!
 
 Last week, I attended the [101st Annual Meeting of the Ecological Society of
 America](http://esa.org/ftlauderdale/ "ESA2016") in Ft. Lauderdale, FL. While
@@ -58,7 +58,7 @@ constructions<sup><label for="Two" class="margin-toggle sidenote-number"></label
 
 So what is it about HTML that keeps me coming back?
 
-##it looks better
+## it looks better
 
 This is clearly a subjective point, but I think I can saw with certainty that
 there are more mechanisms in place (from slide transitions, to parralax
@@ -69,7 +69,7 @@ you can program with a little proficiency in
 [javascript](https://www.javascript.com/) or the even simpler
 [jQuery](https://jquery.com/)) to add aesthetics to your slides.
 
-##media embedding
+## media embedding
 
 This can also be done with Beamer, but it is quite a bit easier with HTML,
 especially if you are presenting online where you can simply link to a YouTube
@@ -77,7 +77,7 @@ video that will play automatically in your slide without having to open another
 window. Likewise, you can link out to another website and return to the same
 slide by simply clicking the back button.
 
-##interactive presentations
+## interactive presentations
 
 I haven't utilized this functionality at all, but with jQuery, it is possible to
 make your presentation interactive in any way you want, be it a game of jeopardy
@@ -86,7 +86,7 @@ or a notes section for people to keep notes which can then be exported as a text
 file.
 <!-- https://thiscouldbebetter.wordpress.com/2012/12/18/loading-editing-and-saving-a-text-file-in-html5-using-javascrip/ -->
 
-##adaptive display
+## adaptive display
 
 This is a pretty big divergence from PDFs, representing, in a sense, an
 alternative approach to the problem of multiple devices/display resolutions.
@@ -102,7 +102,7 @@ drop-down rather than a header. You can make your slides adapt in this way too,
 such that mobile and desktop/projector viewers each get an experience optimized
 for their screens.
 
-##accompanying notes
+## accompanying notes
 
 Finally, and perhaps most importantly for me, it is possible to incorporate
 additional notes which can be used in a "speaker view" or made visible to
