@@ -76,25 +76,27 @@
         </div>
         <div id="talks" class="tab-pane fade">
           <div class="full-width">
-            {% for post in site.categories.slides %}
-              <li class="listing">
-                <div class="row">
-                  <div class="col-xs-10">
-                    <a href="{{ post.url | prepend: site.baseurl }}">
-                      <h3 class="contrast post-title">{{ post.title }}</h3>
-                    </a>
-                    <br><h3 class="presentation-title">{{ post.subtitle }}</h3>
-                    <br><span class="smaller">{{ post.date | date: "%B %-d, %Y" }}</span>
+            <ul class="content-listing">
+              {% for post in site.categories.slides %}
+                <li class="listing">
+                  <div class="row"  style="display: flex; align-items: center;">
+                    <div class="col-xs-11">
+                      <a href="{{ post.url | prepend: site.baseurl }}">
+                        <h3 class="contrast post-title">{{ post.title }}</h3>
+                      </a>
+                      <br><h3 class="presentation-title">{{ post.subtitle }}</h3>
+                      <br><span class="smaller">{{ post.date | date: "%B %-d, %Y" }}</span>
+                    </div>
+                    <div class="col-xs-1">
+                      <span class="presentation-button">
+                        <a href="{{ post.url | prepend: site.baseurl }}">View<br>Presentation</a>
+                      </span>
+                    </div>
                   </div>
-                  <div class="col-xs-1">
-                    <span class="slides-button"><a href="{{ post.url | prepend: site.baseurl }}">
-                      View Presentation
-                    </a></span>
-                  </div>
-                </div>
-                <hr class="slender">
-              </li>
-            {% endfor %}
+                  <hr class="slender">
+                </li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
       </div>

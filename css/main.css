@@ -254,15 +254,14 @@ div #license {
   }
 }
 
+.row.publication:first-of-type {
+  margin-top: 1.4rem;
+}
+
 
 /*/////////////////////////////////// Blog ///////////////////////////////////*/
 .post-title {
   font-family: 'Alegreya', serif;
-}
-
-.presentation-title {
-  font-family: 'Alegreya', serif;
-  font-size: 1.5rem;
 }
 
 .post-details {
@@ -274,11 +273,34 @@ div #license {
   color: black;
   border-width: 1px;
   font-size: 20px;
-  padding: 0px 20px;
+  padding: 5px 20px;
   border-radius: 15px 1px 15px 1px;
   background-color: #1FBF8B; /* green-ish */
 }
 .post-button a {
+  color: black;
+  font-weight: bold;
+}
+
+.presentation-title {
+  font-family: 'Alegreya', serif;
+  font-size: 1.5rem;
+}
+
+.presentation-button {
+  display: inline-block;
+  font-family: "Alegreya SC";
+  color: black;
+  padding: 5px 20px;
+  border-width: 1px;
+  font-size: 20px;
+  border-radius: 15px 1px 15px 1px;
+  background-color: #5894C2; /* blue-ish */
+  text-align: center;
+  line-height: 100%;
+}
+
+.presentation-button a {
   color: black;
   font-weight: bold;
 }
