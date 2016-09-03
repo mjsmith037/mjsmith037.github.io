@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include head.html%}
-  <body>
+{% include head.html%}
+<body>
   <div id="wrapper">
     {% include header.html%}
     <div class="jumbotron">
@@ -20,7 +20,7 @@
         <li><a href="#interests">Interests</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#blog">Blog</a></li>
-        <!-- <li><a href="#talks">Talks</a></li> -->
+        <li><a href="#talks">Talks</a></li>
       </ul>
 
       <div class="tab-content">
@@ -54,29 +54,57 @@
             <article>
               <ul class="content-listing">
                 {% for post in site.posts %}
+                  {% if post.categories contains "slides" %}
+                    <!--  don't show presentations -->
+                  {% else %}
                     <li class="listing">
-                      <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="contrast post-title">{{ post.title }}</h3></a>
-                      <br><span class="smaller">{{ post.date | date: "%B %-d, %Y" }}</span>  <br/>
+                      <a href="{{ post.url | prepend: site.baseurl }}">
+                        <h3 class="contrast post-title">{{ post.title }}</h3>
+                      </a>
+                      <br><span class="smaller">{{ post.date | date: "%B %-d, %Y" }}</span><br>
                       <div>{{ post.excerpt }}</div>
-                      <span class="post-button"><a href="{{ post.url | prepend: site.baseurl }}">Read More</a></span>
+                      <span class="post-button">
+                        <a href="{{ post.url | prepend: site.baseurl }}">Read More</a>
+                      </span>
                       <hr class="slender">
                     </li>
+                  {% endif %}
                 {% endfor %}
               </ul>
             </article>
           </div>
         </div>
-        <!-- <div id="talks" class="tab-pane fade">
-          <div id="importTalks"></div>
-        </div> -->
+        <div id="talks" class="tab-pane fade">
+          <div class="full-width">
+            {% for post in site.categories.slides %}
+              <li class="listing">
+                <div class="row">
+                  <div class="col-xs-10">
+                    <a href="{{ post.url | prepend: site.baseurl }}">
+                      <h3 class="contrast post-title">{{ post.title }}</h3>
+                    </a>
+                    <br><h3 class="presentation-title">{{ post.subtitle }}</h3>
+                    <br><span class="smaller">{{ post.date | date: "%B %-d, %Y" }}</span>
+                  </div>
+                  <div class="col-xs-1">
+                    <span class="slides-button"><a href="{{ post.url | prepend: site.baseurl }}">
+                      View Presentation
+                    </a></span>
+                  </div>
+                </div>
+                <hr class="slender">
+              </li>
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </div>
 <!--    <div>
       <a id="license" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
     </div>-->
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
-  </body>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
 </html>

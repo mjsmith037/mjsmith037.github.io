@@ -115,10 +115,11 @@
 }
 
 span.key {
-  border: 4px solid black;
+  border: 2px solid black;
   border-radius: 10px;
   text-transform: capitalize;
   font-family: "Alegreya SC";
+  font-weight: bold;
   padding: 0px 10px 0px 10px;
   margin: 0 10px;
   font-size: 75%;

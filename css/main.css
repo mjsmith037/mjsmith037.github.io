@@ -260,6 +260,11 @@ div #license {
   font-family: 'Alegreya', serif;
 }
 
+.presentation-title {
+  font-family: 'Alegreya', serif;
+  font-size: 1.5rem;
+}
+
 .post-details {
   font-weight: bold;
 }
@@ -267,6 +272,7 @@ div #license {
 .post-button {
   font-family: "Alegreya SC";
   color: black;
+  border-width: 1px;
   font-size: 20px;
   padding: 0px 20px;
   border-radius: 15px 1px 15px 1px;
