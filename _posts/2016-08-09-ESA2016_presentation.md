@@ -6,4 +6,6 @@ author: "Matthew J. Michalska-Smith"
 date: "2016-08-09"
 categories: slides presentation
 ---
-{%  include /talks/ESA_08.2016/index.html %}
+<head>
+  <meta http-equiv="refresh" content="0; URL='http://michalska-smith.com/talks/ESA_08.2016/'"/>
+</head>

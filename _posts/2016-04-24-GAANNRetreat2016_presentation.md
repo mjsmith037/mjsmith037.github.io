@@ -6,4 +6,6 @@ author: "Matthew J. Michalska-Smith"
 date: "2016-04-24"
 categories: slides presentation
 ---
-{%  include /talks/GAANNRetreat_04.2016/index.html %}
+<head>
+  <meta http-equiv="refresh" content="0; URL='http://michalska-smith.com/talks/GAANNRetreat_04.2016/'"/>
+</head>

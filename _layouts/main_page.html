@@ -28,7 +28,7 @@
           <div class="row">
             <div class="col-xs-12 col-sm-8">
               <p style="padding-top:1.5rem;">
-                I am a third year Ph.D. student in the department of Ecology &amp; Evolution at the University of Chicago.
+                I am a fourth year Ph.D. student in the department of Ecology &amp; Evolution at the University of Chicago.
                 Working in <a href="http://allesinalab.uchicago.edu">Stefano Allesina's lab</a>, I have been exposed to the powerful perspective of seeing the complexity of nature as a network of connected pieces.
                 I have been particularly captivated by the interaction between the dynamics of ecological systems (i.e. the stability and feasibility of equilibria and the role of transient dynamics) and the structures (both local and global) found in network representations of those systems.
               </p>
@@ -55,7 +55,6 @@
               <ul class="content-listing">
                 {% for post in site.posts %}
                   {% if post.categories contains "slides" %}
-                    <!--  don't show presentations -->
                   {% else %}
                     <li class="listing">
                       <a href="{{ post.url | prepend: site.baseurl }}">
@@ -81,7 +80,7 @@
                 <li class="listing">
                   <div class="row"  style="display: flex; align-items: center;">
                     <div class="col-xs-11">
-                      <a href="{{ post.url | prepend: site.baseurl }}">
+                      <a target="_blank" href="{{ post.url | prepend: site.baseurl }}">
                         <h3 class="contrast post-title">{{ post.title }}</h3>
                       </a>
                       <br><h3 class="presentation-title">{{ post.subtitle }}</h3>
@@ -89,7 +88,7 @@
                     </div>
                     <div class="col-xs-1">
                       <span class="presentation-button">
-                        <a href="{{ post.url | prepend: site.baseurl }}">View<br>Presentation</a>
+                        <a target="_blank" href="{{ post.url | prepend: site.baseurl }}">View<br>Presentation</a>
                       </span>
                     </div>
                   </div>

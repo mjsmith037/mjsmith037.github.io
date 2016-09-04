@@ -1,10 +1,17 @@
+---
+
+---
+
+@import "../_sass/fonts";
+@import "../_sass/settings";
+
 /*////////////////////////////////// General /////////////////////////////////*/
 body {
   min-width: 400px;
 }
 
 p {
-  font-family: 'Alegreya Sans', sans-serif;
+  font-family: $sans-font;
 }
 
 a {
@@ -138,12 +145,12 @@ div #license {
 .jumbotron h1 {
   color: #0d0c0c;
   font-size: 40px;
-  font-family: 'Alegreya', serif;
+  font-family: $serif-font;
   font-weight: bold;
 }
 
 .jumbotron p {
-  font-family: 'Alegreya', serif;
+  font-family: $serif-font;
   font-size: 24px;
   color: #0d0c0c;
 }
@@ -175,7 +182,7 @@ div #license {
 
 /*/////////////////////////// Project Descriptions ///////////////////////////*/
 .projects h3 {
-  font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: $sc_font;
 }
 
 .project-image {
@@ -234,7 +241,7 @@ div #license {
 .pubnumber {
   color: #757575;
   font-weight: bold;
-  font-family: 'Alegreya', serif;
+  font-family: $serif-font;
   font-size: 20px;
   float: left;
   width: 2em;
@@ -261,7 +268,7 @@ div #license {
 
 /*/////////////////////////////////// Blog ///////////////////////////////////*/
 .post-title {
-  font-family: 'Alegreya', serif;
+  font-family: $serif-font;
 }
 
 .post-details {
@@ -269,7 +276,7 @@ div #license {
 }
 
 .post-button {
-  font-family: "Alegreya SC";
+  font-family: $sc-font;
   color: black;
   border-width: 1px;
   font-size: 20px;
@@ -283,13 +290,13 @@ div #license {
 }
 
 .presentation-title {
-  font-family: 'Alegreya', serif;
+  font-family: $serif-font;
   font-size: 1.5rem;
 }
 
 .presentation-button {
   display: inline-block;
-  font-family: "Alegreya SC";
+  font-family: $sc-font;
   color: black;
   padding: 5px 20px;
   border-width: 1px;
@@ -308,4 +315,8 @@ div #license {
 label {
   font-weight: normal;
   color:  #a00000;
+}
+
+#welcome-to-the-site {
+  font-family: $sans-font;
 }
