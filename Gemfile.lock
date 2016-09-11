@@ -119,7 +119,6 @@ GEM
     sawyer (0.7.0)
       addressable (>= 2.3.5, < 2.5)
       faraday (~> 0.8, < 0.10)
-    sidenote (0.0.1)
     terminal-table (1.6.0)
     thread_safe (0.3.5)
     typhoeus (0.8.0)
@@ -132,9 +131,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll
-  rouge
-  sidenote
 
 BUNDLED WITH
    1.12.5

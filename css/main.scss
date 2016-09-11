@@ -2,16 +2,13 @@
 
 ---
 
-@import "../_sass/fonts";
 @import "../_sass/settings";
 
 /*////////////////////////////////// General /////////////////////////////////*/
 body {
   min-width: 400px;
-}
-
-p {
   font-family: $sans-font;
+  font-size: 18px;
 }
 
 a {
@@ -49,7 +46,7 @@ div #license {
 }
 
 #navbar a {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -157,7 +154,7 @@ div #license {
 
 /*///////////////////////////////// Tabs Pane ////////////////////////////////*/
 .nav-tabs li a {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -167,10 +164,6 @@ div #license {
   width: 90%;
   margin-top: -40px;
   max-width: 1370px;
-}
-
-.tab-content {
-  font-size: 16px;
 }
 
 /*///////////////////////////////// About Me /////////////////////////////////*/
@@ -291,7 +284,7 @@ div #license {
 
 .presentation-title {
   font-family: $serif-font;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .presentation-button {
@@ -315,8 +308,4 @@ div #license {
 label {
   font-weight: normal;
   color:  #a00000;
-}
-
-#welcome-to-the-site {
-  font-family: $sans-font;
 }
