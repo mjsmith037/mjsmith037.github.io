@@ -1,0 +1,12 @@
+digraph G {
+fixedsize=true;
+node[colorscheme=spectral3, label="", fillcolor="1", shape=circle, height=1];
+"1";
+node[colorscheme=spectral3, label="", fillcolor="1", shape=circle, height=1];
+"2";
+node[colorscheme=spectral3, label="", fillcolor="1", shape=circle, height=1];
+"3";
+"1" -> "2";
+"2" -> "3";
+"3" -> "1";
+}
