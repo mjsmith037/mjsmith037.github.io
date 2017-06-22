@@ -35,19 +35,69 @@ img {
   max-height:100vh;
 }
 
+/*////////////////////////////////// Header/Footer ///////////////////////////////////*/
 #citation {
-  bottom:25px;
-  right:40px;
+  bottom:50px;
+  right:50px;
   position:absolute;
   font-size:70%;
 }
 
-#header {
-  top:25px;
-  left:40px;
-  position:absolute;
-  font-size:150%;
+#citation.citwnotes {
+  right:35vw;
 }
+
+#header {
+  top:0px;
+  left:0px;
+  position:absolute;
+  font-size:90%;
+}
+
+/*/////////////////////////////////// Slide Notes ////////////////////////////////////*/
+.reveal aside.hidden {
+  display:none !important;
+}
+
+.wnotes {
+  width:50vw;
+  position:absolute;
+  left:0;
+}
+
+.reveal aside.notes {
+  display:block;
+  position:absolute;
+  text-align:left;
+  color:#000;
+  background-color:#ffffffcc;
+  right:25px;
+  top: 25px;
+  width:700px;
+  height:900px;
+  font-size:80%;
+  line-height: 120%;
+  overflow:auto;
+}
+
+span.key {
+  border: 2px solid black;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-family: "Alegreya SC";
+  font-weight: bold;
+  padding: 0px 10px 0px 10px;
+  margin: 0 10px;
+  font-size: 75%;
+}
+
+#ns {
+  font-family: "Alegreya SC";
+  font-weight: bold;
+}
+
+
+
 
 table td {
   border-bottom: 0 !important;
