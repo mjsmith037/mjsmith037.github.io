@@ -24,7 +24,7 @@
 				<section class="center" data-background-color="#747aa8">
 					<div class="wnotes">
 						<div style="width:100%;height:50%;margin-top:200px;">
-							<img class="plain" style="width:100%;height:100%;background-color:transparent !important;" src="Images/title.svg">
+							<img class="plain" style="width:100vw;height:100%;background-color:transparent !important;" src="Images/title.svg">
 						</div>
 						<h3 style="margin-top:65px;color:#000;">Matt Michalska-Smith</h3>
 					</div>
@@ -32,17 +32,17 @@
 						This talk was given at the annual NetSci conference in Indianapolis,
 						IN on 20 June 2017.
 						Text here will supplement slide material.
-						<br>
+						<br><br>
 						You can remove this pane (and get it back) by tapping <span class="key">v</span> on your keyboard.
-						<br>
+						<br><br>
 						Some of the slides will have animations which require advancing the
 						slide partway through these explanations. These will be indicated by
 						"<span id="ns">next slide</span>" in these notes.
-						<br>
+						<br><br>
 						Slides can be advanced by tapping<span class="key">Spc</span>,
 						<span class="key"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>, <span class="key">PgDn</span>,
 						or <span class="key">n</span>.
-						<br>
+						<br><br>
 						Finally, this presentation will look best in full-screen, but should
 						be more or less intelligible on smaller screens (no guarantees about phone screens)
 						So, whenever you're ready...
@@ -121,13 +121,11 @@
 
 				<section class="full">
 					<h4 id="header">Model Assumptions</h4>
-			 	  <div class="wnotes">
-						<img class="plain fragment fade-out" data-fragment-index=1 style="position:absolute;top:512px;left:58px;" src="Images/forest1.svg">
-						<img class="plain fragment current-visible" data-fragment-index=1 style="position:absolute;top:512px;left:58px;" src="Images/forest2.svg">
-						<img class="plain fragment current-visible" data-fragment-index=2 style="position:absolute;top:512px;left:58px;" src="Images/forest3.svg">
-						<img class="plain fragment" data-fragment-index=3 style="position:absolute;top:512px;left:58px;" src="Images/forest4.svg">
-						<h1 style="position:absolute;top:900px;left:0;width:1920px;text-align:center;"> $$\sum_i x_i = 1$$</h1>
-			    </div>
+					<img class="plain wnotes fragment fade-out" data-fragment-index=1 style="position:absolute;left:0;top:30%;" src="Images/forest1.svg">
+					<img class="plain wnotes fragment current-visible" data-fragment-index=1 style="position:absolute;left:0;top:30%;" src="Images/forest2.svg">
+					<img class="plain wnotes fragment current-visible" data-fragment-index=2 style="position:absolute;left:0;top:30%;" src="Images/forest3.svg">
+					<img class="plain wnotes fragment" data-fragment-index=3 style="position:absolute;left:0;top:30%;" src="Images/forest4.svg">
+					<h1 class="fullwidth wnotes" style="position:absolute;top:60%;"> $$\sum_i x_i = 1$$</h1>
 					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
 					<aside class="notes">
 						A key assumption of the model we will build is inspired by that first
@@ -154,17 +152,17 @@
 					<h4 id="header">Building a Model</h4>
 			 	  <div class="wnotes">
 						<div style="padding-top:100px">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;width:480px;margin:0 100px 0 0;" src="Images/fertility.svg">
-							<img class="plain fragment" data-fragment-index=3 style="display:inline-block;width:480px;margin:0 0 0 0;" src="Images/interactions.svg">
-							<img class="plain fragment" data-fragment-index=2 style="display:inline-block;width:480px;margin:0 0 0 100px;" src="Images/death.svg">
-
-							<p class="fragment" data-fragment-index=1 style="display:inline-block;width:480px;margin:0 100px 0 0;padding-top:100px;font-size:125%;">
+							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;width:30%;" src="Images/fertility.svg">
+							<img class="plain fragment" data-fragment-index=3 style="display:inline-block;width:30%;" src="Images/interactions.svg">
+							<img class="plain fragment" data-fragment-index=2 style="display:inline-block;width:30%;" src="Images/death.svg">
+							<br>
+							<p class="fragment" data-fragment-index=1 style="display:inline-block;width:15%;text-align:left;">
 									$$\propto f_i x_i$$
 							</p>
-							<p class="fragment" data-fragment-index=3 style="display:inline-block;width:480px;margin:0 0 0 -100px;padding-top:100px;font-size:125%;">
+							<p class="fragment" data-fragment-index=3 style="display:inline-block;width:50%;">
 									$$\begin{align}\mathcal{P}(i \text{ wins against } j) &= H_{ij}\\ &= 1 - H_{ji}\end{align}$$
 							</p>
-							<p class="fragment" data-fragment-index=2 style="display:inline-block;width:480px;margin:0 0 0 100px;padding-top:100px;font-size:125%;">
+							<p class="fragment" data-fragment-index=2 style="display:inline-block;width:15%;text-align:right;">
 									$$d_i x_i$$
 							</p>
 						</div>
@@ -194,9 +192,9 @@
 
 				<section class="full">
 					<h4 id="header">Relation to Prior Models</h4>
-			 	  <div class="wnotes">
-						<div style="padding-top:256px;">
-							<ul style="font-size:150%;">
+			 	  <div class="fullwidth wnotes" style="position:absolute;top:10%;">
+						<div>
+							<ul>
 								<li style="margin:20px;" class="fragment semi-fade-out" data-fragment-index=5>
 									Neutral Theory of Biodiversity (<a href="http://press.princeton.edu/titles/7105.html">Hubbell 2001</a>)
 								</li>
@@ -265,30 +263,30 @@
 				<section class="full">
 					<h4 id="header">Building a Model</h4>
 			 	  <div class="wnotes">
-						<div style="padding-top:100px;">
-							<img class="plain" style="display:inline-block;width:480px;margin:0 100px 0 0;" src="Images/fertility.svg">
-							<img class="plain" style="display:inline-block;width:480px;margin:0 0 0 0;" src="Images/interactions.svg">
-							<img class="plain" style="display:inline-block;width:480px;margin:0 0 0 100px;" src="Images/death.svg">
-
-							<p style="display:inline-block;width:480px;margin:0 100px 0 0;padding-top:100px;">
-								<span class="fragment highlight-green" data-fragment-index=1 style="font-size:125%;">
+						<div style="padding-top:5%;">
+							<img class="plain" style="display:inline-block;width:30%;" src="Images/fertility.svg">
+							<img class="plain" style="display:inline-block;width:30%;" src="Images/interactions.svg">
+							<img class="plain" style="display:inline-block;width:30%;" src="Images/death.svg">
+							<br>
+							<p style="display:inline-block;width:15%;text-align:left;">
+								<span class="fragment highlight-green" data-fragment-index=1>
 									$$\propto f_i x_i$$
 								</span>
 							</p>
-							<p style="display:inline-block;width:480px;margin:0 0 0 0;padding-top:100px;">
-								<span class="fragment highlight-blue" data-fragment-index=1 style="font-size:125%;">
+							<p style="display:inline-block;width:50%;">
+								<span class="fragment highlight-blue" data-fragment-index=1>
 									$$\begin{align}\mathcal{P}(i \text{ wins against } j) &= H_{ij}\\ &= 1 - H_{ji}\end{align}$$
 								</span>
 							</p>
-							<p style="display:inline-block;width:480px;margin:0 0 0 100px;padding-top:100px;">
-								<span class="fragment highlight-red" data-fragment-index=1 style="font-size:125%;">
+							<p style="display:inline-block;width:15%;text-align:right;">
+								<span class="fragment highlight-red" data-fragment-index=1>
 									$$d_i x_i$$
 								</span>
 							</p>
 
 							<p class="fragment" data-fragment-index=1 style="font-size:150%;">Assume $f_i = d_i = 1 \quad \forall i$</p>
 
-							<p class="fragment" data-fragment-index=1 style="margin-top:50px;font-size:150%;">
+							<p class="fragment" data-fragment-index=1 style="margin-top:5%;font-size:150%;">
 								<span>$\dfrac{\text{d} x_i }{\text{d} t} = $</span>
 								<span class="fragment highlight-green" data-fragment-index=1>$x^2_i$</span>
 								<span>$+$</span>
@@ -315,7 +313,7 @@
 				<section class="full">
 					<h4 id="header">Building a Model: Equilvalence with Replicator Equation</h4>
 			 	  <div class="wnotes">
-						<div style="padding-top:100px;">
+						<div style="padding-top:5%;">
 							<p style="font-size:200%;">
 								$$\begin{align}
 								  \dfrac{\text{d} x_i }{\text{d} t} &=
@@ -342,18 +340,18 @@
 				<section class="full">
 					<h4 id="header">Building a Model: Example</h4>
 			 	  <div class="wnotes">
-						<div style="padding-top:100px;">
-							<div style="display:inline-block;margin:50px;vertical-align:middle;">
-								<img class="plain" style="height:500px;" src="Images/RPS.svg">
+						<div style="padding-top:5%;">
+							<div style="display:inline-block;margin:2%;vertical-align:middle;">
+								<img class="plain" style="width:90%" src="Images/RPS.svg">
 							</div>
-							<div style="display:inline-block;margin-left:50px;vertical-align:middle;">
+							<div style="display:inline-block;margin-left:2%;vertical-align:middle;">
 								<span>
-									<img class="plain" style="width:2em;" src="Images/rock.svg">
-									<img class="plain" style="width:2em;margin-left:1.5em;margin-bottom:0;" src="Images/paper.svg">
-									<img class="plain" style="width:2em;margin-left:1.5em;margin-bottom:0;" src="Images/scissors.svg">
+									<img class="plain" style="width:1.5em;margin-bottom:0;" src="Images/rock.svg">
+									<img class="plain" style="width:1.5em;margin-left:1em;margin-bottom:0;" src="Images/paper.svg">
+									<img class="plain" style="width:1.5em;margin-left:1em;margin-bottom:0;" src="Images/scissors.svg">
 								</span>
 								<div>
-									<span style="display:inline-block;font-size:150%;vertical-align:middle;">
+									<span style="display:inline-block;vertical-align:middle;">
 										$$\mathbf{H} = \left[\begin{array}
 										00.5 &    1 &    0 \\
 										0 &  0.5 &    1 \\
@@ -362,14 +360,14 @@
 										$$
 									</span>
 									<span style="display:inline-block;vertical-align:middle;">
-										<img class="plain" style="width:2em;margin:0.1em;" src="Images/rock.svg"><br>
-										<img class="plain" style="width:2em;margin:0.1em;" src="Images/paper.svg"><br>
-										<img class="plain" style="width:2em;margin:0.1em;" src="Images/scissors.svg">
+										<img class="plain" style="width:1.5em;margin:0;" src="Images/rock.svg"><br>
+										<img class="plain" style="width:1.5em;margin:0;" src="Images/paper.svg"><br>
+										<img class="plain" style="width:1.5em;margin:0;" src="Images/scissors.svg">
 									</span>
 								</div>
 								<br>
 								<div>
-									<span style="font-size:150%;display:inline-block;vertical-align:middle;">
+									<span style="display:inline-block;vertical-align:middle;">
 										$$\mathbf{P} = \left[\begin{array}
 										0~~~0 &    ~~~1 &  -1 \\
 										-1 &  ~~~0 &    ~~~1 \\
@@ -377,15 +375,15 @@
 										\end{array}\right]$$
 									</span>
 									<span style="display:inline-block;vertical-align:middle;">
-										<img class="plain" style="width:2em;margin:0.1em;" src="Images/rock.svg"><br>
-										<img class="plain" style="width:2em;margin:0.1em;" src="Images/paper.svg"><br>
-										<img class="plain" style="width:2em;margin:0.1em;" src="Images/scissors.svg">
+										<img class="plain" style="width:1.5em;margin:0;" src="Images/rock.svg"><br>
+										<img class="plain" style="width:1.5em;margin:0;" src="Images/paper.svg"><br>
+										<img class="plain" style="width:1.5em;margin:0;" src="Images/scissors.svg">
 									</span>
 								</div>
 							</div>
 							<div style="display:inline-block;vertical-align:middle;">
 								<div>
-									<img class="plain" style="height:500px;" src="Images/F2b_time.png">
+									<img class="plain" style="height:35%;" src="Images/F2b_time.png">
 								</div>
 							</div>
 				    </div>
@@ -409,23 +407,18 @@
 
 				<section class="full">
 					<h4 id="header">Dynamics:<br>Neutral Cycles</h4>
-			 	  <div class="wnotes">
-
-						<div style="width:1500px;">
-							<div style="height:310px;text-align:right;">
-								<img class="plain" style="vertical-align:middle;" src="Images/RPS.svg">
-								<img class="plain" style="vertical-align:middle;" src="Images/F2b_time.png"><br>
-							</div>
-
-							<div style="height:310px;text-align:right;">
-								<img class="plain fragment" data-fragment-index=1 style="vertical-align:middle;" src="Images/Fa_t.png">
-								<img class="plain fragment" data-fragment-index=1 style="vertical-align:middle;" src="Images/F2a_time.png"><br>
-							</div>
-
-							<div style="height:310px;text-align:right;">
-								<img class="plain fragment" data-fragment-index=2 style="vertical-align:middle;" src="Images/Fd_t.png">
-								<img class="plain fragment" data-fragment-index=2 style="vertical-align:middle;" src="Images/F2d_time.png"><br>
-							</div>
+			 	  <div class="fullwidth wnotes" style="text-align:right;height:100%;">
+						<div style="height:24%;text-align:right;">
+							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/RPS.svg">
+							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2b_time.png"><br>
+						</div>
+						<div style="height:24%;text-align:right;">
+							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fa_t.png">
+							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2a_time.png"><br>
+						</div>
+						<div style="height:24%;text-align:right;">
+							<img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fd_t.png">
+							<img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2d_time.png"><br>
 						</div>
 			    </div>
 					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
@@ -436,10 +429,10 @@
 						species will cycle neutrally around an equilibrium.
 						<br><span id="ns">next slide</span><br>
 						This is a hypertournament, in which the link strengths are not
-						binary. In this tournament, two species go extinct and the remaining
+						binary. In this case, two species go extinct and the remaining
 						three cycle around their equilibrium values.
 						<br><span id="ns">next slide</span><br>
-						In this, more complicated hypertournament, all five species survive
+						In this, more complicated, hypertournament, all five species survive
 						to cycle neutrally.
 					</aside>
 				</section>
@@ -447,22 +440,26 @@
 				<section class="full">
 					<h4 id="header">Coexistence</h4>
 			 	  <div class="wnotes">
-						<div style="padding-top:100px;">
+						<div style="padding-top:5%;">
 							<h1> How many species do we expect to survive?</h1>
-							<div style="display:inline-block;width:800px;vertical-align:top;">
+							<div style="display:inline-block;width:55%;vertical-align:top;">
 								<h3>Method</h3>
-								<ol style="font-size:150%">
+								<ol>
 									<li> Generate many random (hyper) tournaments of $s$ species by drawing interaction strengths($H_{ij}$) at random </li>
 									<li> Run dynamics</li>
 									<li> Count the $k$ survivors</li>
 									<li class="fragment highlight-purple" data-fragment-index=2> what is $\mathcal{P}(k|s)$?</li>
 								</ol>
 								<br>
-								<p style="font-size:125%;max-width:750px;" class="fragment" data-fragment-index=2>$$\mathcal{P}(k|s) = \begin{cases} 0 &\text{for } k \text{ even}\\ {{s}\choose{k}} 2^{1-s} &\text{otherwise}\end{cases}$$</p>
+								<p style="max-width:50%" class="fragment" data-fragment-index=2>
+									<span class="fragment highlight-purple" data-fragment-index=2>
+										$$\mathcal{P}(k|s) = \begin{cases} 0 &\text{for } k \text{ even}\\ {{s}\choose{k}} 2^{1-s} &\text{otherwise}\end{cases}$$
+									</span>
+								</p>
 							</div>
-							<div style="display:inline-block;width:900px;vertical-align:top;">
+							<div style="display:inline-block;width:40%;vertical-align:top;">
 								<h3>Result</h3>
-								<img class="plain fragment" data-fragment-index=2 style="width=100%" src="Images/pkgivens.png">
+								<img class="plain fragment" data-fragment-index=2 style="max-width:100%;max-height:70vh" src="Images/pkgivens.png">
 							</div>
 						</div>
 			    </div>
@@ -478,7 +475,6 @@
 						tournament matrix of probabilities and then run the dynamics to see
 						how many of the original species survive. If we do this many times,
 						we can then calculate the expected number.
-						<br>
 						<br><span id="ns">next slide</span><br>
 						 When we do this, we find that this probability is $0$ for an even
 						 number of surviving species (as was also shown by
@@ -494,29 +490,22 @@
 
 				<section class="full">
 					<h4 id="header">Dynamics:<br>Neutral Cycles</h4>
-			 	  <div class="wnotes">
-
-						<div style="width:1500px;">
-							<div style="height:310px;text-align:right;">
-								<img class="plain" style="vertical-align:middle;" src="Images/RPS.svg">
-								<img class="plain" style="vertical-align:middle;" src="Images/F2b_time.png"><br>
-							</div>
-
-							<div style="height:310px;text-align:right;">
-								<img class="plain" style="vertical-align:middle;" src="Images/Fa_t.png">
-								<img class="plain" style="vertical-align:middle;" src="Images/F2a_time.png"><br>
-							</div>
-
-							<div style="height:310px;text-align:right;">
-								<img class="plain" style="vertical-align:middle;" src="Images/Fd_t.png">
-								<img class="plain" style="vertical-align:middle;" src="Images/F2d_time.png"><br>
-							</div>
-
-							<div style="height:310px;text-align:right;">
-								<h1  class="plain fragment" data-fragment-index=1 style="font-size:300%;display:inline-block;vertical-align:middle;text-align:right;margin-right:75px;">$\ast$</h1>
-								<img class="plain fragment" data-fragment-index=1 style="vertical-align:middle;" src="Images/Fc_t.png">
-								<img class="plain fragment" data-fragment-index=1 style="vertical-align:middle;" src="Images/F2c_time.png">
-							</div>
+			 	  <div class="fullwidth wnotes">
+						<div style="height:310px;text-align:middle;">
+							<img class="plain" style="vertical-align:middle;" src="Images/RPS.svg">
+							<img class="plain" style="vertical-align:middle;" src="Images/F2b_time.png"><br>
+						</div>
+						<div style="height:310px;text-align:middle;">
+							<img class="plain" style="vertical-align:middle;" src="Images/Fa_t.png">
+							<img class="plain" style="vertical-align:middle;" src="Images/F2a_time.png"><br>
+						</div>
+						<div style="height:310px;text-align:middle;">
+							<img class="plain" style="vertical-align:middle;" src="Images/Fd_t.png">
+							<img class="plain" style="vertical-align:middle;" src="Images/F2d_time.png"><br>
+						</div>
+						<div style="height:310px;text-align:middle;position:relative">
+							<img class="plain fragment" data-fragment-index=1 style="vertical-align:middle;" src="Images/Fc_t.png">
+							<img class="plain fragment" data-fragment-index=1 style="vertical-align:middle;" src="Images/F2c_time.png">
 						</div>
 			    </div>
 					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
@@ -531,7 +520,9 @@
 						<br><span id="ns">next slide</span><br>
 						Yet, these cases are highly degenerate and will collapse into an
 						odd number of species with any modification of the coeficients of
-						$\mathbf{H}$ or parameters $f_i$ or $d_i$.
+						$\mathbf{H}$ or parameters $f_i$ or $d_i$. For this reason, I will
+						always mark this example with an asterisk (*), denoting its special
+						status.
 					</aside>
 				</section>
 
@@ -539,17 +530,17 @@
 				<section class="center" data-background-color="#6c8c58">
 					<!-- <h4 id="header">Conclusions</h4> -->
 			 	  <div class="wnotes">
-						<div style="color:#000;width:1500px;margin:210px;">
-							<h2 style="font-size:150%;color:#000;">Conclusions</h2>
+						<div style="color:#000;width:80%;margin:10%;">
+							<h2 style="color:#000;">Conclusions</h2>
 							<h4 style="color:#000;text-align:left;width:100%;">For any matrix $\mathbf{H}$ on $s$ species</h4>
-							<ul style="font-size:150%;">
-								<li style="padding-top:10px;">Irrespective of (positive) initial conditions, $k$ species will coexist and $s - k$ will go extinct</li>
-								<li style="padding-top:10px;">Those that coexist, <b>cycle neutrally</b> around the equilibrium point $x^\ast$</li>
-								<li style="padding-top:10px;">We can choose $x^\ast$ arbitrarily</li>
+							<ul>
+								<li style="padding-top:1%;">Irrespective of (positive) initial conditions, $k$ species will coexist and $s - k$ will go extinct</li>
+								<li style="padding-top:1%;">Those that coexist, <span class="fragment emph-bold">cycle neutrally</span> around the equilibrium point $x^\ast$</li>
+								<li style="padding-top:1%;">We can choose $x^\ast$ arbitrarily</li>
 							</ul>
-							<h4 style="color:#000;text-align:left;width:100%;margin-top:100px;">For a random $\mathbf{H}$ on $s$ species</h4>
-							<ul style="font-size:150%;text-align:left;width:100%;">
-								<li style="padding-top:10px;">On average, $k = s/2$</li>
+							<h4 style="color:#000;text-align:left;width:100%;margin-top:10%;">For a random $\mathbf{H}$ on $s$ species</h4>
+							<ul style="text-align:left;width:100%;">
+								<li style="padding-top:1%;">On average, $k = s/2$</li>
 							</ul>
 						</div>
 					</div>
@@ -562,7 +553,6 @@
 						biologically unrealistic, but also make their species more
 						susceptible to extinction as perturbations, on average, increase the
 						size of such neutral cycles.
-						<br><span id="ns">next slide</span>
 					</aside>
 				</section>
 
@@ -673,7 +663,6 @@
 							</div>
 
 							<div style="height:310px;text-align:right;">
-								<h1 class="plain" style="font-size:300%;display:inline-block;vertical-align:middle;text-align:right;margin-right:75px;">$\ast$</h1>
 								<img class="plain" style="vertical-align:middle;" src="Images/Fc_t.png">
 								<img class="plain" style="vertical-align:middle;" src="Images/F2c_time.png">
 								<img class="plain fragment" data-fragment-index=1 style="vertical-align:middle;" src="Images/F3c_time.png">

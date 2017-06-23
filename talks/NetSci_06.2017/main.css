@@ -59,10 +59,16 @@ img {
   display:none !important;
 }
 
+.fullwidth {
+  width:100%;
+  text-align:center;
+}
+
 .wnotes {
-  width:50vw;
+  width:60%;
   position:absolute;
   left:0;
+  background-color:#00000033;
 }
 
 .reveal aside.notes {
@@ -71,11 +77,11 @@ img {
   text-align:left;
   color:#000;
   background-color:#ffffffcc;
-  right:25px;
-  top: 25px;
-  width:700px;
-  height:900px;
-  font-size:80%;
+  right:2%;
+  top: 5%;
+  width:35%;
+  height:90%;
+  font-size:90%;
   line-height: 120%;
   overflow:auto;
 }
@@ -96,9 +102,6 @@ span.key {
   font-weight: bold;
 }
 
-
-
-
 table td {
   border-bottom: 0 !important;
 }
@@ -107,7 +110,8 @@ table td {
 .reveal .slides section .fragment.highlight-current-yellow,
 .reveal .slides section .fragment.highlight-purple,
 .reveal .slides section .fragment.highlight-current-purple,
-.reveal .slides section .fragment.unhighlight {
+.reveal .slides section .fragment.unhighlight,
+.reveal .slides section .fragment.emph-bold {
   opacity: 1;
   visibility: visible; }
 
@@ -143,3 +147,7 @@ table td {
 
 .reveal .slides section .fragment.highlight-current-yellow.current-fragment {
   color: #b58e33; }
+
+.reveal .slides section .fragment.emph-bold.current-fragment {
+  font-weight: bold;
+  visibility: visible; }
