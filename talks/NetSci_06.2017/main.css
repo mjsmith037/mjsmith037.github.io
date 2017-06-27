@@ -25,11 +25,6 @@
   text-transform: none;
 }
 
-.full {
-    height:100%;
-    width:100%;
-}
-
 img {
   max-width:100vw;
   max-height:100vh;
@@ -44,7 +39,7 @@ img {
 }
 
 #citation.citwnotes {
-  right:35vw;
+  right:40%;
 }
 
 #header {
@@ -64,11 +59,21 @@ img {
   text-align:center;
 }
 
+img.plain {
+  background-color:transparent !important;
+}
 .wnotes {
   width:60%;
+  height:90%;
   position:absolute;
   left:0;
   background-color:#00000033;
+}
+
+section {
+  height:100vh;
+  width:100vw;
+  background-color:#00000022;
 }
 
 .reveal aside.notes {
@@ -81,7 +86,7 @@ img {
   top: 5%;
   width:35%;
   height:90%;
-  font-size:90%;
+  font-size:80%;
   line-height: 120%;
   overflow:auto;
 }
