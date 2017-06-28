@@ -59,6 +59,13 @@ img {
   text-align:center;
 }
 
+.fullwidth.tomiddle {
+  text-align:center;
+}
+.fullwidth.tomiddle.wnotes {
+  text-align:right;
+}
+
 img.plain {
   background-color:transparent !important;
 }
