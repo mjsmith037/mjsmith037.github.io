@@ -22,9 +22,9 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background-color="#747aa8">
-					<div class="wnotes">
+					<div class="wnotes" style="height:100%;">
 						<img class="plain" style="max-width:80%;position:absolute;top:50%;left:50%;margin-top:-15%;margin-left:-40%;"src="Images/title.png">
-						<p style="position:absolute;top:60%;left:10%;color:#000;font-size:150%;text-align:left;">
+						<p style="position:absolute;top:60%;left:10%;color:#111111;font-size:150%;text-align:left;">
 							Jacopo Grilli<br>
 							Gy&ouml;rgy Barab&aacute;s<br>
 							<b>Matt Michalska-Smith</b><br>
@@ -170,13 +170,13 @@
 							<img class="plain fragment" data-fragment-index=3 style="display:inline-block;width:25%;margin-left:7%" src="Images/interactions.svg">
 							<img class="plain fragment" data-fragment-index=2 style="display:inline-block;width:25%;margin-left:7%" src="Images/death.svg">
 						</div>
-						<p class="fragment" data-fragment-index=1 style="display:inline-block;width:15%;text-align:left;">
+						<p class="fragment" data-fragment-index=1 style="display:inline-block;width:20%;text-align:left;">
 								$$\propto f_i x_i$$
 						</p>
 						<p class="fragment" data-fragment-index=3 style="display:inline-block;width:50%;">
 								$$\begin{align}\mathcal{P}(i \text{ wins against } j) &= H_{ij}\\ &= 1 - H_{ji}\end{align}$$
 						</p>
-						<p class="fragment" data-fragment-index=2 style="display:inline-block;width:15%;text-align:right;">
+						<p class="fragment" data-fragment-index=2 style="display:inline-block;width:20%;text-align:right;">
 								$$d_i x_i$$
 						</p>
 			    </div>
@@ -372,8 +372,8 @@
 									<img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/scissors.svg">
 								</span>
 							</div>
-							<div style="height:40%;">
-								<span style="display:inline-block;vertical-align:middle;padding:5% 0 0 0;margin:0;">
+							<div style="height:40%;padding-top:5%;">
+								<span style="display:inline-block;vertical-align:middle;padding:0;margin:0;">
 									$$\mathbf{P} = \left[\begin{array}
 									0~~~0 &    ~~~1 &  -1 \\
 									-1 &  ~~~0 &    ~~~1 \\
@@ -381,13 +381,13 @@
 									\end{array}\right]$$
 								</span>
 								<span style="display:inline-block;vertical-align:middle;">
-									<img class="plain" style="width:1.5em;margin:0;padding:1em 0 0 0;vertical-align:middle;" src="Images/rock.svg"><br>
+									<img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/rock.svg"><br>
 									<img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/paper.svg"><br>
 									<img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/scissors.svg">
 								</span>
 							</div>
 						</div>
-						<div style="height:50%;position:relative;top:10%;">
+						<div style="height:50%;position:relative;top:15%;">
 							<img class="plain" style="height:100%;" src="Images/F2b_time.png">
 						</div>
 					</div>
@@ -531,15 +531,15 @@
 				<section class="center" data-background-color="#6c8c58">
 					<!-- <h4 id="header">Conclusions</h4> -->
 			 	  <div class="wnotes">
-						<div style="color:#000;width:80%;margin:10%;">
-							<h2 style="color:#000;">Conclusions</h2>
-							<h4 style="color:#000;text-align:left;width:100%;">For any matrix $\mathbf{H}$ on $s$ species</h4>
+						<div style="color:#111111;width:80%;margin:10%;">
+							<h2 style="color:#111111;">Conclusions</h2>
+							<h4 style="color:#111111;text-align:left;width:100%;">For any matrix $\mathbf{H}$ on $s$ species</h4>
 							<ul>
 								<li style="padding-top:1%;">Irrespective of (positive) initial conditions, $k$ species will coexist and $s - k$ will go extinct</li>
 								<li style="padding-top:1%;">Those that coexist, <span class="fragment emph-bold">cycle neutrally</span> around the equilibrium point $x^\ast$</li>
 								<li style="padding-top:1%;">We can choose $x^\ast$ arbitrarily</li>
 							</ul>
-							<h4 style="color:#000;text-align:left;width:100%;margin-top:10%;">For a random $\mathbf{H}$ on $s$ species</h4>
+							<h4 style="color:#111111;text-align:left;width:100%;margin-top:10%;">For a random $\mathbf{H}$ on $s$ species</h4>
 							<ul style="text-align:left;width:100%;">
 								<li style="padding-top:1%;">On average, $k = s/2$</li>
 							</ul>
@@ -644,7 +644,7 @@
 				</section>
 
 				<section>
-					<h4 id="header" style="z-index:1;">Dynamics:<br> <span class="fragment strike" data-fragment-index=1>Neutral Cycles</span><br> <span class="fragment" data-fragment-index=1>Stable Fixed Point(!)</span></h4>
+					<h4 id="header">Dynamics:<br> <span class="fragment strike" data-fragment-index=1>Neutral Cycles</span><br> <span class="fragment" data-fragment-index=1>Stable Fixed Point(!)</span></h4>
 					<div class="fullwidth tomiddle wnotes" style="height:100%;">
 						<div style="height:24%;">
 							<img class="plain" style="display:inline-block;vertical-align:middle;height:87%;padding:0;margin:0;" src="Images/RPS.svg">
@@ -715,8 +715,8 @@
 				<section class="center" data-background-color="#8e4fc4">
 					<!-- <h4 id="header">Conclusions</h4> -->
 			 	  <div class="wnotes">
-						<div style="color:#000;width:80%;margin:10%;">
-							<h2 style="color:#000;">Conclusions</h2>
+						<div style="color:#111111;width:80%;margin:10%;">
+							<h2 style="color:#111111;">Conclusions</h2>
 							<ul>
 								<li style="padding-top:1%;">The addition of higher order interactions stabilize the dynamics but do not change the equilibrium</li>
 								<li style="padding-top:1%;">Higher orders of higher order interactions speed up convergence to the equilibrium</li>
@@ -796,117 +796,129 @@
 					</aside>
 				</section>
 
-<!-- I'VE GOTTEN THIS FAR -->
-
 				<section>
 					<h4 id="header">Dynamics:<br>
 							<span class="fragment strike" data-fragment-index=4>Unstable Cycles</span><br>
 							<span class="fragment" data-fragment-index=4>Stable Fixed Point</span></h4>
-					<div class="wnotes">
-						<div style="width:1750px">
-							<div style="height:24%;text-align:right;">
-								<img class="plain" style="display:inline-block;vertical-align:middle;" src="Images/RPS.svg">
-								<img class="plain" style="display:inline-block;vertical-align:middle;" src="Images/Fs2b_time.png">
-								<img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;" src="Images/Fs3b_time.png"><br>
-							</div>
-
-							<div style="height:24%;text-align:right;">
-								<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;" src="Images/Fa_t.png">
-								<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;" src="Images/Fs2a_time.png">
-								<img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;" src="Images/Fs3a_time.png"><br>
-							</div>
-
-							<div style="height:24%;text-align:right;">
-								<img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;" src="Images/Fd_t.png">
-								<img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;" src="Images/Fs2d_time.png">
-								<img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;" src="Images/Fs3d_time.png"><br>
-							</div>
-
-							<div style="height:24%;text-align:right;">
-								<h1  class="plain fragment" data-fragment-index=3 style="font-size:300%;display:inline-block;vertical-align:middle;text-align:right;margin-right:75px;">$\ast$</h1>
-								<img class="plain fragment" data-fragment-index=3 style="display:inline-block;vertical-align:middle;" src="Images/Fc_t.png">
-								<img class="plain fragment" data-fragment-index=3 style="display:inline-block;vertical-align:middle;" src="Images/Fs2c_time.png">
-								<img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;" src="Images/Fs3c_time.png">
-							</div>
+					<div class="fullwidth tomiddle wnotes" style="height:100%;">
+						<div style="height:24%;">
+							<img class="plain" style="display:inline-block;vertical-align:middle;height:87%;padding:0;margin:0;" src="Images/RPS.svg">
+							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs2b_time.png">
+							<img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3b_time.png"><br>
 						</div>
-			    </div>
+						<div style="height:24%;">
+							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fa_t.png">
+							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs2a_time.png">
+							<img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3a_time.png"><br>
+						</div>
+						<div style="height:24%;">
+							<img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fd_t.png">
+							<img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs2d_time.png">
+							<img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3d_time.png"><br>
+						</div>
+						<div style="height:24%;">
+							<img class="plain fragment" data-fragment-index=3 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fc_t.png">
+							<img class="plain fragment" data-fragment-index=3 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs2c_time.png">
+							<img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3c_time.png">
+						</div>
+					</div>
 					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
 					<aside class="notes">
 						In this case, we see that the rock-paper-scissors dynamics are no longer
-						neutral cycles, but rather the cycles are amplifying and will eventually
+						neutral cycles, but rather unstable. The cycles are amplifying and will eventually
 						lead to extinction and monodominance. This is also seen in the second
 						<br><span id="ns">next slide</span><br>
 						and third
 						<br><span id="ns">next slide</span><br>
-						networks from the before example.
+						networks from the before examples.
 						<br><span id="ns">next slide</span><br>
 						In the case of the dynamically-fragile four-species case, we see
 						that this modification of the physiological parameters leads to the
-						rapid extinction of one of the species. When we sample three species
-						for each competetive bout,
+						rapid extinction of one of the species, making the number of
+						remaining species odd, and those remaining also show the amplifying
+						cylclical behavior. When we sample three species for each
+						competetive bout,
 						<br><span id="ns">next slide</span><br>
 						we see the recovery of a stable fixed point for all cases, with the
-						exception of the special case with the even number of coexisting species.
+						exception of the special case, where now an odd number of species
+						coexist stably.
 					</aside>
 				</section>
 
 				<section class="center" data-background-color="#b65067">
 					<div class="wnotes">
-						<div style="color:#000;width:1500px;margin:210px;">
-							<h2 style="font-size:150%;color:#000;">Conclusions</h2>
-							<ul style="font-size:150%;">
-								<li style="padding-top:10px"> This theory relies on higher-order interactions</li>
-								<li style="padding-top:10px"> Leads to the stable coexistence of an arbitrary number of species</li>
-								<ul style="list-style-type:circle"><li style="padding-top:10px"> Can produce any species abundance distribution</li></ul>
-								<li style="padding-top:10px"> Is robust to changes in parameters</li>
-								<li style="padding-top:10px;"> More experimentally tractable due to parameterization of HOI as direct consequence of pairwise interactions</li>
-								<ul style="list-style-type:circle"><li style="padding-top:10px;">Such interactions chains can arise in nature due to differing scales of space or time</li></ul>
+						<div style="color:#111111;width:80%;margin:10%;">
+							<h2 style="color:#111111;">Conclusions</h2>
+							<ul>
+								<li style="padding-top:1%;">This theory relies on higher-order interactions</li>
+								<li style="padding-top:1%;">Leads to the stable coexistence of an arbitrary number of species</li>
+								<ul style="list-style-type:circle">
+									<li style="padding-top:1%;">Can produce any species abundance distribution</li>
+								</ul>
+								<li style="padding-top:1%;">Is robust to changes in parameters</li>
+								<li style="padding-top:1%;">
+									More experimentally tractable due to parameterization of HOI as direct consequence of pairwise interactions
+								</li>
+								<ul style="list-style-type:circle">
+									<li style="padding-top:1%;">
+										Such interactions chains can arise in nature due to differing scales of space or time
+									</li>
+								</ul>
 							</ul>
 						</div>
 					</div>
 					<aside class="notes">
-						In conclusion, we have presented a theory which allows for the coexistence
-						of very many species, even in the case of randomized parameters. With the
-						addition of higher-order interactions, the dynamics are stabilized, and
-						this stability is enhanced by incorporating "higher" higher-order
-						interactions. Remarkably, this formulation can yield dynamics leading
-						to an arbitrarily specified equilibrium, which is valuable insofar as
-						it means it can reproduce observed distributions of relative abundances.
-						<br>
-						Our use of interaction chains of pairwise competitions rather than
-						"true" higher order interactions severely reduces the number of
-						parameters in the model and makes it empirically testable.
-						<br>
-						Finally, if you see such interaction chains as a limiting assumption,
-						this is actually a very natural assumption when considering differing
-						scales of space or time. For instance, two seedlings could sprout more
-						closely and only interact with a third after the first competition is
-						already decided. Alternatively, there could be a temporal distinction
-						in which the links of the interaction chain are separated by timescale.
+						<p>
+						In conclusion, we have presented a theory which allows for the
+						coexistence of very many species, even in the case of randomized
+						interaction and physiological parameters. With the addition of
+						higher-order interactions, the dynamics are stabilized, and this
+						stability is enhanced by incorporating "higher" higher-order
+						interactions. Remarkably, this formulation can yield stable,
+						fixed-point dynamics leading to an arbitrarily specified
+						equilibrium.
+						</p><p>
+						These changes are effected without adding additional information or
+						parameters into the model due to our use of interaction chains of
+						pairwise competitions rather than "true" higher order interactions.
+						This choice both severely reduces the number of parameters in the
+						model and makes it empirically testable.
+						</p><p>
+						Finally, if you see such interaction chains as a limiting
+						assumption, this is actually a very natural interpretation when
+						considering differing scales of space or time. For instance, two
+						seedlings could sprout more closely to each other and only interact
+						with a third after the first competition is already decided.
+						Alternatively, there could be a temporal distinction in which the
+						links of the interaction chain are separated by timescale, for
+						instance if two seedlings sprout first and the third is delayed
+						until after the winner of the first competition is decided.
+						</p>
 					</aside>
 				</section>
 
-
 				<section class="center">
-					<div class="wnotes">
-						<h1 style="font-size:180px;">Questions?</h1>
-						<h2 style="margin-top:100px;">This work is now in press at <i>Nature</i> &mdash; ask me for a pre-print!</h2>
-						<p style="position:relative; margin-top:380px; font-size:50;"><a href="http://michalska-smith.com/talks/NetSci_06.2017">Slides available on Michalska-Smith.com</a></p>
+					<div class="wnotes" style="height:100%;">
+						<h1 style="position:absolute;top:30%;width:100%;text-align:center;font-size:500%;">Questions?</h1>
+						<p style="position:absolute;bottom:20%;width:100%;text-align:center;"><a href="http://michalska-smith.com/talks/NetSci_06.2017">Slides available on Michalska-Smith.com</a></p>
 					</div>
 					<aside class="notes">
+						<p>
 						Thanks for viewing this presentation, if you have any feedback or
 						questions, please <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#106;&#115;&#109;&#105;&#116;&#104;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;">Email me</a>!
-						<br>
+						</p><p>
 						P.S. there are a couple of supplemental slides after this that I did not present, but show some additional
 						results that are presented in the paper.
+						<p>
 					</aside>
 				</section>
 
 
 				<section>
 					<h4 id="header">Introducing Stochasticity</h4>
-				 	<div class="wnotes">
-						<img class="plain" style="height:90%;width:100%;position:absolute;bottom:25px;left:0;" src="Images/traj.png">
+				 	<div class="fullwidth wnotes" style="height:100%;">
+						<span style="display:inline-block;height:100%;vertical-align:middle;"></span> <!-- centers vertically -->
+						<img class="plain" style="width:100%;vertical-align:middle;" src="Images/traj.png">
 			  	</div>
 					<h4 id="citation"></h4>
 					<aside class="notes">
@@ -932,20 +944,24 @@
 
 				<section>
 					<h4 id="header">Transitivity</h4>
-			 	  <div class="wnotes">
-						<img class="plain" style="display:inline-block;width:800px;vertical-align:middle;margin-top:300px;" src="Images/transitive_H.png">
-						<img class="plain" style="display:inline-block;width:1100px;vertical-align:middle;margin-top:300px;" src="Images/transitive_7.png">
+			 	  <div class="wnotes" style="height:100%;">
+						<span style="display:inline-block;height:100%;vertical-align:middle;"></span> <!-- centers vertically -->
+						<img class="plain" style="display:inline-block;width:43%;vertical-align:middle;" src="Images/transitive_H.png">
+						<img class="plain" style="display:inline-block;width:53%;vertical-align:middle;" src="Images/transitive_7.png">
 			    </div>
 					<h4 id="citation"></h4>
 					<aside class="notes">
-						It is a classic result for tournaments (binary competition probabilities)
-						that intransitivity is necessary for coexistence. In contrast, when we
-						allow for partial dominance in the form of hyper-tournaments we see that
-						this intransitivity need only exist "in-probability" (i.e. rock need only
-						beat scissors <i>most</i> of the time, etc.). Finally, when we move to the
-						fully general model with variable physiological rates as well, we can even
-						break this constraint. As seen in this example, we can have a matrix
-						$\mathbf{H}$ which is completely transitive and yet produces stable coexistence.
+						It is a classic result for tournaments (binary competition
+						probabilities) that intransitivity is necessary for coexistence. In
+						contrast, when we allow for partial dominance in the form of
+						hyper-tournaments we see that this intransitivity need only exist
+						"in-probability" (i.e. rock need only beat scissors <i>most</i> of
+						the time, etc.). Remarkably, when we move to the fully general model
+						with variable physiological rates, we can even break this
+						constraint. As seen in this example, we can have a matrix
+						$\mathbf{H}$ which is completely transitive (interaction
+						probabilities greater than $0.5$ are underlined for clarity) and yet
+						produces stable coexistence.
 					</aside>
 				</section>
 
@@ -992,8 +1008,6 @@
 				history: true,
 				center: true,
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
-		    // parallaxBackgroundImage: 'Images/background.svg',
-		    // parallaxBackgroundSize: '5000px 1500px',
 
 				// Optional reveal.js plugins
 				dependencies: [
