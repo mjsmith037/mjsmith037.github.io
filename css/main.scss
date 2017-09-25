@@ -9,6 +9,7 @@ body {
   min-width: 400px;
   font-family: $sans-font;
   font-size: 18px;
+  color: #111 !important;
 }
 
 a {
@@ -193,37 +194,42 @@ div #license {
 .biblinks .btn {
   color: black;
   font-size: 14px;
-  padding: 0px 10px;
+  padding: 1px;
   width: 110px;
   border-radius: 15px 1px 15px 1px;
+  font-weight: bold;
 }
 
 .btn-openaccess {
   background-color: #1FBF8B; /* green-ish */
-  font-weight: bold;
 }
 
 .btn-journal {
   background-color: #CF304D; /* red-ish */
-  font-weight: bold;
 }
 
 .btn-mycopy {
   background-color: #5894C2; /* blue-ish */
-  font-weight: bold;
 }
 
 .btn-preprint {
   background-color: #A460D8; /* purple-ish */
-  font-weight: bold;
 }
 
 .biblinks p {
   margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  .biblinks p {
+    display: inline;
+  }
 }
 
 .publication {
-  height: 60px;
+  padding-bottom: 0.5em;
 }
 
 .bibinfo {
@@ -248,16 +254,9 @@ div #license {
   font-weight: bold;
 }
 
-@media screen and (max-width: 720px) {
-  .biblinks p {
-    display: inline-block;
-  }
-}
-
 .row.publication:first-of-type {
   margin-top: 1.4rem;
 }
-
 
 /*/////////////////////////////////// Blog ///////////////////////////////////*/
 .post-title {
@@ -277,6 +276,7 @@ div #license {
   border-radius: 15px 1px 15px 1px;
   background-color: #1FBF8B; /* green-ish */
 }
+
 .post-button a {
   color: black;
   font-weight: bold;
@@ -288,7 +288,8 @@ div #license {
 }
 
 .presentation-button {
-  display: inline-block;
+  display: block;
+  margin: 15px auto 0 auto;
   font-family: $sc-font;
   color: black;
   padding: 5px 20px;
@@ -298,6 +299,13 @@ div #license {
   background-color: #5894C2; /* blue-ish */
   text-align: center;
   line-height: 100%;
+  max-width: 250px;
+}
+
+@media only screen and (min-width: 768px) {
+  .presentation-button {
+    width: 200px;
+  }
 }
 
 .presentation-button a {

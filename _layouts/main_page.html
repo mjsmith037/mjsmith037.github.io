@@ -28,13 +28,17 @@
           <div class="row">
             <div class="col-xs-12 col-sm-8">
               <p style="padding-top:1.5rem;">
-                I am a fourth year Ph.D. student in the department of Ecology &amp; Evolution at the University of Chicago.
+                I am a fifth year Ph.D. student in the department of Ecology &amp; Evolution at the University of Chicago.
                 Working in <a href="http://allesinalab.uchicago.edu">Stefano Allesina's lab</a>, I have been exposed to the powerful perspective of seeing the complexity of nature as a network of connected pieces.
                 I have been particularly captivated by the interaction between the dynamics of ecological systems (i.e. the stability and feasibility of equilibria and the role of transient dynamics) and the structures (both local and global) found in network representations of those systems.
               </p>
               <p>
                 Though I have worked primarily with food-webs, many of my projects exploit the extreme generality of mathematical models, and have applied network- and matrix-based methods to a host of systems.
-                I am driven by the development of computational and statistical methods to enhance our ability to detect patterns in ecological data.</p>
+                I am driven by the development of computational and statistical methods to enhance our ability to detect patterns in ecological data.
+              </p>
+              <p>
+                I am now located in Minneapolis, MN, finishing up my Ph.D. remotely, with an expected graduation date of late spring 2018.
+              </p>
             </div>
             <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
               <img src="Images/me.jpg" id="MyPic"/>
@@ -78,17 +82,17 @@
             <ul class="content-listing">
               {% for post in site.categories.slides %}
                 <li class="listing">
-                  <div class="row"  style="display: flex; align-items: center;">
-                    <div class="col-xs-11">
+                  <div class="row">
+                    <div class="col-sm-10 col-xs-12">
                       <a target="_blank" href="{{ post.url | prepend: site.baseurl }}">
                         <h3 class="contrast post-title">{{ post.title }}</h3>
                       </a>
                       <br><h3 class="presentation-title">{{ post.subtitle }}</h3>
                       <br><span class="smaller">{{ post.date | date: "%B %-d, %Y" }}</span>
                     </div>
-                    <div class="col-xs-1">
+                    <div class="col-sm-1 col-xs-12">
                       <span class="presentation-button">
-                        <a target="_blank" href="{{ post.url | prepend: site.baseurl }}">View<br>Presentation</a>
+                        <a target="_blank" href="{{ post.url | prepend: site.baseurl }}">View Presentation</a>
                       </span>
                     </div>
                   </div>
