@@ -34,7 +34,6 @@ for bibitem in biblist:
     ## initialize the links since they are optional
     prelink = ''
     jrnlink = ''
-    shareditlink = ''
     OA = False
     for info in tmp:
         infotype = info[0].strip().lower()
@@ -50,8 +49,6 @@ for bibitem in biblist:
             prelink = info[1].strip(' {}e,')
         if infotype == 'url':
             jrnlink = info[1].strip(' {},')
-        if infotype == 'sharedit':
-            shareditlink = info[1].strip(' {},')
         if infotype == 'note':
             if info[1].strip(' {},') == "Open Access":
                 OA = True
@@ -81,14 +78,9 @@ for bibitem in biblist:
                                  '    </a></p>']
         else:
             if bibID != "whirling":
-                if shareditlink == '':
-                    bibhtml = bibhtml + ['    <p><a target="_blank"  href="pdfs/' + bibID + '.pdf">',
-                                         '      <button type="button" class="btn btn-mycopy">Full-Text PDF</button>',
-                                         '    </a></p>']
-                else:
-                    bibhtml = bibhtml + ['    <p><a target="_blank"  href="' + shareditlink + '">',
-                                         '      <button type="button" class="btn btn-mycopy">Full-Text PDF</button>',
-                                         '    </a></p>']
+                bibhtml = bibhtml + ['    <p><a target="_blank"  href="pdfs/' + bibID + '.pdf">',
+                                     '      <button type="button" class="btn btn-mycopy">Full-Text PDF</button>',
+                                     '    </a></p>']
 
     bibhtml = bibhtml + ['  </div>',
                          '</div>']
