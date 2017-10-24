@@ -1,987 +1,988 @@
-<!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>NetSci 2017</title>
+    <title>NetSci 07.2017</title>
 
-		<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
-		<link rel="stylesheet" href="main.css">
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
-		<!-- font-linking -->
-		<link href='https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-		<!-- Font Awesome -->
-		<script src="https://use.fontawesome.com/ca6fc79211.js"></script>
-		<!-- JQuery -->
-		<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-background-color="#747aa8">
-					<div class="wnotes" style="height:100%;">
-						<img class="plain" style="max-width:80%;position:absolute;top:50%;left:50%;margin-top:-15%;margin-left:-40%;"src="Images/title.png">
-						<p style="position:absolute;top:60%;left:10%;color:#111111;font-size:150%;text-align:left;">
-							Jacopo Grilli<br>
-							Gy&ouml;rgy Barab&aacute;s<br>
-							<b>Matt Michalska-Smith</b><br>
-							Stefano Allesina
-						</p>
-					</div>
-					<aside class="notes">
-						<p>
-							This talk was given at the annual NetSci conference in Indianapolis,
-							IN USA on 20 June 2017.
-							Text here will supplement slide material.
-					  </p><p>
-							You can remove this pane (and get it back) by tapping <span class="key">v</span> on your keyboard.
-						</p><p>
-							Some of the slides will have animations which require advancing the
-							slide partway through these explanations. These will be indicated by
-							"<span id="ns">next slide</span>" in these notes.
-						</p><p>
-							Slides can be advanced by tapping<span class="key">Spc</span>,
-							<span class="key"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>, <span class="key">PgDn</span>,
-							or <span class="key">n</span>.
-						</p><p>
-							Finally, this presentation will look best in full-screen, but should
-							be more or less intelligible on smaller screens (no guarantees about phone screens)
-							So, whenever you're ready...
-						</p>
-						<span id="ns">next slide</span>
-					</aside>
-				</section>
+    <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
 
-				<section>
-					<div class="wnotes">
-						<h2 style="margin-bottom:2%;">Acknowledgements</h2>
-						<div style="display:inline-block; margin-right:5%;height:30vh;">
-							<img class="plain" src="Images/J.Grilli.jpg" style="margin:0;padding:0;height:100%;">
-							<p style="margin:0;">Jacopo Grilli</p>
-						</div>
-						<div style="display:inline-block;height:30vh;">
-							<img class="plain" src="Images/G.Barabas.jpg" style="margin:0;padding:0;height:100%;">
-							<p style="margin:0;">Gyuri Barab&aacute;s</p>
-						</div>
-						<div style="display:inline-block; margin-left:5%;height:30vh;">
-							<img class="plain" src="Images/S.Allesina.jpg" style="margin:0;padding:0;height:100%;">
-							<p style="margin:0;">Stefano Allesina</p>
-						</div>
-						<table style="margin-top:5%;">
-							<tr>
-								<td>E. L. Sander<br> C. A. Marcelo Serv&aacute;n<br> D. Maynard<br> E. Leigh<br> J. Aljadeff</td>
-							  <td>A. Monteiro<br> J.A. Capit&aacute;n<br> F. Brandl<br> J.M. Levine<br> J-F. Laslier</td>
-						 </tr>
-						</table>
-					</div>
-					<div style="position:absolute;bottom:0;left:0" id="abs_pos">
-						<img class="plain" src="../NSF_logo.png" style="display:inline-block;height:10vh;">
-						<img class="plain" src="Images/HSFP.jpg" style="display:inline-block;height:10vh;">
-						<img class="plain" src="../DeptofEd.png" style="display:inline-block;height:10vh;">
-						<img class="plain" src="../UC_logo.png" style="display:inline-block;height:10vh;">
-					</div>
-					<aside class="notes">
-						This work was done in collaboration with <a href="http://home.uchicago.edu/~jgrilli/">Jacopo Grilli</a>,
-						 <a href="http://chicago.academia.edu/GyuriBarabas">Gyuri Barab&aacute;s</a>, and <a href="http://allesinalab.uchicago.edu">Stefano Allesina</a>.
-						<br>
-						Also thanks to J. Aljadeff, F. Brandl, J.A. Capit&aacute;n, J-F. Laslier, J.M.
-						Levine, C.A. Marcelo Serv&aacute;n, E. Sander, and others for comments
-						and discussions on both the manuscript and this presentation. E.
-						Leigh and four anonymous referees provided constructive feedback.
-						J.G. was supported by the Human Frontier Science Program, S.A. and G.B
-						by NSF DEB-1148867, and myself by US Department of Education grant
-						P200A150101.
-					</aside>
-				</section>
+    <!-- personal css file -->
+    <link rel="stylesheet" href="main.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
 
-				<section data-background="Images/rainforest.jpg">
-					<div class="wnotes"></div>
-					<h4 id="citation" class="citwnotes"><a href="http://www.gettyimages.ca/detail/news-photo/picture-taken-on-august-26-2013-shows-a-river-in-the-news-photo/179399760#picture-taken-on-august-26-2013-shows-a-river-in-the-amazonian-forest-picture-id179399760">JEROME VALLETTE/AFP/Getty Images</a></h4>
-					<aside class="notes">
-						When we see images of rainforests such as this, there are two
-						striking observations that can be made. First, every square meter of
-						land appears to be covered by a tree, each of which is approximately
-						the same height and size. The second is that, despite this apparent
-						homogeneity, a hectare of rainforest can support hundreds of unique
-						species, all coexisting despite an onslaught of perturbing forces.
-						As theoretical ecologists, we would like to develop a theory that
-						can explain this, allowing for the stable coexistence of many
-						species while maintaining a robustness to parameters.
-					</aside>
-				</section>
+    <!-- font-linking -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/ca6fc79211.js"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background-color="#747aa8">
+          <div class="wnotes" style="height:100%;">
+            <img class="plain" style="max-width:80%;position:absolute;top:50%;left:50%;margin-top:-15%;margin-left:-40%;"src="Images/title.png">
+            <p style="position:absolute;top:60%;left:10%;color:#111111;font-size:150%;text-align:left;">
+              Jacopo Grilli<br>
+              Gy&ouml;rgy Barab&aacute;s<br>
+              <b>Matt Michalska-Smith</b><br>
+              Stefano Allesina
+            </p>
+          </div>
+          <aside class="notes">
+            <p>
+              This talk was given at the annual NetSci conference in Indianapolis,
+              IN USA on 20 June 2017.
+              Text here will supplement slide material.
+            </p><p>
+              You can remove this pane (and get it back) by tapping <span class="key">v</span> on your keyboard.
+            </p><p>
+              Some of the slides will have animations which require advancing the
+              slide partway through these explanations. These will be indicated by
+              "<span id="ns">next slide</span>" in these notes.
+            </p><p>
+              Slides can be advanced by tapping<span class="key">Spc</span>,
+              <span class="key"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>, <span class="key">PgDn</span>,
+              or <span class="key">n</span>.
+            </p><p>
+              Finally, this presentation will look best in full-screen, but should
+              be more or less intelligible on smaller screens (no guarantees about phone screens)
+              So, whenever you're ready...
+            </p>
+            <span id="ns">next slide</span>
+          </aside>
+        </section>
 
-				<section data-background="Images/tree_dies.jpg">
-					<div class="wnotes"></div>
-						<h4 id="citation" class="citwnotes"><a href="http://www.newsweek.com/whats-best-way-protect-forests-thats-big-question-paris-climate-talks-400923">Nacho Doce/Reuters</a></h4>
-					<aside class="notes">
-						In many ways, solving this problem comes down to figuring out what
-						happens when an individual dies or, put another way, how the
-						replacement is chosen to fill the gap.
-					</aside>
-				</section>
+        <section>
+          <div class="wnotes">
+            <h2 style="margin-bottom:2%;">Acknowledgements</h2>
+            <div style="display:inline-block; margin-right:5%;height:30vh;">
+              <img class="plain" src="Images/J.Grilli.jpg" style="margin:0;padding:0;height:100%;">
+              <p style="margin:0;">Jacopo Grilli</p>
+            </div>
+            <div style="display:inline-block;height:30vh;">
+              <img class="plain" src="Images/G.Barabas.jpg" style="margin:0;padding:0;height:100%;">
+              <p style="margin:0;">Gyuri Barab&aacute;s</p>
+            </div>
+            <div style="display:inline-block; margin-left:5%;height:30vh;">
+              <img class="plain" src="Images/S.Allesina.jpg" style="margin:0;padding:0;height:100%;">
+              <p style="margin:0;">Stefano Allesina</p>
+            </div>
+            <table style="margin-top:5%;">
+              <tr>
+                <td>E. L. Sander<br> C. A. Marcelo Serv&aacute;n<br> D. Maynard<br> E. Leigh<br> J. Aljadeff</td>
+                <td>A. Monteiro<br> J.A. Capit&aacute;n<br> F. Brandl<br> J.M. Levine<br> J-F. Laslier</td>
+             </tr>
+            </table>
+          </div>
+          <div style="position:absolute;bottom:0;left:0" id="abs_pos">
+            <img class="plain" src="../NSF_logo.png" style="display:inline-block;height:10vh;">
+            <img class="plain" src="Images/HSFP.jpg" style="display:inline-block;height:10vh;">
+            <img class="plain" src="../DeptofEd.png" style="display:inline-block;height:10vh;">
+            <img class="plain" src="../UC_logo.png" style="display:inline-block;height:10vh;">
+          </div>
+          <aside class="notes">
+            This work was done in collaboration with <a href="http://home.uchicago.edu/~jgrilli/">Jacopo Grilli</a>,
+             <a href="http://chicago.academia.edu/GyuriBarabas">Gyuri Barab&aacute;s</a>, and <a href="http://allesinalab.uchicago.edu">Stefano Allesina</a>.
+            <br>
+            Also thanks to J. Aljadeff, F. Brandl, J.A. Capit&aacute;n, J-F. Laslier, J.M.
+            Levine, C.A. Marcelo Serv&aacute;n, E. Sander, and others for comments
+            and discussions on both the manuscript and this presentation. E.
+            Leigh and four anonymous referees provided constructive feedback.
+            J.G. was supported by the Human Frontier Science Program, S.A. and G.B
+            by NSF DEB-1148867, and myself by US Department of Education grant
+            P200A150101.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Model Assumptions</h4>
-					<div class="fullwidth wnotes" style="height:100%;">
-						<div style="position:relative;height:55%;">
-							<img class="plain fragment fade-out" data-fragment-index=1 style="position:absolute;bottom:0;left:2%;width:100%;" src="Images/forest1.svg">
-							<img class="plain fragment current-visible" data-fragment-index=1 style="position:absolute;bottom:0;left:2%;width:100%;" src="Images/forest2.svg">
-							<img class="plain fragment current-visible" data-fragment-index=2 style="position:absolute;bottom:0;left:2%;width:100%;" src="Images/forest3.svg">
-							<img class="plain fragment" data-fragment-index=3 style="position:absolute;bottom:0;left:2%;width:100%;" src="Images/forest4.svg">
-						</div>
-						<h1 style="height:20%;margin-top:5%;">$$\sum_i x_i = 1$$</h1>
-					</div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						<p>
-							A key assumption of the model we will build is inspired by that
-							first observation of the rainforest: that the space is entirely
-							filled and any gap in the canopy is rapidly filled by a new
-							individual. Because of this, the dynamics can be said to be
-							appproximately "zero-sum."
-						</p><p>
-							This means that the number of individuals in the community is
-							approximately fixed and we can just model the relative species
-							abundances $x_i$. Pictorally, this means that:
-						</p>
-						<span id="ns">next slide</span>
-						<p>when a tree dies</p>
-						<span id="ns">next slide</span>
-						<p>a seedling is chosen at random to fill the gap and</p>
-						<span id="ns">next slide</span>
-						<p>this seedling grows into an adult</p>
-						<span id="ns">next slide</span>
-						<p>
-							maintaining the total number of individuals in the  community but
-							potentially changing the relative abundances of the species
-							ivolved.
-						</p>
-					</aside>
-				</section>
+        <section data-background="Images/rainforest.jpg">
+          <div class="wnotes"></div>
+          <h4 id="citation" class="citwnotes"><a href="http://www.gettyimages.ca/detail/news-photo/picture-taken-on-august-26-2013-shows-a-river-in-the-news-photo/179399760#picture-taken-on-august-26-2013-shows-a-river-in-the-amazonian-forest-picture-id179399760">JEROME VALLETTE/AFP/Getty Images</a></h4>
+          <aside class="notes">
+            When we see images of rainforests such as this, there are two
+            striking observations that can be made. First, every square meter of
+            land appears to be covered by a tree, each of which is approximately
+            the same height and size. The second is that, despite this apparent
+            homogeneity, a hectare of rainforest can support hundreds of unique
+            species, all coexisting despite an onslaught of perturbing forces.
+            As theoretical ecologists, we would like to develop a theory that
+            can explain this, allowing for the stable coexistence of many
+            species while maintaining a robustness to parameters.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Building a Model</h4>
-					<div class="wnotes" style="height:90%;padding-top:5%;">
-						<div style="height:50%;">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;width:25%;" src="Images/fertility.png">
-							<img class="plain fragment" data-fragment-index=3 style="display:inline-block;width:25%;margin-left:7%" src="Images/interactions.png">
-							<img class="plain fragment" data-fragment-index=2 style="display:inline-block;width:25%;margin-left:7%" src="Images/death.png">
-						</div>
-						<p class="fragment" data-fragment-index=1 style="display:inline-block;width:20%;text-align:left;">
-								$$\propto f_i x_i$$
-						</p>
-						<p class="fragment" data-fragment-index=3 style="display:inline-block;width:50%;">
-								$$\begin{align}\mathcal{P}(i \text{ wins against } j) &= H_{ij}\\ &= 1 - H_{ji}\end{align}$$
-						</p>
-						<p class="fragment" data-fragment-index=2 style="display:inline-block;width:20%;text-align:right;">
-								$$d_i x_i$$
-						</p>
-			    </div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						We can model the processes at play in a more mathematically rigorous
-						manner. For instance,
-						<br><span id="ns">next slide</span><br>
-						each species has a birth rate, which is proportional to its
-						fecundity (the number of seedlings produced).
-						<br><span id="ns">next slide</span><br>
-						It also has a death rate. We assume that a random individual dies at
-						each time point. Since the individual is chosen at random, the
-						probability of any individual dying is proportional to its relative
-						species abundance. Finally, some things happen in-between these
-						events, which we will model as competition.
-						<br><span id="ns">next slide</span><br>
-						We can assume very simplified competition, where the individuals
-						compete in pairs and the winner of any competitive bout is
-						determined by a tournament matrix $\textbf{H}$ which encapsulates
-						the probabilities of any species $i$ beating another species $j$. Of
-						course, this means species $j$ has a $1-H_{ij}=H_{ji}$ probability of
-						winning the bout.
-					</aside>
-				</section>
+        <section data-background="Images/tree_dies.jpg">
+          <div class="wnotes"></div>
+            <h4 id="citation" class="citwnotes"><a href="http://www.newsweek.com/whats-best-way-protect-forests-thats-big-question-paris-climate-talks-400923">Nacho Doce/Reuters</a></h4>
+          <aside class="notes">
+            In many ways, solving this problem comes down to figuring out what
+            happens when an individual dies or, put another way, how the
+            replacement is chosen to fill the gap.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Relation to Prior Models</h4>
-			 	  <div class="fullwidth wnotes" style="position:absolute;top:10%;">
-						<div>
-							<ul>
-								<li style="margin:2%;" class="fragment semi-fade-out" data-fragment-index=5>
-									Neutral Theory of Biodiversity (<a href="http://press.princeton.edu/titles/7105.html">Hubbell 2001</a>)
-								</li>
-								<li class="fragment" data-fragment-index=1 style="list-style: none;">
-									<span class="fragment semi-fade-out" data-fragment-index=5>
-										$$f_i = d_i = 1 \text{, } H_{ij} = H_{ji} = 0.5$$
-									</span>
-								</li>
-								<li style="margin:2%;" class="fragment semi-fade-out" data-fragment-index=5>
-									Competitive Tournaments (<a href="http://www.pnas.org/content/108/14/5638.long">Allesina &amp; Levine 2011</a>)
-								</li>
-								<li class="fragment" data-fragment-index=2 style="list-style: none;">
-									<span class="fragment semi-fade-out" data-fragment-index=5>
-										$$f_i = d_i = 1 \text{, } (H_{ij}, H_{ji}) = \begin{cases}
-		    					(1,0)&\\ (0,1) \end{cases}$$
-								</span>
-							</li>
-								<li style="margin:2%;" class="fragment highlight-purple" data-fragment-index=5>
-									Competitive Hypertournaments
-								</li>
-								<li class="fragment" data-fragment-index=3 style="list-style: none;">
-									<span class="fragment highlight-purple" data-fragment-index=5>
-										$$f_i = d_i = 1 \text{, } \text{any nonnegative } (H_{ij}, H_{ji}): H_{ij} + H_{ji} = 1$$
-									</span>
-								</li>
-								<li style="margin:2%;" class="fragment semi-fade-out" data-fragment-index=5>
-									General Model
-								</li>
-								<li class="fragment" data-fragment-index=4 style="list-style: none;">
-									<span class="fragment semi-fade-out" data-fragment-index=5>
-										$$\text{any nonnegative } f_i, d_i, (H_{ij}, H_{ji}): H_{ij} + H_{ji} = 1$$
-									</span>
-								</li>
-							</ul>
-						</div>
-			    </div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						Using this simple framework, we can recapitulate some models that have
-						already been well-studied, as well as propose some advancements.
-						For instance, the neutral theory of biodiversity proposed by Stephen
-						Hubbell in 2001 can be replicated in this framework by assuming
-						<br><span id="ns">next slide</span><br>
-						that the fecundities and death rates are equal for all species (we
-						can consequently assume that this value is $1$ for conveneince) and
-						that the probability of any given species winning a competitive bout
-						is equal to that of its competitor winning.
-						<br><span id="ns">next slide</span><br>
-						Likewise, if the probabilities of victory are exclusively $1$'s and
-						$0$'s, that is, species $i$ always wins against species $j$ and
-						always loses to some species $k$, we are dealing with competitive
-						tournaments, which have been explored in an ecological context by
-						Allesina and Levine in PNAS in 2011.
-						<br>
-						In this work, we build on these models by first allowing non-binary
-						probabilities of victory
-						<br><span id="ns">next slide</span><br>
-						and second allowing full flexibility of parameterization, breaking
-						that reliance on equal physiological parameters.
-						<br><span id="ns">next slide</span><br>
-						We will first consider the former and get to the latter toward the
-						end of the presentation.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Model Assumptions</h4>
+          <div class="fullwidth wnotes" style="height:100%;">
+            <div style="position:relative;height:55%;">
+              <img class="plain fragment fade-out" data-fragment-index=1 style="position:absolute;bottom:0;left:2%;width:100%;" src="Images/forest1.svg">
+              <img class="plain fragment current-visible" data-fragment-index=1 style="position:absolute;bottom:0;left:2%;width:100%;" src="Images/forest2.svg">
+              <img class="plain fragment current-visible" data-fragment-index=2 style="position:absolute;bottom:0;left:2%;width:100%;" src="Images/forest3.svg">
+              <img class="plain fragment" data-fragment-index=3 style="position:absolute;bottom:0;left:2%;width:100%;" src="Images/forest4.svg">
+            </div>
+            <h1 style="height:20%;margin-top:5%;">$$\sum_i x_i = 1$$</h1>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            <p>
+              A key assumption of the model we will build is inspired by that
+              first observation of the rainforest: that the space is entirely
+              filled and any gap in the canopy is rapidly filled by a new
+              individual. Because of this, the dynamics can be said to be
+              appproximately "zero-sum."
+            </p><p>
+              This means that the number of individuals in the community is
+              approximately fixed and we can just model the relative species
+              abundances $x_i$. Pictorally, this means that:
+            </p>
+            <span id="ns">next slide</span>
+            <p>when a tree dies</p>
+            <span id="ns">next slide</span>
+            <p>a seedling is chosen at random to fill the gap and</p>
+            <span id="ns">next slide</span>
+            <p>this seedling grows into an adult</p>
+            <span id="ns">next slide</span>
+            <p>
+              maintaining the total number of individuals in the  community but
+              potentially changing the relative abundances of the species
+              ivolved.
+            </p>
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Building a Model</h4>
-			 	  <div class="wnotes" style="height:90%;padding-top:5%;">
-						<div style="height:50%;">
-							<img class="plain" style="display:inline-block;height:100%;max-width:25%;" src="Images/fertility.png">
-							<img class="plain" style="display:inline-block;height:100%;max-width:25%;margin-left:7%;" src="Images/interactions.png">
-							<img class="plain" style="display:inline-block;height:100%;max-width:25%;margin-left:7%;" src="Images/death.png">
-						</div>
-						<p style="display:inline-block;width:15%;text-align:left;">
-							<span class="fragment highlight-green" data-fragment-index=1>
-								$$\propto f_i x_i$$
-							</span>
-						</p>
-						<p style="display:inline-block;width:50%;">
-							<span class="fragment highlight-blue" data-fragment-index=1>
-								$$\begin{align}\mathcal{P}(i \text{ wins against } j) &= H_{ij}\\ &= 1 - H_{ji}\end{align}$$
-							</span>
-						</p>
-						<p style="display:inline-block;width:15%;text-align:right;">
-							<span class="fragment highlight-red" data-fragment-index=1>
-								$$d_i x_i$$
-							</span>
-						</p>
-						<p class="fragment" data-fragment-index=1>Assume $f_i = d_i = 1 \quad \forall i$</p>
-						<p class="fragment" data-fragment-index=1>
-							<span>$\dfrac{\text{d} x_i }{\text{d} t} = $</span>
-							<span class="fragment highlight-green" data-fragment-index=1>$x^2_i$</span>
-							<span>$+$</span>
-							<span class="fragment highlight-blue" data-fragment-index=1>$2 x_i \displaystyle\sum_{j \neq i} H_{ij} x_j$</span>
-							<span>$-$</span>
-							<span class="fragment highlight-red"  data-fragment-index=1>$x_i$</span>
-						</p>
-					</div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						Looking at our three processes again, this means by
-						assuming constant and equivalent fecundities and death rates, we can
-						<br><span id="ns">next slide</span><br>
-						codify this into equations where the birth and death rates are
-						proportional to the relative abundance of the species and growth in
-						this abundance can be modified by the outcome of interactions with
-						other species. Note that this is multiplied by two since species are
-						chosen as pairs, and the order of the pairs does not matter. That
-						is, $i$ vs. $j$ is the same as $j$ vs $i$.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Building a Model</h4>
+          <div class="wnotes" style="height:90%;padding-top:5%;">
+            <div style="height:50%;">
+              <img class="plain fragment" data-fragment-index=1 style="display:inline-block;width:25%;" src="Images/fertility.png">
+              <img class="plain fragment" data-fragment-index=3 style="display:inline-block;width:25%;margin-left:7%" src="Images/interactions.png">
+              <img class="plain fragment" data-fragment-index=2 style="display:inline-block;width:25%;margin-left:7%" src="Images/death.png">
+            </div>
+            <p class="fragment" data-fragment-index=1 style="display:inline-block;width:20%;text-align:left;">
+                $$\propto f_i x_i$$
+            </p>
+            <p class="fragment" data-fragment-index=3 style="display:inline-block;width:50%;">
+                $$\begin{align}\mathcal{P}(i \text{ wins against } j) &= H_{ij}\\ &= 1 - H_{ji}\end{align}$$
+            </p>
+            <p class="fragment" data-fragment-index=2 style="display:inline-block;width:20%;text-align:right;">
+                $$d_i x_i$$
+            </p>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            We can model the processes at play in a more mathematically rigorous
+            manner. For instance,
+            <br><span id="ns">next slide</span><br>
+            each species has a birth rate, which is proportional to its
+            fecundity (the number of seedlings produced).
+            <br><span id="ns">next slide</span><br>
+            It also has a death rate. We assume that a random individual dies at
+            each time point. Since the individual is chosen at random, the
+            probability of any individual dying is proportional to its relative
+            species abundance. Finally, some things happen in-between these
+            events, which we will model as competition.
+            <br><span id="ns">next slide</span><br>
+            We can assume very simplified competition, where the individuals
+            compete in pairs and the winner of any competitive bout is
+            determined by a tournament matrix $\textbf{H}$ which encapsulates
+            the probabilities of any species $i$ beating another species $j$. Of
+            course, this means species $j$ has a $1-H_{ij}=H_{ji}$ probability of
+            winning the bout.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Building a Model: Equilvalence with Replicator Equation</h4>
-			 	  <div class="wnotes">
-						<p style="padding-top:10%;">
-							$$\begin{align}
-							  \dfrac{\text{d} x_i }{\text{d} t} &=
-							 	x^2_i + 2 x_i \sum_{j \neq i} H_{ij} x_j - x_i\\
-								&= x_i \left(2 \sum_j H_{ij} x_j -  1 \right)\\
-							 	&= \sum_j \left( H_{ij} - H_{ji}\right) x_i x_j\\
-								&= \sum_j P_{ij} x_i x_j
-							\end{align}$$
-						</p>
-			    </div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						One of the really nice things about this model formulation is that
-						it can be shown to be equivalent to the extremely well studied
-						replicator equations, using the notation from game theory of a
-						payoff matrix $\mathbf{P}$ which dictates how much each species
-						gains (or loses) as a result of each competitive bout. This
-						equivalence allows us to leverage results and tools from this
-						additional field of study to better understand our model.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Relation to Prior Models</h4>
+           <div class="fullwidth wnotes" style="position:absolute;top:10%;">
+            <div>
+              <ul>
+                <li style="margin:2%;" class="fragment semi-fade-out" data-fragment-index=5>
+                  Neutral Theory of Biodiversity (<a href="http://press.princeton.edu/titles/7105.html">Hubbell 2001</a>)
+                </li>
+                <li class="fragment" data-fragment-index=1 style="list-style: none;">
+                  <span class="fragment semi-fade-out" data-fragment-index=5>
+                    $$f_i = d_i = 1 \text{, } H_{ij} = H_{ji} = 0.5$$
+                  </span>
+                </li>
+                <li style="margin:2%;" class="fragment semi-fade-out" data-fragment-index=5>
+                  Competitive Tournaments (<a href="http://www.pnas.org/content/108/14/5638.long">Allesina &amp; Levine 2011</a>)
+                </li>
+                <li class="fragment" data-fragment-index=2 style="list-style: none;">
+                  <span class="fragment semi-fade-out" data-fragment-index=5>
+                    $$f_i = d_i = 1 \text{, } (H_{ij}, H_{ji}) = \begin{cases}
+                  (1,0)&\\ (0,1) \end{cases}$$
+                </span>
+              </li>
+                <li style="margin:2%;" class="fragment highlight-purple" data-fragment-index=5>
+                  Competitive Hypertournaments
+                </li>
+                <li class="fragment" data-fragment-index=3 style="list-style: none;">
+                  <span class="fragment highlight-purple" data-fragment-index=5>
+                    $$f_i = d_i = 1 \text{, } \text{any nonnegative } (H_{ij}, H_{ji}): H_{ij} + H_{ji} = 1$$
+                  </span>
+                </li>
+                <li style="margin:2%;" class="fragment semi-fade-out" data-fragment-index=5>
+                  General Model
+                </li>
+                <li class="fragment" data-fragment-index=4 style="list-style: none;">
+                  <span class="fragment semi-fade-out" data-fragment-index=5>
+                    $$\text{any nonnegative } f_i, d_i, (H_{ij}, H_{ji}): H_{ij} + H_{ji} = 1$$
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            Using this simple framework, we can recapitulate some models that have
+            already been well-studied, as well as propose some advancements.
+            For instance, the neutral theory of biodiversity proposed by Stephen
+            Hubbell in 2001 can be replicated in this framework by assuming
+            <br><span id="ns">next slide</span><br>
+            that the fecundities and death rates are equal for all species (we
+            can consequently assume that this value is $1$ for conveneince) and
+            that the probability of any given species winning a competitive bout
+            is equal to that of its competitor winning.
+            <br><span id="ns">next slide</span><br>
+            Likewise, if the probabilities of victory are exclusively $1$'s and
+            $0$'s, that is, species $i$ always wins against species $j$ and
+            always loses to some species $k$, we are dealing with competitive
+            tournaments, which have been explored in an ecological context by
+            Allesina and Levine in PNAS in 2011.
+            <br>
+            In this work, we build on these models by first allowing non-binary
+            probabilities of victory
+            <br><span id="ns">next slide</span><br>
+            and second allowing full flexibility of parameterization, breaking
+            that reliance on equal physiological parameters.
+            <br><span id="ns">next slide</span><br>
+            We will first consider the former and get to the latter toward the
+            end of the presentation.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Building a Model: Example</h4>
-			 	  <div class="wnotes" style="padding-top:5%;height:90%;">
-						<div style="display:inline-block;margin:0 2% 0 2%;vertical-align:middle;width:30%;height:40%;">
-							<img class="plain" style="" src="Images/RPS.svg">
-						</div>
-						<div style="display:inline-block;margin-left:2%;vertical-align:middle;width:50%;height:40%;">
-							<span>
-								<img class="plain" style="width:1.5em;margin-bottom:0;padding:0 0 0 0.5em;;" src="Images/rock.svg">
-								<img class="plain" style="width:1.5em;margin:0 0 0 1em;padding:0;" src="Images/paper.svg">
-								<img class="plain" style="width:1.5em;margin:0 0 0 1em;padding:0;" src="Images/scissors.svg">
-							</span>
-							<div style="height:40%;">
-								<span style="display:inline-block;vertical-align:middle;margin:0;padding:0'">
-									$$\mathbf{H} = \left[\begin{array}
-									00.5 &    1 &    0 \\
-									0 &  0.5 &    1 \\
-									1 &    0 &  0.5
-									\end{array}\right]
-									$$
-								</span>
-								<span style="display:inline-block;vertical-align:middle;">
-									<img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/rock.svg"><br>
-									<img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/paper.svg"><br>
-									<img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/scissors.svg">
-								</span>
-							</div>
-							<div style="height:40%;padding-top:5%;">
-								<span style="display:inline-block;vertical-align:middle;padding:0;margin:0;">
-									$$\mathbf{P} = \left[\begin{array}
-									0~~~0 &    ~~~1 &  -1 \\
-									-1 &  ~~~0 &    ~~~1 \\
-									~~~1 &  -1 &  ~~~0
-									\end{array}\right]$$
-								</span>
-								<span style="display:inline-block;vertical-align:middle;">
-									<img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/rock.svg"><br>
-									<img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/paper.svg"><br>
-									<img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/scissors.svg">
-								</span>
-							</div>
-						</div>
-						<div style="height:50%;position:relative;top:15%;">
-							<img class="plain" style="height:100%;" src="Images/F2b_time.png">
-						</div>
-					</div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						Lets look at a concrete example. Imagine three species: rock, paper,
-						and scissors which interact in an intransitive cycle of complete
-						dominance. The tournament matrix $\mathbf{H}$ is thus shown here,
-						with a $1$ in the top middle, for instance, indicating that paper
-						always wins against rock. An individual of a given species always
-						has an equal probability of winning or losing when competing against
-						another individual of the same species, hence the $0.5$ on the
-						diagonal. This $\mathbf{H}$ corresponds to the following
-						$\mathbf{P}$, which shows that, in the previously mentioned bout,
-						the result is that rock loses an individual and paper gains one.
-						These dynamics result is neutral cycling about an equilibrium of one
-						third for each species.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Building a Model</h4>
+           <div class="wnotes" style="height:90%;padding-top:5%;">
+            <div style="height:50%;">
+              <img class="plain" style="display:inline-block;height:100%;max-width:25%;" src="Images/fertility.png">
+              <img class="plain" style="display:inline-block;height:100%;max-width:25%;margin-left:7%;" src="Images/interactions.png">
+              <img class="plain" style="display:inline-block;height:100%;max-width:25%;margin-left:7%;" src="Images/death.png">
+            </div>
+            <p style="display:inline-block;width:15%;text-align:left;">
+              <span class="fragment highlight-green" data-fragment-index=1>
+                $$\propto f_i x_i$$
+              </span>
+            </p>
+            <p style="display:inline-block;width:50%;">
+              <span class="fragment highlight-blue" data-fragment-index=1>
+                $$\begin{align}\mathcal{P}(i \text{ wins against } j) &= H_{ij}\\ &= 1 - H_{ji}\end{align}$$
+              </span>
+            </p>
+            <p style="display:inline-block;width:15%;text-align:right;">
+              <span class="fragment highlight-red" data-fragment-index=1>
+                $$d_i x_i$$
+              </span>
+            </p>
+            <p class="fragment" data-fragment-index=1>Assume $f_i = d_i = 1 \quad \forall i$</p>
+            <p class="fragment" data-fragment-index=1>
+              <span>$\dfrac{\text{d} x_i }{\text{d} t} = $</span>
+              <span class="fragment highlight-green" data-fragment-index=1>$x^2_i$</span>
+              <span>$+$</span>
+              <span class="fragment highlight-blue" data-fragment-index=1>$2 x_i \displaystyle\sum_{j \neq i} H_{ij} x_j$</span>
+              <span>$-$</span>
+              <span class="fragment highlight-red"  data-fragment-index=1>$x_i$</span>
+            </p>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            Looking at our three processes again, this means by
+            assuming constant and equivalent fecundities and death rates, we can
+            <br><span id="ns">next slide</span><br>
+            codify this into equations where the birth and death rates are
+            proportional to the relative abundance of the species and growth in
+            this abundance can be modified by the outcome of interactions with
+            other species. Note that this is multiplied by two since species are
+            chosen as pairs, and the order of the pairs does not matter. That
+            is, $i$ vs. $j$ is the same as $j$ vs $i$.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Dynamics:<br>Neutral Cycles</h4>
-			 	  <div class="fullwidth tomiddle wnotes" style="height:100%;">
-						<div style="height:24%;">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/RPS.svg">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2b_time.png"><br>
-						</div>
-						<div style="height:24%;">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fa_t.png">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2a_time.png"><br>
-						</div>
-						<div style="height:24%;">
-							<img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fd_t.png">
-							<img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2d_time.png"><br>
-						</div>
-			    </div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						This is also the case for more complicated tournament and
-						hypertournament structures. For instance,
-						<br><span id="ns">next slide</span><br>
-						this is a hypertournament, i.e. the link strengths are not
-						binary, in which two species go extinct and the remaining
-						three cycle around their equilibrium values.
-						<br><span id="ns">next slide</span><br>
-						In this, more complicated, hypertournament, all five species survive
-						to cycle neutrally.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Building a Model: Equilvalence with Replicator Equation</h4>
+           <div class="wnotes">
+            <p style="padding-top:10%;">
+              $$\begin{align}
+                \dfrac{\text{d} x_i }{\text{d} t} &=
+                 x^2_i + 2 x_i \sum_{j \neq i} H_{ij} x_j - x_i\\
+                &= x_i \left(2 \sum_j H_{ij} x_j -  1 \right)\\
+                 &= \sum_j \left( H_{ij} - H_{ji}\right) x_i x_j\\
+                &= \sum_j P_{ij} x_i x_j
+              \end{align}$$
+            </p>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            One of the really nice things about this model formulation is that
+            it can be shown to be equivalent to the extremely well studied
+            replicator equations, using the notation from game theory of a
+            payoff matrix $\mathbf{P}$ which dictates how much each species
+            gains (or loses) as a result of each competitive bout. This
+            equivalence allows us to leverage results and tools from this
+            additional field of study to better understand our model.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Coexistence</h4>
-			 	  <div class="wnotes">
-						<div style="padding-top:5%;">
-							<h2> How many species do we expect to survive?</h2>
-							<div style="display:inline-block;width:55%;vertical-align:top;">
-								<h3>Method</h3>
-								<ol>
-									<li> Generate many random (hyper) tournaments of $s$ species by drawing interaction strengths($H_{ij}$) at random </li>
-									<li> Run dynamics</li>
-									<li> Count the $k$ survivors</li>
-									<li class="fragment highlight-purple" data-fragment-index=2> what is $\mathcal{P}(k|s)$?</li>
-								</ol>
-								<br>
-								<p style="width:50%" class="fragment" data-fragment-index=2>
-									<span class="fragment highlight-purple" data-fragment-index=2>
-										$$\mathcal{P}(k|s) = \begin{cases} 0 &\text{for } k \text{ even}\\ {{s}\choose{k}} 2^{1-s} &\text{otherwise}\end{cases}$$
-									</span>
-								</p>
-							</div>
-							<div style="display:inline-block;width:40%;height:80vh;vertical-align:top;">
-								<h3>Result</h3>
-								<img class="plain fragment" data-fragment-index=2 style="max-width:100%;max-height:90%" src="Images/pkgivens.png">
-							</div>
-						</div>
-			    </div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						So, we saw that in some cases, all of the species will survive and
-						in other cases, some will go extinct. One might reasonably wonder
-						how many species will survive on average. Put another way, if we
-						were to open all the gates at a zoo and let the animals interact,
-						how many species would we expect to coexist after all of the
-						extinctions? We can approach this problem from the perspective of
-						random matrices. In this approach, we generate a random (hyper)tournament
-						matrix of probabilities and then run the dynamics to see how many of
-						the original species survive. If we do this many times, we can then
-						estimate the expected number.
-						<br><span id="ns">next slide</span><br>
-						 When we do this, we find that this probability is $0$ for an even
-						 number of surviving species (as was also shown by
-						 <a href="http://www.pnas.org/content/108/14/5638.long">Allesina &amp; Levine 2011</a>)
-						 and follows a binomial distribution with $p = 0.5$ otherwise. This
-						 means that, regardless of the number of initial species, the
-						 expected number that survive is half of that. Put another way,
-						 there is no upper limit for the number of surviving species, which
-						 suggests that the high biodiversity we observe in nature maybe
-						 shoudldn't be so surprising after all.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Building a Model: Example</h4>
+           <div class="wnotes" style="padding-top:5%;height:90%;">
+            <div style="display:inline-block;margin:0 2% 0 2%;vertical-align:middle;width:30%;height:40%;">
+              <img class="plain" style="" src="Images/RPS.svg">
+            </div>
+            <div style="display:inline-block;margin-left:2%;vertical-align:middle;width:50%;height:40%;">
+              <span>
+                <img class="plain" style="width:1.5em;margin-bottom:0;padding:0 0 0 0.5em;;" src="Images/rock.svg">
+                <img class="plain" style="width:1.5em;margin:0 0 0 1em;padding:0;" src="Images/paper.svg">
+                <img class="plain" style="width:1.5em;margin:0 0 0 1em;padding:0;" src="Images/scissors.svg">
+              </span>
+              <div style="height:40%;">
+                <span style="display:inline-block;vertical-align:middle;margin:0;padding:0'">
+                  $$\mathbf{H} = \left[\begin{array}
+                  00.5 &    1 &    0 \\
+                  0 &  0.5 &    1 \\
+                  1 &    0 &  0.5
+                  \end{array}\right]
+                  $$
+                </span>
+                <span style="display:inline-block;vertical-align:middle;">
+                  <img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/rock.svg"><br>
+                  <img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/paper.svg"><br>
+                  <img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/scissors.svg">
+                </span>
+              </div>
+              <div style="height:40%;padding-top:5%;">
+                <span style="display:inline-block;vertical-align:middle;padding:0;margin:0;">
+                  $$\mathbf{P} = \left[\begin{array}
+                  0~~~0 &    ~~~1 &  -1 \\
+                  -1 &  ~~~0 &    ~~~1 \\
+                  ~~~1 &  -1 &  ~~~0
+                  \end{array}\right]$$
+                </span>
+                <span style="display:inline-block;vertical-align:middle;">
+                  <img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/rock.svg"><br>
+                  <img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/paper.svg"><br>
+                  <img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/scissors.svg">
+                </span>
+              </div>
+            </div>
+            <div style="height:50%;position:relative;top:15%;">
+              <img class="plain" style="height:100%;" src="Images/F2b_time.png">
+            </div>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            Lets look at a concrete example. Imagine three species: rock, paper,
+            and scissors which interact in an intransitive cycle of complete
+            dominance. The tournament matrix $\mathbf{H}$ is thus shown here,
+            with a $1$ in the top middle, for instance, indicating that paper
+            always wins against rock. An individual of a given species always
+            has an equal probability of winning or losing when competing against
+            another individual of the same species, hence the $0.5$ on the
+            diagonal. This $\mathbf{H}$ corresponds to the following
+            $\mathbf{P}$, which shows that, in the previously mentioned bout,
+            the result is that rock loses an individual and paper gains one.
+            These dynamics result is neutral cycling about an equilibrium of one
+            third for each species.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Dynamics:<br>Neutral Cycles</h4>
-			 	  <div class="fullwidth tomiddle wnotes" style="height:100%;">
-						<div style="height:24%;">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/RPS.svg">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2b_time.png"><br>
-						</div>
-						<div style="height:24%;">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fa_t.png">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2a_time.png"><br>
-						</div>
-						<div style="height:24%;">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fd_t.png">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2d_time.png"><br>
-						</div>
-						<div style="height:24%;">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fc_t.png">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2c_time.png">
-						</div>
-			    </div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						One of the interesting things about the transition from strict
-						tournaments to hyper tournaments, i.e. moving from binary probabilities
-						of victory to real-valued probabilities, is that we can actually
-						construct an infitinte number of matrices $\mathbf{H}$ that will
-						converge to an arbitrary equilibrium $x^\ast$. What this means is
-						that we can fine-tune a system to allow the persistence of an even
-						number of species.
-						<br><span id="ns">next slide</span><br>
-						Yet, these cases are highly degenerate and will collapse into an
-						odd number of species with any modification of the coeficients of
-						$\mathbf{H}$ or parameters $f_i$ or $d_i$. For this reason, I will
-						always mark this example with an asterisk (*), denoting its special
-						status.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Dynamics:<br>Neutral Cycles</h4>
+           <div class="fullwidth tomiddle wnotes" style="height:100%;">
+            <div style="height:24%;">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/RPS.svg">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2b_time.png"><br>
+            </div>
+            <div style="height:24%;">
+              <img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fa_t.png">
+              <img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2a_time.png"><br>
+            </div>
+            <div style="height:24%;">
+              <img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fd_t.png">
+              <img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2d_time.png"><br>
+            </div>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            This is also the case for more complicated tournament and
+            hypertournament structures. For instance,
+            <br><span id="ns">next slide</span><br>
+            this is a hypertournament, i.e. the link strengths are not
+            binary, in which two species go extinct and the remaining
+            three cycle around their equilibrium values.
+            <br><span id="ns">next slide</span><br>
+            In this, more complicated, hypertournament, all five species survive
+            to cycle neutrally.
+          </aside>
+        </section>
 
-				<!-- TODO: what is up with the notes on this slide? -->
-				<section class="center" data-background-color="#6c8c58">
-					<!-- <h4 id="header">Conclusions</h4> -->
-			 	  <div class="wnotes">
-						<div style="color:#111111;width:80%;margin:10%;">
-							<h2 style="color:#111111;">Conclusions</h2>
-							<h4 style="color:#111111;text-align:left;width:100%;">For any matrix $\mathbf{H}$ on $s$ species</h4>
-							<ul>
-								<li style="padding-top:1%;">Irrespective of (positive) initial conditions, $k$ species will coexist and $s - k$ will go extinct</li>
-								<li style="padding-top:1%;">Those that coexist, <span class="fragment emph-bold">cycle neutrally</span> around the equilibrium point $x^\ast$</li>
-								<li style="padding-top:1%;">We can choose $x^\ast$ arbitrarily</li>
-							</ul>
-							<h4 style="color:#111111;text-align:left;width:100%;margin-top:10%;">For a random $\mathbf{H}$ on $s$ species</h4>
-							<ul style="text-align:left;width:100%;">
-								<li style="padding-top:1%;">On average, $k = s/2$</li>
-							</ul>
-						</div>
-					</div>
-					<aside class="notes">
-						So, where do we stand thus far? We have a model that can produce
-						high biodiversity without fine tuning. It can, though I did not go
-						into it here, yield an arbitrary species abundance distribution as
-						equilibrium with the proper choice of $\mathbf{H}$ (which is to say
-						it can feasibly produce empirically observed species abundance
-						distributions). There are still some shortcomings, however.
-						<br><span id="ns">next slide</span><br>
-						Most noticably is the presence of neutral cycles, which are not only
-						very uncommon emprically, but also make their species more
-						susceptible to extinction as perturbations, on average, increase the
-						size of such neutral cycles.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Coexistence</h4>
+           <div class="wnotes">
+            <div style="padding-top:5%;">
+              <h2> How many species do we expect to survive?</h2>
+              <div style="display:inline-block;width:55%;vertical-align:top;">
+                <h3>Method</h3>
+                <ol>
+                  <li> Generate many random (hyper) tournaments of $s$ species by drawing interaction strengths($H_{ij}$) at random </li>
+                  <li> Run dynamics</li>
+                  <li> Count the $k$ survivors</li>
+                  <li class="fragment highlight-purple" data-fragment-index=2> what is $\mathcal{P}(k|s)$?</li>
+                </ol>
+                <br>
+                <p style="width:50%" class="fragment" data-fragment-index=2>
+                  <span class="fragment highlight-purple" data-fragment-index=2>
+                    $$\mathcal{P}(k|s) = \begin{cases} 0 &\text{for } k \text{ even}\\ {{s}\choose{k}} 2^{1-s} &\text{otherwise}\end{cases}$$
+                  </span>
+                </p>
+              </div>
+              <div style="display:inline-block;width:40%;height:80vh;vertical-align:top;">
+                <h3>Result</h3>
+                <img class="plain fragment" data-fragment-index=2 style="max-width:100%;max-height:90%" src="Images/pkgivens.png">
+              </div>
+            </div>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            So, we saw that in some cases, all of the species will survive and
+            in other cases, some will go extinct. One might reasonably wonder
+            how many species will survive on average. Put another way, if we
+            were to open all the gates at a zoo and let the animals interact,
+            how many species would we expect to coexist after all of the
+            extinctions? We can approach this problem from the perspective of
+            random matrices. In this approach, we generate a random (hyper)tournament
+            matrix of probabilities and then run the dynamics to see how many of
+            the original species survive. If we do this many times, we can then
+            estimate the expected number.
+            <br><span id="ns">next slide</span><br>
+             When we do this, we find that this probability is $0$ for an even
+             number of surviving species (as was also shown by
+             <a href="http://www.pnas.org/content/108/14/5638.long">Allesina &amp; Levine 2011</a>)
+             and follows a binomial distribution with $p = 0.5$ otherwise. This
+             means that, regardless of the number of initial species, the
+             expected number that survive is half of that. Put another way,
+             there is no upper limit for the number of surviving species, which
+             suggests that the high biodiversity we observe in nature maybe
+             shoudldn't be so surprising after all.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Higher-order Interactions</h4>
-			 	  <div class="wnotes">
-						<div style="padding-top:5%;">
-							<img class="plain fragment fade-out" data-fragment-index=1 style="display:inline-block;width:40%;	" src="Images/interactions.png">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;width:40%;	" src="Images/interactions3.svg">
-						</div>
-		    	</div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						At this point, you might be wondering what this has to do with
-						higher-order interactions (HOI). So far, the interaction part of our
-						model consisted of choosing two seedlings and competing them to
-						determine the winner in a pairwise fasion. This is overwhelmingly
-						the approach used in ecological research, but this is due to historical
-						precedent and mathematical convenience. In nature, we observe a
-						rich seedbank, where potentially many seedlings are competing for
-						each gap in the canopy.
-						<br><span id="ns">next slide</span><br>
-						We can take a step toward this reality by increasing the number of
-						competing species in each bout to three.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Dynamics:<br>Neutral Cycles</h4>
+           <div class="fullwidth tomiddle wnotes" style="height:100%;">
+            <div style="height:24%;">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/RPS.svg">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2b_time.png"><br>
+            </div>
+            <div style="height:24%;">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fa_t.png">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2a_time.png"><br>
+            </div>
+            <div style="height:24%;">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fd_t.png">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2d_time.png"><br>
+            </div>
+            <div style="height:24%;">
+              <img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fc_t.png">
+              <img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2c_time.png">
+            </div>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            One of the interesting things about the transition from strict
+            tournaments to hyper tournaments, i.e. moving from binary probabilities
+            of victory to real-valued probabilities, is that we can actually
+            construct an infitinte number of matrices $\mathbf{H}$ that will
+            converge to an arbitrary equilibrium $x^\ast$. What this means is
+            that we can fine-tune a system to allow the persistence of an even
+            number of species.
+            <br><span id="ns">next slide</span><br>
+            Yet, these cases are highly degenerate and will collapse into an
+            odd number of species with any modification of the coeficients of
+            $\mathbf{H}$ or parameters $f_i$ or $d_i$. For this reason, I will
+            always mark this example with an asterisk (*), denoting its special
+            status.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Parameterizing HOI</h4>
-			 	  <div class="wnotes">
-						<div class="fragment fade-out" data-fragment-index=1 style="padding-top:5%;">
-							<img class="plain" style="display:inline-block;width:35%;margin-right:15%;vertical-align:middle;" src="Images/icon3-1.svg">
-							<img class="plain" style="display:inline-block;width:45%;vertical-align:middle;" src="Images/icon3.svg">
-						</div>
-						<img class="plain fragment current-visible" data-fragment-index=1 style="position:absolute;top:300px;left:50px;width:100%;" src="Images/pairwise_hoi.png">
-						<img class="plain fragment" data-fragment-index=2 style="position:absolute;top:300px;left:50px;width:100%;" src="Images/pairwise_hoi_2.png">
-			    </div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						Unfortunately, even this small change faces us with a dilemma. We
-						can consider true HOI in which there is a coeficient for each unique
-						triplet of interacting species, but then our number of parameters in
-						the model quickly becomes intractable from an empirical standpoint.
-						An alternative is to consider an interaction chain,
-						<br><span id="ns">next slide</span><br>
-						in which first two of the species compete and then the winner of
-						this pairwise bout competes with the third species to determine
-						the overall winner. This has the advantage of reducing the number of
-						parameters to exactly that needed for the pairwise case, but comes
-						with its own shortcomming: now the order of interactions matters.
-						For instance, in this example, if we re-ordered the interactions
-						such that the orange seedling interacts first with the purple
-						<br><span id="ns">next slide</span><br>
-						seedling, rather than the blue, we see that it is purple, rather
-						than orange that advances to the second bout producing a new interaction
-						that wasn't present in the previous chain. If blue is able to
-						defeat purple then the final victor can also differ.
-					</aside>
-				</section>
+        <!-- TODO: what is up with the notes on this slide? -->
+        <section class="center" data-background-color="#6c8c58">
+          <!-- <h4 id="header">Conclusions</h4> -->
+           <div class="wnotes">
+            <div style="color:#111111;width:80%;margin:10%;">
+              <h2 style="color:#111111;">Conclusions</h2>
+              <h4 style="color:#111111;text-align:left;width:100%;">For any matrix $\mathbf{H}$ on $s$ species</h4>
+              <ul>
+                <li style="padding-top:1%;">Irrespective of (positive) initial conditions, $k$ species will coexist and $s - k$ will go extinct</li>
+                <li style="padding-top:1%;">Those that coexist, <span class="fragment emph-bold">cycle neutrally</span> around the equilibrium point $x^\ast$</li>
+                <li style="padding-top:1%;">We can choose $x^\ast$ arbitrarily</li>
+              </ul>
+              <h4 style="color:#111111;text-align:left;width:100%;margin-top:10%;">For a random $\mathbf{H}$ on $s$ species</h4>
+              <ul style="text-align:left;width:100%;">
+                <li style="padding-top:1%;">On average, $k = s/2$</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            So, where do we stand thus far? We have a model that can produce
+            high biodiversity without fine tuning. It can, though I did not go
+            into it here, yield an arbitrary species abundance distribution as
+            equilibrium with the proper choice of $\mathbf{H}$ (which is to say
+            it can feasibly produce empirically observed species abundance
+            distributions). There are still some shortcomings, however.
+            <br><span id="ns">next slide</span><br>
+            Most noticably is the presence of neutral cycles, which are not only
+            very uncommon emprically, but also make their species more
+            susceptible to extinction as perturbations, on average, increase the
+            size of such neutral cycles.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Still Consistent with Replicator Dynamics</h4>
-			 	  <div class="wnotes">
-						<div style="padding-top:15%;line-height:5%;">
-							<p>
-								<span class="fragment semi-fade-out" data-fragment-index=1>$$\dfrac{\text{d} x_i }{\text{d} t} = \sum_j P_{ij} x_i x_j$$</span>
-								<span class="fragment" data-fragment-index=1>$$\dfrac{\text{d} x_i }{\text{d} t} = \sum_j P_{ijk} x_i x_j x_k$$</span>
-							</p>
-							<p class="fragment" data-fragment-index=1>
-								where $\mathbf{P}$ is a tensor in which $$P_{ijk} = 2 H_{ij} H_{ik} - H_{ji} H_{jk} - H_{ki} H_{kj}$$
-							</p>
-						</div>
-			    </div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						This change does not, however, break equivalence with replicator
-						dynamics. Instead, the payoff matrix now becomes
-						<br><span id="ns">next slide</span><br>
-						a payoff tensor with as many indices as there are interacting
-						seedlings in each competetive bout (in this case three). Furthermore, because we are
-						defining the HOI in terms of a sequence of pairwise competitions, we
-						can write this tensor $\mathbf{P}$ in terms of the coefficients of
-						the tournament matrix $\mathbf{H}$.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Higher-order Interactions</h4>
+           <div class="wnotes">
+            <div style="padding-top:5%;">
+              <img class="plain fragment fade-out" data-fragment-index=1 style="display:inline-block;width:40%;  " src="Images/interactions.png">
+              <img class="plain fragment" data-fragment-index=1 style="display:inline-block;width:40%;  " src="Images/interactions3.svg">
+            </div>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            At this point, you might be wondering what this has to do with
+            higher-order interactions (HOI). So far, the interaction part of our
+            model consisted of choosing two seedlings and competing them to
+            determine the winner in a pairwise fasion. This is overwhelmingly
+            the approach used in ecological research, but this is due to historical
+            precedent and mathematical convenience. In nature, we observe a
+            rich seedbank, where potentially many seedlings are competing for
+            each gap in the canopy.
+            <br><span id="ns">next slide</span><br>
+            We can take a step toward this reality by increasing the number of
+            competing species in each bout to three.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Dynamics:<br> <span class="fragment strike" data-fragment-index=1>Neutral Cycles</span><br> <span class="fragment" data-fragment-index=1>Stable Fixed Point(!)</span></h4>
-					<div class="fullwidth tomiddle wnotes" style="height:100%;">
-						<div style="height:24%;">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:87%;padding:0;margin:0;" src="Images/RPS.svg">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2b_time.png">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F3b_time.png"><br>
-						</div>
-						<div style="height:24%;">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fa_t.png">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2a_time.png">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F3a_time.png"><br>
-						</div>
-						<div style="height:24%;">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fd_t.png">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2d_time.png">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F3d_time.png"><br>
-						</div>
-						<div style="height:24%;">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fc_t.png">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2c_time.png">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F3c_time.png">
-						</div>
-			    </div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						So, how does this change affect the dynamics?
-						<br><span id="ns">next slide</span><br>
-						Remarkably, each of these neutral centers now becomes a stable fixed point attractor.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Parameterizing HOI</h4>
+           <div class="wnotes">
+            <div class="fragment fade-out" data-fragment-index=1 style="padding-top:5%;">
+              <img class="plain" style="display:inline-block;width:35%;margin-right:15%;vertical-align:middle;" src="Images/icon3-1.svg">
+              <img class="plain" style="display:inline-block;width:45%;vertical-align:middle;" src="Images/icon3.svg">
+            </div>
+            <img class="plain fragment current-visible" data-fragment-index=1 style="position:absolute;top:300px;left:50px;width:100%;" src="Images/pairwise_hoi.png">
+            <img class="plain fragment" data-fragment-index=2 style="position:absolute;top:300px;left:50px;width:100%;" src="Images/pairwise_hoi_2.png">
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            Unfortunately, even this small change faces us with a dilemma. We
+            can consider true HOI in which there is a coeficient for each unique
+            triplet of interacting species, but then our number of parameters in
+            the model quickly becomes intractable from an empirical standpoint.
+            An alternative is to consider an interaction chain,
+            <br><span id="ns">next slide</span><br>
+            in which first two of the species compete and then the winner of
+            this pairwise bout competes with the third species to determine
+            the overall winner. This has the advantage of reducing the number of
+            parameters to exactly that needed for the pairwise case, but comes
+            with its own shortcomming: now the order of interactions matters.
+            For instance, in this example, if we re-ordered the interactions
+            such that the orange seedling interacts first with the purple
+            <br><span id="ns">next slide</span><br>
+            seedling, rather than the blue, we see that it is purple, rather
+            than orange that advances to the second bout producing a new interaction
+            that wasn't present in the previous chain. If blue is able to
+            defeat purple then the final victor can also differ.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Dynamics: Stable Fixed Point (Faster!)</h4>
-					<div class="fullwidth tomiddle wnotes" style="height:100%;">
-						<div style="display:inline-block;vertical-align:middle;width:20%;">
-							<img class="plain" style="margin-left:150px;" src="Images/Fa_t.png">
-						</div>
-						<div style="display:inline-block;vertical-align:middle;width:75%;height:100%;">
-							<div style="height:24%;">
-								<img class="plain" style="display:inline-block;width:200px;margin:0;padding:0;vertical-align:middle;" src="Images/icon2.svg">
-								<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2d_time.png">
-							</div>
-							<div style="height:24%;">
-								<img class="plain" style="display:inline-block;width:200px;margin:0;padding:0;vertical-align:middle;" src="Images/icon3-1.svg">
-								<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F3d_time_.png">
-							</div>
-							<div class="fragment" data-fragment-index=1  style="height:24%;">
-								<img class="plain" style="display:inline-block;width:200px;margin:0;padding:0;vertical-align:middle;" src="Images/icon4.svg">
-								<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F4d_time_.png">
-							</div>
-							<div class="fragment" data-fragment-index=2 style="height:24%;">
-								<img class="plain" style="display:inline-block;width:200px;margin:0;padding:0;vertical-align:middle;" src="Images/icon5.svg">
-								<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F5d_time_.png">
-							</div>
-						</div>
-			    </div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						What happens when we increase the number of competitors per bout to four?
-						<br><span id="ns">next slide</span><br>
-						or five?
-						<br><span id="ns">next slide</span><br>
-						The speed of convergence increases with increased number of
-						competitors in each bout. Remarkably, however, the equilibrium
-						remains unchanged regardless of the number of competitors per bout.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Still Consistent with Replicator Dynamics</h4>
+           <div class="wnotes">
+            <div style="padding-top:15%;line-height:5%;">
+              <p>
+                <span class="fragment semi-fade-out" data-fragment-index=1>$$\dfrac{\text{d} x_i }{\text{d} t} = \sum_j P_{ij} x_i x_j$$</span>
+                <span class="fragment" data-fragment-index=1>$$\dfrac{\text{d} x_i }{\text{d} t} = \sum_j P_{ijk} x_i x_j x_k$$</span>
+              </p>
+              <p class="fragment" data-fragment-index=1>
+                where $\mathbf{P}$ is a tensor in which $$P_{ijk} = 2 H_{ij} H_{ik} - H_{ji} H_{jk} - H_{ki} H_{kj}$$
+              </p>
+            </div>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            This change does not, however, break equivalence with replicator
+            dynamics. Instead, the payoff matrix now becomes
+            <br><span id="ns">next slide</span><br>
+            a payoff tensor with as many indices as there are interacting
+            seedlings in each competetive bout (in this case three). Furthermore, because we are
+            defining the HOI in terms of a sequence of pairwise competitions, we
+            can write this tensor $\mathbf{P}$ in terms of the coefficients of
+            the tournament matrix $\mathbf{H}$.
+          </aside>
+        </section>
 
-				<section class="center" data-background-color="#8e4fc4">
-					<!-- <h4 id="header">Conclusions</h4> -->
-			 	  <div class="wnotes">
-						<div style="color:#111111;width:80%;margin:10%;">
-							<h2 style="color:#111111;">Conclusions</h2>
-							<ul>
-								<li style="padding-top:1%;">The addition of higher order interactions stabilize the dynamics but do not change the equilibrium</li>
-								<li style="padding-top:1%;">Higher orders of higher order interactions speed up convergence to the equilibrium</li>
-								<li style="padding-top:1%;">This is all despite not adding any new information/parameters into the model!</li>
-							</ul>
-			    	</div>
-				  </div>
-					<aside class="notes">
-						This small, and rather intuitive, modification to our dynamical model
-						has a profound effect on the dynamics, changing from neutral cycles
-						to convergence to a fixed point. This convergence can be accelerated by
-						increasing the number of individuals competing in each bout. Finally,
-						and most surprisingly, this is all without adding any information
-						into the system -- we still use the pairwise interaction probabilities
-						to determine the victor of these higher-order interactions.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Dynamics:<br> <span class="fragment strike" data-fragment-index=1>Neutral Cycles</span><br> <span class="fragment" data-fragment-index=1>Stable Fixed Point(!)</span></h4>
+          <div class="fullwidth tomiddle wnotes" style="height:100%;">
+            <div style="height:24%;">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:87%;padding:0;margin:0;" src="Images/RPS.svg">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2b_time.png">
+              <img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F3b_time.png"><br>
+            </div>
+            <div style="height:24%;">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fa_t.png">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2a_time.png">
+              <img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F3a_time.png"><br>
+            </div>
+            <div style="height:24%;">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fd_t.png">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2d_time.png">
+              <img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F3d_time.png"><br>
+            </div>
+            <div style="height:24%;">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fc_t.png">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2c_time.png">
+              <img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F3c_time.png">
+            </div>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            So, how does this change affect the dynamics?
+            <br><span id="ns">next slide</span><br>
+            Remarkably, each of these neutral centers now becomes a stable fixed point attractor.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Relation to Prior Models</h4>
-					<div class="fullwidth wnotes" style="position:absolute;top:10%;">
-						<div>
-							<ul>
-								<li style="margin:2%;" class="fragment semi-fade-out" data-fragment-index=1>
-									Neutral Theory of Biodiversity (<a href="http://press.princeton.edu/titles/7105.html">Hubbell 2001</a>)
-								</li>
-								<li style="list-style: none;" class="fragment semi-fade-out" data-fragment-index=1>
-									$$f_i = d_i = 1 \text{, } H_{ij} = H_{ji} = 0.5$$
-								</li>
-								<li style="margin:2%;" class="fragment semi-fade-out" data-fragment-index=1>
-									Competitive Tournaments (<a href="http://www.pnas.org/content/108/14/5638.long">Allesina &amp; Levine 2011</a>)
-								</li>
-								<li style="list-style: none;" class="fragment semi-fade-out" data-fragment-index=1>
-									$$f_i = d_i = 1 \text{, } (H_{ij}, H_{ji}) = \begin{cases}
-		    					(1,0)& \text{w.p. } 0.5\\ (0,1) & \text{otherwise} \end{cases}$$
-								</li>
-								<li style="margin:2%;" class="fragment semi-fade-out" data-fragment-index=1>
-									Competitive Hypertournaments
-								</li>
-								<li style="list-style: none;" class="fragment semi-fade-out" data-fragment-index=1>
-									$$f_i = d_i = 1 \text{, } \text{any nonnegative } (H_{ij}, H_{ji}): H_{ij} + H_{ji} = 1$$
-								</li>
-								<li style="margin:2%;" class="fragment highlight-red" data-fragment-index=1>
-									General Model
-								</li>
-								<li style="list-style: none;">
-									<span class="fragment highlight-red" data-fragment-index=1>
-										$$\text{any nonnegative } f_i, d_i, (H_{ij}, H_{ji}): H_{ij} + H_{ji} = 1$$
-									</span>
-								</li>
-							</ul>
-						</div>
-			    </div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						These results provide a possible mechanism for the coexistence of
-						large numbers of species such as we see in nature, but everything thus
-						far has been under the unrealistic assumption of physiological equivalence.
-						What happens when we turn to the fully general model
-						<br><span id="ns">next slide</span><br>
-						with arbitrary physiological parameters as well as victory
-						probabilities?
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Dynamics: Stable Fixed Point (Faster!)</h4>
+          <div class="fullwidth tomiddle wnotes" style="height:100%;">
+            <div style="display:inline-block;vertical-align:middle;width:20%;">
+              <img class="plain" style="margin-left:150px;" src="Images/Fa_t.png">
+            </div>
+            <div style="display:inline-block;vertical-align:middle;width:75%;height:100%;">
+              <div style="height:24%;">
+                <img class="plain" style="display:inline-block;width:200px;margin:0;padding:0;vertical-align:middle;" src="Images/icon2.svg">
+                <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2d_time.png">
+              </div>
+              <div style="height:24%;">
+                <img class="plain" style="display:inline-block;width:200px;margin:0;padding:0;vertical-align:middle;" src="Images/icon3-1.svg">
+                <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F3d_time_.png">
+              </div>
+              <div class="fragment" data-fragment-index=1  style="height:24%;">
+                <img class="plain" style="display:inline-block;width:200px;margin:0;padding:0;vertical-align:middle;" src="Images/icon4.svg">
+                <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F4d_time_.png">
+              </div>
+              <div class="fragment" data-fragment-index=2 style="height:24%;">
+                <img class="plain" style="display:inline-block;width:200px;margin:0;padding:0;vertical-align:middle;" src="Images/icon5.svg">
+                <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F5d_time_.png">
+              </div>
+            </div>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            What happens when we increase the number of competitors per bout to four?
+            <br><span id="ns">next slide</span><br>
+            or five?
+            <br><span id="ns">next slide</span><br>
+            The speed of convergence increases with increased number of
+            competitors in each bout. Remarkably, however, the equilibrium
+            remains unchanged regardless of the number of competitors per bout.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Different Physiological Rates</h4>
-			 	  <div class="wnotes" style="padding-top:5%;">
-						<img class="plain" style="display:inline-block;width:35%;" src="Images/fertility.png">
-						<img class="plain" style="display:inline-block;width:35%;padding-left:15%;" src="Images/death.png">
-						<h2>What happens when these rates are alowed to vary?</h2>
-			    </div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						In other words, what happens when different species die and
-						reproduce at different rates?
-					</aside>
-				</section>
+        <section class="center" data-background-color="#8e4fc4">
+          <!-- <h4 id="header">Conclusions</h4> -->
+           <div class="wnotes">
+            <div style="color:#111111;width:80%;margin:10%;">
+              <h2 style="color:#111111;">Conclusions</h2>
+              <ul>
+                <li style="padding-top:1%;">The addition of higher order interactions stabilize the dynamics but do not change the equilibrium</li>
+                <li style="padding-top:1%;">Higher orders of higher order interactions speed up convergence to the equilibrium</li>
+                <li style="padding-top:1%;">This is all despite not adding any new information/parameters into the model!</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            This small, and rather intuitive, modification to our dynamical model
+            has a profound effect on the dynamics, changing from neutral cycles
+            to convergence to a fixed point. This convergence can be accelerated by
+            increasing the number of individuals competing in each bout. Finally,
+            and most surprisingly, this is all without adding any information
+            into the system -- we still use the pairwise interaction probabilities
+            to determine the victor of these higher-order interactions.
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Dynamics:<br>
-							<span class="fragment strike" data-fragment-index=4>Unstable Cycles</span><br>
-							<span class="fragment" data-fragment-index=4>Stable Fixed Point</span></h4>
-					<div class="fullwidth tomiddle wnotes" style="height:100%;">
-						<div style="height:24%;">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:87%;padding:0;margin:0;" src="Images/RPS.svg">
-							<img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs2b_time.png">
-							<img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3b_time.png"><br>
-						</div>
-						<div style="height:24%;">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fa_t.png">
-							<img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs2a_time.png">
-							<img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3a_time.png"><br>
-						</div>
-						<div style="height:24%;">
-							<img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fd_t.png">
-							<img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs2d_time.png">
-							<img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3d_time.png"><br>
-						</div>
-						<div style="height:24%;">
-							<img class="plain fragment" data-fragment-index=3 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fc_t.png">
-							<img class="plain fragment" data-fragment-index=3 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs2c_time.png">
-							<img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3c_time.png">
-						</div>
-					</div>
-					<h4 id="citation"></h4> <!-- Neccessary for proper header location -->
-					<aside class="notes">
-						In this case, we see that the rock-paper-scissors dynamics are no longer
-						neutral cycles, but rather unstable. The cycles are amplifying and will eventually
-						lead to extinction and monodominance. This is also seen in the second
-						<br><span id="ns">next slide</span><br>
-						and third
-						<br><span id="ns">next slide</span><br>
-						networks from the before examples.
-						<br><span id="ns">next slide</span><br>
-						In the case of the dynamically-fragile four-species case, we see
-						that this modification of the physiological parameters leads to the
-						rapid extinction of one of the species, making the number of
-						remaining species odd, and those remaining also show the amplifying
-						cylclical behavior. When we sample three species for each
-						competetive bout,
-						<br><span id="ns">next slide</span><br>
-						we see the recovery of a stable fixed point for all cases, with the
-						exception of the special case, where now an odd number of species
-						coexist stably.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Relation to Prior Models</h4>
+          <div class="fullwidth wnotes" style="position:absolute;top:10%;">
+            <div>
+              <ul>
+                <li style="margin:2%;" class="fragment semi-fade-out" data-fragment-index=1>
+                  Neutral Theory of Biodiversity (<a href="http://press.princeton.edu/titles/7105.html">Hubbell 2001</a>)
+                </li>
+                <li style="list-style: none;" class="fragment semi-fade-out" data-fragment-index=1>
+                  $$f_i = d_i = 1 \text{, } H_{ij} = H_{ji} = 0.5$$
+                </li>
+                <li style="margin:2%;" class="fragment semi-fade-out" data-fragment-index=1>
+                  Competitive Tournaments (<a href="http://www.pnas.org/content/108/14/5638.long">Allesina &amp; Levine 2011</a>)
+                </li>
+                <li style="list-style: none;" class="fragment semi-fade-out" data-fragment-index=1>
+                  $$f_i = d_i = 1 \text{, } (H_{ij}, H_{ji}) = \begin{cases}
+                  (1,0)& \text{w.p. } 0.5\\ (0,1) & \text{otherwise} \end{cases}$$
+                </li>
+                <li style="margin:2%;" class="fragment semi-fade-out" data-fragment-index=1>
+                  Competitive Hypertournaments
+                </li>
+                <li style="list-style: none;" class="fragment semi-fade-out" data-fragment-index=1>
+                  $$f_i = d_i = 1 \text{, } \text{any nonnegative } (H_{ij}, H_{ji}): H_{ij} + H_{ji} = 1$$
+                </li>
+                <li style="margin:2%;" class="fragment highlight-red" data-fragment-index=1>
+                  General Model
+                </li>
+                <li style="list-style: none;">
+                  <span class="fragment highlight-red" data-fragment-index=1>
+                    $$\text{any nonnegative } f_i, d_i, (H_{ij}, H_{ji}): H_{ij} + H_{ji} = 1$$
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            These results provide a possible mechanism for the coexistence of
+            large numbers of species such as we see in nature, but everything thus
+            far has been under the unrealistic assumption of physiological equivalence.
+            What happens when we turn to the fully general model
+            <br><span id="ns">next slide</span><br>
+            with arbitrary physiological parameters as well as victory
+            probabilities?
+          </aside>
+        </section>
 
-				<section class="center" data-background-color="#b65067">
-					<div class="wnotes">
-						<div style="color:#111111;width:80%;margin:10%;">
-							<h2 style="color:#111111;">Conclusions</h2>
-							<ul>
-								<li style="padding-top:1%;">This theory relies on higher-order interactions</li>
-								<li style="padding-top:1%;">Leads to the stable coexistence of an arbitrary number of species</li>
-								<ul style="list-style-type:circle">
-									<li style="padding-top:1%;">Can produce any species abundance distribution</li>
-								</ul>
-								<li style="padding-top:1%;">Is robust to changes in parameters</li>
-								<li style="padding-top:1%;">
-									More experimentally tractable due to parameterization of HOI as direct consequence of pairwise interactions
-								</li>
-								<ul style="list-style-type:circle">
-									<li style="padding-top:1%;">
-										Such interactions chains can arise in nature due to differing scales of space or time
-									</li>
-								</ul>
-							</ul>
-						</div>
-					</div>
-					<aside class="notes">
-						<p>
-						In conclusion, we have presented a theory which allows for the
-						coexistence of very many species, even in the case of randomized
-						interaction and physiological parameters. With the addition of
-						higher-order interactions, the dynamics are stabilized, and this
-						stability is enhanced by incorporating "higher" higher-order
-						interactions. Remarkably, this formulation can yield stable,
-						fixed-point dynamics leading to an arbitrarily specified
-						equilibrium.
-						</p><p>
-						These changes are effected without adding additional information or
-						parameters into the model due to our use of interaction chains of
-						pairwise competitions rather than "true" higher order interactions.
-						This choice both severely reduces the number of parameters in the
-						model and makes it empirically testable.
-						</p><p>
-						Finally, if you see such interaction chains as a limiting
-						assumption, this is actually a very natural interpretation when
-						considering differing scales of space or time. For instance, two
-						seedlings could sprout more closely to each other and only interact
-						with a third after the first competition is already decided.
-						Alternatively, there could be a temporal distinction in which the
-						links of the interaction chain are separated by timescale, for
-						instance if two seedlings sprout first and the third is delayed
-						until after the winner of the first competition is decided.
-						</p>
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Different Physiological Rates</h4>
+           <div class="wnotes" style="padding-top:5%;">
+            <img class="plain" style="display:inline-block;width:35%;" src="Images/fertility.png">
+            <img class="plain" style="display:inline-block;width:35%;padding-left:15%;" src="Images/death.png">
+            <h2>What happens when these rates are alowed to vary?</h2>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            In other words, what happens when different species die and
+            reproduce at different rates?
+          </aside>
+        </section>
 
-				<section class="center">
-					<div class="wnotes" style="height:100%;">
-						<h1 style="position:absolute;top:30%;width:100%;text-align:center;font-size:500%;">Questions?</h1>
-						<p style="position:absolute;bottom:20%;width:100%;text-align:center;"><a href="http://michalska-smith.com/talks/NetSci_06.2017">Slides available on Michalska-Smith.com</a></p>
-					</div>
-					<aside class="notes">
-						<p>
-						Thanks for viewing this presentation, if you have any feedback or
-						questions, please <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#106;&#115;&#109;&#105;&#116;&#104;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;">Email me</a>!
-						</p><p>
-						P.S. there are a couple of supplemental slides after this that I did not present, but show some additional
-						results that are presented in the paper.
-						<p>
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Dynamics:<br>
+              <span class="fragment strike" data-fragment-index=4>Unstable Cycles</span><br>
+              <span class="fragment" data-fragment-index=4>Stable Fixed Point</span></h4>
+          <div class="fullwidth tomiddle wnotes" style="height:100%;">
+            <div style="height:24%;">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:87%;padding:0;margin:0;" src="Images/RPS.svg">
+              <img class="plain" style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs2b_time.png">
+              <img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3b_time.png"><br>
+            </div>
+            <div style="height:24%;">
+              <img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fa_t.png">
+              <img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs2a_time.png">
+              <img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3a_time.png"><br>
+            </div>
+            <div style="height:24%;">
+              <img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fd_t.png">
+              <img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs2d_time.png">
+              <img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3d_time.png"><br>
+            </div>
+            <div style="height:24%;">
+              <img class="plain fragment" data-fragment-index=3 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fc_t.png">
+              <img class="plain fragment" data-fragment-index=3 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs2c_time.png">
+              <img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3c_time.png">
+            </div>
+          </div>
+          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <aside class="notes">
+            In this case, we see that the rock-paper-scissors dynamics are no longer
+            neutral cycles, but rather unstable. The cycles are amplifying and will eventually
+            lead to extinction and monodominance. This is also seen in the second
+            <br><span id="ns">next slide</span><br>
+            and third
+            <br><span id="ns">next slide</span><br>
+            networks from the before examples.
+            <br><span id="ns">next slide</span><br>
+            In the case of the dynamically-fragile four-species case, we see
+            that this modification of the physiological parameters leads to the
+            rapid extinction of one of the species, making the number of
+            remaining species odd, and those remaining also show the amplifying
+            cylclical behavior. When we sample three species for each
+            competetive bout,
+            <br><span id="ns">next slide</span><br>
+            we see the recovery of a stable fixed point for all cases, with the
+            exception of the special case, where now an odd number of species
+            coexist stably.
+          </aside>
+        </section>
 
+        <section class="center" data-background-color="#b65067">
+          <div class="wnotes">
+            <div style="color:#111111;width:80%;margin:10%;">
+              <h2 style="color:#111111;">Conclusions</h2>
+              <ul>
+                <li style="padding-top:1%;">This theory relies on higher-order interactions</li>
+                <li style="padding-top:1%;">Leads to the stable coexistence of an arbitrary number of species</li>
+                <ul style="list-style-type:circle">
+                  <li style="padding-top:1%;">Can produce any species abundance distribution</li>
+                </ul>
+                <li style="padding-top:1%;">Is robust to changes in parameters</li>
+                <li style="padding-top:1%;">
+                  More experimentally tractable due to parameterization of HOI as direct consequence of pairwise interactions
+                </li>
+                <ul style="list-style-type:circle">
+                  <li style="padding-top:1%;">
+                    Such interactions chains can arise in nature due to differing scales of space or time
+                  </li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            <p>
+            In conclusion, we have presented a theory which allows for the
+            coexistence of very many species, even in the case of randomized
+            interaction and physiological parameters. With the addition of
+            higher-order interactions, the dynamics are stabilized, and this
+            stability is enhanced by incorporating "higher" higher-order
+            interactions. Remarkably, this formulation can yield stable,
+            fixed-point dynamics leading to an arbitrarily specified
+            equilibrium.
+            </p><p>
+            These changes are effected without adding additional information or
+            parameters into the model due to our use of interaction chains of
+            pairwise competitions rather than "true" higher order interactions.
+            This choice both severely reduces the number of parameters in the
+            model and makes it empirically testable.
+            </p><p>
+            Finally, if you see such interaction chains as a limiting
+            assumption, this is actually a very natural interpretation when
+            considering differing scales of space or time. For instance, two
+            seedlings could sprout more closely to each other and only interact
+            with a third after the first competition is already decided.
+            Alternatively, there could be a temporal distinction in which the
+            links of the interaction chain are separated by timescale, for
+            instance if two seedlings sprout first and the third is delayed
+            until after the winner of the first competition is decided.
+            </p>
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Introducing Stochasticity</h4>
-				 	<div class="fullwidth wnotes" style="height:100%;">
-						<span style="display:inline-block;height:100%;vertical-align:middle;"></span> <!-- centers vertically -->
-						<img class="plain" style="width:100%;vertical-align:middle;" src="Images/traj.png">
-			  	</div>
-					<h4 id="citation"></h4>
-					<aside class="notes">
-						What happens when we add stochasticity to this framework? This plot
-						depicts stochastic trajectories for a rock-paper-scissors system,
-						when we vary the number of seedlings competing ($m$). Dotted lines
-						correspond to the deterministic approximation. For $m = 1$ and equal
-						physiological rates, one recovers a neutral model. For equal
-						physiological rates and pairwise interactions ($m = 2$) stability is
-						only neutral and the deterministic solution does not describe the
-						stochastic trajectories. Densities fluctuate around the fixed point,
-						but the amplitude of these oscillations is driven by stochasticity,
-						rather than being fixed as in the deterministic case. For higher-
-						order interactions ($m = 3$), densities fluctuate around the stable
-						equilibrium of the deterministic system. When physiological rates
-						are different, the stochastic trajectories are predicted by the
-						deterministic equations. For $m \le 2$, extinctions occur very
-						rapidly, and are driven by the deterministic dynamics. For $m = 3$,
-						trajectories fluctuate around the stable equilibrium. For these
-						simulations the total population abundance was set to $1000$.
-					</aside>
-				</section>
+        <section class="center">
+          <div class="wnotes" style="height:100%;">
+            <h1 style="position:absolute;top:30%;width:100%;text-align:center;font-size:500%;">Questions?</h1>
+            <p style="position:absolute;bottom:20%;width:100%;text-align:center;"><a href="http://michalska-smith.com/talks/NetSci_06.2017">Slides available on Michalska-Smith.com</a></p>
+          </div>
+          <aside class="notes">
+            <p>
+            Thanks for viewing this presentation, if you have any feedback or
+            questions, please <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#106;&#115;&#109;&#105;&#116;&#104;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;">Email me</a>!
+            </p><p>
+            P.S. there are a couple of supplemental slides after this that I did not present, but show some additional
+            results that are presented in the paper.
+            <p>
+          </aside>
+        </section>
 
-				<section>
-					<h4 id="header">Transitivity</h4>
-			 	  <div class="wnotes" style="height:100%;">
-						<span style="display:inline-block;height:100%;vertical-align:middle;"></span> <!-- centers vertically -->
-						<img class="plain" style="display:inline-block;width:43%;vertical-align:middle;" src="Images/transitive_H.png">
-						<img class="plain" style="display:inline-block;width:53%;vertical-align:middle;" src="Images/transitive_7.png">
-			    </div>
-					<h4 id="citation"></h4>
-					<aside class="notes">
-						It is a classic result for tournaments (binary competition
-						probabilities) that intransitivity is necessary for coexistence. In
-						contrast, when we allow for partial dominance in the form of
-						hyper-tournaments we see that this intransitivity need only exist
-						"in-probability" (i.e. rock need only beat scissors <i>most</i> of
-						the time, etc.). Remarkably, when we move to the fully general model
-						with variable physiological rates, we can even break this
-						constraint. As seen in this example, we can have a matrix
-						$\mathbf{H}$ which is completely transitive (interaction
-						probabilities greater than $0.5$ are underlined for clarity) and yet
-						produces stable coexistence.
-					</aside>
-				</section>
+        <section>
+          <h4 id="header">Introducing Stochasticity</h4>
+           <div class="fullwidth wnotes" style="height:100%;">
+            <span style="display:inline-block;height:100%;vertical-align:middle;"></span> <!-- centers vertically -->
+            <img class="plain" style="width:100%;vertical-align:middle;" src="Images/traj.png">
+          </div>
+          <h4 id="citation"></h4>
+          <aside class="notes">
+            What happens when we add stochasticity to this framework? This plot
+            depicts stochastic trajectories for a rock-paper-scissors system,
+            when we vary the number of seedlings competing ($m$). Dotted lines
+            correspond to the deterministic approximation. For $m = 1$ and equal
+            physiological rates, one recovers a neutral model. For equal
+            physiological rates and pairwise interactions ($m = 2$) stability is
+            only neutral and the deterministic solution does not describe the
+            stochastic trajectories. Densities fluctuate around the fixed point,
+            but the amplitude of these oscillations is driven by stochasticity,
+            rather than being fixed as in the deterministic case. For higher-
+            order interactions ($m = 3$), densities fluctuate around the stable
+            equilibrium of the deterministic system. When physiological rates
+            are different, the stochastic trajectories are predicted by the
+            deterministic equations. For $m \le 2$, extinctions occur very
+            rapidly, and are driven by the deterministic dynamics. For $m = 3$,
+            trajectories fluctuate around the stable equilibrium. For these
+            simulations the total population abundance was set to $1000$.
+          </aside>
+        </section>
 
-				<!-- <section>
-					<h4 id="header"></h4>
-			 	  <div class="wnotes">
-						<div style="padding-top:100px;">
+        <section>
+          <h4 id="header">Transitivity</h4>
+           <div class="wnotes" style="height:100%;">
+            <span style="display:inline-block;height:100%;vertical-align:middle;"></span> <!-- centers vertically -->
+            <img class="plain" style="display:inline-block;width:43%;vertical-align:middle;" src="Images/transitive_H.png">
+            <img class="plain" style="display:inline-block;width:53%;vertical-align:middle;" src="Images/transitive_7.png">
+          </div>
+          <h4 id="citation"></h4>
+          <aside class="notes">
+            It is a classic result for tournaments (binary competition
+            probabilities) that intransitivity is necessary for coexistence. In
+            contrast, when we allow for partial dominance in the form of
+            hyper-tournaments we see that this intransitivity need only exist
+            "in-probability" (i.e. rock need only beat scissors <i>most</i> of
+            the time, etc.). Remarkably, when we move to the fully general model
+            with variable physiological rates, we can even break this
+            constraint. As seen in this example, we can have a matrix
+            $\mathbf{H}$ which is completely transitive (interaction
+            probabilities greater than $0.5$ are underlined for clarity) and yet
+            produces stable coexistence.
+          </aside>
+        </section>
 
-						</div>
-			    </div>
-					<h4 id="citation"></h4>
-					<aside class="notes">
-					</aside>
-				</section> -->
-			</div>
-		</div>
+        <!-- <section>
+          <h4 id="header"></h4>
+           <div class="wnotes">
+            <div style="padding-top:100px;">
 
-		<script src="../../reveal.js/lib/js/head.min.js"></script>
-		<script src="../../reveal.js/js/reveal.js"></script>
-		<!-- Custom Javascript -->
+            </div>
+          </div>
+          <h4 id="citation"></h4>
+          <aside class="notes">
+          </aside>
+        </section> -->
+      </div>
+    </div>
+
+    <script src="../../reveal.js/lib/js/head.min.js"></script>
+    <script src="../../reveal.js/js/reveal.js"></script>
+
+    <!-- Custom Javascript -->
     <script>
     $(document).keydown(function(e) {
       var key = e.which;
@@ -993,31 +994,28 @@
       }
     });
     </script>
-		<!-- Reveal.js Settings -->
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-		    width: 1920,
-    		height:1280,
-				margin: 0,
-				minScale: 0.2,
-				maxScale: 1.5,
-				controls: false,
-				progress: true,
-				slideNumber: true,
-				history: true,
-				center: true,
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: '../../reveal.js/plugin/markdown/marked.js' },
-					{ src: '../../reveal.js/plugin/markdown/markdown.js' },
-					{ src: '../../reveal.js/plugin/notes/notes.js', async: true },
-					{ src: '../../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: '../../reveal.js/plugin/math/math.js', async: true }
-				]
-			});
-		</script>
-	</body>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        width: "100%",
+        height:"100%",
+        controls: false,
+        progress: true,
+        slideNumber: true,
+        history: true,
+        center: true,
+        transition: "slide", // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: "../../reveal.js/plugin/markdown/marked.js" },
+          { src: "../../reveal.js/plugin/markdown/markdown.js" },
+          { src: "../../reveal.js/plugin/notes/notes.js", async: true },
+          { src: "../../reveal.js/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: "../../reveal.js/plugin/math/math.js", async: true }
+        ]
+      });
+    </script>
+  </body>
 </html>
