@@ -55,8 +55,8 @@ for bibitem in biblist:
             journal = info
         if infotype == 'url':
             jrnlink = info
-        if infotype == 'OA':
-            OA = info
+        if infotype == 'OA' and info.lower() == "true":
+            OA = True
         if infotype == "arxiv":
             prelink = info
 
