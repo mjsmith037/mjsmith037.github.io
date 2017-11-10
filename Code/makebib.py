@@ -10,7 +10,7 @@ def parseauth(author):
     cofirst = ''
     if re.search("textsuperscript", lastname):
         lastname = lastname.replace('\\textsuperscript*', '')
-        cofirst = '<sup>&#42;</sup>'
+        cofirst = '<sup title="These authors contributed equally to this publication">&#42;</sup>'
     cc = 'author'
     if (re.match('Michalska-Smith|Smith', lastname) and firstname == 'Matthew J.'):
         cc = cc + ' pi'
