@@ -5,47 +5,28 @@
 
     <title>101st ESA: 08.2016</title>
 
-    <link rel="stylesheet" href="/reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="/reveal.js/css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
 
     <!-- personal css file -->
-    <link rel="stylesheet" href="/talks/ESA_08.2016/main.css">
+    <link rel="stylesheet" href="main.css">
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="/reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
 
     <!-- font-linking -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
-      crossorigin="anonymous">
-
-    <!-- file partitioning -->
-    <script src="http://www.w3schools.com/lib/w3data.js"></script>
-
+    <script src="https://use.fontawesome.com/ca6fc79211.js"></script>
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
-    			  integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
-    			  crossorigin="anonymous"></script>
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( "link" );
-      link.rel = "stylesheet";
-      link.type = "text/css";
-      link.href = window.location.search.match( /print-pdf/gi ) ? "/reveal.js/css/print/pdf.css" : "/reveal.js/css/print/paper.css";
-      document.getElementsByTagName( "head" )[0].appendChild( link );
-    </script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
   </head>
   <body>
-    <!-- TODO: adaptive notes pane -->
     <div class="reveal">
       <div class="slides">
         <section class="center">
           <div class="wnotes">
             <!-- <h1>Identifying unique species roles</h1>
 		        <p>by characterizing differences in ecological network structure</p> -->
-            <img class="plain" src="/talks/ESA_08.2016/Images/oldtitle.png" style="width:100%; max-height:50vh !important;">
+            <img class="plain" src="Images/oldtitle.png" style="width:100%; max-height:50vh !important;">
             <h5 style="margin:5vh auto;">Matt Michalska-Smith</h5>
           </div>
           <aside class="notes">
@@ -74,7 +55,7 @@
   					<h1 style="font-size:80%; margin-top:-25px; display:inline-block; line-height:85%;">the<br>role<br>of</h1>
   					<h1 style="font-size:300%; margin-top:-25px; display:inline-block;">Parasites</h1>
   					<p style="font-size:135%; margin-top:-40px;"> in food webs using the group model</p> -->
-            <img class="plain" src="/talks/ESA_08.2016/Images/newtitle.png" style="width:100%; max-height:50vh !important;">
+            <img class="plain" src="Images/newtitle.png" style="width:100%; max-height:50vh !important;">
             <p style="position:relative; text-align:left; margin:5vh 5vw;">
               <b>Matt Michalska-Smith</b><br>
               Liz Sander<br>
@@ -95,9 +76,9 @@
             <h3 style="margin-bottom:10vh; font-weight:bold;">Acknowledgements</h3>
             <table>
               <tr>
-                <td><img class="plain" src="/talks/ESA_08.2016/Images/L.Sander.jpg" style="margin:0; padding:0; height:20vh; max-width:15vw;"></td>
-                <td><img class="plain" src="/talks/ESA_08.2016/Images/S.Allesina.jpg" style="margin:0; padding:0; height:20vh;"></td>
-                <td><img class="plain" src="/talks/ESA_08.2016/Images/M.Pascual.jpg" style="margin:0; padding:0; height:20vh;"></td>
+                <td><img class="plain" src="Images/L.Sander.jpg" style="margin:0; padding:0; height:20vh; max-width:15vw;"></td>
+                <td><img class="plain" src="Images/S.Allesina.jpg" style="margin:0; padding:0; height:20vh;"></td>
+                <td><img class="plain" src="Images/M.Pascual.jpg" style="margin:0; padding:0; height:20vh;"></td>
 
               </tr>
               <tr>
@@ -195,7 +176,7 @@
         <section class="full" data-transition="slide-in fade-out">
           <!-- TODO: add concom links to fw and reveal/highlight -->
           <h4 id="header">introduction: Food-Webs</h4>
-          <img class="plain wnotes" src="/talks/ESA_08.2016/Figures/FoodWeb_animals.png">
+          <img class="plain wnotes" src="Figures/FoodWeb_animals.png">
           <h4 id="citation"></h4> <!-- REQUIRED FOR PROPER HEADER LOCATION -->
           <aside class="notes">
             This is a toy example of a food-web. Note that the links point from
@@ -213,7 +194,7 @@
         <section class="full" data-transition="fade-in slide-out">
           <!-- TODO: add concom links to fw and reveal/highlight -->
           <h4 id="header">introduction: Food-Webs</h4>
-          <img class="plain wnotes" src="/talks/ESA_08.2016/Figures/FoodWeb_dots.png">
+          <img class="plain wnotes" src="Figures/FoodWeb_dots.png">
           <h4 id="citation"></h4> <!-- REQUIRED FOR PROPER HEADER LOCATION -->
           <aside class="notes">
             When the additional information of ecological classifications is
@@ -244,33 +225,33 @@
           "  <tr" => "<tr"
           "th>  </th" => "th></th"
           " align="right"" => ""
-          "<th>(\w+)</th>" => "<th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/$1.svg"></th>"
-          "<td>(\D+2?)</td>" =>  "<td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/$1.svg"></td>"
+          "<th>(\w+)</th>" => "<th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/$1.svg"></th>"
+          "<td>(\D+2?)</td>" =>  "<td><img style="float:right;" class="plain matimg" src="Images/animals/$1.svg"></td>"
           -->
           <table style="margin-top:5vh;" class="matrix wnotes">
             <tr>
               <th></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/acorn.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/rabbit2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/squirrel2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/deer2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/fox2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/owl.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/bear2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/worm.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/tick.svg"></th>
             </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/rabbit2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/squirrel2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/fox2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
           </table>
           <aside class="notes">
               Every network can also be viewed as a matrix. When we do this, the
@@ -293,33 +274,33 @@
             "  <tr" => "<tr"
             "th>  </th" => "th></th"
             " align="right"" => ""
-            "<th>(\w+)</th>" => "<th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/$1.svg"></th>"
-            "<td>(\D+2?)</td>" =>  "<td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/$1.svg"></td>"
+            "<th>(\w+)</th>" => "<th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/$1.svg"></th>"
+            "<td>(\D+2?)</td>" =>  "<td><img style="float:right;" class="plain matimg" src="Images/animals/$1.svg"></td>"
             -->
             <table style="margin-top:5vh;" class="matrix wnotes">
               <tr>
                 <th></th>
-                <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></th>
-                <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></th>
-                <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></th>
-                <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></th>
-                <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></th>
-                <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></th>
-                <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></th>
-                <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></th>
-                <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></th>
-                <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></th>
+                <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></th>
+                <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/acorn.svg"></th>
+                <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/rabbit2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/squirrel2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/deer2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/fox2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/owl.svg"></th>
+                <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/bear2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/worm.svg"></th>
+                <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/tick.svg"></th>
               </tr>
-              <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
-              <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
-              <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
-              <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> </tr>
-              <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> </tr>
-              <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
-              <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
-              <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> </tr>
-              <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td class="parasite">1</td> <td class="parasite">1</td> <td class="parasite">1</td> <td>0</td> <td>0</td> </tr>
-              <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td class="parasite">1</td> <td class="parasite">1</td> <td class="parasite">1</td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/rabbit2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/squirrel2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/fox2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td class="parasite">1</td> <td class="parasite">1</td> <td class="parasite">1</td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td class="parasite">1</td> <td class="parasite">1</td> <td class="parasite">1</td> <td>0</td> <td>0</td> </tr>
             </table>
             <aside class="notes">
               One unique feature of symbionts, such as parasites, is that they can
@@ -361,27 +342,27 @@
           <table style="margin-top:5vh;" class="matrix wnotes">
             <tr>
               <th></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/acorn.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/rabbit2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/squirrel2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/deer2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/fox2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/owl.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/bear2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/worm.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/tick.svg"></th>
             </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/rabbit2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/squirrel2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/fox2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
           </table>
           <h4 id="citation"></h4> <!-- REQUIRED FOR PROPER HEADER LOCATION -->
           <aside class="notes">
@@ -398,27 +379,27 @@
           <table style="margin-top:5vh;" class="matrix wnotes">
             <tr>
               <th></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></th>
-              <th id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></th>
-              <th id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/acorn.svg"></th>
+              <th id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/rabbit2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/squirrel2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/deer2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/fox2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/bear2.svg"></th>
+              <th id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/owl.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/worm.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/tick.svg"></th>
             </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td id="gbc">1</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
-            <tr style="border-top:5px solid black;"> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td id="gbc">1</td> <td>1</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td id="gbc">1</td> <td>0</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td id="gbc">1</td> <td>1</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td>1</td> </tr>
-            <tr style="border-top:5px solid black;"> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td id="gbc">1</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+            <tr style="border-top:5px solid black;"> <td><img style="float:right;" class="plain matimg" src="Images/animals/rabbit2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td id="gbc">1</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/squirrel2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td id="gbc">1</td> <td>0</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/fox2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td id="gbc">1</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td>1</td> </tr>
+            <tr style="border-top:5px solid black;"> <td><img style="float:right;" class="plain matimg" src="Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
           </table>
           <h4 id="citation"></h4> <!-- REQUIRED FOR PROPER HEADER LOCATION -->
           <aside class="notes">
@@ -445,27 +426,27 @@
           <table style="margin-top:5vh;" class="matrix wnotes">
             <tr>
               <th></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></th>
-              <th id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></th>
-              <th id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></th>
-              <th id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></th>
-              <th id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></th>
-              <th><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/owl.svg"></th>
+              <th id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/acorn.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/worm.svg"></th>
+              <th id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/rabbit2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/bear2.svg"></th>
+              <th id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/squirrel2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/deer2.svg"></th>
+              <th id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/fox2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/tick.svg"></th>
             </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc" id="gbc">1</td> <td>1</td> <td id="gbc">1</td> <td>1</td> <td id="gbc">0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc" id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> </tr>
-            <tr style="border-top:5px solid black;"> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">1</td> <td>1</td> <td id="gbc">0</td> <td>0</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc" id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> </tr>
-            <tr style="border-top:5px solid black;"> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">1</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> </tr>
-            <tr style="border-top:5px solid black;"> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">1</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> </tr>
-            <tr style="border-top:5px solid black;"> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> </tr>
-            <tr> <td><img style="float:right;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc" id="gbc">1</td> <td>1</td> <td id="gbc">1</td> <td>1</td> <td id="gbc">0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc" id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> </tr>
+            <tr style="border-top:5px solid black;"> <td><img style="float:right;" class="plain matimg" src="Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">1</td> <td>1</td> <td id="gbc">0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc" id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> </tr>
+            <tr style="border-top:5px solid black;"> <td><img style="float:right;" class="plain matimg" src="Images/animals/rabbit2.svg"></td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> </tr>
+            <tr style="border-top:5px solid black;"> <td><img style="float:right;" class="plain matimg" src="Images/animals/squirrel2.svg"></td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> </tr>
+            <tr style="border-top:5px solid black;"> <td><img style="float:right;" class="plain matimg" src="Images/animals/fox2.svg"></td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="plain matimg" src="Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> </tr>
           </table>
           <h4 id="citation"></h4> <!-- REQUIRED FOR PROPER HEADER LOCATION -->
           <aside class="notes">
@@ -479,72 +460,72 @@
           <div class="wnotes">
             <table style="margin-top:5vh; width:100%; position:absolute; table-layout:fixed;">
               <tr>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></td>
-                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></td>
-                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/acorn.svg"></td>
+                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/rabbit2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/squirrel2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/deer2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/fox2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/bear2.svg"></td>
+                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/owl.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/worm.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/tick.svg"></td>
               </tr>
             </table>
             <table style="margin-top:50vh; width:100%; position:absolute; table-layout:fixed;">
               <tr>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></td>
-                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></td>
-                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></td>
-                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></td>
-                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/owl.svg"></td>
+                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/acorn.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/worm.svg"></td>
+                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/rabbit2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/bear2.svg"></td>
+                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/squirrel2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/deer2.svg"></td>
+                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/fox2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/tick.svg"></td>
               </tr>
             </table>
             <table class="fragment fade-in" data-fragment-index="0" style="margin-top:5vh; width:100%; position:absolute; table-layout:fixed;">
               <tr>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></td>
-                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></td>
-                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></td>
-                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></td>
-                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/acorn.svg"></td>
+                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/rabbit2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/squirrel2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/deer2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/fox2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/bear2.svg"></td>
+                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/owl.svg"></td>
+                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/worm.svg"></td>
+                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/tick.svg"></td>
               </tr>
             </table>
             <table class="fragment fade-in" data-fragment-index="0"  style="margin-top:50vh; width:100%; position:absolute; table-layout:fixed;">
               <tr>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></td>
-                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></td>
-                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></td>
-                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></td>
-                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></td>
-                <td><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></td>
-                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></td>
-                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/owl.svg"></td>
+                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/acorn.svg"></td>
+                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/worm.svg"></td>
+                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/rabbit2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/bear2.svg"></td>
+                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/squirrel2.svg"></td>
+                <td><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/deer2.svg"></td>
+                <td id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/fox2.svg"></td>
+                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/tick.svg"></td>
               </tr>
             </table>
             <table class="fragment fade-in" data-fragment-index="2" style="margin-top:5vh; width:100%; position:absolute; table-layout:fixed;">
               <tr>
-                <td style="background-color:#abdda4"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></td>
-                <td style="background-color:#abdda4"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></td>
-                <td style="background-color:#2b83ba" id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></td>
-                <td style="background-color:#2b83ba"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></td>
-                <td style="background-color:#2b83ba"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></td>
-                <td style="background-color:#fdae61"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></td>
-                <td style="background-color:#fdae61"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></td>
-                <td style="background-color:#fdae61" id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></td>
-                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></td>
-                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></td>
+                <td style="background-color:#abdda4"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></td>
+                <td style="background-color:#abdda4"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/acorn.svg"></td>
+                <td style="background-color:#2b83ba" id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/rabbit2.svg"></td>
+                <td style="background-color:#2b83ba"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/squirrel2.svg"></td>
+                <td style="background-color:#2b83ba"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/deer2.svg"></td>
+                <td style="background-color:#fdae61"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/fox2.svg"></td>
+                <td style="background-color:#fdae61"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/bear2.svg"></td>
+                <td style="background-color:#fdae61" id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/owl.svg"></td>
+                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/worm.svg"></td>
+                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/tick.svg"></td>
               </tr>
             </table>
             <table style="position:absolute; margin-top:15vh; font-size:80%; white-space:nowrap;">
@@ -557,16 +538,16 @@
             </table>
             <table class="fragment fade-in" data-fragment-index="2" style="margin-top:50vh; width:100%; position:absolute; table-layout:fixed;">
               <tr>
-                <td style="background-color:#abdda4;"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/grass.svg"></td>
-                <td style="background-color:#fdae61;"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/owl.svg"></td>
-                <td style="background-color:#abdda4;" id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/acorn.svg"></td>
-                <td style="background-color:#d7191c;;"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/worm.svg"></td>
-                <td style="background-color:#2b83ba;" id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/rabbit2.svg"></td>
-                <td style="background-color:#fdae61;"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/bear2.svg"></td>
-                <td style="background-color:#2b83ba;" id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/squirrel2.svg"></td>
-                <td style="background-color:#2b83ba;"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/deer2.svg"></td>
-                <td style="background-color:#fdae61;" id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/fox2.svg"></td>
-                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="/talks/ESA_08.2016/Images/animals/tick.svg"></td>
+                <td style="background-color:#abdda4;"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/grass.svg"></td>
+                <td style="background-color:#fdae61;"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/owl.svg"></td>
+                <td style="background-color:#abdda4;" id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/acorn.svg"></td>
+                <td style="background-color:#d7191c;;"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/worm.svg"></td>
+                <td style="background-color:#2b83ba;" id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/rabbit2.svg"></td>
+                <td style="background-color:#fdae61;"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/bear2.svg"></td>
+                <td style="background-color:#2b83ba;" id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/squirrel2.svg"></td>
+                <td style="background-color:#2b83ba;"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/deer2.svg"></td>
+                <td style="background-color:#fdae61;" id="gbc"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/fox2.svg"></td>
+                <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="plain matimg" src="Images/animals/tick.svg"></td>
               </tr>
             </table>
             <table style="position:absolute; margin-top:60vh; font-size:80%; white-space:nowrap;">
@@ -633,7 +614,7 @@
         <section class="full">
           <section class="full">
             <h4 id="header">methods: Data</h4>
-            <img class="plain wnotes" style="height:100%;" src="/talks/ESA_08.2016/Figures/DegreeBoxPlot_PuntaBanda_all.svg">
+            <img class="plain wnotes" style="height:100%;" src="Figures/DegreeBoxPlot_PuntaBanda_all.svg">
             <aside class="notes">
               We can summarize this data by looking at the in- and out- degree
               distributions for each of our four categories. Recall that in-degree
@@ -656,13 +637,13 @@
             </aside>
           </section>
           <section class="full">
-            <img class="plain wnotes" style="height:100%;" src="/talks/ESA_08.2016/Figures/DegreeBoxPlot_all_Par.svg">
+            <img class="plain wnotes" style="height:100%;" src="Figures/DegreeBoxPlot_all_Par.svg">
             <aside class="notes">
               Degree distributions for all webs without including concomitant predation links.
             </aside>
           </section>
           <section class="full">
-            <img class="plain wnotes" style="height:100%;" src="/talks/ESA_08.2016/Figures/DegreeBoxPlot_all_ParCon.svg">
+            <img class="plain wnotes" style="height:100%;" src="Figures/DegreeBoxPlot_all_ParCon.svg">
             <aside class="notes">
               Degree distributions for all webs when including concomitant predation links.
             </aside>
@@ -763,8 +744,8 @@
 
         <section class="full">
           <h4 id="header">results: Condensed Graphs</h4>
-          <img class="plain wnotes" style="margin-top:10vh;" src="/talks/ESA_08.2016/Figures/PuntaBanda-ParCon_2_0.dot.svg">
-          <img id="citation" class="citwnotes" src="/talks/ESA_08.2016/Figures/legend.svg" style="width:20vw; border-width:1px;">
+          <img class="plain wnotes" style="margin-top:10vh;" src="Figures/PuntaBanda-ParCon_2_0.dot.svg">
+          <img id="citation" class="citwnotes" src="Figures/legend.svg" style="width:20vw; border-width:1px;">
           <aside class="notes">
             A more concise way to view these networks is to collapse the groups
             into a single node, colored according to the ecological classifications
@@ -781,8 +762,8 @@
 
         <section class="full">
           <h4 id="header">results: Condensed Graphs</h4>
-          <img class="plain wnotes" style="margin-top:10vh;" src="/talks/ESA_08.2016/Figures/PuntaBanda-ParCon_3_0.dot.svg">
-          <img id="citation" class="citwnotes" src="/talks/ESA_08.2016/Figures/legend.svg" style="width:20vw; border-width:1px;">
+          <img class="plain wnotes" style="margin-top:10vh;" src="Figures/PuntaBanda-ParCon_3_0.dot.svg">
+          <img id="citation" class="citwnotes" src="Figures/legend.svg" style="width:20vw; border-width:1px;">
           <aside class="notes">
               Likewise, when we constrain the number of groups to 3, we still see
               consumers coming out, but now we see a group that is mostly parasites
@@ -793,8 +774,8 @@
 
         <section class="full">
           <h4 id="header">results: Condensed Graphs</h4>
-          <img class="plain wnotes" style="margin-top:10vh;" src="/talks/ESA_08.2016/Figures/PuntaBanda-ParCon_5_0.dot.svg">
-          <img id="citation" class="citwnotes" src="/talks/ESA_08.2016/Figures/legend.svg" style="width:20vw; border-width:1px;">
+          <img class="plain wnotes" style="margin-top:10vh;" src="Figures/PuntaBanda-ParCon_5_0.dot.svg">
+          <img id="citation" class="citwnotes" src="Figures/legend.svg" style="width:20vw; border-width:1px;">
           <aside class="notes">
             When we have five groups, something intesting happens: the consumer
             block is split in two. This is suggestive of additional structure
@@ -808,8 +789,8 @@
 
         <section class="full">
           <h4 id="header">results: Condensed Graphs</h4>
-          <img class="plain wnotes" style="margin-top:10vh;" src="/talks/ESA_08.2016/Figures/PuntaBanda-Par_10_0.dot.svg">
-          <img id="citation" class="citwnotes" src="/talks/ESA_08.2016/Figures/legend.svg" style="width:20vw; border-width:1px;">
+          <img class="plain wnotes" style="margin-top:10vh;" src="Figures/PuntaBanda-Par_10_0.dot.svg">
+          <img id="citation" class="citwnotes" src="Figures/legend.svg" style="width:20vw; border-width:1px;">
           <aside class="notes">
             Finally, the highest number of groups we looked at: 10 groups we get
             some uniform groups, and some groups that are still conglomerates.
@@ -886,8 +867,8 @@
       </div>
     </div>
 
-    <script src="/reveal.js/lib/js/head.min.js"></script>
-    <script src="/reveal.js/js/reveal.js"></script>
+    <script src="../../reveal.js/lib/js/head.min.js"></script>
+    <script src="../../reveal.js/js/reveal.js"></script>
 
     <!-- Custom Javascript -->
     <script>
@@ -913,16 +894,16 @@
         history: true,
         center: true,
         transition: "slide", // none/fade/slide/convex/concave/zoom
-        parallaxBackgroundImage: "/talks/ESA_08.2016/Images/background.svg",
+        parallaxBackgroundImage: "Images/background.svg",
         parallaxBackgroundSize: "5000px 1460px",
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: "/reveal.js/plugin/markdown/marked.js" },
-          { src: "/reveal.js/plugin/markdown/markdown.js" },
-          { src: "/reveal.js/plugin/notes/notes.js", async: true },
-          { src: "/reveal.js/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: "/reveal.js/plugin/math/math.js", async: true }
+          { src: "../../reveal.js/plugin/markdown/marked.js" },
+          { src: "../../reveal.js/plugin/markdown/markdown.js" },
+          { src: "../../reveal.js/plugin/notes/notes.js", async: true },
+          { src: "../../reveal.js/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: "../../reveal.js/plugin/math/math.js", async: true }
         ]
       });
     </script>
