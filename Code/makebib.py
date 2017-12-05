@@ -6,10 +6,15 @@ def parseauth(author):
     initials = ''.join([xx[0] + '.' for xx in firstname.split(' ')])
     ## sanitization (latex -> html)
     lastname = lastname.replace("\\'a", '&aacute;')
+    ## co-first-authorship
+    cofirst = ''
+    if re.search("textsuperscript", lastname):
+        lastname = lastname.replace('\\textsuperscript*', '')
+        cofirst = '<sup title="These authors contributed equally to this publication">&#42;</sup>'
     cc = 'author'
-    if ((lastname == 'Smith' or lastname == 'Michalska-Smith') and firstname == 'Matthew J.'):
+    if (re.match('Michalska-Smith|Smith', lastname) and firstname == 'Matthew J.'):
         cc = cc + ' pi'
-    return('<span class="' + cc + '">' + initials + ' ' + lastname + '</span>')
+    return('<span class="' + cc + '">' + initials + ' ' + lastname + '</span>' + cofirst)
 
 #### read in the bibfile
 with open('../Documents/MJSbib.bib', 'r') as bibfile:
@@ -20,12 +25,12 @@ with open('../Documents/MJSbib.bib', 'r') as bibfile:
 biblist = bibtext.split('@')
 
 ## sort array by year so numbers can be assigned
-biblist.sort(key=lambda xx: re.findall(r'ear\s?=\s?{(\d\d\d\d)}', xx), reverse=True)
+biblist.sort(key=lambda xx: re.findall(r'ear\s*?=\s*?{(\d\d\d\d)}', xx), reverse=True)
 
 htmllist = []
 nn = 1
 for bibitem in biblist:
-    if not re.findall(r'ear\s?=\s?{(\d\d\d\d)}', bibitem):
+    if not re.findall(r'ear\s*?=\s*?{(\d\d\d\d)}', bibitem):
         continue
     bibinfo = bibitem.split('\n')
     ## extract the parts of the citation
@@ -34,27 +39,27 @@ for bibitem in biblist:
     ## initialize the links since they are optional
     prelink = ''
     jrnlink = ''
-    shareditlink = ''
     OA = False
     for info in tmp:
+        if len(info) != 2:
+            continue
         infotype = info[0].strip().lower()
+        info = info[1].strip(' {},')
         if infotype == 'title':
-            title = info[1].strip(' {},')
+            title = info
         if infotype == 'author':
-            authlist = info[1].strip(' {},').replace('}', '').replace('{', '').replace('\\textbf', '').split(' and ')
+            authlist = info.replace('}', '').replace('{', '').replace('\\textbf', '').split(' and ')
         if infotype == 'year':
-            year = info[1].strip(' {},')
+            year = info
         if infotype == 'journal':
-            journal = info[1].strip(' {},')
-        if infotype == 'doi':
-            prelink = info[1].strip(' {}e,')
+            journal = info
         if infotype == 'url':
-            jrnlink = info[1].strip(' {},')
-        if infotype == 'sharedit':
-            shareditlink = info[1].strip(' {},')
-        if infotype == 'note':
-            if info[1].strip(' {},') == "Open Access":
-                OA = True
+            jrnlink = info
+        if infotype == 'oa' and info.lower() == "true":
+            OA = True
+        if infotype == "arxiv":
+            prelink = info
+
     #### create the html bibentries
     bibhtml = ['<div class="row publication">',
                '  <div class="col-xs-12 col-sm-10 bibinfo">',
@@ -76,19 +81,14 @@ for bibitem in biblist:
                                  '      <button type="button" class="btn btn-journal">Journal Version</button>',
                                  '    </a></p>']
         if prelink:
-            bibhtml = bibhtml + ['    <p><a target="_blank"  href="' + prelink + '">',
+            bibhtml = bibhtml + ['    <p><a target="_blank"  href="' + prelink + '" title="' + journal + '">',
                                  '      <button type="button" class="btn btn-preprint">Citable Preprint</button>',
                                  '    </a></p>']
         else:
             if bibID != "whirling":
-                if shareditlink == '':
-                    bibhtml = bibhtml + ['    <p><a target="_blank"  href="pdfs/' + bibID + '.pdf">',
-                                         '      <button type="button" class="btn btn-mycopy">Full-Text PDF</button>',
-                                         '    </a></p>']
-                else:
-                    bibhtml = bibhtml + ['    <p><a target="_blank"  href="' + shareditlink + '">',
-                                         '      <button type="button" class="btn btn-mycopy">Full-Text PDF</button>',
-                                         '    </a></p>']
+                bibhtml = bibhtml + ['    <p><a target="_blank"  href="pdfs/' + bibID + '.pdf">',
+                                     '      <button type="button" class="btn btn-mycopy">Full-Text PDF</button>',
+                                     '    </a></p>']
 
     bibhtml = bibhtml + ['  </div>',
                          '</div>']
