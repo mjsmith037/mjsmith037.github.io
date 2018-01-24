@@ -1,0 +1,162 @@
+/*////////////////////////////////// General /////////////////////////////////*/
+body {
+  min-width: 400px;
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 18px;
+  color: #111 !important;
+}
+
+a {
+  color: #080076;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #125454;
+}
+
+div #license {
+  position: absolute;
+  bottom: 20px;
+  margin-left: 50%;
+  height: 15px;
+}
+
+#license {
+  height: 15px;
+}
+
+/*////////////////////////////////// NavBar //////////////////////////////////*/
+.navbar-brand {
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+.navbar {
+  background-color: transparent;
+  border: 0;
+  max-width: 1370px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#navbar a {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar a {
+  color: #0d0c0c !important;
+}
+
+#navbar a:hover {
+  color: #125454 !important;
+}
+
+.navbar .fa {
+  font-size: 16px;
+}
+
+/*///////////////////////////////// Jumbotron ////////////////////////////////*/
+.jumbotron {
+  background: url('Images/MatBanner.png') center center no-repeat;
+  height: 260px;
+  margin-top: -30px;
+}
+
+.jumbotron .overlay-top {
+  height: 75px;
+  position: relative;
+  top: -48px;
+
+  background: rgba(255,255,255,0);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
+  background: -webkit-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+  background: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+  background: -ms-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+  background: -o-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+  background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,1)', endColorstr='rgba(255,255,255,0)');
+}
+
+.jumbotron .overlay-bottom {
+  height: 75px;
+  position: relative;
+  top: 62px;
+
+  background: rgba(255,255,255,0);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  background: -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1));
+  background: -ms-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  background: -o-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,0)', endColorstr='rgba(255,255,255,1)');
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron .overlay-top {
+    height: 75px;
+    position: relative;
+    top: -30px;
+
+    background: rgba(255,255,255,0);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -ms-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -o-linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,1)', endColorstr='rgba(255,255,255,0)');
+  }
+
+  .jumbotron .overlay-bottom {
+    height: 75px;
+    position: relative;
+    top: 80px;
+
+    background: rgba(255,255,255,0);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    background: -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1));
+    background: -ms-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    background: -o-linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,0)', endColorstr='rgba(255,255,255,1)');
+  }
+}
+
+.jumbotron .container {
+  max-width: 925px;
+  position: relative;
+  top: -130px;
+  background: rgba(255,255,255,0.85);
+}
+
+.jumbotron h1 {
+  color: #0d0c0c;
+  font-size: 40px;
+  font-family: "Alegreya", serif;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-family: "Alegreya", serif;
+  font-size: 24px;
+  color: #0d0c0c;
+}
+
+/*///////////////////////////////// Tabs Pane ////////////////////////////////*/
+.nav-tabs li a {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.tabs {
+  margin: auto;
+  width: 90%;
+  margin-top: -40px;
+  max-width: 1370px;
+}
