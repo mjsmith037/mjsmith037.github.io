@@ -21,14 +21,13 @@ projmat_plot <- function(B) {
         ggplot() +
         aes(x=one, y=-1 * two, fill=overlap) +
         geom_raster(show.legend=FALSE) +
-        facet_grid(str_c("Projection Matrices")~orientation) +
+        facet_grid(.~str_c("Projection Matrix (Species in Common)")) +
         scale_fill_distiller(palette = "Spectral") +
         scale_x_continuous(expand=c(0,0)) + scale_y_continuous(expand=c(0,0)) +
-        ylab("") +
+        ylab("") + xlab("") +
         theme_bw() +
         theme(axis.text=element_text(colour=NA),
-              axis.ticks=element_blank(),
-              axis.title.x=element_blank())
+              axis.ticks=element_blank())
 }
 run_pca <- function(mat) {
     prcomp(mat, center=TRUE, scale.=TRUE) %>%
@@ -42,10 +41,11 @@ pca_plot <- function(B) {
     run_pca(B %*% t(B)) %>% mutate(orientation = "species") %>%
         ggplot() +
         aes(x=PC1, y=PC2) +
-        geom_point() +
-        facet_grid(str_c("PCA")~orientation, scales="free") +
+        geom_point(size=0.5) +
+        facet_grid(.~str_c("PCA"), scales="free") +
         coord_equal() +
-        theme_bw()
+        theme_bw() +
+        theme(axis.text=element_blank())
 }
 get_n_eigenvectors <- function(mat, n_vecs) {
     eigen(mat, symmetric=TRUE)$vectors[,1:n_vecs] %>%
@@ -60,8 +60,8 @@ eigvect_plot <- function(B, n_vecs=5) {
     get_n_eigenvectors(B %*% t(B), n_vecs) %>% mutate(orientation="species") %>%
         ggplot() +
         aes(x=rowname, y=value) +
-        geom_point() +
-        facet_grid(vector~orientation, scales="free") +
+        geom_point(size=0.5) +
+        facet_grid(vector~., scales="free") +
         theme_bw() +
         theme(axis.title.x=element_blank())
 }
@@ -76,8 +76,9 @@ equal_spacing <- function(n, first, last) seq(first, last, length.out=n+1) %>% h
 constant <- function(n, value, filler_variable) rep(value, n)
 alt_exp <- function(x, rate, base) rate * base^(-rate * x)
 logistic <- function(x, transition, k) -1 / (1 + exp(-k * (x - transition)))
+normalized_normal <- function(nn, mu, sig) rnorm(nn, mu, sig) %>% `-`(min(.)) %>% `/`(max(.))
 
-#### functions to produce probabilistic occurance matrices ####
+## functions to produce probabilistic occurance matrices ####
 build_bounded_probabilitymatrix <- function(n_species, species_dfuncs, species_dist_para_1, species_dist_para_2, site_locations) {
     species_distributions <- lapply(1:n_species, function(ii) {
         return(function(xx) {
@@ -149,6 +150,33 @@ build_3d_looping_probabilitymatrix <- function(n_species, species_dfuncs, specie
     })
     return(prob_observed)
 }
+build_4d_looping_probabilitymatrix <- function(n_species, species_dfuncs, species_dist_para_1, species_dist_para_2, site_locations) {
+    species_distributions <- lapply(1:n_species, function(ii) {
+        return(function(xx) {
+            species_dfuncs[[ii]](xx, rep(0, 4), species_dist_para_2[[ii]])
+        })
+    })
+    prob_observed <- lapply(1:n_species, function(ii) {
+        ## we pick the density associated with the minimum distance to the
+        ## distribution center for convenience
+        species_distributions[[ii]](
+            site_locations %>%
+                as_data_frame() %>%
+                mutate(w_dist = V1 - species_dist_para_1[ii,1],
+                       x_dist = V2 - species_dist_para_1[ii,2],
+                       y_dist = V3 - species_dist_para_1[ii,3],
+                       z_dist = V4 - species_dist_para_1[ii,4]) %>%
+                rowwise() %>%
+                transmute(min_w_dist = c(w_dist, 1 - abs(w_dist))[which.min(abs(c(w_dist, 1 - abs(w_dist))))],
+                          min_x_dist = c(x_dist, 1 - abs(x_dist))[which.min(abs(c(x_dist, 1 - abs(x_dist))))],
+                          min_y_dist = c(y_dist, 1 - abs(y_dist))[which.min(abs(c(y_dist, 1 - abs(y_dist))))],
+                          min_z_dist = c(z_dist, 1 - abs(z_dist))[which.min(abs(c(z_dist, 1 - abs(z_dist))))]) %>%
+                as.matrix()
+        )
+    })
+    return(prob_observed)
+}
+
 
 ## function to recursively remove full/empty rows/cols as these contain no information
 remove_uninformative_nodes <- function(mat) {
@@ -215,42 +243,50 @@ make_mat <- function(edge_behavior, d, rseed, n_sites, n_species,
         .[order(species_centers[,1]), order(site_locations[,1])] %>%
         ## remove full/empty rows/cols
         remove_uninformative_nodes()
-    
-    ## normalize by column
-    B <- occurance_matrix %>% apply(2, function(col) (col - mean(col)) / sd(col))
-    return(B)
+    return(occurance_matrix)
 }
 
-## 1d standard
-B <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)
-p <- full_diagnostic_plot(B, "../Figures/1d_bounded.svg", 10, 3)
+## 1d very large
+occ_mat <- make_mat("bounded", 1, 0, 1000, 2500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_bounded_large.svg", 16.5, 4)
 
-B <- make_mat("looping", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)
-p <- full_diagnostic_plot(B, "../Figures/1d_looping.svg", 10, 3)
+occ_mat <- make_mat("looping", 1, 0, 1000, 2500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_looping_large.svg", 16.5, 4)
+
+## 1d standard
+occ_mat <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_bounded.svg", 16.5, 4)
+
+occ_mat <- make_mat("looping", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_looping.svg", 16.5, 4)
 
 ## 2d standard
-B <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 0.1)
-p <- full_diagnostic_plot(B, "../Figures/2d_bounded.svg", 10, 3)
+occ_mat <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 0.1)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/2d_bounded.svg", 16.5, 4)
 
-B <- make_mat("looping", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 0.1)
-p <- full_diagnostic_plot(B, "../Figures/2d_looping.svg", 10, 3)
+occ_mat <- make_mat("looping", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 0.1)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/2d_looping.svg", 16.5, 4)
 
 ## high d
-B <- make_mat("looping", 3, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(3) * 0.1)
-p <- full_diagnostic_plot(B, "../Figures/3d_looping.svg", 10, 3)
+occ_mat <- make_mat("looping", 3, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(3) * 0.1)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/3d_bounded.svg", 16.5, 4)
 
-B <- make_mat("looping", 4, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(4) * 0.1)
-p <- full_diagnostic_plot(B, "../Figures/4d_looping.svg", 10, 3)
+occ_mat <- make_mat("looping", 4, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(4) * 0.1)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/4d_bounded.svg", 16.5, 4)
 
 ## high var
-B <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 1)
-p <- full_diagnostic_plot(B, "../Figures/1d_bounded_medvar.svg", 10, 3)
+occ_mat <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 1)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_bounded_midvar.svg", 16.5, 4)
 
-B <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 1)
-p <- full_diagnostic_plot(B, "../Figures/2d_bounded_medvar.svg", 10, 3)
+occ_mat <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 1)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/2d_bounded_midvar.svg", 16.5, 4)
 
-B <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 10)
-p <- full_diagnostic_plot(B, "../Figures/1d_bounded_highvar.svg", 10, 3)
+occ_mat <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 10)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_bounded_highvar.svg", 16.5, 4)
 
-B <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 10)
-p <- full_diagnostic_plot(B, "../Figures/2d_bounded_highvar.svg", 10, 3)
+occ_mat <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 10)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/2d_bounded_highvar.svg", 16.5, 4)
+
+## species distributions clustered at mid-elevation
+occ_mat <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "normalized_normal", 0, 1, "dmnorm", "SC", 0.1)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_bounded_midelev.svg", 16.5, 4)

@@ -11,6 +11,7 @@
     <!-- personal css file -->
     <link rel="stylesheet" href="main.css">
     <!-- Theme used for syntax highlighting of code -->
+    <!-- <link rel="stylesheet" href="../../reveal.js/lib/css/tomorrow.css"> -->
     <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
 
     <!-- font-linking -->
@@ -69,10 +70,61 @@
         </section>
 
         <section>
-          <h4 id="header"></h4>
-          <div class="wnotes">
-<!-- add image of species distributions along gradient -->
+          <h4 id="header">A motivating example<i class="fas fa-circle blue" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <div class="wnotes vcenter" style="flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
+            <img class="plain" src="Images/mountainside.png">
+            <img class="plain" src="Figures/occurance.svg" style="max-width:50vw;">
 <!-- ***basic assumption: nearby sites have similar species compositions -->
+          </div>
+          <h4 id="citation"></h4>
+          <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <div class="wnotes vcenter">
+            <img class="plain" style="height:85vh;padding-top:5vh;" src="Figures/1d_bounded_large_split_mat.svg">
+          </div>
+          <h4 id="citation"></h4>
+          <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i></h4>
+          <div class="wnotes vcenter">
+            <img class="plain" style="height:85vh;padding-top:5vh;" src="Figures/1d_bounded_large_split_pca.svg">
+          </div>
+          <h4 id="citation"></h4>
+          <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i></h4>
+          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
+            <img class="plain" src="Images/mountainside.png" style="width:50%;">
+            <div class="vcenter">
+              <h1 style="font-size:200%;color:#fff;">?</h1>
+              <i class="fas fa-arrow-alt-circle-right" style="font-size:200%;"></i>
+            </div>
+            <img class="plain" src="Figures/1d_bounded_large_split_pca.svg" style="width:45%;">
+          </div>
+          <h4 id="citation"></h4>
+          <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i></h4>
+          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
+            <img class="plain" src="Images/mountainside.png" style="width:50%;">
+            <div class="vcenter">
+              <h1 style="font-size:200%;">?</h1>
+              <i class="fas fa-arrow-alt-circle-left" style="font-size:200%;"></i>
+            </div>
+            <img class="plain" src="Figures/1d_bounded_large_split_pca.svg" style="width:45%;">
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -96,14 +148,14 @@
         </section>
 
         <section>
-          <h4 id="header">What is known <i class="fas fa-circle blue" style="padding-left:1vw;"></i><i class="fas fa-circle"></i></h4>
+          <h4 id="header">What is known <i class="fas fa-circle blue" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
           <div class="wnotes vcenter">
             <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
               <li><i class="fa-li fas fa-angle-right"></i>Ecologists have been interested in ordination for a long time</li>
-              <li class="fragment"><i class="fa-li fas fa-angle-right"></i>Fairly early on, Principal Component Analysis (PCA) was identified as a powerful, <span class="red">agnostic</span> tool in this effort</li>
-              <li class="fragment"><i class="fa-li fas fa-angle-right"></i>For a period of time, the arch observed in PCA of one dimensional data was viewed as a statistical artifact</li>
-              <li class="fragment"><i class="fa-li fas fa-angle-right"></i>Now, the mathematics uderlying the arch are better understood and the emphasis has shifted away from "correcting" the ordination coordinates...</li>
-              <li class="fragment"><i class="fa-li fas fa-angle-right"></i>but the presence of the arch still presents challenges for extracting the optimal ordering of the data</li>
+              <li><i class="fa-li fas fa-angle-right"></i>Fairly early on, Principal Component Analysis (PCA) was identified as a powerful, <span class="red">agnostic</span> tool in this effort</li>
+              <li><i class="fa-li fas fa-angle-right"></i>For a period of time, the arch observed in PCA of one dimensional data was viewed as a statistical artifact</li>
+              <li><i class="fa-li fas fa-angle-right"></i>Now, the mathematics uderlying the arch are better understood and the emphasis has shifted away from "correcting" the ordination coordinates...</li>
+              <li><i class="fa-li fas fa-angle-right"></i>but the presence of the arch still presents challenges for extracting the optimal ordering of the data</li>
             </ul>
           </div>
           <h4 id="citation"></h4>
@@ -112,8 +164,30 @@
         </section>
 
         <section>
-          <h4 id="header">What is known <i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i></h4>
-          <div class="wnotes">
+          <h4 id="header">What is known <i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
+            <img  class="plain" src="Figures/toeplitz.svg">
+            <img class="fragment plain" src="Figures/circulant.svg">
+          </div>
+          <h4 id="citation"></h4>
+          <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">What is known <i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i></h4>
+          <div class="wnotes vcenter">
+            <img class="plain" src="Figures/1d_bounded_large.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
+            <img class="plain fragment" src="Figures/1d_looping_large.svg" style="max-height:45%;margin-top:0;padding-bottom:0;">
+          </div>
+          <h4 id="citation"></h4>
+          <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">What is known <i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i></h4>
+          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
 
           </div>
           <h4 id="citation"></h4>
@@ -139,18 +213,30 @@
 
         <section>
           <h4 id="header">What we've done<i class="fas fa-circle blue" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes">
-<!-- show figure of four stages again -->
+          <div class="wnotes vcenter">
+            <img class="plain" src="Figures/1d_bounded_large.svg" style="width:100%;">
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
+            multiple avenues of approach
           </aside>
         </section>
 
         <section>
           <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes">
-<!-- justify choice with timings and visual results -->
+          <div class="wnotes vcenter">
+<pre><code  data-trim class="python">
+calculate matrix B by normalizing the columns of the occurance matrix
+take matrix M = t(B) x B
+for each column_i of M {
+  for each column_j of M within d steps of column_i {
+      calculate the euclidean distance between the two columns
+  }
+  sum the distances to get column_i's contribution to overall score
+}
+sum each column's contribution to get total score of the configuration
+the smaller the score, the better the ordering
+</code></pre>
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -160,7 +246,7 @@
         <section>
           <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i></h4>
           <div class="wnotes">
-<!-- explain algorithm with pseudocode -->
+            <!-- justify choice with timings and visual results -->
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -194,9 +280,12 @@
         </section>
 
         <section>
-          <h4 id="header"></h4>
-          <div class="wnotes">
-<!--  -->
+          <h4 id="header">What remains<i class="fas fa-circle blue" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <div class="wnotes vcenter">
+            <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
+              <li><i class="fa-li fas fa-angle-right"></i>The effect of using different distance metrics</li>
+              <li><i class="fa-li fas fa-angle-right"></i></li>
+            </ul>
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -204,7 +293,7 @@
         </section>
 
         <section>
-          <h4 id="header"></h4>
+          <h4 id="header">What remains<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i></h4>
           <div class="wnotes">
 
           </div>
@@ -231,8 +320,10 @@
 
         <section>
           <h4 id="header">Some interesting observations<i class="fas fa-circle blue" style="padding-left:1vw;"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes">
-<!-- add figure for d 1, 2, 3 -->
+          <div class="wnotes vcenter">
+            <img class="plain" src="Figures/2d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
+            <img class="plain" src="Figures/3d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
+            <img class="plain" src="Figures/4d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -241,8 +332,11 @@
 
         <section>
           <h4 id="header">Some interesting observations<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i></h4>
-          <div class="wnotes">
-<!-- add figure comparing results for 1, 2 D, with L, H var -->
+          <div class="wnotes vcenter">
+            <img class="plain" src="Figures/1d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
+            <img class="plain" src="Figures/1d_bounded_midvar.svg" style="max-height:30%;margin:0;padding:0;">
+            <img class="plain" src="Figures/1d_bounded_highvar.svg" style="max-height:30%;margin:0;padding:0;">
+            <!-- add figure comparing results for 1, 2 D, with L, H var -->
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
