@@ -1,4 +1,3 @@
-rm(list=ls())
 library(gridExtra)
 library(tidyverse)
 library(stringr)
@@ -192,15 +191,14 @@ make_mat <- function(edge_behavior, d, rseed, n_sites, n_species,
     ## distributions of species around centers (each species could have its own density kernel)
     species_dfuncs <- lapply(1:n_species, function(xx) get(species_dist))
     ifelse(sd_para_1 == "SC", species_dist_para_1 <- species_centers, species_dist_para_1 <- sd_para_1)
-    species_dist_para_2 <- lapply(1:n_species, function(ii, param) {
-        param
-    }, param=sd_para_2)
+    species_dist_para_2 <- lapply(1:n_species, function(ii, param) {return(param)}, param=sd_para_2)
     
     ## turn probabilities into binary occurance matrix ####
     prob_func <- ifelse(edge_behavior == "bounded",
                         "build_bounded_probabilitymatrix",
                         str_c("build_", d, "d_", edge_behavior, "_probabilitymatrix"))
-    prob_observed <- get(prob_func)(n_species, species_dfuncs, species_dist_para_1, species_dist_para_2, site_locations)
+    prob_observed <- get(prob_func)(n_species, species_dfuncs, species_dist_para_1,
+                                    species_dist_para_2, site_locations)
     
     occurance_matrix <- do.call(rbind, prob_observed) %>%
         ## normalize densities to have maximum of 1 and minimum of 0
@@ -223,7 +221,36 @@ make_mat <- function(edge_behavior, d, rseed, n_sites, n_species,
     return(B)
 }
 
+## 1d standard
 B <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)
-p <- full_diagnostic_plot(B, "../Figures/1d_bounded_0.svg", 10, 3)
+p <- full_diagnostic_plot(B, "../Figures/1d_bounded.svg", 10, 3)
 
+B <- make_mat("looping", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)
+p <- full_diagnostic_plot(B, "../Figures/1d_looping.svg", 10, 3)
 
+## 2d standard
+B <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 0.1)
+p <- full_diagnostic_plot(B, "../Figures/2d_bounded.svg", 10, 3)
+
+B <- make_mat("looping", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 0.1)
+p <- full_diagnostic_plot(B, "../Figures/2d_looping.svg", 10, 3)
+
+## high d
+B <- make_mat("looping", 3, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(3) * 0.1)
+p <- full_diagnostic_plot(B, "../Figures/3d_looping.svg", 10, 3)
+
+B <- make_mat("looping", 4, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(4) * 0.1)
+p <- full_diagnostic_plot(B, "../Figures/4d_looping.svg", 10, 3)
+
+## high var
+B <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 1)
+p <- full_diagnostic_plot(B, "../Figures/1d_bounded_medvar.svg", 10, 3)
+
+B <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 1)
+p <- full_diagnostic_plot(B, "../Figures/2d_bounded_medvar.svg", 10, 3)
+
+B <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 10)
+p <- full_diagnostic_plot(B, "../Figures/1d_bounded_highvar.svg", 10, 3)
+
+B <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 10)
+p <- full_diagnostic_plot(B, "../Figures/2d_bounded_highvar.svg", 10, 3)
