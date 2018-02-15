@@ -290,3 +290,59 @@ p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_di
 ## species distributions clustered at mid-elevation
 occ_mat <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "normalized_normal", 0, 1, "dmnorm", "SC", 0.1)
 p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_bounded_midelev.svg", 16.5, 4)
+
+
+occ_mat <- make_mat("bounded", 1, 0, 500, 1000, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1) %>% t()
+occ_mat %>%
+    as_data_frame() %>%
+    rownames_to_column("one") %>%
+    gather("two", "overlap", -one) %>%
+    mutate(one = as.integer(one) / max(as.integer(one)),
+           two = two %>% id_to_axis(),
+           overlap = as.logical(overlap)) %>%
+    ggplot() +
+    aes(x=one, y=-1 * two, fill=overlap) +
+    geom_raster() +
+    scale_fill_manual(values=c("white", "#9e0142")) +
+    scale_x_continuous(expand=c(0,0)) + scale_y_continuous(expand=c(0,0)) +
+    ylab("") +
+    theme_bw() +
+    theme(axis.text=element_blank(),
+          axis.ticks=element_blank(),
+          axis.title=element_blank(),
+          legend.position="none")
+ggsave(filename="../Figures/occurance.svg", width=10, height=5)
+
+
+t_mat <- toeplitz(500:0) %>% `/`(500) %>% mat_to_df() %>%
+    ggplot() +
+    aes(x=one, y=-1 * two, fill=overlap) +
+    geom_raster() +
+    scale_fill_distiller(palette = "Spectral") +
+    scale_x_continuous(expand=c(0,0)) + scale_y_continuous(expand=c(0,0)) +
+    ylab("") +
+    theme_bw() +
+    theme(axis.text=element_blank(),
+          axis.ticks=element_blank(),
+          axis.title=element_blank(),
+          legend.title=element_blank())
+panel_height <- unit(1,"npc") - sum(ggplotGrob(t_mat)[["heights"]][-3])
+t_mat + guides(fill=guide_colorbar(barheight=panel_height))
+ggsave(filename="../Figures/toeplitz.svg", width=7, height=7)
+
+
+c_mat <- toeplitz(c(250:0, 1:250)) %>% `/`(501) %>% mat_to_df() %>%
+    ggplot() +
+    aes(x=one, y=-1 * two, fill=overlap) +
+    geom_raster() +
+    scale_fill_distiller(palette = "Spectral") +
+    scale_x_continuous(expand=c(0,0)) + scale_y_continuous(expand=c(0,0)) +
+    ylab("") +
+    theme_bw() +
+    theme(axis.text=element_blank(),
+          axis.ticks=element_blank(),
+          axis.title=element_blank(),
+          legend.title=element_blank())
+panel_height <- unit(1,"npc") - sum(ggplotGrob(c_mat)[["heights"]][-3])
+c_mat + guides(fill=guide_colorbar(barheight=panel_height))
+ggsave(filename="../Figures/circulant.svg", width=7, height=7)
