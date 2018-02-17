@@ -1,76 +1,9 @@
-library(gridExtra)
+source("plotting_functions.R")
+
+library(vegan)
 library(tidyverse)
 library(stringr)
 library(mnormt)
-
-id_to_axis <- function(id_vect) {
-    id_vect %>% str_extract("\\d+") %>% as.integer() %>% `/`(max(.))
-}
-mat_to_df <- function(mat) {
-    mat %>%
-        as_data_frame() %>%
-        mutate(one = colnames(.) %>% id_to_axis()) %>%
-        gather("two", "overlap", -one) %>%
-        mutate(two = two %>% id_to_axis(),
-               overlap = overlap / max(overlap))
-}
-projmat_plot <- function(B) {
-    # bind_rows((B %*% t(B)) %>% mat_to_df() %>% mutate(orientation = "species"),
-    #           (t(B) %*% B) %>% mat_to_df() %>% mutate(orientation = "sites")) %>%
-    (B %*% t(B)) %>% mat_to_df() %>% mutate(orientation = "species") %>%
-        ggplot() +
-        aes(x=one, y=-1 * two, fill=overlap) +
-        geom_raster(show.legend=FALSE) +
-        facet_grid(.~str_c("Projection Matrix (Species in Common)")) +
-        scale_fill_distiller(palette = "Spectral") +
-        scale_x_continuous(expand=c(0,0)) + scale_y_continuous(expand=c(0,0)) +
-        ylab("") + xlab("") +
-        theme_bw() +
-        theme(axis.text=element_text(colour=NA),
-              axis.ticks=element_blank())
-}
-run_pca <- function(mat) {
-    prcomp(mat, center=TRUE, scale.=TRUE) %>%
-        .$rotation %>%
-        .[,1:2] %>%
-        as_data_frame()
-}
-pca_plot <- function(B) {
-    # bind_rows(run_pca(B %*% t(B)) %>% mutate(orientation = "species"),
-    #           run_pca(t(B) %*% B) %>% mutate(orientation = "sites")) %>%
-    run_pca(B %*% t(B)) %>% mutate(orientation = "species") %>%
-        ggplot() +
-        aes(x=PC1, y=PC2) +
-        geom_point(size=0.5) +
-        facet_grid(.~str_c("PCA"), scales="free") +
-        coord_equal() +
-        theme_bw() +
-        theme(axis.text=element_blank())
-}
-get_n_eigenvectors <- function(mat, n_vecs) {
-    eigen(mat, symmetric=TRUE)$vectors[,1:n_vecs] %>%
-        as_data_frame() %>%
-        rownames_to_column() %>%
-        gather("vector", "value", -rowname) %>%
-        mutate(rowname=as.integer(rowname))
-}
-eigvect_plot <- function(B, n_vecs=5) {
-    # bind_rows(get_n_eigenvectors(B %*% t(B), n_vecs) %>% mutate(orientation="species"),
-    #           get_n_eigenvectors(t(B) %*% B, n_vecs) %>% mutate(orientation="sites")) %>%
-    get_n_eigenvectors(B %*% t(B), n_vecs) %>% mutate(orientation="species") %>%
-        ggplot() +
-        aes(x=rowname, y=value) +
-        geom_point(size=0.5) +
-        facet_grid(vector~., scales="free") +
-        theme_bw() +
-        theme(axis.title.x=element_blank())
-}
-full_diagnostic_plot <- function(B, filename=NULL, ww=8, hh=3) {
-    p <- arrangeGrob(projmat_plot(B), pca_plot(B), eigvect_plot(B),
-                     layout_matrix=matrix(c(1,2,3,3),1,4))
-    if (!is.null(filename)) ggsave(p, file=filename, width=ww, height=hh)
-    return(p)
-}
 
 equal_spacing <- function(n, first, last) seq(first, last, length.out=n+1) %>% head(-1)
 constant <- function(n, value, filler_variable) rep(value, n)
@@ -230,9 +163,9 @@ make_mat <- function(edge_behavior, d, rseed, n_sites, n_species,
     
     occurance_matrix <- do.call(rbind, prob_observed) %>%
         ## normalize densities to have maximum of 1 and minimum of 0
-        apply(1, function(row) (row - min(row)) / max(row - min(row))) %>%
-        ## apply by row transposes, so transpose to reverse
-        t() %>%
+        # apply(1, function(row) (row - min(row)) / max(row - min(row))) %>%
+        # ## apply by row transposes, so transpose to reverse
+        # t() %>%
         ## if density is larger than uniform random variable, then count as observed
         `>`(matrix(runif(n_species * n_sites), n_species, n_sites)) %>%
         ## alternatively, if density is above threshold, then count as observed
@@ -246,6 +179,7 @@ make_mat <- function(edge_behavior, d, rseed, n_sites, n_species,
     return(occurance_matrix)
 }
 
+#### STANDARD FULL DIAGNOSTIC PLOTS ####
 ## 1d very large
 occ_mat <- make_mat("bounded", 1, 0, 1000, 2500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)
 p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_bounded_large.svg", 16.5, 4)
@@ -268,52 +202,31 @@ occ_mat <- make_mat("looping", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dm
 p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/2d_looping.svg", 16.5, 4)
 
 ## high d
-occ_mat <- make_mat("looping", 3, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(3) * 0.1)
+occ_mat <- make_mat("looping", 3, 0, 1000, 2500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(3) * 0.01)
 p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/3d_bounded.svg", 16.5, 4)
 
-occ_mat <- make_mat("looping", 4, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(4) * 0.1)
+occ_mat <- make_mat("looping", 4, 0, 1000, 2500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(4) * 0.01)
 p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/4d_bounded.svg", 16.5, 4)
 
 ## high var
-occ_mat <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 1)
+occ_mat <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.2)
 p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_bounded_midvar.svg", 16.5, 4)
 
-occ_mat <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 1)
-p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/2d_bounded_midvar.svg", 16.5, 4)
+occ_mat <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 0.2)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_looping_midvar.svg", 16.5, 4)
 
-occ_mat <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 10)
+occ_mat <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.5)
+image(occ_mat)
 p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_bounded_highvar.svg", 16.5, 4)
 
-occ_mat <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 10)
-p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/2d_bounded_highvar.svg", 16.5, 4)
+occ_mat <- make_mat("bounded", 2, 0, 200, 500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(2) * 0.5)
+p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_looping_highvar.svg", 16.5, 4)
 
 ## species distributions clustered at mid-elevation
 occ_mat <- make_mat("bounded", 1, 0, 200, 500, "runif", 0, 1, "normalized_normal", 0, 1, "dmnorm", "SC", 0.1)
 p <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col)) %>% full_diagnostic_plot("../Figures/1d_bounded_midelev.svg", 16.5, 4)
 
-
-occ_mat <- make_mat("bounded", 1, 0, 500, 1000, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1) %>% t()
-occ_mat %>%
-    as_data_frame() %>%
-    rownames_to_column("one") %>%
-    gather("two", "overlap", -one) %>%
-    mutate(one = as.integer(one) / max(as.integer(one)),
-           two = two %>% id_to_axis(),
-           overlap = as.logical(overlap)) %>%
-    ggplot() +
-    aes(x=one, y=-1 * two, fill=overlap) +
-    geom_raster() +
-    scale_fill_manual(values=c("white", "#9e0142")) +
-    scale_x_continuous(expand=c(0,0)) + scale_y_continuous(expand=c(0,0)) +
-    ylab("") +
-    theme_bw() +
-    theme(axis.text=element_blank(),
-          axis.ticks=element_blank(),
-          axis.title=element_blank(),
-          legend.position="none")
-ggsave(filename="../Figures/occurance.svg", width=10, height=5)
-
-
+#### TOEPLITZ, CIRCULANT ####
 t_mat <- toeplitz(500:0) %>% `/`(500) %>% mat_to_df() %>%
     ggplot() +
     aes(x=one, y=-1 * two, fill=overlap) +
@@ -346,3 +259,90 @@ c_mat <- toeplitz(c(250:0, 1:250)) %>% `/`(501) %>% mat_to_df() %>%
 panel_height <- unit(1,"npc") - sum(ggplotGrob(c_mat)[["heights"]][-3])
 c_mat + guides(fill=guide_colorbar(barheight=panel_height))
 ggsave(filename="../Figures/circulant.svg", width=7, height=7)
+
+
+#### OTHER ####
+occ_mat <- make_mat("bounded", 1, 0, 500, 1000, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1) %>% t()
+occ_mat %>%
+    as_data_frame() %>%
+    rownames_to_column("one") %>%
+    gather("two", "overlap", -one) %>%
+    mutate(one = as.integer(one) / max(as.integer(one)),
+           two = two %>% id_to_axis(),
+           overlap = as.logical(overlap)) %>%
+    ggplot() +
+    aes(x=one, y=-1 * two, fill=overlap) +
+    geom_raster() +
+    scale_fill_manual(values=c("white", "#9e0142")) +
+    scale_x_continuous(expand=c(0,0)) + scale_y_continuous(expand=c(0,0)) +
+    ylab("Sites") + xlab("Species") +
+    theme_bw() +
+    theme(axis.text=element_blank(),
+          axis.ticks=element_blank(),
+          axis.title=element_text(size=24),
+          legend.position="none")
+ggsave(filename="../Figures/occurance.svg", width=10, height=5)
+
+occ_mat %>% t() %>%
+    prcomp(center=TRUE, scale.=TRUE) %>%
+    .$rotation %>%
+    .[,1:2] %>%
+    as_data_frame() %>%
+    mutate(orientation = "species") %>%
+    ggplot() +
+    aes(x=PC1, y=PC2) +
+    geom_point(size=0.5) +
+    facet_grid(.~str_c("PCA"), scales="free") +
+    coord_equal() +
+    theme_bw() +
+    theme(axis.text=element_blank())
+ggsave(filename="../Figures/raw_presabs_pca.svg", width=7, height=5)
+
+B <- occ_mat %>% apply(2, function(col) (col - mean(col)) / sd(col))
+
+t(B) %>%
+    prcomp(center=TRUE, scale.=TRUE) %>%
+    .$rotation %>%
+    .[,1:2] %>%
+    as_data_frame() %>%
+    mutate(orientation = "species") %>%
+    ggplot() +
+    aes(x=PC1, y=PC2) +
+    geom_point(size=0.5) +
+    facet_grid(.~str_c("PCA"), scales="free") +
+    coord_equal() +
+    theme_bw() +
+    theme(axis.text=element_blank())
+
+B %>% projmat_plot()
+ggsave(filename="../Figures/1d_bounded_large_split_mat.png", width=4, height=4)
+
+B %>% pca_plot()
+ggsave(filename="../Figures/1d_bounded_large_split_pca.svg", width=4, height=4)
+
+
+lapply(c("bray", "manhattan", "mountford", "raup", "kulczynski", "binomial"), function(meth) {
+    vegdist(occ_mat, method=meth, binary=TRUE) %>%
+        prcomp(center=TRUE, scale.=TRUE) %>%
+        .$rotation %>%
+        .[,1:2] %>%
+        as_data_frame() %>%
+        mutate(dist_metric = meth)
+}) %>%
+    bind_rows() %>%
+    ggplot() +
+    aes(x=PC1, y=PC2) +
+    geom_point(size=0.5) +
+    facet_wrap(~dist_metric, scales="free") +
+    coord_equal() +
+    theme_bw() +
+    theme(axis.text=element_blank())
+ggsave(filename="../Figures/alternative_distance_metrics.svg", width=12.5, height=9)
+
+x <- (B %*% t(B)) %>%
+    metaMDS(center=TRUE)
+
+y <- vegdist(occ_mat, method="bray", binary=TRUE) %>%
+    metaMDS(center=TRUE)
+
+

@@ -11,8 +11,9 @@
     <!-- personal css file -->
     <link rel="stylesheet" href="main.css">
     <!-- Theme used for syntax highlighting of code -->
-    <!-- <link rel="stylesheet" href="../../reveal.js/lib/css/tomorrow.css"> -->
-    <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+    <!-- <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css"> -->
+    <link rel="stylesheet" href="../../reveal.js/lib/css/idea.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/r.min.js"></script>
 
     <!-- font-linking -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
@@ -25,7 +26,7 @@
       <div class="slides">
         <section>
           <div class="wnotes vcenter">
-            <img class="plain" style="max-width:80vw;padding-bottom:5vh;" src="Images/title.svg">
+            <img class="plain" style="max-width:80%;padding-bottom:5vh;" src="Images/title.svg">
             <p><b>Matt Michalska-Smith</b><br>Stefano Allesina</p>
           </div>
           <aside class="notes">
@@ -41,8 +42,8 @@
               slide partway through these explanations. These will be indicated by
               "<span id="ns">next slide</span>" in these notes.
             </p><p>
-              Slides can be advanced by tapping<span class="key">Spc</span>,
-              <span class="key"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>, <span class="key">PgDn</span>,
+              Slides can be advanced by tapping<span class="key">Spc</span> (preferred),
+              <span class="key"><i class="fas fa-arrow-right"></i></span>, <span class="key">PgDn</span>,
               or <span class="key">n</span>.
             </p><p>
               Finally, this presentation will look best in full-screen, but should
@@ -66,15 +67,33 @@
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
+            A brief outline of the talk today, going with the standard layout
           </aside>
         </section>
 
         <section>
-          <h4 id="header">A motivating example<i class="fas fa-circle blue" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <h4 id="header">A motivating example<i class="fas fa-circle blue" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
           <div class="wnotes vcenter" style="flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
             <img class="plain" src="Images/mountainside.png">
             <img class="plain" src="Figures/occurance.svg" style="max-width:50vw;">
-<!-- ***basic assumption: nearby sites have similar species compositions -->
+          </div>
+          <h4 id="citation"></h4>
+          <aside class="notes">
+            This project stemmed from a statistical observation that arises when
+            one is dealing with data which are strongly influenced by an underlying,
+            one-dimensional gradient. Think, for example, of species distributions
+            on an elevational gradient. For each species, there will be an elevation
+            with the greatest abundance, and then
+            ***basic assumption: nearby sites have similar species compositions
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
+            <img class="plain" src="Figures/occurance_T.svg" style="max-width:50vw;">
+            <i class="fas fa-arrow-alt-circle-right" style="font-size:3vw;"></i>
+            <img class="plain" src="Figures/raw_presabs_pca.svg">
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -82,9 +101,13 @@
         </section>
 
         <section>
-          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes vcenter">
-            <img class="plain" style="height:85vh;padding-top:5vh;" src="Figures/1d_bounded_large_split_mat.svg">
+          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
+            <img class="plain" src="Figures/occurance.svg" style="width:25vw;">
+            <i class="fas fa-times-circle" style="font-size:3vw;"></i>
+            <img class="plain" src="Figures/occurance_T.svg" style="height:25vw;">
+            <i class="fas fa-pause-circle fa-rotate-90" style="font-size:3vw;"></i>
+            <img class="plain" style="width:15vw;" src="Figures/1d_bounded_large_split_mat.png">
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -92,9 +115,11 @@
         </section>
 
         <section>
-          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes vcenter">
-            <img class="plain" style="height:85vh;padding-top:5vh;" src="Figures/1d_bounded_large_split_pca.svg">
+          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i></h4>
+          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
+            <img class="plain" style="max-width:45vw;" src="Figures/1d_bounded_large_split_mat.png">
+            <i class="fas fa-arrow-alt-circle-right" style="font-size:3vw;"></i>
+            <img class="plain" style="max-width:45vw;" src="Figures/1d_bounded_large_split_pca.svg">
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -102,27 +127,18 @@
         </section>
 
         <section>
-          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i></h4>
+          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i></h4>
           <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
             <img class="plain" src="Images/mountainside.png" style="width:50%;">
-            <div class="vcenter">
-              <h1 style="font-size:200%;color:#fff;">?</h1>
-              <i class="fas fa-arrow-alt-circle-right" style="font-size:200%;"></i>
-            </div>
-            <img class="plain" src="Figures/1d_bounded_large_split_pca.svg" style="width:45%;">
-          </div>
-          <h4 id="citation"></h4>
-          <aside class="notes">
-          </aside>
-        </section>
-
-        <section>
-          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i></h4>
-          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
-            <img class="plain" src="Images/mountainside.png" style="width:50%;">
-            <div class="vcenter">
-              <h1 style="font-size:200%;">?</h1>
-              <i class="fas fa-arrow-alt-circle-left" style="font-size:200%;"></i>
+            <div class="vcenter" style="position:relative;width:3%;">
+              <div class="fragment fade-out" style="position:absolute;bottom:45%;" data-fragment-index="1">
+                <h1 style="font-size:200%;color:#fff;margin:0;padding:0;">?</h1>
+                <i class="fas fa-arrow-alt-circle-right" style="font-size:5vw;"></i>
+              </div>
+              <div class="fragment fade-in" style="position:absolute;bottom:45%;" data-fragment-index="1">
+                <h1 style="font-size:200%;margin:0;padding:0;">?</h1>
+                <i class="fas fa-arrow-alt-circle-left" style="font-size:5vw;"></i>
+              </div>
             </div>
             <img class="plain" src="Figures/1d_bounded_large_split_pca.svg" style="width:45%;">
           </div>
@@ -174,21 +190,22 @@
           </aside>
         </section>
 
-        <section>
+        <section data-transition="slide-in fade-out">
           <h4 id="header">What is known <i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i></h4>
           <div class="wnotes vcenter">
-            <img class="plain" src="Figures/1d_bounded_large.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
-            <img class="plain fragment" src="Figures/1d_looping_large.svg" style="max-height:45%;margin-top:0;padding-bottom:0;">
+            <img class="plain" src="Figures/1d_bounded_large_split_noeigs.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
+            <img class="plain fragment" src="Figures/1d_looping_large_split_noeigs.svg" style="max-height:45%;margin-top:0;padding-bottom:0;">
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
           </aside>
         </section>
 
-        <section>
+        <section data-transition="fade-in slide-out">
           <h4 id="header">What is known <i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i></h4>
-          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
-
+          <div class="wnotes vcenter">
+            <img class="plain" src="Figures/1d_bounded_large.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
+            <img class="plain" src="Figures/1d_looping_large.svg" style="max-height:45%;margin-top:0;padding-bottom:0;">
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -212,7 +229,7 @@
         </section>
 
         <section>
-          <h4 id="header">What we've done<i class="fas fa-circle blue" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <h4 id="header">What we've done<i class="fas fa-circle blue" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></i></h4>
           <div class="wnotes vcenter">
             <img class="plain" src="Figures/1d_bounded_large.svg" style="width:100%;">
           </div>
@@ -223,20 +240,50 @@
         </section>
 
         <section>
-          <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes vcenter">
-<pre><code  data-trim class="python">
-calculate matrix B by normalizing the columns of the occurance matrix
-take matrix M = t(B) x B
-for each column_i of M {
-  for each column_j of M within d steps of column_i {
-      calculate the euclidean distance between the two columns
+          <section>
+            <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+            <div class="wnotes vcenter">
+<pre style="max-width:66vw;"><code data-trim class="r">
+# normalize the columns of the occurance matrix to get matrix B
+M &lt;- t(B) %*% B
+# initialize total distance (smaller is better)
+total_score &lt;- 0
+# loop through the columns of M to get each contribution to the total score
+for (each column_i in M) {
+  for (each column_j in M) {
+    distance_i[j] &lt;- sqrt(sum((column_i - column_j)^2))
   }
-  sum the distances to get column_i's contribution to overall score
+  rank_distance_i &lt;- rank(distance_i)
+  for (each column_j in M within d steps of column_i) {
+    total_score &lt;- total_score + sum(rank_distance_i[j])
+  }
 }
-sum each column's contribution to get total score of the configuration
-the smaller the score, the better the ordering
 </code></pre>
+            </div>
+            <h4 id="citation"></h4>
+            <aside class="notes">
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+            <div class="wnotes vcenter">
+              <!-- explain mcmcmc -->
+            </div>
+            <h4 id="citation"></h4>
+            <aside class="notes">
+            </aside>
+          </section>
+        </section>
+
+        <!-- justify choice with timings and visual results? -->
+
+        <section>
+          <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <div class="wnotes vcenter">
+            <img class="plain" src="Figures/Simmat_Before.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
+            <img class="plain" src="Figures/Simmat_After.svg" style="max-height:45%;margin-top:0;padding-bottom:0;">
+            <img class="plain fragment fade-in" style="position:absoulte;" src="Figures/compare_simmat_orderings.svg">
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -244,9 +291,11 @@ the smaller the score, the better the ordering
         </section>
 
         <section>
-          <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes">
-            <!-- justify choice with timings and visual results -->
+          <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i><i class="fas fa-circle"></i></h4>
+          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
+            <img class="plain" style="position:absolute;left:0;max-width:65%" src="Images/Nutnet_GreatPlains.png">
+            <img class="plain" style="position:absolute;right:0;max-width:35%;" src="Images/Nutnet_PCA.svg">
+            <img class="plain fragment" style="position:absolute;right:0;max-width:35%;" src="Images/Nutnet_PCA_wline.svg">
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -254,9 +303,10 @@ the smaller the score, the better the ordering
         </section>
 
         <section>
-          <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i></h4>
-          <div class="wnotes">
-<!-- some results from simulated data, including correlation with known order -->
+          <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle blue"></i></h4>
+          <div class="wnotes vcenter">
+            <img class="plain" src="Figures/Empirical_Before.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
+            <img class="plain" src="Figures/Empirical_After.svg" style="max-height:45%;margin-top:0;padding-bottom:0;">
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -283,7 +333,7 @@ the smaller the score, the better the ordering
           <h4 id="header">What remains<i class="fas fa-circle blue" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
           <div class="wnotes vcenter">
             <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
-              <li><i class="fa-li fas fa-angle-right"></i>The effect of using different distance metrics</li>
+              <li><i class="fa-li fas fa-angle-right"></i>Identifying rank vs. identifying position</li>
               <li><i class="fa-li fas fa-angle-right"></i></li>
             </ul>
           </div>
@@ -331,19 +381,31 @@ the smaller the score, the better the ordering
         </section>
 
         <section>
-          <h4 id="header">Some interesting observations<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i></h4>
-          <div class="wnotes vcenter">
-            <img class="plain" src="Figures/1d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
-            <img class="plain" src="Figures/1d_bounded_midvar.svg" style="max-height:30%;margin:0;padding:0;">
-            <img class="plain" src="Figures/1d_bounded_highvar.svg" style="max-height:30%;margin:0;padding:0;">
-            <!-- add figure comparing results for 1, 2 D, with L, H var -->
-          </div>
-          <h4 id="citation"></h4>
-          <aside class="notes">
-          </aside>
+          <section>
+            <h4 id="header">Some interesting observations<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i></h4>
+            <div class="wnotes vcenter">
+              <img class="plain" src="Figures/1d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
+              <img class="plain" src="Figures/1d_bounded_midvar.svg" style="max-height:30%;margin:0;padding:0;">
+              <img class="plain" src="Figures/1d_bounded_highvar.svg" style="max-height:30%;margin:0;padding:0;">
+            </div>
+            <h4 id="citation"></h4>
+            <aside class="notes">
+
+            </aside>
+          </section>
+          <section>
+            <h4 id="header">Some interesting observations<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle blue"></i></h4>
+            <div class="wnotes vcenter">
+              <img class="plain" src="Figures/1d_looping.svg" style="max-height:30%;margin:0;padding:0;">
+              <img class="plain" src="Figures/1d_looping_midvar.svg" style="max-height:30%;margin:0;padding:0;">
+              <img class="plain" src="Figures/1d_looping_highvar.svg" style="max-height:30%;margin:0;padding:0;">
+            </div>
+            <h4 id="citation"></h4>
+            <aside class="notes">
+              Increasing variance in species distributions
+            </aside>
+          </section>
         </section>
-
-
 
         <section class="center">
           <div class="wnotes vcenter">
@@ -360,6 +422,16 @@ the smaller the score, the better the ordering
             Thanks for viewing this presentation, if you have any feedback or
             questions, please <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#106;&#115;&#109;&#105;&#116;&#104;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;">Email me</a>!
             <p>
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">Alternative Distance Metrics</h4>
+          <div class="wnotes">
+            <img class="plain" style="padding-top:5vh;" src="Figures/alternative_distance_metrics.svg">
+          </div>
+          <h4 id="citation"></h4>
+          <aside class="notes">
           </aside>
         </section>
 
@@ -394,7 +466,6 @@ the smaller the score, the better the ordering
     </script>
 
     <script>
-      // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         width: "100%",
         height:"100%",
@@ -403,15 +474,15 @@ the smaller the score, the better the ordering
         slideNumber: true,
         history: true,
         center: false,
-        transition: "fade", // none/fade/slide/convex/concave/zoom
+        transition: "slide", // none/fade/slide/convex/concave/zoom
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: "../../reveal.js/plugin/markdown/marked.js" },
-          { src: "../../reveal.js/plugin/markdown/markdown.js" },
+          // { src: "../../reveal.js/plugin/markdown/marked.js" },
+          // { src: "../../reveal.js/plugin/markdown/markdown.js" },
+          // { src: "../../reveal.js/plugin/math/math.js", async: true },
           { src: "../../reveal.js/plugin/notes/notes.js", async: true },
-          { src: "../../reveal.js/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: "../../reveal.js/plugin/math/math.js", async: true }
+          { src: "../../reveal.js/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ]
       });
     </script>
