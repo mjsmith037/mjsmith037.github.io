@@ -6,12 +6,12 @@ library(parallel)
 library(broom)
 library(tidyverse)
 
-matfile_base <- "transposedsimmat_1d_bounded_3-MC3_Distance"
-results_dir <- "~/Research/EcologicalLinearity/Results/SimulatedMatrices"
-data_dir <- "~/Research/EcologicalLinearity/Data/SimulatedMatrices"
-# matfile_base <- "nutnet"
-# results_dir <- "~/Research/EcologicalLinearity/Results/EmpiricalMatrices"
-# data_dir <- "~/Research/EcologicalLinearity/Data/EmpiricalMatrices"
+# matfile_base <- "transposedsimmat_1d_bounded_3-MC3_Distance"
+# results_dir <- "~/Research/EcologicalLinearity/Results/SimulatedMatrices"
+# data_dir <- "~/Research/EcologicalLinearity/Data/SimulatedMatrices"
+matfile_base <- "nutnet"
+results_dir <- "~/Research/EcologicalLinearity/Results/EmpiricalMatrices"
+data_dir <- "~/Research/EcologicalLinearity/Data/EmpiricalMatrices"
 
 comp_dd <- 20
 
@@ -56,10 +56,10 @@ result_df <- data_frame(original_file=res_files) %>%
     #                       "Wrapping", "dd", "n_steps", "n_chains", "r_seed"), "-") %>%
     # unite("Web", Type, Subtype, Year, sep="-") %>%
     ## otherwise
-    # separate(file_base, c("Web", "Search", "R_OR_C", "Wrapping", "dd",
-    #                       "n_steps", "n_chains", "r_seed"), "-") %>%
+    separate(file_base, c("Web", "Search", "R_OR_C", "Wrapping", "dd",
+                          "n_steps", "n_chains", "r_seed"), "-") %>%
     ## old style
-    separate(file_base, c("Web", "Search", "R_OR_C", "n_steps", "n_chains", "r_seed"), "-") %>%
+    # separate(file_base, c("Web", "Search", "R_OR_C", "n_steps", "n_chains", "r_seed"), "-") %>%
     mutate(ordering=lapply(orderings, str_c, collapse=" ") %>% unlist()) %>%
     group_by(Web, R_OR_C) %>%
     do(get_fitnesses(.)) %>%
@@ -120,20 +120,20 @@ result_df %>%
            str_split(.$ordering, " ") %>% unlist() %>% as.integer()) %>%
            tidy())
 
-## look at the new ordering
-order_df <- data_frame(n=result_df %>%
-                           arrange(fitness_dist, fitness_lm) %>%
-                           do(head(., 1)) %>%
-                           .$ordering %>% str_split(" ") %>% unlist() %>% as.integer()) %>% 
-    mutate(o=1:n())
-ggplot(order_df) +
-    aes(x=o, y=n) +
-    geom_point() +
-    ylab(str_c("Best Found Ordering (",
-               read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
-                   as.matrix() %>% .[order_df$n,] %>% full_distance(comp_dd) %>% format(scientific=FALSE, big.mark=","), ")")) +
-    xlab(str_c("Original Ordering (",
-               read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
-                   as.matrix() %>% full_distance(comp_dd) %>% format(scientific=FALSE, big.mark=","), ")")) +
-    theme_bw()
-ggsave(filename="../Figures/compare_simmat_orderings.svg", width=7, height=5)
+## look at the new ordering (for comparing to known orders)
+# order_df <- data_frame(n=result_df %>%
+#                            arrange(fitness_dist, fitness_lm) %>%
+#                            do(head(., 1)) %>%
+#                            .$ordering %>% str_split(" ") %>% unlist() %>% as.integer()) %>% 
+#     mutate(o=1:n())
+# ggplot(order_df) +
+#     aes(x=o, y=n) +
+#     geom_point() +
+#     ylab(str_c("Best Found Ordering (",
+#                read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
+#                    as.matrix() %>% .[order_df$n,] %>% full_distance(comp_dd) %>% format(scientific=FALSE, big.mark=","), ")")) +
+#     xlab(str_c("Original Ordering (",
+#                read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
+#                    as.matrix() %>% full_distance(comp_dd) %>% format(scientific=FALSE, big.mark=","), ")")) +
+#     theme_bw()
+# ggsave(filename="../Figures/compare_simmat_orderings.svg", width=7, height=5)

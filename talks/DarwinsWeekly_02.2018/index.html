@@ -23,10 +23,10 @@
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"><section>
+      <div class="slides">
         <section>
           <div class="wnotes vcenter">
-            <img class="plain" style="max-width:80%;padding-bottom:5vh;" src="Images/title.svg">
+            <img class="plain" style="max-width:80%;padding-bottom:5vh;" src="Images/title.png">
             <p><b>Matt Michalska-Smith</b><br>Stefano Allesina</p>
           </div>
           <aside class="notes">
@@ -65,71 +65,72 @@
               <li>Some interesting observations</li>
             </ol>
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
-            A brief outline of the talk today, going with the standard layout
+            <p>
+              A brief outline of the talk today. We're going to start with a brief
+              example of what we are talking about when we say gradient, ordination,
+              etc. Then move into some of the historical work on this problem before
+              moving on to what we've done so far and a few things that are still
+              left to be done. I'll end with some interesting further explorations
+              that are made possible by the simulation framework I've developed to
+              explore this phenomenon.
+            </p><p>
+              Without further ado, let's get started...
+            </p><span id="ns">next slide</span><p>
+              by looking at this problem using a concrete example.
+            </p>
           </aside>
         </section>
 
         <section>
-          <h4 id="header">A motivating example<i class="fas fa-circle" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <h4 id="header">A motivating example</h4>
           <div class="wnotes vcenter" style="flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
-            <img class="plain" src="Images/mountainside.png">
-            <img class="plain" src="Figures/occurance.svg" style="max-width:50vw;">
+            <img class="plain" src="Images/mountainside.png" style="max-width:45vw;margin-top:10vh;">
+            <img class="plain" src="Figures/scrambled_occurance_highlight.svg" style="max-width:55vw;">
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
-            This project stemmed from a statistical observation that arises when
-            one is dealing with data which are strongly influenced by an underlying,
-            one-dimensional gradient. Think, for example, of species distributions
-            on an elevational gradient. For each species, there will be an elevation
-            with the greatest abundance, and then
-            ***basic assumption: nearby sites have similar species compositions
+            <p>
+              This project stemmed from a statistical observation that arises when
+              one is dealing with data which are strongly influenced by an underlying,
+              one-dimensional gradient. Think, for example, of species distributions
+              on an elevational gradient. For each species, there will be an elevation
+              with the greatest abundance, and some probability of observing a member
+              of the species outside of that range which decreases with distance.
+            </p><p>
+              Thus, if we were to sample species presence/absence data along this
+              mountain, we might collect a presence/absence matrix that looks something
+              like the one here on the right. Here, each row is a site, for which
+              we have recorded either the presence (red cell) or absence (white cell)
+              of each species found anywhere on the mountain.
+            </p>
           </aside>
         </section>
 
         <section>
-          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <h4 id="header">A motivating example</h4>
           <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
-            <img class="plain" src="Figures/occurance_T.svg" style="max-width:50vw;">
-            <i class="fas fa-arrow-alt-circle-right" style="font-size:3vw;"></i>
-            <img class="plain" src="Figures/raw_presabs_pca.svg">
+            <img class="plain" src="Figures/scrambled_occurance.svg">
+            <i class="fas fa-arrow-alt-circle-right" style="font-size:3vw;position:relative;"></i>
+            <img class="plain" src="Figures/raw_presabs_pca.svg" style="position:relative;">
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            <p>
+              If we were to run a principal component analysis on this raw data,
+              a surprising pattern emerges: a distinctive arch in the PCA space.
+              In fact, every time one does a pca on data generated by an underlying
+              one-dimensional gradient, this arch appears as a sort of signature
+              of this fact.
+            </p>
           </aside>
         </section>
 
         <section>
-          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <h4 id="header">A motivating example</h4>
           <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
-            <img class="plain" src="Figures/occurance.svg" style="width:25vw;">
-            <i class="fas fa-times-circle" style="font-size:3vw;"></i>
-            <img class="plain" src="Figures/occurance_T.svg" style="height:25vw;">
-            <i class="fas fa-pause-circle fa-rotate-90" style="font-size:3vw;"></i>
-            <img class="plain" style="width:15vw;" src="Figures/1d_bounded_large_split_mat.png">
-          </div>
-          <h4 id="citation"></h4>
-          <aside class="notes">
-          </aside>
-        </section>
-
-        <section>
-          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
-            <img class="plain" style="max-width:45vw;" src="Figures/1d_bounded_large_split_mat.png">
-            <i class="fas fa-arrow-alt-circle-right" style="font-size:3vw;"></i>
-            <img class="plain" style="max-width:45vw;" src="Figures/1d_bounded_large_split_pca.svg">
-          </div>
-          <h4 id="citation"></h4>
-          <aside class="notes">
-          </aside>
-        </section>
-
-        <section>
-          <h4 id="header">A motivating example<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
-            <img class="plain" src="Images/mountainside.png" style="width:50%;">
+            <img class="plain" style="width:55%;" src="Images/mountainside.png">
             <div class="vcenter" style="position:relative;width:3%;">
               <div class="fragment fade-out" style="position:absolute;bottom:45%;" data-fragment-index="1">
                 <h1 style="font-size:200%;color:#fff;margin:0;padding:0;">?</h1>
@@ -140,10 +141,22 @@
                 <i class="fas fa-arrow-alt-circle-left" style="font-size:5vw;"></i>
               </div>
             </div>
-            <img class="plain" src="Figures/1d_bounded_large_split_pca.svg" style="width:45%;">
+            <img class="plain" src="Figures/raw_presabs_pca.svg" style="width:40%;">
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            <p>
+              So, we know that if we observe this arch pattern in the PCA results,
+              we can infer that there exists some underlying gradient in the data,
+              but what can we do with this information? It would be more useful if,
+              having observed this arch phenomenologically, we were then able to
+              go backwards...
+            </p><span id="ns">next slide</span><p>
+              and find the proper order of the data according to the underlying
+              gradient. We could then try to find a strong correlate with this
+              ordering in order to make some testable predictions about potential
+              causal relationships in the Ecology of the species being analyzed.
+            </p>
           </aside>
         </section>
 
@@ -158,57 +171,187 @@
               <li>Some interesting observations</li>
             </ol>
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            So what are the foundations of knowledge we will be building on?
           </aside>
         </section>
 
         <section>
-          <h4 id="header">What is known <i class="fas fa-circle" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <h4 id="header">What is known</h4>
           <div class="wnotes vcenter">
-            <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
-              <li><i class="fa-li fas fa-angle-right"></i>Ecologists have been interested in ordination for a long time</li>
-              <li><i class="fa-li fas fa-angle-right"></i>Fairly early on, Principal Component Analysis (PCA) was identified as a powerful, <span class="red">agnostic</span> tool in this effort</li>
-              <li><i class="fa-li fas fa-angle-right"></i>For a period of time, the arch observed in PCA of one dimensional data was viewed as a statistical artifact</li>
-              <li><i class="fa-li fas fa-angle-right"></i>Now, the mathematics uderlying the arch are better understood and the emphasis has shifted away from "correcting" the ordination coordinates...</li>
-              <li><i class="fa-li fas fa-angle-right"></i>but the presence of the arch still presents challenges for extracting the optimal ordering of the data</li>
-            </ul>
+            <img class="plain" src="Images/horseshoe_examples_Wartenberg1987.png" style="height:85vh;">
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"><a href="https://www.jstor.org/stable/2461691">Wartenberg, Ferson &amp; Rohlf 1987</a></h4>
           <aside class="notes">
+            <p>
+              Ecologists have been interested in ordination for a long time and
+              fairly early on, Principal Component Analysis (PCA) was identified
+              as a powerful, <span class="red">agnostic</span> tool in this effort.
+              For a period of time, the arch observed in PCA of one dimensional
+              data was viewed as a statistical artifact but due in part to an
+              increasing understanding of the mathematics uderlying the arch, more
+              recent efforts have shifted away from "correcting" the ordination
+              coordinates. Nevertheless, the presence of the arch still presents
+              challenges for extracting the optimal ordering of the data.
+            </p><p style="font-size:60%;">
+              Original Legend from Wartenberg 1987:  FIG. 2.-A few examples of
+              curvature of component scores from many fields of study. A,
+              Psychology, Nonmetric, multidimensional scaling ordination of
+              "judged similarities among 14 approximately spectral colors"
+              (after Shepard 1978). The numbers correspond to wave- lengths.
+              Subjects rated their perceived pairwise similarity between all
+              possible pairs of 14 objects each with a different color. The
+              derived arch shows a progression from long- wavelength colors
+              (reds) to short-wavelength colors (blues). B, Ecology, Principal-
+              components-analysis ordination of pitfalls based on species of
+              lycosid spiders (after van der  Aart 1973). The distribution of
+              pitfalls along the observed arch reflects a sequence of biotopes
+              with vegetation changing from bare sand and lichens at one end
+              through grassy areas, meadows, parks with shrubs, and, finally,
+              relatively dense woods. The symbols correspond to classes of
+              pitfalls. C, Astronomy, Nonmetric, multidimensional scaling
+              ordination of galaxy types based on Mahalonobis distance using
+              morphological data such as size, color, brightness, etc. (after
+              Nathanson 1971). The letters correspond to types of galaxies. The
+              arch reflects a gradual transition in the physical properties of
+              each galaxy. D, Archaeology, Nonmetric, multidimensional scaling
+              ordination of graves in La Tene cemetery at Munsingen- Rain based
+              on the presence or absence of artifacts found within (after
+              Kendall 1971). The numbers represent Hodson's ordering of the
+              graves. E, Anthropology, Procrustes ordination of humanoid
+              populations based on skull characteristics (after Gower and Digby
+              1981). Groupings of points represent different populations. F,
+              Sociology, Principal-components- analysis ordination of U.S.
+              cities based on the frequency of different types of crimes (after
+              Gower and Digby 1981).
+            </p>
           </aside>
         </section>
 
         <section>
-          <h4 id="header">What is known <i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <h4 id="header">What is known</h4>
+          <div class="wnotes vcenter">
+            <img class="plain" src="Figures/raw_presabs_pca.svg" style="width:40%;">
+          </div>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+            The problem posed by the arch is rather intuitive -- though it it clear
+            that the points are in some order as you move along the arch, it is
+            difficult to be sure of the correct ordering of adjacent points due to
+            the scatter. One way that has been seen to make the arch a bit better
+            behaved is to run the PCA on a symmetric distance matrix, rather than
+            on the raw data.
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">What is known</h4>
+          <div class="wnotes vcenter">
+            <div class="vcenter" style="position:absolute;display:flex;flex-wrap:nowrap;flex-direction:row;width:100%;">
+              <img class="plain" src="Figures/scrambled_occurance_T.svg" style="width:15%;">
+              <i class="fas fa-times-circle" style="font-size:3vw;"></i>
+              <img class="plain" src="Figures/scrambled_occurance.svg" style="width:30%;">
+              <i class="fas fa-pause-circle fa-rotate-90" style="font-size:3vw;"></i>
+              <img class="plain" style="width:35%;" src="Figures/scrambled_distance_matrix.svg">
+            </div>
+            <div class="fragment vcenter" style="position:absolute;display:flex;flex-wrap:nowrap;flex-direction:row;width:100%;">
+              <img class="plain" src="Figures/occurance_T.svg" style="width:15%;">
+              <i class="fas fa-times-circle" style="font-size:3vw;"></i>
+              <img class="plain" src="Figures/occurance.svg" style="width:30%;">
+              <i class="fas fa-pause-circle fa-rotate-90" style="font-size:3vw;"></i>
+              <img class="plain" style="width:35%;" src="Figures/distance_matrix.svg">
+            </div>
+          </div>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+            <p>
+              For our purposes, we can take a very simple distance metric, where we
+              first normalize the adjacency matrix and then multiply it by its transpose.
+              This produces a matrix where high values indicate that the row and column
+              species have many presences and absences in common. When we do this with
+              our toy data from earlier, we get this new "projection" matrix.
+              Interestingly, if species distributions are laid out as I suggested,
+              then nearby sites should have similar species compositions, and if we
+              were to re-order the species into the right configuration (e.g. by order
+              of the elevational center of their distribution)
+            </p><span id="ns">next slide</span><p>
+              a pattern appears in both the occurance matrix and this new distance matrix.
+              Note that there is some artifactually higher values in the lower left and
+              upper right corners. This is due to an interaction between our simulating
+              framework and the normalization we do on the occurance matrices prior to
+              multiplying them. Basically, these species look more similar than they ought
+              because they share many absences, even though their presences are nearly
+              all unshared.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">What is known</h4>
           <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
             <img  class="plain" src="Figures/toeplitz.svg">
             <img class="fragment plain" src="Figures/circulant.svg">
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            <p>
+              This pattern, and it's relationship to the arch in the PCA data has
+              been well studied. It's structure is what is called a
+              <a href="https://en.wikipedia.org/wiki/Toeplitz_matrix">Toeplitz Matrix</a>,
+              and in the ideal, infitinitely large case, can be normalized to look
+              like this, where species are identical with themselves and have similarity
+              that decreases with distance. Note that in this ideal case, there are no
+              artefacts in the corners.
+            </p><span id="ns">next slide</span><p>
+              If one is simulating a circular gradient (i.e. one in which going off the left
+              side of the matrix means entering from the right side), the ideal, infitinitely
+              sized matrix takes a special form of Toeplitz matrix, called a
+              <a href="https://en.wikipedia.org/wiki/Circulant_matrix">Circulant Matrix</a>
+              where the corners are high valued due to the looping nature of the gradient.
+            </p>
           </aside>
         </section>
 
-        <section data-transition="slide-in fade-out">
-          <h4 id="header">What is known <i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+        <section>
+          <h4 id="header">What is known</h4>
           <div class="wnotes vcenter">
-            <img class="plain" src="Figures/1d_bounded_large_split_noeigs.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
-            <img class="plain fragment" src="Figures/1d_looping_large_split_noeigs.svg" style="max-height:45%;margin-top:0;padding-bottom:0;">
+            <div style="position:absolute;width:100%;">
+              <img class="plain" src="Figures/1d_bounded_large_split_noeigs.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
+              <img class="plain fragment" src="Figures/1d_looping_large_split_noeigs.svg" style="max-height:45%;margin-top:0;padding-top:0;">
+            </div>
+            <div class="fragment" style="position:absolute;width:100%;">
+              <img class="plain" src="Figures/1d_bounded_large_justeigs.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
+              <img class="plain" src="Figures/1d_looping_large_justeigs.svg" style="max-height:45%;margin-top:0;padding-top:0;">
+            </div>
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
-          </aside>
-        </section>
-
-        <section data-transition="fade-in slide-out">
-          <h4 id="header">What is known <i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes vcenter">
-            <img class="plain" src="Figures/1d_bounded_large.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
-            <img class="plain" src="Figures/1d_looping_large.svg" style="max-height:45%;margin-top:0;padding-bottom:0;">
-          </div>
-          <h4 id="citation"></h4>
-          <aside class="notes">
+            <p>
+              Moving out of the ideal, when we simulate large matrices, we see the
+              bounded one-dimensional gradient produces a Toeplitz-like matrix and
+              the distinctive arch in the PC space, and
+            </p><span id="ns">next slide</span><p>
+              a looping one-dimensional gradient produces a Circulant-like matrix,
+              with a corresponding circle in PC space.
+            </p><p>
+              The final piece of history was quite recently brought into the spotlight in Ecology
+              in a paper by <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3989108/">Novembre &amp; Stephens</a>. It turns out that
+              the reason for this arch actually stems from the fact that PCA is an
+              eigenvalue decomposition. An efficient means for compressing information
+              is to sum a sequence of sinusoidal curves. This is the method used for
+              compressing images into the <code style="font-size:80%;">.jpeg</code> format,
+              or audio files into <code style="font-size:80%;">.mp3</code>'s.
+            </p><span id="ns">next slide</span><p>
+              Likewise, the PCA tries to compress our occurance data and ends up
+              using the exact same process, leading to what is termed the
+              <a href="https://en.wikipedia.org/wiki/Discrete_cosine_transform">Discrete Cosine Transform</a>
+              for the bounded case (i.e. for the Toeplitz Matrix), and the
+              <a href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform">Discrete Fourier Transform</a>
+              in the looping (i.e. Circulant) one. These are both sinusoidal
+              decompositions and provide a nice intuition for why the PC plot produces
+              the characteristic arch in these datasets.
+            </p>
           </aside>
         </section>
 
@@ -223,92 +366,162 @@
               <li>Some interesting observations</li>
             </ol>
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            Alright, now that we have a bit of a foundation, let's jump into what
+            we've added to this discussion.
           </aside>
         </section>
 
         <section>
-          <h4 id="header">What we've done<i class="fas fa-circle" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></i></h4>
+          <h4 id="header">What we've done</h4>
+          <div class="wnotes vcenter">
+            <img class="plain" src="Figures/simulation_framework_0.svg" style="position:absolute;">
+            <img class="fragment plain" src="Figures/simulation_framework_1.svg" style="position:absolute;" data-fragment-index="1">
+            <img class="fragment plain" src="Figures/simulation_framework_4.svg" style="position:absolute;" data-fragment-index="2">
+            <img class="fragment plain" src="Figures/simulation_framework_5.svg" style="position:absolute;" data-fragment-index="3">
+            <img class="fragment plain" src="Figures/simulation_framework.svg" style="position:absolute;" data-fragment-index="4">
+            <span class="fragment" style="width:100%;height:100%;background-color:#ffffff;opacity:0.5;" data-fragment-index="5"></span>
+            <img class="fragment plain" src="Figures/occurance_T.svg" style="position:absolute;" data-fragment-index="5">
+          </div>
+          <aside class="notes">
+            <p>
+              First, I'm going to lay out the simulation framework used to create
+              all of the simulated datasets seen so far in the talk. We can simulate
+              a gradient quite simply as a line, where one can think of one end as
+              the low end and the other as the high end of the gradient.
+            </p><span id="ns">next slide</span><p>
+              Along this gradient, we will sprinkle some sampling sites according
+              to a prescribed distribution. For this talk, I am always using a uniform
+              distribution, but this is easy to adjust.
+            </p><span id="ns">next slide</span><p>
+              Next, we sprinkle some species. These lines indicate what will be the
+              centers of each species' distribution, which, in the case of normally
+              distributed species, is the location of their most likely observance.
+              Again, I am distributing these centers normally in this talk for
+              convenience of presentation, but, as I will mention later, changing
+              this assumption is a key area of further research.
+            </p><span id="ns">next slide</span><p>
+              Finally, each of these species will have some distribution around that center.
+              For this figure and throughout the talk, I am just using a simple normal
+              distribution. Within the framework, it is quite easy to change both
+              the distribution used by each species, as well as to make it such that
+              different species have different distribution kernels.
+            </p><span id="ns">next slide</span><p>
+              And, of course, these simulated datasets have more than 10 sites and
+              5 species, so there are actually very many more sites and species distributions
+              at a time...
+            </p><span id="ns">next slide</span><p>
+              leading to occurance matrices like our example from earlier in the
+              presentation. Importantly, because we know the locations of each site
+              and the centers of each species' distribution, we know how to order
+              this matrix to make the gradient apparent. When testing our algorithm,
+              we will randomize this matrix prior to searching in order to test our
+              ability to recover this known ordering.
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">What we've done</h4>
           <div class="wnotes vcenter">
             <img class="plain" src="Figures/1d_bounded_large.svg" style="width:100%;">
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
-            multiple avenues of approach
+            <p>
+              From this occurance matrix, we can normalize and multiply by it's transpose to get
+              the distance matrix, as mentioned before, and the PCA and eigenvectors of this
+              matrix can likewise be plotted. Looking at this properly ordered case, it is
+              apparent that there are multiple potential avenues of approach if we wanted to go
+              backwards to extract this ordering.
+            </p><p>
+              First, one could look at the PCA plot, since this is order invariant,
+              and try to trace along the arch to get the proper ordering. Though this
+              looks easy in this case, this is a large simulated matrix with low variance
+              leading to a very clean arch that is usually not the case in real data.
+            </p><p>
+              Likewise, one could try rearranging the eigenvector components to best fit
+              the known theoretical transform. Again, we would run into some issues with
+              noisy data, but it is an option.
+            </p><p>
+              Finally, one could work with the distance matrix, or, equivalently the normalized
+              occurance matrix, directly, rearranging rows or columns in order to put the most
+              similar rows/columns next to one another. This is the path we've chosen as, in
+              the early stages of prototyping and testing, it was shown to be both faster and
+              more consistent at generating favorable results compared to fitting the eigenvectors.
+            </p>
           </aside>
         </section>
 
         <section>
-          <section>
-            <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
-            <div class="wnotes vcenter">
+          <h4 id="header">What we've done</h4>
+          <div class="wnotes vcenter">
 <pre style="max-width:66vw;"><code data-trim class="r">
-# normalize the columns of the occurance matrix to get matrix B
-M &lt;- t(B) %*% B
+# normalize the columns of the occurance matrix (A) to get matrix B
+B &lt;- normalize(A)
 # initialize total distance (smaller is better)
 total_score &lt;- 0
 # loop through the columns of M to get each contribution to the total score
-for (each column_i in M) {
-  for (each column_j in M) {
+for (each column_i in B) {
+  for (each column_j in B) {
     distance_i[j] &lt;- sqrt(sum((column_i - column_j)^2))
   }
   rank_distance_i &lt;- rank(distance_i)
-  for (each column_j in M within d steps of column_i) {
+  for (each column_j in B within d steps of column_i) {
     total_score &lt;- total_score + sum(rank_distance_i[j])
   }
 }
 </code></pre>
-            </div>
-            <h4 id="citation"></h4>
-            <aside class="notes">
-            </aside>
-          </section>
-
-          <section>
-            <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
-            <div class="wnotes vcenter">
-              <!-- explain mcmcmc -->
-            </div>
-            <h4 id="citation"></h4>
-            <aside class="notes">
-            </aside>
-          </section>
+          </div>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+          </aside>
         </section>
+
+        <!-- <section>
+          <h4 id="header">What we've done</h4>
+          <div class="wnotes vcenter">
+
+          </div>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+            explain mcmcmc
+          </aside>
+        </section> -->
 
         <!-- justify choice with timings and visual results? -->
 
         <section>
-          <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <h4 id="header">What we've done</h4>
           <div class="wnotes vcenter">
             <img class="plain" src="Figures/Simmat_Before.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
-            <img class="plain" src="Figures/Simmat_After.svg" style="max-height:45%;margin-top:0;padding-bottom:0;">
+            <img class="plain" src="Figures/Simmat_After.svg" style="max-height:45%;margin-top:0;padding-top:0;">
             <img class="plain fragment fade-in" style="position:absoulte;" src="Figures/compare_simmat_orderings.svg">
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
           </aside>
         </section>
 
         <section>
-          <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <h4 id="header">What we've done</h4>
           <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
             <img class="plain" style="position:absolute;left:0;max-width:65%" src="Images/Nutnet_GreatPlains.png">
             <img class="plain" style="position:absolute;right:0;max-width:35%;" src="Images/Nutnet_PCA.svg">
             <img class="plain fragment" style="position:absolute;right:0;max-width:35%;" src="Images/Nutnet_PCA_wline.svg">
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
           </aside>
         </section>
 
         <section>
-          <h4 id="header">What we've done<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-check-circle"></i><i class="fas fa-circle"></i></h4>
+          <h4 id="header">What we've done</h4>
           <div class="wnotes vcenter">
             <img class="plain" src="Figures/Empirical_Before.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
-            <img class="plain" src="Figures/Empirical_After.svg" style="max-height:45%;margin-top:0;padding-bottom:0;">
+            <img class="plain fragment" src="Figures/Empirical_After.svg" style="max-height:45%;margin-top:0;padding-top:0;">
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
           </aside>
         </section>
@@ -324,30 +537,26 @@ for (each column_i in M) {
               <li>Some interesting observations</li>
             </ol>
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
           </aside>
         </section>
 
         <section>
-          <h4 id="header">What remains<i class="fas fa-circle" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
+          <h4 id="header">What remains</h4>
           <div class="wnotes vcenter">
             <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
               <li><i class="fa-li fas fa-angle-right"></i>Identifying rank vs. identifying position</li>
-              <li><i class="fa-li fas fa-angle-right"></i></li>
+              <li><i class="fa-li fas fa-angle-right"></i>Types of variability</li>
+              <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
+                <li><i class="fa-li fas fa-angle-double-right"></i>Species center distribution</li>
+                <li><i class="fa-li fas fa-angle-double-right"></i>Site location distribution</li>
+                <li><i class="fa-li fas fa-angle-double-right"></i>Species distribution parameters</li>
+                <li><i class="fa-li fas fa-angle-double-right"></i>Species distribution class</li>
+              </ul>
             </ul>
           </div>
-          <h4 id="citation"></h4>
-          <aside class="notes">
-          </aside>
-        </section>
-
-        <section>
-          <h4 id="header">What remains<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes">
-
-          </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
           </aside>
         </section>
@@ -363,52 +572,71 @@ for (each column_i in M) {
               <li class="red">Some interesting observations</li>
             </ol>
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
           </aside>
         </section>
 
         <section>
-          <h4 id="header">Some interesting observations<i class="fas fa-circle" style="padding-left:1vw;"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes vcenter">
-            <img class="plain" src="Figures/2d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
-            <img class="plain" src="Figures/3d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
-            <img class="plain" src="Figures/4d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
-          </div>
-          <h4 id="citation"></h4>
-          <aside class="notes">
-          </aside>
+          <h4 id="header">Some interesting observations</h4>
+          <section>
+            <div class="wnotes vcenter">
+              <img class="plain" src="Figures/2d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
+              <img class="plain" src="Figures/3d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
+              <img class="plain" src="Figures/4d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
+            </div>
+            <aside class="notes">
+            </aside>
+          </section>
+
+          <section>
+            <div class="wnotes vcenter">
+              <img class="plain" src="Figures/3d_pca_table.png" style="top:5vh;">
+            </div>
+            <aside class="notes">
+            </aside>
+          </section>
+
+          <section>
+            <div class="wnotes vcenter">
+              <img class="plain" src="Figures/4d_pca_table.png" style="top:5vh;">
+            </div>
+            <aside class="notes">
+            </aside>
+          </section>
+          <h4 id="citation" class="citwnotes"></h4>
         </section>
 
         <section>
-          <h4 id="header">Some interesting observations<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes vcenter">
-            <img class="plain" src="Figures/1d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
-            <img class="plain" src="Figures/1d_bounded_midvar.svg" style="max-height:30%;margin:0;padding:0;">
-            <img class="plain" src="Figures/1d_bounded_highvar.svg" style="max-height:30%;margin:0;padding:0;">
-          </div>
-          <h4 id="citation"></h4>
-          <aside class="notes">
+          <h4 id="header">Some interesting observations</h4>
+          <section>
+            <div class="wnotes vcenter">
+              <img class="plain" src="Figures/1d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
+              <img class="plain" src="Figures/1d_bounded_midvar.svg" style="max-height:30%;margin:0;padding:0;">
+              <img class="plain" src="Figures/1d_bounded_highvar.svg" style="max-height:30%;margin:0;padding:0;">
+            </div>
+            <aside class="notes">
+              Increasing variance in species distributions: bounded
+            </aside>
+          </section>
 
-          </aside>
-        </section>
-        <section>
-          <h4 id="header">Some interesting observations<i class="fas fa-check-circle" style="padding-left:1vw;"></i><i class="fas fa-circle"></i></h4>
-          <div class="wnotes vcenter">
-            <img class="plain" src="Figures/1d_looping.svg" style="max-height:30%;margin:0;padding:0;">
-            <img class="plain" src="Figures/1d_looping_midvar.svg" style="max-height:30%;margin:0;padding:0;">
-            <img class="plain" src="Figures/1d_looping_highvar.svg" style="max-height:30%;margin:0;padding:0;">
-          </div>
-          <h4 id="citation"></h4>
-          <aside class="notes">
-            Increasing variance in species distributions
-          </aside>
+          <section>
+            <div class="wnotes vcenter">
+              <img class="plain" src="Figures/1d_looping.svg" style="max-height:30%;margin:0;padding:0;">
+              <img class="plain" src="Figures/1d_looping_midvar.svg" style="max-height:30%;margin:0;padding:0;">
+              <img class="plain" src="Figures/1d_looping_highvar.svg" style="max-height:30%;margin:0;padding:0;">
+            </div>
+            <aside class="notes">
+              Increasing variance in species distributions: looping
+            </aside>
+          </section>
+          <h4 id="citation" class="citwnotes"></h4>
         </section>
 
         <section class="center">
           <div class="wnotes vcenter">
             <h1 style="width:100%;font-size:300%;padding-bottom:20vh;">Questions?</h1>
-            <!-- <p style="position:absolute;bottom:20%;width:100%;text-align:center;"><a href="http://michalska-smith.com/talks/NetSci_06.2017">Slides available on Michalska-Smith.com</a></p> -->
+            <!-- <p style="position:absolute;bottom:20%;width:100%;text-align:center;"><a href="http://michalska-smith.com/talks/">Slides available on Michalska-Smith.com</a></p> -->
           </div>
           <div style="position:absolute;bottom:0;left:5%;" id="abs_pos">
             <img class="plain" src="../NSF_logo.png" style="display:inline-block;height:10vh;">
@@ -425,10 +653,10 @@ for (each column_i in M) {
 
         <section>
           <h4 id="header">Alternative Distance Metrics</h4>
-          <div class="wnotes">
-            <img class="plain" style="padding-top:5vh;max-height:85vh;" src="Figures/alternative_distance_metrics.svg">
+          <div class="wnotes vcenter">
+            <img class="plain" src="Figures/alternative_distance_metrics.svg">
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
           </aside>
         </section>
@@ -440,11 +668,11 @@ for (each column_i in M) {
 
             </div>
           </div>
-          <h4 id="citation"></h4>
+          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
           </aside>
         </section> -->
-      </section></div>
+      </div>
     </div>
 
     <script src="../../reveal.js/lib/js/head.min.js"></script>
@@ -457,7 +685,7 @@ for (each column_i in M) {
       if (key == 86) {
           // if the user pressed 'v':
           $("aside.notes").toggleClass("hidden");
-          $("aside.notes").siblings().not("#header").not("#citation").not("#abs_pos").toggleClass("wnotes");
+          $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").toggleClass("wnotes");
           $("section > #citation").toggleClass("citwnotes");
       }
     });
@@ -469,7 +697,7 @@ for (each column_i in M) {
         height:"100%",
         controls: false,
         progress: true,
-        // slideNumber: true,
+        slideNumber: true,
         history: true,
         center: false,
         transition: "slide", // none/fade/slide/convex/concave/zoom

@@ -37,22 +37,33 @@ section > div {
 /*////////////////////////////// Header/Footer ///////////////////////////////*/
 #citation {
   bottom:0;
-  right:0;
+  right:2vw;
+  text-align:right;
   position:absolute;
-  font-size:70%;
+  font-size:50%;
   z-index:100;
 }
 
 #citation.citwnotes {
-  right:35vw;
+  right:42vw;
 }
 
 #header {
-  top:0px;
-  left:0px;
+  top:0;
+  left:2vw;
   position:absolute;
   font-size:90%;
   z-index:100;
+}
+
+#slide_position {
+  text-align:right;
+  top:1vh;
+  right:2vw;
+  position:absolute;
+  font-size:50%;
+  z-index:99;
+  color:#aaa;
 }
 
 /*/////////////////////////////// Slide Notes ////////////////////////////////*/
@@ -87,7 +98,7 @@ img.plain {
   position: absolute;
   display: block;
   text-align: left;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(235, 235, 235, 0.8);
   color: #000000;
   right: 0;
   top: 5vh;
@@ -96,6 +107,7 @@ img.plain {
   font-size: 60%;
   line-height: 120%;
   overflow:auto;
+  padding-left: 0.5vw;
 }
 
 span.key {
@@ -118,15 +130,12 @@ table td {
   border-bottom: 0 !important;
 }
 
-.red {
-  color:#ff2c2d;
-}
+.red {color:#9e0142;}
+.blue {color: #747aa8;}
+.green {color: #6c8c58;}
+.purple {color: #8e4fc4;}
 
-.blue {
-  color: #747aa8
-}
-
-/* .reveal .slides section .fragment.highlight-yellow,
+.reveal .slides section .fragment.highlight-yellow,
 .reveal .slides section .fragment.highlight-current-yellow,
 .reveal .slides section .fragment.highlight-purple,
 .reveal .slides section .fragment.highlight-current-purple,
@@ -136,7 +145,7 @@ table td {
   visibility: visible; }
 
 .reveal .slides section .fragment.highlight-red.visible {
-  color: #b65067; }
+  color: #9e0142; }
 
 .reveal .slides section .fragment.highlight-green.visible {
   color: #6c8c58; }
@@ -154,7 +163,7 @@ table td {
   color: #000000; }
 
 .reveal .slides section .fragment.highlight-current-red.current-fragment {
-  color: #b65067; }
+  color: #9e0142; }
 
 .reveal .slides section .fragment.highlight-current-green.current-fragment {
   color: #6c8c58; }
@@ -170,7 +179,7 @@ table td {
 
 .reveal .slides section .fragment.emph-bold.current-fragment {
   font-weight: bold;
-  visibility: visible; } */
+  visibility: visible; }
 
 .vcenter {
   display:flex;
@@ -211,4 +220,8 @@ img {
   left: 2vw;
   margin: 0;
   padding: 0;
+}
+
+.fa-li {
+  padding-top:0.2em;
 }
