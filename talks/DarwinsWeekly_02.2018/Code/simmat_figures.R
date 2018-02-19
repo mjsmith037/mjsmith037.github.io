@@ -112,7 +112,6 @@ build_4d_looping_probabilitymatrix <- function(n_species, species_dfuncs, specie
     return(prob_observed)
 }
 
-
 ## function to recursively remove full/empty rows/cols as these contain no information
 remove_uninformative_nodes <- function(mat) {
     sub_mat <- mat
@@ -335,7 +334,7 @@ occ_mat %>% normalize() %>% pca_plot()
 ggsave(filename="../Figures/pca_standalone.svg", width=4, height=4)
 
 #### NESTEDNESS ####
-occ_mat <- make_mat("bounded", 1, 0, 100, 200, "runif", 0, 1, "constant", 0, NA, "logistic", seq(1, 0.1,length.out=200), 8)
+occ_mat <- make_mat("bounded", 1, 0, 1000, 2500, "runif", 0, 1, "constant", 0, NA, "logistic", seq(1, 0.1,length.out=2500), 15)
 occ_mat %>%
     as_data_frame() %>%
     rownames_to_column("one") %>%
@@ -354,8 +353,8 @@ occ_mat %>%
           axis.ticks=element_blank(),
           axis.title=element_text(size=24),
           legend.position="none")
-ggsave(filename="../Figures/nested_occurance.svg", width=7, height=5)
-p <- occ_mat %>% normalize() %>% full_diagnostic_plot("../Figures/nested_fullplot.svg", 16.5, 4)
+ggsave(filename="../Figures/nested_occurance.svg", width=10, height=5)
+p <- occ_mat %>% normalize() %>% full_diagnostic_plot("../Figures/nested_fullplot.png", 16.5, 4)
 
 #### ALTERNATIVE METHODS ####
 occ_mat <- make_mat("bounded", 1, 2, 500, 750, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)

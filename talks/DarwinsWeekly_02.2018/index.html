@@ -455,7 +455,8 @@
 
         <section>
           <h4 id="header">What we've done</h4>
-          <div class="wnotes vcenter">
+          <!-- <section> -->
+            <div class="wnotes vcenter">
 <pre style="max-width:66vw;"><code data-trim class="r">
 # normalize the columns of the occurance matrix (A) to get matrix B
 B &lt;- normalize(A)
@@ -472,21 +473,34 @@ for (each column_i in B) {
   }
 }
 </code></pre>
-          </div>
-          <h4 id="citation" class="citwnotes"></h4>
-          <aside class="notes">
-          </aside>
-        </section>
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+              We utilized a
+              <a href="https://darrenjw.wordpress.com/2013/09/29/parallel-tempering-and-metropolis-coupled-mcmc/">Metropolis-Coupled Markov Chain Monte Carlo</a>
+              (MCMCMC, or MC^3) stochastic search algorithm. The core functionality
+              of this algorithm is the fitness function, which is what this pseudocode
+              outlines. Basically, a good fit is one in which, for each column, the
+              other columns that are most similar to the target column/row are also the
+              nearest in position. To quantify this, we rank the distances to every
+              other column from a target column and then sum those ranks for a local
+              neighborhood around that target column, finally summing those values
+              for every column/row in the matrix. Thus, the lower this value, the more
+              low-rank distance columns/rows are nearby the target column/row and the
+              better the fit.
+            </aside>
+          </section>
 
-        <!-- <section>
-          <h4 id="header">What we've done</h4>
-          <div class="wnotes vcenter">
+          <!-- <section>
+            <div class="wnotes vcenter">
 
-          </div>
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+              explain mcmcmc
+            </aside>
+          </section>
           <h4 id="citation" class="citwnotes"></h4>
-          <aside class="notes">
-            explain mcmcmc
-          </aside>
         </section> -->
 
         <!-- justify choice with timings and visual results? -->
@@ -500,18 +514,54 @@ for (each column_i in B) {
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            <p>
+              So, how does this work? We can test it with our simulated data. This is
+              how the results look when they are first generated, and ...
+            </p><span id="ns">next slide</span><p>
+              this is how the best solution found from a randomized starting configuration
+              looks. If you can't see the difference, that is a good thing -- it means we
+              were able to recover near the optimal ordering. This can be further demonstrated
+              if we plot the two orderings against one another.
+            </p><span id="ns">next slide</span><p>
+              As you can see, there are a few swaps, but in general, this is a correlation of
+              greater than 0.98. Also note the fitness scores shown in the axes labels --
+              we actually found a slightly better fit than the original. This could be due to
+              not having the optimal neighborhood size in our calculation of fitness, or it could
+              be that, due to the stochastic nature of the data generation, this new order is
+              actually more parsimonious than the original.
+            </p>
           </aside>
         </section>
 
         <section>
           <h4 id="header">What we've done</h4>
           <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
-            <img class="plain" style="position:absolute;left:0;max-width:65%" src="Images/Nutnet_GreatPlains.png">
-            <img class="plain" style="position:absolute;right:0;max-width:35%;" src="Images/Nutnet_PCA.svg">
-            <img class="plain fragment" style="position:absolute;right:0;max-width:35%;" src="Images/Nutnet_PCA_wline.svg">
+            <img class="plain" style="position:absolute;left:0;max-width:65%" src="Images/Nutnet_GreatPlains_bw.png">
+            <img class="plain" style="position:absolute;right:0;max-width:35%;" src="Images/Nutnet_PCA_bw.svg">
+            <img class="plain fragment" style="position:absolute;left:0;max-width:65%" src="Images/Nutnet_GreatPlains.png" data-fragment-index="1">
+            <img class="plain fragment" style="position:absolute;right:0;max-width:35%;" src="Images/Nutnet_PCA.svg" data-fragment-index="1">
+            <img class="plain fragment" style="position:absolute;right:0;max-width:35%;" src="Images/Nutnet_PCA_wline.svg" data-fragment-index="2">
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            <p>
+              So, the algorithm works, at least with highly controlled, simulated data. What about
+              in the real world? This map shows a subset of the experimental sites taking part in
+              the <a href="http://www.nutnet.umn.edu/">Nutrient Network</a> -- a replicated experiment
+              which contains plots of land for which plant percent cover data has been collected
+              for over a decade. If we build an occurance matrix analogous to thos shown earlier in
+              the talk, i.e. species x plot, and perform the usual analysis of buiding a distance
+              matrix and running a PCA on it (though note that in this case, we are using the plot x
+              plot projection, not the species x species one), we see our familiar arch.
+              Even more exciting, if we color the sites by longitude,
+            </p><span id="ns">next slide</span><p>
+              We see a clear pattern along the arch, which can be accentuated by a path drawn
+              between the mean positions for each longitude:
+            </p><span id="ns">next slide</span><p>
+              The one extreme outlier in this case, the light blue in the upper right, is the site
+              in Tyson, MO. Remarkably, this site is about to be closed down because it is suffering
+              a rapid invasion of species more common in the Eastern US.
+            </p>
           </aside>
         </section>
 
@@ -523,6 +573,24 @@ for (each column_i in B) {
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            <p>
+              So how does our algorithm fare with this relatively nice, though clearly more
+              noisy, empirical case? Here is the before picture, with the plots clustered by
+              site, but unordered otherwise.
+            </p><span id="ns">next slide</span><p>
+              And here is the best found ordering of the plots. Note that while the distance
+              matrix is clearly showing greater structure (as would be expected, as this is
+              the level upon which the algorithm is acting), there is only marginal improvement
+              in the interpretability of the eigenvectors. What's more, the structure in the
+              distance matrix does not appear to match our Toeplitz structure especially well.
+              This is likely due to not running the algorithm for long enough. This is supported
+              by the observation that our best-found ordering has a substantially worse fit than
+              the starting configuration. This is despite running the algorithm for substantially
+              longer and the matrix being substantially smaller than in the simulated case.
+            </P><p>
+              In essence, it appears that empirical datasets are much more difficult to fit
+              than in the simulated case -- not a surprising result.
+            </p>
           </aside>
         </section>
 
@@ -539,6 +607,9 @@ for (each column_i in B) {
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            Alright, so other than running the algorithm for longer on the empirical dataset
+            in hopes of finding a better solution, what are some other things I am hoping to
+            tackle with this framework?
           </aside>
         </section>
 
@@ -547,6 +618,7 @@ for (each column_i in B) {
           <div class="wnotes vcenter">
             <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
               <li><i class="fa-li fas fa-angle-right"></i>Identifying rank vs. identifying position</li>
+              <li><i class="fa-li fas fa-angle-right"></i>Gradients in more than one dimension</li>
               <li><i class="fa-li fas fa-angle-right"></i>Types of variability</li>
               <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
                 <li><i class="fa-li fas fa-angle-double-right"></i>Species center distribution</li>
@@ -558,6 +630,23 @@ for (each column_i in B) {
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            <p>
+              It is iportant to be clear about what this algorithm is actually doing; it is not
+              identifying the position along the gradient of each species/site. Rather, it is
+              identifying a rank-order for the species/sites along the gradient. These are
+              different problems, but the latter would be the more powerful result. I know that
+              <a href="http://allesinalab.uchicago.edu/">Stefano Allesina</a> has been looking
+              into this related problem, and I look forward to discussing this issue with him.
+            </p><p>
+              Second, are there similar patterns in the principal components or eigenvectors
+              when a more complicated gradient underlies the data, such as a two or more
+              dimensional gradient? This is something that has been under-explored, but which
+              is quite easy to investigate using the framework explained in this talk.
+            </p><p>
+              A third area of expansion is more clearly defining the limits to our inference.
+              Explicitly, how does introducing variation at different levels of the simulation
+              affect our ability to consistently recover the proper orderings?
+            </p>
           </aside>
         </section>
 
@@ -574,6 +663,8 @@ for (each column_i in B) {
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            I want to end with some observations that begin to tackle a couple of
+            the aforementioned points, but at a very superficial level.
           </aside>
         </section>
 
@@ -586,22 +677,26 @@ for (each column_i in B) {
               <img class="plain" src="Figures/4d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
             </div>
             <aside class="notes">
+              First, the case of higher dimensions. Here are the basic results for 2, 3, and 4
+              dimensional gradients.
             </aside>
           </section>
 
           <section>
             <div class="wnotes vcenter">
-              <img class="plain" src="Figures/3d_pca_table.png" style="top:5vh;">
+              <img class="plain" src="Figures/3d_pca_table_cropped.png" style="top:5vh;">
             </div>
             <aside class="notes">
+              first four pcs for 3D gradient
             </aside>
           </section>
 
           <section>
             <div class="wnotes vcenter">
-              <img class="plain" src="Figures/4d_pca_table.png" style="top:5vh;">
+              <img class="plain" src="Figures/4d_pca_table_cropped.png" style="top:5vh;">
             </div>
             <aside class="notes">
+              first four pcs for 4D gradient
             </aside>
           </section>
           <h4 id="citation" class="citwnotes"></h4>
@@ -655,6 +750,17 @@ for (each column_i in B) {
           <h4 id="header">Alternative Distance Metrics</h4>
           <div class="wnotes vcenter">
             <img class="plain" src="Figures/alternative_distance_metrics.svg">
+          </div>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">Nestedness as Gradient</h4>
+          <div class="wnotes vcenter">
+            <img class="plain" style="width:33%;" src="Figures/nested_occurance.svg">
+            <img class="plain" src="Figures/nested_fullplot.png">
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
