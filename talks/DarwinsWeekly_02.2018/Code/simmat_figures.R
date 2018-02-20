@@ -331,7 +331,7 @@ occ_mat %>% normalize() %>% projmat_plot()
 ggsave(filename="../Figures/distance_matrix.svg", width=4, height=4)
 
 occ_mat %>% normalize() %>% pca_plot()
-ggsave(filename="../Figures/pca_standalone.svg", width=4, height=4)
+ggsave(filename="../Figures/pca_standalone.svg", width=4, height=4.25)
 
 #### NESTEDNESS ####
 occ_mat <- make_mat("bounded", 1, 0, 1000, 2500, "runif", 0, 1, "constant", 0, NA, "logistic", seq(1, 0.1,length.out=2500), 15)

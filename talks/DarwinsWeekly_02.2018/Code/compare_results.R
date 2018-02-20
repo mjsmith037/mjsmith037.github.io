@@ -6,7 +6,7 @@ library(parallel)
 library(broom)
 library(tidyverse)
 
-# matfile_base <- "transposedsimmat_1d_bounded_3-MC3_Distance"
+# matfile_base <- "simmat_1d_bounded_3-MC3_Distance"
 # results_dir <- "~/Research/EcologicalLinearity/Results/SimulatedMatrices"
 # data_dir <- "~/Research/EcologicalLinearity/Data/SimulatedMatrices"
 matfile_base <- "nutnet"
@@ -51,15 +51,8 @@ get_fitnesses <- function(dat) {
 }
 result_df <- data_frame(original_file=res_files) %>%
     mutate(file_base = original_file %>% file_path_sans_ext() %>% basename()) %>%
-    ## special formatting of US Congress Files
-    # separate(file_base, c("Type", "Subtype", "Year", "Search", "R_OR_C",
-    #                       "Wrapping", "dd", "n_steps", "n_chains", "r_seed"), "-") %>%
-    # unite("Web", Type, Subtype, Year, sep="-") %>%
-    ## otherwise
     separate(file_base, c("Web", "Search", "R_OR_C", "Wrapping", "dd",
                           "n_steps", "n_chains", "r_seed"), "-") %>%
-    ## old style
-    # separate(file_base, c("Web", "Search", "R_OR_C", "n_steps", "n_chains", "r_seed"), "-") %>%
     mutate(ordering=lapply(orderings, str_c, collapse=" ") %>% unlist()) %>%
     group_by(Web, R_OR_C) %>%
     do(get_fitnesses(.)) %>%
@@ -91,20 +84,19 @@ plot_comparison <- function(dat) {
     load(dat$original_file[1])
     rm(list="full_diagnostic_plot")
     source("plotting_functions.R")
-    before <- mat %>%
+    before <- mat %>% #t() %>%
         .[,apply(., 2, sd) != 0] %>%
         apply(2, function(col) (col - mean(col)) / sd(col)) %>% t() %>%
-        full_diagnostic_plot() %>%
-        ggsave(filename="../Figures/Empirical_Before.svg", width=16.5, height=4)
-    after <- mat[,dat %>% filter(R_OR_C == "1") %>% .$ordering %>% str_split(" ") %>% unlist() %>% as.integer()] %>%
+        full_diagnostic_plot(filename="../Figures/_Before.svg", 16.5, 4)
+    after <- mat[,#dat %>% filter(R_OR_C == "0") %>% .$ordering %>% str_split(" ") %>% unlist() %>% as.integer(),] %>% t() %>%
+                 dat %>% filter(R_OR_C == "1") %>% .$ordering %>% str_split(" ") %>% unlist() %>% as.integer()] %>%
         .[,apply(., 2, sd) != 0] %>% 
         apply(2, function(col) (col - mean(col)) / sd(col)) %>% t() %>%
-        full_diagnostic_plot() %>%
-        ggsave(filename="../Figures/Empirical_After.svg", width=16.5, height=4)
+        full_diagnostic_plot(filename="../Figures/_After.svg", 16.5, 4)
     return(dat)
 }
 best_order <- result_df %>%
-    filter(R_OR_C == "1") %>%
+    # filter(R_OR_C == "1") %>%
     group_by(Web) %>%
     arrange(fitness_dist, fitness_lm) %>%
     do(head(., 1)) %>%
@@ -121,19 +113,19 @@ result_df %>%
            tidy())
 
 ## look at the new ordering (for comparing to known orders)
-# order_df <- data_frame(n=result_df %>%
-#                            arrange(fitness_dist, fitness_lm) %>%
-#                            do(head(., 1)) %>%
-#                            .$ordering %>% str_split(" ") %>% unlist() %>% as.integer()) %>% 
-#     mutate(o=1:n())
-# ggplot(order_df) +
-#     aes(x=o, y=n) +
-#     geom_point() +
-#     ylab(str_c("Best Found Ordering (",
-#                read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
-#                    as.matrix() %>% .[order_df$n,] %>% full_distance(comp_dd) %>% format(scientific=FALSE, big.mark=","), ")")) +
-#     xlab(str_c("Original Ordering (",
-#                read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
-#                    as.matrix() %>% full_distance(comp_dd) %>% format(scientific=FALSE, big.mark=","), ")")) +
-#     theme_bw()
-# ggsave(filename="../Figures/compare_simmat_orderings.svg", width=7, height=5)
+order_df <- data_frame(n=result_df %>%
+                           arrange(fitness_dist, fitness_lm) %>%
+                           do(head(., 1)) %>%
+                           .$ordering %>% str_split(" ") %>% unlist() %>% as.integer()) %>%
+    mutate(o=n():1) ## reverse ordering as necessary to make correlation positive
+ggplot(order_df) +
+    aes(x=o, y=n) +
+    geom_point() +
+    ylab(str_c("Best Found Ordering (",
+               read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
+                   as.matrix() %>% .[order_df$n,] %>% full_distance(comp_dd) %>% format(scientific=FALSE, big.mark=","), ")")) +
+    xlab(str_c("Original Ordering (",
+               read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
+                   as.matrix() %>% full_distance(comp_dd) %>% format(scientific=FALSE, big.mark=","), ")")) +
+    theme_bw()
+ggsave(filename="../Figures/compare_simmat_orderings.svg", width=7, height=5)

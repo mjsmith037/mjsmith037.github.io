@@ -42,9 +42,10 @@
               slide partway through these explanations. These will be indicated by
               "<span id="ns">next slide</span>" in these notes.
             </p><p>
-              Slides can be advanced by tapping<span class="key">Spc</span> (preferred),
-              <span class="key"><i class="fas fa-arrow-right"></i></span>, <span class="key">PgDn</span>,
-              or <span class="key">n</span>.
+              Slides can be advanced by tapping<span class="key"><i class="fas fa-arrow-right"></i></span>
+              to display only the core slides, or <span class="key">Spc</span>,
+              <span class="key">PgDn</span>, or <span class="key">n</span> to also show
+              some supplemental slides throughout the presentation.
             </p><p>
               Finally, this presentation will look best in full-screen, but should
               be more or less intelligible on smaller screens (no guarantees about phone screens)
@@ -188,10 +189,14 @@
               Ecologists have been interested in ordination for a long time and
               fairly early on, Principal Component Analysis (PCA) was identified
               as a powerful, <span class="red">agnostic</span> tool in this effort.
-              For a period of time, the arch observed in PCA of one dimensional
+              For instance, this figure, shows six (well, I'm not convinced by the
+              bottom row, but at least four) examples of the arch pattern across
+              a range of disciplines from Psychology (A) to Ecology (B) to Astronomy (C)
+              to Arhaeology (D). For a period of time, the arch observed in PCA of one dimensional
               data was viewed as a statistical artifact but due in part to an
-              increasing understanding of the mathematics uderlying the arch, more
-              recent efforts have shifted away from "correcting" the ordination
+              increasing understanding of the mathematics uderlying the arch, efforts,
+              starting with this publication by Wartenberg, Ferson, and Rohlf in 1987,
+              have shifted away from "correcting" the ordination
               coordinates. Nevertheless, the presence of the arch still presents
               challenges for extracting the optimal ordering of the data.
             </p><p style="font-size:60%;">
@@ -231,8 +236,10 @@
 
         <section>
           <h4 id="header">What is known</h4>
-          <div class="wnotes vcenter">
+          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;">
             <img class="plain" src="Figures/raw_presabs_pca.svg" style="width:40%;">
+            <i class="fas fa-arrow-alt-circle-right" style="font-size:3vw;"></i>
+            <img class="plain" src="Figures/pca_standalone.svg" style="width:40%;">
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
@@ -478,7 +485,7 @@ for (each column_i in B) {
             <aside class="notes">
               We utilized a
               <a href="https://darrenjw.wordpress.com/2013/09/29/parallel-tempering-and-metropolis-coupled-mcmc/">Metropolis-Coupled Markov Chain Monte Carlo</a>
-              (MCMCMC, or MC^3) stochastic search algorithm. The core functionality
+              (MCMCMC, or MC$^3$) stochastic search algorithm. The core functionality
               of this algorithm is the fitness function, which is what this pseudocode
               outlines. Basically, a good fit is one in which, for each column, the
               other columns that are most similar to the target column/row are also the
@@ -508,9 +515,10 @@ for (each column_i in B) {
         <section>
           <h4 id="header">What we've done</h4>
           <div class="wnotes vcenter">
-            <img class="plain" src="Figures/Simmat_Before.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
-            <img class="plain" src="Figures/Simmat_After.svg" style="max-height:45%;margin-top:0;padding-top:0;">
-            <img class="plain fragment fade-in" style="position:absoulte;" src="Figures/compare_simmat_orderings.svg">
+            <img class="plain" style="position:absolute;" src="Figures/Simmat_Before.svg">
+            <img class="plain fragment" style="position:absolute;" src="Figures/Simmat_After.svg" data-fragment-index="1">
+            <span class="fragment" style="width:100%;height:100%;background-color:#ffffff;opacity:0.5;position:absolute" data-fragment-index="2"></span>
+            <img class="plain fragment" style="position:absoulte;z-index:50;" src="Figures/compare_simmat_orderings.svg" data-fragment-index="2">
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
@@ -580,7 +588,7 @@ for (each column_i in B) {
             </p><span id="ns">next slide</span><p>
               And here is the best found ordering of the plots. Note that while the distance
               matrix is clearly showing greater structure (as would be expected, as this is
-              the level upon which the algorithm is acting), there is only marginal improvement
+              the level upon which the algorithm is acting), there is only marginal (at best) improvement
               in the interpretability of the eigenvectors. What's more, the structure in the
               distance matrix does not appear to match our Toeplitz structure especially well.
               This is likely due to not running the algorithm for long enough. This is supported
@@ -812,7 +820,7 @@ for (each column_i in B) {
         dependencies: [
           // { src: "../../reveal.js/plugin/markdown/marked.js" },
           // { src: "../../reveal.js/plugin/markdown/markdown.js" },
-          // { src: "../../reveal.js/plugin/math/math.js", async: true },
+          { src: "../../reveal.js/plugin/math/math.js", async: true },
           { src: "../../reveal.js/plugin/notes/notes.js", async: true },
           { src: "../../reveal.js/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ]
