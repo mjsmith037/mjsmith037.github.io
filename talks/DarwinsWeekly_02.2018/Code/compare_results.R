@@ -25,7 +25,7 @@ orderings <- mclapply(1:length(res_files), mc.cores=1, function(ii) {
 })
 get_fitnesses <- function(dat) {
     load(str_c(data_dir, "/", str_replace(dat$Web[1], "transposed", ""), ".RData"))
-    # occurance_matrix <- Data$B
+    occurance_matrix <- Data$B
     B <- occurance_matrix[,apply(occurance_matrix, 2, sd) != 0] %>%
         apply(2, function(col) (col - mean(col)) / sd(col))
     if (unique(dat$R_OR_C) == "1") {
@@ -113,19 +113,19 @@ result_df %>%
            tidy())
 
 ## look at the new ordering (for comparing to known orders)
-order_df <- data_frame(n=result_df %>%
-                           arrange(fitness_dist, fitness_lm) %>%
-                           do(head(., 1)) %>%
-                           .$ordering %>% str_split(" ") %>% unlist() %>% as.integer()) %>%
-    mutate(o=n():1) ## reverse ordering as necessary to make correlation positive
-ggplot(order_df) +
-    aes(x=o, y=n) +
-    geom_point() +
-    ylab(str_c("Best Found Ordering (",
-               read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
-                   as.matrix() %>% .[order_df$n,] %>% full_distance(comp_dd) %>% format(scientific=FALSE, big.mark=","), ")")) +
-    xlab(str_c("Original Ordering (",
-               read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
-                   as.matrix() %>% full_distance(comp_dd) %>% format(scientific=FALSE, big.mark=","), ")")) +
-    theme_bw()
-ggsave(filename="../Figures/compare_simmat_orderings.svg", width=7, height=5)
+# order_df <- data_frame(n=result_df %>%
+#                            arrange(fitness_dist, fitness_lm) %>%
+#                            do(head(., 1)) %>%
+#                            .$ordering %>% str_split(" ") %>% unlist() %>% as.integer()) %>%
+#     mutate(o=n():1) ## reverse ordering as necessary to make correlation positive
+# ggplot(order_df) +
+#     aes(x=o, y=n) +
+#     geom_point() +
+#     ylab(str_c("Best Found Ordering (",
+#                read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
+#                    as.matrix() %>% .[order_df$n,] %>% full_distance(comp_dd) %>% format(scientific=FALSE, big.mark=","), ")")) +
+#     xlab(str_c("Original Ordering (",
+#                read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
+#                    as.matrix() %>% full_distance(comp_dd) %>% format(scientific=FALSE, big.mark=","), ")")) +
+#     theme_bw()
+# ggsave(filename="../Figures/compare_simmat_orderings.svg", width=7, height=5)
