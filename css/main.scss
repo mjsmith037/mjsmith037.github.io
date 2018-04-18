@@ -33,9 +33,9 @@ div #license {
 }
 
 /*////////////////////////////////// NavBar //////////////////////////////////*/
-.navbar-brand {
+a.navbar-brand {
   font-variant: small-caps;
-  font-weight: bold;
+  color: #0d0c0c;
 }
 
 .navbar {
@@ -44,24 +44,17 @@ div #license {
   max-width: 1370px;
   margin-left: auto;
   margin-right: auto;
+  font-family: $serif-font;
+  font-weight: bold;
 }
 
 #navbar a {
-  font-size: 14px;
-  font-weight: bold;
   text-transform: uppercase;
+  color: #0d0c0c;
 }
 
-.navbar a {
-  color: #0d0c0c !important;
-}
-
-#navbar a:hover {
-  color: #125454 !important;
-}
-
-.navbar .fa {
-  font-size: 16px;
+#navbar>li>a>i {
+  font-size: 18px;
 }
 
 /*///////////////////////////////// Jumbotron ////////////////////////////////*/

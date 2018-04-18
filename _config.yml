@@ -8,4 +8,4 @@ permalink: /articles/:short_year/:title
 timezone: America/Chicago
 excerpt_separator: <!--more-->
 exclude: ['Gemfile', 'Gemfile.lock']
-gems: ['github-pages']
+plugins: ['github-pages']
