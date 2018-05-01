@@ -298,3 +298,7 @@ td {
   width:0;
   float: left;
 }
+
+.fa-ul {
+  list-style-type:none !important;
+}
