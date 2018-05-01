@@ -1,0 +1,1545 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Dissertation Defense</title>
+  <meta name="author" content="Matthew J Michalska-Smith">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="theme.css" id="theme">
+  <link rel="stylesheet" href="main.css">
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+  <!-- font-linking -->
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <script defer src="https://pro.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-+1nLPoB0gaUktsZJP+ycZectl3GX7wP8Xf2PE/JHrb7X1u7Emm+v7wJMbAcPr8Ge" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <div class="wnotes vcenter">
+          <div style="position:absolute;left:1vw;top:3vh;margin:0;padding:0;">
+            <h2 style="font-size:2.5vw;margin:0;padding:0;">University of Chicago</h2>
+            <h3 style="font-size:2vw;margin:-0.5em;padding:-0.5em;">Department of Ecology &amp; Evolution</h3>
+          </div>
+          <img src="Images/title.png" style="max-width:80%;padding-bottom:3vh;margin-top:-10vh;">
+          <h2 style="font-size:3vw;">Matthew Michalska-Smith</h2>
+          <ul style="list-style-type:none;position:absolute;left:1vw;bottom:3vh;margin:0;padding:0;font-size:2vw;">
+            <li style="font-weight:bold;">Stefano Allesina</li>
+            <li>Trevor Price</li>
+            <li>Mercedes Pascual</li>
+            <li>Sarah Cobey</li>
+            <li>Amos Maritan</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          <p>
+            This talk was given on 2 May 2018 at the <a
+            href="https://www.uchicago.edu/">University of Chicago</a> as the
+            public defense of my Ph.D. Dissertation. Text here will supplement
+            slide material.
+          </p><p>
+            You can remove this pane (and get it back) by tapping <span class="key">v</span> on your keyboard.
+          </p><p>
+            Some of the slides will have animations which require advancing the
+            slide partway through these explanations. These will be indicated by
+            "<span id="ns">next slide</span>" in these notes.
+          </p><p>
+            Slides can be advanced by tapping<span class="key"><i class="fas fa-arrow-alt-right"></i></span>
+            to display only the core slides, or <span class="key">Spc</span>,
+            <span class="key">PgDn</span>, or <span class="key">n</span> to also show
+            some supplemental slides throughout the presentation.
+          </p><p>
+            Finally, this presentation will look best in full-screen, but should
+            be more or less intelligible on smaller screens (no guarantees about phone screens)
+            So, whenever you're ready...
+          </p>
+          <span id="ns">next slide</span>
+        </aside>
+      </section>
+
+      <section>
+        <h4 id="header">Outline</h4>
+        <div class="wnotes vcenter">
+          <ol>
+            <li>Ecological networks: a brief history</li>
+            <li>Are ecological networks structuraly distinct?</li>
+            <li>Do trophic roles have structural signatures?</li>
+            <li>How ought competitve networks be structured?</li>
+            <li>Where do we go from here?</li>
+          </ol>
+        </div>
+        <h4 id="citation" class="citwnotes"></h4>
+        <aside class="notes">
+          <p>In this presentation, I will be discussing three of the projects I undertook
+          while a graduate student at the University of Chicago. Before we jump into
+          the projects themselves, however...</p>
+        </aside>
+      </section>
+
+      <section>
+        <h4 id="header">Outline</h4>
+        <div class="wnotes vcenter">
+          <ol>
+            <li class="orange">Ecological Networks: a brief history</li>
+            <ul class="fa-ul" style="list-style-type:none;font-size:80%;">
+              <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Networks as a unifying methodology</li>
+              <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Ecological networks</li>
+              <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Network structure</li>
+            </ul>
+            <li style="opacity:0.5;">Are ecological networks structuraly distinct?</li>
+            <li style="opacity:0.5;">Do trophic roles have structural signatures?</li>
+            <li style="opacity:0.5;">How ought competitve networks be structured?</li>
+            <li style="opacity:0.5;">Where do we go from here?</li>
+          </ol>
+        </div>
+        <h4 id="citation" class="citwnotes"></h4>
+        <aside class="notes">
+          <p>I'm going to provide a brief contextualization of network research in
+          Ecology. Touching on some of the important concepts that will pervade
+          the rest of the talk.</p>
+        </aside>
+      </section>
+
+      <section>
+        <h4 id="header">Networks as a unifying methodology</h4>
+        <div class="wnotes vcenter">
+          <blockquote style="font-size:150%;">
+            Here we are reminded that in nature <br><span class="green">nothing exists alone</span>
+          </blockquote>
+          <span style="font-size:80%;">&mdash;Rachel Carson, <i>Silent Spring</i>
+          </div>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+            <p>Few concepts have driven and shaped ecological research through the
+            ages as much as the notion that everything is connected.
+            Immortalized through famous quotes such as Darwin's <a
+            href="https://www.gutenberg.org/files/2009/2009-h/2009-h.htm">(en)tangled
+            bank</a>, this concept can be operationalized through the tools and techniques
+            of network analysis in which, for example, species are nodes in a network with links
+            representing interactions between these species.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#000" data-background="Images/planetary_network.jpg" data-background-size="contain">
+          <h4 id="header">Networks as a unifying methodology</h4>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes" style="background-color:rgba(0, 0, 0, 0.7);">
+            <p>Of course, it is not just nature that is interconnected, but there are a variety of
+            ways in which we are connected both with each other and with different
+            parts of the global ecosystem. Indeed, "network science" has proven to be
+            an exceedingly interdisciplinary endeavor, with similar techniques and
+            concepts being utilized across a host of fields spanning both the physical,
+            biological, and social sciences.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">Ecological Networks</h4>
+          <div class="wnotes vcenter">
+            <img style="max-height:90%;" src="Images/ecological_network_timeline.png">
+          </div>
+          <h4 id="citation" class="citwnotes"> <a href="https://www.springer.com/br/book/9783319682273">Ings &amp; Hawes 2018</a> </h4>
+          <aside class="notes">
+            <p>Within ecology, the use of networks is as old as the field itself. With the first food chains
+            being documented around the same time as graph theory is being developed in the
+            18th century, and complex food-webs being depicted in scientific
+            publications by the 19th century when the term "Ecology" is first coined.</p>
+            <p>Things moved quickly from there and the number of publications looking at ecological
+            networks continues to grow exponentially to the present day.</p>
+            <p>Especially noteworthy is the more recent shift in focus to look at
+            networks of various (and multiple) interaction types.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">Network structure</h4>
+          <div class="wnotes vcenter">
+            <div style="width:100%;display:flex;flex-direction:row;align-items:space-around;">
+              <ul class="fa-ul" style="list-style-type:none;width:45%;">
+                <li><i class="fa-li fas fa-angle-right"></i>Size (number of nodes)</li>
+                <li class="fragment" data-fragment-index="1"><i class="fa-li fas fa-angle-right"></i>Connectance (proportion of possible links realized)</li>
+                <li class="fragment" data-fragment-index="2"><i class="fa-li fas fa-angle-right"></i>Degree distribution (how many connections does each node have?)</li>
+              </ul>
+              <div class="vcenter" style="width:45%;">
+                <img style="position:absolute;margin:auto;width:75%;" src="Images/nodes.svg">
+                <img class="fragment" data-fragment-index="1" style="position:absolute;margin:auto;width:75%;" src="Images/links.svg">
+                <img class="fragment" data-fragment-index="2" style="position:absolute;margin:auto;width:75%;" src="Images/degree.svg">
+              </div>
+            </div>
+          </div>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+            <p>The area of network science that most fascinates me is network
+            structure. As networks became more commonplace, a natural question
+            arose of how to compare networks to one another. Initially,
+            scientists would just look at differences in the core components of
+            networks, starting with size, that is, the number of things in the
+            network. Represented here by these circles,</p>
+            <span id="ns">next slide</span>
+            <p>The second core component of a network is connections between the
+            nodes, usually termed "links" or "edges." Here, these are depicted
+            with lines connecting the dots. notice that nodes can interact with
+            themselves to produce what are called "self-loops" and that these
+            edges (while undirected and all of the same strength here) can also
+            convey this more sophisticated information in the general case. A
+            summary statistic about edges that is often looked at in network
+            science is the connectance which is just the proportion of all edges
+            possible that are actually present in a given network. Here, that
+            value is about $0.5$</p>
+            <span id="ns">next slide</span>
+            <p>One step up in complexity of network structure is to look at
+            properties of individual nodes in the network, for instance their
+            degree which is just another way to say the number of links
+            connected to that node. </p>
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">Network structure: Global</h4>
+          <div class="wnotes vcenter">
+            <div style="width:100%;display:flex;flex-direction:row;justify-content:space-around;">
+              <p>Nestedness</p>
+              <p class="fragment" data-fragment-index="1">Modularity</p>
+            </div>
+            <div style="width:100%;display:flex;flex-direction:row;justify-content:space-around;max-height:75vh;">
+              <img style="width:40%;max-height:100%;" src="Images/Weitz,etal_2013_nestedness.svg">
+              <img style="width:40%;max-height:100%;" class="fragment" data-fragment-index="1" src="Images/Weitz,etal_2013_modularity.svg">
+            </div>
+            <span class="orange fragment" data-fragment-index="2" style="font-size:10vh;position:absolute;margin:auto;background-color:rgba(0,0,0,.5);padding:5%;border-radius:50%;">Bipartite</span>
+          </div>
+          <h4 id="citation" class="citwnotes"><a href="https://www.sciencedirect.com/science/article/pii/S0966842X12002004">Weitz, <i>et al.</i> 2013</a>
+                                              <br><a href="https://link.springer.com/article/10.1007%2FBF00317469">Wright &amp; Reeves 1992</a>
+                                              <br><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1600-0706.2008.17053.x">Ulrich, Almeida-Neto, &amp; Gotelli 2008</a>
+                                              <br><a href="http://www.pnas.org/content/103/23/8577.short">Newman 2006</a></h4>
+          <aside class="notes">
+            <p>Especially in ecology, two "global" network structures have
+            dominated investigations into network structure. These structures
+            involve every node in the network, and are usually summarised with a
+            single value.</p>
+            <p>The first of these popular ecological structures is "Nestedness"
+            which is a attempt to quantify the degree to which the interactions
+            of specialists are a subset of generalists' interactions. This
+            results in a triangular network representation as seen in this modified
+            figure of phages infecting bacteria from <a
+            href="http://ecotheory.biology.gatech.edu/">Joshua Weitz's group at
+            Georgia Tech</a>.</p>
+            <span id="ns">next slide</span>
+            <p>The second structure is called "Modularity," also called
+            compartmentalization. This structure asks to what degree can species
+            be divided into subgroups which interact strongly within the group,
+            but weakly (or not at all in this toy example) with members of other
+            such groups.</p>
+            <p>For each of these structures, multiple methods of quantification
+            have been proposed, but they are, in-general, computationally intensive
+            to do well</p>
+            <span id="ns">next slide</span>
+            <p>As a side note, these networks have an additional structure that comes
+            up throughout this talk: they are bipartite. This means that, unline the
+            toy network in the previous slide, in which any node can be connected to
+            any other node, in these networks, the nodes can be divided into two classes
+            for which all interactions are between nodes of disparate class. In this
+            example, all links connect a virus to a bacterium; there are no links
+            betweeen two viruses or between two bacteria.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">Network structure: Local</h4>
+          <div class="wnotes vcenter">
+            <img style="position:absolute;margin:auto;width:80vw;" class="fragment fade-out" data-fragment-index="1" src="Images/motifs.svg">
+            <img class="fragment fade-in" data-fragment-index="1" src="Images/motif_distribution.svg">
+          </div>
+          <h4 id="citation" class="citwnotes"><a href="http://science.sciencemag.org/content/298/5594/824">Milo <i>et al.</i> 2002</a>
+                                              <br><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/oik.02176">Borrelli 2015</a></h4>
+          <aside class="notes">
+            <p>While the examination of the properties of small webs in isolation dates
+            back decades, more recently these subgraphs or "motifs" have been interpreted
+            as "building blocks" of larger networks.</p>
+            <p>For example, any network can be broken down into each possible combination
+            of three connected nodes in the network, of which there are then only 13 possible
+            configurations for the links to take. We can then tally up how many of each
+            of these configurations there are in a given network or set of networks.</p>
+            <span id="ns">next slide</span>
+            <p>For example, in this study by <a href="https://jjborrelli.github.io/">Jonathan Borrelli</a>,
+            now at SUNY Plattsburgh, we see that across 50 food-webs we find that the same
+          subgraphs are more or less common in each of the analyzed webs.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">Outline</h4>
+          <div class="wnotes vcenter">
+            <ol>
+              <li style="opacity:0.5;">Ecological Networks: a brief history</li>
+              <li class="orange">Are ecological networks structuraly distinct?</li>
+              <ul class="fa-ul" style="list-style-type:none;font-size:80%;">
+                <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Framing the question and the solution</li>
+                <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Efforts thus far</li>
+                <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>A computational challenge</li>
+              </ul>
+              <li style="opacity:0.5;">Do trophic roles have structural signatures?</li>
+              <li style="opacity:0.5;">How ought competitve networks be structured?</li>
+              <li style="opacity:0.5;">Where do we go from here?</li>
+            </ol>
+          </div>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+            <p>Alright, with that context, we are going to jump into the projects that I'm
+              highlighting today, starting with an interesting question of what we can
+              infer from network structure generally.</p>
+          </aside>
+        </section>
+
+        <section>
+          <div class="wnotes vcenter">
+            <img src="Images/distinguishing_title.png" style="max-width:80%;max-height:50vh;">
+            <ul style="list-style-type:none;position:absolute;left:5vw;bottom:5vh;">
+              <li style="font-size:75%;">In collaboration with:</li>
+              <li>Stefano Allesina</li>
+            </ul>
+          </div>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+            <p>This work has been something of a perpetual work in progress over the past five
+            years, so I am now in the process of writing it up as a challenge to the scientific
+          community to see if they might be able to make some more progress on it <!-- TODO: fix --></p>
+          </aside>
+        </section>
+
+        <section>
+          <div class="wnotes vcenter">
+            <h2>The Question:</h2>
+            <p>
+              Is it possible to distinguish networks of differing
+              <span class="fragment highlight-orange" data-fragment-index="1">types</span>
+              by their <span class="fragment highlight-orange" data-fragment-index="2">
+                structure</span>?
+              </p>
+              <dl>
+                <dt class="fragment" data-fragment-index="1">Interaction Type:</dt>
+                <dd class="fragment" data-fragment-index="1">the real-world-event being depicted by a network link</dd>
+
+                <dt class="fragment" data-fragment-index="2">Network Structure:</dt>
+                <dd class="fragment" data-fragment-index="2">the arrangement of connections within a network</dd>
+              </dl>
+            </div>
+            <aside class="notes">
+              <p>The project arose from a fairly simple question, with some surprisingly
+              complicated secondary considerations. First, we should probably clear up some
+              of the terminology.</p>
+              <span id="ns">next slide</span>
+              <p>By types, we are mainly thinking about the type of ecological interaction
+              being represented, <i>e.g.</i> pollination, parasitism, seed-dispersal, <i>etc.</i>.</p>
+              <span id="ns">next slide</span>
+              <p>and by structure, we mean all of those arrangements of links mentioned in the
+                introduction and any others that we can think of. Here we are only restricted by
+              the computational effort required to measure something on many networks, some of which
+            can be quite large.</p>
+            <p>Also, just to be clear, in this project we were only looking at bipartite networks,
+            as this tends to be the structure of type-specific ecological interaction networks.</p>
+            </aside>
+          </section>
+
+          <section>
+            <div class="wnotes vcenter">
+              <h2>The Solution:</h2>
+              <p>
+                Seeking <span class="fragment highlight-current-orange" data-fragment-index="1">generality</span>, <span class="fragment highlight-current-orange" data-fragment-index="2">specificity</span>, and <span class="fragment highlight-current-orange" data-fragment-index="3">scalability</span>.
+              </p>
+              <dl>
+                <dt class="fragment" data-fragment-index="1">Generality:</dt>
+                <dd class="fragment" data-fragment-index="1">Will our model work on new data?</dd>
+
+                <dt class="fragment" data-fragment-index="2">Specificity:</dt>
+                <dd class="fragment" data-fragment-index="2">Will our model fail when it is supposed to?</dd>
+
+                <dt class="fragment" data-fragment-index="3">Scalability:</dt>
+                <dd class="fragment" data-fragment-index="3">What is the proper level of disambiguation?</dd>
+              </dl>
+            </div>
+            <aside class="notes">
+              <p>It is important to be up front about what we are looking for as a solution to this problem.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">Generality</h4>
+            <div class="wnotes vcenter" style="margin-top:3vh;">
+              <img style="position:absolute;margin:auto;" src="Figures/Fit_full_results.svg">
+              <img class="fragment" style="position:absolute;margin:auto;" src="Figures/Test_full_results.svg">
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+              <p>In this and the following slides, I will be demonstrating a
+              potential solution which has some success, but several sortcomings
+              as well. For these figures, I am using a PCA that has been fit <!--TODO emphasize that PCA does not see categorizations -->
+              using a subset of non-ecological networks including webs of actors
+              performing in the same movies, authors publishing in the same
+              journals, crimes committed in different neighborhoods in different
+              cities, legislature voting records, and mirobiome OTU
+              presence/absence data across sites on human hosts.</p>
+              <p>These non-ecological data have an advantage of being fairly
+              large and consistent in their collection methods, as well as being
+              very highly replicated compared to ecological data.</p>
+              <p>One of the best ways to demonstrate that you are not
+              overfitting your model. That is, that you are not fitting your
+              model to a particular set of data rather than to the general class
+              of data you are interested in. Is to divide your data into fitting
+              and testing sets. Here, we use $100$ networks from each type to
+              fit the PCA and then ...</p>
+              <span id="ns">next slide</span>
+               <p>we can add the leftover networks onto the same plot and see if
+               they still fall within the same general areas.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">Specificity</h4>
+            <div class="wnotes vcenter" style="margin-top:3vh;">
+              <img class="fragment fade-out" data-fragment-index="1" style="position:absolute;margin:auto;" src="Figures/Empirical_full_results.svg">
+              <img class="fragment current-visible" data-fragment-index="1" style="position:absolute;margin:auto;" src="Figures/CM-Rand_full_results.svg">
+              <img class="fragment" data-fragment-index="2" style="position:absolute;margin:auto;" src="Figures/ER-Rand_full_results.svg">
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+              <p>The second concern is a tradeoff with generality. We want our model to be able
+              to be broken when we know that the relevant structure is disrupted. Put another way,
+            a model that is able to fit any set of networks will ... <!-- TODO emphasize noninformative variation--></p>
+            <p>To test this, we randomize the structure of each of our networks according to a
+            randomization protocol and see whether or not this breaks the clustering. We do this randomization in two ways, first a randomization that
+          preserved degree distribution: each node in the randomized web has the same number of connections as in the original network,
+        but who those connections are with is different</p>
+            <span id="ns">next slide</span>
+            <p>Second, we did a more conservative randomization in which only the total number of connections in the network
+            is preserved.</p>
+            <span id="ns">next slide</span>
+            <p>As you can see, in this latter case, there is a significant loss of separation, especially with
+            regards to the authorship networks and (to a lesser degree) the legislature webs.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">Scalability</h4>
+            <div class="wnotes vcenter" style="margin-top:3vh;">
+              <img class="fragment fade-out" data-fragment-index="1" style="position:absolute;margin:auto;" src="Figures/Empirical_full_results.svg">
+              <img class="fragment" data-fragment-index="1" style="position:absolute;margin:auto;" src="Figures/CrimeFocus_full_results.svg">
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+              <p>Finally, we have thus far treated the difference between type of network loosely.
+              This was on purpose, but there isn't an obvious cutoff for type ... <!-- TODO --></p>
+              <span id="ns">next slide</span>
+              <p>For example, whe we look more closely at the crime networks, there is additional structure
+              being captured by the PCA: namely each city's webs cluster together within the larger cluster of
+            crime webs.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">Efforts thus far</h4>
+            <div class="wnotes vcenter" style="margin-top:3vh;">
+              <img style="position:absolute;margin:auto;" src="Figures/EmpOverlay_full_results.svg">
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+              <p>So, how do ecological networks fit into this attempt?</p>
+              <p>Unfortunately, despite relative success in each of the desired
+              properties of a solution laid out thus far, ecological networks do not cluster.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">A computational challenge</h4>
+            <div class="wnotes vcenter">
+              <ul class="fa-ul" style="list-style-type:none;font-size:5vh;">
+                <li><i class="fa-li fas fa-angle-right"></i>Data</li>
+                <ul class="fa-ul" style="list-style-type:none;">
+                  <li><i class="fa-li fas fa-angle-double-right"></i>Ecological webs (<span style="color:#e07699;">51</span>, <span style="color:#95a7d5;">126</span>, <span style="color:#79c8a5;">35</span>)</li>
+                  <li><i class="fa-li fas fa-angle-double-right"></i>Non-biological reference set</li>
+                  <li><i class="fa-li fas fa-angle-double-right"></i>Erd&ouml;s-R&eacute;nyi and Configuration Model Randomizations</li>
+                </ul class="fa-ul" style="list-style-type:none;">
+                <li><i class="fa-li fas fa-angle-right"></i>Code</li>
+                <ul class="fa-ul" style="list-style-type:none;">
+                  <li><i class="fa-li fas fa-angle-double-right"></i>Analysis pipeline</li>
+                  <li><i class="fa-li fas fa-angle-double-right"></i>Easy-Add metrics</li>
+                </ul>
+              </ul>
+              <h3>All hosted online at Github</h3>
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+              <p>One of the great things about this project is that everyone has their own
+              ideas for which structures might be important. With an aim to utilize this crowd wisdom,
+              we will be putting the whole dataset as well as well-anotated and easy-to-modify
+              code online so everyone can give it a shot themselves.
+             </p>
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">Future directions</h4>
+            <div class="wnotes vcenter">
+              <ul class="fa-ul" style="list-style-type:none;font-size:5vh;">
+                <li>Machine learning</li>
+                <ul class="fa-ul" style="list-style-type:none;">
+                  <li>Gradient Boosted Regression Trees</li>
+                </ul class="fa-ul" style="list-style-type:none;">
+                <li>Continuing to add data</li>
+                <ul class="fa-ul" style="list-style-type:none;">
+                  <li>Ecological data as available</li>
+                  <li>Enhancing/adding to non-ecological data</li>
+                </ul>
+              </ul>
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+              <p>But why didn't our method work? Maybe we didn't measure the
+              right metrics or maybe PCA is too simplistic of a clustering
+              technique. Alternatively, maybe the ecological networks we have
+              are of too-low quality to be able to get at the fine-scale
+              structural differences between networks of mutualistic and
+              antagonistic interactions.</p>
+              <p>An alternative interpretation is that it actually did work.
+              Maybe it is just that the variation within ecological networks
+              is greater than the variation between networks of differing
+              interaction types.</p>
+              <p>To address this latter point, I will be continuing to add data
+              to the repository, but I am also interested in trying out some of
+              the machine learning techniques which are a bit more sophisticated
+              than PCA and have been growing in reputation in recent years.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">Outline</h4>
+            <div class="wnotes vcenter">
+              <ol>
+                <li style="opacity:0.5;">Ecological Networks: a brief history</li>
+                <li style="opacity:0.5;">Are ecological networks structuraly distinct?</li>
+                <li class="orange">Do trophic roles have structural signatures?</li>
+                <ul class="fa-ul" style="list-style-type:none;font-size:80%;">
+                  <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Defining trophic roles</li>
+                  <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Introducing the group model</li>
+                  <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>results</li>
+                </ul>
+                <li style="opacity:0.5;">How ought competitve networks be structured?</li>
+                <li style="opacity:0.5;">Where do we go from here?</li>
+              </ol>
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+              <p>In this second project, we are looking at a similar problem, but
+              in this case we are looking at distinguishing species within a single
+              network, in particular, a food-web.</p>
+            </aside>
+          </section>
+
+          <section>
+            <div class="wnotes vcenter">
+              <img src="Images/parasites_title.png" style="max-width:80%;">
+              <ul style="list-style-type:none;position:absolute;left:5vw;bottom:5vh;">
+                <li style="font-size:75%;">In collaboration with:</li>
+                <li>Liz Sander</li>
+                <li>Mercedes Pascual</li>
+                <li>Stefano Allesina</li>
+              </ul>
+            </div>
+            <h4 id="citation" class="citwnotes"><a href="http://dx.doi.org/10.1111/1365-2656.12782">Michalska-Smith &amp; Sander, <i>et al.</i> 2018</a></h4>
+            <aside class="notes">
+              <p>And in particular, we are interested in parasites. This work
+              was published in the <i>Journal of Animal Ecology</i> earlier this year.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">Ecological Networks</h4>
+            <div class="wnotes vcenter">
+              <img style="position:absolute;margin:auto;" class="fragment fade-out" data-fragment-index="1" src="Images/Camerano_food-web_1.svg">
+              <img style="position:absolute;margin:auto;" class="fragment fade-in" data-fragment-index="1" src="Images/Camerano_food-web_2.svg">
+            </div>
+            <h4 id="citation" class="citwnotes"><a href="http://izt.ciens.ucv.ve/ecologia/Archivos/ECOLOGIA_DE%20_POBLACIONES_Hasta%202004/ECOL_POBLAC_Hasta%202004_(A-G)/Camerano%201880.pdf">Camerano 1880</a></h4>
+            <aside class="notes">
+              <p>The complication isn't difficult to appreciate: in 1880, an Italian
+              Ecologist drew out the earliest food-web we have record of today. In this
+              depiction, we see a web where species are arranged by trophic level and
+              is little more than a combination a few food-chains. He also drew this
+              web which now includes parasites -- the increase in complexity is self-evident.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">introduction</h4>
+            <div class="wnotes">
+              <h3 style="margin-top:20vh;">What are parasites?</h3>
+              <ul class="fa-ul" style="list-style-type:none;max-width:80%;">
+                <li><i class="fa-li fas fa-angle-right"></i>Prey/predator body size ratio (?)</li>
+                <li><i class="fa-li fas fa-angle-right"></i>Intimate, durable interactions (?)</li>
+                <li><i class="fa-li fas fa-angle-right"></i>Number of hosts or prey attacked during a particular life-history stage</li>
+              </ul>
+            </div>
+            <p id="citation" class="citwnotes"><a href="http://www.sciencedirect.com/science/article/pii/B9780080454054005267">Lafferty 2008</a></p>
+            <aside class="notes">
+              <p>Lafferty, in his contribution to the
+              <a href="http://www.sciencedirect.com/science/referenceworks/9780080454054">Encyclopedia of Ecology</a>,
+              explains some of the many complications that arise when trying
+              to systematically differentiate parasites from other
+              life-cycles we observe in nature He discounts the first option since
+              many predators consume prey that are larger than themselves (e.g.
+              wolves eating moose) and the second with a similar argument:
+              lions spend weeks consuming a single antelope.</p>
+              <p>Though he settles on the number of hosts/prey attacked in a
+              particular life-history stage as a good indicator, with parasites
+              attacking fewer (usually only one), this is difficult to measure
+              quickly and precisely using the sampling methods that are common
+              when collecting food-web data.</p>
+            </aside>
+          </section>
+
+          <section data-transition="slide-in fade-out">
+            <!-- TODO: add concom links to fw and reveal/highlight -->
+            <h4 id="header">introduction: Food-Webs</h4>
+            <div class="wnotes vcenter">
+              <img class="fragment fade-out" data-fragment-index="1" style="max-height:85vh;position:absolute;margin:auto;" src="Figures/FoodWeb_animals.svg">
+              <img class="fragment" data-fragment-index="1" style="max-height:85vh;position:absolute;margin:auto;" src="Figures/FoodWeb_dots.svg">
+            </div>
+            <h4 id="citation"></h4>
+            <aside class="notes">
+              <p>This is a toy example of a food-web. Note that the links point
+              from prey to predator. This allows us to distinguish between
+              in-degree -- the number of prey a species has -- and out-degree --
+              the number of predators.</p>
+              <p>When viewed this way, we can use additional information to know
+              that the owl is a predator and the tick a parasite, but
+              theoretical ecologists tend to see this picture a little
+              differently...</p>
+              <span id="ns">next slide</span>
+              <p>When the additional information of ecological classifications
+              is unavailable, e.g. with a  previously unobserved species,
+              parasites and consumers look much more similar.</p>
+              <p>This project started as a question of whether or not we can
+              identify species roles based just on this information, that is,
+              the network structure.</p>
+              <p>Put another way, can we do what an ecologist does when
+              observing species extensively in the field by just looking at the
+              binary network of interactions?</p>
+              <p>By approaching this problem in a more statistical way, we can
+              more explicitly identify the important, distinguishing
+              characteristics, and provide justification (or not) for the
+              characteristics that are thought to be important.</p>
+            </aside>
+          </section>
+
+          <section data-transition="slide-in fade-out">
+            <h4 id="header">methods: Food-Webs</h4>
+            <!-- REPLACEMENTS:
+            "> (\w+) <" => ">$1<"
+            " <th>" => "\n\t<th>"
+            "  <tr" => "<tr"
+            "th>  </th" => "th></th"
+            " align="right"" => ""
+            "<th>(\w+)</th>" => "<th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/$1.svg"></th>"
+            "<td>(\D+2?)</td>" =>  "<td><img style="float:right;" class="matimg" src="Images/animals/$1.svg"></td>"
+          -->
+          <div class="wnotes vcenter">
+            <table class="matrix fragment fade-out" data-fragment-index="1" style="font-size:2vw;position:absolute;margin:auto;">
+              <tr>
+                <th></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/grass.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/acorn.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/rabbit2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/squirrel2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/deer2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/fox2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/owl.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/bear2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/worm.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/tick.svg"></th>
+              </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/rabbit2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/squirrel2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/fox2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+            </table>
+            <table class="matrix fragment" data-fragment-index="1" style="font-size:2vw;position:absolute;margin:auto;">
+              <tr>
+                <th></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/grass.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/acorn.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/rabbit2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/squirrel2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/deer2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/fox2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/owl.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/bear2.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/worm.svg"></th>
+                <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/tick.svg"></th>
+              </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/rabbit2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/squirrel2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/fox2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td><span class="orange">1</span></td> <td><span class="orange">1</span></td> <td><span class="orange">1</span></td> <td>0</td> <td>0</td> </tr>
+              <tr> <td><img style="float:right;" class="matimg" src="Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td><span class="orange">1</span></td> <td><span class="orange">1</span></td> <td><span class="orange">1</span></td> <td>0</td> <td>0</td> </tr>
+            </table>
+          </div>
+          <aside class="notes">
+            <p>Every network can also be viewed as a matrix. When we do this, the
+            row and column labels are in the same order, and a 1 indicates that
+            the column species is eating the row species.</p>
+            <p>One feature of food-webs viewed in this way is that they tend to
+            have a "cascade structure" -- that is, the interactions tend to show
+            a pattern in which the majority of the links fall above the diagonal
+            (i.e. in the upper triangle).</p>
+            <span id="ns">next slide</span>
+            <p>One unique feature of symbionts, such as parasites, is that they can
+              be consumed by "accident" when their host is consumed. Note that these
+              links tend to fall in the lower triangle. This difference is one of
+              the structural cues we can use to distinguish species from one another.</p>
+          </aside>
+        </section>
+
+      <section>
+        <h4 id="header">methods: Group Model</h4>
+        <div class="wnotes vcenter">
+          <ul>
+            <li>Also known as the stochastic blockmodel</li>
+            <li>A generalized form of Modularity</li>
+            <li style="font-weight:bold;">Seeks to find groups of strongly connecting species</li>
+          </ul>
+        </div>
+        <p id="citation" class="citwnotes"><a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1461-0248.2009.01321.x/full">Allesina &amp; Pascual 2009</a></p>
+        <aside class="notes">
+          <p>Ecological classifications, such as herbivore or parasite, are
+          assigned by ecologists following a detailed investigation of the
+          species life history and, in particular, its interactions with other
+          species. Another approach to group species is to look at the overall
+          network structure and to group species that eat or are eaten by the
+          same or similar prey or predators.</p>
+          <p>In 2009, Allesina &amp; Pascual introduced the group model to ecology
+          to make this concept statistically rigorous. The model had been used
+          previously in the social sciences under a different name -- the
+          stochastic blockmodel. This model works by re-arranging the rows/columns
+          of the matrix in order to form blocks of species with similar interactions.</p>
+        </aside>
+      </section>
+
+      <section data-transition="slide-in fade-out">
+        <!-- TODO: overlay groups with C values (?) -->
+        <h4 id="header">methods: Group Model <span class="fragment" data-fragment-index="2">(Degree Corrected)</span> </h4>
+        <div class="wnotes vcenter">
+          <table class="matrix fragment fade-out" data-fragment-index="1" style="font-size:2vw;position:absolute;margin:auto;">
+            <tr>
+              <th></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/grass.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/acorn.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/rabbit2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/squirrel2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/deer2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/fox2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/owl.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/bear2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/worm.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/tick.svg"></th>
+            </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/rabbit2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/squirrel2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/fox2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+          </table>
+          <table class="matrix fragment current-visible" data-fragment-index="1" style="font-size:2vw;position:absolute;margin:auto;">
+            <tr>
+              <th></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/grass.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/acorn.svg"></th>
+              <th id="gbc"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/rabbit2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/squirrel2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/deer2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/fox2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/bear2.svg"></th>
+              <th id="gbc"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/owl.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/worm.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/tick.svg"></th>
+            </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td id="gbc">1</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td>1</td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+            <tr style="border-top:5px solid #ef6d1d;"> <td><img style="float:right;" class="matimg" src="Images/animals/rabbit2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td id="gbc">1</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/squirrel2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td id="gbc">1</td> <td>0</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/fox2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td id="gbc">1</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td>1</td> </tr>
+            <tr style="border-top:5px solid #ef6d1d;"> <td><img style="float:right;" class="matimg" src="Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+          </table>
+          <table class="matrix fragment" data-fragment-index="2" style="font-size:2vw;position:absolute;margin:auto;">
+            <tr>
+              <th></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/grass.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/acorn.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/worm.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/tick.svg"></th>
+              <th id="gbc"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/rabbit2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/squirrel2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/deer2.svg"></th>
+              <th id="gbc"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/fox2.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/owl.svg"></th>
+              <th><img style="vertical-align: bottom;" class="matimg" src="Images/animals/bear2.svg"></th>
+            </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/grass.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">1</td> <td>1</td> <td>1</td> <td id="gbc">1</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/acorn.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td>1</td> <td id="gbc">1</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/worm.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/tick.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+            <tr style="border-top:5px solid #ef6d1d;"> <td><img style="float:right;" class="matimg" src="Images/animals/rabbit2.svg"></td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>1</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/squirrel2.svg"></td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/deer2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>1</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>1</td> </tr>
+            <tr style="border-top:5px solid #ef6d1d;"> <td><img style="float:right;" class="matimg" src="Images/animals/fox2.svg"></td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>1</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>1</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/owl.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>0</td> </tr>
+            <tr> <td><img style="float:right;" class="matimg" src="Images/animals/bear2.svg"></td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td id="gbc">0</td> <td>0</td> <td>0</td> <td id="gbc">0</td> <td>0</td> <td>1</td> </tr>
+          </table>
+        </div>
+        <h4 id="citation"></h4>
+        <aside class="notes">
+          <p>So, if we look back to our food-web from before, we can re-arrange
+          the rows and columns and optimizing both the number and size of the
+          groups involved ...</p>
+          <span id="ns">next slide</span>
+          <p>... to find a grouping such as this,
+            where there are many blocks with no links, and a few blocks with a
+            high density of links.</p>
+            <p>One drawback of this model (in general, though not evident in this
+              case) is that the degree -- i.e. the number of consumptive
+              interactions a species has -- can influence the grouping in
+              undesirable ways, such as artificially grouping specialists together
+              just because they all have few prey.</p>
+              <p>To account for this, in this project, we also used a modified version
+                of the group model that accounts for the differences in degree across
+                species.</p>
+                <span id="ns">next slide</span>
+                <p>Which, as you can see produces less intuitive and more evenly spaced groupings.</p>
+        </aside>
+      </section>
+
+      <section>
+        <h4 id="header">methods: Imbalance</h4>
+        <div class="wnotes">
+          <table style="margin-top:10vh; width:100%; position:absolute; table-layout:fixed;">
+            <tr>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/grass.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/acorn.svg"></td>
+              <td id="gbc"><img style="vertical-align:bottom;" class="matimg" src="Images/animals/rabbit2.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/squirrel2.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/deer2.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/fox2.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/bear2.svg"></td>
+              <td id="gbc"><img style="vertical-align:bottom;" class="matimg" src="Images/animals/owl.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/worm.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/tick.svg"></td>
+            </tr>
+          </table>
+          <table style="margin-top:55vh; width:100%; position:absolute; table-layout:fixed;">
+            <tr>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/grass.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/acorn.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/worm.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/tick.svg"></td>
+              <td id="gbc"><img style="vertical-align:bottom;" class="matimg" src="Images/animals/rabbit2.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/squirrel2.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/deer2.svg"></td>
+              <td id="gbc"><img style="vertical-align:bottom;" class="matimg" src="Images/animals/fox2.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/owl.svg"></td>
+              <td><img style="vertical-align:bottom;" class="matimg" src="Images/animals/bear2.svg"></td>
+            </tr>
+          </table>
+          <table class="fragment fade-in" data-fragment-index="0" style="margin-top:10vh; width:100%; position:absolute; table-layout:fixed;">
+            <tr>
+              <td><img style="vertical-align: bottom;" class="matimg" src="Images/animals/grass.svg"></td>
+              <td><img style="vertical-align: bottom;" class="matimg" src="Images/animals/acorn.svg"></td>
+              <td id="gbc"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/rabbit2.svg"></td>
+              <td><img style="vertical-align: bottom;" class="matimg" src="Images/animals/squirrel2.svg"></td>
+              <td><img style="vertical-align: bottom;" class="matimg" src="Images/animals/deer2.svg"></td>
+              <td><img style="vertical-align: bottom;" class="matimg" src="Images/animals/fox2.svg"></td>
+              <td><img style="vertical-align: bottom;" class="matimg" src="Images/animals/bear2.svg"></td>
+              <td id="gbc"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/owl.svg"></td>
+              <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/worm.svg"></td>
+              <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/tick.svg"></td>
+            </tr>
+          </table>
+          <table class="fragment fade-in" data-fragment-index="0"  style="margin-top:55vh; width:100%; position:absolute; table-layout:fixed;">
+            <tr>
+              <td><img style="vertical-align: bottom;" class="matimg" src="Images/animals/grass.svg"></td>
+              <td><img style="vertical-align: bottom;" class="matimg" src="Images/animals/acorn.svg"></td>
+              <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/worm.svg"></td>
+              <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/tick.svg"></td>
+              <td id="gbc"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/rabbit2.svg"></td>
+              <td><img style="vertical-align: bottom;" class="matimg" src="Images/animals/squirrel2.svg"></td>
+              <td><img style="vertical-align: bottom;" class="matimg" src="Images/animals/deer2.svg"></td>
+              <td id="gbc"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/fox2.svg"></td>
+              <td><img style="vertical-align: bottom;" class="matimg" src="Images/animals/owl.svg"></td>
+              <td><img style="vertical-align: bottom;" class="matimg" src="Images/animals/bear2.svg"></td>
+            </tr>
+          </table>
+          <table class="fragment fade-in" data-fragment-index="2" style="margin-top:10vh; width:100%; position:absolute; table-layout:fixed;">
+            <tr>
+              <td style="background-color:#abdda4"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/grass.svg"></td>
+              <td style="background-color:#abdda4"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/acorn.svg"></td>
+              <td style="background-color:#2b83ba" id="gbc"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/rabbit2.svg"></td>
+              <td style="background-color:#2b83ba"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/squirrel2.svg"></td>
+              <td style="background-color:#2b83ba"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/deer2.svg"></td>
+              <td style="background-color:#fdae61"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/fox2.svg"></td>
+              <td style="background-color:#fdae61"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/bear2.svg"></td>
+              <td style="background-color:#fdae61" id="gbc"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/owl.svg"></td>
+              <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/worm.svg"></td>
+              <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/tick.svg"></td>
+            </tr>
+          </table>
+          <table style="position:absolute; margin-top:20vh; font-size:80%; white-space:nowrap;">
+            <tr class="fragment fade-in" data-fragment-index="1"> <th></th> <th>ψ</th> <th>p-value</th> </tr>
+            <tr class="fragment fade-in" data-fragment-index="1"> <td class="category pa">Parasites</td> <td>0.667</td> <td>0.089</td> </tr>
+            <tr class="fragment fade-in" data-fragment-index="2"> <td class="category pr">Predators</td> <td>0.4</td> <td>0.533</td> </tr>
+            <tr class="fragment fade-in" data-fragment-index="2"> <td class="category hb">Herbivores</td> <td>0.6</td> <td>0.158</td> </tr>
+            <tr class="fragment fade-in" data-fragment-index="2"> <td class="category pp">Primary Producers</td> <td>1.0</td> <td>0.022</td> </tr>
+            <tr class="fragment fade-in" data-fragment-index="2"> <td style="font-weight:bold;">Overall</td> <td>0.4</td> <td>0.033</td> </tr>
+          </table>
+          <table class="fragment fade-in" data-fragment-index="2" style="margin-top:55vh; width:100%; position:absolute; table-layout:fixed;">
+            <tr>
+              <td style="background-color:#abdda4;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/grass.svg"></td>
+              <td style="background-color:#abdda4;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/acorn.svg"></td>
+              <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/worm.svg"></td>
+              <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/tick.svg"></td>
+              <td id="gbc" style="background-color:#2b83ba;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/rabbit2.svg"></td>
+              <td style="background-color:#2b83ba;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/squirrel2.svg"></td>
+              <td style="background-color:#2b83ba;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/deer2.svg"></td>
+              <td id="gbc" style="background-color:#fdae61;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/fox2.svg"></td>
+              <td style="background-color:#fdae61;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/owl.svg"></td>
+              <td style="background-color:#fdae61;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/bear2.svg"></td>
+            </tr>
+          </table>
+          <table style="position:absolute; margin-top:65vh; font-size:80%; white-space:nowrap;">
+            <tr class="fragment fade-in" data-fragment-index="1"> <td class="category pa">Parasites</td> <td>0.5</td> <td>0.8</td> </tr>
+            <tr class="fragment fade-in" data-fragment-index="2"> <td class="category pr">Predators</td> <td>1</td> <td>0.017</td> </tr>
+            <tr class="fragment fade-in" data-fragment-index="2"> <td class="category hb">Herbivores</td> <td>1</td> <td>0.017</td> </tr>
+            <tr class="fragment fade-in" data-fragment-index="2"> <td class="category pp">Primary Producers</td> <td>0.5</td> <td>0.8</td> </tr>
+            <tr class="fragment fade-in" data-fragment-index="2"> <td style="font-weight:bold;">Overall</td> <td>0.5</td> <td>0.004</td> </tr>
+          </table>
+        </div>
+        <h4 id="citation"></h4>
+        <aside class="notes">
+          <p>Once we have these statistical groupings, we want to know how well
+          these groupings correspond to  ecological classifications.</p>
+          <p>Put another way, if we look at which species are parasites,</p>
+          <span id="ns">next slide</span>
+          <p>we want to calculate how "imbalanced"
+          the groupings are with respect to the provided groupings. Are all of
+          the parasites in a group by themselves? or are they evenly spaced
+          between the groups? Finally, using a permutation test, we can calculate
+          explicitly</p>
+          <span id="ns">next slide</span>
+          <p>how likely it is for such a level of imbalance to arise by chance.</p>
+          <p>We can apply this proceedure for each ecological classification
+          (as well as look at all of them at once).</p>
+          <span id="ns">next slide</span>
+          <p>In this case, we see that the top grouping does well for
+          producers and parasites, while the bottom grouping is more
+          evenly spread (i.e. nonsignificant). Note that even though one of the degree-corrected
+          groups is made up of entirely herbivores, the p-value is still
+          quite high because it is not very unlikely for such a configuration
+          to occur given this number of herbivores and groups.</p>
+        </aside>
+      </section>
+
+      <section>
+        <h4 id="header">methods: Data</h4>
+        <div class="wnotes vcenter">
+          <ul class="fa-ul" style="list-style-type:none;max-width:80%;">
+            <li><i class="fa-li fas fa-angle-right"></i>7 Large, well-resolved, marine/estuarine food-webs</li>
+            <li><i class="fa-li fas fa-angle-right"></i>With/without Concomitant predation</li>
+            <li><i class="fa-li fas fa-angle-right"></i>Each species categorized:</li>
+              <ul class="fa-ul" style="list-style-type:none;">
+                <li><i class="fa-li fas fa-angle-double-right"></i><span class="category pp">Primary Producer</span></li>
+                <li><i class="fa-li fas fa-angle-double-right"></i><span class="category hb">Herbivore</span></li>
+                <li><i class="fa-li fas fa-angle-double-right"></i><span class="category pa">Parasite</span></li>
+                <li><i class="fa-li fas fa-angle-double-right"></i><span class="category pr">Predators</span></li>
+              </ul>
+          </ul>
+        </div>
+        <p id="citation" class="citwnotes"><a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001579">Dunne <i>et al.</i> 2013</a></p>
+        <aside class="notes">
+          <p>In the project we used seven of the largest, best resolved food-webs
+          containing parasites, which were published by Jennifer Dunne in 2013,
+          and are available on the
+          <a href="http://datadryad.org/resource/doi:10.5061/dryad.b8r5c">Dryad Digital Repository</a>.
+          For each of the species in these webs, we had an ecological
+          categorization and copies with or without concomitant predation.</p>
+        </aside>
+      </section>
+
+      <section data-transition="slide-in fade-out">
+        <h4 id="header">results: Imbalance</h4>
+        <div class="wnotes vcenter">
+          <table  class="fragment fade-out" data-fragment-index="1" style="table-layout:fixed;font-size:1.5vw;position:absolute;margin:auto;">
+            <tr>
+              <th> Concomitant Links </th>
+              <th> Degree Corrected </th>
+              <th> g </th>
+              <th><span  class="category pp"> Primary Producers </span></th>
+              <th><span  class="category hb"> Herbivores </span></th>
+              <th><span  class="category pr"> Consumers </span></th>
+              <th><span  class="category pa"> Parasites </span></th>
+              <th> Overall </th>
+            </tr>
+            <tr> <td rowspan="8">No </td> <td rowspan="4">No </td> <td> 2</td> <td>0.895***</td> <td>0.737***</td> <td>0.491***</td> <td>0.421   </td> <td>0.246***</td> </tr>
+            <tr>                                                   <td> 3</td> <td>0.826** </td> <td>0.589   </td> <td>0.331***</td> <td>0.260   </td> <td>0.120***</td> </tr>
+            <tr>                                                   <td> 5</td> <td>0.757***</td> <td>0.551***</td> <td>0.628***</td> <td>0.430***</td> <td>0.307***</td> </tr>
+            <tr>                                                   <td>10</td> <td>0.585*  </td> <td>0.448***</td> <td>0.439***</td> <td>0.445***</td> <td>0.214***</td> </tr>
+            <tr>                          <td rowspan="4">Yes</td> <td> 2</td> <td>0.874   </td> <td>0.692   </td> <td>0.660***</td> <td>0.449***</td> <td>0.397***</td> </tr>
+            <tr>                                                   <td> 3</td> <td>0.815   </td> <td>0.565   </td> <td>0.381***</td> <td>0.521***</td> <td>0.250***</td> </tr>
+            <tr>                                                   <td> 5</td> <td>0.689   </td> <td>0.350   </td> <td>0.289***</td> <td>0.559***</td> <td>0.109***</td> </tr>
+            <tr>                                                   <td>10</td> <td>0.487   </td> <td>0.145   </td> <td>0.244***</td> <td>0.138***</td> <td>0.027***</td> </tr>
+            <tr> <td rowspan="8">Yes</td> <td rowspan="4">No </td> <td> 2</td> <td>0.898** </td> <td>0.745***</td> <td>0.912***</td> <td>0.555***</td> <td>0.555***</td> </tr>
+            <tr>                                                   <td> 3</td> <td>0.839** </td> <td>0.598   </td> <td>0.835***</td> <td>0.603***</td> <td>0.370***</td> </tr>
+            <tr>                                                   <td> 5</td> <td>0.731   </td> <td>0.440*  </td> <td>0.702***</td> <td>0.710***</td> <td>0.327***</td> </tr>
+            <tr>                                                   <td>10</td> <td>0.702***</td> <td>0.284***</td> <td>0.582***</td> <td>0.343***</td> <td>0.164***</td> </tr>
+            <tr>                          <td rowspan="4">Yes</td> <td> 2</td> <td>0.874   </td> <td>0.709***</td> <td>0.812***</td> <td>0.609***</td> <td>0.537***</td> </tr>
+            <tr>                                                   <td> 3</td> <td>0.833** </td> <td>0.609***</td> <td>0.564***</td> <td>0.515***</td> <td>0.282***</td> </tr>
+            <tr>                                                   <td> 5</td> <td>0.716   </td> <td>0.360   </td> <td>0.365***</td> <td>0.506***</td> <td>0.173***</td> </tr>
+            <tr>                                                   <td>10</td> <td>0.451   </td> <td>0.198***</td> <td>0.364***</td> <td>0.445***</td> <td>0.114***</td> </tr>
+          </table>
+          <table  class="fragment" data-fragment-index="1" style="table-layout:fixed;font-size:1.5vw;position:absolute;margin:auto;">
+            <tr>
+              <th> Concomitant Links </th>
+              <th> Degree Corrected </th>
+              <th> g </th>
+              <th><span class="category pp"> Primary Producers </span></th>
+              <th><span  class="category hb"> Herbivores </span></th>
+              <th><span  class="category pr"> Consumers </span></th>
+              <th><span  class="category pa"> Parasites </span></th>
+              <th> Overall </th>
+            </tr>
+            <tr> <td rowspan="8">No </td> <td rowspan="4">No </td> <td> 2</td> <td class="sig3">0.895***</td> <td class="sig3">0.737***</td> <td class="sig3">0.491***</td> <td class="nsig">0.421   </td> <td class="sig3">0.246***</td> </tr>
+            <tr>                                                   <td> 3</td> <td class="sig2">0.826** </td> <td class="nsig">0.589   </td> <td class="sig3">0.331***</td> <td class="nsig">0.260   </td> <td class="sig3">0.120***</td> </tr>
+            <tr>                                                   <td> 5</td> <td class="sig3">0.757***</td> <td class="sig3">0.551***</td> <td class="sig3">0.628***</td> <td class="sig3">0.430***</td> <td class="sig3">0.307***</td> </tr>
+            <tr>                                                   <td>10</td> <td class="sig1">0.585*  </td> <td class="sig3">0.448***</td> <td class="sig3">0.439***</td> <td class="sig3">0.445***</td> <td class="sig3">0.214***</td> </tr>
+            <tr>                          <td rowspan="4">Yes</td> <td> 2</td> <td class="nsig">0.874   </td> <td class="nsig">0.692   </td> <td class="sig3">0.660***</td> <td class="sig3">0.449***</td> <td class="sig3">0.397***</td> </tr>
+            <tr>                                                   <td> 3</td> <td class="nsig">0.815   </td> <td class="nsig">0.565   </td> <td class="sig3">0.381***</td> <td class="sig3">0.521***</td> <td class="sig3">0.250***</td> </tr>
+            <tr>                                                   <td> 5</td> <td class="nsig">0.689   </td> <td class="nsig">0.350   </td> <td class="sig3">0.289***</td> <td class="sig3">0.559***</td> <td class="sig3">0.109***</td> </tr>
+            <tr>                                                   <td>10</td> <td class="nsig">0.487   </td> <td class="nsig">0.145   </td> <td class="sig3">0.244***</td> <td class="sig3">0.138***</td> <td class="sig3">0.027***</td> </tr>
+            <tr> <td rowspan="8">Yes</td> <td rowspan="4">No </td> <td> 2</td> <td class="sig2">0.898** </td> <td class="sig3">0.745***</td> <td class="sig3">0.912***</td> <td class="sig3">0.555***</td> <td class="sig3">0.555***</td> </tr>
+            <tr>                                                   <td> 3</td> <td class="sig2">0.839** </td> <td class="nsig">0.598   </td> <td class="sig3">0.835***</td> <td class="sig3">0.603***</td> <td class="sig3">0.370***</td> </tr>
+            <tr>                                                   <td> 5</td> <td class="nsig">0.731   </td> <td class="sig1">0.440*  </td> <td class="sig3">0.702***</td> <td class="sig3">0.710***</td> <td class="sig3">0.327***</td> </tr>
+            <tr>                                                   <td>10</td> <td class="sig3">0.702***</td> <td class="sig3">0.284***</td> <td class="sig3">0.582***</td> <td class="sig3">0.343***</td> <td class="sig3">0.164***</td> </tr>
+            <tr>                          <td rowspan="4">Yes</td> <td> 2</td> <td class="nsig">0.874   </td> <td class="sig3">0.709***</td> <td class="sig3">0.812***</td> <td class="sig3">0.609***</td> <td class="sig3">0.537***</td> </tr>
+            <tr>                                                   <td> 3</td> <td class="sig2">0.833** </td> <td class="sig3">0.609***</td> <td class="sig3">0.564***</td> <td class="sig3">0.515***</td> <td class="sig3">0.282***</td> </tr>
+            <tr>                                                   <td> 5</td> <td class="nsig">0.716   </td> <td class="nsig">0.360   </td> <td class="sig3">0.365***</td> <td class="sig3">0.506***</td> <td class="sig3">0.173***</td> </tr>
+            <tr>                                                   <td>10</td> <td class="nsig">0.451   </td> <td class="sig3">0.198***</td> <td class="sig3">0.364***</td> <td class="sig3">0.445***</td> <td class="sig3">0.114***</td> </tr>
+          </table>
+        </div>
+        <aside class="notes">
+          <p>This table summarizes how imbalanced each category was for a given
+          model and number of groups (g), again looking at the Punta Banda network.
+          The numbers are not as important as the p-values, so I will highlight here just
+          according to significance, that is, imbalance values that are
+          substantially lower than would be expected by chance.</p>
+          <span id="ns">next slide</span>
+          <p>Red corresponds to an alpha value of one tenth of one percent.</p>
+          <p>Note that, despite the difference in degree we saw in the previous figure,
+            the degree-corrected group model produced significantly more imbalanced
+            groups, regardless of concomitant predation
+            (paired t-test, estimated difference: .12, p < .001 and .067, p < .001,
+            when including/excluding concomitant predation, respectively).
+            This suggests that degree is not an essential distinguishing factor for parasites.</p>
+            <p>Including concomitant links also produced more imbalanced groups,
+              under both the degree-corrected (paired t-test, estimated
+              difference: .034, p = .0049) and uncorrected (estimated difference:
+              203 .085, p < .001) models.</p>
+              <p>For the following images, we will be looking at the case of including
+                concomitant predation links, but not correcting for degree.</p>
+        </aside>
+      </section>
+
+      <section>
+        <h4 id="header">results: Condensed Graphs</h4>
+        <div class="wnotes vcenter">
+          <img class="fragment fade-out" data-fragment-index="1"style="position:absolute;margin:auto;padding-bottom:10vh;width:65vw;" src="Figures/PuntaBanda-ParCon_2_0.dot.svg">
+          <img class="fragment current-visible" data-fragment-index="1"style="position:absolute;margin:auto;padding-bottom:10vh;width:75vw;" src="Figures/PuntaBanda-ParCon_3_0.dot.svg">
+          <img class="fragment current-visible" data-fragment-index="2"style="position:absolute;margin:auto;padding-bottom:10vh;width:85vw;" src="Figures/PuntaBanda-ParCon_5_0.dot.svg">
+          <img class="fragment" data-fragment-index="3"style="position:absolute;margin:auto;padding-bottom:10vh;width:95vw;" src="Figures/PuntaBanda-ParCon_10_0.dot.svg">
+        </div>
+        <img id="citation" class="citwnotes" src="Figures/legend.svg" style="width:20vw; border-width:1px;">
+        <aside class="notes">
+          <p>A more concise way to view these networks is to collapse the groups
+          into a single node, colored according to the ecological classifications
+          of the nodes within it.</p>
+          <p>In this case, for example, the species have been divided into two
+          groups, with one of the groups consisting entirely of consumers. This
+          suggests that consumers are behaving in a unique way, i.e. the network
+          structure of a given consumer is more similar to other consumers than
+          to non-consumers.</p>
+          <span id="ns">next slide</span>
+          <p>Likewise, when we constrain the number of groups to 3, we still see
+            consumers coming out, but now we see a group that is mostly parasites
+            as well.</p>
+          <span id="ns">next slide</span>
+          <p>When we have five groups, something intesting happens: the consumer
+            block is split in two. This is suggestive of additional structure
+            within these gross ecological categories. Put another way, there are
+            sub-structures within the consumer class where the differences between
+            the sub-categorizations are more explanatory than the difference between
+            consumers at large and other ecological categories.</p>
+          <span id="ns">next slide</span>
+          <p>Finally, the highest number of groups we looked at: 10 groups we get
+          some uniform groups, and some groups that are still conglomerates.
+          This shows that while our statistical approach does resemble the
+          ecological categorizations, there are larger statistical differences
+          between members of the same categorizations than between different
+          ones. Some of the cateogories are better parsed than others, which
+          suggests that these categories have a stronger foundation in network
+          structure.</p>
+        </aside>
+      </section>
+
+      <section>
+        <h4 id="header">Summary</h4>
+        <div class="wnotes vcenter">
+          <ul class="fa-ul" style="list-style-type:none;max-width:75vw;font-size:3vw;">
+            <li><i class="fa-li fas fa-angle-right"></i>Ecological classifications have statistical meaning</li>
+            <ul class="fa-ul" style="list-style-type:none">
+              <li><i class="fa-li fas fa-angle-double-right"></i>Especially for Consumers and Parasites</li>
+              <li><i class="fa-li fas fa-angle-double-right"></i>(beyond simple degree distribution)</li>
+            </ul>
+            <li><i class="fa-li fas fa-angle-right"></i>But this is not always the strongest source of variance</li>
+            <ul class="fa-ul" style="list-style-type:none">
+              <li><i class="fa-li fas fa-angle-double-right"></i>Further structure to be found</li>
+             </ul>
+            <li><i class="fa-li fas fa-angle-right"></i>Concomitant links important</li>
+            <li><i class="fa-li fas fa-angle-right"></i>Next step: Identify the most explanatory properties of homogenous groups</li>
+          </ul>
+        </div>
+        <h4 id="citation" class="citwnotes"></h4>
+        <aside class="notes">
+          <p>So what can we take away from this?</p>
+          <p>Well, it is comforting to know that the classifications that ecologists
+          use in the field have statistical meaning with regards to network
+          structure, and that these differences extend beyond simple degree
+          distribution (the degree-corrected model produced more imbalanced
+          partitions, suggesting that discounting the effect of degree in fact
+          improved the ability to distinguish ecological categorizations).</p>
+          <p>Interestingly, the intra-category differences were stronger than the
+          inter-category differences in some cases, suggesting there might be
+          more informative classifications than the one we used here.</p>
+          <p>Concomitant links are useful, but not the end-all in distinguishing
+          parasites and consumers.</p>
+          <p>Finally, we can use these groupings (especially the homogenous ones)
+          to identify the properties that differ between categorizations. These
+          differences can then be used to produce more rigorous
+          definitions and provide insight into the important distinctions between species
+          roles in nature.</p>
+        </aside>
+      </section>
+
+      <section>
+        <h4 id="header">Outline</h4>
+        <div class="wnotes vcenter">
+          <ol>
+            <li style="opacity:0.5;">Ecological Networks: a brief history</li>
+            <li style="opacity:0.5;">Are ecological networks structuraly distinct?</li>
+            <li style="opacity:0.5;">Do trophic roles have structural signatures?</li>
+            <li class="orange">How ought competitve networks be structured?</li>
+            <ul class="fa-ul" style="list-style-type:none;font-size:80%;">
+              <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>The traditional dogma</li>
+              <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Generalizing for more species</li>
+              <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Separating the effects of intra- vs. interspecific interactions</li>
+            </ul>
+            <li style="opacity:0.5;">Where do we go from here?</li>
+          </ol>
+        </div>
+        <h4 id="citation" class="citwnotes"></h4>
+        <aside class="notes">
+          <p>Alright, for this final chapter, we are going to change gears a little.
+          For this project, we looked at networks of symmetric competition between species</p>
+        </aside>
+      </section>
+
+      <section>
+        <div class="wnotes vcenter">
+          <img src="Images/intrainter_title.png" style="max-width:80%;max-height:50vh;">
+          <ul style="list-style-type:none;position:absolute;left:5vw;bottom:5vh;">
+            <li style="font-size:75%;">In collaboration with:</li>
+            <li>Gy&ouml;rgy Barab&aacute;s</li>
+            <li>Stefano Allesina</li>
+          </ul>
+        </div>
+        <h4 id="citation" class="citwnotes"></h4>
+        <aside class="notes">
+          <p>In particular, we revisit a traditional dogma of the stability implications
+          for the relation between intraspecific competion (competition between members
+          of the same species) and interspecific competition (competition between members
+          of different species).</p>
+        </aside>
+      </section>
+
+      <section>
+        <h4 id="header">Dogma</h4>
+        <div class="wnotes vcenter">
+          <div style="max-width:80%;">
+            <p style="font-size:3vw;;"> Intraspecific competition must be greater than interspecific competition for stable coexistence </p>
+          </div>
+          <div class="fragment" style="font-size:3vw;;">
+            <span class="green">$\frac{\mathrm{d} N_1}{\mathrm{d} t}$</span><span>$=$</span>
+            <span class="green">$N_1$</span><span>$($</span><span class="purple">$r_1$</span><span>-</span>
+            <span class="orange">$a_{12}$</span><span class="green">$N_2$</span><span>$-$</span><span class="orange">$a_{11}$</span>
+            <span class="green">$N_1$</span><span>$)$</span>
+            <p></p>
+            <span style="padding-top:2vh;" class="green">$\frac{\mathrm{d} N_2}{\mathrm{d} t}$</span><span>$=$</span>
+            <span class="green">$N_2$</span><span>$($</span><span class="purple">$r_2$</span><span>-</span>
+            <span class="orange">$a_{21}$</span><span class="green">$N_1$</span><span>$-$</span><span class="orange">$a_{22}$</span>
+            <span class="green">$N_2$</span><span>$)$</span>
+          </div>
+          <img style="position:absolute;margin:auto;" class="fragment current-visible" src="Figures/LV_Competition.svg">
+          <div class="fragment" style="font-size:3vw;;padding-top:5vh;">
+            <p>Condition for stability:</p>
+            <span style="padding-left:3vw;" class="orange">$a_{12}a_{21}$</span><span style="margin:15px;">$<$</span><span class="orange">$a_{11}a_{22}$</span>
+          </div>
+        </div>
+        <h4 id="citation" class="citwnotes"><a href="https://www.annualreviews.org/doi/abs/10.1146/annurev.ecolsys.31.1.343">Chesson 2000</a></h4>
+        <aside class="notes">
+          <p>In almost every textbook on basic ecology, you will find a statement similar
+          to this, stemming from the formulation of compeition using the Lotka-Volterra
+          competition equations.</p>
+          <span id="ns">next slide</span>
+          <p>which can be written out in this way where the $r$'s are intrinsic growth
+          rates, the $N$'s are population levels, and the $a$'s indicate the strength
+          of interaction either with members of different species ($a_{ij}$, $i \neq j$)
+          or the same species ($a_{ii}$)</p>
+          <span id="ns">next slide</span>
+          <p>The stability conditions for two species interacting in this way can be
+            depicted in phase diagrams such as these (in which I've fixed the intra-specific
+            competition to be $1$ for convenience). For this system, there are four possible
+            cases. In the top right species $1$ outcomptes species $2$ and drives the former
+            extinct. In the bottom left is the complement of that scenario</p>
+            <p>In th bottom right, the winner is determined by the starting conditions, and the
+              only situation in which both species coexist is the top right where for both species, the
+              strength of competition with the other species is less than one.</p>
+          <span id="ns">next slide</span>
+          <p>More formally, </p>
+          <span id="ns">next slide</span>
+          <p>the geometric mean of the intraspecific competition must be less than
+            the geometric mean of the interspecific competition</p>
+        </aside>
+      </section>
+
+      <section>
+        <h4 id="header">Dogma</h4>
+        <div class="wnotes vcenter">
+          <div style="width:100%;display:flex;flex-direction:row;align-items:space-around;">
+            <div class="vcenter" style="width:44%;font-size:3vw;padding:3%;">
+              <div>
+                <span class="green">$\frac{\mathrm{d} \boldsymbol{N}}{\mathrm{d} t}$</span><span>$=$</span>
+                <span class="green">$\boldsymbol{N}$</span><span>&nbsp;$($</span><span class="purple">$\boldsymbol{r}$</span>
+                <span>&nbsp;+&nbsp;</span><span class="orange">$\boldsymbol{a}$</span><span class="green">$\boldsymbol{N}$</span><span>$)$</span>
+              </div>
+              <div>
+                <span class="orange">$\boldsymbol{a}$</span><span>=</span><span>$- \begin{pmatrix} 9 & 1 \\ 13 & 2 \end{pmatrix}$</span>
+              </div>
+              <div style="margin:20px;">
+                <span style="padding-left:3vw;" class="orange">$a_{12}a_{21}$</span><span style="margin:15px;">$<$</span><span class="orange">$a_{11}a_{22}$</span>
+              </div>
+            </div>
+            <img class="fragment" style="width:50%;max-height:50vh;" src="Images/intrainterfigs/LV_2spp_stab_feas.svg">
+          </div>
+        </div>
+        <h4 id="citation" class="citwnotes"></h4>
+        <aside class="notes">
+          <p>As an example, we can rewrite the equations in this more compressed matrix form
+          in which the competition parameters are in a matris $\boldsymbol{a}$</p>
+          <p>For this example, our coexistence condition is met,</p>
+          <span id="ns">next slide</span>
+          <p>and that is exactly what we see.</p>
+        </aside>
+      </section>
+
+      <section>
+        <h4 id="header">What about $3$ species?</h4>
+        <div class="wnotes vcenter">
+          <div style="width:100%;display:flex;flex-direction:row;align-items:space-around;">
+            <div class="vcenter" style="width:44%;font-size:3vw;padding:3%;">
+              <div>
+                <span class="green">$\frac{\mathrm{d} \boldsymbol{N}}{\mathrm{d} t}$</span><span>$=$</span>
+                <span class="green">$\boldsymbol{N}$</span><span>$($</span><span class="purple">$\boldsymbol{r}$</span>
+                <span>+</span><span class="orange">$\boldsymbol{a}$</span><span class="green">$\boldsymbol{N}$</span><span>$)$</span>
+              </div>
+              <div>
+                <span class="orange">$\boldsymbol{a}$</span><span>=</span><span>$- \begin{pmatrix} 10 & 9 & 5 \\ 9 & 10 & 9 \\ 5 & 9 & 10 \end{pmatrix}$</span>
+              </div>
+            </div>
+            <img class="fragment" data-fragment-index="1" style="width:50%;max-height:50vh;" src="Images/intrainterfigs/LV_3sp_unstable.svg">
+          </div>
+          <p style="font-size:3vw;"><span class="orange">Intra</span> $>$ <span class="orange">inter</span>
+            for all pairs ... <span class="fragment" data-fragment-index="1">yet no coexistence</span></p>
+          </div>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+            <p>But what happens when we look at a system of three interacting species?
+            Here our condition is met if we were to consider any of the pairs of species
+            in isolation,</p>
+            <span id="ns">next slide</span>
+            <p>yet, when we run through the dynamics, the yellow species goes extinct!</p>
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">What about $3$ species?</h4>
+          <div class="wnotes vcenter">
+            <div style="width:100%;display:flex;flex-direction:row;align-items:space-around;">
+              <div class="vcenter" style="width:44%;font-size:3vw;padding:3%;">
+                <div>
+                  <span class="green">$\frac{\mathrm{d} \boldsymbol{N}}{\mathrm{d} t}$</span><span>$=$</span>
+                  <span class="green">$\boldsymbol{N}$</span><span>$($</span><span class="purple">$\boldsymbol{r}$</span>
+                  <span>+</span><span class="orange">$\boldsymbol{a}$</span><span class="green">$\boldsymbol{N}$</span><span>$)$</span>
+                </div>
+                <div>
+                  <span class="orange">$\boldsymbol{a}$</span><span>=</span><span>$- \begin{pmatrix} 10 & 7 & 12 \\ 15 & 10 & 8 \\ 7 & 11 & 10 \end{pmatrix}$</span>
+                </div>
+              </div>
+              <img class="fragment" data-fragment-index="2" style="width:50%;max-height:50vh;" src="Images/intrainterfigs/LV_3sp_stable.svg">
+            </div>
+            <p style="font-size:3vw;">
+              <span class="orange">Intra</span><span class="red">$<$</span><span class="orange">inter</span>
+              for species $1$ &amp; $2$ ... <span class="fragment" data-fragment-index="2">yet coexistence</span>
+            </p>
+          </div>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+            <p>Likewise, in this example, our condition fails for two of the three pairs</p>
+            <span id="ns">next slide</span>
+            <p>yet all three species stably coexist when we run the dynamics</p>
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">Generalization to large $n$</h4>
+          <div class="wnotes vcenter">
+            <div style="display:flex;flex-direction:row;align-items:space-between;">
+              <div style="width:50%;margin:5%;font-size:3vw;">
+                <p>Are there generalizations for the relationship of intra- to interspecific competition for more than 2 species?</p
+                  <p><i class="fal fa-angle-right"></i> in particular, are their signatures for the most extreme cases?</p>
+                </div>
+                <div style="width:40%;" class="vcenter">
+                  <img class="fragment fade-out" data-fragment-index="1" style="position:absolute;width:40%;" src="Images/intrainterfigs/randmat.svg">
+                  <img class="fragment fade-in" data-fragment-index="1" style="position:absolute;width:40%;" src="Images/intrainterfigs/InterSet.svg">
+                </div>
+              </div>
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">Generalization to large $n$</h4>
+            <div class="wnotes vcenter" style="width:80vh;margin:auto;">
+              <div style="height:25%;width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-around;">
+                <!-- <span class="rotate" style="font-size:60%;">Most Stablizing</span> -->
+                <img class="fragment" data-fragment-index="1" style="height:100%;margin-right:5vw;" src="Images/intrainterfigs/most_stable.svg">
+                <img class="fragment" data-fragment-index="2" style="height:100%;" src="Images/intrainterfigs/most_stable_explanation.svg">
+              </div>
+              <div style="height:25%;width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-around">
+                <!-- <span class="rotate" style="font-size:60%;">Random</span> -->
+                <img style="height:100%;margin-right:5vw;" src="Images/intrainterfigs/randmat.svg">
+                <img style="visibility:hidden;height:100%;" src="Images/intrainterfigs/most_stable_explanation.svg">
+              </div>
+              <div style="height:25%;width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-around;">
+                <!-- <span class="rotate" style="font-size:60%;">Most Destablizing</span> -->
+                <img class="fragment" data-fragment-index="3" style="height:100%;margin-right:5vw;" src="Images/intrainterfigs/least_stable.svg">
+                <img class="fragment" data-fragment-index="4" style="height:100%;" src="Images/intrainterfigs/least_stable_explanation.svg">
+              </div>
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">The additive effect of intra-specific competition</h4>
+            <div class="wnotes vcenter" style="height:85%;padding-top:10%;">
+              <div style="width:100%;height:40px;display:flex;flex-direction:row;justify-content:space-between;">
+                <span style="width:30%;text-align:center;">Interspecific</span><span style="width:63%;text-align:center;">Intraspecific</span>
+              </div>
+              <div style="width:100%;height:40px;display:flex;flex-direction:row;justify-content:flex-end;">
+                <span style="width:33%;text-align:center;">Stabilizing</span><span style="width:33%;text-align:center;">Destabilizing</span>
+              </div>
+              <div style="height:40%;width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-between;">
+                <img style="width:33%;" src="Images/intrainterfigs/most_stable.svg">
+                <img class="fragment" data-fragment-index="1" style="width:33%;" src="Images/intrainterfigs/most_stable_most_stable.svg">
+                <img class="fragment" data-fragment-index="2" style="width:33%;" src="Images/intrainterfigs/most_stable_least_stable.svg">
+              </div>
+              <div style="height:40%;width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-between;">
+                <img style="width:33%;" src="Images/intrainterfigs/least_stable.svg">
+                <img class="fragment" data-fragment-index="3" style="width:33%;" src="Images/intrainterfigs/least_stable_most_stable.svg">
+                <img class="fragment" data-fragment-index="3" style="width:33%;" src="Images/intrainterfigs/least_stable_least_stable.svg">
+              </div>
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">Summary</h4>
+            <div class="wnotes vcenter">
+              <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
+                <li><i class="fa-li fas fa-angle-right"></i>Two species coexistence: simple and intuitive</li>
+                <li><i class="fa-li fas fa-angle-right"></i>But this rule does not hold for more species</li>
+                <li><i class="fa-li fas fa-angle-right"></i>Patterns to exploit (for symmetric case):</li>
+                <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
+                  <li><i class="fa-li fas fa-angle-double-right"></i>Clustering most stable</li>
+                  <li><i class="fa-li fas fa-angle-double-right"></i>Nested least stable</li>
+                  <li><i class="fa-li fas fa-angle-double-right"></i>Intraspecific competition follows same patterns as inter-</li>
+                </ul>
+              </ul>
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header">Outline</h4>
+            <div class="wnotes vcenter">
+              <ol>
+                <li style="opacity:0.5;">Ecological Networks: a brief history</li>
+                <li style="opacity:0.5;">Are ecological networks structuraly distinct?</li>
+                <li style="opacity:0.5;">Do trophic roles have structural signatures?</li>
+                <li style="opacity:0.5;">How ought competitve networks be structured?</li>
+                <li class="orange">Where do we go from here?</li>
+                <ul class="fa-ul" style="list-style-type:none;font-size:80%;">
+                  <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Synthesis</li>
+                  <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Extension</li>
+                </ul>
+              </ol>
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+            </aside>
+          </section>
+
+
+
+          <section>
+            <div class="vcenter">
+              <h1 style="font-size:120px">Questions?</h1>
+              <!-- <h3>
+              Thanks for viewing this presentation, if you have any feedback or
+              questions, please <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#106;&#115;&#109;&#105;&#116;&#104;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;">Email me</a>!</h3> -->
+              <p style="position=relative; margin-top:15vh; font-size:24px;"><a href="http://michalska-smith.com//talks/ESA_08,2016/">Slides available on Michalska-Smith.com</a></p>
+              <p style="position=relative; font-size:24px;">
+                Food-web animals (
+                <a href="http://www.freepik.com/free-vector/cute-forest-animals_787689.htm">1</a>,
+                <a href="http://www.freepik.com/free-vector/hand-drawn-variety-of-bushs_853746.htm">2</a>,
+                <a href="http://www.freepik.com/free-vector/hand-drawn-forest-animal-collection_843677.htm">3</a>,
+                <a href="http://www.freepik.com/free-vector/hand-drawn-forest-animal-collection_845584.htm">4</a>,
+                <a href="https://www.123freevectors.com/free-vector-insect-silhouettes/">5</a>
+                ) modified from images designed by Freepik and Snap2Objects.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <div class="wnotes">
+              <h3 style="margin-bottom:10vh; font-weight:bold;">Acknowledgements</h3>
+              <table style="margin:3vh auto; font-size:80%;">
+                <tr>
+                  <td>Liz Sander</td>
+                  <td>Stefano Allesina</td>
+                  <td>Mercedes Pascual</td>
+                </tr>
+                <tr> <td>Gyuri Barab&aacute;s</td> <td>Jacopo Grilli</td>   <td>Iuri Ventura</td></tr>
+                <tr> <td></td>            <td></td>  <td>Carlos Marcelo Servan</td></tr>
+                <tr> <td></td>       <td></td> <td></td></tr>
+              </table>
+            </div>
+            <div style="bottom:0; position:absolute;" class="wnotes">
+              <img src="../DeptofEd.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
+              <img src="../NSF_logo.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
+              <img src="../UC_logo.png" style="display:inline-block; max-height:10vh !important; max-width:67% !important;">
+            </div>
+            <aside class="notes">
+              The work was undergone in collaboration with <a href="http://lizsander.com">Liz Sander</a>,
+              <a href="http://allesinalab.uchicago.edu">Stefano Allesina</a>, and
+              <a href="http://pondside.uchicago.edu/ecol-evol/people/pascual.html">Mercedes Pascual</a>,
+              all at the University of Chicago. The project was funded through the NSF
+              GRFP and the U.S. Dept. of Education (P200A150101).
+              <br><br>
+              This work was inspired by the Parasites and Food-Webs Working Group
+              supported by the National Center for Ecological Analysis and Synthesis,
+              a center funded by NSF (DEB-0553768), the University of California,
+              Santa Barbara and the State of California. Also thanks to the people
+              listed here who gave invaluable feedback on this talk.
+              <br><span id="ns">next slide</span>
+            </aside>
+          </section>
+
+
+        </div>
+      </div>
+
+      <script src="../../reveal.js/lib/js/head.min.js"></script>
+      <script src="../../reveal.js/js/reveal.js"></script>
+
+      <!-- Custom Javascript -->
+      <script>
+      $(document).keydown(function(e) {
+        var key = e.which;
+        if (key == 86) {
+          // if the user pressed 'v':
+          $("aside.notes").toggleClass("hidden");
+          $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").toggleClass("wnotes");
+          $("section > #citation").toggleClass("citwnotes");
+        }
+      });
+      </script>
+
+      <script>
+      Reveal.initialize({
+        width: "100%",
+        height:"100%",
+        controls: false,
+        progress: true,
+        slideNumber: true,
+        history: true,
+        center: false,
+        transition: "slide", // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          // { src: "../../reveal.js/plugin/markdown/marked.js" },
+          // { src: "../../reveal.js/plugin/markdown/markdown.js" },
+          { src: "../../reveal.js/plugin/math/math.js", async: true },
+          { src: "../../reveal.js/plugin/notes/notes.js", async: true },
+          { src: "../../reveal.js/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+      </script>
+    </body>
+    </html>

@@ -1,0 +1,300 @@
+/*///////////////////////////////// Debugging ////////////////////////////////*/
+/* section {
+  background-color:#888888;
+}
+section > div {
+  background-color:#aa99aa;
+} */
+
+
+/*/////////////////////////////////// Font ///////////////////////////////////*/
+.reveal h1 {
+  font-family: "Alegreya", serif;
+  text-transform: none;
+}
+
+/*////////////////////////////// Header/Footer ///////////////////////////////*/
+#citation {
+  bottom:0;
+  right:2vw;
+  text-align:right;
+  position:absolute;
+  font-size:50%;
+  z-index:100;
+}
+
+#citation.citwnotes {
+  right:42vw;
+}
+
+#header {
+  top:0;
+  left:2vw;
+  position:absolute;
+  font-size:90%;
+  z-index:100;
+}
+
+#slide_position {
+  text-align:right;
+  top:1vh;
+  right:2vw;
+  position:absolute;
+  font-size:50%;
+  z-index:99;
+  color:#aaa;
+}
+
+/*/////////////////////////////// Slide Notes ////////////////////////////////*/
+.reveal aside.hidden {
+  display:none !important;
+}
+
+.fullwidth {
+  width:100%;
+  text-align:center;
+}
+
+.fullwidth.tomiddle {
+  text-align:center;
+}
+.fullwidth.tomiddle.wnotes {
+  text-align:right;
+}
+
+.wnotes {
+  display: block;
+  position: absolute;
+  width:55vw;
+  left:0;
+}
+
+.reveal aside.notes {
+  position: absolute;
+  display: block;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.2);
+  right: 0;
+  top: 5vh;
+  width: 40vw;
+  height: 90vh;
+  font-size: 60%;
+  line-height: 120%;
+  overflow:auto;
+  padding-left: 0.5vw;
+}
+
+span.key {
+  border: 2px solid black;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.3) ;
+  text-transform: capitalize;
+  font-family: "Alegreya SC", serif;
+  font-weight: bold;
+  padding: 0px 10px 0px 10px;
+  margin: 0 10px;
+  font-size: 75%;
+}
+
+#ns {
+  font-family: "Alegreya SC", serif;
+  font-weight: bold;
+}
+
+table {
+  color: inherit;
+}
+
+table td {
+  border-bottom: 0 !important;
+}
+
+.orange,
+.reveal .slides section .fragment.highlight-orange.visible,
+.reveal .slides section .fragment.highlight-current-orange.current-fragment {
+   color:#ef6d1d;}
+
+.red,
+.reveal .slides section .fragment.highlight-red.visible,
+.reveal .slides section .fragment.highlight-current-red.current-fragment {
+  color:#f07973;}
+
+.blue,
+.reveal .slides section .fragment.highlight-blue.visible,
+.reveal .slides section .fragment.highlight-current-blue.current-fragment {
+   color: #4592d1;}
+
+.green,
+.reveal .slides section .fragment.highlight-green.visible,
+.reveal .slides section .fragment.highlight-current-green.current-fragment {
+   color: #55c2bb;}
+
+.purple,
+.reveal .slides section .fragment.highlight-purple.visible,
+.reveal .slides section .fragment.highlight-current-purple.current-fragment {
+  color: #8a9aed;}
+
+.reveal .slides section .fragment.highlight-yellow.visible,
+.reveal .slides section .fragment.highlight-current-yellow.current-fragment {
+  color: #fed58c; }
+
+.reveal .slides section .fragment.highlight-yellow,
+.reveal .slides section .fragment.highlight-current-yellow,
+.reveal .slides section .fragment.highlight-orange,
+.reveal .slides section .fragment.highlight-current-orange,
+.reveal .slides section .fragment.highlight-purple,
+.reveal .slides section .fragment.highlight-current-purple,
+.reveal .slides section .fragment.unhighlight,
+.reveal .slides section .fragment.emph-bold {
+  opacity: 1;
+  visibility: visible; }
+
+.reveal .slides section .fragment.unhighlight.visible {
+    color: inherit; }
+
+.reveal .slides section .fragment.emph-bold.current-fragment {
+  font-weight: bold;
+  visibility: visible; }
+
+.vcenter {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:100%;
+}
+
+img {
+  max-width:100vw;
+  max-height:100vh;
+}
+
+.reveal .slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.reveal .slides>section {
+  height: 96vh;
+  width: 96vw;
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  margin: 0;
+  padding: 0;
+}
+
+.reveal .slides>section>section {
+  height: 96vh;
+  width: 96vw;
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  margin: 0;
+  padding: 0;
+}
+
+.fa-li {
+  padding-top:0.2em;
+}
+
+/*///////////////////////////////////// Matrices /////////////////////////////////////*/
+.matrix {
+  display:inline-table;
+  padding:50px;
+  table-layout:fixed;
+  color: inherit;
+}
+
+.matrix td {
+  border-style:solid;
+  border-width:1px;
+  width: 4vmin;
+  height: 4vmin;
+  font-size: 110%;
+  text-align: center;
+}
+
+.matrix th {
+  border:0;
+  text-align: center;
+}
+
+.matrix tr:last-child td:not(:first-child) {
+  border-bottom:1px solid !important;
+}
+
+.matrix td:first-child,
+.matrix th:first-child {
+  border:0;
+}
+
+.matimg {
+  max-width: 4vmin !important;
+  max-height: 4vmin !important;
+  padding:0 !important;
+  margin:0 auto !important;
+}
+
+td {
+  text-align: center !important;
+}
+
+#gbr {
+  border-top-width: 5px;
+}
+
+#gbc {
+  border-left: 5px solid #ef6d1d;
+}
+
+/*////////////////////////////////////// Colors //////////////////////////////////////*/
+.pp {
+  color:#abdda4;
+}
+.hb {
+  color:#2b83ba;
+}
+.pa {
+  color:#d7191c;
+}
+.pr {
+  color:#fdae61;
+}
+
+.nsig {
+  background-color:#333333;
+  color: rgba(0,0,0,0);
+}
+.sig1 {
+  background-color:#dcc200;
+  color: rgba(0,0,0,0);
+}
+.sig2 {
+  background-color:#dc5400;
+  color: rgba(0,0,0,0);
+}
+.sig3 {
+  background-color:#dc001a;
+  color: rgba(0,0,0,0);
+}
+
+/*////////////////////////////////////// Other ///////////////////////////////////////*/
+.parasite {
+  color: #d7191c;
+}
+
+.category {
+  font-weight:bold;
+}
+
+.rotate {
+  white-space: nowrap;
+  transform: rotate(-90deg);
+  transform-origin: left left;
+  width:0;
+  float: left;
+}
