@@ -28,7 +28,7 @@
           </div>
           <img src="Images/title.png" style="max-width:80%;padding-bottom:3vh;margin-top:-10vh;">
           <h2 style="font-size:3vw;">Matthew Michalska-Smith</h2>
-          <ul style="position:absolute;left:1vw;bottom:3vh;margin:0;padding:0;font-size:2vw;">
+          <ul style="list-style-type:none;position:absolute;left:1vw;bottom:3vh;margin:0;padding:0;font-size:2vw;">
             <li style="font-weight:bold;">Stefano Allesina</li>
             <li>Trevor Price</li>
             <li>Mercedes Pascual</li>
@@ -126,7 +126,7 @@
         </section>
 
         <section data-background-color="#000" data-background="Images/planetary_network.jpg" data-background-size="contain">
-          <h4 id="header">Networks as a unifying methodology</h4>
+          <h4 style="background-color:rgba(0,0,0,0.8);border-radius:5%;"id="header">Networks as a unifying methodology</h4>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes" style="background-color:rgba(0, 0, 0, 0.7);">
             <p>Of course, it is not just nature that is interconnected, but there are a variety of
@@ -202,11 +202,11 @@
         <section>
           <h4 id="header">Network structure: Global</h4>
           <div class="wnotes vcenter">
-            <div style="width:100%;display:flex;flex-direction:row;justify-content:space-around;">
+            <div style="margin:0;padding:0;width:100%;display:flex;flex-direction:row;justify-content:space-around;">
               <p>Nestedness</p>
               <p class="fragment" data-fragment-index="1">Modularity</p>
             </div>
-            <div style="width:100%;display:flex;flex-direction:row;justify-content:space-around;max-height:75vh;">
+            <div style="margin:0;padding:0;width:100%;display:flex;flex-direction:row;justify-content:space-around;max-height:70vh;">
               <img style="width:40%;max-height:100%;" src="Images/Weitz,etal_2013_nestedness.svg">
               <img style="width:40%;max-height:100%;" class="fragment" data-fragment-index="1" src="Images/Weitz,etal_2013_modularity.svg">
             </div>
@@ -298,7 +298,7 @@
         <section>
           <div class="wnotes vcenter">
             <img src="Images/distinguishing_title.png" style="max-width:80%;max-height:50vh;">
-            <ul style="position:absolute;left:5vw;bottom:5vh;">
+            <ul style="list-style-type:none;font-size:2.5vw;position:absolute;left:5vw;bottom:5vh;">
               <li style="font-size:75%;">In collaboration with:</li>
               <li>Stefano Allesina</li>
             </ul>
@@ -526,8 +526,8 @@
                 <li class="orange">Do trophic roles have structural signatures?</li>
                 <ul class="fa-ul" style="font-size:80%;">
                   <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Defining trophic roles</li>
-                  <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Introducing the group model</li>
-                  <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>results</li>
+                  <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Introducing the methodology</li>
+                  <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Visualizing Imbalance</li>
                 </ul>
                 <li style="opacity:0.5;">How ought competitve networks be structured?</li>
                 <li style="opacity:0.5;">Where do we go from here?</li>
@@ -544,7 +544,7 @@
           <section>
             <div class="wnotes vcenter">
               <img src="Images/parasites_title.png" style="max-width:80%;">
-              <ul style="position:absolute;left:5vw;bottom:5vh;">
+              <ul style="list-style-type:none;font-size:2.5vw;position:absolute;left:5vw;bottom:5vh;">
                 <li style="font-size:75%;">In collaboration with:</li>
                 <li>Liz Sander</li>
                 <li>Mercedes Pascual</li>
@@ -718,7 +718,7 @@
       <section>
         <h4 id="header">methods: Group Model</h4>
         <div class="wnotes vcenter">
-          <ul>
+          <ul style="list-style-type:none;">
             <li>Also known as the stochastic blockmodel</li>
             <li>A generalized form of Modularity</li>
             <li style="font-weight:bold;">Seeks to find groups of strongly connecting species</li>
@@ -915,10 +915,10 @@
               <td style="background-color:#d7191c;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/tick.svg"></td>
             </tr>
           </table>
-          <table style="position:absolute; margin-top:20vh; font-size:80%; white-space:nowrap;">
+          <table style="position:absolute; margin-top:20vh; font-size:65%; white-space:nowrap;">
             <tr class="fragment fade-in" data-fragment-index="1"> <th></th> <th>ψ</th> <th>p-value</th> </tr>
             <tr class="fragment fade-in" data-fragment-index="1"> <td class="category pa">Parasites</td> <td>0.667</td> <td>0.089</td> </tr>
-            <tr class="fragment fade-in" data-fragment-index="2"> <td class="category pr">Predators</td> <td>0.4</td> <td>0.533</td> </tr>
+            <tr class="fragment fade-in" data-fragment-index="2"> <td class="category pr">Consumers</td> <td>0.4</td> <td>0.533</td> </tr>
             <tr class="fragment fade-in" data-fragment-index="2"> <td class="category hb">Herbivores</td> <td>0.6</td> <td>0.158</td> </tr>
             <tr class="fragment fade-in" data-fragment-index="2"> <td class="category pp">Primary Producers</td> <td>1.0</td> <td>0.022</td> </tr>
             <tr class="fragment fade-in" data-fragment-index="2"> <td style="font-weight:bold;">Overall</td> <td>0.4</td> <td>0.033</td> </tr>
@@ -937,9 +937,9 @@
               <td style="background-color:#fdae61;"><img style="vertical-align: bottom;" class="matimg" src="Images/animals/bear2.svg"></td>
             </tr>
           </table>
-          <table style="position:absolute; margin-top:65vh; font-size:80%; white-space:nowrap;">
+          <table style="position:absolute; margin-top:65vh; font-size:65%; white-space:nowrap;">
             <tr class="fragment fade-in" data-fragment-index="1"> <td class="category pa">Parasites</td> <td>0.5</td> <td>0.8</td> </tr>
-            <tr class="fragment fade-in" data-fragment-index="2"> <td class="category pr">Predators</td> <td>1</td> <td>0.017</td> </tr>
+            <tr class="fragment fade-in" data-fragment-index="2"> <td class="category pr">Consumers</td> <td>1</td> <td>0.017</td> </tr>
             <tr class="fragment fade-in" data-fragment-index="2"> <td class="category hb">Herbivores</td> <td>1</td> <td>0.017</td> </tr>
             <tr class="fragment fade-in" data-fragment-index="2"> <td class="category pp">Primary Producers</td> <td>0.5</td> <td>0.8</td> </tr>
             <tr class="fragment fade-in" data-fragment-index="2"> <td style="font-weight:bold;">Overall</td> <td>0.5</td> <td>0.004</td> </tr>
@@ -981,7 +981,7 @@
                 <li><i class="fa-li fas fa-angle-double-right"></i><span class="category pp">Primary Producer</span></li>
                 <li><i class="fa-li fas fa-angle-double-right"></i><span class="category hb">Herbivore</span></li>
                 <li><i class="fa-li fas fa-angle-double-right"></i><span class="category pa">Parasite</span></li>
-                <li><i class="fa-li fas fa-angle-double-right"></i><span class="category pr">Predators</span></li>
+                <li><i class="fa-li fas fa-angle-double-right"></i><span class="category pr">Consumers</span></li>
               </ul>
           </ul>
         </div>
@@ -1185,13 +1185,13 @@
       <section>
         <div class="wnotes vcenter">
           <img src="Images/intrainter_title.png" style="max-width:80%;max-height:50vh;">
-          <ul style="position:absolute;left:5vw;bottom:5vh;">
+          <ul style="list-style-type:none;font-size:2.5vw;position:absolute;left:5vw;bottom:5vh;">
             <li style="font-size:75%;">In collaboration with:</li>
             <li>Gy&ouml;rgy Barab&aacute;s</li>
             <li>Stefano Allesina</li>
           </ul>
         </div>
-        <h4 id="citation" class="citwnotes"></h4>
+        <h4 id="citation" class="citwnotes"><a href="https://www.journals.uchicago.edu/doi/abs/10.1086/686901">Barab&aacute;s, Michalska-Smith, &amp; Allesina 2017</a></h4>
         <aside class="notes">
           <p>In particular, we revisit a traditional dogma of the stability implications
           for the relation between intraspecific competion (competition between members
@@ -1208,18 +1208,18 @@
           </div>
           <div class="fragment" style="font-size:3vw;;">
             <span class="green">$\frac{\mathrm{d} N_1}{\mathrm{d} t}$</span><span>$=$</span>
-            <span class="green">$N_1$</span><span>$($</span><span class="purple">$r_1$</span><span>-</span>
+            <span class="green">$N_1$</span><span>$($</span><span class="purple">$r_1$</span><span>$-$</span>
             <span class="orange">$a_{12}$</span><span class="green">$N_2$</span><span>$-$</span><span class="orange">$a_{11}$</span>
             <span class="green">$N_1$</span><span>$)$</span>
             <p></p>
             <span style="padding-top:2vh;" class="green">$\frac{\mathrm{d} N_2}{\mathrm{d} t}$</span><span>$=$</span>
-            <span class="green">$N_2$</span><span>$($</span><span class="purple">$r_2$</span><span>-</span>
+            <span class="green">$N_2$</span><span>$($</span><span class="purple">$r_2$</span><span>$-$</span>
             <span class="orange">$a_{21}$</span><span class="green">$N_1$</span><span>$-$</span><span class="orange">$a_{22}$</span>
             <span class="green">$N_2$</span><span>$)$</span>
           </div>
           <img style="position:absolute;margin:auto;" class="fragment current-visible" src="Figures/LV_Competition.svg">
           <div class="fragment" style="font-size:3vw;;padding-top:5vh;">
-            <p>Condition for stability:</p>
+            <p>Condition for coexistence:</p>
             <span style="padding-left:3vw;" class="orange">$a_{12}a_{21}$</span><span style="margin:15px;">$<$</span><span class="orange">$a_{11}a_{22}$</span>
           </div>
         </div>
@@ -1534,11 +1534,11 @@
             <h4 id="header">Extension</h4>
             <div class="wnotes vcenter">
               <div style="display:flex;flex-direction:row;align-items:space-around;">
-                <img style="width:45%;max-height:85vh;" src="Images/multilayer_networks.svg">
-                <img style="width:45%;max-height:85vh;" src="<<DYNAMIC NETWORKS>>">
+                <img style="width:100vw;max-height:85vh;" src="Images/multilayer_networks.svg">
+                <!-- <img style="width:45%;max-height:85vh;" src="<<DYNAMIC NETWORKS>>"> -->
               </div>
             </div>
-            <h4 id="citation" class="citwnotes"></h4>
+            <h4 id="citation" class="citwnotes"><a href="https://www.nature.com/articles/s41559-017-0101?shunter=1489658586817">Pilosof, <i>et al.</i> 2017</a></h4>
             <aside class="notes">
               <p>I want to end with a note on two areas of growing research that
               I think will be fruitful avenues for Ecology in the near future:
@@ -1552,28 +1552,34 @@
             </aside>
           </section>
 
-          <!-- <section>
-          <div class="wnotes">
-          <h3 style="margin-bottom:10vh; font-weight:bold;">Acknowledgements</h3>
-          <table style="margin:3vh auto; font-size:80%;">
-          <tr>
-          <td>Liz Sander</td>
-          <td>Stefano Allesina</td>
-          <td>Mercedes Pascual</td>
-        </tr>
-        <tr> <td>Gyuri Barab&aacute;s</td> <td>Jacopo Grilli</td>   <td>Iuri Ventura</td></tr>
-        <tr> <td></td>            <td></td>  <td>Carlos Marcelo Servan</td></tr>
-        <tr> <td></td>       <td></td> <td></td></tr>
-      </table>
-    </div>
-    <div style="bottom:0; position:absolute;" class="wnotes">
-    <img src="../DeptofEd.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
-    <img src="../NSF_logo.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
-    <img src="../UC_logo.png" style="display:inline-block; max-height:10vh !important; max-width:67% !important;">
-  </div>
-  <aside class="notes">
-</aside>
-</section> -->
+          <section>
+          <div class="wnotes vcenter">
+            <h3 style="font-weight:bold;">Acknowledgements</h3>
+            <table style="margin:0;padding:0;font-size:3vh;"><tbody>
+              <tr><td>Adam</td><td>Brenon</td><td>Evan</td><td>Jody</td><td>Marcos</td><td>Sarah</td><td>&nbsp;</td></tr>
+              <tr><td>Agata</td><td>Carlos</td><td>Finnigan</td><td>John</td><td>Mariah</td><td>Simon</td><td>&nbsp;</td></tr>
+              <tr><td>Alex</td><td>Chad</td><td>Frank</td><td>Jose</td><td>Mark</td><td>Stefano</td><td>&nbsp;</td></tr>
+              <tr><td>Allison</td><td>Cody</td><td>Grzesz</td><td>Katherine</td><td>Mary</td><td>Steve</td><td>&nbsp;</td></tr>
+              <tr><td>Amos</td><td>Connie</td><td>Gyuri</td><td>Kimbra</td><td>Mercedes</td><td>Supriya</td><td>&nbsp;</td></tr>
+              <tr><td>Angelo</td><td>Courtney</td><td>Iuri</td><td>Laura</td><td>Misha</td><td>Sylvia</td><td>&nbsp;</td></tr>
+              <tr><td>Arvind</td><td>Dan</td><td>Jacopo</td><td>Lili</td><td>Monika</td><td>Trevor</td><td>&nbsp;</td></tr>
+              <tr><td>Audrey</td><td>Dave</td><td>Jakez</td><td>Linnea</td><td>Phillip</td><td>Tyler</td><td>&nbsp;</td></tr>
+              <tr><td>Ben</td><td>Elisa</td><td>Jared</td><td>Liz</td><td>Rahul</td><td>Yoseop</td><td>&nbsp;</td></tr>
+              <tr><td>Bonnie</td><td>Emilio</td><td>Jeff</td><td>Madeline</td><td>Roberto</td><td>Zach</td><td><i>etc.</i></td></tr>
+             </tbody></table>
+          </div>
+          <div style="bottom:0; position:absolute;" class="wnotes">
+          <img src="../DeptofEd.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
+          <img src="../NSF_logo.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
+          <img src="../UC_logo.png" style="display:inline-block; max-height:10vh !important; max-width:67% !important;">
+        </div>
+        <aside class="notes">
+      </aside>
+      </section>
+
+  <section>
+    <img src="Images/marta_finn.jpeg">
+  </section>
 
           <section>
             <div class="vcenter">
