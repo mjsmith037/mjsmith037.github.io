@@ -481,6 +481,8 @@
             </aside>
           </section>
 
+<!-- TODO: move font size of lists to css -->
+
           <section>
             <h4 id="header">Future directions</h4>
             <div class="wnotes vcenter">
@@ -1234,14 +1236,13 @@
           <span id="ns">next slide</span>
           <p>The stability conditions for two species interacting in this way can be
             depicted in phase diagrams such as these (in which I've fixed the intra-specific
-            competition to be $1$ for convenience). For this system, there are four possible
+            competition and growth rates to be $1$ for convenience). For this system, there are four possible
             cases. In the top right species $1$ outcomptes species $2$ and drives the former
             extinct. In the bottom left is the complement of that scenario</p>
             <p>In th bottom right, the winner is determined by the starting conditions, and the
               only situation in which both species coexist is the top right where for both species, the
               strength of competition with the other species is less than one.</p>
-          <span id="ns">next slide</span>
-          <p>More formally, </p>
+              <p>More formally, </p>
           <span id="ns">next slide</span>
           <p>the geometric mean of the intraspecific competition must be less than
             the geometric mean of the interspecific competition</p>
@@ -1352,9 +1353,18 @@
             </div>
             <h4 id="citation" class="citwnotes"></h4>
             <aside class="notes">
-
+              <p>But of course, there are more than two or even three species in nature,
+              so is there anything we can say about these more complicated systems?</p>
+              <p>We can interpret this question in another way: </p>
+              <span id="ns">next slide</span>
+              <p>If we were to take each of the between-species interaction coeficients in a system
+              of competing species and arrange them into the most stable system possible,
+              would there be a detectable pattern in this arrangement? And the same can
+              be asked if we were to place them in the least stable configuration possible.</p>
             </aside>
           </section>
+
+<!-- TODO: add decomposition slide -->
 
           <section>
             <h4 id="header">Generalization to large $n$</h4>
@@ -1377,16 +1387,37 @@
             </div>
             <h4 id="citation" class="citwnotes"></h4>
             <aside class="notes">
+              <p>We performed this experiment, taking a random interaction
+              matrix and re-arranging the off-diagonal interaction coeficients
+              in a matrix using a stochastic search algoritm to find the configuration
+              that maximized stability</p>
+              <span id="ns">next slide</span>
+              <p>we found that this nested configuration is most stabilizing.</p>
+              <span id="ns">next slide</span>
+              <p>This could arise, for instance if species are able to coexist by either
+              specializing more on a particular resource, or generalizing
+              such that they can consume a wider diversity of resources.</p>
+              <p>In this figure, each curve indicates a diet of a different coexisting species.</p>
+              <p>In the least-stabilizing case, a different pattern emerges:</p>
+              <span id="ns">next slide</span>
+              <p>The species interactions for a sort of "anti-modular" structure.</p>
+              <span id="ns">next slide</span>
+              <p>You can imagine an ecological scenario that would lead to this situation,
+              for instance in the case of allelopathy in plants, where species interact strongly
+              with plants who produce very different toxins, but have resistance to toxins
+              similar to their own.</p>
+              <p>In this figure the dots indicate which toxin is producred by each species
+              and the colours indicate general clusters of toxin similarity.</p>
             </aside>
           </section>
 
           <section>
             <h4 id="header">The additive effect of intra-specific competition</h4>
-            <div class="wnotes vcenter" style="height:85%;padding-top:10%;">
-              <div style="width:100%;height:40px;display:flex;flex-direction:row;justify-content:space-between;">
+            <div class="wnotes vcenter" style="height:85vh;padding-top:10vh;">
+              <div style="font-size:3vw;width:100%;height:40px;display:flex;flex-direction:row;justify-content:space-between;">
                 <span style="width:30%;text-align:center;">Interspecific</span><span style="width:63%;text-align:center;">Intraspecific</span>
               </div>
-              <div style="width:100%;height:40px;display:flex;flex-direction:row;justify-content:flex-end;">
+              <div style="font-size:3vw;width:100%;height:40px;display:flex;flex-direction:row;justify-content:flex-end;">
                 <span style="width:33%;text-align:center;">Stabilizing</span><span style="width:33%;text-align:center;">Destabilizing</span>
               </div>
               <div style="height:40%;width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-between;">
@@ -1402,25 +1433,49 @@
             </div>
             <h4 id="citation" class="citwnotes"></h4>
             <aside class="notes">
+              <p>We can repeat this procedure looking at the intra-specific interactions.
+              In this case, we can take each of the inter-specific patterns as a background
+              and modify the diagonal elements to see what patterns enhance or detract from
+              the effect of the off-diagonal terms.</p>
+              <span id="ns">next slide</span>
+              <p>Starting with the most-stabilizing case, we find that the diagonal elements
+              enhance stability when they generally conform to the same pattern, with the
+              same species that experience high inter-specific competition having the highest
+              intra-specific competition.</p>
+              <span id="ns">next slide</span>
+              <p>Unsurprisingly, the inverse is most destabilizing.</p>
+              <span id="ns">next slide</span>
+              <p>For the least-stabilizing situation of interspecific competition,
+              we see the same general pattern, with intraspecific competition
+              mirroring the interspecific competition to enhance the effect and
+              counter-pointing it to detract from the dominant effect of interspecific
+              effects.</p>
             </aside>
           </section>
 
           <section>
             <h4 id="header">Summary</h4>
             <div class="wnotes vcenter">
-              <ul class="fa-ul" style="max-width:80%;">
+              <ul class="fa-ul" style="max-width:80%;font-size:3vw;">
                 <li><i class="fa-li fas fa-angle-right"></i>Two species coexistence: simple and intuitive</li>
                 <li><i class="fa-li fas fa-angle-right"></i>But this rule does not hold for more species</li>
                 <li><i class="fa-li fas fa-angle-right"></i>Patterns to exploit (for symmetric case):</li>
-                <ul class="fa-ul" style="max-width:80%;">
+                <ul class="fa-ul" style="max-width:80%;font-size:2.5vw;">
                   <li><i class="fa-li fas fa-angle-double-right"></i>Clustering most stable</li>
                   <li><i class="fa-li fas fa-angle-double-right"></i>Nested least stable</li>
                   <li><i class="fa-li fas fa-angle-double-right"></i>Intraspecific competition follows same patterns as inter-</li>
                 </ul>
+                <li><i class="fa-li fas fa-angle-right"></i>Asymmetric competition much more difficult to study</li>
               </ul>
             </div>
             <h4 id="citation" class="citwnotes"></h4>
             <aside class="notes">
+              <p>So, in summary, while the two species rule is nice it is unfortunately
+              not very useful as a maxim for real world competition networks. Nevertheless,
+              there are some general patterns that emerge when we examine the extrema of
+              stability.</p>
+              <p>The study of asymmetric competition would be a valuable next step, but is
+              mathematically and computationally more complicated.</p>
             </aside>
           </section>
 
@@ -1441,10 +1496,61 @@
             </div>
             <h4 id="citation" class="citwnotes"></h4>
             <aside class="notes">
+              <p>That's the last project I'm highlighting today. I just want to close with a little
+              bit of synthesis and potential expansions in the area of ecological network structure.</p>
             </aside>
           </section>
 
+          <section>
+            <h4 id="header">Synthesis</h4>
+            <div class="wnotes vcenter">
+              <ul class="fa-ul" style="max-width:80%;font-size:3vw;">
+                <li><i class="fa-li fas fa-angle-right"></i>Ecological networks are diverse and complex</li>
+                <li><i class="fa-li fas fa-angle-right"></i>But there are detectable patterns with real, ecological implications</li>
+                <ul class="fa-ul" style="max-width:80%;font-size:2.5vw;">
+                  <li><i class="fa-li fas fa-angle-double-right"></i>Ecological interaction networks have large within-type variation and are more structurally similar than previously appreciated</li>
+                  <li><i class="fa-li fas fa-angle-double-right"></i>Trophic roles have structural signatures in food-webs</li>
+                  <li><i class="fa-li fas fa-angle-double-right"></i>The extreme cases of competition network structure have clear ecological corollaries</li>
+                </ul>
+              </ul>
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+              <p>While it is true that at first-glance these three projects appear to have little in
+              common, each of them looks at the relationship between network structure and ecological
+              processes underlying the construction and maintenance of those networks.</p>
+              <p>In particular, I want to highlight that there are patterns in ecological network
+              structure that exist to be found and explored further. While the first project's main
+              message was that such structures can be difficult to find, even in this "negative" result
+              is information on the variance inherent to ecological systems. in the second project,
+              we find that there are structural signatures for the commonly described trophic roles,
+              even parasites which are notoriously difficult to define precisely. Finally, in this last
+              section, I've shown the endpoints in a spectrum of stability for competetive networks,
+              revealing that both ends have clear, interpretable structures.</p>
+            </aside>
+          </section>
 
+          <section>
+            <h4 id="header">Extension</h4>
+            <div class="wnotes vcenter">
+              <div style="display:flex;flex-direction:row;align-items:space-around;">
+                <img style="width:45%;max-height:85vh;" src="Images/multilayer_networks.svg">
+                <img style="width:45%;max-height:85vh;" src="<<DYNAMIC NETWORKS>>">
+              </div>
+            </div>
+            <h4 id="citation" class="citwnotes"></h4>
+            <aside class="notes">
+              <p>I want to end with a note on two areas of growing research that
+              I think will be fruitful avenues for Ecology in the near future:
+              multi-layer networks and dynamic networks. Both of these are
+              extensions to more tradtional network representations,
+              incorporating greater realism at the expense of greater
+              complexity. It will be important in the coming years to both
+              develop methods for understanding these new data representations,
+              but also to critically evaluate whether this complexity is worth
+              it in terms of greater understanding or predictability.</p>
+            </aside>
+          </section>
 
           <!-- <section>
           <div class="wnotes">
