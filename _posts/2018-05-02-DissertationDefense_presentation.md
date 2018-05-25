@@ -3,7 +3,7 @@ layout: slides
 title: "University of Chicago Department of Ecology & Evolution Dissertation Defense"
 subtitle: "Structural Inferences: three cases of linking pattern & process in ecological networks"
 author: "Matthew J. Michalska-Smith"
-date: "2017-05-02"
+date: "2018-05-02"
 categories: slides presentation
 ---
 <head>
