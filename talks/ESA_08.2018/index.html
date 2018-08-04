@@ -13,13 +13,12 @@
     <!-- Theme used for syntax highlighting of code -->
     <!-- <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css"> -->
     <link rel="stylesheet" href="../../reveal.js/lib/css/idea.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/r.min.js"></script>
-
     <!-- font-linking -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-TXfwrfuHVznxCssTxWoPZjhcss/hp38gEOH8UPZG/JcXonvBQ6SlsIF49wUzsGno" crossorigin="anonymous">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <!-- <script src="../../../ForLocalPresentations/jquery-3.3.1.min.js"></script> -->
   </head>
   <body>
     <div class="reveal">
@@ -31,9 +30,10 @@
           </div>
           <aside class="notes">
             <p>
-              This talk was given for a departmental seminar entitled Darwin's Weekly,
+              This talk was originally prepared for a departmental seminar entitled Darwin's Weekly,
               at the University of Chicago Department of Ecology &amp; Evolution on
-              2 February 2018.
+              2 February 2018. It was modified from this to be presented at the Annual Meeting
+              of the Ecological Society of America on 6 August 2018.
               Text here will supplement slide material.
             </p><p>
               You can remove this pane (and get it back) by tapping <span class="key">v</span> on your keyboard.
@@ -42,7 +42,7 @@
               slide partway through these explanations. These will be indicated by
               "<span id="ns">next slide</span>" in these notes.
             </p><p>
-              Slides can be advanced by tapping<span class="key"><i class="fas fa-arrow-right"></i></span>
+              Slides can be advanced by tapping<span class="key"><i class="fas fa-arrow-alt-right"></i></span>
               to display only the core slides, or <span class="key">Spc</span>,
               <span class="key">PgDn</span>, or <span class="key">n</span> to also show
               some supplemental slides throughout the presentation.
@@ -55,6 +55,36 @@
           </aside>
         </section>
 
+
+        <section class="center">
+          <div class="wnotes vcenter">
+            <div style="width:75%;display:flex;flex-direction:row;align-items:baseline;justify-content:space-around;">
+              <div>
+                <img class="plain" style="width:20vw;" src="Images/Stefano.jpg">
+                <h1 style="font-size:125%">Stefano Allesina</h1>
+              </div>
+              <div>
+                <img class="plain" style="width:20vw;" src="Images/Zach.jpg">
+                <h1 style="font-size:125%">Zachary Miller</h1>
+              </div>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:0;left:5%;" id="abs_pos">
+            <img class="plain" src="../NSF_logo.png" style="display:inline-block;height:10vh;">
+            <img class="plain" src="../DeptofEd_logo.png" style="display:inline-block;height:10vh;">
+            <img class="plain" src="../NutNet_logo.png" style="display:inline-block;height:10vh;">
+            <img class="plain" src="../UC_logo.png" style="display:inline-block;height:10vh;">
+          </div>
+          <aside class="notes">
+            <p>
+              This work was conducted with Stefano Allesina and Zach Miller at the
+              University of Chicago, with funding from NSF and the Department of
+              Education. For an example later in this talk, I will be utilizing
+              data from the Nutrient Network.
+            <p>
+          </aside>
+        </section>
+
         <section>
           <h4 id="header">Outline</h4>
           <div class="wnotes vcenter">
@@ -63,7 +93,6 @@
               <li>What is known</li>
               <li>What we've done</li>
               <li>What remains</li>
-              <li>Some interesting observations</li>
             </ol>
           </div>
           <h4 id="citation" class="citwnotes"></h4>
@@ -113,7 +142,7 @@
           <h4 id="header">A motivating example</h4>
           <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
             <img class="plain" src="Figures/scrambled_occurance.svg">
-            <i class="fas fa-arrow-alt-circle-right" style="font-size:3vw;position:relative;"></i>
+            <i class="fal fa-arrow-circle-o-right" aria-hidden="true" style="font-size:3vw;position:relative;"></i>
             <img class="plain" src="Figures/raw_presabs_pca.svg" style="position:relative;">
           </div>
           <h4 id="citation" class="citwnotes"></h4>
@@ -135,11 +164,11 @@
             <div class="vcenter" style="position:relative;width:3%;">
               <div class="fragment fade-out" style="position:absolute;bottom:45%;" data-fragment-index="1">
                 <h1 style="font-size:200%;color:#fff;margin:0;padding:0;">?</h1>
-                <i class="fas fa-arrow-alt-circle-right" style="font-size:5vw;"></i>
+                <i class="fal fa-arrow-circle-o-right" aria-hidden="true" style="font-size:3vw;position:relative;"></i>
               </div>
               <div class="fragment fade-in" style="position:absolute;bottom:45%;" data-fragment-index="1">
                 <h1 style="font-size:200%;margin:0;padding:0;">?</h1>
-                <i class="fas fa-arrow-alt-circle-left" style="font-size:5vw;"></i>
+                <i class="fal fa-arrow-circle-o-left" aria-hidden="true" style="font-size:3vw;position:relative;"></i>
               </div>
             </div>
             <img class="plain" src="Figures/raw_presabs_pca.svg" style="width:40%;">
@@ -169,7 +198,6 @@
               <li class="red">What is known</li>
               <li>What we've done</li>
               <li>What remains</li>
-              <li>Some interesting observations</li>
             </ol>
           </div>
           <h4 id="citation" class="citwnotes"></h4>
@@ -238,7 +266,7 @@
           <h4 id="header">What is known</h4>
           <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;">
             <img class="plain" src="Figures/raw_presabs_pca.svg" style="width:40%;">
-            <i class="fas fa-arrow-alt-circle-right" style="font-size:3vw;"></i>
+            <i class="fal fa-arrow-circle-o-right" aria-hidden="true" style="font-size:3vw;"></i>
             <img class="plain" src="Figures/pca_standalone.svg" style="width:40%;">
           </div>
           <h4 id="citation" class="citwnotes"></h4>
@@ -257,16 +285,16 @@
           <div class="wnotes vcenter">
             <div class="vcenter" style="position:absolute;display:flex;flex-wrap:nowrap;flex-direction:row;width:100%;">
               <img class="plain" src="Figures/scrambled_occurance_T.svg" style="width:15%;">
-              <i class="fas fa-times-circle" style="font-size:3vw;"></i>
+              <i class="fal fa-times-circle" style="font-size:3vw;"></i>
               <img class="plain" src="Figures/scrambled_occurance.svg" style="width:30%;">
-              <i class="fas fa-pause-circle fa-rotate-90" style="font-size:3vw;"></i>
+              <i class="fal fa-pause-circle fa-rotate-90" style="font-size:3vw;"></i>
               <img class="plain" style="width:35%;" src="Figures/scrambled_distance_matrix.svg">
             </div>
             <div class="fragment vcenter" style="position:absolute;display:flex;flex-wrap:nowrap;flex-direction:row;width:100%;">
               <img class="plain" src="Figures/occurance_T.svg" style="width:15%;">
-              <i class="fas fa-times-circle" style="font-size:3vw;"></i>
+              <i class="fal fa-times-circle" style="font-size:3vw;"></i>
               <img class="plain" src="Figures/occurance.svg" style="width:30%;">
-              <i class="fas fa-pause-circle fa-rotate-90" style="font-size:3vw;"></i>
+              <i class="fal fa-pause-circle fa-rotate-90" style="font-size:3vw;"></i>
               <img class="plain" style="width:35%;" src="Figures/distance_matrix.svg">
             </div>
           </div>
@@ -370,7 +398,6 @@
               <li>What is known</li>
               <li class="red">What we've done</li>
               <li>What remains</li>
-              <li>Some interesting observations</li>
             </ol>
           </div>
           <h4 id="citation" class="citwnotes"></h4>
@@ -610,7 +637,6 @@ for (each column_i in B) {
               <li>What is known</li>
               <li>What we've done</li>
               <li class="red">What remains</li>
-              <li>Some interesting observations</li>
             </ol>
           </div>
           <h4 id="citation" class="citwnotes"></h4>
@@ -625,14 +651,14 @@ for (each column_i in B) {
           <h4 id="header">What remains</h4>
           <div class="wnotes vcenter">
             <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
-              <li><i class="fa-li fas fa-angle-right"></i>Identifying rank vs. identifying position</li>
-              <li><i class="fa-li fas fa-angle-right"></i>Gradients in more than one dimension</li>
-              <li><i class="fa-li fas fa-angle-right"></i>Types of variability</li>
+              <li><i class="fa-li fal fa-angle-right"></i>Identifying rank vs. identifying position</li>
+              <li><i class="fa-li fal fa-angle-right"></i>Gradients in more than one dimension</li>
+              <li><i class="fa-li fal fa-angle-right"></i>Types of variability</li>
               <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
-                <li><i class="fa-li fas fa-angle-double-right"></i>Species center distribution</li>
-                <li><i class="fa-li fas fa-angle-double-right"></i>Site location distribution</li>
-                <li><i class="fa-li fas fa-angle-double-right"></i>Species distribution parameters</li>
-                <li><i class="fa-li fas fa-angle-double-right"></i>Species distribution class</li>
+                <li><i class="fa-li fal fa-angle-double-right"></i>Species center distribution</li>
+                <li><i class="fa-li fal fa-angle-double-right"></i>Site location distribution</li>
+                <li><i class="fa-li fal fa-angle-double-right"></i>Species distribution parameters</li>
+                <li><i class="fa-li fal fa-angle-double-right"></i>Species distribution class</li>
               </ul>
             </ul>
           </div>
@@ -658,21 +684,16 @@ for (each column_i in B) {
           </aside>
         </section>
 
-        <section>
-          <h4 id="header">Outline</h4>
+        <section class="center">
           <div class="wnotes vcenter">
-            <ol style="font-size:130%;">
-              <li>A motivating example</li>
-              <li>What is known</li>
-              <li>What we've done</li>
-              <li>What remains</li>
-              <li class="red">Some interesting observations</li>
-            </ol>
+            <h1 style="width:100%;font-size:300%;">Questions?</h1>
+            <p style="position:absolute;bottom:20%;width:100%;text-align:center;"><a href="http://michalska-smith.com/talks/">Slides available on Michalska-Smith.com</a></p>
           </div>
-          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
-            I want to end with some observations that begin to tackle a couple of
-            the aforementioned points, but at a very superficial level.
+            <p>
+              Thanks for viewing this presentation, if you have any feedback or
+              questions, please <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#106;&#115;&#109;&#105;&#116;&#104;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;">Email me</a>!
+            <p>
           </aside>
         </section>
 
@@ -736,24 +757,6 @@ for (each column_i in B) {
           <h4 id="citation" class="citwnotes"></h4>
         </section>
 
-        <section class="center">
-          <div class="wnotes vcenter">
-            <h1 style="width:100%;font-size:300%;padding-bottom:20vh;">Questions?</h1>
-            <!-- <p style="position:absolute;bottom:20%;width:100%;text-align:center;"><a href="http://michalska-smith.com/talks/">Slides available on Michalska-Smith.com</a></p> -->
-          </div>
-          <div style="position:absolute;bottom:0;left:5%;" id="abs_pos">
-            <img class="plain" src="../NSF_logo.png" style="display:inline-block;height:10vh;">
-            <img class="plain" src="../DeptofEd.png" style="display:inline-block;height:10vh;">
-            <img class="plain" src="../UC_logo.png" style="display:inline-block;height:10vh;">
-          </div>
-          <aside class="notes">
-            <p>
-            Thanks for viewing this presentation, if you have any feedback or
-            questions, please <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#106;&#115;&#109;&#105;&#116;&#104;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;">Email me</a>!
-            <p>
-          </aside>
-        </section>
-
         <section>
           <h4 id="header">Alternative Distance Metrics</h4>
           <div class="wnotes vcenter">
@@ -799,7 +802,7 @@ for (each column_i in B) {
       if (key == 86) {
           // if the user pressed 'v':
           $("aside.notes").toggleClass("hidden");
-          $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").toggleClass("wnotes");
+          $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
           $("section > #citation").toggleClass("citwnotes");
       }
     });
@@ -815,11 +818,13 @@ for (each column_i in B) {
         history: true,
         center: false,
         transition: "slide", // none/fade/slide/convex/concave/zoom
-
+        math: {
+      		mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          // mathjax: '../../../ForLocalPresentations/MathJax/unpacked/MathJax.js',
+      		config: 'TeX-AMS_HTML-full'
+      	},
         // Optional reveal.js plugins
         dependencies: [
-          // { src: "../../reveal.js/plugin/markdown/marked.js" },
-          // { src: "../../reveal.js/plugin/markdown/markdown.js" },
           { src: "../../reveal.js/plugin/math/math.js", async: true },
           { src: "../../reveal.js/plugin/notes/notes.js", async: true },
           { src: "../../reveal.js/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
