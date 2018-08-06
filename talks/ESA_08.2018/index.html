@@ -116,7 +116,7 @@
           <h4 id="header">A motivating example</h4>
           <div class="wnotes vcenter" style="flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
             <img class="plain" src="Images/mountainside.png" style="max-width:45vw;margin-top:10vh;">
-            <img class="plain" src="Figures/scrambled_occurance_highlight.svg" style="max-width:55vw;">
+            <img class="plain" src="Figures/scrambled_occurance_highlight.svg" style="max-width:40vw;">
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
@@ -140,7 +140,7 @@
         <section>
           <h4 id="header">A motivating example</h4>
           <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
-            <img class="plain" src="Figures/scrambled_occurance.svg">
+            <img class="plain" src="Figures/scrambled_occurance.svg" style="max-width:40vw;">
             <i class="fal fa-arrow-circle-right" aria-hidden="true" style="font-size:3vw;position:relative;"></i>
             <img class="plain" src="Figures/raw_presabs_pca.svg" style="position:relative;">
           </div>
@@ -288,7 +288,7 @@
               <img class="plain" src="Figures/scrambled_occurance.svg" style="width:30%;">
               <i class="fal fa-times" style="font-size:3vw;"></i>
               <img class="plain" src="Figures/scrambled_occurance_T.svg" style="width:15%;">
-              <i class="fal fa-pause fa-rotate-90" style="font-size:3vw;"></i>
+              <i class="fal fa-equals" style="font-size:3vw;"></i>
               <img class="plain" style="width:35%;" src="Figures/scrambled_distance_matrix.svg">
             </div>
             <div class="fragment vcenter" style="position:absolute;display:flex;flex-wrap:nowrap;flex-direction:row;width:100%;">
@@ -697,9 +697,7 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
               It is iportant to be clear about what this algorithm is actually doing; it is not
               identifying the position along the gradient of each species/site. Rather, it is
               identifying a rank-order for the species/sites along the gradient. These are
-              different problems, but the latter would be the more powerful result. I know that
-              <a href="http://allesinalab.uchicago.edu/">Stefano Allesina</a> has been looking
-              into this related problem, and I look forward to discussing this issue with him.
+              different problems, but the latter would be the more powerful result.
             </p><p>
               Second, are there similar patterns in the principal components or eigenvectors
               when a more complicated gradient underlies the data, such as a two or more
