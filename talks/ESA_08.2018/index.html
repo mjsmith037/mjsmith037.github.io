@@ -11,8 +11,7 @@
     <!-- personal css file -->
     <link rel="stylesheet" href="main.css">
     <!-- Theme used for syntax highlighting of code -->
-    <!-- <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css"> -->
-    <link rel="stylesheet" href="../../reveal.js/lib/css/idea.css">
+    <link rel="stylesheet" href="../../reveal.js/lib/css/googlecode.css">
     <!-- font-linking -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-TXfwrfuHVznxCssTxWoPZjhcss/hp38gEOH8UPZG/JcXonvBQ6SlsIF49wUzsGno" crossorigin="anonymous">
@@ -26,7 +25,7 @@
         <section>
           <div class="wnotes vcenter">
             <img class="plain" style="max-width:80%;padding-bottom:5vh;" src="Images/title.png">
-            <p><b>Matt Michalska-Smith</b><br>Stefano Allesina</p>
+            <p><b>Matt Michalska-Smith</b><br>Zachary Miller<br>Stefano Allesina</p>
           </div>
           <aside class="notes">
             <p>
@@ -219,8 +218,12 @@
               as a powerful, <span class="red">agnostic</span> tool in this effort.
               For instance, this figure, shows six (well, I'm not convinced by the
               bottom row, but at least four) examples of the arch pattern across
-              a range of disciplines from Psychology (A) to Ecology (B) to Astronomy (C)
-              to Arhaeology (D). For a period of time, the arch observed in PCA of one dimensional
+              a range of disciplines from Psychology (perception of colors) (A)
+              to Ecology (isects caught along a transect of changing environment) (B)
+              to Astronomy (galaxies) (C) to Arhaeology (graves according to artifact count) (D)
+              to Anthropology (human skull anatomy) (#)
+              to Sociology (cities base on crime frequency) (F).
+               For a period of time, the arch observed in PCA of one dimensional
               data was viewed as a statistical artifact but due in part to an
               increasing understanding of the mathematics uderlying the arch, efforts,
               starting with this publication by Wartenberg, Ferson, and Rohlf in 1987,
@@ -266,8 +269,6 @@
           <h4 id="header">What is known</h4>
           <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;">
             <img class="plain" src="Figures/raw_presabs_pca.svg" style="width:40%;">
-            <i class="fal fa-arrow-circle-o-right" aria-hidden="true" style="font-size:3vw;"></i>
-            <img class="plain" src="Figures/pca_standalone.svg" style="width:40%;">
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
@@ -284,17 +285,17 @@
           <h4 id="header">What is known</h4>
           <div class="wnotes vcenter">
             <div class="vcenter" style="position:absolute;display:flex;flex-wrap:nowrap;flex-direction:row;width:100%;">
-              <img class="plain" src="Figures/scrambled_occurance_T.svg" style="width:15%;">
-              <i class="fal fa-times-circle" style="font-size:3vw;"></i>
               <img class="plain" src="Figures/scrambled_occurance.svg" style="width:30%;">
-              <i class="fal fa-pause-circle fa-rotate-90" style="font-size:3vw;"></i>
+              <i class="fal fa-times" style="font-size:3vw;"></i>
+              <img class="plain" src="Figures/scrambled_occurance_T.svg" style="width:15%;">
+              <i class="fal fa-pause fa-rotate-90" style="font-size:3vw;"></i>
               <img class="plain" style="width:35%;" src="Figures/scrambled_distance_matrix.svg">
             </div>
             <div class="fragment vcenter" style="position:absolute;display:flex;flex-wrap:nowrap;flex-direction:row;width:100%;">
-              <img class="plain" src="Figures/occurance_T.svg" style="width:15%;">
-              <i class="fal fa-times-circle" style="font-size:3vw;"></i>
               <img class="plain" src="Figures/occurance.svg" style="width:30%;">
-              <i class="fal fa-pause-circle fa-rotate-90" style="font-size:3vw;"></i>
+              <i class="fal fa-times" style="font-size:3vw;"></i>
+              <img class="plain" src="Figures/occurance_T.svg" style="width:15%;">
+              <i class="fal fa-pause fa-rotate-90" style="font-size:3vw;"></i>
               <img class="plain" style="width:35%;" src="Figures/distance_matrix.svg">
             </div>
           </div>
@@ -324,6 +325,24 @@
 
         <section>
           <h4 id="header">What is known</h4>
+          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;">
+            <img class="plain" src="Figures/raw_presabs_pca.svg" style="width:40%;">
+            <i class="fal fa-arrow-circle-o-right" aria-hidden="true" style="font-size:3vw;"></i>
+            <img class="plain" src="Figures/pca_standalone.svg" style="width:40%;">
+          </div>
+          <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+            The problem posed by the arch is rather intuitive -- though it it clear
+            that the points are in some order as you move along the arch, it is
+            difficult to be sure of the correct ordering of adjacent points due to
+            the scatter. One way that has been seen to make the arch a bit better
+            behaved is to run the PCA on a symmetric distance matrix, rather than
+            on the raw data.
+          </aside>
+        </section>
+
+        <!-- <section>
+          <h4 id="header">What is known</h4>
           <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
             <img  class="plain" src="Figures/toeplitz.svg">
             <img class="fragment plain" src="Figures/circulant.svg">
@@ -346,7 +365,7 @@
               where the corners are high valued due to the looping nature of the gradient.
             </p>
           </aside>
-        </section>
+        </section> -->
 
         <section>
           <h4 id="header">What is known</h4>
@@ -456,73 +475,81 @@
         </section>
 
         <section>
-          <h4 id="header">What we've done</h4>
-          <div class="wnotes vcenter">
-            <img class="plain" src="Figures/1d_bounded_large.svg" style="width:100%;">
-          </div>
-          <h4 id="citation" class="citwnotes"></h4>
-          <aside class="notes">
-            <p>
-              From this occurance matrix, we can normalize and multiply by it's transpose to get
-              the distance matrix, as mentioned before, and the PCA and eigenvectors of this
-              matrix can likewise be plotted. Looking at this properly ordered case, it is
-              apparent that there are multiple potential avenues of approach if we wanted to go
-              backwards to extract this ordering.
-            </p><p>
-              First, one could look at the PCA plot, since this is order invariant,
-              and try to trace along the arch to get the proper ordering. Though this
-              looks easy in this case, this is a large simulated matrix with low variance
-              leading to a very clean arch that is usually not the case in real data.
-            </p><p>
-              Likewise, one could try rearranging the eigenvector components to best fit
-              the known theoretical transform. Again, we would run into some issues with
-              noisy data, but it is an option.
-            </p><p>
-              Finally, one could work with the distance matrix, or, equivalently the normalized
-              occurance matrix, directly, rearranging rows or columns in order to put the most
-              similar rows/columns next to one another. This is the path we've chosen as, in
-              the early stages of prototyping and testing, it was shown to be both faster and
-              more consistent at generating favorable results compared to fitting the eigenvectors.
-            </p>
-          </aside>
-        </section>
-
-        <section>
-          <h4 id="header">What we've done</h4>
-          <!-- <section> -->
+          <section>
+            <h4 id="header">What we've done</h4>
             <div class="wnotes vcenter">
-<pre style="max-width:66vw;"><code data-trim class="r">
-# normalize the columns of the occurance matrix (A) to get matrix B
-B &lt;- normalize(A)
-# initialize total distance (smaller is better)
-total_score &lt;- 0
-# loop through the columns of M to get each contribution to the total score
-for (each column_i in B) {
-  for (each column_j in B) {
-    distance_i[j] &lt;- sqrt(sum((column_i - column_j)^2))
-  }
-  rank_distance_i &lt;- rank(distance_i)
-  for (each column_j in B within d steps of column_i) {
-    total_score &lt;- total_score + sum(rank_distance_i[j])
-  }
-}
-</code></pre>
+              <!-- <img src="Figures/scrambled_occurance.svg" class="plain" style="width:33%;">
+              <img class="plain" src="Figures/1d_bounded_large_scrambled.svg" style="width:100%;"> -->
+              <img src="Figures/occurance.svg" class="plain" style="width:33%;">
+              <img class="plain" src="Figures/1d_bounded_large.svg" style="width:100%;">
             </div>
             <h4 id="citation" class="citwnotes"></h4>
             <aside class="notes">
-              We utilized a
-              <a href="https://darrenjw.wordpress.com/2013/09/29/parallel-tempering-and-metropolis-coupled-mcmc/">Metropolis-Coupled Markov Chain Monte Carlo</a>
-              (MCMCMC, or MC$^3$) stochastic search algorithm. The core functionality
-              of this algorithm is the fitness function, which is what this pseudocode
-              outlines. Basically, a good fit is one in which, for each column, the
-              other columns that are most similar to the target column/row are also the
-              nearest in position. To quantify this, we rank the distances to every
-              other column from a target column and then sum those ranks for a local
-              neighborhood around that target column, finally summing those values
-              for every column/row in the matrix. Thus, the lower this value, the more
-              low-rank distance columns/rows are nearby the target column/row and the
-              better the fit.
+              <p>
+                From this occurance matrix, we can normalize and multiply by it's transpose to get
+                the distance matrix, as mentioned before, and the PCA and eigenvectors of this
+                matrix can likewise be plotted. Looking at this properly ordered case, it is
+                apparent that there are multiple potential avenues of approach if we wanted to go
+                backwards to extract this ordering.
+              </p><p>
+                First, one could look at the PCA plot, since this is order invariant,
+                and try to trace along the arch to get the proper ordering. Though this
+                looks easy in this case, this is a large simulated matrix with low variance
+                leading to a very clean arch that is usually not the case in real data.
+              </p><p>
+                Likewise, one could try rearranging the eigenvector components to best fit
+                the known theoretical transform. Again, we would run into some issues with
+                noisy data, but it is an option.
+              </p><p>
+                Finally, one could work with the distance matrix, or, equivalently the normalized
+                occurance matrix, directly, rearranging rows or columns in order to put the most
+                similar rows/columns next to one another. This is the path we've chosen as, in
+                the early stages of prototyping and testing, it was shown to be both faster and
+                more consistent at generating favorable results compared to fitting the eigenvectors.
+              </p>
             </aside>
+          </section>
+
+          <section>
+            <h4 id="header">What we've done</h4>
+            <!-- <section> -->
+              <div class="wnotes vcenter">
+<pre style="max-width:66vw;"><code data-trim class="stretch r">
+# take a binary occurance matrix B
+# for a decreasing neighborhood size d
+for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
+  # loop through each column to get the contribution to the total score
+  for (each column_i in B) {
+    for (each column_j in B) {
+      # measure the euclidean distance between the two columns
+      distance_i[j] &lt;- sqrt(sum((column_i - column_j)^2))
+    }
+    # rank the distance to each other column
+    rank_distance_i &lt;- rank(distance_i)
+    # add the ranks of the columns within d steps of the target column
+    for (each column_j within d steps of column_i) {
+      total_score &lt;- total_score + sum(rank_distance_i[j])
+    }
+  }
+}
+</code></pre>
+              </div>
+              <h4 id="citation" class="citwnotes"></h4>
+              <aside class="notes">
+                We utilized a
+                <a href="https://darrenjw.wordpress.com/2013/09/29/parallel-tempering-and-metropolis-coupled-mcmc/">Metropolis-Coupled Markov Chain Monte Carlo</a>
+                (MCMCMC, or MC$^3$) stochastic search algorithm. The core functionality
+                of this algorithm is the fitness function, which is what this pseudocode
+                outlines. Basically, a good fit is one in which, for each column, the
+                other columns that are most similar to the target column/row are also the
+                nearest in position. To quantify this, we rank the distances to every
+                other column from a target column and then sum those ranks for a local
+                neighborhood around that target column, finally summing those values
+                for every column/row in the matrix. Thus, the lower this value, the more
+                low-rank distance columns/rows are nearby the target column/row and the
+                better the fit.
+              </aside>
+            </section>
           </section>
 
           <!-- <section>
@@ -603,8 +630,10 @@ for (each column_i in B) {
         <section>
           <h4 id="header">What we've done</h4>
           <div class="wnotes vcenter">
-            <img class="plain" src="Figures/Empirical_Before.svg" style="max-height:45%;margin-bottom:0;padding-bottom:0;">
-            <img class="plain fragment" src="Figures/Empirical_After.svg" style="max-height:45%;margin-top:0;padding-top:0;">
+            <img class="plain" src="Figures/Empirical_Before.svg" style="position:absolute;">
+            <img class="plain fragment" src="Figures/Empirical_After.svg" style="position:absolute;" data-fragment-index="1">
+            <span class="fragment" style="width:100%;height:100%;background-color:#ffffff;opacity:0.5;position:absolute" data-fragment-index="2"></span>
+            <img class="plain fragment" style="position:absoulte;z-index:50;" src="Figures/compare_empirical_orderings.svg" data-fragment-index="2">
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
@@ -650,11 +679,11 @@ for (each column_i in B) {
         <section>
           <h4 id="header">What remains</h4>
           <div class="wnotes vcenter">
-            <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
+            <ul class="fa-ul" style="width:80%;list-style-type:none;">
               <li><i class="fa-li fal fa-angle-right"></i>Identifying rank vs. identifying position</li>
               <li><i class="fa-li fal fa-angle-right"></i>Gradients in more than one dimension</li>
               <li><i class="fa-li fal fa-angle-right"></i>Types of variability</li>
-              <ul class="fa-ul" style="max-width:80%;list-style-type:none;">
+              <ul class="fa-ul" style="width:80%;list-style-type:none;">
                 <li><i class="fa-li fal fa-angle-double-right"></i>Species center distribution</li>
                 <li><i class="fa-li fal fa-angle-double-right"></i>Site location distribution</li>
                 <li><i class="fa-li fal fa-angle-double-right"></i>Species distribution parameters</li>
@@ -713,7 +742,7 @@ for (each column_i in B) {
 
           <section>
             <div class="wnotes vcenter">
-              <img class="plain" src="Figures/3d_pca_table_cropped.png" style="top:5vh;">
+              <img class="plain" src="Figures/3d_pca_table.png" style="top:5vh;">
             </div>
             <aside class="notes">
               first four pcs for 3D gradient
@@ -722,7 +751,7 @@ for (each column_i in B) {
 
           <section>
             <div class="wnotes vcenter">
-              <img class="plain" src="Figures/4d_pca_table_cropped.png" style="top:5vh;">
+              <img class="plain" src="Figures/4d_pca_table.png" style="top:5vh;">
             </div>
             <aside class="notes">
               first four pcs for 4D gradient

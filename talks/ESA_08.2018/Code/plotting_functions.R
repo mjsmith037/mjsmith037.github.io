@@ -16,14 +16,14 @@ mat_to_df <- function(mat) {
                overlap = overlap / max(overlap))
 }
 projmat_plot <- function(B) {
-    mat_to_df(B %*% t(B)) %>%
+    mat_to_df(t(B) %*% B) %>%
         ggplot() +
         aes(x=one, y=-1 * two, fill=overlap) +
         geom_raster(show.legend=FALSE) +
-        facet_grid(.~str_c("Projection Matrix (\"Sites in Common\")")) +
+        facet_grid(.~str_c("Projection Matrix (\"Species in Common\")")) +
         scale_fill_distiller(palette = "Spectral") +
         scale_x_continuous(expand=c(0,0)) + scale_y_continuous(expand=c(0,0)) +
-        ylab("Species") + xlab("Species") +
+        ylab("Sites") + xlab("Sites") +
         theme(axis.text=element_blank(),
               axis.ticks=element_blank())
 }
@@ -34,12 +34,11 @@ run_pca <- function(mat, n_pcs=2) {
         as_data_frame()
 }
 pca_plot <- function(B) {
-    run_pca(B %*% t(B)) %>%
+    run_pca(t(B) %*% B) %>%
         ggplot() +
         aes(x=PC1, y=PC2) +
         geom_point(size=0.5) +
         facet_grid(.~str_c("Principal Component Analysis"), scales="free") +
-        coord_equal() +
         theme(axis.text=element_blank())
 }
 get_n_eigenvectors <- function(mat, n_vecs) {
@@ -50,7 +49,7 @@ get_n_eigenvectors <- function(mat, n_vecs) {
         mutate(rowname=as.integer(rowname))
 }
 eigvect_plot <- function(B, n_vecs=5) {
-    get_n_eigenvectors(B %*% t(B), n_vecs) %>%
+    get_n_eigenvectors(t(B) %*% B, n_vecs) %>%
         ggplot() +
         aes(x=rowname, y=value) +
         geom_point(size=0.5) +
@@ -68,7 +67,7 @@ pca_table_plot_data <- function(dat) {
     zzz <- dat %>% gather("Axis", "Value", -orientation)
     zzz %>% group_by(orientation) %>% 
         do(group_by(., Axis) %>%
-               do(lapply(unique(zzz$Axis),
+               do(lapply(unique(zzz$Axis)[str_extract(unique(zzz$Axis), "\\d+") > str_extract(unique(.$Axis), "\\d+")],
                          function(xx) 
                              bind_cols(., filter(zzz,
                                                  orientation == unique(.$orientation),
@@ -79,9 +78,9 @@ pca_table_plot_data <- function(dat) {
 
 pca_table_plot <- function(B, n_pcs=4, orient = "rows") {
     if (orient == "rows") {
-        pc_res <- run_pca(B %*% t(B), n_pcs)
+        pc_res <- run_pca(t(B) %*% B, n_pcs)
     } else {
-        pc_res <- run_pca(B %*% t(B), n_pcs)
+        pc_res <- run_pca(t(B) %*% B, n_pcs)
     }
     pc_res %>%
         mutate(orientation = orient) %>% 
@@ -90,6 +89,5 @@ pca_table_plot <- function(B, n_pcs=4, orient = "rows") {
         aes(x=Value, y=Value1) +
         geom_point(size=0.5, alpha=0.25) +
         facet_grid(Axis~Axis1, scales="free") +
-        coord_equal() +
         theme(axis.title = element_blank())
 }

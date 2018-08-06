@@ -183,6 +183,9 @@ make_mat <- function(edge_behavior, d, rseed, n_sites, n_species,
 occ_mat <- make_mat("bounded", 1, 0, 1000, 1500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)
 p <- occ_mat %>% normalize() %>% full_diagnostic_plot("../Figures/1d_bounded_large.svg", 16.5, 4)
 
+p <- occ_mat %>% .[sample(nrow(.)),sample(ncol(.))] %>%
+    normalize() %>% full_diagnostic_plot("../Figures/1d_bounded_large_scrambled.svg", 16.5, 4)
+
 occ_mat <- make_mat("looping", 1, 0, 1000, 1500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)
 p <- occ_mat %>% normalize() %>% full_diagnostic_plot("../Figures/1d_looping_large.svg", 16.5, 4)
 
@@ -261,10 +264,10 @@ ggsave(filename="../Figures/circulant.svg", width=7, height=7)
 
 #### HIGHER D TABLE PLOTS ####
 occ_mat <- make_mat("looping", 3, 0, 1000, 2500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(3) * 0.01)
-p <- occ_mat %>% normalize() %>% pca_table_plot() %>% ggsave(filename="../Figures/3d_pca_table.png", width=12, height=12)
+occ_mat %>% normalize() %>% pca_table_plot() %>% ggsave(filename="../Figures/3d_pca_table.png", width=12, height=12)
 
 occ_mat <- make_mat("looping", 4, 0, 1000, 2500, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", diag(4) * 0.01)
-p <- occ_mat %>% normalize() %>% pca_table_plot() %>% ggsave(filename="../Figures/4d_pca_table.png", width=12, height=12)
+occ_mat %>% normalize() %>% pca_table_plot() %>% ggsave(filename="../Figures/4d_pca_table.png", width=12, height=12)
 
 #### EXAMPLE MATRICES ####
 occ_mat <- make_mat("bounded", 1, 0, 100, 200, "runif", 0, 1, "runif", 0, 1, "dmnorm", "SC", 0.1)
@@ -289,7 +292,7 @@ occ_mat %>%
 ggsave(filename="../Figures/occurance.svg", width=10, height=5)
 
 set.seed(0)
-scrambled_occ_mat <- occ_mat[sample(nrow(occ_mat)),]
+scrambled_occ_mat <- occ_mat[sample(nrow(occ_mat)),sample(ncol(occ_mat))]
 scrambled_occ_mat %>%
     as_data_frame() %>%
     rownames_to_column("one") %>%
@@ -319,9 +322,9 @@ scrambled_occ_mat %>%
     aes(x=PC1, y=PC2) +
     geom_point(size=0.5) +
     facet_grid(.~str_c("Principal Component Analysis"), scales="free") +
-    coord_equal() +
     theme_bw() +
-    theme(axis.text=element_blank())
+    theme(axis.text=element_blank()) +
+    scale_y_reverse()
 ggsave(filename="../Figures/raw_presabs_pca.svg", width=4, height=4.25)
 
 scrambled_occ_mat %>% normalize() %>% projmat_plot()
@@ -330,7 +333,7 @@ ggsave(filename="../Figures/scrambled_distance_matrix.svg", width=4, height=4)
 occ_mat %>% normalize() %>% projmat_plot()
 ggsave(filename="../Figures/distance_matrix.svg", width=4, height=4)
 
-occ_mat %>% normalize() %>% pca_plot()
+occ_mat %>% normalize() %>% pca_plot() + scale_y_reverse()
 ggsave(filename="../Figures/pca_standalone.svg", width=4, height=4.25)
 
 #### NESTEDNESS ####
