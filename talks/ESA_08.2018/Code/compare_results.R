@@ -122,7 +122,7 @@ order_df <- data_frame(n=result_df %>%
                            .$ordering %>% str_split(" ") %>% unlist() %>% as.integer()) %>%
     mutate(o=n():1) ## reverse ordering as necessary to make correlation positive
 ggplot(order_df) +
-    aes(x=o, y=n, colour=as.factor(o)) +
+    aes(x=o, y=n) +
     geom_point() +
     ylab(str_c("Best Found Ordering (",
                # read_table("~/Research/EcologicalLinearity/Data/SimulatedMatrices/simmat_1d_bounded_3.txt", col_names=FALSE) %>%
