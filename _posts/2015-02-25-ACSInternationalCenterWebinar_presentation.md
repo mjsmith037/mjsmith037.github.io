@@ -3,7 +3,7 @@ layout: slides
 title: "American Chemical Society International Center&trade; Webinar Series"
 subtitle: "Global Scientific Collaboration: Key to Scientific Success"
 author: "Matthew J. Michalska-Smith"
-date: "2016-04-24"
+date: "2015-02-25"
 categories: slides presentation
 ---
 <head>
