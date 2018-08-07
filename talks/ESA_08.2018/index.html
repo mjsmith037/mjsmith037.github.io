@@ -47,7 +47,7 @@
               some supplemental slides throughout the presentation.
             </p><p>
               Finally, this presentation will look best in full-screen, but should
-              be more or less intelligible on smaller screens (no guarantees about phone screens)
+              be more or less intelligible on smaller screens (no guarantees about phone screens).
               So, whenever you're ready...
             </p>
             <span id="ns">next slide</span>
@@ -97,13 +97,11 @@
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
             <p>
-              A brief outline of the talk today. We're going to start with a brief
-              example of what we are talking about when we say gradient, ordination,
+              A brief outline of the talk today. We're going to start with an
+              example to highlight what we are talking about when we say gradient, ordination,
               etc. Then move into some of the historical work on this problem before
               moving on to what we've done so far and a few things that are still
-              left to be done. I'll end with some interesting further explorations
-              that are made possible by the simulation framework I've developed to
-              explore this phenomenon.
+              left to be done.
             </p><p>
               Without further ado, let's get started...
             </p><span id="ns">next slide</span><p>
@@ -122,14 +120,14 @@
           <aside class="notes">
             <p>
               This project stemmed from a statistical observation that arises when
-              one is dealing with data which are strongly influenced by an underlying,
+              one is dealing with data strongly influenced by an underlying,
               one-dimensional gradient. Think, for example, of species distributions
-              on an elevational gradient. For each species, there will be an elevation
+              on the side of a mountain. For each species, there will be an elevation
               with the greatest abundance, and some probability of observing a member
-              of the species outside of that range which decreases with distance.
+              of the species outside of that elevation which decreases with distance.
             </p><p>
               Thus, if we were to sample species presence/absence data along this
-              mountain, we might collect a presence/absence matrix that looks something
+              elvational gradient, we might collect a presence/absence matrix that looks something
               like the one here on the right. Here, each row is a site, for which
               we have recorded either the presence (red cell) or absence (white cell)
               of each species found anywhere on the mountain.
@@ -175,9 +173,9 @@
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
             <p>
-              So, we know that if we observe this arch pattern in the PCA results,
-              we can infer that there exists some underlying gradient in the data,
-              but what can we do with this information? It would be more useful if,
+              So, we know that if we have data influenced by some underlying
+              gradient in the data, we will see this arch in the PCA, but what
+              can we do with this information? It would be more useful if,
               having observed this arch phenomenologically, we were then able to
               go backwards...
             </p><span id="ns">next slide</span><p>
@@ -201,7 +199,7 @@
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
-            So what are the foundations of knowledge we will be building on?
+            So, what is already known about this pattern in ordination analyses?
           </aside>
         </section>
 
@@ -215,23 +213,22 @@
             <p>
               Ecologists have been interested in ordination for a long time and
               fairly early on, Principal Component Analysis (PCA) was identified
-              as a powerful, <span class="red">agnostic</span> tool in this effort.
-              For instance, this figure, shows six (well, I'm not convinced by the
-              bottom row, but at least four) examples of the arch pattern across
-              a range of disciplines from Psychology (perception of colors) (A)
-              to Ecology (isects caught along a transect of changing environment) (B)
-              to Astronomy (galaxies) (C) to Arhaeology (graves according to artifact count) (D)
-              to Anthropology (human skull anatomy) (#)
-              to Sociology (cities base on crime frequency) (F).
-               For a period of time, the arch observed in PCA of one dimensional
-              data was viewed as a statistical artifact but due in part to an
-              increasing understanding of the mathematics uderlying the arch, efforts,
-              starting with this publication by Wartenberg, Ferson, and Rohlf in 1987,
-              have shifted away from "correcting" the ordination
-              coordinates. Nevertheless, the presence of the arch still presents
-              challenges for extracting the optimal ordering of the data.
+              as a powerful, <b>agnostic</b> tool in this effort. For instance,
+              this figure, shows six (well, I'm not convinced by the bottom row,
+              but at least four) examples of the arch pattern across a range of
+              disciplines from Psychology (A) to Ecology (B) to Astronomy (C) to
+              Archaeology (D). For a period of time, the arch observed in PCA of
+              one dimensional data was viewed as a statistical artifact, distorting
+              what was known to be an underlying linear gradient, but due
+              in part to an increasing understanding of the mathematics
+              uderlying the arch, efforts, starting with this publication by
+              Wartenberg, Ferson, and Rohlf in 1987, have shifted away from
+              "correcting" the ordination coordinates. Nevertheless, the
+              presence of the arch still presents challenges for extracting the
+              optimal ordering of the data.
             </p><p style="font-size:60%;">
-              Original Legend from Wartenberg 1987:  FIG. 2.-A few examples of
+              Original Legend from Wartenberg Ferson, and Rohlf 1987:<br>
+              FIG. 2.-A few examples of
               curvature of component scores from many fields of study. A,
               Psychology, Nonmetric, multidimensional scaling ordination of
               "judged similarities among 14 approximately spectral colors"
@@ -289,14 +286,14 @@
               <i class="fal fa-times" style="font-size:3vw;"></i>
               <img class="plain" src="Figures/scrambled_occurance_T.svg" style="width:15%;">
               <i class="fal fa-equals" style="font-size:3vw;"></i>
-              <img class="plain" style="width:35%;" src="Figures/scrambled_distance_matrix.svg">
+              <img class="plain" style="width:17%;" src="Figures/scrambled_distance_matrix.svg">
             </div>
             <div class="fragment vcenter" style="position:absolute;display:flex;flex-wrap:nowrap;flex-direction:row;width:100%;">
               <img class="plain" src="Figures/occurance.svg" style="width:30%;">
               <i class="fal fa-times" style="font-size:3vw;"></i>
               <img class="plain" src="Figures/occurance_T.svg" style="width:15%;">
               <i class="fal fa-equals" style="font-size:3vw;"></i>
-              <img class="plain" style="width:35%;" src="Figures/distance_matrix.svg">
+              <img class="plain" style="width:17%;" src="Figures/distance_matrix.svg">
             </div>
           </div>
           <h4 id="citation" class="citwnotes"></h4>
@@ -332,40 +329,10 @@
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
-            The problem posed by the arch is rather intuitive -- though it it clear
-            that the points are in some order as you move along the arch, it is
-            difficult to be sure of the correct ordering of adjacent points due to
-            the scatter. One way that has been seen to make the arch a bit better
-            behaved is to run the PCA on a symmetric distance matrix, rather than
-            on the raw data.
+            This cleans up the arch considerably, but there is still some scatter and
+            a non-uniform distribution of points along the arch.
           </aside>
         </section>
-
-        <!-- <section>
-          <h4 id="header">What is known</h4>
-          <div class="wnotes vcenter" style="display:flex;flex-wrap:nowrap;flex-direction:row;max-height:85vh;padding-top:5vh;">
-            <img  class="plain" src="Figures/toeplitz.svg">
-            <img class="fragment plain" src="Figures/circulant.svg">
-          </div>
-          <h4 id="citation" class="citwnotes"></h4>
-          <aside class="notes">
-            <p>
-              This pattern, and it's relationship to the arch in the PCA data has
-              been well studied. It's structure is what is called a
-              <a href="https://en.wikipedia.org/wiki/Toeplitz_matrix">Toeplitz Matrix</a>,
-              and in the ideal, infitinitely large case, can be normalized to look
-              like this, where species are identical with themselves and have similarity
-              that decreases with distance. Note that in this ideal case, there are no
-              artefacts in the corners.
-            </p><span id="ns">next slide</span><p>
-              If one is simulating a circular gradient (i.e. one in which going off the left
-              side of the matrix means entering from the right side), the ideal, infitinitely
-              sized matrix takes a special form of Toeplitz matrix, called a
-              <a href="https://en.wikipedia.org/wiki/Circulant_matrix">Circulant Matrix</a>
-              where the corners are high valued due to the looping nature of the gradient.
-            </p>
-          </aside>
-        </section> -->
 
         <section>
           <h4 id="header">What is known</h4>
@@ -382,12 +349,12 @@
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
             <p>
-              Moving out of the ideal, when we simulate large matrices, we see the
-              bounded one-dimensional gradient produces a Toeplitz-like matrix and
-              the distinctive arch in the PC space, and
+              When looking at large datasets, we see this distance matrix approaching
+              what is called a "Toeplitz" structure in mathematics. When the gradient
+              loops back upon itself,
             </p><span id="ns">next slide</span><p>
-              a looping one-dimensional gradient produces a Circulant-like matrix,
-              with a corresponding circle in PC space.
+              the matrix instead converges toward a structure known as "Circulant"
+              and produces a corresponding circle in PC space.
             </p><p>
               The final piece of history was quite recently brought into the spotlight in Ecology
               in a paper by <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3989108/">Novembre &amp; Stephens</a>. It turns out that
@@ -440,7 +407,7 @@
           <aside class="notes">
             <p>
               First, I'm going to lay out the simulation framework used to create
-              all of the simulated datasets seen so far in the talk. We can simulate
+              all of the datasets seen so far in the talk. We can simulate
               a gradient quite simply as a line, where one can think of one end as
               the low end and the other as the high end of the gradient.
             </p><span id="ns">next slide</span><p>
@@ -451,9 +418,10 @@
               Next, we sprinkle some species. These lines indicate what will be the
               centers of each species' distribution, which, in the case of normally
               distributed species, is the location of their most likely observance.
-              Again, I am distributing these centers normally in this talk for
-              convenience of presentation, but, as I will mention later, changing
-              this assumption is a key area of further research.
+              Again, I am distributing these centers uniformly in this talk for
+              convenience of presentation, but changing this and other
+              assumptions in this simulation framework is a key area of further
+              research.
             </p><span id="ns">next slide</span><p>
               Finally, each of these species will have some distribution around that center.
               For this figure and throughout the talk, I am just using a simple normal
@@ -492,7 +460,7 @@
                 apparent that there are multiple potential avenues of approach if we wanted to go
                 backwards to extract this ordering.
               </p><p>
-                First, one could look at the PCA plot, since this is order invariant,
+                First, one could look at the PCA plot iself, since this is order invariant,
                 and try to trace along the arch to get the proper ordering. Though this
                 looks easy in this case, this is a large simulated matrix with low variance
                 leading to a very clean arch that is usually not the case in real data.
@@ -501,7 +469,7 @@
                 the known theoretical transform. Again, we would run into some issues with
                 noisy data, but it is an option.
               </p><p>
-                Finally, one could work with the distance matrix, or, equivalently the normalized
+                Finally, one could work with the distance matrix, or, equivalently the
                 occurance matrix, directly, rearranging rows or columns in order to put the most
                 similar rows/columns next to one another. This is the path we've chosen as, in
                 the early stages of prototyping and testing, it was shown to be both faster and
@@ -547,24 +515,12 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
                 neighborhood around that target column, finally summing those values
                 for every column/row in the matrix. Thus, the lower this value, the more
                 low-rank distance columns/rows are nearby the target column/row and the
-                better the fit.
+                better the fit. To improve the quality of the final fit, we narrow in the
+                neighborhood of interest, starting with a broad neighborhood and getting
+                down to just considering the immediate neighbors of each column/row.
               </aside>
             </section>
           </section>
-
-          <!-- <section>
-            <div class="wnotes vcenter">
-
-            </div>
-            <h4 id="citation" class="citwnotes"></h4>
-            <aside class="notes">
-              explain mcmcmc
-            </aside>
-          </section>
-          <h4 id="citation" class="citwnotes"></h4>
-        </section> -->
-
-        <!-- justify choice with timings and visual results? -->
 
         <section>
           <h4 id="header">What we've done</h4>
@@ -585,12 +541,13 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
               were able to recover near the optimal ordering. This can be further demonstrated
               if we plot the two orderings against one another.
             </p><span id="ns">next slide</span><p>
-              As you can see, there are a few swaps, but in general, this is a correlation of
-              greater than 0.98. Also note the fitness scores shown in the axes labels --
-              we actually found a slightly better fit than the original. This could be due to
-              not having the optimal neighborhood size in our calculation of fitness, or it could
-              be that, due to the stochastic nature of the data generation, this new order is
-              actually more parsimonious than the original.
+              As you can see, there are a few swaps, but in general, this is a
+              correlation of greater than 0.95. Also note the fitness scores
+              shown in the axes labels -- we actually found a better fit (lower
+              distance value) than the original. This could be due to a mismatch
+              between our fitness measure and the optimal ordering, or it could
+              be that, due to the stochastic nature of the data generation, this
+              new order is actually more parsimonious than the original.
             </p>
           </aside>
         </section>
@@ -613,8 +570,7 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
               which contains plots of land for which plant percent cover data has been collected
               for over a decade. If we build an occurance matrix analogous to thos shown earlier in
               the talk, i.e. species x plot, and perform the usual analysis of buiding a distance
-              matrix and running a PCA on it (though note that in this case, we are using the plot x
-              plot projection, not the species x species one), we see our familiar arch.
+              matrix and running a PCA on it, we see our familiar arch.
               Even more exciting, if we color the sites by longitude,
             </p><span id="ns">next slide</span><p>
               We see a clear pattern along the arch, which can be accentuated by a path drawn
@@ -642,19 +598,17 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
               noisy, empirical case? Here is the before picture, with the plots clustered by
               site, but unordered otherwise.
             </p><span id="ns">next slide</span><p>
-              And here is the best found ordering of the plots. Note that while the distance
-              matrix is clearly showing greater structure (as would be expected, as this is
-              the level upon which the algorithm is acting), there is only marginal (at best) improvement
-              in the interpretability of the eigenvectors. What's more, the structure in the
-              distance matrix does not appear to match our Toeplitz structure especially well.
-              This is likely due to not running the algorithm for long enough. This is supported
-              by the observation that our best-found ordering has a substantially worse fit than
-              the starting configuration. This is despite running the algorithm for substantially
-              longer and the matrix being substantially smaller than in the simulated case.
-            </P><p>
-              In essence, it appears that empirical datasets are much more difficult to fit
-              than in the simulated case -- not a surprising result.
-            </p>
+              And here is the best found ordering of the plots. The change here is
+              harder to interpret. the eigenvetors are smoother, but certainly not
+              obviously related to the expected discrete cosine transformation. Likewise,
+              the distance matrix looks a little closer to Toeplitz structure, but still
+              not especially close.
+            </p><span id="ns">next slide</span><p>
+              If we again plot the new order agains the old, we tend to see clusters of points
+              rearranged in the new order. These are whole sites being moved, rather than
+              individual plots being picket out of sites. The next steps will be to see if this
+              best-found order correlates with any of the known metainformation we have for the
+              sites in question, for instance longitude.
           </aside>
         </section>
 
@@ -670,9 +624,9 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
-            Alright, so other than running the algorithm for longer on the empirical dataset
-            in hopes of finding a better solution, what are some other things I am hoping to
-            tackle with this framework?
+            Alright, so other than fur, what are someter exploring potential correlates on
+            the emprical results, I am excited to also further explore this simulation framework
+            to get a feel for the importance of variation at various stages in ordering recoverability.
           </aside>
         </section>
 
@@ -725,7 +679,7 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
         </section>
 
         <section>
-          <h4 id="header">Some interesting observations</h4>
+          <h4 id="header">Gradients in higher dimensions</h4>
           <section>
             <div class="wnotes vcenter">
               <img class="plain" src="Figures/2d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
@@ -733,8 +687,8 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
               <img class="plain" src="Figures/4d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
             </div>
             <aside class="notes">
-              First, the case of higher dimensions. Here are the basic results for 2, 3, and 4
-              dimensional gradients.
+              What do the ordinations of higher-dimensional gradients look like? Here
+              are figures for 2, 3, and 4 dimensional gradients.
             </aside>
           </section>
 
@@ -743,7 +697,8 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
               <img class="plain" src="Figures/3d_pca_table.png" style="top:5vh;">
             </div>
             <aside class="notes">
-              first four pcs for 3D gradient
+              Here are extended biplots looking at the pairwise combination of
+              each of the first four principal components of a three dimensional gradient.
             </aside>
           </section>
 
@@ -752,14 +707,15 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
               <img class="plain" src="Figures/4d_pca_table.png" style="top:5vh;">
             </div>
             <aside class="notes">
-              first four pcs for 4D gradient
+              Here are extended biplots looking at the pairwise combination of
+              each of the first four principal components of a four dimensional gradient.
             </aside>
           </section>
           <h4 id="citation" class="citwnotes"></h4>
         </section>
 
         <section>
-          <h4 id="header">Some interesting observations</h4>
+          <h4 id="header">Increasing species distribution variance</h4>
           <section>
             <div class="wnotes vcenter">
               <img class="plain" src="Figures/1d_bounded.svg" style="max-height:30%;margin:0;padding:0;">
@@ -767,7 +723,9 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
               <img class="plain" src="Figures/1d_bounded_highvar.svg" style="max-height:30%;margin:0;padding:0;">
             </div>
             <aside class="notes">
-              Increasing variance in species distributions: bounded
+              Moving down the page are summary figures of simulated datasets with
+              increasing variance of the species distributions (i.e. species span
+              over a wider range of sites)
             </aside>
           </section>
 
@@ -778,7 +736,7 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
               <img class="plain" src="Figures/1d_looping_highvar.svg" style="max-height:30%;margin:0;padding:0;">
             </div>
             <aside class="notes">
-              Increasing variance in species distributions: looping
+              Similar to the above slide, but in the case of a looping gradient
             </aside>
           </section>
           <h4 id="citation" class="citwnotes"></h4>
@@ -791,6 +749,8 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            Looking at the effect of different distance metrics on the arch pattern
+            in principal component space.
           </aside>
         </section>
 
@@ -802,6 +762,10 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
+            Nestedness is of particular interest in Ecology and can likewise be
+            interpreted as a gradient, producing similar results. I'm not sure if the rotation
+            of the PCA biplot is a robust result, and I will also be looking into this more in
+            the future.
           </aside>
         </section>
 
