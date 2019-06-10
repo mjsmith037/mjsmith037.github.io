@@ -15,7 +15,7 @@ and see many interesting talks. I also gave a talk of my own, where I presented
 some recently submitted work on distinguishing ecological categorizations or
 roles (e.g. parasites vs predators) using a purely statistical consideration of
 the network structure. For this, we utilized (and enhanced) the group model
-which was introduced to Ecology by my advisor ([Stefano
+which was introduced to Ecology by my adviser ([Stefano
 Allesina](http://allesinalab.uchicago.edu/)) and committee member ([Mercedes
 Pascual](http://pondside.uchicago.edu/ecol-evol/people/pascual.html)) [back in
 2009](http://onlinelibrary.wiley.com/doi/10.1111/j.1461-0248.2009.01321.x/abstract
@@ -61,7 +61,7 @@ So what is it about HTML that keeps me coming back?
 ## it looks better
 
 This is clearly a subjective point, but I think I can saw with certainty that
-there are more mechanisms in place (from slide transitions, to parralax
+there are more mechanisms in place (from slide transitions, to parallax
 backgrounds, to sub-slides, to a slide-space geometry in
 [impress.js](https://github.com/impress/impress.js/) or
 [jimpress.js](http://jmpressjs.github.io/jmpress.js/#/home), to any animation
