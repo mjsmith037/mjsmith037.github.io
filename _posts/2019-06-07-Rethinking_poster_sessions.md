@@ -5,8 +5,8 @@ author: "Matthew J. Michalska-Smith"
 date: "2019-06-07"
 categories: presentation methods
 ---
-
-[Get the full paper pre-print on <u>AU</u>THOREA](https://www.authorea.com/users/251349/articles/339827-multi-strain-disease-dynamics-on-a-metapopulation-network "feedback is welcome!")
+<a href="http://michalska-smith.com/pdfs/Multistrain_Metapopulation_Preprint.pdf" target="_blank" title="feedback is welcome!">Get the full paper pre-print here (pdf)</a> or
+<a href="https://www.authorea.com/users/251349/articles/339827-multi-strain-disease-dynamics-on-a-metapopulation-network" target="_blank" title="feedback is welcome!">read online on <u>AU</u>THOREA</a>.
 
 I confess, I am not a huge fan of posters.
 
