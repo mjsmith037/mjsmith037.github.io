@@ -120,7 +120,7 @@ was due to a combination of procrastination and oversight, and I think the extra
 steps of clicking through the links to get to the paper is an unnecessary hurdle
 that I have placed between an interested viewer and my work.
 
-You can access a digital version of the poster here.
+You can access a digital version of the poster <a href="http://michalska-smith.com/pdfs/EEID_2019_poster.pdf" target="_blank">here</a>.
 
 As always, I appreciate all questions/comments/suggested improvements, which you can always [email to me](&#109;&#97;&#105;&#108;&#116;&#111;&colon;&#109;&#106;&#115;&#109;&#105;&#116;&#104;&#48;&#51;&#55;&commat;&#103;&#109;&#97;&#105;&#108;&period;&#99;&#111;&#109;)<sup><label for="Two" class="margin-toggle
 sidenote-number"></label></sup><input type="checkbox" id="Two"
