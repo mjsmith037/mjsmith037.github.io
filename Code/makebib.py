@@ -1,12 +1,12 @@
 import re
 
-#### author parsing function
+""" author parsing function """
 def parseauth(author):
     lastname, firstname = [xx.strip() for xx in author.split(',')]
     initials = ''.join([xx[0] + '.' for xx in firstname.split(' ')])
-    ## sanitization (latex -> html)
+    # sanitization (latex -> html)
     lastname = lastname.replace("\\'a", '&aacute;')
-    ## co-first-authorship
+    # co-first-authorship
     cofirst = ''
     if re.search("textsuperscript", lastname):
         lastname = lastname.replace('\\textsuperscript*', '')
@@ -16,15 +16,15 @@ def parseauth(author):
         cc = cc + ' pi'
     return('<span class="' + cc + '">' + initials + ' ' + lastname + '</span>' + cofirst)
 
-#### read in the bibfile
+""" read in the bibfile """
 with open('../Documents/MJSbib.bib', 'r') as bibfile:
     bibtext = bibfile.read()
 
-#### parse the information
-## split by entry and store each as a html string
+""" parse the information """
+# split by entry and store each as a html string
 biblist = bibtext.split('@')
 
-## sort array by year so numbers can be assigned
+# sort array by year so numbers can be assigned
 biblist.sort(key=lambda xx: re.findall(r'ear\s*?=\s*?{(\d\d\d\d)}', xx), reverse=True)
 
 htmllist = []
@@ -33,10 +33,10 @@ for bibitem in biblist:
     if not re.findall(r'ear\s*?=\s*?{(\d\d\d\d)}', bibitem):
         continue
     bibinfo = bibitem.split('\n')
-    ## extract the parts of the citation
+    # extract the parts of the citation
     bibID = bibinfo[0].split('{')[1].strip(',')
     tmp = [xx.split('=') for xx in bibinfo[1:len(bibinfo)]]
-    ## initialize the links since they are optional
+    # initialize the links since they are optional
     prelink = ''
     jrnlink = ''
     OA = False
@@ -60,13 +60,13 @@ for bibitem in biblist:
         if infotype == "arxiv":
             prelink = info
 
-    #### create the html bibentries
+    """ create the html bibentries """
     bibhtml = ['<div class="row publication">',
                '  <div class="col-xs-12 col-sm-10 bibinfo">',
-               '    <span class="pubnumber">' + str(nn) +'</span>',
+               '    <span class="pubnumber">' + str(nn) + '</span>',
                '    <span class="pubtitle">' + title + '</span><br>',
-               ## the author list needs to be parsed and my name accented
-               '    ' + ', '.join([parseauth(auth)  for auth in authlist]) + ';',
+               # the author list needs to be parsed and my name accented
+               '    ' + ', '.join([parseauth(auth) for auth in authlist]) + ';',
                '    <span class="pubyear">' + year + '</span>',
                '  </div>',
                '  <div class="col-xs-12 col-sm-1 text-right biblinks">']
@@ -95,6 +95,6 @@ for bibitem in biblist:
     htmllist.append('\n'.join(bibhtml))
     nn = nn + 1
 
-#### write to file
+""" write to file """
 with open('../_includes/bib.html', 'w') as htmlfile:
     htmlfile.write('\n\n'.join(htmllist))
