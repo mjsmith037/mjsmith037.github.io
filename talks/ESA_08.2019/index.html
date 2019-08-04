@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
     <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
 
-    <!-- personal css file -->
-    <link rel="stylesheet" href="main.css">
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="../../reveal.js/lib/css/googlecode.css">
+    <!-- personal css file -->
+    <link rel="stylesheet" href="main.css">
     <!-- font-linking -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/80b7c598d7.js"></script>
@@ -22,7 +22,7 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>
+        <section data-background-image="Images/niche_overlap_circles.png" data-background-opacity="0.33">
           <div class="wnotes vcenter">
             <img class="plain" style="max-width:80%;padding-bottom:5vh;" src="Images/title.png">
             <p><b>Matt Michalska-Smith</b><br>Lindsey Otto-Hanson, Georgiana May<br>Elizabeth Borer, Eric Seabloom<br>Linda Kinkel</p>
@@ -77,7 +77,6 @@
             <ol style="font-size:130%;">
               <li class="fragment highlight-orange">Experiment overview</li>
               <li>Network analysis</li>
-              <li></li>
               <li>Conclusions</li>
             </ol>
           </div>
@@ -329,8 +328,9 @@
           <div class="wnotes vcenter" style="display: grid; grid-template-columns: 1fr 1fr; align-content: center; justify-content: center">
             <h4>Control</h4>
             <h4>NPK Supplemented</h4>
-            <img style="border: 10px solid #575a3f; border-radius: 10px; justify-self: center;"src="Figures/control_networks.png">
-            <img style="border: 10px solid #d7471e; border-radius: 10px; justify-self: center;"src="Figures/npk_networks.png">
+            <img class="fragment-current-visible" data-fragment-index="1" style="border: 10px solid #575a3f; border-radius: 10px; justify-self: center; grid-row:2; grid-column: span 1 / -2;" src="Figures/control_networks_weighted.png">
+            <img class="fragment" data-fragment-index="1" style="border: 10px solid #575a3f; border-radius: 10px; justify-self: center; grid-row:2; grid-column: span 1 / -2;" src="Figures/control_networks_weighted_fade_C5.png">
+            <img style="border: 10px solid #d7471e; border-radius: 10px; justify-self: center;"src="Figures/npk_networks_weighted.png">
           </div>
           <aside class="notes">
 
@@ -338,21 +338,18 @@
         </section>
 
         <section>
-          <h4 id="header">Outline</h4>
           <div class="wnotes vcenter">
             <ol style="font-size:130%;">
               <li>Experiment overview</li>
               <li class="orange">Network analysis</li>
                 <ul class="fa-ul">
                   <li class="orange"><i class="fa-li fal fa-angle-right"></i>Degree distributions</li>
-                  <li class="orange"><i class="fa-li fal fa-angle-right"></i>Triads</li>
                   <li class="orange"><i class="fa-li fal fa-angle-right"></i>Global structures</li>
+                  <li class="orange"><i class="fa-li fal fa-angle-right"></i>Triads</li>
                 </ul>
-              <li></li>
               <li>Conclusions</li>
             </ol>
           </div>
-          <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
             <p>
               A brief outline of the talk today...
@@ -365,9 +362,369 @@
         </section>
 
         <section>
+          <section>
+            <h4 id="header"></h4>
+            <div class="wnotes vcenter">
+              <img class="plain" src="Figures/NO-histogram_no_line.svg">
+            </div>
+            <aside class="notes">
+
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header"></h4>
+            <div class="wnotes vcenter">
+              <table>
+               <thead>
+                <tr>
+                 <th style="text-align:left;"> Interaction Type </th>
+                 <th style="text-align:left;"> NPK Supplemented </th>
+                 <th style="text-align:left;"> Control </th>
+                 <th style="text-align:left;"> T-test p-value </th>
+                 <th style="text-align:left;"> KS-test p-value </th>
+                </tr>
+               </thead>
+              <tbody>
+                <tr>
+                 <td style="text-align:left;"> Bacteria $\rightarrow$ Bacteria </td>
+                 <td style="text-align:left;"> $0.661$ </td>
+                 <td style="text-align:left;"> $0.659$ </td>
+                 <td style="text-align:left;"> $8.96e-01$ </td>
+                 <td style="text-align:left;"> 0.116 </td>
+                </tr>
+                <tr>
+                 <td style="text-align:left;"> Bacteria $\rightarrow$ Fungi </td>
+                 <td style="text-align:left;"> $0.494$ </td>
+                 <td style="text-align:left;"> $0.408$ </td>
+                 <td style="text-align:left;"> $2.13e-18$ </td>
+                 <td style="text-align:left;"> < 0.001 </td>
+                </tr>
+                <tr>
+                 <td style="text-align:left;"> Fungi $\rightarrow$ Bacteria </td>
+                 <td style="text-align:left;"> $0.731$ </td>
+                 <td style="text-align:left;"> $0.831$ </td>
+                 <td style="text-align:left;"> $9.81e-30$ </td>
+                 <td style="text-align:left;"> < 0.001 </td>
+                </tr>
+                <tr>
+                 <td style="text-align:left;"> Fungi $\rightarrow$ Fungi </td>
+                 <td style="text-align:left;"> $0.656$ </td>
+                 <td style="text-align:left;"> $0.724$ </td>
+                 <td style="text-align:left;"> $5.86e-09$ </td>
+                 <td style="text-align:left;"> < 0.001 </td>
+                </tr>
+              </tbody>
+              </table>
+            </div>
+            <aside class="notes">
+
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h4 id="header"></h4>
+            <div class="wnotes vcenter">
+              <img class="plain fragment-current-visible" data-fragment-index="1" style="position: absolute;" src="Figures/in-by-out-degree-distributions.svg">
+              <img class="plain fragment" data-fragment-index="1" style="position: absolute;" src="Figures/in-by-out-degree-distributions_subdivided.svg">
+            </div>
+            <aside class="notes">
+
+            </aside>
+          </section>
+
+
+          <section>
+            <h4 id="header"></h4>
+            <div class="wnotes vcenter">
+              <table>
+               <thead>
+                <tr>
+                 <th style="text-align:left;"> Treatment </th>
+                 <th style="text-align:left;"> Interaction Type </th>
+                 <th style="text-align:left;"> Formula </th>
+                 <th style="text-align:left;"> p-value </th>
+                 <th style="text-align:left;"> Adjusted $R^2$ </th>
+                </tr>
+               </thead>
+              <tbody>
+                <tr>
+                 <td style="text-align:left;vertical-align: middle !important;" rowspan="6"> Control </td>
+                 <td style="text-align:left;"> Bacteria $\rightarrow$ Any </td>
+                 <td style="text-align:left;"> indegree ~ 19.252$ \cdot $outdegree - 0.508 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.767 </td>
+                </tr>
+                <tr>
+
+                 <td style="text-align:left;"> Bacteria $\rightarrow$ Bacteria </td>
+                 <td style="text-align:left;"> indegree ~ 9.467$ \cdot $outdegree - 0.597 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.743 </td>
+                </tr>
+                <tr>
+
+                 <td style="text-align:left;"> Bacteria $\rightarrow$ Fungi </td>
+                 <td style="text-align:left;"> indegree ~ 10.072$ \cdot $outdegree - 0.449 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.733 </td>
+                </tr>
+                <tr>
+
+                 <td style="text-align:left;"> Fungi $\rightarrow$ Any </td>
+                 <td style="text-align:left;"> indegree ~ 19.996$ \cdot $outdegree - 0.649 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.623 </td>
+                </tr>
+                <tr>
+
+                 <td style="text-align:left;"> Fungi $\rightarrow$ Bacteria </td>
+                 <td style="text-align:left;"> indegree ~ 10.582$ \cdot $outdegree - 0.79 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.511 </td>
+                </tr>
+                <tr>
+
+                 <td style="text-align:left;"> Fungi $\rightarrow$ Fungi </td>
+                 <td style="text-align:left;"> indegree ~ 9.991$ \cdot $outdegree - 0.558 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.643 </td>
+                </tr>
+                <tr>
+                 <td style="text-align:left;vertical-align: middle !important;" rowspan="6"> NPK Supplemented </td>
+                 <td style="text-align:left;"> Bacteria $\rightarrow$ Any </td>
+                 <td style="text-align:left;"> indegree ~ 17.442$ \cdot $outdegree - 0.385 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.546 </td>
+                </tr>
+                <tr>
+
+                 <td style="text-align:left;"> Bacteria $\rightarrow$ Bacteria </td>
+                 <td style="text-align:left;"> indegree ~ 8.765$ \cdot $outdegree - 0.474 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.589 </td>
+                </tr>
+                <tr>
+
+                 <td style="text-align:left;"> Bacteria $\rightarrow$ Fungi </td>
+                 <td style="text-align:left;"> indegree ~ 8.839$ \cdot $outdegree - 0.31 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.369 </td>
+                </tr>
+                <tr>
+
+                 <td style="text-align:left;"> Fungi $\rightarrow$ Any </td>
+                 <td style="text-align:left;"> indegree ~ 18.355$ \cdot $outdegree - 0.569 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.673 </td>
+                </tr>
+                <tr>
+
+                 <td style="text-align:left;"> Fungi $\rightarrow$ Bacteria </td>
+                 <td style="text-align:left;"> indegree ~ 8.676$ \cdot $outdegree - 0.512 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.471 </td>
+                </tr>
+                <tr>
+
+                 <td style="text-align:left;"> Fungi $\rightarrow$ Fungi </td>
+                 <td style="text-align:left;"> indegree ~ 9.546$ \cdot $outdegree - 0.617 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.772 </td>
+                </tr>
+              </tbody>
+              </table>
+            </div>
+            <aside class="notes">
+
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header"></h4>
+            <div class="wnotes vcenter">
+              <table>
+               <thead>
+                <tr>
+                 <th style="text-align:left;"> Term </th>
+                 <th style="text-align:left;"> df </th>
+                 <th style="text-align:left;"> sum squared error </th>
+                 <th style="text-align:left;"> mean squared error </th>
+                 <th style="text-align:left;"> p-value </th>
+                </tr>
+               </thead>
+              <tbody>
+                <tr>
+                 <td style="text-align:left;"> treatment </td>
+                 <td style="text-align:left;"> 1 </td>
+                 <td style="text-align:left;"> 3.989 </td>
+                 <td style="text-align:left;"> 3.989 </td>
+                 <td style="text-align:left;"> 0.419 </td>
+                </tr>
+                <tr>
+                 <td style="text-align:left;"> interaction_type </td>
+                 <td style="text-align:left;"> 3 </td>
+                 <td style="text-align:left;"> 150.053 </td>
+                 <td style="text-align:left;"> 50.018 </td>
+                 <td style="text-align:left;"> < 0.001 </td>
+                </tr>
+                <tr>
+                 <td style="text-align:left;"> treatment:interaction_type </td>
+                 <td style="text-align:left;"> 3 </td>
+                 <td style="text-align:left;"> 6.4 </td>
+                 <td style="text-align:left;"> 2.133 </td>
+                 <td style="text-align:left;"> 0.789 </td>
+                </tr>
+                <tr style="border-bottom: black solid 1px;">
+                 <td style="text-align:left;"> Residuals </td>
+                 <td style="text-align:left;"> 432 </td>
+                 <td style="text-align:left;"> 2636.528 </td>
+                 <td style="text-align:left;"> 6.103 </td>
+                 <td style="text-align:left;">  </td>
+                </tr>
+                <tr>
+                 <td style="text-align:left;"> Adjusted $R^2$ </td>
+                 <td style="text-align:left;"> 0.04209 </td>
+                 <td style="text-align:left;">  </td>
+                 <td style="text-align:left;">  </td>
+                 <td style="text-align:left;">  </td>
+                </tr>
+              </tbody>
+              </table>
+            </div>
+            <aside class="notes">
+
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h4 id="header"></h4>
+            <div class="wnotes vcenter">
+              <img class="plain" src="Figures/in-by-out-by-kingdom-degree-distributions.svg">
+            </div>
+            <aside class="notes">
+
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header"></h4>
+            <div class="wnotes vcenter">
+              <table>
+               <thead>
+                <tr>
+                 <th style="text-align:left;"> Treatment </th>
+                 <th style="text-align:left;"> Direction </th>
+                 <th style="text-align:left;"> Formula </th>
+                 <th style="text-align:left;"> p-value </th>
+                 <th style="text-align:left;"> Adjusted $R^2$ </th>
+                </tr>
+               </thead>
+              <tbody>
+                <tr>
+                 <td style="text-align:left;vertical-align: middle !important;" rowspan="2"> Control </td>
+                 <td style="text-align:left;"> in </td>
+                 <td style="text-align:left;"> between ~ 6.235$ \cdot $within - 0.013 </td>
+                 <td style="text-align:left;"> 0.960 </td>
+                 <td style="text-align:left;"> -0.010 </td>
+                </tr>
+                <tr>
+
+                 <td style="text-align:left;"> out </td>
+                 <td style="text-align:left;"> between ~ -0.199$ \cdot $within + 1.03 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.306 </td>
+                </tr>
+                <tr>
+                 <td style="text-align:left;vertical-align: middle !important;" rowspan="2"> NPK Supplemented </td>
+                 <td style="text-align:left;"> in </td>
+                 <td style="text-align:left;"> between ~ 1.725$ \cdot $within + 0.742 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.238 </td>
+                </tr>
+                <tr>
+
+                 <td style="text-align:left;"> out </td>
+                 <td style="text-align:left;"> between ~ 0.683$ \cdot $within + 0.918 </td>
+                 <td style="text-align:left;"> &lt; 0.001 </td>
+                 <td style="text-align:left;"> 0.542 </td>
+                </tr>
+              </tbody>
+              </table>
+            </div>
+            <aside class="notes">
+
+            </aside>
+          </section>
+
+          <section>
+            <h4 id="header"></h4>
+            <div class="wnotes vcenter">
+              <table>
+               <thead>
+                <tr>
+                 <th style="text-align:left;"> Term </th>
+                 <th style="text-align:left;"> df </th>
+                 <th style="text-align:left;"> sum squared error </th>
+                 <th style="text-align:left;"> mean squared error </th>
+                 <th style="text-align:left;"> p-value </th>
+                </tr>
+               </thead>
+              <tbody>
+                <tr>
+                 <td style="text-align:left;"> treatment </td>
+                 <td style="text-align:left;"> 1 </td>
+                 <td style="text-align:left;"> 0.129 </td>
+                 <td style="text-align:left;"> 0.129 </td>
+                 <td style="text-align:left;"> 0.266 </td>
+                </tr>
+                <tr>
+                 <td style="text-align:left;"> direction </td>
+                 <td style="text-align:left;"> 1 </td>
+                 <td style="text-align:left;"> 0.005 </td>
+                 <td style="text-align:left;"> 0.005 </td>
+                 <td style="text-align:left;"> 0.833 </td>
+                </tr>
+                <tr>
+                 <td style="text-align:left;"> treatment:direction </td>
+                 <td style="text-align:left;"> 1 </td>
+                 <td style="text-align:left;"> 0.024 </td>
+                 <td style="text-align:left;"> 0.024 </td>
+                 <td style="text-align:left;"> 0.628 </td>
+                </tr>
+                <tr style="border-bottom: black solid 1px;">
+                 <td style="text-align:left;"> Residuals </td>
+                 <td style="text-align:left;"> 436 </td>
+                 <td style="text-align:left;"> 45.332 </td>
+                 <td style="text-align:left;"> 0.104 </td>
+                 <td style="text-align:left;">  </td>
+                </tr>
+                <tr>
+                 <td style="text-align:left;"> Adjusted $R^2$ </td>
+                 <td style="text-align:left;"> -0.00338 </td>
+                 <td style="text-align:left;">  </td>
+                 <td style="text-align:left;">  </td>
+                 <td style="text-align:left;">  </td>
+                </tr>
+              </tbody>
+              </table>
+            </div>
+            <aside class="notes">
+
+            </aside>
+          </section>
+        </section>
+
+
+        <section>
           <h4 id="header"></h4>
           <div class="wnotes vcenter">
-            <img class="plain" src="Figures/NO-histogram.svg">
+            <img class="plain" src="Figures/NO-histogram_no_line.svg" style="position: absolute;">
+            <img class="plain fragment" src="Figures/NO-histogram_lines.svg" style="position: absolute;">
           </div>
           <aside class="notes">
 
@@ -375,33 +732,29 @@
         </section>
 
         <section>
-          <h4 id="header"></h4>
-          <div class="wnotes vcenter">
-            <img class="plain" src="Figures/in-by-out-degree-distributions.svg">
-          </div>
-          <aside class="notes">
+          <section>
+            <div class="wnotes vcenter" style="display: grid; grid-template-columns: 1fr 1fr; align-content: center; justify-content: center">
+              <h4>Control</h4>
+              <h4>NPK Supplemented</h4>
+              <img class="fragment-current-visible" data-fragment-index="1" style="border: 10px solid #575a3f; border-radius: 10px; justify-self: center; grid-row:2; grid-column: span 1 / -2;" src="Figures/control_networks_weighted.png">
+              <img class="fragment" data-fragment-index="1" style="border: 10px solid #575a3f; border-radius: 10px; justify-self: center; grid-row:2; grid-column: span 1 / -2;" src="Figures/control_networks.png">
+              <img class="fragment-current-visible" data-fragment-index="1" style="border: 10px solid #d7471e; border-radius: 10px; justify-self: center; grid-row:2; grid-column: span 1 / -1;" src="Figures/npk_networks_weighted.png">
+              <img class="fragment" data-fragment-index="1" style="border: 10px solid #d7471e; border-radius: 10px; justify-self: center; grid-row:2; grid-column: span 1 / -1;" src="Figures/npk_networks.png">
+            </div>
+            <aside class="notes">
 
-          </aside>
-        </section>
+            </aside>
+          </section>
 
-        <section>
-          <h4 id="header"></h4>
-          <div class="wnotes vcenter">
-            <img class="plain" src="Figures/in-by-out-by-kingdom-degree-distributions.svg">
-          </div>
-          <aside class="notes">
+          <section>
+            <h4 id="header"></h4>
+            <div class="wnotes vcenter">
+              <img class="plain" src="Figures/chi_square_clustering_table-1.png">
+            </div>
+            <aside class="notes">
 
-          </aside>
-        </section>
-
-        <section>
-          <h4 id="header"></h4>
-          <div class="wnotes vcenter">
-            <img class="plain" src="Figures/chi_square_clustering_table-1.png">
-          </div>
-          <aside class="notes">
-
-          </aside>
+            </aside>
+          </section>
         </section>
 
         <section>
@@ -459,7 +812,6 @@
             <ol style="font-size:130%;">
               <li>Experiment overview</li>
               <li>Network analysis</li>
-              <li></li>
               <li class="orange">Conclusions</li>
                 <ul class="fa-ul">
                   <li class="orange"><i class="fa-li fal fa-angle-right"></i>Weighted is better than binary</li>

@@ -20,7 +20,7 @@ my_cols <- c("Bacteria"="#006989",
              "Fungi"="#9b1d20",
              "fungi"="#9b1d20")
 
-raw_network_data <- read_csv("../../Data/complete_competetive_index.csv",
+raw_network_data <- read_csv("~/Research/CompetetiveTradeoff/Data/complete_competetive_index.csv",
                              col_types="ccccccccdddddd") %>%
   filter(leaf_x == leaf_y) %>%
   mutate(isolate_x = str_c(isolate_x, type_x, sep="."),
@@ -47,22 +47,6 @@ network_data <- tbl_graph(
 
 normalize <- . %>% subtract(min(.)) %>% divide_by(max(.))
 
-## each leaf own layout calc
-# layout_matrix <- lapply(unique(raw_network_data$leaf), function(ll) {
-#   network_data %>%
-#     filter(leaf == ll) %>%
-#     as.igraph() %>%
-#     layout_with_fr() %>%
-#     as_tibble() %>%
-#     set_names(c("x","y")) %>%
-#     mutate(leaf = ll)
-# }) %>% bind_rows() %>%
-#   group_by(leaf) %>%
-#   mutate(x = normalize(x),
-#          y = normalize(y)) %>%
-#   ungroup() %>%
-#   select(-leaf)
-
 ## all together layout
 layout_matrix <- network_data %>%
   as.igraph() %>%
@@ -76,20 +60,20 @@ layout_matrix <- network_data %>%
   ungroup() %>%
   select(-leaf)
 
-ggraph(network_data %>% filter(leaf == "C1"), layout="manual",
-       node.positions=layout_matrix[which(network_data %>% activate(nodes) %>% as_tibble() %>%
-                                            use_series(leaf) %>% equals("C1")),]) +
-  geom_edge_link(aes(edge_colour=type), start_cap=circle(15, 'pt'), end_cap=circle(15, 'pt'),
-                 edge_width=0.66, arrow=arrow(angle=30, length=unit(5, "pt"), type="closed")) +
-  geom_node_text(aes(colour=type), label="disease", family="Font Awesome 5 Pro Solid", size=8) +
-  scale_colour_manual(values=my_cols) +
-  scale_edge_colour_manual(values=my_cols) +
-  theme(axis.text=element_blank(),
-        axis.title=element_blank(),
-        axis.ticks=element_blank(),
-        panel.grid=element_blank(),
-        legend.position="none")
-ggsave("one_network.png", width=2, height=2)
+# ggraph(network_data %>% filter(leaf == "C1") %>% activate("edges") %>% filter(type == "fungi->bacto" | type == "bacto->fungi"), layout="manual",
+#        node.positions=layout_matrix[which(network_data %>% activate(nodes) %>% as_tibble() %>%
+#                                             use_series(leaf) %>% equals("C1")),]) +
+#   geom_edge_link(aes(edge_colour=type), start_cap=circle(15, 'pt'), end_cap=circle(15, 'pt'),
+#                  edge_width=0.66, arrow=arrow(angle=30, length=unit(5, "pt"), type="closed")) +
+#   geom_node_text(aes(colour=type), label="disease", family="Font Awesome 5 Pro Solid", size=8) +
+#   scale_colour_manual(values=my_cols) +
+#   scale_edge_colour_manual(values=my_cols) +
+#   theme(axis.text=element_blank(),
+#         axis.title=element_blank(),
+#         axis.ticks=element_blank(),
+#         panel.grid=element_blank(),
+#         panel.border=element_blank(),
+#         legend.position="none")
 
 ggraph(network_data %>% filter(treatment == "Control"), layout="manual",
        node.positions=layout_matrix[which(network_data %>% activate(nodes) %>% as_tibble() %>%
@@ -108,6 +92,27 @@ ggraph(network_data %>% filter(treatment == "Control"), layout="manual",
         plot.background=element_blank(),
         strip.background=element_blank(), strip.text=element_blank(),
         legend.position="none")
+ggsave("../Figures/control_networks.png", width=8, height=12)
+# ggsave("../Figures/control_networks_weighted.png", width=8, height=12)
+
+# ggraph(network_data %>% filter(treatment == "Control") %>% mutate(alph=ifelse(leaf == "C5", 0.5, 1)) %>% activate("edges") %>% mutate(alph=ifelse(leaf == "C5", 0.5, 1)), layout="manual",
+#        node.positions=layout_matrix[which(network_data %>% activate(nodes) %>% as_tibble() %>%
+#                                             use_series(treatment) %>% equals("Control")),]) +
+#   geom_edge_link(aes(edge_colour=type, edge_alpha=0.5 * alph), start_cap=circle(10, 'pt'), end_cap=circle(10, 'pt'),
+#                  edge_width=0.66, arrow=arrow(angle=30, length=unit(3, "pt"), type="closed")) +
+#   geom_node_text(aes(colour=type, alpha=alph), label="disease", family="Font Awesome 5 Pro Solid", size=6) +
+#   facet_nodes(~str_extract(leaf, "\\d"), nrow=3, scales="free") +
+#   scale_colour_manual(values=my_cols) +
+#   scale_edge_colour_manual(values=my_cols) +
+#   scale_alpha_identity() + scale_edge_alpha_identity() +
+#   scale_x_continuous(expand=expand_scale(0.12, 0)) +
+#   scale_y_continuous(expand=expand_scale(0.12, 0)) +
+#   theme(axis.text=element_blank(), axis.title=element_blank(), axis.ticks=element_blank(),
+#         panel.grid=element_blank(), panel.border=element_blank(), panel.background=element_blank(),
+#         plot.background=element_blank(),
+#         strip.background=element_blank(), strip.text=element_blank(),
+#         legend.position="none")
+# ggsave("../Figures/control_networks_weighted_fade_C5.png", width=8, height=12)
 
 ggraph(network_data %>% filter(treatment == "NPK Supplemented"), layout="manual",
        node.positions=layout_matrix[which(network_data %>% activate(nodes) %>% as_tibble() %>%
@@ -126,3 +131,5 @@ ggraph(network_data %>% filter(treatment == "NPK Supplemented"), layout="manual"
         plot.background=element_blank(),
         strip.background=element_blank(), strip.text=element_blank(),
         legend.position="none")
+ggsave("../Figures/npk_networks.png", width=8, height=12)
+# ggsave("../Figures/npk_networks_weighted.png", width=8, height=12)

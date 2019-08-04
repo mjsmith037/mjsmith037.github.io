@@ -2,6 +2,29 @@ library(tidygraph)
 library(ggraph)
 library(tidyverse)
 library(xtable)
+library(magrittr)
+
+tidy_p_value <- function(pvals) {
+  ifelse(pvals < 0.001, "< 0.001", format(pvals, digits=0, nsmall=3))
+}
+
+tidy_lm <- function(dat, formula) {
+  lm(formula, data=dat) %>%
+  {bind_cols(tidy(.) %>% mutate(estimate = str_c(str_c(formula)[2], " ~ ", round(estimate[1], 3),
+                                                 "$ \\cdot $", str_c(formula)[3], ifelse(sign(estimate[2]) == 1, " + ", " - "), round(abs(estimate[2]), 3))) %>%
+               filter(term != "(Intercept)") %>% select(term, estimate, p.value),
+             glance(.) %>% select(adj.r.squared))} %>%
+    mutate(p.value = tidy_p_value(p.value)) %>%
+    select(-term)
+}
+
+tidy_aov <- function(dat, formula) {
+  aov(formula, data=dat) %>%
+    {bind_rows(tidy(.) %>% select(term, df, sumsq, meansq, p.value) %>% mutate(p.value = tidy_p_value(p.value),
+                                                                               sumsq = round(sumsq, 3),
+                                                                               meansq = round(meansq, 3)),
+               glance(.) %>% select(adj.r.squared) %>% transmute(term = "Adjusted $R^2$", df=round(adj.r.squared, 5)))}
+}
 
 OVERLAP_LINK_CUTOFF <- 0.75
 
@@ -40,59 +63,48 @@ raw_network_data <- read_csv("~/Research/CompetetiveTradeoff/Data/complete_compe
          interaction_type=str_c(row_type, " -> ", col_type),
          treatment=str_replace_all(treatment, c("C"="Control", "N"="NPK Supplemented")))
 
-degree_in_by_out <- bind_rows(raw_network_data %>%
-                                group_by(row_isolate, leaf, treatment, interaction_type) %>%
-                                summarise(degree = sum(link)) %>%
-                                mutate(direction = "outdegree") %>%
-                                rename(isolate = row_isolate) %>%
-                                mutate(type = str_split_fixed(interaction_type, " -> ", 2)[,1],
-                                       partner = str_split_fixed(interaction_type, " -> ", 2)[,2]),
-                              raw_network_data %>%
-                                group_by(col_isolate, leaf, treatment, interaction_type) %>%
-                                summarise(degree = sum(link)) %>%
-                                mutate(direction = "indegree") %>%
-                                rename(isolate = col_isolate) %>%
-                                mutate(type = str_split_fixed(interaction_type, " -> ", 2)[,2],
-                                       partner = str_split_fixed(interaction_type, " -> ", 2)[,1])) %>%
+degree_dist_by_treatment_by_kingdom <- bind_rows(raw_network_data %>%
+                                                   group_by(row_isolate, row_type, leaf, treatment, interaction_type) %>%
+                                                   summarise(degree = sum(overlap)) %>%
+                                                   mutate(direction = "out") %>%
+                                                   rename(name = row_isolate, type = row_type),
+                                                 raw_network_data %>%
+                                                   group_by(col_isolate, col_type, leaf, treatment, interaction_type) %>%
+                                                   summarise(degree = sum(overlap)) %>%
+                                                   mutate(direction = "in") %>%
+                                                   rename(name = col_isolate, type = col_type)) %>%
   ungroup() %>%
-  spread(direction, degree, fill=0) %>%
-  bind_rows(group_by(., isolate, leaf, treatment, type, partner) %>%
-              summarise(indegree=sum(indegree), outdegree=sum(outdegree)),
-            group_by(., isolate, leaf, treatment, type) %>%
-              summarise(indegree=sum(indegree), outdegree=sum(outdegree))) %>%
-  ungroup() %>%
-  mutate(col = case_when(is.na(partner)  ~ "Any",
-                         type == partner ~ type,
-                         type != partner ~ "Mixed"))
+  filter(leaf != "C5") %>% ## Remove outlying network
+  mutate(tmp = ifelse(interaction_type %>% str_split(" -> ") %>% invoke_map(equals, .), "within", "between")) %>%
+  select(name, type, direction, treatment, tmp, degree) %>%
+  spread(tmp, degree, fill=0)
 
-ggplot(degree_in_by_out) +
-  aes(y=indegree, x=outdegree, colour=col) +
-  geom_jitter(width=0.33, height=0.33) +
+ggplot(degree_dist_by_treatment_by_kingdom) +
+  aes(x=within, y=between, colour=type) +
+  geom_abline(colour="darkgray") +
+  geom_point() +
+  xlab("Degree between members of the same kingdom") +
+  ylab("Degree between members of disparate kingdoms") +
   geom_smooth(method="lm", se=FALSE) +
-  facet_grid(treatment~type) +
+  facet_grid(direction~treatment) +
   scale_colour_manual(values=my_cols) +
   theme(legend.position="none")
+ggsave("../Figures/in-by-out-by-kingdom-degree-distributions.svg", width=7, height=7)
 
-# ggsave("in-by-out-by-kingdom-degree-distributions.svg", width=7, height=7)
-
-degree_in_by_out %>%
-  mutate(interaction_type = ifelse(is.na(interaction_type), str_c(type, " -> Any"), interaction_type)) %>%
-  group_by(treatment, interaction_type) %>%
-  do(tidy_lm(., indegree~outdegree)) %>%
-  # mutate(`p-value` = case_when(`p-value` == "$< 0.001$" ~ )) %>%
+degree_dist_by_treatment_by_kingdom %>%
+  group_by(treatment, direction) %>%
+  do(tidy_lm(., between~within)) %>%
   ungroup() %>%
-  mutate(interaction_type = str_replace_all(interaction_type, "->", "$\\\\rightarrow$")) %>%
-  mutate_if(is.numeric, function(x) str_c("$", format(x, digits=0, nsmall=3), "$")) %>%
-  set_names(c("Treatment", "Interaction Type", "Term", "Estimate", "p-value", "Adjusted $R^2$")) %>%
-  kable(format="latex", row.names=FALSE, booktabs=TRUE, align=unlist(str_split("lllrrr", "")), escape=FALSE) %>%
+  mutate_if(is.numeric, format, digits=0, nsmall=3) %>%
+  set_names(c("Treatment", "Direction", "Formula", "p-value", "Adjusted $R^2$")) %>%
+  kable(row.names=FALSE, escape=FALSE) %>%
   collapse_rows(1)
 
-degree_in_by_out %>%
-  mutate(interaction_type = ifelse(is.na(interaction_type), str_c(type, " -> Any"), interaction_type),
-         ratio = indegree/outdegree) %>%
+degree_dist_by_treatment_by_kingdom %>%
+  mutate(ratio = between/within) %>%
   filter(is.finite(ratio)) %>%
-  do(tidy_aov(., ratio~treatment*interaction_type)) %>%
+  do(tidy_aov(., ratio~treatment*direction)) %>%
   ungroup() %>%
-  set_names(c("Term", "p-value", "Adjusted $R^2$")) %>%
-  xtable() %>%
-  print(booktabs=TRUE, format="latex", include.rownames=FALSE, sanitize.text.function=function(x) return(x))
+  mutate_all(replace_na, "") %>%
+  set_names(c("Term", "df", "sum squared error", "mean squared error", "p-value")) %>%
+  kable(row.names=FALSE, escape=FALSE)

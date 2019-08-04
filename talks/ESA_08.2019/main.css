@@ -129,6 +129,10 @@ span.key {
 table td {
   border-bottom: 0 !important;
 }
+
+table {
+  font-size: 2vw !important;
+}
 /*/////////////////// resource competition network colors ////////////////////*/
 
 .npk,
@@ -248,6 +252,5 @@ img {
 }
 
 .fa-ul {
-  width:80%;
   list-style-type:none !important;
 }
