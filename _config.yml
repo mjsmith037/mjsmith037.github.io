@@ -9,3 +9,4 @@ timezone: America/Chicago
 excerpt_separator: <!--more-->
 exclude: ['Gemfile', 'Gemfile.lock']
 plugins_dir: ['github-pages']
+github: [metadata]
