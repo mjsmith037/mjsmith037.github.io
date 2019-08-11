@@ -91,7 +91,7 @@ img.plain {
   display: block;
   position: absolute;
   width:55vw;
-  left:0;
+  left:1vw;
 }
 
 .reveal aside.notes {
@@ -100,10 +100,10 @@ img.plain {
   text-align: left;
   background-color: rgba(235, 235, 235, 0.8);
   color: #000000;
-  right: 0;
-  top: 5vh;
+  right: 1vw;
   width: 40vw;
-  height: 90vh;
+  height: 96vh;
+  bottom: 2vh;
   font-size: 60%;
   line-height: 120%;
   overflow:auto;

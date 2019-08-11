@@ -4,9 +4,6 @@ library(ggraph)
 library(magrittr)
 library(tidyverse)
 
-# ggplot(tibble(x=1:4, y=1:4, label=c("windows", "linux", "apple", "circle"), ffam = c('Font Awesome 5 Brands Regular', 'Font Awesome 5 Brands Regular', 'Font Awesome 5 Brands Regular', 'Font Awesome 5 Pro Regular'))) +
-#   aes(x=x, y=y, label=label, family=ffam) + geom_text()
-
 OVERLAP_LINK_CUTOFF <- 0.75
 set.seed(0)
 
@@ -33,7 +30,7 @@ raw_network_data <- read_csv("~/Research/CompetetiveTradeoff/Data/complete_compe
                          row_type     = type_y,      row_isolate = isolate_y,
                          col_type     = type_x,      col_isolate = isolate_x,
                          overlap      = y_on_x_pw))) %>%
-  filter(overlap > OVERLAP_LINK_CUTOFF) %>%
+  # filter(overlap > OVERLAP_LINK_CUTOFF) %>%
   mutate(treatment = str_replace_all(treatment, c("C"="Control", "N"="NPK Supplemented")))
 
 network_data <- tbl_graph(
@@ -49,8 +46,7 @@ normalize <- . %>% subtract(min(.)) %>% divide_by(max(.))
 
 ## all together layout
 layout_matrix <- network_data %>%
-  as.igraph() %>%
-  layout_with_fr() %>%
+  layout_with_fr(weights=.$overlap) %>%
   as_tibble(.name_repair="minimal") %>%
   set_names(c("x","y")) %>%
   mutate(leaf = network_data %>% activate(nodes) %>% as_tibble() %>% use_series(leaf)) %>%

@@ -201,7 +201,6 @@ get_metrics_from_graph <- function(g) {
 }
 
 network_data %>%
-  # filter(leaf != "C5") %>%
   morph(to_components) %>%
   crystallise() %>%
   rowwise() %>%
@@ -209,6 +208,7 @@ network_data %>%
   full_join(read_csv("/home/michalska-smith/Research/CompetetiveTradeoff/Results/intransitivity_binary.csv", col_types="cddd") %>% transmute(leaf, intransitivity=pw), by="leaf") %>%
   full_join(read_csv("/home/michalska-smith/Research/CompetetiveTradeoff/Results/intransitivity_weighted.csv", col_types="cddd") %>% transmute(leaf, w_intransitivity=pw), by="leaf") %>%
   gather("metric", "value", -leaf, -treatment) %>%
+  filter(leaf != "C5") %>%
   group_by(metric) %>%
   do(tidy_t_test_long(., "treatment", "value")) %>%
   ungroup() %>%
@@ -257,15 +257,16 @@ get_triads_from_graph <- function(g) {
 }
 
 network_data %>%
-  # filter(leaf != "C5") %>%
   morph(to_components) %>%
   crystallise() %>%
   rowwise() %>%
   do(get_triads_from_graph(.$graph)) %>%
   gather("triad", "value", -leaf, -treatment) %>%
   group_by(triad) %>%
+  filter(leaf != "C5") %>%
   do(tidy_t_test_long(., "treatment", "value")) %>%
   ungroup() %>%
+  select(triad, Control, `NPK Supplemented`, p.value) %>%
   mutate(p.value = case_when(is.na(p.value) ~ "\\hspace{1.25pt}\\faIcon[light]{times}\\hspace{1.25pt}",
                              p.value < 0.001 ~ ifelse(Control < `NPK Supplemented`,
                                                       cell_spec("\\faIcon[solid]{square}", escape=FALSE, color="npk!60!black"),

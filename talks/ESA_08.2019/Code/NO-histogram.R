@@ -59,7 +59,17 @@ raw_network_data <- read_csv("~/Research/CompetetiveTradeoff/Data/complete_compe
          type=str_c(row_type, " -> ", col_type),
          treatment=str_replace_all(treatment, c("C"="Control", "N"="NPK Supplemented")))
 
-p <- ggplot(raw_network_data) +
+ggplot(raw_network_data) +
+  aes(x=overlap) +
+  geom_histogram(bins=50, colour="#595959") +
+  facet_grid(treatment~row_type) +
+  scale_x_continuous(breaks=c(0,0.25,0.5,0.75,1), labels=c("0","0.25","0.5","0.75","1")) +
+  xlab("Niche Overlap") + ylab("Count") +
+  theme(legend.position="none",
+        plot.margin=margin(5.5, 150, 5.5, 150))
+ggsave("../Figures/NO-histogram_aggregated.svg", width=8.67, height=4.5)
+
+ggplot(raw_network_data) +
   aes(x=overlap, fill=type, colour=type) +
   geom_histogram(bins=50) +
   facet_grid(treatment~type) +
@@ -67,7 +77,6 @@ p <- ggplot(raw_network_data) +
   scale_x_continuous(breaks=c(0,0.25,0.5,0.75,1), labels=c("0","0.25","0.5","0.75","1")) +
   xlab("Niche Overlap") + ylab("Count") +
   theme(legend.position="none")
-
 ggsave(p, "../Figures/NO-histogram_no_line.svg", width=8.67, height=4.5)
 ggsave(p + geom_vline(aes(xintercept=OVERLAP_LINK_CUTOFF), size=0.75), "../Figures/NO-histogram.svg", width=8.67, height=4.5)
 
