@@ -102,7 +102,7 @@ img.plain {
   color: #000000;
   right: 1vw;
   width: 40vw;
-  height: 96vh;
+  height: 92vh;
   bottom: 2vh;
   font-size: 60%;
   line-height: 120%;
@@ -253,4 +253,12 @@ img {
 
 .fa-ul {
   list-style-type:none !important;
+}
+
+ol>ul>li {
+  font-size:80% !important;
+}
+
+ul>ul>li {
+  font-size:60% !important;
 }

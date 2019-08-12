@@ -1,5 +1,6 @@
 library(tidygraph)
 library(ggraph)
+library(broom)
 library(tidyverse)
 library(kableExtra)
 
@@ -10,7 +11,7 @@ tidy_p_value <- function(pvals) {
 tidy_lm <- function(dat, formula) {
   lm(formula, data=dat) %>%
   {bind_cols(tidy(.) %>% mutate(estimate = str_c(str_c(formula)[2], " ~ ", round(estimate[1], 3),
-                                                 "$ \\cdot $", str_c(formula)[3], ifelse(sign(estimate[2]) == 1, " + ", " - "), round(abs(estimate[2]), 3))) %>%
+                                                 " &middot; ", str_c(formula)[3], ifelse(sign(estimate[2]) == 1, " + ", " - "), round(abs(estimate[2]), 3))) %>%
                filter(term != "(Intercept)") %>% select(term, estimate, p.value),
              glance(.) %>% select(adj.r.squared))} %>%
     mutate(p.value = tidy_p_value(p.value)) %>%
@@ -115,9 +116,8 @@ degree_in_by_out %>%
   do(tidy_lm(., indegree~outdegree)) %>%
   # mutate(`p-value` = case_when(`p-value` == "$< 0.001$" ~ )) %>%
   ungroup() %>%
-  mutate(interaction_type = str_replace_all(interaction_type, "->", "$\\\\rightarrow$")) %>%
   mutate_if(is.numeric, format, digits=0, nsmall=3) %>%
-
+  mutate(interaction_type = str_replace_all(interaction_type, "->", " &rarr; ")) %>%
   set_names(c("Treatment", "Interaction Type", "Formula", "p-value", "Adjusted $R^2$")) %>%
   kable(row.names=FALSE, escape=FALSE) %>%
   collapse_rows(1)

@@ -57,7 +57,7 @@
             <ol style="font-size:130%;">
               <li class="fragment highlight-orange">Experiment overview</li>
               <li>Network analysis</li>
-              <li>Conclusions</li>
+              <li>Summary / Conclusions</li>
             </ol>
           </div>
           <h4 id="citation" class="citwnotes"></h4>
@@ -371,7 +371,7 @@
                   <li class="orange"><i class="fa-li fal fa-angle-right"></i>Global structures</li>
                   <li class="orange"><i class="fa-li fal fa-angle-right"></i>Triads</li>
                 </ul>
-              <li>Conclusions</li>
+              <li>Summary / Conclusions</li>
             </ol>
           </div>
           <aside class="notes">
@@ -435,28 +435,28 @@
                </thead>
               <tbody>
                 <tr>
-                 <td style="text-align:left;"> Bacteria $\rightarrow$ Bacteria </td>
+                 <td style="text-align:left;"> Bacteria &rarr; Bacteria </td>
                  <td style="text-align:left;"> 0.661 </td>
                  <td style="text-align:left;"> 0.659 </td>
                  <td style="text-align:left;"> 0.896 </td>
                  <td style="text-align:left;"> 0.116 </td>
                 </tr>
                 <tr>
-                 <td style="text-align:left;"> Bacteria $\rightarrow$ Fungi </td>
+                 <td style="text-align:left;"> Bacteria &rarr; Fungi </td>
                  <td style="text-align:left;"> 0.494 </td>
                  <td style="text-align:left;"> 0.408 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                 </tr>
                 <tr>
-                 <td style="text-align:left;"> Fungi $\rightarrow$ Bacteria </td>
+                 <td style="text-align:left;"> Fungi &rarr; Bacteria </td>
                  <td style="text-align:left;"> 0.731 </td>
                  <td style="text-align:left;"> 0.831 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                 </tr>
                 <tr>
-                 <td style="text-align:left;"> Fungi $\rightarrow$ Fungi </td>
+                 <td style="text-align:left;"> Fungi &rarr; Fungi </td>
                  <td style="text-align:left;"> 0.656 </td>
                  <td style="text-align:left;"> 0.724 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
@@ -517,98 +517,99 @@
           <section>
             <h4 id="header"></h4>
             <div class="wnotes vcenter">
-              <table>
+
+              <table style="font-size:1.33vw !important;">
                <thead>
                 <tr>
                  <th style="text-align:left;"> Treatment </th>
                  <th style="text-align:left;"> Interaction Type </th>
                  <th style="text-align:left;"> Formula </th>
                  <th style="text-align:left;"> p-value </th>
-                 <th style="text-align:left;"> Adjusted R^2 </th>
+                 <th style="text-align:left;"> Adjusted $R^2$ </th>
                 </tr>
                </thead>
               <tbody>
                 <tr>
                  <td style="text-align:left;vertical-align: middle !important;" rowspan="6"> Control </td>
-                 <td style="text-align:left;"> Bacteria \rightarrow Any </td>
-                 <td style="text-align:left;"> indegree ~ 19.252 \cdot outdegree - 0.508 </td>
+                 <td style="text-align:left;"> Bacteria  →  Any </td>
+                 <td style="text-align:left;"> indegree ~ 19.252 · outdegree - 0.508 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> 0.767 </td>
                 </tr>
                 <tr>
 
-                 <td style="text-align:left;"> Bacteria \rightarrow Bacteria </td>
-                 <td style="text-align:left;"> indegree ~ 9.467 \cdot outdegree - 0.597 </td>
+                 <td style="text-align:left;"> Bacteria  →  Bacteria </td>
+                 <td style="text-align:left;"> indegree ~ 9.467 · outdegree - 0.597 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> 0.743 </td>
                 </tr>
                 <tr>
 
-                 <td style="text-align:left;"> Bacteria \rightarrow Fungi </td>
-                 <td style="text-align:left;"> indegree ~ 10.072 \cdot outdegree - 0.449 </td>
+                 <td style="text-align:left;"> Bacteria  →  Fungi </td>
+                 <td style="text-align:left;"> indegree ~ 10.072 · outdegree - 0.449 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> 0.733 </td>
                 </tr>
                 <tr>
 
-                 <td style="text-align:left;"> Fungi \rightarrow Any </td>
-                 <td style="text-align:left;"> indegree ~ 19.996 \cdot outdegree - 0.649 </td>
+                 <td style="text-align:left;"> Fungi  →  Any </td>
+                 <td style="text-align:left;"> indegree ~ 19.996 · outdegree - 0.649 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> 0.623 </td>
                 </tr>
                 <tr>
 
-                 <td style="text-align:left;"> Fungi \rightarrow Bacteria </td>
-                 <td style="text-align:left;"> indegree ~ 10.582 \cdot outdegree - 0.79 </td>
+                 <td style="text-align:left;"> Fungi  →  Bacteria </td>
+                 <td style="text-align:left;"> indegree ~ 10.582 · outdegree - 0.79 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> 0.511 </td>
                 </tr>
                 <tr>
 
-                 <td style="text-align:left;"> Fungi \rightarrow Fungi </td>
-                 <td style="text-align:left;"> indegree ~ 9.991 \cdot outdegree - 0.558 </td>
+                 <td style="text-align:left;"> Fungi  →  Fungi </td>
+                 <td style="text-align:left;"> indegree ~ 9.991 · outdegree - 0.558 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> 0.643 </td>
                 </tr>
                 <tr>
                  <td style="text-align:left;vertical-align: middle !important;" rowspan="6"> NPK Supplemented </td>
-                 <td style="text-align:left;"> Bacteria \rightarrow Any </td>
-                 <td style="text-align:left;"> indegree ~ 17.442 \cdot outdegree - 0.385 </td>
+                 <td style="text-align:left;"> Bacteria  →  Any </td>
+                 <td style="text-align:left;"> indegree ~ 17.442 · outdegree - 0.385 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> 0.546 </td>
                 </tr>
                 <tr>
 
-                 <td style="text-align:left;"> Bacteria \rightarrow Bacteria </td>
-                 <td style="text-align:left;"> indegree ~ 8.765 \cdot outdegree - 0.474 </td>
+                 <td style="text-align:left;"> Bacteria  →  Bacteria </td>
+                 <td style="text-align:left;"> indegree ~ 8.765 · outdegree - 0.474 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> 0.589 </td>
                 </tr>
                 <tr>
 
-                 <td style="text-align:left;"> Bacteria \rightarrow Fungi </td>
-                 <td style="text-align:left;"> indegree ~ 8.839 \cdot outdegree - 0.31 </td>
+                 <td style="text-align:left;"> Bacteria  →  Fungi </td>
+                 <td style="text-align:left;"> indegree ~ 8.839 · outdegree - 0.31 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> 0.369 </td>
                 </tr>
                 <tr>
 
-                 <td style="text-align:left;"> Fungi \rightarrow Any </td>
-                 <td style="text-align:left;"> indegree ~ 18.355 \cdot outdegree - 0.569 </td>
+                 <td style="text-align:left;"> Fungi  →  Any </td>
+                 <td style="text-align:left;"> indegree ~ 18.355 · outdegree - 0.569 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> 0.673 </td>
                 </tr>
                 <tr>
 
-                 <td style="text-align:left;"> Fungi \rightarrow Bacteria </td>
-                 <td style="text-align:left;"> indegree ~ 8.676 \cdot outdegree - 0.512 </td>
+                 <td style="text-align:left;"> Fungi  →  Bacteria </td>
+                 <td style="text-align:left;"> indegree ~ 8.676 · outdegree - 0.512 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> 0.471 </td>
                 </tr>
                 <tr>
 
-                 <td style="text-align:left;"> Fungi \rightarrow Fungi </td>
-                 <td style="text-align:left;"> indegree ~ 9.546 \cdot outdegree - 0.617 </td>
+                 <td style="text-align:left;"> Fungi  →  Fungi </td>
+                 <td style="text-align:left;"> indegree ~ 9.546 · outdegree - 0.617 </td>
                  <td style="text-align:left;"> &lt; 0.001 </td>
                  <td style="text-align:left;"> 0.772 </td>
                 </tr>
@@ -616,7 +617,9 @@
               </table>
             </div>
             <aside class="notes">
-
+<p>
+  All of the slopes in the above figure significantly differ from 0.
+</p>
             </aside>
           </section>
 
@@ -663,7 +666,7 @@
                  <td style="text-align:left;">  </td>
                 </tr>
                 <tr>
-                 <td style="text-align:left;"> Adjusted R^2 </td>
+                 <td style="text-align:left;"> Adjusted $R^2$ </td>
                  <td style="text-align:left;"> 0.04209 </td>
                  <td style="text-align:left;">  </td>
                  <td style="text-align:left;">  </td>
@@ -673,7 +676,10 @@
               </table>
             </div>
             <aside class="notes">
-
+<p>
+  Though they only differ from each other across interaction-type, that is, the
+  kingdoms of the two interacting isolates.
+</p>
             </aside>
           </section>
         </section>
@@ -835,7 +841,22 @@
               <img class="fragment" data-fragment-index="1" style="border: 10px solid #d7471e; border-radius: 10px; justify-self: center; grid-row:2; grid-column: span 1 / -1;" src="Figures/npk_networks.png">
             </div>
             <aside class="notes">
-
+              <p>
+                If we look back at our networks from before, applying this threshold severely reduces
+                the number of links in each network:
+              </p><span id="ns">next slide</span><p>
+                and allows us to better visualize the structures that are present. (though this is, in
+                general a rather unreliable way to evaluate the presence or absence of complex network
+                structures). FOr instance, it appears that nodes of the same kingdom are clustering in
+                these layouts. We can test for the significance of such arrangements by first clustering
+                the nodes of the network using a method agnostic to node kingdom, and then checking
+                whether or not the kingdoms are disproportionally represented in these clusters.
+              </p><p>
+                We find that for control plants, nodes cluster according to kingdom in the weighted networks,
+                but not in the binary networks (despite the appearance of the binary networks inspiring this
+                analysis!). For the NPK plants, we see signficant clustering in both the binary and weighted
+                networks but again, more consistently in the weighted case.
+              </p>
             </aside>
           </section>
 
@@ -845,20 +866,19 @@
               <img class="plain" src="Figures/chi_square_clustering_table-1.png">
             </div>
             <aside class="notes">
-              <p>
-                If we look back at our networks from before, applying this threshold severely reduces
-                the number of links in each network:
-              </p><span id="ns">next slide</span><p>
-                and allows us to better visualize the structures that are present. (though this is, in
-                general a rather unreliable way to evaluate the presence or absence of complex network
-                structures).
-              </p>
+<p>
+  Here, each box is a network and they are shaded according to the significance level
+  of a <a href="https://en.wikipedia.org/wiki/Chi-squared_test">$\chi^2$-test</a> analysis
+  of the distribution of kingdoms across a two-group clustering of each network using a
+  spinglass algorithm. In order of increasing darkness, the shades indicate a p-value of
+  &gt; 0.05 (white), &lt; 0.05, &lt; 0.01, and &lt; 0.001 (black).
+</p>
             </aside>
           </section>
         </section>
 
         <section>
-          <h4 id="header"></h4>
+          <h4 id="header">Local structures</h4>
           <div class="wnotes vcenter">
             <img class="plain" src="Figures/centrality_t_test_table-1.png">
           </div>
@@ -886,7 +906,9 @@
   other, forming triangular patterns in the interaction network.
 </p><p>
   Each box in this table is a network, colored according to the sign and significance of
-  differences between isolates of each of the two kingdoms: blue for bacteria, red for fungi.
+  differences between isolates of each of the two kingdoms: blue for bacteria, red for fungi.cclustering lustering
+  Increasing darkness signifies smaller p-values: &lt; 0.05 (light), &lt; 0.01 (medium), and
+  &lt; 0.001 (dark).
   As can be seen, bacteria and fungi differ often in the control plants, but very rarely in
   the nutrient supplemented ones. This suggests some sort of equalizing force being applied
   in the NPK treatment.
@@ -895,7 +917,7 @@
         </section>
 
         <section>
-          <h4 id="header"></h4>
+          <h4 id="header">Global structures</h4>
           <div class="wnotes vcenter">
             <img class="plain" src="Figures/metric_raw_t_test-1.png">
           </div>
@@ -916,12 +938,39 @@
         </section>
 
         <section>
-          <h4 id="header"></h4>
+          <h4 id="header">Global structures &mdash; against random</h4>
           <div class="wnotes vcenter">
             <img class="plain" src="Figures/metric_config_table-1.png">
           </div>
           <aside class="notes">
-            <p>
+<p>
+  Whle comparing the two sets of networks directly provides insights about potential
+  differences between treatments, a second type of comparison: that of a network
+  against randomizations of its structure, provide .....
+</p><p>
+  Here, we signify whether a value is less than or greater than the expectation
+  using <i class="fal fa-angle-up"></i> or <i class="fal fa-angle-down"></i>,
+  using the traditional p-value &gt; 0.95 or &lt; 0.05,
+  respectively. If the empirical p.value is &gt; 0.99 or &lt; 0.01, then we
+  use double arrows. Likewise for z-scores, using 2 (-2) and 4 (-4) as thresholds.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">Meso-scale structures</h4>
+          <div class="wnotes vcenter">
+            <img class="plain" src="Figures/triad_raw_t_test-1.png">
+          </div>
+          <aside class="notes">
+<p>
+  Finally, there exists a middle-ground betwen local structures &mdash; those calculated
+  for each node of the network individually, relying only upon the connections that isolate
+  has, and global structures &mdash; those that take all of the network's connections into
+  account in their calculations. Perhaps the most common of such metrics are triad or motif counts.
+</p><p>
+  Likewise for these, we see very few difference between the two treatments
+</p><p>
               (Note that when the outlying control network is included in this
                analysis, a second significant difference is present in triad 2,
                where NPK plants have significantly higher counts than do control)
@@ -930,22 +979,17 @@
         </section>
 
         <section>
-          <h4 id="header"></h4>
-          <div class="wnotes vcenter">
-            <img class="plain" src="Figures/triad_raw_t_test-1.png">
-          </div>
-          <aside class="notes">
-
-          </aside>
-        </section>
-
-        <section>
-          <h4 id="header"></h4>
+          <h4 id="header">Meso-scale structures &mdash; against random</h4>
           <div class="wnotes vcenter">
             <img class="plain" src="Figures/triad_config_table-1.png">
           </div>
           <aside class="notes">
-
+<p>
+  As before, we also compare these counts agains what we would expect by random,
+  assuming only the degree distribution is maintained. We see a similar pattern
+  as with the global metrics: where there are many differences from random in the
+  resource ammended plots, these differences are in general very small..
+</p>
           </aside>
         </section>
 
@@ -954,7 +998,7 @@
             <ol style="font-size:130%;">
               <li>Experiment overview</li>
               <li>Network analysis</li>
-              <li class="orange">Conclusions</li>
+              <li class="orange">Summary / Conclusions</li>
                 <ul class="fa-ul">
                   <li class="orange"><i class="fa-li fal fa-angle-right"></i>Binary and Weighted networks as complementary approaches</li>
                   <li class="orange"><i class="fa-li fal fa-angle-right"></i>Nutrient ammendments level the playing field</li>
@@ -965,6 +1009,38 @@
             </ol>
           </div>
           <h4 id="citation" class="citwnotes"></h4>
+          <aside class="notes">
+            <p>
+              Alright, that was kindof a whilrlwind of results, but what does it all mean?
+              Over the final few slides, I will breifly sythesize some of these results and
+              try to tie it all back to the biological implications. In brief, I will touch
+              on the complementarity of the binary and weighted network approaches, and...
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">Summary</h4>
+          <div class="wnotes vcenter">
+            <ul class="fa-ul">
+              <li><i class="fa-li fal fa-angle-right"></i>Degree distributions differ significantly beween treatments and interaction types</li>
+              <ul class="fa-ul">
+                <li><i class="fa-li fal fa-angle-double-right"></i>in particular, fungi tend to have a larger impact on bacteria than vice versa</li>
+                <li><i class="fa-li fal fa-angle-double-right"></i>especially in control plants</li>
+              </ul>
+              <!-- <li><i class="fa-li fal fa-angle-right"></i>Isolates with high indegree tend to have lower outdegree</li> -->
+              <li><i class="fa-li fal fa-angle-right"></i>Isolates cluster by kingdom</li>
+              <ul class="fa-ul">
+                <li><i class="fa-li fal fa-angle-double-right"></i>but only for weighted networks in the control plants</li>
+              </ul>
+              <li><i class="fa-li fal fa-angle-right"></i>Bacteria and fungi differ in their local structure in control plants</li>
+              <li><i class="fa-li fal fa-angle-right"></i>There are few / weak differences in global network structure between treatments</li>
+              <li><i class="fa-li fal fa-angle-right"></i>Similarly, their global structures show little deviation from their random expectations</li>
+              <ul class="fa-ul">
+                <li><i class="fa-li fal fa-angle-double-right"></i>with the possible exception of NPK, whre there are small, significant differences from expected</li>
+              </ul>
+            </ul>
+          </div>
           <aside class="notes">
             <p>
 
@@ -981,17 +1057,6 @@
               <li><i class="fa-li fal fa-angle-right"></i>but also accentuates some differences</li>
               <li><i class="fa-li fal fa-angle-right"></i></li>
             </ul>
-          </div>
-          <aside class="notes">
-            <p>
-
-            </p>
-          </aside>
-        </section>
-
-        <section>
-          <div class="wnotes vcenter">
-
           </div>
           <aside class="notes">
             <p>
