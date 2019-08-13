@@ -260,5 +260,9 @@ ol>ul>li {
 }
 
 ul>ul>li {
+  font-size:80% !important;
+}
+
+ol>ul>ul>li {
   font-size:60% !important;
 }

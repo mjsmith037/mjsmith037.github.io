@@ -102,14 +102,15 @@
           <aside class="notes">
             <p>
               We are looking at the endophytic communities of six plants growing
-              under each of two conditions:
+              under each of two conditions as part of
+              the <a href="http://www.nutnet.umn.edu/">Nutrient Network</a> experimental plots
+              at the <a href="https://www.cedarcreek.umn.edu/">Cedar Creek Ecosystem Science Reserve</a>:
             </p><span id="ns">next slide</span><p>
-              a control of plants growing under natural conditions as part of
-              the _________ experiment, and ...
+              plants growing under natural conditions, and
             </p><span id="ns">next slide</span><p>
               a treatment of plants that have received supplemental Nitrogen,
               Phosphorous, and Potassium (as well as some trace nutrients) over
-              the course of ________ years.
+              the course of 7 years.
             </p>
           </aside>
         </section>
@@ -327,7 +328,7 @@
               where each well contains a different nutrient resource.
             </p><span id="ns">next slide</span><p>
               We measure the isolate's growth on each of these resources to produce an
-              approximation of each isolates resource niche.
+              approximation of each isolate's resource niche.
             </p><span id="ns">next slide</span><p>
               By comparing this growth to another isolate's growth on the same
               resources,
@@ -409,8 +410,8 @@
                 of both the source <i>and</i> the target isolate:
               </p><span id="ns">next slide</span><p>
                 Note that, except in the case of the Bacterial effect on Fungal isolates,
-                each of these distributions shows a strong right skew == there are more
-                high values than low values. Also note that, with the exceotion of the
+                each of these distributions shows a strong right skew &mdash; there are more
+                high values than low values. Also note that, with the exception of the
                 effect of bacterial isolates on one another, these distributions all differ
                 significantly between the two treatments (You can see the results of the
                 relevant statistical tests in a supplemental slide here, by pressing
@@ -1000,8 +1001,9 @@
               <li>Network analysis</li>
               <li class="orange">Summary / Conclusions</li>
                 <ul class="fa-ul">
-                  <li class="orange"><i class="fa-li fal fa-angle-right"></i>Binary and Weighted networks as complementary approaches</li>
-                  <li class="orange"><i class="fa-li fal fa-angle-right"></i>Nutrient ammendments level the playing field</li>
+                  <li class="orange"><i class="fa-li fal fa-angle-right"></i>Kingdom comparisons</li>
+                  <li class="orange"><i class="fa-li fal fa-angle-right"></i>Treatment comparisons</li>
+                  <li class="orange"><i class="fa-li fal fa-angle-right"></i>Take-homes</li>
                   <ul class="fa-ul">
                     <li class="orange"><i class="fa-li fal fa-angle-double-right"></i>but do not have large-scale effects on network structure</li>
                   </ul>
@@ -1020,24 +1022,36 @@
         </section>
 
         <section>
-          <h4 id="header">Summary</h4>
+          <h4 id="header">Comparing Kingdom</h4>
           <div class="wnotes vcenter">
             <ul class="fa-ul">
-              <li><i class="fa-li fal fa-angle-right"></i>Degree distributions differ significantly beween treatments and interaction types</li>
+              <li><i class="fa-li fal fa-angle-right"></i>Degree distributions differ significantly between interaction types</li>
               <ul class="fa-ul">
-                <li><i class="fa-li fal fa-angle-double-right"></i>in particular, fungi tend to have a larger impact on bacteria than vice versa</li>
-                <li><i class="fa-li fal fa-angle-double-right"></i>especially in control plants</li>
+                <li><i class="fa-li fal fa-angle-double-right"></i>in particular, fungi tend to have a larger impact on bacteria than vice versa (especially for control plants)</li>
               </ul>
-              <!-- <li><i class="fa-li fal fa-angle-right"></i>Isolates with high indegree tend to have lower outdegree</li> -->
               <li><i class="fa-li fal fa-angle-right"></i>Isolates cluster by kingdom</li>
               <ul class="fa-ul">
-                <li><i class="fa-li fal fa-angle-double-right"></i>but only for weighted networks in the control plants</li>
+                <li><i class="fa-li fal fa-angle-double-right"></i>but only for weighted networks in the control plants (both binary and weighted in NPK)</li>
               </ul>
               <li><i class="fa-li fal fa-angle-right"></i>Bacteria and fungi differ in their local structure in control plants</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            <p>
+
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h4 id="header">Comparing Treatment</h4>
+          <div class="wnotes vcenter">
+            <ul class="fa-ul">
+              <li><i class="fa-li fal fa-angle-right"></i>Degree distributions also differ significantly beween treatments</li>
               <li><i class="fa-li fal fa-angle-right"></i>There are few / weak differences in global network structure between treatments</li>
-              <li><i class="fa-li fal fa-angle-right"></i>Similarly, their global structures show little deviation from their random expectations</li>
+              <li><i class="fa-li fal fa-angle-right"></i>(Binary) control networks show little deviation from their random expectations</li>
               <ul class="fa-ul">
-                <li><i class="fa-li fal fa-angle-double-right"></i>with the possible exception of NPK, whre there are small, significant differences from expected</li>
+                <li><i class="fa-li fal fa-angle-double-right"></i>but even the significant differences in NPK, were usually small</li>
               </ul>
             </ul>
           </div>
@@ -1051,16 +1065,23 @@
         <section>
           <div class="wnotes vcenter">
             <ul class="fa-ul">
-              <li><i class="fa-li fal fa-angle-right"></i>Binary networks are approximately random</li>
-              <li><i class="fa-li fal fa-angle-right"></i>And in some cases highly degenerate</li>
-              <li><i class="fa-li fal fa-angle-right"></i>Dichotomization throws away information</li>
-              <li><i class="fa-li fal fa-angle-right"></i>but also accentuates some differences</li>
-              <li><i class="fa-li fal fa-angle-right"></i></li>
+              <li><i class="fa-li fal fa-lightbulb-exclamation"></i>Binary and Weighted network analysis offer complementary approaches</li>
+              <ul class="fa-ul" style="display:grid; grid-template-columns:1fr 1fr; grid-column-gap:5vw;">
+                <li><i class="fa-li fal fa-balance-scale-right"></i>Usually, weighted networks allow greater power of discrimination</li>
+                <li><i class="fa-li fal fa-balance-scale-left"></i>But many networks/analyses are not yet well-described for weighted graphs</li>
+              </ul>
+              <li><i class="fa-li fal fa-lightbulb-exclamation"></i>Nutrient ammendments level the playing field</li>
+              <ul class="fa-ul">
+                <li><i class="fa-li fal fa-angle-right"></i></li>
+                <li><i class="fa-li fal fa-angle-right"></i></li>
+              </ul>
             </ul>
           </div>
           <aside class="notes">
             <p>
 
+              Dichotomization throws away information
+              but also accentuates some differences
             </p>
           </aside>
         </section>
@@ -1070,15 +1091,19 @@
           <div class="wnotes vcenter">
               <h1>Thank you!</h1>
           </div>
-          <div style="position:absolute;bottom:0;left:5%;" id="abs_pos">
-            <img class="plain" src="../NSF_logo.png" style="display:inline-block;height:10vh;">
-            <img class="plain" src="../UMN_logo.png" style="display:inline-block;height:10vh;">
+          <div style="display:grid; grid-template-columns: 1fr 1fr 5fr; position:absolute;bottom:0;left:5%;" id="abs_pos">
+            <img class="plain" src="../NSF_logo.png" style="height:10vh;align-self:center;">
+            <img class="plain" src="../NutNet_logo.png" style="height:10vh;align-self:center;">
+            <img class="plain" src="../UMN_logo.png" style="height:7vh;align-self:center;">
           </div>
           <aside class="notes">
             <p>
               Thanks for viewing this presentation, if you have any feedback or
               questions, please <a href="mailto:michalsm@umn.edu">Email me</a>!
-            <p>
+            <p><p>
+              This work was funded through the National Science Foundation Division of Environmental
+              Biology (grant number <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1831944&HistoricalAwards=false">1831944)</a>
+            </p>
           </aside>
         </section>
       </div>
