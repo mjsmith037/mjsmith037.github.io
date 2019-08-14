@@ -331,7 +331,7 @@ full_join(
                by=c("leaf", "metric")) %>%
     group_by(leaf, metric) %>%
     summarise(p.value = sum(value.x < value.y) / n()) %>%
-    mutate(p.value = ifelse(leaf %in% names(number_of_unique_randomizations[number_of_unique_randomizations > 100]), p.value, NA),
+    mutate(p.value = ifelse(leaf %in% names(number_of_unique_randomizations[number_of_unique_randomizations > 20]), p.value, NA),
            sig = case_when(is.na(p.value)  ~ na_symbol,
                            p.value < 0.01  ~ sig_sig_small_symbol,
                            p.value < 0.05  ~ sig_small_symbol,
@@ -354,7 +354,7 @@ full_join(
                  mutate(leaf = names(sympatric_communities)) %>% gather("metric", "value", -leaf),
                by=c("leaf", "metric")) %>%
     mutate(z.score = ifelse(sd == 0, NaN, (value - mean) / sd)) %>%
-    mutate(z.score = ifelse(leaf %in% names(number_of_unique_randomizations[number_of_unique_randomizations > 100]),
+    mutate(z.score = ifelse(leaf %in% names(number_of_unique_randomizations[number_of_unique_randomizations > 20]),
                             z.score, NA)) %>%
     mutate(sig = case_when(is.na(z.score)  ~ na_symbol,
                            z.score < -4  ~ sig_sig_small_symbol,
@@ -384,7 +384,7 @@ full_join(
     full_join(sympatric_community_triads, by=c("leaf", "treatment", "triad")) %>%
     group_by(leaf, triad) %>%
     summarise(p.value = sum(count.x < count.y) / n()) %>%
-    mutate(p.value = ifelse(leaf %in% names(number_of_unique_randomizations[number_of_unique_randomizations > 100]), p.value, NA),
+    mutate(p.value = ifelse(leaf %in% names(number_of_unique_randomizations[number_of_unique_randomizations > 20]), p.value, NA),
            sig = case_when(is.na(p.value)  ~ na_symbol,
                            p.value < 0.01  ~ sig_sig_small_symbol,
                            p.value < 0.05  ~ sig_small_symbol,
@@ -404,7 +404,7 @@ full_join(
     ungroup() %>%
     full_join(sympatric_community_triads, by=c("leaf", "triad")) %>%
     mutate(z.score = ifelse(sd == 0, NaN, (count - mean) / sd)) %>%
-    mutate(z.score = ifelse(leaf %in% names(number_of_unique_randomizations[number_of_unique_randomizations > 100]),
+    mutate(z.score = ifelse(leaf %in% names(number_of_unique_randomizations[number_of_unique_randomizations > 20]),
                             z.score, NA)) %>%
     separate(leaf, c("treatment", "leaf"), 1) %>%
     mutate(sig = case_when(is.na(z.score)  ~ na_symbol,
@@ -431,3 +431,38 @@ full_join(
   save_kable("../Figures/triad_config_table.pdf",
              latex_header_includes="\\usepackage{tikz}\\usepackage[pro]{fontawesome5}\\definecolor{gray}{HTML}{888888}")
 system("pdftoppm ../Figures/triad_config_table.pdf ../Figures/triad_config_table -png -r 300")
+
+
+configmodel_metrics %>%
+  filter(leaf != "C5") %>%
+  gather("metric", "value", -leaf) %>%
+  group_by(leaf, metric) %>%
+  summarise(sd=sd(value), mean=mean(value)) %>%
+  ungroup() %>%
+  right_join(sympatric_communities %>% lapply(get_config_metrics) %>% bind_rows() %>%
+               mutate(leaf = names(sympatric_communities)) %>% gather("metric", "value", -leaf),
+             by=c("leaf", "metric")) %>%
+  mutate(z.score = ifelse(sd == 0, NaN, (value - mean) / sd)) %>%
+  mutate(z.score = ifelse(leaf %in% names(number_of_unique_randomizations[number_of_unique_randomizations > 100]),
+                          z.score, NA)) %>%
+  mutate(treatment = str_extract(leaf, "\\w")) %>%
+  group_by(metric) %>%
+  do(tidy_t_test_long(., "treatment", "z.score"))
+
+
+configmodel_community_triads %>%
+  group_by(leaf, triad) %>%
+  summarise(sd=sd(count), mean=mean(count)) %>%
+  ungroup() %>%
+  full_join(sympatric_community_triads, by=c("leaf", "triad")) %>%
+  mutate(z.score = ifelse(sd == 0, NaN, (count - mean) / sd)) %>%
+  mutate(z.score = ifelse(leaf %in% names(number_of_unique_randomizations[number_of_unique_randomizations > 20]),
+                          z.score, NA)) %>%
+  na.omit() %>%
+  separate(leaf, c("treatment", "leaf"), 1) %>%
+  add_count(triad, treatment) %>%
+  filter(n > 3) %>%
+  add_count(triad) %>%
+  filter(n > 4) %>%
+  group_by(triad) %>%
+  do(tidy_t_test_long(., "treatment", "z.score"))
