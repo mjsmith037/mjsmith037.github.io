@@ -72,7 +72,7 @@ section > div {
 }
 
 .fullwidth {
-  width:100%;
+  width:90vw !important;
   text-align:center;
 }
 
@@ -265,4 +265,8 @@ ul>ul>li {
 
 ol>ul>ul>li {
   font-size:60% !important;
+}
+
+.vcenter>ul {
+  max-width:75%;
 }

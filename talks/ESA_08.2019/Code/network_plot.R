@@ -74,10 +74,10 @@ layout_matrix <- network_data %>%
 ggraph(network_data %>% filter(treatment == "Control"), layout="manual",
        node.positions=layout_matrix[which(network_data %>% activate(nodes) %>% as_tibble() %>%
                                             use_series(treatment) %>% equals("Control")),]) +
-  geom_edge_link(aes(edge_colour=type), start_cap=circle(10, 'pt'), end_cap=circle(10, 'pt'),
+  geom_edge_link(aes(edge_colour=type), start_cap=circle(3, 'pt'), end_cap=circle(3, 'pt'),
                  edge_alpha=0.5,
-                 edge_width=0.66, arrow=arrow(angle=30, length=unit(3, "pt"), type="closed")) +
-  geom_node_text(aes(colour=type), label="disease", family="Font Awesome 5 Pro Solid", size=6) +
+                 edge_width=0.25, arrow=arrow(angle=30, length=unit(2, "pt"), type="closed")) +
+  geom_node_text(aes(colour=type), label="disease", family="Font Awesome 5 Pro Solid", size=2) +
   facet_nodes(~str_extract(leaf, "\\d"), nrow=3, scales="free") +
   scale_colour_manual(values=my_cols) +
   scale_edge_colour_manual(values=my_cols) +
@@ -88,15 +88,15 @@ ggraph(network_data %>% filter(treatment == "Control"), layout="manual",
         plot.background=element_blank(),
         strip.background=element_blank(), strip.text=element_blank(),
         legend.position="none")
-ggsave("../Figures/control_networks.png", width=8, height=12)
-# ggsave("../Figures/control_networks_weighted.png", width=8, height=12)
+ggsave("../Figures/control_networks.png", width=3, height=4.5)
+# ggsave("../Figures/control_networks_weighted.png", width=3, height=4.5)
 
-# ggraph(network_data %>% filter(treatment == "Control") %>% mutate(alph=ifelse(leaf == "C5", 0.5, 1)) %>% activate("edges") %>% mutate(alph=ifelse(leaf == "C5", 0.5, 1)), layout="manual",
+ggraph(network_data %>% filter(treatment == "Control") %>% mutate(alph=ifelse(leaf == "C5", 0.5, 1)) %>% activate("edges") %>% mutate(alph=ifelse(leaf == "C5", 0.5, 1)), layout="manual",
 #        node.positions=layout_matrix[which(network_data %>% activate(nodes) %>% as_tibble() %>%
 #                                             use_series(treatment) %>% equals("Control")),]) +
-#   geom_edge_link(aes(edge_colour=type, edge_alpha=0.5 * alph), start_cap=circle(10, 'pt'), end_cap=circle(10, 'pt'),
-#                  edge_width=0.66, arrow=arrow(angle=30, length=unit(3, "pt"), type="closed")) +
-#   geom_node_text(aes(colour=type, alpha=alph), label="disease", family="Font Awesome 5 Pro Solid", size=6) +
+#   geom_edge_link(aes(edge_colour=type, edge_alpha=0.5 * alph), start_cap=circle(3, 'pt'), end_cap=circle(3, 'pt'),
+#                  edge_width=0.25, arrow=arrow(angle=30, length=unit(3, "pt"), type="closed")) +
+#   geom_node_text(aes(colour=type, alpha=alph), label="disease", family="Font Awesome 5 Pro Solid", size=2) +
 #   facet_nodes(~str_extract(leaf, "\\d"), nrow=3, scales="free") +
 #   scale_colour_manual(values=my_cols) +
 #   scale_edge_colour_manual(values=my_cols) +
@@ -108,15 +108,15 @@ ggsave("../Figures/control_networks.png", width=8, height=12)
 #         plot.background=element_blank(),
 #         strip.background=element_blank(), strip.text=element_blank(),
 #         legend.position="none")
-# ggsave("../Figures/control_networks_weighted_fade_C5.png", width=8, height=12)
+# ggsave("../Figures/control_networks_weighted_fade_C5.png", width=3, height=4.5)
 
 ggraph(network_data %>% filter(treatment == "NPK Supplemented"), layout="manual",
        node.positions=layout_matrix[which(network_data %>% activate(nodes) %>% as_tibble() %>%
                                             use_series(treatment) %>% equals("NPK Supplemented")),]) +
-  geom_edge_link(aes(edge_colour=type), start_cap=circle(10, 'pt'), end_cap=circle(10, 'pt'),
+  geom_edge_link(aes(edge_colour=type), start_cap=circle(3, 'pt'), end_cap=circle(3, 'pt'),
                  edge_alpha=0.5,
-                 edge_width=0.66, arrow=arrow(angle=30, length=unit(3, "pt"), type="closed")) +
-  geom_node_text(aes(colour=type), label="disease", family="Font Awesome 5 Pro Solid", size=6) +
+                 edge_width=0.25, arrow=arrow(angle=30, length=unit(2, "pt"), type="closed")) +
+  geom_node_text(aes(colour=type), label="disease", family="Font Awesome 5 Pro Solid", size=2) +
   facet_nodes(~str_extract(leaf, "\\d"), nrow=3, scales="free") +
   scale_colour_manual(values=my_cols) +
   scale_edge_colour_manual(values=my_cols) +
@@ -127,5 +127,5 @@ ggraph(network_data %>% filter(treatment == "NPK Supplemented"), layout="manual"
         plot.background=element_blank(),
         strip.background=element_blank(), strip.text=element_blank(),
         legend.position="none")
-ggsave("../Figures/npk_networks.png", width=8, height=12)
-# ggsave("../Figures/npk_networks_weighted.png", width=8, height=12)
+ggsave("../Figures/npk_networks.png", width=3, height=4.5)
+# ggsave("../Figures/npk_networks_weighted.png", width=3, height=4.5)
