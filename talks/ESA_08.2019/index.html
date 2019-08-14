@@ -28,7 +28,8 @@
             <p><b>Matt Michalska-Smith</b><br>Lindsey Otto-Hanson, Georgiana May<br>Elizabeth Borer, Eric Seabloom<br>Linda Kinkel</p>
           </div>
           <aside class="notes">
-            <p>
+            Thank you, highlight Lindsey and Linda <br> Today I'm going to be talking about some eda of comp net...
+            <!-- <p>
               This talk was presented at the annual meeting of the Ecological Society of America in Louisville on 14 August, 2019.
               Text here will supplement slide material.
             </p><p>
@@ -47,7 +48,7 @@
               be more or less intelligible on smaller screens (no guarantees about phone screens).
               So, whenever you're ready...
             </p>
-            <span id="ns">next slide</span>
+            <span id="ns">next slide</span> -->
           </aside>
         </section>
 
@@ -62,7 +63,8 @@
           </div>
           <h4 id="citation" class="citwnotes"></h4>
           <aside class="notes">
-            <p>
+            but before we get into the methods, I want to detail how these data were collected
+            <!-- <p>
               A brief outline of the talk today. I'll start out detailing the
               source of the data, then I'll jump right into the results of our
               analysis, and end with a couple of synthesizing conclusions.
@@ -70,7 +72,7 @@
               Without further ado, let's get started...
             </p><span id="ns">next slide</span><p>
               by outlining the underlying experimental framework
-            </p>
+            </p> -->
           </aside>
         </section>
 
@@ -100,7 +102,10 @@
             </div>
           </div>
           <aside class="notes">
-            <p>
+            We collected data from twelve individual host plants: six of which were grown under what we'll call
+control conditions and six which have undergone 7 years of persistent nutrient supplementation in the form of
+N, P, and K as part of the nutnet experiment at the Cedar Creek Ecosystem reserve
+            <!-- <p>
               We are looking at the endophytic communities of six plants growing
               under each of two conditions as part of
               the <a href="http://www.nutnet.umn.edu/">Nutrient Network</a> experimental plots
@@ -111,7 +116,7 @@
               a treatment of plants that have received supplemental Nitrogen,
               Phosphorous, and Potassium (as well as some trace nutrients) over
               the course of 7 years.
-            </p>
+            </p> -->
           </aside>
         </section>
 
@@ -159,13 +164,15 @@
             </div>
           </div>
           <aside class="notes">
-            <p>
+for each of these twelve plants we clipped a leaf and from an approx 1cmx1cm section,
+we extracted twenty isolates: ten bacterial and ten fungal
+            <!-- <p>
               For each of these twelve plants,
             </p><span id="ns">next slide</span><p>
               we clipped off a leaf, and from a small
             </p><span id="ns">next slide</span><p>
               (approximately 1cm x 1cm fragment), we extract ten fungal isolates and ten bacterial isolates
-            </p>
+            </p> -->
           </aside>
         </section>
 
@@ -323,7 +330,12 @@
             </div>
           </div>
           <aside class="notes">
-            <p>
+            each of these isolates was then grown on a biolog plate, which, for those who aren't familiar, is a 96 ... <br>
+So, we get a measure of growth on each of these nutrients, and this allows us to infer a resource niche ... <br>
+but the real magic happens when we repeat this for a second isolate, in which case we can look at how much these two isolates eat the same things ... <br>
+we can quantify this to get a measure of niche overlap or resource competition, which we can do in an asymetric manner -- getting the effect of A on B and ... <br>
+Finally, we can do this for all possible pairs of isolates and put them together to form a network of interactions for the whole community
+            <!-- <p>
               Each isolate is grown on a Biolog plate, which is a 96 well plate
               where each well contains a different nutrient resource.
             </p><span id="ns">next slide</span><p>
@@ -337,7 +349,7 @@
             </p><span id="ns">next slide</span><p>
               Finally, we can put all of these pairwise interactions together into
               a complete network of resource competition.
-            </p>
+            </p> -->
           </aside>
         </section>
 
@@ -399,7 +411,11 @@
               <img class="plain fragment" style="position:absolute;" src="Figures/NO-histogram_no_line.svg">
             </div>
             <aside class="notes">
-              <p>
+note F > B <br>
+go one step further ... <br>
+note explicitly F -> B <br>
+all diff C v N except B->B
+              <!-- <p>
                 Perhaps the simplest measure of network structure is the distribution
                 of interaction strengths, termed the degree distribution. These histograms
                 include all of the pairwise interaction strengths, that is, the degree of
@@ -416,7 +432,7 @@
                 significantly between the two treatments (You can see the results of the
                 relevant statistical tests in a supplemental slide here, by pressing
                 <span class="key">Spc</span>, <span class="key">PgDn</span>, or <span class="key">n</span>)
-              </p>
+              </p> -->
             </aside>
           </section>
 
@@ -490,7 +506,10 @@
               <img class="plain fragment" data-fragment-index="1" style="position: absolute;" src="Figures/in-by-out-degree-distributions_subdivided.svg">
             </div>
             <aside class="notes">
-              <p>
+by looking at the relationship between outdegree (def) and indegree (def) we can see some addition detail <br>
+note negative slopes: winners and losers <br>
+can also break down by interaction type: these slopes are all significant, but the only other significant effect is between interaction types, not between treatments
+              <!-- <p>
                 One step up in complexity of network structure is to consider the relationship
                 between incoming and outgoing links in the same node. Here we plot the in-degree
                 against the outdegree for each node in our netwokrks, dividing nodes according
@@ -510,7 +529,7 @@
 
                 FINISH!!
 
-              </p>
+              </p> -->
             </aside>
           </section>
 
@@ -813,7 +832,10 @@
             <img class="plain fragment" src="Figures/NO-histogram_lines.svg" style="position: absolute;">
           </div>
           <aside class="notes">
-            <p>
+weighted networks are great, they provide a lot of information about the strength of interactions, but some
+network structural metrics are not well described for w nets. <br>
+fortunately, it is quite easy to make a weighted network binary, we just describe an arbitrary cutoff ....
+            <!-- <p>
               While this framework of measuring the degree of niche overlap between
               each pair of isolates provides a high level of detail about the structure
               of iteractions across the community, many of the most popular metrics of
@@ -827,7 +849,7 @@
               the two isolates, and below which we ignore the interaction as being too weak to be
               biologically relevant. For the following analyses, we use a, somewhat arbitrary,
               cutoff of 0.75.
-            </p>
+            </p> -->
           </aside>
         </section>
 
@@ -842,7 +864,9 @@
               <img class="fragment" data-fragment-index="1" style="border: 10px solid #d7471e; border-radius: 10px; justify-self: center; grid-row:2; grid-column: span 1 / -1;" src="Figures/npk_networks.png">
             </div>
             <aside class="notes">
-              <p>
+so how does this change our network plots? less hairball <br>
+note separation in NPK -- this is statistically significant clustering, but was even stronger in W nets (just couldn't see it)
+              <!-- <p>
                 If we look back at our networks from before, applying this threshold severely reduces
                 the number of links in each network:
               </p><span id="ns">next slide</span><p>
@@ -857,7 +881,7 @@
                 but not in the binary networks (despite the appearance of the binary networks inspiring this
                 analysis!). For the NPK plants, we see signficant clustering in both the binary and weighted
                 networks but again, more consistently in the weighted case.
-              </p>
+              </p> -->
             </aside>
           </section>
 
@@ -884,7 +908,10 @@
             <img class="plain" src="Figures/centrality_t_test_table-1.png">
           </div>
           <aside class="notes">
-<p>
+local mets: one for each isolate: comparing kingdom <br>
+explain table <br>
+don't mind the details, just notice many differences in control, very few in NPK
+<!-- <p>
   One of the most commonly utilized network structures is that of centrality. There
   are many different formulations for centrality, but they all boil down to assigning
   importance to each node in the network. What they differ in is how they define
@@ -913,7 +940,7 @@
   As can be seen, bacteria and fungi differ often in the control plants, but very rarely in
   the nutrient supplemented ones. This suggests some sort of equalizing force being applied
   in the NPK treatment.
-</p>
+</p> -->
           </aside>
         </section>
 
@@ -923,7 +950,10 @@
             <img class="plain" src="Figures/metric_raw_t_test-1.png">
           </div>
           <aside class="notes">
-<p>
+explaing global mets <br>
+explain table <br>
+no differenecs!
+<!-- <p>
   Looking at global measures of network structure (those that take the whole network
   into account in their calculation), we can compare the treatments more directly.
   Here, we report the total clustering coefficient, the proportion of realized
@@ -934,7 +964,7 @@
   NPK in each of these metrics (using t-tests), we see very few differences in structure between
   treatments. (Note that these results are qualitatively independent from the
   inclusion/exclusion of the outlying control network)
-</p>
+</p> -->
           </aside>
         </section>
 
@@ -944,7 +974,9 @@
             <img class="plain" src="Figures/triad_raw_t_test-1.png">
           </div>
           <aside class="notes">
-<p>
+same for triads <br>
+explain triads
+<!-- <p>
   Finally, there exists a middle-ground betwen local structures &mdash; those calculated
   for each node of the network individually, relying only upon the connections that isolate
   has, and global structures &mdash; those that take all of the network's connections into
@@ -955,7 +987,7 @@
               (Note that when the outlying control network is included in this
                analysis, a second significant difference is present in triad 2,
                where NPK plants have significantly higher counts than do control)
-            </p>
+            </p> -->
           </aside>
         </section>
 
@@ -965,7 +997,11 @@
             <img class="plain" src="Figures/metric_config_table-1.png">
           </div>
           <aside class="notes">
-<p>
+One of the issues with comparing networks directly is that there can be confounding differences
+for instance in size and connectance that are not as biologically relevant. to get around, do randomizations <br>
+explain table <br>
+many "significant" differences, but they are quite small
+<!-- <p>
   Whle comparing the two sets of networks directly provides insights about potential
   differences between treatments, a second type of comparison: that of a network
   against randomizations of its structure, provide .....
@@ -975,7 +1011,7 @@
   using the traditional p-value &gt; 0.95 or &lt; 0.05,
   respectively. If the empirical p.value is &gt; 0.99 or &lt; 0.01, then we
   use double arrows. Likewise for z-scores, using 2 (-2) and 4 (-4) as thresholds.
-            </p>
+            </p> -->
           </aside>
         </section>
 
@@ -985,12 +1021,13 @@
             <img class="plain" src="Figures/triad_config_table-1.png">
           </div>
           <aside class="notes">
-<p>
+and again this is repeated for the triad counts
+<!-- <p>
   As before, we also compare these counts agains what we would expect by random,
   assuming only the degree distribution is maintained. We see a similar pattern
   as with the global metrics: where there are many differences from random in the
   resource ammended plots, these differences are in general very small..
-</p>
+</p> -->
           </aside>
         </section>
 
@@ -1071,10 +1108,10 @@
                 <li  style="padding-top:5vh;"><i class="fa-li fas fa-disease bacto" data-fa-transform="down-12"></i><i class="fa-li fas fa-disease fungi fa-2x"></i>Fungi tend to have wider niches and greater overlap on bacterial isolates</li>
                 <li style="padding-top:5vh;"><span class="fa-li fa-layers"><i class="fas fa-disease bacto"></i><i class="fas fa-disease fungi" data-fa-transform="left-12"></i></span>But these differences are attenuated in NPK plants</li>
               </ul>
-              <li style="padding-top:7vh;"><i class="fa-li fal fa-lightbulb-exclamation"></i>Binary and Weighted network analysis offer complementary approaches</li>
-              <ul class="fa-ul" style="display:grid; grid-template-columns:1fr 1fr; grid-column-gap:10vw;">
-                <li  style="padding-top:5vh;"><i class="fa-li fal fa-balance-scale-right"></i>Usually, weighted networks allow greater power of discrimination</li>
-                <li style="padding-top:5vh;"><i class="fa-li fal fa-balance-scale-left"></i>But some network analyses are not yet well-described for weighted graphs</li>
+              <li style="padding-top:7vh;"><i class="fa-li fal fa-lightbulb-exclamation"></i>Despite pairwise differences, differences not visible in larger network structure</li>
+              <li style="padding-top:7vh;"><i class="fa-li fal fa-lightbulb-exclamation"></i>These small resource competition networks seem to be dominated by pairwise effects</li>
+              <ul class="fa-ul">
+                <li style="padding-top:5vh;"><span class="fa-li fa-layers"><i class="fad fa-chart-network" data-fa-transform="shrink-2" style="--fa-primary-color: #9b1d20; --fa-secondary-color: #006989; --fa-secondary-opacity: 1.0;"></i><i class="far fa-slash orange"></i><i class="fal fa-circle orange" data-fa-transform="grow-10"></i></span>No evidence of higher-order interactionsli>
               </ul>
             </ul>
           </div>
