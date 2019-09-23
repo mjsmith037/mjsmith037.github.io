@@ -257,13 +257,13 @@ get_triads_from_graph <- function(g) {
 }
 
 network_data %>%
+  filter(leaf != "C5") %>%
   morph(to_components) %>%
   crystallise() %>%
   rowwise() %>%
   do(get_triads_from_graph(.$graph)) %>%
   gather("triad", "value", -leaf, -treatment) %>%
   group_by(triad) %>%
-  filter(leaf != "C5") %>%
   do(tidy_t_test_long(., "treatment", "value")) %>%
   ungroup() %>%
   select(triad, Control, `NPK Supplemented`, p.value) %>%

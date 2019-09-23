@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 755.44067 462.59641"
+   version="1.1"
+   id="svg872"
+   sodipodi:docname="dampening-cycles_two.svg"
+   width="755.44067"
+   height="462.59641"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata876">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     id="namedview874"
+     showgrid="false"
+     inkscape:zoom="1.4126984"
+     inkscape:cx="153.24685"
+     inkscape:cy="186.97758"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg872"
+     fit-margin-top="5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5" />
+  <defs
+     id="defs4">
+    <style
+       type="text/css"
+       id="style2"><![CDATA[
+    line, polyline, polygon, path, rect, circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+  </defs>
+  <defs
+     id="defs13">
+    <clipPath
+       id="cpNDkuOTJ8MjE2LjgwfDEzMy43MXw1LjQ4">
+      <rect
+         x="49.919998"
+         y="5.48"
+         width="166.88"
+         height="128.23"
+         id="rect10"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs54">
+    <clipPath
+       id="cpMC4wMHw3NTYuMDB8NDMyLjAwfDAuMDA=">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect51"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs59">
+    <clipPath
+       id="cpNDkuOTJ8MjE2LjgwfDI2Ny40MXwxMzkuMTk=">
+      <rect
+         x="49.919998"
+         y="139.19"
+         width="166.88"
+         height="128.23"
+         id="rect56"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs103">
+    <clipPath
+       id="clipPath101">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect99"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs108">
+    <clipPath
+       id="cpNDkuOTJ8MjE2LjgwfDQwMS4xMnwyNzIuODk=">
+      <rect
+         x="49.919998"
+         y="272.89001"
+         width="166.88"
+         height="128.23"
+         id="rect105"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs152">
+    <clipPath
+       id="clipPath150">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect148"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs157">
+    <clipPath
+       id="cpMjIyLjI4fDM4OS4xNnwxMzMuNzF8NS40OA==">
+      <rect
+         x="222.28"
+         y="5.48"
+         width="166.88"
+         height="128.23"
+         id="rect154"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <polyline
+     points="229.86,76.48 230.88,76.16 231.90,79.84 232.92,82.05 233.93,83.64 234.95,91.08 235.97,105.23 236.99,118.16 238.01,124.97 239.02,127.17 240.04,127.69 241.06,127.81 242.08,127.84 243.10,127.84 244.12,127.79 245.13,127.49 246.15,125.64 247.17,118.32 248.19,104.55 249.21,87.78 250.22,75.21 251.24,75.11 252.26,81.84 253.28,84.35 254.30,80.32 255.32,75.75 256.33,76.99 257.35,80.66 258.37,82.31 259.39,84.76 260.41,94.33 261.42,109.00 262.44,120.52 263.46,125.84 264.48,127.39 265.50,127.74 266.52,127.82 267.53,127.85 268.55,127.84 269.57,127.76 270.59,127.27 271.61,124.46 272.62,115.27 273.64,100.34 274.66,83.71 275.68,73.91 276.70,76.73 277.72,83.15 278.73,83.82 279.75,78.82 280.77,75.48 281.79,77.97 282.81,81.30 283.82,82.59 284.84,86.40 285.86,97.96 286.88,112.53 287.90,122.44 288.92,126.46 289.93,127.53 290.95,127.77 291.97,127.83 292.99,127.85 294.01,127.83 295.02,127.70 296.04,126.92 297.06,122.81 298.08,111.83 299.10,95.99 300.12,80.09 301.13,73.56 302.15,78.57 303.17,84.03 304.19,82.87 305.21,77.46 306.22,75.67 307.24,79.00 308.26,81.77 309.28,83.02 310.30,88.63 311.32,101.80 312.33,115.70 313.35,123.95 314.37,126.90 315.39,127.63 316.41,127.80 317.42,127.84 318.44,127.85 319.46,127.81 320.48,127.61 321.50,126.36 322.52,120.65 323.53,108.08 324.55,91.59 325.57,77.13 326.59,74.08 327.61,80.39 328.62,84.42 329.64,81.60 330.66,76.37 331.68,76.25 332.70,79.94 333.72,82.09 334.73,83.75 335.75,91.43 336.77,105.68 337.79,118.46 338.81,125.09 339.82,127.20 340.84,127.70 341.86,127.81 342.88,127.84 343.90,127.84 344.92,127.79 345.93,127.47 346.95,125.52 347.97,117.99 348.99,104.06 350.01,87.29 351.02,75.01 352.04,75.28 353.06,82.01 354.08,84.31 355.10,80.14 356.12,75.70 357.13,77.10 358.15,80.75 359.17,82.34 360.19,84.92 361.21,94.74 362.22,109.43 363.24,120.77 364.26,125.92 365.28,127.41 366.30,127.74 367.32,127.83 368.33,127.85 369.35,127.84 370.37,127.75 371.39,127.23 372.41,124.29 373.42,114.88 374.44,99.84 375.46,83.25 376.48,73.82 377.50,76.94 378.52,83.28 379.53,83.73 380.55,78.65 381.57,75.48 "
+     style="fill:none;stroke:#016394;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+     clip-path="url(#cpMjIyLjI4fDM4OS4xNnwxMzMuNzF8NS40OA==)"
+     id="polyline191"
+     transform="translate(-0.07929701,33.248986)" />
+  <defs
+     id="defs199">
+    <clipPath
+       id="clipPath197">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect195"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs204">
+    <clipPath
+       id="cpMjIyLjI4fDM4OS4xNnwyNjcuNDF8MTM5LjE5">
+      <rect
+         x="222.28"
+         y="139.19"
+         width="166.88"
+         height="128.23"
+         id="rect201"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <polyline
+     points="229.86,183.90 230.88,181.45 231.90,179.77 232.92,178.77 233.93,178.16 234.95,178.24 235.97,179.66 236.99,182.59 238.01,186.54 239.02,190.85 240.04,195.14 241.06,199.29 242.08,203.25 243.10,207.03 244.12,210.60 245.13,213.91 246.15,216.69 247.17,217.77 248.19,215.70 249.21,210.47 250.22,203.29 251.24,196.49 252.26,191.70 253.28,188.56 254.30,185.91 255.32,183.22 256.33,180.93 257.35,179.46 258.37,178.57 259.39,178.09 260.41,178.45 261.42,180.28 262.44,183.54 263.46,187.64 264.48,191.97 265.50,196.23 266.52,200.33 267.53,204.24 268.55,207.97 269.57,211.48 270.59,214.70 271.61,217.20 272.62,217.56 273.64,214.63 274.66,208.73 275.68,201.41 276.70,195.05 277.72,190.78 278.73,187.87 279.75,185.22 280.77,182.56 281.79,180.48 282.81,179.19 283.82,178.40 284.84,178.07 285.86,178.77 286.88,181.00 287.90,184.54 288.92,188.75 289.93,193.08 290.95,197.30 291.97,201.36 292.99,205.22 294.01,208.89 295.02,212.34 296.04,215.45 297.06,217.57 298.08,217.13 299.10,213.35 300.12,206.89 301.13,199.59 302.15,193.76 303.17,189.95 304.19,187.19 305.21,184.52 306.22,181.95 307.24,180.08 308.26,178.95 309.28,178.26 310.30,178.12 311.32,179.20 312.33,181.81 313.35,185.59 314.37,189.86 315.39,194.18 316.41,198.36 317.42,202.37 318.44,206.19 319.46,209.80 320.48,213.19 321.50,216.14 322.52,217.76 323.53,216.47 324.55,211.89 325.57,204.99 326.59,197.89 327.61,192.61 328.62,189.19 329.64,186.52 330.66,183.82 331.68,181.38 332.70,179.73 333.72,178.74 334.73,178.15 335.75,178.26 336.77,179.73 337.79,182.70 338.81,186.67 339.82,190.98 340.84,195.27 341.86,199.41 342.88,203.37 343.90,207.14 344.92,210.70 345.93,214.01 346.95,216.75 347.97,217.76 348.99,215.59 350.01,210.27 351.02,203.07 352.04,196.32 353.06,191.59 354.08,188.48 355.10,185.83 356.12,183.14 357.13,180.88 358.15,179.43 359.17,178.55 360.19,178.08 361.21,178.48 362.22,180.36 363.24,183.66 364.26,187.77 365.28,192.10 366.30,196.35 367.32,200.45 368.33,204.36 369.35,208.08 370.37,211.58 371.39,214.79 372.41,217.25 373.42,217.52 374.44,214.49 375.46,208.52 376.48,201.19 377.50,194.89 378.52,190.68 379.53,187.79 380.55,185.14 381.57,182.49 "
+     style="fill:none;stroke:#016394;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+     clip-path="url(#cpMjIyLjI4fDM4OS4xNnwyNjcuNDF8MTM5LjE5)"
+     id="polyline240"
+     transform="translate(-0.07929701,33.248986)" />
+  <defs
+     id="defs248">
+    <clipPath
+       id="clipPath246">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect244"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs253">
+    <clipPath
+       id="cpMjIyLjI4fDM4OS4xNnw0MDEuMTJ8MjcyLjg5">
+      <rect
+         x="222.28"
+         y="272.89001"
+         width="166.88"
+         height="128.23"
+         id="rect250"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <polyline
+     points="229.86,304.90 230.88,305.27 231.90,305.73 232.92,306.27 233.93,306.43 234.95,305.62 235.97,303.84 236.99,301.42 238.01,298.88 239.02,297.22 240.04,296.76 241.06,296.76 242.08,296.45 243.10,295.82 244.12,295.46 245.13,295.52 246.15,295.69 247.17,295.84 248.19,296.30 249.21,297.36 250.22,298.67 251.24,300.01 252.26,301.53 253.28,303.15 254.30,304.39 255.32,305.01 256.33,305.37 257.35,305.88 258.37,306.37 259.39,306.33 260.41,305.24 261.42,303.27 262.44,300.74 263.46,298.33 264.48,297.01 265.50,296.75 266.52,296.73 267.53,296.30 268.55,295.68 269.57,295.44 270.59,295.57 271.61,295.72 272.62,295.91 273.64,296.52 274.66,297.69 275.68,299.01 276.70,300.38 277.72,301.96 278.73,303.53 279.75,304.61 280.77,305.11 281.79,305.48 282.81,306.02 283.82,306.44 284.84,306.15 285.86,304.80 286.88,302.66 287.90,300.06 288.92,297.86 289.93,296.87 290.95,296.76 291.97,296.66 292.99,296.13 294.01,295.57 295.02,295.46 296.04,295.61 297.06,295.76 298.08,296.01 299.10,296.78 300.12,298.03 301.13,299.35 302.15,300.76 303.17,302.38 304.19,303.87 305.21,304.78 306.22,305.19 307.24,305.61 308.26,306.16 309.28,306.46 310.30,305.90 311.32,304.31 312.33,302.01 313.35,299.41 314.37,297.48 315.39,296.79 316.41,296.77 317.42,296.57 318.44,295.96 319.46,295.50 320.48,295.49 321.50,295.66 322.52,295.79 323.53,296.14 324.55,297.07 325.57,298.37 326.59,299.70 327.61,301.17 328.62,302.80 329.64,304.17 330.66,304.92 331.68,305.28 332.70,305.75 333.72,306.28 334.73,306.42 335.75,305.58 336.77,303.78 337.79,301.34 338.81,298.81 339.82,297.19 340.84,296.75 341.86,296.76 342.88,296.43 343.90,295.80 344.92,295.46 345.93,295.53 346.95,295.69 347.97,295.84 348.99,296.32 350.01,297.39 351.02,298.71 352.04,300.05 353.06,301.58 354.08,303.20 355.10,304.42 356.12,305.02 357.13,305.38 358.15,305.89 359.17,306.38 360.19,306.31 361.21,305.19 362.22,303.20 363.24,300.66 364.26,298.27 365.28,296.99 366.30,296.75 367.32,296.72 368.33,296.28 369.35,295.67 370.37,295.44 371.39,295.57 372.41,295.73 373.42,295.92 374.44,296.55 375.46,297.73 376.48,299.05 377.50,300.42 378.52,302.00 379.53,303.57 380.55,304.63 381.57,305.12 "
+     style="fill:none;stroke:#016394;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+     clip-path="url(#cpMjIyLjI4fDM4OS4xNnw0MDEuMTJ8MjcyLjg5)"
+     id="polyline289"
+     transform="translate(-0.07929701,33.248986)" />
+  <defs
+     id="defs297">
+    <clipPath
+       id="clipPath295">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect293"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs302">
+    <clipPath
+       id="cpMzk0LjYzfDU2MS41MXwxMzMuNzF8NS40OA==">
+      <rect
+         x="394.63"
+         y="5.48"
+         width="166.88"
+         height="128.23"
+         id="rect299"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs344">
+    <clipPath
+       id="clipPath342">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect340"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs349">
+    <clipPath
+       id="cpMzk0LjYzfDU2MS41MXwyNjcuNDF8MTM5LjE5">
+      <rect
+         x="394.63"
+         y="139.19"
+         width="166.88"
+         height="128.23"
+         id="rect346"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs393">
+    <clipPath
+       id="clipPath391">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect389"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs398">
+    <clipPath
+       id="cpMzk0LjYzfDU2MS41MXw0MDEuMTJ8MjcyLjg5">
+      <rect
+         x="394.63"
+         y="272.89001"
+         width="166.88"
+         height="128.23"
+         id="rect395"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs442">
+    <clipPath
+       id="clipPath440">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect438"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs447">
+    <clipPath
+       id="cpNTY2Ljk5fDczMy44N3wxMzMuNzF8NS40OA==">
+      <rect
+         x="566.98999"
+         y="5.48"
+         width="166.88"
+         height="128.23"
+         id="rect444"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs489">
+    <clipPath
+       id="clipPath487">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect485"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs494">
+    <clipPath
+       id="cpNTY2Ljk5fDczMy44N3wyNjcuNDF8MTM5LjE5">
+      <rect
+         x="566.98999"
+         y="139.19"
+         width="166.88"
+         height="128.23"
+         id="rect491"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs538">
+    <clipPath
+       id="clipPath536">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect534"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs543">
+    <clipPath
+       id="cpNTY2Ljk5fDczMy44N3w0MDEuMTJ8MjcyLjg5">
+      <rect
+         x="566.98999"
+         y="272.89001"
+         width="166.88"
+         height="128.23"
+         id="rect540"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs587">
+    <clipPath
+       id="clipPath585">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect583"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs592">
+    <clipPath
+       id="cpNDkuOTJ8MjE2LjgwfDUuNDh8NS40OA==">
+      <rect
+         x="49.919998"
+         y="5.48"
+         width="166.88"
+         height="0"
+         id="rect589"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs598">
+    <clipPath
+       id="clipPath596">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect594"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs603">
+    <clipPath
+       id="cpMjIyLjI4fDM4OS4xNnw1LjQ4fDUuNDg=">
+      <rect
+         x="222.28"
+         y="5.48"
+         width="166.88"
+         height="0"
+         id="rect600"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs609">
+    <clipPath
+       id="clipPath607">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect605"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs614">
+    <clipPath
+       id="cpMzk0LjYzfDU2MS41MXw1LjQ4fDUuNDg=">
+      <rect
+         x="394.63"
+         y="5.48"
+         width="166.88"
+         height="0"
+         id="rect611"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs620">
+    <clipPath
+       id="clipPath618">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect616"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs625">
+    <clipPath
+       id="cpNTY2Ljk5fDczMy44N3w1LjQ4fDUuNDg=">
+      <rect
+         x="566.98999"
+         y="5.48"
+         width="166.88"
+         height="0"
+         id="rect622"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs631">
+    <clipPath
+       id="clipPath629">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect627"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs636">
+    <clipPath
+       id="cpNzMzLjg3fDc1MC41MnwxMzMuNzF8NS40OA==">
+      <rect
+         x="733.87"
+         y="5.48"
+         width="16.65"
+         height="128.23"
+         id="rect633"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs648">
+    <clipPath
+       id="clipPath646">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect644"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs653">
+    <clipPath
+       id="cpNzMzLjg3fDc1MC41MnwyNjcuNDF8MTM5LjE5">
+      <rect
+         x="733.87"
+         y="139.19"
+         width="16.65"
+         height="128.23"
+         id="rect650"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs665">
+    <clipPath
+       id="clipPath663">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect661"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs670">
+    <clipPath
+       id="cpNzMzLjg3fDc1MC41Mnw0MDEuMTJ8MjcyLjg5">
+      <rect
+         x="733.87"
+         y="272.89001"
+         width="16.65"
+         height="128.23"
+         id="rect667"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs682">
+    <clipPath
+       id="clipPath680">
+      <rect
+         x="0"
+         y="0"
+         width="756"
+         height="432"
+         id="rect678"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </clipPath>
+  </defs>
+  <g
+     id="g1570-7"
+     transform="matrix(0.58314473,0,0,0.58314473,207.58394,110.98423)">
+    <path
+       style="fill:#016394;fill-opacity:0.4;stroke:#000000;stroke-width:0.08526248;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="path6-0-9"
+       class="fa-secondary"
+       d="m 157.93812,-171.38719 -4.73036,9.46414 a 5.4866407,5.4866407 0 0 0 -0.57638,2.43851 v 21.4401 h -10.91359 v -34.10499 a 9.5434299,9.5434299 0 0 1 18.91719,-1.79819 l -0.0315,0.0145 a 5.4670304,5.4670304 0 0 0 -2.6653,2.54594 z"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#016394;fill-opacity:1;stroke:#000000;stroke-width:0.08526248;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="path8-9-4"
+       class="fa-primary"
+       d="m 190.54079,-160.7055 -4.73121,-9.46414 a 2.7283995,2.7283995 0 0 0 -1.33181,-1.27297 l -10.27498,-4.5641 a 2.7283995,2.7283995 0 0 0 -2.21682,0 l -10.27498,4.56666 a 2.7283995,2.7283995 0 0 0 -1.3318,1.27297 l -4.73122,9.46414 a 2.7352205,2.7352205 0 0 0 -0.28819,1.2184 v 21.4401 h 10.9136 v -8.1852 h 13.642 v 8.1852 h 10.9136 v -21.4401 a 2.7352205,2.7352205 0 0 0 -0.28819,-1.22096 z m -13.35381,6.29066 h -8.1852 v -8.1852 h 8.1852 z"
+       inkscape:connector-curvature="0" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.82711411px;line-height:1.25;font-family:'Font Awesome 5 Pro';-inkscape-font-specification:'Font Awesome 5 Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.09567785"
+     x="199.4429"
+     y="37.192261"
+     id="text1574-9-0"
+     inkscape:transform-center-x="70.971447"
+     inkscape:transform-center-y="58.924989"><tspan
+       sodipodi:role="line"
+       x="199.4429"
+       y="37.192261"
+       style="stroke-width:1.09567785"
+       id="tspan1669-4">long-arrow-alt-right</tspan></text>
+</svg>
