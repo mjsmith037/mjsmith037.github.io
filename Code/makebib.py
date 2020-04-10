@@ -2,6 +2,8 @@ import re
 
 """ author parsing function """
 def parseauth(author):
+    if author == '\\ldots':
+        return('<span class="author">...</span>')
     lastname, firstname = [xx.strip() for xx in author.split(',')]
     initials = ''.join([xx[0] + '.' for xx in firstname.split(' ')])
     # sanitization (latex -> html)
@@ -12,7 +14,7 @@ def parseauth(author):
         lastname = lastname.replace('\\textsuperscript*', '')
         cofirst = '<sup title="These authors contributed equally to this publication">&#42;</sup>'
     cc = 'author'
-    if (re.match('Michalska-Smith|Smith', lastname) and firstname == 'Matthew J.'):
+    if (re.match('Michalska-Smith|Smith', lastname) and re.match('Matthew( J.)?', firstname)):
         cc = cc + ' pi'
     return('<span class="' + cc + '">' + initials + ' ' + lastname + '</span>' + cofirst)
 
