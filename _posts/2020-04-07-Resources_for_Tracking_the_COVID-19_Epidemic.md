@@ -99,11 +99,11 @@ epidemics</span>.
 ### 1. [91-DIVOC](http://91-divoc.com/pages/covid-visualization/)
 
 This is my favorite visualization for understanding the spread of COVID-19. I look at each of the
-four main plots each day, and they have recently added the ability to keep track of county level
-data as well (which I use to keep tabs on friends and family across the country). On the main page,
-there are four plots, grouped into two classes. The first two look at absolute numbers at the
-country and US state levels, respectively. And the second two look at numbers normalized by
-population size, again for countries and US states.
+four main plots each day, and they have recently added the [ability to keep track of county level
+data as well](http://91-divoc.com/pages/covid-by-your-locations/) (which I use to keep tabs on
+friends and family across the country). On the main page, there are four plots, grouped into two
+classes. The first two look at absolute numbers at the country and US state levels, respectively.
+And the second two look at numbers normalized by population size, again for countries and US states.
 
 There are two key elements to these plots that make them more informative than most. First, the
 plots horizontal axes are set by the number of days since a threshold level of cases was reached.
