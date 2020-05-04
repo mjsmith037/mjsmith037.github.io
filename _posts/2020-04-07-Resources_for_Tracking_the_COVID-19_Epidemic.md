@@ -137,6 +137,8 @@ JHU site).
 
 ### 3. [A countervailing perspective](https://movement-wildlife.shinyapps.io/APP-2/)
 
+**UPDATE (4 May 2020) : this site appears to no longer be functioning properly, so I have since stopped using it as a reference.**
+
 This is probably one you haven't heard about. It is a relatively simple phenomonological<sup><label
 for="phenom" class="margin-toggle sidenote-number"></label></sup><input type="checkbox" id="phenom"
 class="margin-toggle" /><span class="sidenote">a model that only cares about prediction, not

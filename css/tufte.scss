@@ -27,30 +27,34 @@ nav_exclude: true
   clear: both;
 }
 
-html, body { height: 100%; font-size:100%; }
+html, body { height: 100%; }
 
 html{
-    text-align: baseline;
+    vertical-align: baseline;
     font-size: 1rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
   }
 
-@media screen and (min-width: 800px){ html{ font-size: 14px;} }
+@media screen and (min-width: 800px){ html{ font-size: 12px;} }
 
-@media screen and (min-width: 900px){ html{ font-size: 16px;} }
+@media screen and (min-width: 900px){ html{ font-size: 13px;} }
 
-@media screen and (min-width: 1000px){ html{ font-size: 18px;} }
+@media screen and (min-width: 1000px){ html{ font-size: 14px;} }
 
-@media screen and (min-width: 1100px){ html{ font-size: 20px; } }
+@media screen and (min-width: 1100px){ html{ font-size: 15px; } }
+
+@media screen and (min-width: 1200px){ html{ font-size: 16px; } }
+
+@media screen and (min-width: 1300px){ html{ font-size: 17px; } }
 
 // sets link style according to values in _settings.scss
-.mathblock{
+.mjx-math{
   font-size: 1.3rem;
 }
 
-body.post { width: 95%;
+body { width: 95%;
        margin-left: auto;
        margin-right: auto;
        padding-left: 3%;
@@ -68,17 +72,17 @@ body.post { width: 95%;
 //      line-height: 0.784; }
 
 h1 { font-weight: 600;
-     margin-top: 1.866666666666667rem;
+     font-size: 2.5rem;
+     margin-top: 1.568rem;
      margin-bottom: 0;
-     font-size: 2.1rem;
-     line-height: 0.933333333333333; }
+     line-height: 0.784; }
 
 h2 { font-family: $sc-font;
      font-weight: 400;
      font-size: 1.8rem;
-     margin-top: 2.1777777777777778rem;
-     margin-bottom: 0;
-     line-height: 1.08888888888889; }
+     margin-top: 1.866666666666667rem;
+     margin-bottom: 0.088888888889;
+     line-height: 0.933333333333333; }
 
 h3 { font-style: italic;
      font-weight: 400;
@@ -95,17 +99,36 @@ p .subtitle { font-style: italic;
              display: block;
              line-height: 1.08888888888889; }
 
-blockquote p {  font-size: 1.1rem;
+/* Chapter Epigraphs */
+div.epigraph { margin: 3.5636rem 0; }
+
+div.epigraph > blockquote { margin-top: 3rem;
+                            margin-bottom: 3rem;
+                             }
+
+div.epigraph > blockquote, div.epigraph > blockquote > p { font-style: italic; }
+
+div.epigraph > blockquote > footer {  font-style: normal;
+                                      width: 45%;
+                                      padding-left: 2.5%;
+                                      padding-right: 2.5%;
+                                      padding-top: 0;
+                                      margin-top: 0.4455rem;
+                                      margin-bottom: 3.1182rem }
+
+div.epigraph > blockquote > footer > cite { font-style: italic; }
+/* end chapter epigraphs styles */
+
+blockquote p, blockquote footer{  width: 45%;
+                                  padding-left: 2.5%;
+                                  padding-right: 2.5%;}
+
+blockquote footer {  font-size: 1.1rem;
                 line-height: 1.78181818;
                 margin-top: 1.78181818rem;
                 margin-bottom: 1.78181818rem;
-                width: 45%;
-                padding-left: 2.5%;
-                padding-right: 2.5%; }
-
-blockquote footer { width: 45%;
-                    text-align: right; }
-
+                text-align: right;
+                 }
 
 .sans { font-family: $sans-font;
         letter-spacing: .03em; }
@@ -123,15 +146,18 @@ h1 code, h2 code, h3 code { font-size: 0.80em; } //left in for no real reason
 table, table.booktabs { width: auto;  //making booktabs style tables the unstyled default in case someone uses Markdown styling
                  margin: 0 auto;
                  border-spacing: 0px;
-                 }
+                 border-top: 2px solid $border-color;
+                 border-bottom: 2px solid $border-color; }
 
-.booktabs th, th { padding: 0.65ex 0.5em 0.4ex 0.5em;
-   font-weight: normal;
-   text-align: center;
- }
+.booktabs th, th { border-bottom: 1px solid $border-color;
+               padding: 0.65ex 0.5em 0.4ex 0.5em;
+               font-weight: normal;
+               text-align: center; }
 
 th, td{ font-size: 1.2rem;
         line-height: 1.71428571;  }
+
+.booktabs th.cmid, th { border-bottom: 1px solid lighten($border-color, 25%); }
 
 .booktabs th.nocmid { border-bottom: none; }
 
@@ -176,6 +202,15 @@ section { padding-top: 1rem;
 
 //li { padding: 0.5em 0; } //vertical padding on list items screws up vertical rhythym
 
+article ul { width: 70%;
+             list-style-type: none; }
+article ul li p { width: 100% !important; }
+
+article ol { width: 70%; }
+article ol li p { width: 100% !important; }
+article ol li::marker { font-weight: 600;
+                        font-size: 1.5rem; }
+
 figure, figure img.maincolumn { max-width: 55%;
          -webkit-margin-start: 0;
          -webkit-margin-end: 0;
@@ -183,7 +218,7 @@ figure, figure img.maincolumn { max-width: 55%;
 
 figcaption { float: right;
              clear: right;
-             margin-right: -48%;
+             margin-right: -50%;
              margin-top: 0;
              margin-bottom: 0;
              font-size: 1.0rem;
@@ -192,7 +227,7 @@ figcaption { float: right;
              position: relative;
              max-width: 40%; }
 
-figure.fullwidth figcaption { float: left; margin-right: 0%; margin-left: 36%; }
+figure.fullwidth figcaption { float: left; margin-right: 0%; margin-left: 33%; max-width: 100%; }
 
 img { max-width: 100%; }
 
@@ -202,18 +237,18 @@ img { max-width: 100%; }
                          width: 42%;
                          margin-top: 0;
                          margin-bottom: 1.96rem;
-                         font-size: .9rem;
+                         font-size: 1rem;
                          vertical-align: baseline;
                          position: relative; }
 
-li .sidenote, li .marginnote{ margin-right: -100%; } //added to allow for the fact that lists are indented and marginnotes and sidenotes push to right
 
-blockquote .sidenote, blockquote .marginnote { margin-right: -95% }
+blockquote .sidenote, blockquote .marginnote { margin-right: -79% }
 
 .sidenote-number { counter-increment: sidenote-counter; }
 
 .sidenote-number:after, .sidenote:before { content: counter(sidenote-counter) " ";
                                            font-family: $serif-font;
+                                           color: $contrast-color; //added color
                                            vertical-align: baseline; }
 
 .sidenote-number:after { content: counter(sidenote-counter);
@@ -225,28 +260,28 @@ blockquote .sidenote, blockquote .marginnote { margin-right: -95% }
                    color: $contrast-color;
                    top: 0rem; } //removed superscripting for numerical reference in sidenote
 
-.post p, .post div.table-wrapper, .post div.mathblock{ width: 70%; }
+.post p, .post div.table-wrapper, .post div.mathblock { width: 70%; }
 
 div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
 
-@media screen and (max-width: 760px) { p, footer,div.mathblock { width: 90%; }
+@media screen and (max-width: 760px) { p, footer { width: 90%; }
                                        pre code { width: 87.5%; }
-                                       ul { width: 85%; }
+                                       ul, ol { width: 85%; }
                                        figure { max-width: 90%; }
                                        figcaption, figure.fullwidth figcaption { margin-right: 0%;
                                                                                  max-width: none; }
-                                       blockquote p, blockquote footer {  width: 80%;
+                                       blockquote p, blockquote footer, div.epigraph > blockquote > footer,.MJXc-display {  width: 80%;
                                                                           padding-left: 5%;
                                                                           padding-right: 5%;
                                                                         }}
 
 .marginnote code, .sidenote code { font-size: 1rem; } //more .code class removal
 
-pre, pre code, p pre code { width: 52.5%;
+pre { width: 52.5%; //, pre code, p pre code are both selectors in tufte.css - they have been removed here to fix alignment issues
            padding-left: 2.5%;
            overflow-x: auto; }
 
-// .fullwidth, li.listing div{ max-width: 90%; }
+.fullwidth, li.listing div{ max-width: 90%; }
 
 .full-width { .sidenote, .sidenote-number, .marginnote { display: none; } }
 
@@ -286,7 +321,10 @@ label.margin-toggle:not(.sidenote-number) { display: none; }
                                              position: relative; }
                             div.table-wrapper, table, table.booktabs { width: 85%; }
                             div.table-wrapper { border-right: 1px solid #efefef; }
-                            img { max-width: 100%; } }
+                            img { max-width: 100%; }
+                            figcaption.maincolumn-figure, figure.fullwidth figcaption { float:none; text-align: center;}
+                            figure.fullwidth figcaption { margin-left: 0; }
+                          }
 /*--- End of Basic Layout stuff from tufte.css ---*/
 
 /* -- Jekyll specific styling --*/
