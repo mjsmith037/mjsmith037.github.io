@@ -38,7 +38,7 @@ numbers are very rarely included in the analyses and visualizations you will fin
 Third, testing intensity differs across localities, and testing is strongly correlated with the
 number of cases detected<label for="testfig" class="margin-toggle">&#8853;</label><input
 type="checkbox" class="margin-toggle" id="testfig"/><span class="marginnote"><a
-href="/Images/cases_by_tests.png"><img src="/Images/blog_figures/cases_by_tests.png" alt="A plot relating testing
+href="/Images/blog_figures/cases_by_tests.png"><img src="/Images/blog_figures/cases_by_tests.png" alt="A plot relating testing
 to number of cases"/></a></span> and death rates. Put simply, the more tests you perform, the more
 cases you will detect<sup><label for="testing" class="margin-toggle
 sidenote-number"></label></sup><input type="checkbox" id="testing" class="margin-toggle"/><span
