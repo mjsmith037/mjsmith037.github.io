@@ -18,7 +18,7 @@ class="sidenote">like those mentioned [in the last post](Resources_for_Tracking_
 
 First, one must be sure the numbers are normalized by population. A reasonable expectation is that,
 ideally, this would be normalizing by population **density** rather than just population, but doing
-so for countries is complicated by its highly heterogeneous nature. Namely, there are very dense
+so for countries is complicated by how heterogeneous density is across space. Namely, there are very dense
 (*e.g.* New York City at more than 26 000 people/mile<sup>2</sup>) and very sparse (*e.g.* the state
 of Wyoming with only 6 people/mile<sup>2</sup>) areas within the same country. Because of this,
 calculating population density by dividing total population by total land area often leads to a
