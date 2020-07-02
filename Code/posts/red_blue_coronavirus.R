@@ -157,7 +157,7 @@ left_join(county_populations %>% mutate(fips = as.integer(fips)),
   na.omit() %>%
   mutate(date = mdy(date)) %>%
   filter(date >= mdy("02-29-2020")) %>%
-  group_by(fips) %>% mutate(cases = (cases - lag(cases)) / population_density) %>% ungroup() %>%
+  group_by(fips) %>% mutate(cases = (cases - lag(cases)) / population) %>% ungroup() %>%
   count(date, party, wt=cases) %>%
   group_by(date) %>% mutate(percent = n / sum(n)) %>% ungroup() %>%
   {ggplot(.) + aes(x=date, y=percent, colour=party) +
@@ -237,8 +237,9 @@ ggsave("../../Images/blog_figures/red_blue_coronavirus/county_densities.png", wi
 left_join(county_populations %>% mutate(fips = as.integer(fips)),
           cases_by_county, by=c("fips")) %>% left_join(county_party, by=c("fips"="FIPS")) %>%
   mutate(date = mdy(date)) %>%
-  filter(date >= mdy("02-29-2020")) %>%
-  group_by(fips) %>% mutate(cases = (cases - lag(cases))/population) %>% ungroup() %>% na.omit() %>%
+  filter(date >= mdy("04-01-2020")) %>%
+  group_by(fips) %>% mutate(cases = (cases - lag(cases))/population/population_density) %>% ungroup() %>% na.omit() %>%
+  # filter(cases > 0) %>%
   {
     ggplot(.) +
       aes(x=date, y=cases, colour=party) +
@@ -255,3 +256,4 @@ left_join(county_populations %>% mutate(fips = as.integer(fips)),
                          legend.position="bottom",
                          legend.text=element_text(size=12),
                          axis.title.x=element_blank())}
+
