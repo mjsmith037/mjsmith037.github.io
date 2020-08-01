@@ -66,7 +66,7 @@ left_join(county_populations %>% mutate(fips = as.integer(fips)),
                          legend.position="bottom",
                          axis.title.x=element_blank()) +
       labs(caption="COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University")}
-ggsave("../../Images/blog_figures/red_blue_coronavirus/counties_by_density.png", width=10, height=6)
+# ggsave("../../Images/blog_figures/red_blue_coronavirus/counties_by_density.png", width=10, height=6)
 
 left_join(county_populations %>% mutate(fips = as.integer(fips)),
           cases_by_county, by=c("fips")) %>%
@@ -149,7 +149,7 @@ left_join(county_populations %>% mutate(fips = as.integer(fips)),
                          legend.text=element_text(size=14),
                          axis.title.x=element_blank()) +
       labs(caption="MIT Election Data and Science Lab, 2018, Harvard Dataverse, County Presidential Election Returns 2000-2016\nCOVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University")}
-ggsave("../../Images/blog_figures/red_blue_coronavirus/counties_redo.png", width=10, height=6)
+# ggsave("../../Images/blog_figures/red_blue_coronavirus/counties_redo.png", width=10, height=6)
 
 left_join(county_populations %>% mutate(fips = as.integer(fips)),
           cases_by_county, by=c("fips")) %>%
@@ -182,7 +182,7 @@ left_join(county_populations %>% mutate(fips = as.integer(fips)),
                          legend.text=element_text(size=14),
                          axis.title.x=element_blank()) +
       labs(caption="MIT Election Data and Science Lab, 2018, Harvard Dataverse, County Presidential Election Returns 2000-2016\nCOVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University")}
-ggsave("../../Images/blog_figures/red_blue_coronavirus/counties_percapita.png", width=10, height=6)
+# ggsave("../../Images/blog_figures/red_blue_coronavirus/counties_percapita.png", width=10, height=6)
 
 left_join(county_populations %>% mutate(fips = as.integer(fips)),
           cases_by_county, by=c("fips")) %>%
@@ -208,7 +208,7 @@ left_join(county_populations %>% mutate(fips = as.integer(fips)),
                          legend.text=element_text(size=14),
                          axis.title.x=element_blank()) +
       labs(caption="MIT Election Data and Science Lab, 2018, Harvard Dataverse, County Presidential Election Returns 2000-2016\nCOVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University")}
-ggsave("../../Images/blog_figures/red_blue_coronavirus/total_newcases.png", width=10, height=6)
+# ggsave("../../Images/blog_figures/red_blue_coronavirus/total_newcases.png", width=10, height=6)
 
 
 left_join(county_populations %>% mutate(fips = as.integer(fips)),
@@ -230,7 +230,7 @@ left_join(county_populations %>% mutate(fips = as.integer(fips)),
                                  legend.position="bottom",
                                  legend.text=element_text(size=12))
           }
-ggsave("../../Images/blog_figures/red_blue_coronavirus/county_densities.png", width=7, height=5)
+# ggsave("../../Images/blog_figures/red_blue_coronavirus/county_densities.png", width=7, height=5)
 
 
 
