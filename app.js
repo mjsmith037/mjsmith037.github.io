@@ -22,20 +22,20 @@ $(document).ready(function(){
         if (activeTab.length) {
             activeTab.tab('show');
         } else { /*This part still not working*/
-            $('#myTabs a:first').tab('show') 
+            $('#myTabs a:first').tab('show')
         }
     });
 
 
     // import the bibliography
-    $("#importBib").load("bib.html"); 
-    
+    $("#importBib").load("bib.html");
+
     // import the project descriptions
     $("#importProj").load("projects.html");
-    
+
     // import the project descriptions
-    $("#importBlog").load("blog/index.html"); 
-    
+    $("#importBlog").load("blog/index.html");
+
     // when a project is selected, center it and remove the others
     /*$(".projects .thumbnail").click(function(){
         $(this).parent().siblings().children("h3").toggle();
@@ -45,17 +45,15 @@ $(document).ready(function(){
     });*/
 });
 
-// Google Analytics
-(function(i,s,o,g,r,a,m){
-    i['GoogleAnalyticsObject']=r;
-    i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},
-    i[r].l=1*new Date();
-    a=s.createElement(o), m=s.getElementsByTagName(o)[0];
-    a.async=1;
-    a.src=g;
-    m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-73376463-1', 'auto');
-ga('send', 'pageview');
-
-
+// // Google Analytics
+// (function(i,s,o,g,r,a,m){
+//     i['GoogleAnalyticsObject']=r;
+//     i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},
+//     i[r].l=1*new Date();
+//     a=s.createElement(o), m=s.getElementsByTagName(o)[0];
+//     a.async=1;
+//     a.src=g;
+//     m.parentNode.insertBefore(a,m)
+// })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+// ga('create', 'UA-73376463-1', 'auto');
+// ga('send', 'pageview');
