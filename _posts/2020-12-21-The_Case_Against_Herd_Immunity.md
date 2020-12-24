@@ -41,15 +41,15 @@ class="margin-toggle sidenote-number"></label></sup><input type="checkbox" id="m
 class="margin-toggle" /><span class="sidenote">This is just a fancy way of saying that each
 infectious individual has the same chance to infect any susceptible individual in the
 population</span> population. In such a simplified scenario, there is also a nice relationship
-between the reproductive number $\mathcal{R}_0$<sup><label for="r0" class="margin-toggle
+between the reproductive number $$\mathcal{R}_0$$<sup><label for="r0" class="margin-toggle
 sidenote-number"></label></sup><input type="checkbox" id="r0" class="margin-toggle" /><span
 class="sidenote">Recall that this is the expected number of new infections resulting from an initial
 infectious individual in an otherwise completely susceptible population</span> and the percentage
-needed for herd immunity $p$:
+needed for herd immunity $$p$$:
 
-$$p = 1 / \mathcal{R}_0$$.
+<div class="mathblock">$$p = 1 / \mathcal{R}_0 .$$</div>
 
-In other words, for a disease like COVID-19 with an $\mathcal{R}_0 \approx 3$, we would need to
+In other words, for a disease like COVID-19 with an $$\mathcal{R}_0 \approx 3$$, we would need to
 have at least 67% of the population immune before the pandemic would die out. 
 
 Unfortunately, our population is not well-mixed, and this can affect the proportion needed for herd
@@ -177,47 +177,51 @@ individuals in this age range in the US, even this small risk could tally to mor
 <!-- <input type="checkbox" id="coviddeath" class="margin-toggle" /><span class="marginnote"> -->
 <sup>a</sup><a href="https://www.nature.com/articles/s41586-020-2918-0">O'Driscoll *et al*. 2020</a><br>
 <sup>b</sup><a href="https://www.cdc.gov/flu/about/burden/2018-2019.html">Numbers from the 2018-19 US influenza season</a><br>
-<sup>c</sup> <i>i.e.</i> given that you are infected, you are $x$ times more likely to die from COVID than from flu
+<sup>c</sup> <i>i.e.</i> given that you are infected, you are $$x$$ times more likely to die from COVID than from flu
 </span>
 
-<div class="table-wrapper">
-<table class="booktabs">
-    <tr>
-        <td>Age (years)</td>
-        <td>COVID-19<sup>a</sup></td>
-        <td>Influenza<sup>b</sup></td>
-        <td>Ratio<sup>c</sup></td>
-    </tr>
-    <tr>
-        <td>0-4</td>
-        <td>0.003%</td>
-        <td>0.007%</td>
-        <td>0.43</td>
-    </tr>
-    <tr>
-        <td>5-17</td>
-        <td>0.001%</td>
-        <td>0.003%</td>
-        <td>0.33</td>
-    </tr>
-    <tr>
-        <td>18-49</td>
-        <td>0.045%</td>
-        <td>0.209%</td>
-        <td>0.22</td>
-    </tr>
-    <tr>
-        <td>50-64</td>
-        <td>0.327%</td>
-        <td>0.615%</td>
-        <td>0.53</td>
-    </tr>
-    <tr>
-        <td>65+</td>
-        <td>3.312%</td>
-        <td>0.831%</td>
-        <td>3.99</td>
-    </tr>
+<div class="table-wrapper" style="margin: 1em;">
+<table>
+    <thead>
+        <tr>
+            <th>Age (years)</th>
+            <th>COVID-19<sup>a</sup></th>
+            <th>Influenza<sup>b</sup></th>
+            <th>Ratio<sup>c</sup></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0-4</td>
+            <td>0.003%</td>
+            <td>0.007%</td>
+            <td>0.43</td>
+        </tr>
+        <tr>
+            <td>5-17</td>
+            <td>0.001%</td>
+            <td>0.003%</td>
+            <td>0.33</td>
+        </tr>
+        <tr>
+            <td>18-49</td>
+            <td>0.045%</td>
+            <td>0.209%</td>
+            <td>0.22</td>
+        </tr>
+        <tr>
+            <td>50-64</td>
+            <td>0.327%</td>
+            <td>0.615%</td>
+            <td>0.53</td>
+        </tr>
+        <tr>
+            <td>65+</td>
+            <td>3.312%</td>
+            <td>0.831%</td>
+            <td>3.99</td>
+        </tr>
+    </tbody>
 </table>
 </div>
 
