@@ -255,7 +255,7 @@ ol>ul>ul>li {
 /*/////////////////////////////// Coauthors ////////////////////////////////*/
 #coauthors {
   display: grid;
-  grid-template-rows: 7fr 1fr;
+  grid-template-rows: auto auto;
   column-gap: 5rem;
   justify-items: center;
   align-items: end;
