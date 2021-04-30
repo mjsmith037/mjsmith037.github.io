@@ -50,6 +50,33 @@ ggraph(net, layout=layout) +
   theme(legend.position="none")
 ggsave("net.svg", width=7, height=6, bg="transparent")
 
+
+ggraph(net %>% filter(type == "household"), layout="nicely") +
+  geom_edge_link(aes(colour=type),
+                 edge_alpha=0.67, edge_width=0.5,
+                 end_cap=circle(radius=5, unit="pt"), start_cap=circle(radius=5, unit="pt")) +
+  geom_node_point(size=3) +
+  scale_edge_colour_manual(values=my_cols) +
+  scale_edge_alpha_manual(values=c(family=0.33, classmate=0.33, coworker=0.33), guide=FALSE) +
+  guides(edge_colour=guide_legend(override.aes=list(edge_width=1.5, edge_alpha=1))) +
+  theme_graph(background=NULL) +
+  theme(legend.position="bottom",
+        legend.title=element_blank())
+ggsave("edges_zero.svg", width=7, height=6, bg="transparent")
+
+ggraph(net %>% filter(type != "coworker"), layout="nicely") +
+  geom_edge_link(aes(colour=type),
+                 edge_alpha=0.67, edge_width=0.5,
+                 end_cap=circle(radius=5, unit="pt"), start_cap=circle(radius=5, unit="pt")) +
+  geom_node_point(size=3) +
+  scale_edge_colour_manual(values=my_cols) +
+  scale_edge_alpha_manual(values=c(family=0.33, classmate=0.33, coworker=0.33), guide=FALSE) +
+  guides(edge_colour=guide_legend(override.aes=list(edge_width=1.5, edge_alpha=1))) +
+  theme_graph(background=NULL) +
+  theme(legend.position="bottom",
+        legend.title=element_blank())
+ggsave("edges_one.svg", width=7, height=6, bg="transparent")
+
 ggraph(net, layout=layout) +
   geom_edge_link(aes(colour=type),
                  edge_alpha=0.67, edge_width=0.5,
