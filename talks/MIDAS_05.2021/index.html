@@ -21,7 +21,7 @@
   <body>
     <div class="reveal">
       <div id="globalfooter" style="position:absolute; bottom:4rem; right:4rem; font-size: 67%; z-index:100;">
-        <a href="z.umn.edu/LINCS">z.umn.edu/LINCS</a>
+        <a href="https://z.umn.edu/LINCS">z.umn.edu/LINCS</a>
       </div>
       <div class="slides">
         <!-- Title Slide -->
@@ -32,8 +32,8 @@
           </div>
           <aside class="notes">
             <p>
-              This talk was presented at the MIDAS Network Annual Meeting
-              as a video presentation on XXX May, 2021. <!-- TODO -->
+              This talk was recorded for the MIDAS Network Annual Meeting
+              as a video presentation on 30 April 2021, and was presented on 10 May.
               Text here will supplement slide material.
             </p><p>
               You can remove this pane (and get it back) by tapping <span class="key">v</span> on your keyboard.
@@ -56,14 +56,26 @@
         </section>
 
         <section>
-          <div id="coauthors">
-            <img style="border:5px solid black;" src="images/marie.jpg">
-            <h3>Marie Gilbertson</h3>
-            <img style="border:5px solid black;" src="images/lauren.jpg">
-            <h3>Lauren White</h3>
-            <img style="border:5px solid black;" src="images/meggan.jpg">
-            <h3>Meggan Craft</h3>
+          <div class="wnotes vcenter">
+            <div id="coauthors">
+              <img style="border:5px solid black;" src="images/marie.jpg">
+              <h3>Marie Gilbertson</h3>
+              <img style="border:5px solid black;" src="images/lauren.jpg">
+              <h3>Lauren White</h3>
+              <img style="border:5px solid black;" src="images/meggan.jpg">
+              <h3>Meggan Craft</h3>
+            </div>
           </div>
+          <aside class="notes">
+            <p>
+              The work presented here was done in collaboration with <a
+              href="https://scholar.google.com/citations?user=S-81O6EAAAAJ&hl=en">Marie
+              Gilbertson</a>, who is currently a postdoc at UW Madison, <a
+              href="https://laurenwhitephd.com/welcome/">Lauren White</a>, who is a fellow with the
+              AAAS, and my advisor <a href="https://mcraftlab.wordpress.com/">Meggan Craft</a> at
+              the University of Minnesota.
+            </p>
+          </aside>
         </section>
 
         <section>
@@ -71,7 +83,12 @@
             <img src="images/app_screenshot.png">
           </div>
           <aside class="notes">
-            
+            <p>
+              Now, one of the major points of this talk is to advertise an online tool that
+              we've created to explore the relationship between contact networks structure and
+              disease spread, and I promise I'll get to a walk through of the app, but first,
+              I'm going to explain a bit of the how and why behind the app we developed.
+            </p>
           </aside>
         </section>
 
@@ -79,9 +96,19 @@
           <div class="wnotes vcenter">
             <img style="height:67vh;" src="images/nyt_lockdowns_04-2020">
           </div>
-          <h4 id="citation" class="citwnotes"><a href="https://www.nytimes.com/interactive/2020/us/coronavirus-stay-at-home-order.html"></a>New York Times, April 2020</a></h4>
+          <h4 id="citation" class="citwnotes"><a href="https://www.nytimes.com/interactive/2020/us/coronavirus-stay-at-home-order.html">New York Times, April 2020</a></h4>
           <aside class="notes">
-
+            <p>
+              A little over a year ago, there were widespred lockdowns across the US.
+              In this map from the New York Times, we see that many states invoked state-wide
+              lockdowns on travel and business. This was a blunt tool to try to avoid a rising
+              catastrophe, but the reasoning behind it was rooted in an understanding of how
+              diseases are transmitted from person to person; if we could prevent disease-spreading
+              contacts, then we could pre-empt the pandemic. It doesn't take a disease ecologist to realize that
+              there is room for improvement in this approach. For instance, what if we could limit our
+              intervention to preventing only those contacts that are most critical to disease spread,
+              leaving other interactions, perhaps even the majority of interactions, intact at the same time.
+            </p>
           </aside>
         </section>
 
@@ -95,7 +122,12 @@
             </div>
           </div>
           <aside class="notes">
-            
+            <p>
+              To dive into this problem, we considered two integral parts of disease spread: the
+              contact network upon which the disease spreads, and the underlying dynamics of
+              disease progression in any given person, independently. We then chose to focus on the
+              former as our target for intervention, beginning with generating realistic, synthetic contact networks.
+            </p>
           </aside>
         </section>
 
@@ -104,8 +136,8 @@
             <!-- <div style="display:grid; grid-template-columns:1fr; width:85%;"> -->
               <h2>What is contact?</h2>
               <img src="images/face_cough.png" width=50%>
-              <h2>What makes a contact network realistic?</h2>
-              <ul class="fa-ul">
+              <h2 data-fragment-index=0 class="fragment">What makes a contact network realistic?</h2>
+              <ul data-fragment-index=0 class="fragment fa-ul">
                 <li><i class="blue fa-li fal fa-house"></i>Home/Family</li>
                 <li><i class="green fa-li fal fa-school"></i>School</li>
                 <li><i class="orange fa-li fal fa-building"></i>Work</li>
@@ -120,7 +152,25 @@
           </div>
           <h4 id="citation" class="citwnotes">image adapted from <a href="https://aip.scitation.org/doi/10.1063/5.0048746#"></a>Monroe <i>et al.</i> 2021</a></h4>
           <aside class="notes">
-            
+            <p>
+              To do this we had to answer a couple of basic questions, such as "What is a contact?"
+              The answer to this question is obviously context specific, but with COVID-19, with its
+              aerosolized transmission, we think about the risk of transmission increasing with the 
+              duration of people sharing the same air space.
+            </p> 
+            <span id="ns">next slide</span>
+            <p>
+              But of course the ways in which we are close to other people is also context dependent,
+              leading to the key insight for this project: the structure of our interactions with other
+              people is dependent on the different ways in which we interact with different facets of our
+              social network.
+            </p>
+            <p>
+              To put it more concretely, we interact with co-workers differently than we interact with
+              people at home, or at a religious institution. The differences in these interactions,
+              including the strength of interaction and the interacting group size, can have consequences
+              for the spread of disease.
+            </p>
           </aside>
         </section>
 
@@ -128,35 +178,98 @@
           <div class="wnotes vcenter">
             <div style="display:grid; grid-template-columns:1fr 1fr;">
               <h2>Interaction properties</h2>
-              <h2>Node properties</h2>
-              <img src="figures/edges.svg" style="width:45vw;">
-              <img src="figures/nodes.svg" style="width:45vw;">
+              <h2 class="fragment" data-fragment-index=2>Node properties</h2>
+              <div class="r-stack">
+                <img src="figures/edges_zero.svg" style="width:100%;" class="fragment fade-out" data-fragment-index=0>
+                <img src="figures/edges_one.svg" style="width:100%;" class="fragment current-visible" data-fragment-index=0>
+                <img src="figures/edges.svg" style="width:100%;" class="fragment" data-fragment-index=1>
+              </div>
+              <img src="figures/nodes.svg" style="width:100%;" class="fragment" data-fragment-index=2>
             </div>
           </div>
           <aside class="notes">
-            
+            <p>
+              So, we begin to assemble our networks: starting with a collection of individuals, whose ages are
+              distributed according to some locality's census data and grouping them into households, based on
+              the empirical distribution of household sizes. We then successively layer additional interaction
+              types, including schools, 
+            </p> 
+            <span id="ns">next slide</span>
+            <p>
+              work-places,
+            </p> 
+            <span id="ns">next slide</span>
+            <p>
+              and possibly others (each likewise based on empirical data whenever possible).
+            </p> 
+            <span id="ns">next slide</span>
+            <p>
+              Importantly, because each node has an age associated with it, we can also classify some
+              individuals as being more vulnerable to adverse outcomes from COVID, using age-normalized
+              hospitalization rates. Here, we dichotomize individuals into "Vulnerable" or "Not" for simplicity.
+            </p>
           </aside>
         </section>
 
         <section>
           <div class="wnotes vcenter">
             <h2 style="margin-bottom:2em;">Disease Model</h2>
-            <div class="r-stack">
-              <img class="fragment current-visible" style="width:75vw;" src="images/model_subsets/infection.svg">
-              <img class="fragment" style="width:75vw;" src="images/model_subsets/exposure.svg">
-              <img class="fragment" style="width:75vw;" src="images/model_subsets/recovery.svg">
-              <img class="fragment" style="width:75vw;" src="images/model_subsets/death.svg">
-              <img class="fragment" style="width:75vw;" src="images/model_subsets/vulnerable.svg">              
+            <div class="r-stack" style="width:85%;">
+              <img class="fragment fade-out" style="width:100%;" src="images/model_subsets/infection.svg" data-fragment-index=0>
+              <img class="fragment" style="width:100%;" src="images/model_subsets/exposure.svg" data-fragment-index=0>
+              <img class="fragment" style="width:100%;" src="images/model_subsets/recovery.svg">
+              <img class="fragment" style="width:100%;" src="images/model_subsets/death.svg">
+              <img class="fragment" style="width:100%;" src="images/model_subsets/vulnerable.svg">              
             </div>
           </div>
           <aside class="notes">
-            
+            <p>
+              I want to take a minute to run through the underlying disease model, but since I'm
+              sure most of you have seen these types of models explained, and perhaps explained them
+              yourselves, multiple times, I will keep it very brief.
+            </p>
+            <p>
+              At each timestep in a simulation, every individual in the network has one of six states.
+              They start out as <span class="blue">S</span>usceptible to disease and can become infected when they share an edge,
+              representing a social contact, with an infectious individual.
+            </p>
+            <span id="ns">next slide</span>
+            <p>
+              Upon infection, they enter a latency period and are classified as <span class="green">E</span>xposed, but not yet infectious.
+              Over time, they transition to being <span class="yellow">I</span>/<span class="orange">I</span>nfectious, and some fraction will develop symptoms.
+            </p>
+            <span id="ns">next slide</span>
+            <p>
+              As more time passes, some of these will <span class="purple">R</span>ecover,
+            </p>
+            <span id="ns">next slide</span>
+            <p>
+              while others will sadly <span class="red">D</span>ie.
+            </p>
+            <span id="ns">next slide</span>
+            <p>
+              The final piece of the puzzle is that those individuals that we classified as vulnerable have 
+              both longer disease courses (slower recovery),
+            </p>
+            <span id="ns">next slide</span>
+            <p>
+              and are more likely to die, modifying these two parameters as shown.
+            </p>
           </aside>
         </section>
 
         <section>
-          <p>What does this look like in a single simulation?</p>
-          <img src="figures/dynamics_1.gif" style="max-height:67vh;">
+          <div class="wnotes vcenter">
+            <p>What does this look like in a single simulation?</p>
+            <img src="figures/dynamics_1.gif" style="max-height:67vh;">
+          </div>
+          <aside class="notes">
+            So, for a single simulated epidemic, we see nodes cycling through the various
+            disease states, and, on the right, the proportion of the population in each
+            class through time. Note that some individuals are able to escape infection,
+            even at the end of the simulation, if they are sparsely connected to the rest of the
+            network, or just very lucky.
+          </aside>
         </section>
 
         <section>
@@ -172,7 +285,7 @@
             </h1>
           </div>
           <aside class="notes">
-
+            Without further ado, lets jump over into the app for the remainder of the time!
           </aside>
         </section>
 
@@ -197,6 +310,16 @@
         </section>
       </div>
     </div>
+
+    <!-- Supplemental slides? Will I be able to share screen in discussion? -->
+    <!-- <section>
+      <div class="wnotes vcenter">
+
+      </div>
+      <aside class="notes">
+
+      </aside>
+    </section> -->
 
     <script src="../../reveal.js/dist/reveal.js"></script>
     <script src="../../reveal.js/plugin/math/math.js"></script>
