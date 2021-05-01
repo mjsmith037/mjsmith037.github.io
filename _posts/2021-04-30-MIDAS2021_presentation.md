@@ -7,5 +7,5 @@ date: "2021-04-30"
 categories: slides presentation
 ---
 <head>
-  <meta http-equiv="refresh" content="0; URL='http://michalska-smith.com/talks/EpiQ_09.2019/'"/>
+  <meta http-equiv="refresh" content="0; URL='http://michalska-smith.com/talks/MIDAS_05.2021/'"/>
 </head>
