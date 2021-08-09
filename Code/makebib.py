@@ -87,7 +87,7 @@ for bibitem in biblist:
                                  '      <button type="button" class="btn btn-preprint">Citable Preprint</button>',
                                  '    </a></p>']
         else:
-            if bibID != "whirling":
+            if bibID != "whirling" and bibID != "dispersalnetworks":
                 bibhtml = bibhtml + ['    <p><a target="_blank"  href="pdfs/' + bibID + '.pdf">',
                                      '      <button type="button" class="btn btn-mycopy">Full-Text PDF</button>',
                                      '    </a></p>']
