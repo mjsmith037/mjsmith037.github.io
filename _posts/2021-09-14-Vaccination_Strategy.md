@@ -76,15 +76,15 @@ person's job involves a risky behavior in addition to a large number of interper
 
 ## An alternative: vaccinating to reduce disease spread
 
-So, how do we operationalize this network perspective? Put simply, a network view of vaccination
-suggests we should additionally consider both **exposure risk** (the risk of being infected) and
-**spread risk** (the risk of passing the pathogen along to others)<sup><label for="vaxgame"
-class="margin-toggle sidenote-number"></label></sup><input type="checkbox" id="vaxgame"
-class="margin-toggle" /><span class="sidenote">For a fun, interactive exploration of this idea,
-check out [this game](https://vax.herokuapp.com/). In it, you have a limited number of vaccines to
-distribute amongst a population to minimize the total epidemic size. It doesn't consider
-differential vulnerability, but does a good job of demonstrating the importance of contact network
-structure on the spread of disease</span>.
+So, how do we [operationalize](https://en.wikipedia.org/wiki/Operationalization) this network
+perspective? Put simply, a network view of vaccination suggests we should additionally consider both
+**exposure risk** (the risk of being infected) and **spread risk** (the risk of passing the pathogen
+along to others)<sup><label for="vaxgame" class="margin-toggle sidenote-number"></label></sup><input
+type="checkbox" id="vaxgame" class="margin-toggle"/><span class="sidenote">For a fun, interactive
+exploration of this idea, check out [this game](https://vax.herokuapp.com/). In it, you have a
+limited number of vaccines to distribute amongst a population to minimize the total epidemic size.
+It doesn't consider differential vulnerability, but does a good job of demonstrating the importance
+of contact network structure on the spread of disease</span>.
 
 Thinking about differential risk of exposure and spread across the population is complicated because
 it depends on many interacting variables, such as the prevalence of disease within the population,
@@ -133,8 +133,8 @@ health care systems have morbidity and mortality costs outside of this narrow de
 people that need medical care cannot or do not get the care they need when hospitals are full of
 COVID patients, even if most of those patients will not die from the disease.
 
-<label for="figinterp" class="margin-toggle"></label><input type="checkbox" class="margin-toggle"
-id="figinterp"/><span class="marginnote">Figure modified from Figure 1 of <a
+<label for="figinterp" class="margin-toggle">&#8853;</label><input type="checkbox"
+class="margin-toggle" id="figinterp"/><span class="marginnote">Figure modified from Figure 1 of <a
 href="https://www.science.org/doi/full/10.1126/science.abe6959">Bubar, et al. 2021</a>. Note that
 the largest reduction in deaths (highest curve in the bottom-right (**H**)) corresponds to
 preferentially vaccinating the elderly. The curves in the top-right (**D**) indicate reductions in
