@@ -138,7 +138,7 @@ class="margin-toggle" id="figinterp"/><span class="marginnote">Figure modified f
 href="https://www.science.org/doi/full/10.1126/science.abe6959">Bubar, et al. 2021</a>. Note that
 the largest reduction in deaths (highest curve in the bottom-right (**H**)) corresponds to
 preferentially vaccinating the elderly. The curves in the top-right (**D**) indicate reductions in
-total number of COVID-19 cases. For this outcome, vaccinating younger indviduals (those 20-49 years
+total number of COVID-19 cases. For this outcome, vaccinating younger individuals (those 20-49 years
 old) has the largest effect.</span>
 
 [![](/Images/blog_figures/vaccination_strategy/modified_fig.png)](/Images/blog_figures/vaccination_strategy/modified_fig.png)

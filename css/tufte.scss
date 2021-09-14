@@ -265,10 +265,10 @@ blockquote .sidenote, blockquote .marginnote { margin-right: -79% }
 
 div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
 
-@media screen and (max-width: 760px) { p, footer { width: 90%; }
+@media screen and (max-width: 760px) { .post p, footer { width: 95%; }
                                        pre code { width: 87.5%; }
                                        ul, ol { width: 85%; }
-                                       figure { max-width: 90%; }
+                                       figure { max-width: 95%; }
                                        figcaption, figure.fullwidth figcaption { margin-right: 0%;
                                                                                  max-width: none; }
                                        blockquote p, blockquote footer, div.epigraph > blockquote > footer,.MJXc-display {  width: 80%;
