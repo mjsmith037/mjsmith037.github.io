@@ -2,14 +2,14 @@
 layout: post
 title: "Why vaccination strategy is not as simple as it seems"
 author: "Matthew J. Michalska-Smith"
-date: "2021-09-10"
+date: "2021-09-14"
 categories: current_events methods
 ---
 
 When vaccination just started getting underway in the U.S., many people were confused and angered at
 the fact that many localities were pursuing vaccination strategies that didn't just boil down to
 vaccinating the most vulnerable. On the other hand, there was a significant movement to vaccinate
-front-line workers that often cited equity and racial justice as motivations. What didn't seem to
+front-line workers which often cited equity and racial justice as motivations. What didn't seem to
 make the news as often is the mathematics that make this a reasonable alternative to consider.
 
 <!--more-->
@@ -51,12 +51,12 @@ sidenote-number"></label></sup><input type="checkbox" id="concept" class="margin
 class="sidenote">That is, figure not meant to represent actual data, but rather to
 help us think about a problem</span> of what these guidelines are trying to capture:
 
-![](/Images/blog_figures/vaccination_strategy/risk_distribution.png)
+[![](/Images/blog_figures/vaccination_strategy/risk_distribution.png)](/Images/blog_figures/vaccination_strategy/risk_distribution.png)
 
 Note that there is some probability of being infected in any given moment that depends on the
 distance you are from an infectious person. Similarly, the longer you are near that person, the more
 likely you are to get infected yourself. The guideline is a way of simplifying the message that, for
-example, you have a 1 in 3 chance of being infected by the time you have spent 15 minutes within 6
+example, you have a 1 in 4 chance of being infected by the time you have spent 15 minutes within 6
 feet of an infectious person (the upper-left region of the heatmap inside the blue curve).
 
 <label for="netfig" class="margin-toggle">&#8853;</label><input type="checkbox"
@@ -74,32 +74,30 @@ person's job involves a risky behavior in addition to a large number of interper
 (consider, for example, dentists, whose work involves increase exposure to aerosolized particles
 *and* interacting with many people in close contact and for extended periods of time).
 
-## An alternative to vaccinating by health status
+## An alternative: vaccinating to reduce disease spread
 
 So, how do we operationalize this network perspective? Put simply, a network view of vaccination
 suggests we should additionally consider both **exposure risk** (the risk of being infected) and
-**spread risk** (the risk of passing the pathogen along to others).
+**spread risk** (the risk of passing the pathogen along to others)<sup><label for="vaxgame"
+class="margin-toggle sidenote-number"></label></sup><input type="checkbox" id="vaxgame"
+class="margin-toggle" /><span class="sidenote">For a fun, interactive exploration of this idea,
+check out [this game](https://vax.herokuapp.com/). In it, you have a limited number of vaccines to
+distribute amongst a population to minimize the total epidemic size. It doesn't consider
+differential vulnerability, but does a good job of demonstrating the importance of contact network
+structure on the spread of disease</span>.
 
-### Countervailing consideration 1: exposure risk
-
-Thinking about differential risk of exposure across the population is complicated because it depends
-on many interacting variables, such as the likelihood of a person interacting with a sick person (note
-this depends both on the person's interpersonal interactions as well as the prevalence of disease in
-the population), the personal behavior of both people involved in the interaction, and even
-environmental features such as airflow. A person who largely stays home and minimizes their contact
-with others has a low risk of being infected by others, whereas a dentist (as mentioned above) has
-a much higher risk.
-
-### Countervailing consideration 2: spread risk
-
-A second, related, consideration is how each individual contributes to the overall risk of a disease
-spreading through a population. For this, we have to consider how each person fits within the wider
-social contact network along which communicable diseases spread. In many ways, this consideration
-overlaps with exposure risk: someone with few interpersonal interactions is unlikely to contribute
-to further disease spread even if they do happen to get sick. Yet, there are also situations where
-these become decoupled. A waiter, delivery person, or teacher, on the other hand, has both a higher
-likelihood of being infected **and of passing that infection along to others** as a result of their
-position within the contact network.
+Thinking about differential risk of exposure and spread across the population is complicated because
+it depends on many interacting variables, such as the prevalence of disease within the population,
+the personal behavior of people when they are interacting with one another, and even environmental
+features such as airflow. The factor that we are focusing on here for the sake of vaccine
+distribution, is how each person fits within the wider social contact network: a person who largely
+stays home and minimizes their contact with others has a low risk of being infected and is unlikely
+to contribute to further disease spread even if they do happen to get sick; a waiter, delivery
+person, or teacher, on the other hand, has both a higher likelihood of being infected *and of
+passing that infection along to others* as a result of their position within the contact network.
+Thus, it might make sense to prioritize these "high risk" people for vaccination, reasoning that
+reduced disease spread might result in lower morbidity and mortality in the population as a
+whole.
 
 ## But which is the better course?
 
@@ -114,25 +112,38 @@ choice, how should we be administering vaccinations in response to COVID-19?
 A recent study<sup><label for="science" class="margin-toggle sidenote-number"></label></sup><input
 type="checkbox" id="science" class="margin-toggle" /><span class="sidenote">[Bubar, et al. *Science*
 2021](https://www.science.org/doi/full/10.1126/science.abe6959)</span> looking into this question
-found that the approach of vaccinating the more vulnerable is better if your goal is to minimize
-deaths<sup><label for="cases" class="margin-toggle sidenote-number"></label></sup><input
-type="checkbox" id="cases" class="margin-toggle" /><span class="sidenote">In contrast, targeting
-younger people (who both make up a larger fraction of the population and are more likely to interact
-with others) has a greater effect on reducing the overall case-burden</span>.
-
-<label for="figinterp" class="margin-toggle sidenote-number"></label><input type="checkbox"
-class="margin-toggle" id="figinterp"/><span class="marginnote">Note that the largest reduction in
-deaths (highest curve on the right) corresponds to preferentially vaccinating the elderly.</span>
-
-<figure class="fullwidth">
-  <img style="max-width:750px; width:100%;" src="/Images/blog_figures/vaccination_strategy/modified_fig.png"/>
-  <figcaption>Modified from Figure 1 of <a href="https://www.science.org/doi/full/10.1126/science.abe6959">Bubar, et al. 2021</a>.</figcaption>
-</figure>
+for COVID-19 found that the approach of vaccinating the more vulnerable is better if your goal is to
+minimize deaths.
 
 Some subset of readers are at this point exclaiming that "of course! this was obviously going to be
 the result," and are probably wondering why they've wasted their time reading this whole
 post.<sup><label for="thanks" class="margin-toggle sidenote-number"></label></sup><input
 type="checkbox" id="thanks" class="margin-toggle" /><span class="sidenote">THANK YOU!, by the way <i
 class="fal fa-smile-beam"></i></span> It is important to remember that this didn't have to be the
-case, and indeed might not be the case for other diseases. Intuitions are not always correct, and we
-need to do the research to be confident in our choices, especially when there are lives on the line.
+case. In fact, in the same study, they found that targeting younger people (who both make up a
+larger fraction of the population and are more likely to interact with others) had a greater effect
+on reducing the overall case-burden.
+
+If we were considering another disease with a less dramatic connection between age and mortality
+rate, this reduction in overall case number might be enough to shift the mortality results to favor
+this approach as well. It is also worth mentioning that the study is only considering mortality
+directly caused by COVID-19, while there is
+[ample evidence](https://www.cdc.gov/nchs/nvss/vsrr/covid19/excess_deaths.htm) that overburdened
+health care systems have morbidity and mortality costs outside of this narrow definition: many
+people that need medical care cannot or do not get the care they need when hospitals are full of
+COVID patients, even if most of those patients will not die from the disease.
+
+<label for="figinterp" class="margin-toggle"></label><input type="checkbox" class="margin-toggle"
+id="figinterp"/><span class="marginnote">Figure modified from Figure 1 of <a
+href="https://www.science.org/doi/full/10.1126/science.abe6959">Bubar, et al. 2021</a>. Note that
+the largest reduction in deaths (highest curve in the bottom-right (**H**)) corresponds to
+preferentially vaccinating the elderly. The curves in the top-right (**D**) indicate reductions in
+total number of COVID-19 cases. For this outcome, vaccinating younger indviduals (those 20-49 years
+old) has the largest effect.</span>
+
+[![](/Images/blog_figures/vaccination_strategy/modified_fig.png)](/Images/blog_figures/vaccination_strategy/modified_fig.png)
+
+So, at least in part, the answer to which policy is better depends on your priorities, as well as a
+proper quantification of the many [externalities](https://en.wikipedia.org/wiki/Externality) of
+increased daily new COVID case counts. Intuitions are not always correct, and we need to do the
+research to be confident in our choices, especially when there are lives on the line.

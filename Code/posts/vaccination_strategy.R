@@ -7,15 +7,17 @@ library(magrittr)
 theme_set(theme_bw())
 
 distance <- tibble(distance=seq(0, 18, length.out=500),
-                   probability=seq(0, 20, length.out=500) %>% {0.95 / (1.15^.)})
+                   probability=seq(0, 20, length.out=500) %>% {0.95 / (1.125^.)})
 time <- tibble(time=seq(0, 45, length.out=500),
-               probability=seq(0, 1, length.out=500) %>% {50 * .^2 / (10 + 50 * 0.8 * .^2)})
+               probability=seq(0, 1, length.out=500) %>% {35 * .^2 / (3 + 35 * 0.96 * .^2)})
 joint <- tcrossprod(time$probability, distance$probability) %>%
   as_tibble() %>%
   set_colnames(distance$distance) %>%
   mutate(time = time$time) %>%
   pivot_longer(!time, names_to="distance", values_to="probability") %>%
   mutate(distance=as.numeric(distance))
+
+joint %>% filter(near(time, 15, tol=0.05), near(distance, 6, tol=0.02))
 
 ggplot(distance) +
   aes(x=distance, y=probability) +
@@ -36,16 +38,20 @@ ggplot(time) +
 ggplot(joint) +
   aes(x=distance, y=time, fill=probability) +
   geom_raster(interpolate=TRUE) +
-  geom_contour(aes(z=probability), breaks=0.33, linetype="21",
-               colour=viridis::viridis_pal(option="H", begin=0.26)(1), size=1) +
+  geom_contour(aes(z=probability, colour="25% chance\nof infection"),
+               breaks=0.25, linetype="21", size=1) +
+  # geom_point(size=4, shape=10, stroke=1.5, fill=NA,
+  #            colour=viridis::viridis_pal(option="H", begin=0.26)(1), data=tibble(distance=6, time=15)) +
   # geom_hline(aes(yintercept=I(15)), colour="red") +
   # geom_vline(aes(xintercept=I(6)), colour="red") +
   scale_x_continuous(name="Distance (ft)", breaks=0:3 * 6) +
   scale_y_continuous(name="Time (min)", breaks=0:3 * 15) +
   coord_cartesian(expand=FALSE) +
   scale_fill_viridis_c(option="E", limits=c(0, 1)) +
+  scale_colour_manual(values=viridis::viridis_pal(option="H", begin=0.26)(1)) +
   ggtitle("leading to a region of likely infection used to inform guidelines") +
-  guides(fill=guide_colourbar(barheight=9)) +
+  guides(fill=guide_colourbar(barheight=9),
+         colour=guide_legend(title=element_blank())) +
   plot_layout(widths=c(1, 1, 1.2)) &
   theme(text=element_text(family="Alegreya"),
         plot.title=element_text(size=10))
