@@ -5,8 +5,8 @@ author: Matthew J Michalska-Smith
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 permalink: /articles/:short_year/:title
-timezone: America/Chicago
+timezone: America/New_York
 excerpt_separator: <!--more-->
-exclude: ['Gemfile', 'Gemfile.lock']
+exclude: ['Gemfile', 'Gemfile.lock', 'node_modules', '_drafts', 'Code']
 plugins_dir: ['github-pages']
 github: [metadata]
