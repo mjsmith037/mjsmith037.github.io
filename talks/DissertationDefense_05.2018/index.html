@@ -7,14 +7,14 @@
   <meta name="author" content="Matthew J Michalska-Smith">
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="../../reveal.js/old_reveal/css/reveal.css">
+  <link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="theme.css" id="theme">
   <link rel="stylesheet" href="main.css">
   <!-- Theme used for syntax highlighting of code -->
-  <link rel="stylesheet" href="../../reveal.js/old_reveal/lib/css/zenburn.css">
+  <link rel="stylesheet" href="../../reveal.js/plugin/highlight/zenburn.css">
   <!-- font-linking -->
   <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-  <script defer src="https://pro.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-+1nLPoB0gaUktsZJP+ycZectl3GX7wP8Xf2PE/JHrb7X1u7Emm+v7wJMbAcPr8Ge" crossorigin="anonymous"></script>
+  <script defer src="../../fontawesome/js/all.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -67,9 +67,9 @@
         <div class="wnotes vcenter">
           <ol>
             <li>Ecological networks: a brief history</li>
-            <li>Are ecological networks structuraly distinct?</li>
+            <li>Are ecological networks structurally distinct?</li>
             <li>Do trophic roles have structural signatures?</li>
-            <li>How ought competitve networks be structured?</li>
+            <li>How ought competitive networks be structured?</li>
             <li>Where do we go from here?</li>
           </ol>
         </div>
@@ -91,9 +91,9 @@
               <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Ecological networks</li>
               <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Network structure</li>
             </ul>
-            <li style="opacity:0.5;">Are ecological networks structuraly distinct?</li>
+            <li style="opacity:0.5;">Are ecological networks structurally distinct?</li>
             <li style="opacity:0.5;">Do trophic roles have structural signatures?</li>
-            <li style="opacity:0.5;">How ought competitve networks be structured?</li>
+            <li style="opacity:0.5;">How ought competitive networks be structured?</li>
             <li style="opacity:0.5;">Where do we go from here?</li>
           </ol>
         </div>
@@ -219,7 +219,7 @@
           <aside class="notes">
             <p>Especially in ecology, two "global" network structures have
             dominated investigations into network structure. These structures
-            involve every node in the network, and are usually summarised with a
+            involve every node in the network, and are usually summarized with a
             single value.</p>
             <p>The first of these popular ecological structures is "Nestedness"
             which is a attempt to quantify the degree to which the interactions
@@ -239,12 +239,12 @@
             to do well</p>
             <span id="ns">next slide</span>
             <p>As a side note, these networks have an additional structure that comes
-            up throughout this talk: they are bipartite. This means that, unline the
+            up throughout this talk: they are bipartite. This means that, unlike the
             toy network in the previous slide, in which any node can be connected to
             any other node, in these networks, the nodes can be divided into two classes
             for which all interactions are between nodes of disparate class. In this
             example, all links connect a virus to a bacterium; there are no links
-            betweeen two viruses or between two bacteria.</p>
+            between two viruses or between two bacteria.</p>
           </aside>
         </section>
 
@@ -276,14 +276,14 @@
           <div class="wnotes vcenter">
             <ol>
               <li style="opacity:0.5;">Ecological Networks: a brief history</li>
-              <li class="orange">Are ecological networks structuraly distinct?</li>
+              <li class="orange">Are ecological networks structurally distinct?</li>
               <ul class="fa-ul" style="font-size:80%;">
                 <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Framing the question and the solution</li>
                 <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Efforts thus far</li>
                 <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>A computational challenge</li>
               </ul>
               <li style="opacity:0.5;">Do trophic roles have structural signatures?</li>
-              <li style="opacity:0.5;">How ought competitve networks be structured?</li>
+              <li style="opacity:0.5;">How ought competitive networks be structured?</li>
               <li style="opacity:0.5;">Where do we go from here?</li>
             </ol>
           </div>
@@ -376,12 +376,12 @@
             <h4 id="citation" class="citwnotes"></h4>
             <aside class="notes">
               <p>In this and the following slides, I will be demonstrating a
-              potential solution which has some success, but several sortcomings
+              potential solution which has some success, but several shortcomings
               as well. For these figures, I am using a PCA that has been fit <!--TODO emphasize that PCA does not see categorizations -->
               using a subset of non-ecological networks including webs of actors
               performing in the same movies, authors publishing in the same
               journals, crimes committed in different neighborhoods in different
-              cities, legislature voting records, and mirobiome OTU
+              cities, legislature voting records, and microbiome OTU
               presence/absence data across sites on human hosts.</p>
               <p>These non-ecological data have an advantage of being fairly
               large and consistent in their collection methods, as well as being
@@ -458,13 +458,13 @@
             <div class="wnotes vcenter">
               <ul class="fa-ul" style="font-size:3vw;">
                 <li><i class="fa-li fas fa-angle-right"></i>Data</li>
-                <ul class="fa-ul" style="">
+                <ul class="fa-ul">
                   <li><i class="fa-li fas fa-angle-double-right"></i>Ecological webs (<span style="color:#e07699;">51</span>, <span style="color:#95a7d5;">126</span>, <span style="color:#79c8a5;">35</span>)</li>
                   <li><i class="fa-li fas fa-angle-double-right"></i>Non-biological reference set</li>
                   <li><i class="fa-li fas fa-angle-double-right"></i>Erd&#337;s-R&eacute;nyi and Configuration Model Randomizations</li>
-                </ul class="fa-ul" style="">
+                </ul class="fa-ul">
                 <li><i class="fa-li fas fa-angle-right"></i>Code</li>
-                <ul class="fa-ul" style="">
+                <ul class="fa-ul">
                   <li><i class="fa-li fas fa-angle-double-right"></i>Analysis pipeline</li>
                   <li><i class="fa-li fas fa-angle-double-right"></i>Easy-Add metrics</li>
                 </ul>
@@ -475,7 +475,7 @@
             <aside class="notes">
               <p>One of the great things about this project is that everyone has their own
               ideas for which structures might be important. With an aim to utilize this crowd wisdom,
-              we will be putting the whole dataset as well as well-anotated and easy-to-modify
+              we will be putting the whole dataset as well as well-annotated and easy-to-modify
               code online so everyone can give it a shot themselves.
              </p>
             </aside>
@@ -522,14 +522,14 @@
             <div class="wnotes vcenter">
               <ol>
                 <li style="opacity:0.5;">Ecological Networks: a brief history</li>
-                <li style="opacity:0.5;">Are ecological networks structuraly distinct?</li>
+                <li style="opacity:0.5;">Are ecological networks structurally distinct?</li>
                 <li class="orange">Do trophic roles have structural signatures?</li>
                 <ul class="fa-ul" style="font-size:80%;">
                   <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Defining trophic roles</li>
                   <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Introducing the methodology</li>
                   <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Visualizing Imbalance</li>
                 </ul>
-                <li style="opacity:0.5;">How ought competitve networks be structured?</li>
+                <li style="opacity:0.5;">How ought competitive networks be structured?</li>
                 <li style="opacity:0.5;">Where do we go from here?</li>
               </ol>
             </div>
@@ -958,7 +958,7 @@
           explicitly</p>
           <span id="ns">next slide</span>
           <p>how likely it is for such a level of imbalance to arise by chance.</p>
-          <p>We can apply this proceedure for each ecological classification
+          <p>We can apply this procedure for each ecological classification
           (as well as look at all of them at once).</p>
           <span id="ns">next slide</span>
           <p>In this case, we see that the top grouping does well for
@@ -1102,7 +1102,7 @@
             consumers coming out, but now we see a group that is mostly parasites
             as well.</p>
           <span id="ns">next slide</span>
-          <p>When we have five groups, something intesting happens: the consumer
+          <p>When we have five groups, something interesting happens: the consumer
             block is split in two. This is suggestive of additional structure
             within these gross ecological categories. Put another way, there are
             sub-structures within the consumer class where the differences between
@@ -1114,7 +1114,7 @@
           This shows that while our statistical approach does resemble the
           ecological categorizations, there are larger statistical differences
           between members of the same categorizations than between different
-          ones. Some of the cateogories are better parsed than others, which
+          ones. Some of the categories are better parsed than others, which
           suggests that these categories have a stronger foundation in network
           structure.</p>
         </aside>
@@ -1164,9 +1164,9 @@
         <div class="wnotes vcenter">
           <ol>
             <li style="opacity:0.5;">Ecological Networks: a brief history</li>
-            <li style="opacity:0.5;">Are ecological networks structuraly distinct?</li>
+            <li style="opacity:0.5;">Are ecological networks structurally distinct?</li>
             <li style="opacity:0.5;">Do trophic roles have structural signatures?</li>
-            <li class="orange">How ought competitve networks be structured?</li>
+            <li class="orange">How ought competitive networks be structured?</li>
             <ul class="fa-ul" style="font-size:80%;">
               <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>The traditional dogma</li>
               <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Generalizing for more species</li>
@@ -1226,7 +1226,7 @@
         <h4 id="citation" class="citwnotes"><a href="https://www.annualreviews.org/doi/abs/10.1146/annurev.ecolsys.31.1.343">Chesson 2000</a></h4>
         <aside class="notes">
           <p>In almost every textbook on basic ecology, you will find a statement similar
-          to this, stemming from the formulation of compeition using the Lotka-Volterra
+          to this, stemming from the formulation of competition using the Lotka-Volterra
           competition equations.</p>
           <span id="ns">next slide</span>
           <p>which can be written out in this way where the $r$'s are intrinsic growth
@@ -1237,7 +1237,7 @@
           <p>The stability conditions for two species interacting in this way can be
             depicted in phase diagrams such as these (in which I've fixed the intra-specific
             competition and growth rates to be $1$ for convenience). For this system, there are four possible
-            cases. In the top right species $1$ outcomptes species $2$ and drives the former
+            cases. In the top right species $1$ outcompetes species $2$ and drives the former
             extinct. In the bottom left is the complement of that scenario</p>
             <p>In th bottom right, the winner is determined by the starting conditions, and the
               only situation in which both species coexist is the top right where for both species, the
@@ -1272,7 +1272,7 @@
         <h4 id="citation" class="citwnotes"></h4>
         <aside class="notes">
           <p>As an example, we can rewrite the equations in this more compressed matrix form
-          in which the competition parameters are in a matris $\boldsymbol{a}$</p>
+          in which the competition parameters are in a matrix $\boldsymbol{a}$</p>
           <p>For this example, our coexistence condition is met,</p>
           <span id="ns">next slide</span>
           <p>and that is exactly what we see.</p>
@@ -1370,7 +1370,7 @@
             <h4 id="header">Generalization to large $n$</h4>
             <div class="wnotes vcenter" style="width:80vh;margin:auto;">
               <div style="height:25%;width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-around;">
-                <!-- <span class="rotate" style="font-size:60%;">Most Stablizing</span> -->
+                <!-- <span class="rotate" style="font-size:60%;">Most Stabilizing</span> -->
                 <img class="fragment" data-fragment-index="1" style="height:100%;margin-right:5vw;" src="Images/intrainterfigs/most_stable.svg">
                 <img class="fragment" data-fragment-index="2" style="height:100%;" src="Images/intrainterfigs/most_stable_explanation.svg">
               </div>
@@ -1380,7 +1380,7 @@
                 <img style="visibility:hidden;height:100%;" src="Images/intrainterfigs/most_stable_explanation.svg">
               </div>
               <div style="height:25%;width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-around;">
-                <!-- <span class="rotate" style="font-size:60%;">Most Destablizing</span> -->
+                <!-- <span class="rotate" style="font-size:60%;">Most Destabilizing</span> -->
                 <img class="fragment" data-fragment-index="3" style="height:100%;margin-right:5vw;" src="Images/intrainterfigs/least_stable.svg">
                 <img class="fragment" data-fragment-index="4" style="height:100%;" src="Images/intrainterfigs/least_stable_explanation.svg">
               </div>
@@ -1388,8 +1388,8 @@
             <h4 id="citation" class="citwnotes"></h4>
             <aside class="notes">
               <p>We performed this experiment, taking a random interaction
-              matrix and re-arranging the off-diagonal interaction coeficients
-              in a matrix using a stochastic search algoritm to find the configuration
+              matrix and re-arranging the off-diagonal interaction coefficients
+              in a matrix using a stochastic search algorithm to find the configuration
               that maximized stability</p>
               <span id="ns">next slide</span>
               <p>we found that this nested configuration is most stabilizing.</p>
@@ -1406,21 +1406,21 @@
               for instance in the case of allelopathy in plants, where species interact strongly
               with plants who produce very different toxins, but have resistance to toxins
               similar to their own.</p>
-              <p>In this figure the dots indicate which toxin is producred by each species
+              <p>In this figure the dots indicate which toxin is produced by each species
               and the colours indicate general clusters of toxin similarity.</p>
             </aside>
           </section>
 
           <section>
             <h4 id="header">The additive effect of intra-specific competition</h4>
-            <div class="wnotes vcenter" style="height:85vh;padding-top:10vh;">
+            <div class="wnotes vcenter" style="height:90vh;padding-top:5vh;">
               <div style="font-size:3vw;width:100%;height:40px;display:flex;flex-direction:row;justify-content:space-between;">
                 <span style="width:30%;text-align:center;">Interspecific</span><span style="width:63%;text-align:center;">Intraspecific</span>
               </div>
               <div style="font-size:3vw;width:100%;height:40px;display:flex;flex-direction:row;justify-content:flex-end;">
                 <span style="width:33%;text-align:center;">Stabilizing</span><span style="width:33%;text-align:center;">Destabilizing</span>
               </div>
-              <div style="height:40%;width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-between;">
+              <div style="height:40%;width:100%;padding-top:3vh;display:flex;flex-direction:row;align-items:center;justify-content:space-between;">
                 <img style="width:33%;" src="Images/intrainterfigs/most_stable.svg">
                 <img class="fragment" data-fragment-index="1" style="width:33%;" src="Images/intrainterfigs/most_stable_most_stable.svg">
                 <img class="fragment" data-fragment-index="2" style="width:33%;" src="Images/intrainterfigs/most_stable_least_stable.svg">
@@ -1484,9 +1484,9 @@
             <div class="wnotes vcenter">
               <ol>
                 <li style="opacity:0.5;">Ecological Networks: a brief history</li>
-                <li style="opacity:0.5;">Are ecological networks structuraly distinct?</li>
+                <li style="opacity:0.5;">Are ecological networks structurally distinct?</li>
                 <li style="opacity:0.5;">Do trophic roles have structural signatures?</li>
-                <li style="opacity:0.5;">How ought competitve networks be structured?</li>
+                <li style="opacity:0.5;">How ought competitive networks be structured?</li>
                 <li class="orange">Where do we go from here?</li>
                 <ul class="fa-ul" style="font-size:80%;">
                   <li class="orange"><i class="fa-li fas fa-level-up" data-fa-transform="rotate-90"></i>Synthesis</li>
@@ -1525,7 +1525,7 @@
               is information on the variance inherent to ecological systems. in the second project,
               we find that there are structural signatures for the commonly described trophic roles,
               even parasites which are notoriously difficult to define precisely. Finally, in this last
-              section, I've shown the endpoints in a spectrum of stability for competetive networks,
+              section, I've shown the endpoints in a spectrum of stability for competitive networks,
               revealing that both ends have clear, interpretable structures.</p>
             </aside>
           </section>
@@ -1543,7 +1543,7 @@
               <p>I want to end with a note on two areas of growing research that
               I think will be fruitful avenues for Ecology in the near future:
               multi-layer networks and dynamic networks. Both of these are
-              extensions to more tradtional network representations,
+              extensions to more traditional network representations,
               incorporating greater realism at the expense of greater
               complexity. It will be important in the coming years to both
               develop methods for understanding these new data representations,
@@ -1553,7 +1553,7 @@
           </section>
 
           <section>
-          <div class="wnotes vcenter">
+          <div class="vcenter">
             <h3 style="font-weight:bold;">Acknowledgements</h3>
             <table style="margin:0;padding:0;font-size:3vh;"><tbody>
               <tr><td>Adam</td><td>Brenon</td><td>Evan</td><td>Jody</td><td>Marcos</td><td>Sarah</td><td>&nbsp;</td></tr>
@@ -1569,12 +1569,10 @@
              </tbody></table>
           </div>
           <div style="bottom:0; position:absolute;" class="wnotes">
-          <img src="../DeptofEd.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
+          <img src="../DeptofEd_logo.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
           <img src="../NSF_logo.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
           <img src="../UC_logo.png" style="display:inline-block; max-height:10vh !important; max-width:67% !important;">
         </div>
-        <aside class="notes">
-      </aside>
       </section>
 
   <section>
@@ -1587,8 +1585,8 @@
               <!-- <h3>
               Thanks for viewing this presentation, if you have any feedback or
               questions, please <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#106;&#115;&#109;&#105;&#116;&#104;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;">Email me</a>!</h3> -->
-              <p style="position=relative; margin-top:15vh; font-size:24px;"><a href="http://michalska-smith.com/#talks">Slides available on Michalska-Smith.com</a></p>
-              <p style="position=relative; font-size:24px;">
+              <p style="position:relative; margin-top:15vh; font-size:24px;"><a href="http://michalska-smith.com/#talks">Slides available on Michalska-Smith.com</a></p>
+              <p style="position:relative; font-size:24px;">
                 Food-web animals (
                 <a href="http://www.freepik.com/free-vector/cute-forest-animals_787689.htm">1</a>,
                 <a href="http://www.freepik.com/free-vector/hand-drawn-variety-of-bushs_853746.htm">2</a>,
@@ -1602,42 +1600,39 @@
         </div>
       </div>
 
-      <script src="../../reveal.js/old_reveal/lib/js/head.min.js"></script>
-      <script src="../../reveal.js/old_reveal/js/reveal.js"></script>
-
-      <!-- Custom Javascript -->
+      <script src="../../reveal.js/dist/reveal.js"></script>
+      <script src="../../reveal.js/plugin/math/math.js"></script>
+      <script src="../../reveal.js/plugin/notes/notes.js"></script>
+      <script src="../../reveal.js/plugin/highlight/highlight.js"></script>
+  
       <script>
-      $(document).keydown(function(e) {
-        var key = e.which;
-        if (key == 86) {
-          // if the user pressed 'v':
-          $("aside.notes").toggleClass("hidden");
-          $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").toggleClass("wnotes");
-          $("section > #citation").toggleClass("citwnotes");
-        }
-      });
-      </script>
-
-      <script>
-      Reveal.initialize({
-        width: "100%",
-        height:"100%",
-        controls: false,
-        progress: true,
-        slideNumber: true,
-        history: true,
-        center: false,
-        transition: "slide", // none/fade/slide/convex/concave/zoom
-
-        // Optional reveal.js plugins
-        dependencies: [
-          // { src: "../../reveal.js/old_reveal/plugin/markdown/marked.js" },
-          // { src: "../../reveal.js/old_reveal/plugin/markdown/markdown.js" },
-          { src: "../../reveal.js/old_reveal/plugin/math/math.js", async: true },
-          { src: "../../reveal.js/old_reveal/plugin/notes/notes.js", async: true },
-          { src: "../../reveal.js/old_reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-        ]
-      });
+        Reveal.configure({
+          keyboard: {
+            // if the user pressed 'v':
+            86: () => {
+                  $("aside.notes").toggleClass("hidden");
+                  $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
+                  $("section > #citation").toggleClass("citwnotes");
+                }
+          }
+        })
+        Reveal.initialize({
+          width: "100%",
+          height:"100%",
+          controls: false,
+          progress: true,
+          slideNumber: true,
+          history: true,
+          center: false,
+          transition: "slide", // none/fade/slide/convex/concave/zoom
+          math: {
+            mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+            // mathjax: '../../../ForLocalPresentations/MathJax/unpacked/MathJax.js',
+            config: 'TeX-AMS_HTML-full'
+          },
+          // Optional reveal.js 
+          plugins: [RevealMath, RevealNotes, RevealHighlight]
+        });
       </script>
     </body>
-    </html>
+  </html>

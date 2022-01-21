@@ -5,17 +5,17 @@
 
     <title>NetSci 07.2017</title>
 
-    <link rel="stylesheet" href="../../reveal.js/old_reveal/css/reveal.css">
-    <link rel="stylesheet" href="../../reveal.js/old_reveal/css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js/dist/theme/white.css" id="theme">
 
     <!-- personal css file -->
     <link rel="stylesheet" href="main.css">
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../../reveal.js/old_reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="../../reveal.js/plugin/highlight/zenburn.css">
 
     <!-- font-linking -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <script src="https://use.fontawesome.com/ca6fc79211.js"></script>
+    <link rel="stylesheet" href="../../fontawesome/css/all.css">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
   </head>
@@ -71,7 +71,7 @@
               <img class="plain" src="Images/S.Allesina.jpg" style="margin:0;padding:0;height:100%;">
               <p style="margin:0;">Stefano Allesina</p>
             </div>
-            <table style="margin-top:5%;">
+            <table style="margin-top:5%;font-size:3vh;">
               <tr>
                 <td>E. L. Sander<br> C. A. Marcelo Serv&aacute;n<br> D. Maynard<br> E. Leigh<br> J. Aljadeff</td>
                 <td>A. Monteiro<br> J.A. Capit&aacute;n<br> F. Brandl<br> J.M. Levine<br> J-F. Laslier</td>
@@ -81,7 +81,7 @@
           <div style="position:absolute;bottom:0;left:0" id="abs_pos">
             <img class="plain" src="../NSF_logo.png" style="display:inline-block;height:10vh;">
             <img class="plain" src="Images/HSFP.jpg" style="display:inline-block;height:10vh;">
-            <img class="plain" src="../DeptofEd.png" style="display:inline-block;height:10vh;">
+            <img class="plain" src="../DeptofEd_logo.png" style="display:inline-block;height:10vh;">
             <img class="plain" src="../UC_logo.png" style="display:inline-block;height:10vh;">
           </div>
           <aside class="notes">
@@ -135,18 +135,18 @@
             </div>
             <h1 style="height:20%;margin-top:5%;">$$\sum_i x_i = 1$$</h1>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             <p>
               A key assumption of the model we will build is inspired by that
               first observation of the rainforest: that the space is entirely
               filled and any gap in the canopy is rapidly filled by a new
               individual. Because of this, the dynamics can be said to be
-              appproximately "zero-sum."
+              approximately "zero-sum."
             </p><p>
               This means that the number of individuals in the community is
               approximately fixed and we can just model the relative species
-              abundances $x_i$. Pictorally, this means that:
+              abundances $x_i$. Pictorially, this means that:
             </p>
             <span id="ns">next slide</span>
             <p>when a tree dies</p>
@@ -158,14 +158,14 @@
             <p>
               maintaining the total number of individuals in the  community but
               potentially changing the relative abundances of the species
-              ivolved.
+              involved.
             </p>
           </aside>
         </section>
 
         <section>
           <h4 id="header">Building a Model</h4>
-          <div class="wnotes" style="height:90%;padding-top:5%;">
+          <div class="wnotes" style="height:85%;padding-top:5%;">
             <div style="height:50%;">
               <img class="plain fragment" data-fragment-index=1 style="display:inline-block;width:25%;" src="Images/fertility.png">
               <img class="plain fragment" data-fragment-index=3 style="display:inline-block;width:25%;margin-left:7%" src="Images/interactions.png">
@@ -181,7 +181,7 @@
                 $$d_i x_i$$
             </p>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             We can model the processes at play in a more mathematically rigorous
             manner. For instance,
@@ -245,7 +245,7 @@
               </ul>
             </div>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             Using this simple framework, we can recapitulate some models that have
             already been well-studied, as well as propose some advancements.
@@ -253,7 +253,7 @@
             Hubbell in 2001 can be replicated in this framework by assuming
             <br><span id="ns">next slide</span><br>
             that the fecundities and death rates are equal for all species (we
-            can consequently assume that this value is $1$ for conveneince) and
+            can consequently assume that this value is $1$ for convenience) and
             that the probability of any given species winning a competitive bout
             is equal to that of its competitor winning.
             <br><span id="ns">next slide</span><br>
@@ -276,7 +276,7 @@
 
         <section>
           <h4 id="header">Building a Model</h4>
-           <div class="wnotes" style="height:90%;padding-top:5%;">
+           <div class="wnotes" style="height:85%;padding-top:5%;">
             <div style="height:50%;">
               <img class="plain" style="display:inline-block;height:100%;max-width:25%;" src="Images/fertility.png">
               <img class="plain" style="display:inline-block;height:100%;max-width:25%;margin-left:7%;" src="Images/interactions.png">
@@ -307,7 +307,7 @@
               <span class="fragment highlight-red"  data-fragment-index=1>$x_i$</span>
             </p>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             Looking at our three processes again, this means by
             assuming constant and equivalent fecundities and death rates, we can
@@ -322,7 +322,7 @@
         </section>
 
         <section>
-          <h4 id="header">Building a Model: Equilvalence with Replicator Equation</h4>
+          <h4 id="header">Building a Model: Equivalence with Replicator Equation</h4>
            <div class="wnotes">
             <p style="padding-top:10%;">
               $$\begin{align}
@@ -334,7 +334,7 @@
               \end{align}$$
             </p>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             One of the really nice things about this model formulation is that
             it can be shown to be equivalent to the extremely well studied
@@ -348,9 +348,9 @@
 
         <section>
           <h4 id="header">Building a Model: Example</h4>
-           <div class="wnotes" style="padding-top:5%;height:90%;">
+           <div class="wnotes" style="padding-top:5%;height:85%;">
             <div style="display:inline-block;margin:0 2% 0 2%;vertical-align:middle;width:30%;height:40%;">
-              <img class="plain" style="" src="Images/RPS.svg">
+              <img class="plain" src="Images/RPS.svg">
             </div>
             <div style="display:inline-block;margin-left:2%;vertical-align:middle;width:50%;height:40%;">
               <span>
@@ -359,7 +359,7 @@
                 <img class="plain" style="width:1.5em;margin:0 0 0 1em;padding:0;" src="Images/scissors.svg">
               </span>
               <div style="height:40%;">
-                <span style="display:inline-block;vertical-align:middle;margin:0;padding:0'">
+                <span style="display:inline-block;vertical-align:middle;margin:0;padding:0">
                   $$\mathbf{H} = \left[\begin{array}
                   00.5 &    1 &    0 \\
                   0 &  0.5 &    1 \\
@@ -373,7 +373,7 @@
                   <img class="plain" style="width:1.5em;margin:0;padding:0;vertical-align:middle;" src="Images/scissors.svg">
                 </span>
               </div>
-              <div style="height:40%;padding-top:5%;">
+              <div style="height:40%;padding-top:10%;">
                 <span style="display:inline-block;vertical-align:middle;padding:0;margin:0;">
                   $$\mathbf{P} = \left[\begin{array}
                   0~~~0 &    ~~~1 &  -1 \\
@@ -388,11 +388,11 @@
                 </span>
               </div>
             </div>
-            <div style="height:50%;position:relative;top:15%;">
+            <div style="height:50%;position:relative;top:16%;right:20%;">
               <img class="plain" style="height:100%;" src="Images/F2b_time.png">
             </div>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             Lets look at a concrete example. Imagine three species: rock, paper,
             and scissors which interact in an intransitive cycle of complete
@@ -425,7 +425,7 @@
               <img class="plain fragment" data-fragment-index=2 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2d_time.png"><br>
             </div>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             This is also the case for more complicated tournament and
             hypertournament structures. For instance,
@@ -459,13 +459,13 @@
                   </span>
                 </p>
               </div>
-              <div style="display:inline-block;width:40%;height:80vh;vertical-align:top;">
+              <div style="display:inline-block;width:40%;height:70vh;vertical-align:top;">
                 <h3>Result</h3>
-                <img class="plain fragment" data-fragment-index=2 style="max-width:100%;max-height:90%" src="Images/pkgivens.png">
+                <img class="plain fragment" data-fragment-index=2 style="max-width:100%;max-height:85%" src="Images/pkgivens.png">
               </div>
             </div>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             So, we saw that in some cases, all of the species will survive and
             in other cases, some will go extinct. One might reasonably wonder
@@ -486,7 +486,7 @@
              expected number that survive is half of that. Put another way,
              there is no upper limit for the number of surviving species, which
              suggests that the high biodiversity we observe in nature maybe
-             shoudldn't be so surprising after all.
+             shouldn't be so surprising after all.
           </aside>
         </section>
 
@@ -510,18 +510,18 @@
               <img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F2c_time.png">
             </div>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             One of the interesting things about the transition from strict
             tournaments to hyper tournaments, i.e. moving from binary probabilities
             of victory to real-valued probabilities, is that we can actually
-            construct an infitinte number of matrices $\mathbf{H}$ that will
+            construct an infinite number of matrices $\mathbf{H}$ that will
             converge to an arbitrary equilibrium $x^\ast$. What this means is
             that we can fine-tune a system to allow the persistence of an even
             number of species.
             <br><span id="ns">next slide</span><br>
             Yet, these cases are highly degenerate and will collapse into an
-            odd number of species with any modification of the coeficients of
+            odd number of species with any modification of the coefficients of
             $\mathbf{H}$ or parameters $f_i$ or $d_i$. For this reason, I will
             always mark this example with an asterisk (*), denoting its special
             status.
@@ -554,8 +554,8 @@
             it can feasibly produce empirically observed species abundance
             distributions). There are still some shortcomings, however.
             <br><span id="ns">next slide</span><br>
-            Most noticably is the presence of neutral cycles, which are not only
-            very uncommon emprically, but also make their species more
+            Most noticeably is the presence of neutral cycles, which are not only
+            very uncommon empirically, but also make their species more
             susceptible to extinction as perturbations, on average, increase the
             size of such neutral cycles.
           </aside>
@@ -564,17 +564,17 @@
         <section>
           <h4 id="header">Higher-order Interactions</h4>
            <div class="wnotes">
-            <div style="padding-top:5%;">
+            <div style="height:85%;padding-top:5%;">
               <img class="plain fragment fade-out" data-fragment-index=1 style="display:inline-block;width:40%;  " src="Images/interactions.png">
               <img class="plain fragment" data-fragment-index=1 style="display:inline-block;width:40%;  " src="Images/interactions3.svg">
             </div>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             At this point, you might be wondering what this has to do with
             higher-order interactions (HOI). So far, the interaction part of our
             model consisted of choosing two seedlings and competing them to
-            determine the winner in a pairwise fasion. This is overwhelmingly
+            determine the winner in a pairwise fashion. This is overwhelmingly
             the approach used in ecological research, but this is due to historical
             precedent and mathematical convenience. In nature, we observe a
             rich seedbank, where potentially many seedlings are competing for
@@ -592,13 +592,13 @@
               <img class="plain" style="display:inline-block;width:35%;margin-right:15%;vertical-align:middle;" src="Images/icon3-1.svg">
               <img class="plain" style="display:inline-block;width:45%;vertical-align:middle;" src="Images/icon3.svg">
             </div>
-            <img class="plain fragment current-visible" data-fragment-index=1 style="position:absolute;top:300px;left:50px;width:100%;" src="Images/pairwise_hoi.png">
-            <img class="plain fragment" data-fragment-index=2 style="position:absolute;top:300px;left:50px;width:100%;" src="Images/pairwise_hoi_2.png">
+            <img class="plain fragment current-visible" data-fragment-index=1 style="position:absolute;top:0px;left:50px;width:100%;" src="Images/pairwise_hoi.png">
+            <img class="plain fragment" data-fragment-index=2 style="position:absolute;top:0px;left:50px;width:100%;" src="Images/pairwise_hoi_2.png">
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             Unfortunately, even this small change faces us with a dilemma. We
-            can consider true HOI in which there is a coeficient for each unique
+            can consider true HOI in which there is a coefficient for each unique
             triplet of interacting species, but then our number of parameters in
             the model quickly becomes intractable from an empirical standpoint.
             An alternative is to consider an interaction chain,
@@ -607,7 +607,7 @@
             this pairwise bout competes with the third species to determine
             the overall winner. This has the advantage of reducing the number of
             parameters to exactly that needed for the pairwise case, but comes
-            with its own shortcomming: now the order of interactions matters.
+            with its own shortcoming: now the order of interactions matters.
             For instance, in this example, if we re-ordered the interactions
             such that the orange seedling interacts first with the purple
             <br><span id="ns">next slide</span><br>
@@ -631,13 +631,13 @@
               </p>
             </div>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             This change does not, however, break equivalence with replicator
             dynamics. Instead, the payoff matrix now becomes
             <br><span id="ns">next slide</span><br>
             a payoff tensor with as many indices as there are interacting
-            seedlings in each competetive bout (in this case three). Furthermore, because we are
+            seedlings in each competitive bout (in this case three). Furthermore, because we are
             defining the HOI in terms of a sequence of pairwise competitions, we
             can write this tensor $\mathbf{P}$ in terms of the coefficients of
             the tournament matrix $\mathbf{H}$.
@@ -668,7 +668,7 @@
               <img class="plain fragment" data-fragment-index=1 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/F3c_time.png">
             </div>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             So, how does this change affect the dynamics?
             <br><span id="ns">next slide</span><br>
@@ -701,7 +701,7 @@
               </div>
             </div>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             What happens when we increase the number of competitors per bout to four?
             <br><span id="ns">next slide</span><br>
@@ -771,7 +771,7 @@
               </ul>
             </div>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             These results provide a possible mechanism for the coexistence of
             large numbers of species such as we see in nature, but everything thus
@@ -785,12 +785,12 @@
 
         <section>
           <h4 id="header">Different Physiological Rates</h4>
-           <div class="wnotes" style="padding-top:5%;">
+           <div class="wnotes" style="height:75%;padding-top:5%;">
             <img class="plain" style="display:inline-block;width:35%;" src="Images/fertility.png">
             <img class="plain" style="display:inline-block;width:35%;padding-left:15%;" src="Images/death.png">
-            <h2>What happens when these rates are alowed to vary?</h2>
+            <h2>What happens when these rates are allowed to vary?</h2>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             In other words, what happens when different species die and
             reproduce at different rates?
@@ -823,7 +823,7 @@
               <img class="plain fragment" data-fragment-index=4 style="display:inline-block;vertical-align:middle;height:100%;padding:0;margin:0;" src="Images/Fs3c_time.png">
             </div>
           </div>
-          <h4 id="citation"></h4> <!-- Neccessary for proper header location -->
+          <h4 id="citation"></h4> <!-- Necessary for proper header location -->
           <aside class="notes">
             In this case, we see that the rock-paper-scissors dynamics are no longer
             neutral cycles, but rather unstable. The cycles are amplifying and will eventually
@@ -837,8 +837,8 @@
             that this modification of the physiological parameters leads to the
             rapid extinction of one of the species, making the number of
             remaining species odd, and those remaining also show the amplifying
-            cylclical behavior. When we sample three species for each
-            competetive bout,
+            cyclical behavior. When we sample three species for each
+            competitive bout,
             <br><span id="ns">next slide</span><br>
             we see the recovery of a stable fixed point for all cases, with the
             exception of the special case, where now an odd number of species
@@ -918,7 +918,7 @@
           <h4 id="header">Introducing Stochasticity</h4>
            <div class="fullwidth wnotes" style="height:100%;">
             <span style="display:inline-block;height:100%;vertical-align:middle;"></span> <!-- centers vertically -->
-            <img class="plain" style="width:100%;vertical-align:middle;" src="Images/traj.png">
+            <img class="plain" style="vertical-align:middle;" src="Images/traj.png">
           </div>
           <h4 id="citation"></h4>
           <aside class="notes">
@@ -979,24 +979,22 @@
       </div>
     </div>
 
-    <script src="../../reveal.js/old_reveal/lib/js/head.min.js"></script>
-    <script src="../../reveal.js/old_reveal/js/reveal.js"></script>
+    <script src="../../reveal.js/dist/reveal.js"></script>
+    <script src="../../reveal.js/plugin/math/math.js"></script>
+    <script src="../../reveal.js/plugin/notes/notes.js"></script>
+    <script src="../../reveal.js/plugin/highlight/highlight.js"></script>
 
-    <!-- Custom Javascript -->
     <script>
-    $(document).keydown(function(e) {
-      var key = e.which;
-      if (key == 86) {
+      Reveal.configure({
+        keyboard: {
           // if the user pressed 'v':
-          $("aside.notes").toggleClass("hidden");
-          $("aside.notes").siblings().not("#header").not("#citation").not("#abs_pos").toggleClass("wnotes");
-          $("section > #citation").toggleClass("citwnotes");
-      }
-    });
-    </script>
-
-    <script>
-      // More info https://github.com/hakimel/reveal.js#configuration
+          86: () => {
+                $("aside.notes").toggleClass("hidden");
+                $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
+                $("section > #citation").toggleClass("citwnotes");
+              }
+        }
+      })
       Reveal.initialize({
         width: "100%",
         height:"100%",
@@ -1006,16 +1004,15 @@
         history: true,
         center: true,
         transition: "slide", // none/fade/slide/convex/concave/zoom
-
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: "../../reveal.js/old_reveal/plugin/markdown/marked.js" },
-          { src: "../../reveal.js/old_reveal/plugin/markdown/markdown.js" },
-          { src: "../../reveal.js/old_reveal/plugin/notes/notes.js", async: true },
-          { src: "../../reveal.js/old_reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: "../../reveal.js/old_reveal/plugin/math/math.js", async: true }
-        ]
+        math: {
+      		mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          // mathjax: '../../../ForLocalPresentations/MathJax/unpacked/MathJax.js',
+      		config: 'TeX-AMS_HTML-full'
+      	},
+        // Optional reveal.js 
+        plugins: [RevealMath, RevealNotes, RevealHighlight]
       });
     </script>
   </body>
 </html>
+

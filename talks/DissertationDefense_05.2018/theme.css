@@ -15,7 +15,8 @@ body {
   font-family: "Alegreya", serif;
   font-size: 38px;
   font-weight: normal;
-  color: #f4e6d4; }
+  color: #f4e6d4;
+  background: #2b3141;}
 
 .reveal .slides > section,
 .reveal .slides > section > section {

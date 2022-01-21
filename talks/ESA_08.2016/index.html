@@ -5,17 +5,17 @@
 
     <title>101st ESA: 08.2016</title>
 
-    <link rel="stylesheet" href="../../reveal.js/old_reveal/css/reveal.css">
-    <link rel="stylesheet" href="../../reveal.js/old_reveal/css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js/dist/theme/white.css" id="theme">
 
     <!-- personal css file -->
     <link rel="stylesheet" href="main.css">
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../../reveal.js/old_reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="../../reveal.js/plugin/highlight/zenburn.css">
 
     <!-- font-linking -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <script src="https://use.fontawesome.com/ca6fc79211.js"></script>
+    <link rel="stylesheet" href="../../fontawesome/css/all.css">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
   </head>
@@ -94,9 +94,9 @@
             </table>
           </div>
           <div style="bottom:0; position:absolute;" class="wnotes">
-            <img class="plain" src="/talks/DeptofEd.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
-            <img class="plain" src="/talks/NSF_logo.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
-            <img class="plain" src="/talks/UC_logo.png" style="display:inline-block; max-height:10vh !important; max-width:67% !important;">
+            <img class="plain" src="../DeptofEd_logo.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
+            <img class="plain" src="../NSF_logo.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
+            <img class="plain" src="../UC_logo.png" style="display:inline-block; max-height:10vh !important; max-width:67% !important;">
           </div>
           <aside class="notes">
             The work was undergone in collaboration with <a href="http://lizsander.com">Liz Sander</a>,
@@ -867,24 +867,22 @@
       </div>
     </div>
 
-    <script src="../../reveal.js/old_reveal/lib/js/head.min.js"></script>
-    <script src="../../reveal.js/old_reveal/js/reveal.js"></script>
+    <script src="../../reveal.js/dist/reveal.js"></script>
+    <script src="../../reveal.js/plugin/math/math.js"></script>
+    <script src="../../reveal.js/plugin/notes/notes.js"></script>
+    <script src="../../reveal.js/plugin/highlight/highlight.js"></script>
 
-    <!-- Custom Javascript -->
     <script>
-    $(document).keydown(function(e) {
-      var key = e.which;
-      if (key == 86) {
+      Reveal.configure({
+        keyboard: {
           // if the user pressed 'v':
-          $("aside.notes").toggleClass("hidden");
-          $("aside.notes").siblings().not("#header").not("#citation").toggleClass("wnotes");
-          $("section > #citation").toggleClass("citwnotes");
-      }
-    });
-    </script>
-
-    <script>
-      // More info https://github.com/hakimel/reveal.js#configuration
+          86: () => {
+                $("aside.notes").toggleClass("hidden");
+                $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
+                $("section > #citation").toggleClass("citwnotes");
+              }
+        }
+      })
       Reveal.initialize({
         width: "100%",
         height:"100%",
@@ -896,15 +894,13 @@
         transition: "slide", // none/fade/slide/convex/concave/zoom
         parallaxBackgroundImage: "Images/background.svg",
         parallaxBackgroundSize: "5000px 1460px",
-
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: "../../reveal.js/old_reveal/plugin/markdown/marked.js" },
-          { src: "../../reveal.js/old_reveal/plugin/markdown/markdown.js" },
-          { src: "../../reveal.js/old_reveal/plugin/notes/notes.js", async: true },
-          { src: "../../reveal.js/old_reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: "../../reveal.js/old_reveal/plugin/math/math.js", async: true }
-        ]
+        math: {
+      		mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          // mathjax: '../../../ForLocalPresentations/MathJax/unpacked/MathJax.js',
+      		config: 'TeX-AMS_HTML-full'
+      	},
+        // Optional reveal.js 
+        plugins: [RevealMath, RevealNotes, RevealHighlight]
       });
     </script>
   </body>
