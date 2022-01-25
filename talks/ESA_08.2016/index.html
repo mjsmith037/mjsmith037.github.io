@@ -5,17 +5,17 @@
 
     <title>101st ESA: 08.2016</title>
 
-    <link rel="stylesheet" href="../../reveal.js/old_reveal/css/reveal.css">
-    <link rel="stylesheet" href="../../reveal.js/old_reveal/css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js/dist/theme/white.css" id="theme">
 
     <!-- personal css file -->
     <link rel="stylesheet" href="main.css">
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../../reveal.js/old_reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="../../reveal.js/plugin/highlight/zenburn.css">
 
     <!-- font-linking -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <script src="https://use.fontawesome.com/ca6fc79211.js"></script>
+    <link rel="stylesheet" href="../../fontawesome/css/all.css">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
   </head>
@@ -94,9 +94,9 @@
             </table>
           </div>
           <div style="bottom:0; position:absolute;" class="wnotes">
-            <img class="plain" src="/talks/DeptofEd.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
-            <img class="plain" src="/talks/NSF_logo.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
-            <img class="plain" src="/talks/UC_logo.png" style="display:inline-block; max-height:10vh !important; max-width:67% !important;">
+            <img class="plain" src="../DeptofEd_logo.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
+            <img class="plain" src="../NSF_logo.png" style="display:inline-block; max-height:10vh !important; max-width:14% !important;">
+            <img class="plain" src="../UC_logo.png" style="display:inline-block; max-height:10vh !important; max-width:67% !important;">
           </div>
           <aside class="notes">
             The work was undergone in collaboration with <a href="http://lizsander.com">Liz Sander</a>,
@@ -592,7 +592,7 @@
             <p style="margin-top:20vh;"> 7 Large, well-resolved, marine/estuarine food-webs</p>
             <p>With/without Concomitant predation</p>
             <p >Each species categorized:</p>
-            <ul style="list-style-type=none;">
+            <ul style="list-style-type:none;">
               <li class="category pp">Primary Producer</li>
               <li class="category hb">Herbivore</li>
               <li class="category pa">Parasite</li>
@@ -852,8 +852,8 @@
             Thanks for viewing this presentation, if you have any feedback or
             questions, please <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#106;&#115;&#109;&#105;&#116;&#104;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;">Email me</a>!
           </h3>
-          <p style="position=relative; margin-top:25vh; font-size:24px;"><a href="http://michalska-smith.com//talks/ESA_08,2016/">Slides available on Michalska-Smith.com</a></p>
-          <p style="position=relative; font-size:24px;">
+          <p style="position:relative; margin-top:25vh; font-size:24px;"><a href="http://michalska-smith.com//talks/ESA_08,2016/">Slides available on Michalska-Smith.com</a></p>
+          <p style="position:relative; font-size:24px;">
             <a href="http://www.freepik.com/free-vector/hand-drawn-forest-animal-collection_843677.htm">Background</a>
             and food-web animals (
             <a href="http://www.freepik.com/free-vector/cute-forest-animals_787689.htm">1</a>,
@@ -867,24 +867,12 @@
       </div>
     </div>
 
-    <script src="../../reveal.js/old_reveal/lib/js/head.min.js"></script>
-    <script src="../../reveal.js/old_reveal/js/reveal.js"></script>
-
-    <!-- Custom Javascript -->
-    <script>
-    $(document).keydown(function(e) {
-      var key = e.which;
-      if (key == 86) {
-          // if the user pressed 'v':
-          $("aside.notes").toggleClass("hidden");
-          $("aside.notes").siblings().not("#header").not("#citation").toggleClass("wnotes");
-          $("section > #citation").toggleClass("citwnotes");
-      }
-    });
-    </script>
+    <script src="../../reveal.js/dist/reveal.js"></script>
+    <script src="../../reveal.js/plugin/math/math.js"></script>
+    <script src="../../reveal.js/plugin/notes/notes.js"></script>
+    <script src="../../reveal.js/plugin/highlight/highlight.js"></script>
 
     <script>
-      // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         width: "100%",
         height:"100%",
@@ -896,15 +884,18 @@
         transition: "slide", // none/fade/slide/convex/concave/zoom
         parallaxBackgroundImage: "Images/background.svg",
         parallaxBackgroundSize: "5000px 1460px",
-
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: "../../reveal.js/old_reveal/plugin/markdown/marked.js" },
-          { src: "../../reveal.js/old_reveal/plugin/markdown/markdown.js" },
-          { src: "../../reveal.js/old_reveal/plugin/notes/notes.js", async: true },
-          { src: "../../reveal.js/old_reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: "../../reveal.js/old_reveal/plugin/math/math.js", async: true }
-        ]
+        math: {
+      		mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          // mathjax: '../../../ForLocalPresentations/MathJax/unpacked/MathJax.js',
+      		config: 'TeX-AMS_HTML-full'
+      	},
+        // Optional reveal.js 
+        plugins: [RevealMath, RevealNotes, RevealHighlight]
+      });
+      Reveal.addKeyBinding({ keyCode: 86, key: 'V', description: 'Show/Hide Notes'}, () => {
+        $("aside.notes").toggleClass("hidden");
+        $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
+        $("section > #citation").toggleClass("citwnotes");
       });
     </script>
   </body>

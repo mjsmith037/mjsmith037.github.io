@@ -5,16 +5,16 @@
 
     <title>103rd ESA: 08.2018</title>
 
-    <link rel="stylesheet" href="../../reveal.js/old_reveal/css/reveal.css">
-    <link rel="stylesheet" href="../../reveal.js/old_reveal/css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js/dist/theme/white.css" id="theme">
 
     <!-- personal css file -->
     <link rel="stylesheet" href="main.css">
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../../reveal.js/old_reveal/lib/css/googlecode.css">
+    <link rel="stylesheet" href="../../reveal.js/plugin/highlight/googlecode.css">
     <!-- font-linking -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-TXfwrfuHVznxCssTxWoPZjhcss/hp38gEOH8UPZG/JcXonvBQ6SlsIF49wUzsGno" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../fontawesome/css/all.css">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <!-- <script src="../../../ForLocalPresentations/jquery-3.3.1.min.js"></script> -->
@@ -783,21 +783,10 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
       </div>
     </div>
 
-    <script src="../../reveal.js/old_reveal/lib/js/head.min.js"></script>
-    <script src="../../reveal.js/old_reveal/js/reveal.js"></script>
-
-    <!-- Custom Javascript -->
-    <script>
-    $(document).keydown(function(e) {
-      var key = e.which;
-      if (key == 86) {
-          // if the user pressed 'v':
-          $("aside.notes").toggleClass("hidden");
-          $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
-          $("section > #citation").toggleClass("citwnotes");
-      }
-    });
-    </script>
+    <script src="../../reveal.js/dist/reveal.js"></script>
+    <script src="../../reveal.js/plugin/math/math.js"></script>
+    <script src="../../reveal.js/plugin/notes/notes.js"></script>
+    <script src="../../reveal.js/plugin/highlight/highlight.js"></script>
 
     <script>
       Reveal.initialize({
@@ -815,11 +804,12 @@ for (d in ncol(B) / 2, ncol(B) / 4, ncol(B) / 8, ..., 2, 1) {
       		config: 'TeX-AMS_HTML-full'
       	},
         // Optional reveal.js plugins
-        dependencies: [
-          { src: "../../reveal.js/old_reveal/plugin/math/math.js", async: true },
-          { src: "../../reveal.js/old_reveal/plugin/notes/notes.js", async: true },
-          { src: "../../reveal.js/old_reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-        ]
+        plugins: [RevealMath, RevealNotes, RevealHighlight]
+      });
+      Reveal.addKeyBinding({ keyCode: 86, key: 'V', description: 'Show/Hide Notes'}, () => {
+        $("aside.notes").toggleClass("hidden");
+        $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
+        $("section > #citation").toggleClass("citwnotes");
       });
     </script>
   </body>
