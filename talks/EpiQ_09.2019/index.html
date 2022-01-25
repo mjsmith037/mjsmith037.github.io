@@ -15,8 +15,6 @@
     <!-- font-linking -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <script defer src="../../fontawesome/js/all.min.js"></script>
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="reveal">
@@ -191,9 +189,9 @@
 
         <section>
           <div class="vcenter">
-            <img style="position:absolute; width:80vw;" class="plain" src="images/within-farm_zero.svg">
-            <img style="position:absolute; width:80vw;" class="plain fragment fade-out" data-fragment-index=1 src="images/within-farm_one.svg">
-            <img style="position:absolute; width:80vw;" class="plain fragment fade-in" data-fragment-index=1 src="images/within-farm_two.svg">
+            <object style="position:absolute; width:80vw;" class="plain" data="images/within-farm_zero.svg"></object>
+            <object style="position:absolute; width:80vw;" class="plain fragment fade-out" data-fragment-index=1 data="images/within-farm_one.svg"></object>
+            <object style="position:absolute; width:80vw;" class="plain fragment fade-in" data-fragment-index=1 data="images/within-farm_two.svg"></object>
           </div>
         </section>
 
@@ -448,23 +446,23 @@
 
         <section>
           <div class="vcenter">
-            <img class="plain" src="figures/large-network-comparison/summary_networks.svg">
-            <img class="plain fragment" src="figures/large-network-comparison/degree_distributions.svg">
+            <img style="height:21.5vh;padding-bottom:0;margin-bottom:0;" class="plain" src="figures/large-network-comparison/summary_networks.svg">
+            <img style="height:75vh;padding-top:0;margin-top:0;" class="plain fragment" src="figures/large-network-comparison/degree_distributions.svg">
           </div>
         </section>
 
         <section>
           <section>
             <div class="vcenter">
-              <img class="plain" src="figures/large-network-comparison/summary_networks.svg">
-              <img class="plain" src="figures/large-network-comparison/response_vars_sigma=20.svg">
+              <img style="height:25vh;padding-bottom:0;margin-bottom:0;" class="plain" src="figures/large-network-comparison/summary_networks.svg">
+              <img style="height:60vh;padding-top:0;margin-top:0;" class="plain" src="figures/large-network-comparison/response_vars_sigma=20.svg">
             </div>
           </section>
 
           <section>
             <div class="vcenter">
-              <img class="plain" src="figures/large-network-comparison/summary_networks.svg">
-              <img class="plain" src="figures/large-network-comparison/response_vars_sigma=40.svg">
+              <img style="height:25vh;padding-bottom:0;margin-bottom:0;" class="plain" src="figures/large-network-comparison/summary_networks.svg">
+              <img style="height:60vh;padding-top:0;margin-top:0;" class="plain" src="figures/large-network-comparison/response_vars_sigma=40.svg">
             </div>
           </section>
         </section>
@@ -520,16 +518,6 @@
     <script src="../../reveal.js/plugin/highlight/highlight.js"></script>
 
     <script>
-      Reveal.configure({
-        keyboard: {
-          // if the user pressed 'v':
-          86: () => {
-                $("aside.notes").toggleClass("hidden");
-                $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
-                $("section > #citation").toggleClass("citwnotes");
-              }
-        }
-      })
       Reveal.initialize({
         width: "100%",
         height:"100%",
@@ -546,6 +534,11 @@
       	},
         // Optional reveal.js
         plugins: [RevealMath, RevealNotes, RevealHighlight]
+      });
+      Reveal.addKeyBinding({ keyCode: 86, key: 'V', description: 'Show/Hide Notes'}, () => {
+        $("aside.notes").toggleClass("hidden");
+        $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
+        $("section > #citation").toggleClass("citwnotes");
       });
     </script>
   </body>

@@ -592,7 +592,7 @@
             <p style="margin-top:20vh;"> 7 Large, well-resolved, marine/estuarine food-webs</p>
             <p>With/without Concomitant predation</p>
             <p >Each species categorized:</p>
-            <ul style="list-style-type=none;">
+            <ul style="list-style-type:none;">
               <li class="category pp">Primary Producer</li>
               <li class="category hb">Herbivore</li>
               <li class="category pa">Parasite</li>
@@ -852,8 +852,8 @@
             Thanks for viewing this presentation, if you have any feedback or
             questions, please <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#106;&#115;&#109;&#105;&#116;&#104;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;">Email me</a>!
           </h3>
-          <p style="position=relative; margin-top:25vh; font-size:24px;"><a href="http://michalska-smith.com//talks/ESA_08,2016/">Slides available on Michalska-Smith.com</a></p>
-          <p style="position=relative; font-size:24px;">
+          <p style="position:relative; margin-top:25vh; font-size:24px;"><a href="http://michalska-smith.com//talks/ESA_08,2016/">Slides available on Michalska-Smith.com</a></p>
+          <p style="position:relative; font-size:24px;">
             <a href="http://www.freepik.com/free-vector/hand-drawn-forest-animal-collection_843677.htm">Background</a>
             and food-web animals (
             <a href="http://www.freepik.com/free-vector/cute-forest-animals_787689.htm">1</a>,
@@ -873,16 +873,6 @@
     <script src="../../reveal.js/plugin/highlight/highlight.js"></script>
 
     <script>
-      Reveal.configure({
-        keyboard: {
-          // if the user pressed 'v':
-          86: () => {
-                $("aside.notes").toggleClass("hidden");
-                $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
-                $("section > #citation").toggleClass("citwnotes");
-              }
-        }
-      })
       Reveal.initialize({
         width: "100%",
         height:"100%",
@@ -901,6 +891,11 @@
       	},
         // Optional reveal.js 
         plugins: [RevealMath, RevealNotes, RevealHighlight]
+      });
+      Reveal.addKeyBinding({ keyCode: 86, key: 'V', description: 'Show/Hide Notes'}, () => {
+        $("aside.notes").toggleClass("hidden");
+        $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
+        $("section > #citation").toggleClass("citwnotes");
       });
     </script>
   </body>

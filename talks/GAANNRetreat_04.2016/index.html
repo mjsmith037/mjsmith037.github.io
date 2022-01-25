@@ -17,15 +17,6 @@
     <!-- font-linking -->
     <link href='https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
-
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
@@ -199,16 +190,6 @@
         <script src="../../reveal.js/plugin/highlight/highlight.js"></script>
     
         <script>
-          Reveal.configure({
-            keyboard: {
-            // if the user pressed 'v':
-            86: () => {
-                  $("aside.notes").toggleClass("hidden");
-                  $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
-                  $("section > #citation").toggleClass("citwnotes");
-                }
-            }
-          })
           Reveal.initialize({
             width: "100%",
             height:"100%",
@@ -225,6 +206,11 @@
               },
             // Optional reveal.js 
             plugins: [RevealMath, RevealNotes, RevealHighlight]
+          });
+          Reveal.addKeyBinding({ keyCode: 86, key: 'V', description: 'Show/Hide Notes'}, () => {
+            $("aside.notes").toggleClass("hidden");
+            $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
+            $("section > #citation").toggleClass("citwnotes");
           });
         </script>
       </body>

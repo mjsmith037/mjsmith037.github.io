@@ -1606,16 +1606,6 @@
       <script src="../../reveal.js/plugin/highlight/highlight.js"></script>
   
       <script>
-        Reveal.configure({
-          keyboard: {
-            // if the user pressed 'v':
-            86: () => {
-                  $("aside.notes").toggleClass("hidden");
-                  $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
-                  $("section > #citation").toggleClass("citwnotes");
-                }
-          }
-        })
         Reveal.initialize({
           width: "100%",
           height:"100%",
@@ -1632,6 +1622,11 @@
           },
           // Optional reveal.js 
           plugins: [RevealMath, RevealNotes, RevealHighlight]
+        });
+        Reveal.addKeyBinding({ keyCode: 86, key: 'V', description: 'Show/Hide Notes'}, () => {
+          $("aside.notes").toggleClass("hidden");
+          $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
+          $("section > #citation").toggleClass("citwnotes");
         });
       </script>
     </body>
