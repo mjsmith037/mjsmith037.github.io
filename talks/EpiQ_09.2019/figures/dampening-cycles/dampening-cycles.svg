@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2631,19 +2631,17 @@
        d="m 316.1893,-19.254578 -2.75898,-5.518964 a 1.5910518,1.5910518 0 0 0 -0.77664,-0.742326 l -5.9918,-2.66153 a 1.5910518,1.5910518 0 0 0 -1.29273,0 l -5.9918,2.663023 a 1.5910518,1.5910518 0 0 0 -0.77663,0.742326 l -2.75899,5.518963 a 1.5950294,1.5950294 0 0 0 -0.16805,0.710504 v 12.5026813 h 6.36421 v -4.7731563 h 7.95526 v 4.7731563 h 6.3642 V -18.542582 a 1.5950294,1.5950294 0 0 0 -0.16805,-0.711996 z m -7.78721,3.668365 h -4.77315 v -4.773156 h 4.77315 z"
        inkscape:connector-curvature="0" />
   </g>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.82711411px;line-height:1.25;font-family:'Font Awesome 5 Pro';-inkscape-font-specification:'Font Awesome 5 Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.09567785"
-     x="199.4429"
-     y="37.192261"
-     id="text1574-9-0"
+  <g
+     aria-label="long-arrow-alt-right"
      inkscape:transform-center-x="70.971447"
-     inkscape:transform-center-y="58.924989"><tspan
-       sodipodi:role="line"
-       x="199.4429"
-       y="37.192261"
-       style="stroke-width:1.09567785"
-       id="tspan1669-4">long-arrow-alt-right</tspan></text>
+     inkscape:transform-center-y="58.924989"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.82711411px;line-height:1.25;font-family:'Font Awesome 5 Pro';-inkscape-font-specification:'Font Awesome 5 Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.09567785"
+     id="text1574-9-0">
+    <path
+       d="m 228.54684,30.173074 8.47439,-8.474383 c 0.428,-0.342399 0.428,-1.027198 0,-1.455197 l -8.47439,-8.474383 c -0.68479,-0.599199 -1.71199,-0.1712 -1.71199,0.770398 v 6.077588 H 200.4701 c -0.5992,0 -1.0272,0.427999 -1.0272,1.027198 v 2.739195 c 0,0.599199 0.428,1.027198 1.0272,1.027198 h 26.36475 v 6.077588 c 0,0.941598 1.0272,1.369597 1.71199,0.684798 z"
+       style="stroke-width:1.09567785;fill:#000000;fill-opacity:1"
+       id="path5039" />
+  </g>
   <g
      id="g1543-3"
      transform="matrix(0.25328768,0,0,0.25328768,109.25038,52.397998)">
@@ -2676,30 +2674,26 @@
        d="m 663.38737,-17.979317 -2.75898,-5.518964 a 1.5910518,1.5910518 0 0 0 -0.77664,-0.742326 l -5.9918,-2.66153 a 1.5910518,1.5910518 0 0 0 -1.29273,0 l -5.9918,2.663023 a 1.5910518,1.5910518 0 0 0 -0.77663,0.742326 l -2.75899,5.518963 a 1.5950294,1.5950294 0 0 0 -0.16805,0.710504 v 12.5026815 h 6.36421 v -4.7731563 h 7.95526 v 4.7731563 h 6.3642 V -17.267321 a 1.5950294,1.5950294 0 0 0 -0.16805,-0.711996 z m -7.78721,3.668365 h -4.77315 v -4.773156 h 4.77315 z"
        inkscape:connector-curvature="0" />
   </g>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.82711411px;line-height:1.25;font-family:'Font Awesome 5 Pro';-inkscape-font-specification:'Font Awesome 5 Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.09567785"
-     x="544.0542"
-     y="37.192261"
-     id="text1574-9-0-6"
+  <g
+     aria-label="long-arrow-alt-right"
      inkscape:transform-center-x="70.971447"
-     inkscape:transform-center-y="58.924989"><tspan
-       sodipodi:role="line"
-       x="544.0542"
-       y="37.192261"
-       style="stroke-width:1.09567785"
-       id="tspan1669-4-2">long-arrow-alt-right</tspan></text>
-  <text
-     xml:space="preserve"
+     inkscape:transform-center-y="58.924989"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.82711411px;line-height:1.25;font-family:'Font Awesome 5 Pro';-inkscape-font-specification:'Font Awesome 5 Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.09567785"
-     x="371.74854"
-     y="37.192261"
-     id="text1574-9-0-9"
+     id="text1574-9-0-6">
+    <path
+       d="m 573.15814,30.173074 8.47439,-8.474383 c 0.42799,-0.342399 0.42799,-1.027198 0,-1.455197 l -8.47439,-8.474383 c -0.6848,-0.599199 -1.71199,-0.1712 -1.71199,0.770398 v 6.077588 H 545.0814 c -0.5992,0 -1.0272,0.427999 -1.0272,1.027198 v 2.739195 c 0,0.599199 0.428,1.027198 1.0272,1.027198 h 26.36475 v 6.077588 c 0,0.941598 1.02719,1.369597 1.71199,0.684798 z"
+       style="stroke-width:1.09567785;fill:#000000;fill-opacity:1"
+       id="path5042" />
+  </g>
+  <g
+     aria-label="long-arrow-alt-right"
      inkscape:transform-center-x="70.971447"
-     inkscape:transform-center-y="58.924989"><tspan
-       sodipodi:role="line"
-       x="371.74854"
-       y="37.192261"
-       style="stroke-width:1.09567785"
-       id="tspan1669-4-9">long-arrow-alt-right</tspan></text>
+     inkscape:transform-center-y="58.924989"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.82711411px;line-height:1.25;font-family:'Font Awesome 5 Pro';-inkscape-font-specification:'Font Awesome 5 Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.09567785"
+     id="text1574-9-0-9">
+    <path
+       d="m 400.85248,30.173074 8.47438,-8.474383 c 0.428,-0.342399 0.428,-1.027198 0,-1.455197 l -8.47438,-8.474383 c -0.6848,-0.599199 -1.712,-0.1712 -1.712,0.770398 v 6.077588 h -26.36475 c -0.5992,0 -1.02719,0.427999 -1.02719,1.027198 v 2.739195 c 0,0.599199 0.42799,1.027198 1.02719,1.027198 h 26.36475 v 6.077588 c 0,0.941598 1.0272,1.369597 1.712,0.684798 z"
+       style="stroke-width:1.09567785;fill:#000000;fill-opacity:1"
+       id="path5045" />
+  </g>
 </svg>

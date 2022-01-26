@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -40,7 +40,7 @@
      id="namedview694"
      showgrid="false"
      inkscape:zoom="1.3110938"
-     inkscape:cx="200.87359"
+     inkscape:cx="28.117072"
      inkscape:cy="250.33641"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -472,29 +472,25 @@
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
-  <text
-     xml:space="preserve"
+  <g
+     aria-label="long-arrow-alt-left"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.82711411px;line-height:1.25;font-family:'Font Awesome 5 Pro';-inkscape-font-specification:'Font Awesome 5 Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.09567785"
-     x="373.3533"
-     y="37.972092"
-     id="text1574-9-6"><tspan
-       sodipodi:role="line"
-       x="373.3533"
-       y="37.972092"
-       style="stroke-width:1.09567785"
-       id="tspan1669-2">long-arrow-alt-left</tspan></text>
-  <text
-     xml:space="preserve"
+     id="text1574-9-6">
+    <path
+       d="m 382.51248,12.548942 -8.47438,8.474383 c -0.428,0.427999 -0.428,1.112798 0,1.455197 l 8.47438,8.474383 c 0.6848,0.684799 1.7976,0.2568 1.7976,-0.684798 v -6.077588 h 26.36475 c 0.5136,0 1.0272,-0.427999 1.0272,-1.027198 v -2.739195 c 0,-0.599199 -0.5136,-1.027198 -1.0272,-1.027198 H 384.31008 V 13.31934 c 0,-0.941598 -1.1128,-1.369597 -1.7976,-0.770398 z"
+       style="stroke-width:1.09567785;fill:#000000;fill-opacity:1"
+       id="path1038" />
+  </g>
+  <g
+     aria-label="long-arrow-alt-left"
+     transform="scale(-1)"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.82711411px;line-height:1.25;font-family:'Font Awesome 5 Pro';-inkscape-font-specification:'Font Awesome 5 Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.09567785"
-     x="-242.47057"
-     y="-5.7677259"
-     id="text1574-9-6-6"
-     transform="scale(-1)"><tspan
-       sodipodi:role="line"
-       x="-242.47057"
-       y="-5.7677259"
-       style="stroke-width:1.09567785"
-       id="tspan1669-2-4">long-arrow-alt-left</tspan></text>
+     id="text1574-9-6-6">
+    <path
+       d="m -233.31138,-31.190876 -8.47439,8.474383 c -0.428,0.427999 -0.428,1.112798 0,1.455197 l 8.47439,8.474384 c 0.68479,0.684798 1.79759,0.256799 1.79759,-0.684799 v -6.077588 h 26.36475 c 0.5136,0 1.0272,-0.427999 1.0272,-1.027198 v -2.739195 c 0,-0.599198 -0.5136,-1.027198 -1.0272,-1.027198 h -26.36475 v -6.077588 c 0,-0.941598 -1.1128,-1.369597 -1.79759,-0.770398 z"
+       style="stroke-width:1.09567785;fill:#000000;fill-opacity:1"
+       id="path1035" />
+  </g>
   <g
      id="g1826"
      transform="translate(21.636775,60.168577)">

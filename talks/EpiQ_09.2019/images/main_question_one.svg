@@ -28,7 +28,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -48,7 +48,7 @@
      id="namedview6"
      showgrid="false"
      inkscape:zoom="0.4609375"
-     inkscape:cx="944.52445"
+     inkscape:cx="442.28716"
      inkscape:cy="384.87703"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -58,15 +58,13 @@
      fit-margin-left="5"
      fit-margin-right="5"
      fit-margin-bottom="5" />
-  <text
-     xml:space="preserve"
+  <g
+     aria-label="long-arrow-alt-right"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:604.13293457px;line-height:1.25;font-family:'Font Awesome 5 Pro';-inkscape-font-specification:'Font Awesome 5 Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:15.10332394"
-     x="687.39935"
-     y="559.19299"
-     id="text1222"><tspan
-       sodipodi:role="line"
-       id="tspan1220"
-       x="687.39935"
-       y="559.19299"
-       style="stroke-width:15.10332394">long-arrow-alt-right</tspan></text>
+     id="text1222">
+    <path
+       d="m 1088.5814,462.43733 116.8147,-116.81477 c 5.8998,-4.71979 5.8998,-14.15936 0,-20.0591 L 1088.5814,208.74869 c -9.4396,-8.25963 -23.599,-2.35989 -23.599,10.61953 v 83.77624 H 701.55872 c -8.25963,0 -14.15937,5.89974 -14.15937,14.15937 v 37.75831 c 0,8.25963 5.89974,14.15936 14.15937,14.15936 h 363.42368 v 83.77625 c 0,12.97942 14.1594,18.87915 23.599,9.43958 z"
+       style="stroke-width:15.10332394"
+       id="path4188" />
+  </g>
 </svg>
