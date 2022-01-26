@@ -40,7 +40,7 @@
      id="namedview874"
      showgrid="false"
      inkscape:zoom="1.4126984"
-     inkscape:cx="153.24685"
+     inkscape:cx="-10.623938"
      inkscape:cy="186.97758"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -592,17 +592,15 @@
        d="m 190.54079,-160.7055 -4.73121,-9.46414 a 2.7283995,2.7283995 0 0 0 -1.33181,-1.27297 l -10.27498,-4.5641 a 2.7283995,2.7283995 0 0 0 -2.21682,0 l -10.27498,4.56666 a 2.7283995,2.7283995 0 0 0 -1.3318,1.27297 l -4.73122,9.46414 a 2.7352205,2.7352205 0 0 0 -0.28819,1.2184 v 21.4401 h 10.9136 v -8.1852 h 13.642 v 8.1852 h 10.9136 v -21.4401 a 2.7352205,2.7352205 0 0 0 -0.28819,-1.22096 z m -13.35381,6.29066 h -8.1852 v -8.1852 h 8.1852 z"
        inkscape:connector-curvature="0" />
   </g>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.82711411px;line-height:1.25;font-family:'Font Awesome 5 Pro';-inkscape-font-specification:'Font Awesome 5 Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.09567785"
-     x="199.4429"
-     y="37.192261"
-     id="text1574-9-0"
+  <g
+     aria-label="long-arrow-alt-right"
      inkscape:transform-center-x="70.971447"
-     inkscape:transform-center-y="58.924989"><tspan
-       sodipodi:role="line"
-       x="199.4429"
-       y="37.192261"
-       style="stroke-width:1.09567785"
-       id="tspan1669-4">long-arrow-alt-right</tspan></text>
+     inkscape:transform-center-y="58.924989"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.82711411px;line-height:1.25;font-family:'Font Awesome 5 Pro';-inkscape-font-specification:'Font Awesome 5 Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.09567785"
+     id="text1574-9-0">
+    <path
+       d="m 228.54684,30.173074 8.47439,-8.474383 c 0.428,-0.342399 0.428,-1.027198 0,-1.455197 l -8.47439,-8.474383 c -0.68479,-0.599199 -1.71199,-0.1712 -1.71199,0.770398 v 6.077588 H 200.4701 c -0.5992,0 -1.0272,0.427999 -1.0272,1.027198 v 2.739195 c 0,0.599199 0.428,1.027198 1.0272,1.027198 h 26.36475 v 6.077588 c 0,0.941598 1.0272,1.369597 1.71199,0.684798 z"
+       style="stroke-width:1.09567785;fill:#000000;fill-opacity:1"
+       id="path934" />
+  </g>
 </svg>
