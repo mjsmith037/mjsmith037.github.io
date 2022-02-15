@@ -57,17 +57,115 @@ a.navbar-brand {
   font-size: 18px;
 }
 
+/*///////////////////////////////// Title ////////////////////////////////*/
+#title::after {
+  -webkit-animation: cycle 7s infinite; /* Safari 4+ */
+  -moz-animation: cycle 7s infinite; /* Fx 5+ */
+  -o-animation: cycle 7s infinite; /* Opera 12+ */
+  animation: cycle 7s infinite; /* IE 10+, Fx 29+ */
+  content: "";
+}
+
+@keyframes cycle {
+  0%   {opacity:0; content: "Theoretical";}
+  7%  {opacity:1; content: "Theoretical";}
+  26%  {opacity:1; content: "Theoretical";}
+  33%  {opacity:0; content: "Theoretical";}
+  34%  {opacity:0; content: "Network";}
+  40%  {opacity:1; content: "Network";}
+  59%  {opacity:1; content: "Network";}
+  66%  {opacity:0; content: "Network";}
+  67%  {opacity:0; content: "Disease";}
+  74%  {opacity:1; content: "Disease";}
+  93%  {opacity:1; content: "Disease";}
+  100% {opacity:0; content: "Disease";}
+}
+
+@-o-keyframes cycle {
+  0%   {opacity:0; content: "Theoretical";}
+  7%  {opacity:1; content: "Theoretical";}
+  26%  {opacity:1; content: "Theoretical";}
+  33%  {opacity:0; content: "Theoretical";}
+  34%  {opacity:0; content: "Network";}
+  40%  {opacity:1; content: "Network";}
+  59%  {opacity:1; content: "Network";}
+  66%  {opacity:0; content: "Network";}
+  67%  {opacity:0; content: "Disease";}
+  74%  {opacity:1; content: "Disease";}
+  93%  {opacity:1; content: "Disease";}
+  100% {opacity:0; content: "Disease";}
+}
+
+@-moz-keyframes cycle {
+  0%   {opacity:0; content: "Theoretical";}
+  7%  {opacity:1; content: "Theoretical";}
+  26%  {opacity:1; content: "Theoretical";}
+  33%  {opacity:0; content: "Theoretical";}
+  34%  {opacity:0; content: "Network";}
+  40%  {opacity:1; content: "Network";}
+  59%  {opacity:1; content: "Network";}
+  66%  {opacity:0; content: "Network";}
+  67%  {opacity:0; content: "Disease";}
+  74%  {opacity:1; content: "Disease";}
+  93%  {opacity:1; content: "Disease";}
+  100% {opacity:0; content: "Disease";}
+}
+
+@-webkit-keyframes cycle {
+  0%   {opacity:0; content: "Theoretical";}
+  7%  {opacity:1; content: "Theoretical";}
+  26%  {opacity:1; content: "Theoretical";}
+  33%  {opacity:0; content: "Theoretical";}
+  34%  {opacity:0; content: "Network";}
+  40%  {opacity:1; content: "Network";}
+  59%  {opacity:1; content: "Network";}
+  66%  {opacity:0; content: "Network";}
+  67%  {opacity:0; content: "Disease";}
+  74%  {opacity:1; content: "Disease";}
+  93%  {opacity:1; content: "Disease";}
+  100% {opacity:0; content: "Disease";}
+}
+
+.jumbotron .container {
+  max-width: 985px;
+  position: relative;
+  top: -130px;
+  background: rgba(255,255,255,0.85);
+}
+
+.jumbotron h1 {
+  color: #0d0c0c;
+  font-size: min(max(2.5rem, 10vw), 56px);
+  font-family: $serif-font;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-family: $serif-font;
+  font-size: min(max(1.5rem, 5vw), 36px);
+  color: #0d0c0c;
+}
+
 /*///////////////////////////////// Jumbotron ////////////////////////////////*/
+
 .jumbotron {
   background: url('../Images/MatBanner.png') center center no-repeat;
   height: 260px;
   margin-top: -30px;
+  padding-left: 20vw;
+  margin-left: -20vw;
+  padding-right: 20vw;
+  margin-right: -20vw;
 }
 
 .jumbotron .overlay-top {
   height: 75px;
   position: relative;
   top: -48px;
+  padding-left: 20vw;
+  margin-left: -20vw;
+  padding-right: 20vw;
+  margin-right: -20vw;
 
   background: rgba(255,255,255,0);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
@@ -83,6 +181,10 @@ a.navbar-brand {
   height: 75px;
   position: relative;
   top: 62px;
+  padding-left: 20vw;
+  margin-left: -20vw;
+  padding-right: 20vw;
+  margin-right: -20vw;
 
   background: rgba(255,255,255,0);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)));
@@ -99,6 +201,10 @@ a.navbar-brand {
     height: 75px;
     position: relative;
     top: -30px;
+    padding-left: 20vw;
+    margin-left: -20vw;
+    padding-right: 20vw;
+    margin-right: -20vw;
 
     background: rgba(255,255,255,0);
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
@@ -114,6 +220,10 @@ a.navbar-brand {
     height: 75px;
     position: relative;
     top: 80px;
+    padding-left: 20vw;
+    margin-left: -20vw;
+    padding-right: 20vw;
+    margin-right: -20vw;
 
     background: rgba(255,255,255,0);
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)));
@@ -124,26 +234,6 @@ a.navbar-brand {
     background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,0)', endColorstr='rgba(255,255,255,1)');
   }
-}
-
-.jumbotron .container {
-  max-width: 925px;
-  position: relative;
-  top: -130px;
-  background: rgba(255,255,255,0.85);
-}
-
-.jumbotron h1 {
-  color: #0d0c0c;
-  font-size: 40px;
-  font-family: $serif-font;
-  font-weight: bold;
-}
-
-.jumbotron p {
-  font-family: $serif-font;
-  font-size: 24px;
-  color: #0d0c0c;
 }
 
 /*///////////////////////////////// Tabs Pane ////////////////////////////////*/
