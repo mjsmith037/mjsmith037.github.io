@@ -44,6 +44,9 @@ $(document).ready(function(){
         $(this).next().toggle();
     });*/
 });
+$(window).load(function(){        
+  $('#myModal').modal('show');
+}); 
 
 // // Google Analytics
 // (function(i,s,o,g,r,a,m){
