@@ -54,6 +54,8 @@ ggplot(joint) +
          colour=guide_legend(title=element_blank())) +
   plot_layout(widths=c(1, 1, 1.2)) &
   theme(text=element_text(family="Alegreya"),
+        legend.margin=margin(),
+        legend.box.margin=margin(t=0.5, unit="in"),
         plot.title=element_text(size=10))
 ggsave("../../Images/blog_figures/vaccination_strategy/risk_distribution.png", width=10, height=3)
 
