@@ -8,7 +8,7 @@
 body {
   min-width: 400px;
   font-family: $sans-font;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #111 !important;
 }
 
@@ -23,13 +23,13 @@ a:hover {
 
 div #license {
   position: absolute;
-  bottom: 20px;
+  bottom: 1.25rem;
   margin-left: 50%;
-  height: 15px;
+  height: 0.938rem;
 }
 
 #license {
-  height: 15px;
+  height: 0.938rem;
 }
 
 /*////////////////////////////////// NavBar //////////////////////////////////*/
@@ -242,7 +242,7 @@ a.navbar-brand {
 
 /*///////////////////////////////// Tabs Pane ////////////////////////////////*/
 .nav-tabs li a {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -281,10 +281,10 @@ a.navbar-brand {
 /*/////////////////////////////// Bibliography ///////////////////////////////*/
 .biblinks .btn {
   color: black;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 1px;
-  width: 110px;
-  border-radius: 15px 1px 15px 1px;
+  width: 7rem;
+  border-radius: 0.938rem 0.1rem 0.938rem 0.1rem;
   font-weight: bold;
 }
 
@@ -305,13 +305,25 @@ a.navbar-brand {
 }
 
 .biblinks p {
-  margin: 1px auto 1px 0px;
-  padding: 0px;
+  margin: 0.1rem auto 1rem 0re,;
+  padding: 0rem;
 }
 
 @media only screen and (max-width: 768px) {
   .biblinks p {
     display: inline;
+  }
+  .biblinks .btn {
+    border-radius: 0.1rem 0.1rem 0.1rem 0.1rem;
+  }
+  .biblinks a:first-child .btn{
+    border-radius: 0.938rem 0.1rem 0.1rem 0.1rem;
+  }
+  .biblinks a:last-child .btn{
+    border-radius: 0.1rem 0.1rem 0.938rem 0.1rem;
+  }
+  .biblinks a:only-child .btn{
+    border-radius: 0.938rem 0.1rem 0.938rem 0.1rem;
   }
 }
 
@@ -326,7 +338,7 @@ a.navbar-brand {
 
 .publication:hover {
   background-color: #F5F5F5;
-  border-radius: 15px 1px 15px 1px;
+  border-radius: 0.938rem 0.1rem 0.938rem 0.1rem;
 }
 
 .bibinfo {
@@ -338,14 +350,14 @@ a.navbar-brand {
   color: #757575;
   font-weight: bold;
   font-family: $serif-font;
-  font-size: 20px;
+  font-size: 1.25rem;
   float: left;
   width: 2em;
-  margin-left: 10px;
+  margin-left: 0.625rem;
 }
 
 .pubyear {
-  padding-left: 0.25em;
+  padding-left: 0.25rem;
 }
 
 .pi {
@@ -368,10 +380,10 @@ a.navbar-brand {
 .post-button {
   font-family: $sc-font;
   color: black;
-  border-width: 1px;
-  font-size: 20px;
-  padding: 5px 20px;
-  border-radius: 15px 1px 15px 1px;
+  border-width: 0.1rem;
+  font-size: 1.25rem;
+  padding: 0.3rem 1.25rem;
+  border-radius: 0.938rem 0.1rem 0.938rem 0.1rem;
   background-color: #1FBF8B; /* green-ish */
 }
 
@@ -387,13 +399,13 @@ a.navbar-brand {
 
 .presentation-button {
   display: block;
-  margin: 15px auto 0 auto;
+  margin: 0.938rem auto 0rem auto;
   font-family: $sc-font;
   color: black;
-  padding: 5px 20px;
-  border-width: 1px;
-  font-size: 20px;
-  border-radius: 15px 1px 15px 1px;
+  padding: 0.3rem 1.25rem;
+  border-radius: 0.938rem 0.1rem 0.938rem 0.1rem;
+  border-width: 0.1rem;
+  font-size: 1.25rem;
   background-color: #5894C2; /* blue-ish */
   text-align: center;
   line-height: 100%;

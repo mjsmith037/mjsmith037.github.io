@@ -71,29 +71,31 @@ for bibitem in biblist:
                '    ' + ', '.join([parseauth(auth) for auth in authlist]) + ';',
                '    <span class="pubyear">' + year + '</span>',
                '  </div>',
-               '  <div class="col-xs-12 col-sm-1 text-right biblinks">']
+               '  <div class="col-xs-12 col-sm-1 text-right biblinks">',
+               '    <p>']
     if OA:
         if jrnlink:
-            bibhtml = bibhtml + ['    <p><a target="_blank"  href="' + jrnlink + '" title="' + journal + '">',
+            bibhtml = bibhtml + ['    <a target="_blank"  href="' + jrnlink + '" title="' + journal + '">',
                                  '      <button type="button" class="btn btn-openaccess">Open Access</button>',
-                                 '    </a></p>']
+                                 '    </a>']
     else:
         if jrnlink:
-            bibhtml = bibhtml + ['    <p><a target="_blank"  href="' + jrnlink + '" title="' + journal + '">',
+            bibhtml = bibhtml + ['    <a target="_blank"  href="' + jrnlink + '" title="' + journal + '">',
                                  '      <button type="button" class="btn btn-journal">Journal Version</button>',
-                                 '    </a></p>']
+                                 '    </a>']
         if prelink:
-            bibhtml = bibhtml + ['    <p><a target="_blank"  href="' + prelink + '" title="' + journal + '">',
+            bibhtml = bibhtml + ['    <a target="_blank"  href="' + prelink + '" title="' + journal + '">',
                                  '      <button type="button" class="btn btn-preprint">Citable Preprint</button>',
-                                 '    </a></p>']
+                                 '    </a>']
         else:
             # these papers were not written by me and I don't have access to editable pre-publication versions
-            if bibID != "whirling" and bibID != "dispersalnetworks":
-                bibhtml = bibhtml + ['    <p><a target="_blank"  href="pdfs/' + bibID + '.pdf">',
+            if bibID not in ["whirling", "dispersalnetworks", "noseasonbipartite", "multistrainreview"]:
+                bibhtml = bibhtml + ['    <a target="_blank"  href="pdfs/' + bibID + '.pdf">',
                                      '      <button type="button" class="btn btn-mycopy">Full-Text PDF</button>',
-                                     '    </a></p>']
+                                     '    </a>']
 
-    bibhtml = bibhtml + ['  </div>',
+    bibhtml = bibhtml + ['    </p>',
+                         '  </div>',
                          '</div>']
     htmllist.append('\n'.join(bibhtml))
     nn = nn + 1
