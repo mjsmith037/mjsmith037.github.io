@@ -284,8 +284,20 @@ a.navbar-brand {
   font-size: 0.875rem;
   padding: 1px;
   width: 7rem;
-  border-radius: 0.938rem 0.1rem 0.938rem 0.1rem;
   font-weight: bold;
+}
+
+.biblinks .btn {
+  border-radius: 0.1rem 0.1rem 0.1rem 0.1rem;
+}
+.biblinks a:first-child .btn{
+  border-radius: 0.938rem 0.1rem 0.1rem 0.1rem;
+}
+.biblinks a:last-child .btn{
+  border-radius: 0.1rem 0.1rem 0.938rem 0.1rem;
+}
+.biblinks a:only-child .btn{
+  border-radius: 0.938rem 0.1rem 0.938rem 0.1rem;
 }
 
 .btn-openaccess {
@@ -312,18 +324,6 @@ a.navbar-brand {
 @media only screen and (max-width: 768px) {
   .biblinks p {
     display: inline;
-  }
-  .biblinks .btn {
-    border-radius: 0.1rem 0.1rem 0.1rem 0.1rem;
-  }
-  .biblinks a:first-child .btn{
-    border-radius: 0.938rem 0.1rem 0.1rem 0.1rem;
-  }
-  .biblinks a:last-child .btn{
-    border-radius: 0.1rem 0.1rem 0.938rem 0.1rem;
-  }
-  .biblinks a:only-child .btn{
-    border-radius: 0.938rem 0.1rem 0.938rem 0.1rem;
   }
 }
 

@@ -30,10 +30,11 @@ biblist = bibtext.split('@')
 biblist.sort(key=lambda xx: re.findall(r'ear\s*?=\s*?{(\d\d\d\d)}', xx), reverse=True)
 
 htmllist = []
-nn = 1
+
+biblist = [bibitem for bibitem in biblist if re.findall(r'ear\s*?=\s*?{(\d\d\d\d)}', bibitem)]
+
+nn = len(biblist)
 for bibitem in biblist:
-    if not re.findall(r'ear\s*?=\s*?{(\d\d\d\d)}', bibitem):
-        continue
     bibinfo = bibitem.split('\n')
     # extract the parts of the citation
     bibID = bibinfo[0].split('{')[1].strip(',')
@@ -89,7 +90,7 @@ for bibitem in biblist:
                                  '    </a>']
         else:
             # these papers were not written by me and I don't have access to editable pre-publication versions
-            if bibID not in ["whirling", "dispersalnetworks", "noseasonbipartite", "multistrainreview"]:
+            if bibID not in ["whirling", "noseasonbipartite"]:
                 bibhtml = bibhtml + ['    <a target="_blank"  href="pdfs/' + bibID + '.pdf">',
                                      '      <button type="button" class="btn btn-mycopy">Full-Text PDF</button>',
                                      '    </a>']
@@ -98,7 +99,7 @@ for bibitem in biblist:
                          '  </div>',
                          '</div>']
     htmllist.append('\n'.join(bibhtml))
-    nn = nn + 1
+    nn -= 1
 
 """ write to file """
 with open('../_includes/bib.html', 'w') as htmlfile:
