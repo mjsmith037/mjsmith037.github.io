@@ -1,0 +1,71 @@
+\documentclass[11pt, titlepage]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{pdfpages}
+\usepackage[auth-lg]{authblk}
+
+\renewcommand*{\Affilfont}{\small}
+
+\makeatletter
+  \def\maketitle{%
+    \newpage
+    \null
+    \vskip 3em%
+    \begin{center}%
+      {\LARGE \@title \par}%
+      \vskip 1em%
+      {\Large\sc \href{https://doi.org/10.1111/cobi.13640}{doi:10.1111/cobi.13640} \par}%
+      \vskip 2em%
+      {\large
+      \lineskip .5em%
+      \begin{center}\@author\end{center}\par}%
+      \vskip 2em%
+      {\large \@date}%
+    \end{center}%
+    \par
+  \vskip 1.5em
+  \noindent This is the peer reviewed version of the following article: 
+  \begin{verse}
+    LL Sullivan, MJ Michalska-Smith, KP Sperry, DA Moeller, and AK Shaw. "Consequences of ignoring
+    dispersal variation in network models for landscape connectivity." \emph{Conservation Biology}
+    35, no. 3 (2021): 944-954.
+  \end{verse}
+  \noindent which has been published in final form at \url{https://doi.org/10.1111/cobi.13640}. This article
+  may be used for non-commercial purposes in accordance with Wiley Terms and Conditions for Use of
+  Self-Archived Versions. This article may not be enhanced, enriched or otherwise transformed into a
+  derivative work, without express permission from Wiley or by statutory rights under applicable
+  legislation. Copyright notices must not be removed, obscured or modified. The article must be
+  linked to Wiley’s version of record on Wiley Online Library and any embedding, framing or
+  otherwise making available the article or pages thereof by third parties from platforms, services
+  and websites other than Wiley Online Library must be prohibited.
+  }
+\makeatother
+
+
+\title{\Huge Consequences of ignoring dispersal variation in network models for landscape connectivity}
+
+\author[1,2]{Lauren L. Sullivan}
+\author[3,4]{Matthew J. Michalska-Smith}
+\author[2,5]{Katie P. Sperry}
+\author[6]{David A. Moeller}
+\author[2]{Allison K. Shaw}
+
+\affil[1]{Division of Biological Sciences, University of Missouri, Columbia, MO, U.S.A.}
+\affil[2]{Department of Ecology, Evolution, and Behavior, University of Minnesota, Saint Paul, MN, U.S.A.}
+\affil[3]{Department of Veterinary Population Medicine, University of Minnesota, Saint Paul, MN, U.S.A.}
+\affil[4]{Department of Plant Pathology, University of Minnesota, Saint Paul, MN, U.S.A.}
+\affil[5]{Marine and Environmental Sciences, Northeastern University, Boston, MA, U.S.A.}
+\affil[6]{Department of Plant and Microbial Biology, University of Minnesota, Saint Paul, MN, U.S.A.}
+
+\date{First published: 25 September 2020}
+
+\begin{document}
+
+\maketitle\pagenumbering{gobble}
+
+\includepdf{../pdfs/dispersalnetworks.pdf}
+
+\end{document}
+
+
