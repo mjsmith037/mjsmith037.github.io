@@ -11,6 +11,7 @@ library(parallel)
 library(showtext)
 showtext_auto()
 font_add_google("Alegreya Sans")
+font_add_google("Lato")
 
 myprod <- function(x) prod(x[x != 0])
 
@@ -19,7 +20,7 @@ assignInNamespace("aggregate_positions", function(tau_x, type = "sum") {
   if (!inherits(tau_x, "Matrix") & !is.matrix(tau_x)) {
     stop("tau_x must be a matrix")
   }
-
+  
   if (type == "sum") {
     return(rowSums(tau_x))
   } else if (type == "prod") {
@@ -44,14 +45,14 @@ run_disease_network_simulation <- function(timesteps, contact_network, model_str
   # parse model structure
   model_states <- str_split(model_structure, "")[[1]]
   if (head(model_states, 1) == tail(model_states, 1)) model_states %<>% head(-1)
-
+  
   # initialize with one infected node (chosen at random)
   if (is.matrix(contact_network)) contact_network %<>% as_tbl_graph()
   contact_network %<>%
     activate(nodes) %>%
     mutate("0" = sample(c("I", rep("S", nrow(as_tibble(.)) - 1))) %>%
              factor(levels=model_states))
-
+  
   # progress through the discrete time epidemic simulation
   for (timestep in 1:timesteps) {
     contact_network %<>%
@@ -81,7 +82,7 @@ run_disease_network_simulation <- function(timesteps, contact_network, model_str
                          {ifelse(. > length(model_states), 1, .)}] %>%
           factor(levels=model_states))
   }
-
+  
   # convert the output to a more manageable format
   timeseries <- contact_network %N>%
     # remove unnecessary columns
@@ -97,9 +98,9 @@ run_disease_network_simulation <- function(timesteps, contact_network, model_str
     count(status, time) %>%
     # add 0's for missing classes at each timestep
     complete(status, nesting(time), fill=list(n=0))
-
+  
   if (return_net) return(contact_network)
-
+  
   # return the cleaned output
   return(timeseries)
 }
@@ -213,7 +214,7 @@ disease_anim <- function(dis_sim, mycols, layout_matrix) {
   node_data %<>%
     pivot_longer(!c(node_id, x, y), names_to="time", values_to="status") %>%
     mutate(time = as.integer(time))
-
+  
   anim <- ggplot() +
     geom_segment(data=edge_data, size=1, aes(x=x, xend=xend, y=y, yend=yend, group=edge_id), alpha=0.67) +
     geom_point(data=node_data, aes(x=x, y=y, colour=status, group=node_id), size=3) +
@@ -234,7 +235,7 @@ line_anim <- function(dis_sim, mycols) {
     mutate(time = as.integer(time)) %>%
     count(status, time) %>%
     complete(status, nesting(time), fill=list(n=0))
-
+  
   anim <- ggplot(dat) +
     aes(x=time, y=n, colour=status) +
     geom_line(size=1.5) +
@@ -286,3 +287,70 @@ for(i in 2:100){
 
 anim_save(filename="../figures/paired_simulations.gif",
           detail=5, animation=full_gif, end_pause=10)
+
+## static figure for BWF
+layout <- igraph::layout_nicely(net1) %>% set_colnames(c("x", "y"))
+node_data <- net1 %N>%
+  as_tibble() %>%
+  mutate(node_id = 1:n()) %>%
+  bind_cols(layout) %>%
+  mutate(col = ifelse(node_id == 169, "#9a281d", "#000000"))
+edge_data <- net1 %E>%
+  as_tibble() %>%
+  mutate(col = ifelse(from == 169 | to == 169, "#9a281d", "#000000")) %>% 
+  unite(from, to, col="edge_id", sep="_", remove=FALSE) %>%
+  pivot_longer(c(from, to), names_to="end", values_to="node_id") %>%
+  left_join(select(node_data, c(node_id, x, y)), by=c("node_id")) %>%
+  pivot_longer(c(x, y), names_to="coordinate", values_to="value") %>%
+  # create xend and yend when at the "to" end, for geom_segment use later
+  mutate(dir = str_c(coordinate, if_else(end == "to", "end", ""))) %>%
+  select(edge_id, dir, col, value) %>%
+  arrange(edge_id) %>%
+  pivot_wider(names_from=dir, values_from=value)
+netplot <- ggplot() +
+  geom_segment(data=edge_data, size=1.5, aes(x=x, xend=xend, y=y, yend=yend, group=edge_id, colour=col), alpha=0.67) +
+  geom_point(data=node_data, aes(x=x, y=y, group=node_id, colour=col), size=4) +
+  scale_colour_identity() +
+  theme_graph()
+
+lineplot <- bind_rows(
+  sim1 %N>%
+    select(-prob_change_status) %>%
+    as_tibble() %>%
+    pivot_longer(names_to="time", values_to="status", everything()) %>%
+    mutate(time = as.integer(time)) %>%
+    count(status, time) %>%
+    complete(status, nesting(time), fill=list(n=0)) %>% 
+    filter(status == "I", time > 50) %>%
+    mutate(status = "Original"),
+  sim2 %N>%
+    select(-prob_change_status) %>%
+    as_tibble() %>%
+    pivot_longer(names_to="time", values_to="status", everything()) %>%
+    mutate(time = as.integer(time)) %>%
+    count(status, time) %>%
+    complete(status, nesting(time), fill=list(n=0)) %>% 
+    filter(status == "I", time > 50) %>%
+    mutate(status = "Masker")
+  ) %>% 
+  ggplot() +
+  aes(x=time, y=n, colour=status) +
+  geom_line(size=1.5) +
+  # scale_colour_manual(values=c("#297373", "#e3944f", "#9a281d")) +
+  scale_colour_manual(values=c("#297373", "#9a281d")) +
+  ylab("Number of people infectious") + ylab("Time") +
+  theme_bw() +
+  theme(text=element_text(size=20, family="Alegreya Sans"),
+        legend.title=element_blank())
+
+deltaplot <- ggplot(tibble(time=sim1$time[sim1$status=="I"], delta=sim1$n[sim1$status=="I"] - sim2$n[sim2$status=="I"])) +
+  aes(x=time, y=delta) +
+  geom_line(size=1.5) +
+  ylab("Original - Masker") +
+  theme_bw() +
+  theme(text=element_text(size=20, family="Alegreya Sans"))
+ggsave("../figures/delta.svg", width=6, height=4)
+
+
+library(patchwork)
+netplot + lineplot +

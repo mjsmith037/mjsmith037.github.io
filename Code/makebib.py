@@ -19,19 +19,19 @@ def parseauth(author):
     return('<span class="' + cc + '">' + initials + ' ' + lastname + '</span>' + cofirst)
 
 """ read in the bibfile """
-with open('../Documents/MJSbib.bib', 'r') as bibfile:
+with open('../../CurriculumVitae/MJSbib.bib', 'r') as bibfile:
     bibtext = bibfile.read()
 
 """ parse the information """
 # split by entry and store each as a html string
 biblist = bibtext.split('@')
-
+# only keep peer-reviewed articles
+biblist = [bibitem for bibitem in biblist if re.findall(r'^article', bibitem)]
+biblist = [bibitem for bibitem in biblist if not re.findall(r'peerreview\s*?=\s*?{False}', bibitem)]
 # sort array by year so numbers can be assigned
 biblist.sort(key=lambda xx: re.findall(r'ear\s*?=\s*?{(\d\d\d\d)}', xx), reverse=True)
 
 htmllist = []
-
-biblist = [bibitem for bibitem in biblist if re.findall(r'ear\s*?=\s*?{(\d\d\d\d)}', bibitem)]
 
 nn = len(biblist)
 for bibitem in biblist:
@@ -56,11 +56,11 @@ for bibitem in biblist:
             year = info
         if infotype == 'journal':
             journal = info
-        if infotype == 'url':
-            jrnlink = info
+        if infotype == 'doi':
+            jrnlink = 'https://doi.org/' + info
         if infotype == 'oa' and info.lower() == "true":
             OA = True
-        if infotype == "arxiv":
+        if infotype == "preprintlink":
             prelink = info
 
     """ create the html bibentries """
