@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   width="679"
+   height="727"
+   viewBox="0 0 679 727"
+   sodipodi:docname="Anderson_etal_1981_phasediagram_overlay.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="0.91816891"
+     inkscape:cx="125.16316"
+     inkscape:cy="330.54983"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <rect
+     style="fill:#50b99a;fill-opacity:0.86666667"
+     id="rect4528"
+     width="542.38391"
+     height="600.10742"
+     x="78.416946"
+     y="31.049625" />
+  <path
+     style="fill:#b6003b;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.86666667"
+     d="M 89.308186,32.13875 87.129938,479.7688 c 6.6684,53.94087 18.386592,79.26626 33.762852,83.86257 54.27468,25.05775 332.54593,-115.44717 498.81889,-173.17075 L 617.53343,33.227874 Z"
+     id="path12"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccc" />
+  <rect
+     style="fill:#f74700;fill-opacity:0.86666667;stroke-width:1.00201404"
+     id="rect4526"
+     width="542.38385"
+     height="31.584602"
+     x="78.416946"
+     y="631.15704" />
+  <path
+     style="opacity:1;vector-effect:none;fill:#016394;fill-opacity:0.86666667;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 619.71112,390.46145 C 453.43819,448.18503 175.16747,588.68912 120.89279,563.63137 105.51653,559.03506 93.79947,533.71091 87.13107,479.77004 L 89.3088,32.13919 78.41623,31.04934 v 600.10742 h 542.38479"
+     id="rect4528-7"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccc" />
+</svg>

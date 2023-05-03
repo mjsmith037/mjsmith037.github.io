@@ -49,13 +49,13 @@ for bibitem in biblist:
         infotype = info[0].strip().lower()
         info = info[1].strip(' {},')
         if infotype == 'title':
-            title = info
+            title = info.replace('}', '').replace('{', '')
         if infotype == 'author':
             authlist = info.replace('}', '').replace('{', '').replace('\\textbf', '').split(' and ')
         if infotype == 'year':
             year = info
         if infotype == 'journal':
-            journal = info
+            journal = info.replace('}', '').replace('{', '')
         if infotype == 'doi':
             jrnlink = 'https://doi.org/' + info
         if infotype == 'oa' and info.lower() == "true":

@@ -13,7 +13,7 @@
    viewBox="0 0 504.00 432.00"
    version="1.1"
    id="svg3850"
-   sodipodi:docname="edges.svg"
+   sodipodi:docname="edges_two.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata3854">
@@ -23,6 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -40,7 +41,7 @@
      id="namedview3852"
      showgrid="false"
      inkscape:zoom="1.1588694"
-     inkscape:cx="444.97858"
+     inkscape:cx="293.96933"
      inkscape:cy="241.22069"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -8254,18 +8255,5 @@
          style="fill-rule: nonzero; fill: #000000; stroke-width: 0.75; stroke: none;"
          d="M 494.10 382.25 L 494.10 382.25 L 493.37 382.29 L 492.71 382.41 L 492.11 382.61 L 491.58 382.87 L 491.13 383.21 L 490.75 383.59 L 490.45 384.04 L 490.23 384.53 L 490.10 385.06 L 490.05 385.62 L 490.05 385.62 L 490.20 386.60 L 490.61 387.37 L 491.21 387.97 L 491.94 388.45 L 492.73 388.86 L 493.52 389.22 L 494.25 389.59 L 494.85 390.00 L 495.26 390.50 L 495.40 391.13 L 495.40 391.13 L 495.38 391.40 L 495.31 391.66 L 495.20 391.91 L 495.04 392.14 L 494.84 392.35 L 494.60 392.53 L 494.33 392.68 L 494.01 392.80 L 493.66 392.87 L 493.28 392.90 L 493.28 392.90 L 492.99 392.88 L 492.68 392.84 L 492.37 392.78 L 492.05 392.69 L 491.73 392.57 L 491.40 392.43 L 491.08 392.26 L 490.76 392.07 L 490.46 391.86 L 490.16 391.62 L 489.93 391.77 L 489.67 393.51 L 489.67 393.51 L 490.00 393.67 L 490.33 393.81 L 490.67 393.94 L 491.02 394.05 L 491.36 394.14 L 491.71 394.22 L 492.06 394.28 L 492.40 394.32 L 492.74 394.35 L 493.08 394.35 L 493.08 394.35 L 493.85 394.30 L 494.55 394.16 L 495.17 393.93 L 495.72 393.63 L 496.18 393.26 L 496.56 392.84 L 496.86 392.37 L 497.07 391.86 L 497.20 391.32 L 497.25 390.77 L 497.25 390.77 L 497.10 389.82 L 496.69 389.08 L 496.10 388.49 L 495.37 388.02 L 494.59 387.63 L 493.80 387.27 L 493.07 386.91 L 492.48 386.50 L 492.07 386.00 L 491.92 385.37 L 491.92 385.37 L 491.95 385.11 L 492.01 384.86 L 492.12 384.63 L 492.26 384.41 L 492.44 384.21 L 492.66 384.04 L 492.92 383.90 L 493.20 383.79 L 493.52 383.73 L 493.87 383.70 L 493.87 383.70 L 494.11 383.71 L 494.35 383.74 L 494.59 383.78 L 494.83 383.84 L 495.08 383.92 L 495.33 384.01 L 495.57 384.12 L 495.82 384.25 L 496.07 384.39 L 496.33 384.55 L 496.63 384.47 L 496.92 382.81 L 496.92 382.81 L 496.64 382.70 L 496.35 382.60 L 496.07 382.52 L 495.78 382.44 L 495.50 382.38 L 495.21 382.33 L 494.93 382.29 L 494.65 382.27 L 494.37 382.25 L 494.10 382.25 Z" />
     </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:30px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-       x="192.66116"
-       y="426.17538"
-       id="text4663"><tspan
-         sodipodi:role="line"
-         id="tspan4661"
-         x="192.66116"
-         y="426.17538"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26px;font-family:'Alegreya Sans';-inkscape-font-specification:'Alegreya Sans';stroke-width:0.75"><tspan
-   style="font-weight:bold"
-   id="tspan4699">+</tspan> Background</tspan></text>
   </g>
 </svg>

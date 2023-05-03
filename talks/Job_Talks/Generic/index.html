@@ -1,0 +1,1149 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Bansal Lab Informal Talk</title>
+  <meta name="author" content="Matthew J Michalska-Smith">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="../../../reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../../../reveal.js/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="main.css">
+  <!-- Theme used for syntax highlighting of code -->
+  <!-- <link rel="stylesheet" href="../../reveal.js/lib/css/googlecode.css"> -->
+  <link rel="stylesheet" href="../../../reveal.js/plugin/highlight/monokai.css">
+  <!-- font-linking -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+SC&family=Alegreya+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <script defer src="../../../fontawesome/js/all.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+<section>
+  <div class="wnotes vcenter">
+    <h1>Bansal Lab Meeting</h1>
+    <p>3 May 2023</p>
+    <p style="font-size:4vh; font-family:Alegreya SC;">
+      matthew michalska-smith
+    </p>
+  </div>
+  <aside class="notes">
+
+  </aside>
+</section>
+    
+<section>
+  <div class="vcenter wnotes">
+    <h1 style="font-size:2.5vw; margin-bottom:1vh; width:100%;">
+        How does the structure of a network relate to the dynamical processes being depicted?
+    </h1>
+    <h1 style="font-size:2.5vw; margin-bottom:1vh; width:80%;" class="fragment fade-in-then-semi-out" data-fragment-index=1>
+      How does the structure of <span class="fragment highlight-current-orange" data-fragment-index=1>endophytic resource competition</span>
+      relate to the <span class="fragment highlight-current-orange" data-fragment-index=1>growth and health of host plants</span>?
+    </h1>
+    <h1 style="font-size:2.5vw; margin-bottom:1vh; width:80%;" class="fragment fade-in-then-semi-out" data-fragment-index=2>
+      How does the <span class="fragment highlight-current-orange" data-fragment-index=2>positioning of parasites within food-webs</span>
+      relate to <span class="fragment highlight-current-orange" data-fragment-index=2>groupings of species based on interaction similarity</span>?
+    </h1>
+    <h1 style="font-size:2.5vw; margin-bottom:1vh; width:80%;" class="fragment fade-in-then-semi-out" data-fragment-index=3>
+      How does the structure of <span class="fragment highlight-current-orange" data-fragment-index=3>bipartite ecological interaction networks </span>
+      <span class="fragment highlight-current-orange" data-fragment-index=3>differ between antagonism and mutualism</span>?
+    </h1>
+    <h1 style="font-size:2.5vw; margin-bottom:1vh; width:80%;" class="fragment fade-in-then-semi-out" data-fragment-index=4>
+      How does the structure of <span class="fragment highlight-current-orange" data-fragment-index=4>competition networks</span>
+      relate to <span class="fragment highlight-current-orange" data-fragment-index=4>communities' dynamical stability</span>?
+    </h1>
+    <h1 style="font-size:2.5vw; margin-bottom:1vh; width:80%;" class="fragment fade-in" data-fragment-index=5>
+      How does the structure of <span class="fragment highlight-orange" data-fragment-index=5>metapopulations of host movement</span>
+      relate to <span class="fragment highlight-orange" data-fragment-index=5>local disease dynamics</span>?
+    </h1>
+    <h1 style="font-size:2.5vw; margin-bottom:1vh; width:100%;" class="fragment fade-in" data-fragment-index=6>
+      How does the structure of <span class="fragment highlight-orange" data-fragment-index=6>contact networks</span>
+      relate to the <span class="fragment highlight-orange" data-fragment-index=6>spread of disease</span>?
+    </h1>
+  </div>
+  <aside class="notes">
+      Much of the my career thus far can be unified by a fascination with this, quite general,
+      question, which I've then interpreted in many different specific projects over the years.
+      For instance, ...
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter wnotes">
+    <ol style="font-size:150%;">
+      <li style="padding-bottom:3vh;">Host movement and local patch dynamics</li>
+      <li style="padding-bottom:3vh;">COVID-19 spread across interactions of different types</li>
+      <li>Network structures related to disease spread</li>
+    </ol>
+  </div>
+  <aside class="notes">
+
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter">
+    <div class="journaltitle">
+      <img src="../images/scientific_reports.png">
+      <img src="../images/metapop_journal_title.png">
+    </div>
+    <div id="coauthors">
+      <img src="../coauthors/K.VanderWaal.jpg">
+      <h3>Kimberly VanderWaal</h3>
+      <img src="../coauthors/M.Craft.jpg">
+      <h3>Meggan Craft</h3>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="vcenter r-stack">
+    <img style="max-height:90vh;" class="fragment fade-out" data-fragment-index=2 src="../figures/metapop/sample_network/sample_network_nodes_zero_prime2.png">
+    <img style="max-height:90vh;" class="fragment" data-fragment-index=1 src="../figures/metapop/sample_network/sample_network_edges_zero.png">
+    <img style="max-height:90vh;" class="fragment current-visible" data-fragment-index=2 src="../figures/metapop/sample_network/sample_network_nodes_zero_prime1.png">
+    <img style="max-height:90vh;" class="fragment current-visible" data-fragment-index=3 src="../figures/metapop/sample_network/sample_network_nodes_zero_prime.png">
+    <img style="max-height:90vh;" class="fragment" data-fragment-index=4 src="../figures/metapop/sample_network/sample_network_nodes_zero.png">
+    <img style="max-height:90vh;" class="fragment" data-fragment-index=5 src="../figures/metapop/sample_network/sample_network_nodes_one.png">
+    <img style="max-height:90vh;" class="fragment" data-fragment-index=5 src="../figures/metapop/sample_network/sample_network_edges_one.png">
+    <img style="max-height:90vh;" class="fragment" data-fragment-index=6 src="../figures/metapop/sample_network/sample_network_nodes_two.png">
+    <img style="max-height:90vh;" class="fragment" data-fragment-index=7 src="../figures/metapop/sample_network/sample_network_nodes_three.png">
+    <img style="max-height:90vh;" class="fragment" data-fragment-index=8 src="../figures/metapop/sample_network/sample_network_nodes_four.png">
+    <img style="max-height:90vh;" class="fragment" data-fragment-index=9 src="../figures/metapop/sample_network/sample_network_nodes_five.png">
+    <img style="max-height:90vh;" class="fragment" data-fragment-index=10 src="../figures/metapop/sample_network/sample_network_nodes_six.png">
+  </div>
+</section>
+
+<section>
+  <div class="vcenter r-stack">
+    <img style="width:80vw;" src="../images/within-farm_zero.svg">
+    <img style="width:80vw;" class="fragment fade-out" data-fragment-index=1 src="../images/within-farm_one.svg">
+    <img style="width:80vw;" class="fragment fade-in" data-fragment-index=1 src="../images/within-farm_two.svg">
+  </div>
+</section>
+
+<section>
+  <div style="font-size:2vw; display: inline-grid; grid-template-columns:45% 45%; column-gap: 5%; width: 95vw; justify-items: center; align-items: center;" class="wnotes vcenter">
+    <div>
+      $$
+        \begin{aligned}
+          \frac{\textrm{d} S_i}{\textrm{d}t} &= {\color{bc4b51}r S \left(1 - \frac{N}{K}\right)} - {\color{50b99a}\beta S I}\\
+          \frac{\textrm{d} E_i}{\textrm{d}t} &= {\color{50b99a}\beta S I} - {\color{0b6884}\sigma E} - {\color{bc4b51}r\frac{N}{K} E} - {\color{bc4b51}\mu E}\\
+          \frac{\textrm{d} I_i}{\textrm{d}t} &= {\color{0b6884}\sigma E} - {\color{ff5e5b}\nu I} - {\color{bc4b51}r\frac{N}{K} I} - {\color{bc4b51}\mu I}
+        \end{aligned}
+      $$
+    </div>
+    
+    <ul class="fa-ul">
+      <li>${\color{bc4b51}r}$: growth (birth - death)</li>
+      <li>${\color{50b99a}\beta}$: infection</li>
+      <li>${\color{0b6884}\sigma}$: recovery</li>
+      <li>${\color{bc4b51}\mu}$: death</li>
+      <li>${\color{ff5e5b}\nu}$: disease-induced mortality</li>
+    </ul>
+        
+  </div>
+  <h4 id="citation" class="citwnotes">
+    <a href="https://www.nature.com/articles/289765a0">Anderson <i>et al.</i> 1981</a>
+  </h4>
+  <aside class="notes">
+    
+  </aside>
+</section>
+
+<section>
+  <div  style="font-size:2vw;" class="wnotes vcenter">
+    <div class="r-stack">
+      <img src="../images/Anderson_etal_1981_phasediagram.png">
+      <img class="fragment" src="../images/Anderson_etal_1981_phasediagram_overlay.svg">
+    </div>
+  </div>
+  <h4 id="citation" class="citwnotes">
+    <a href="https://www.nature.com/articles/289765a0">Anderson <i>et al.</i> 1981</a>
+  </h4>
+  <aside class="notes">
+    
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter r-stack">
+    <img style="width:80vw;" src="../images/main_question_zero.svg">
+    <img style="width:80vw;" class="fragment fade-in" data-fragment-index=1 src="../images/main_question_one.svg">
+    <img style="width:80vw;" class="fragment fade-in-then-out" data-fragment-index=1 src="../images/main_question_two.svg">
+    <img style="width:80vw;" class="fragment" src="../images/main_question_three.svg">
+  </div>
+</section>
+
+<section>
+  <div class="vcenter fullwidth">
+    <div style="display:grid; grid-template-columns:2fr 3fr; align-items:center;">
+      <div class="vcenter r-stack">
+        <img style="max-width:100%;" class="fragment fade-out" data-fragment-index=1 src="../figures/metapop/sample_network/sample_network.png">
+        <img style="max-width:100%;" class="fragment fade-in" data-fragment-index=1 src="../figures/metapop/sample_network/sample_network_numbers.png">
+      </div>
+      <div style="font-size:2vw;" class="fragment" data-fragment-index=1>
+        $$
+          \mathbf{\Delta} =
+          \begin{bmatrix}
+            -\delta & 0 & 0 & \delta & 0 & 0 & 0\\
+            0 & -\delta & 0 & 0 & 0 & \delta & 0\\
+            \delta & 0 & -3 \delta & \delta & \delta & 0 & 0\\
+            0 & 0 & 0 & 0 & 0 & 0 & 0\\
+            \delta & \delta & 0 & 0 & -2 \delta & 0 & 0\\
+            \delta & 0 & \delta & 0 & \delta & -4 \delta & \delta\\
+            0 & 0 & \delta & \delta & 0 & 0 & -2 \delta
+          \end{bmatrix}
+        $$
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div style="font-size:2vw; display: inline-grid; grid-template-columns:45% 45%; column-gap: 5%; width: 95vw; justify-items: center; align-items: center;" class="wnotes vcenter">
+    <div>
+      $$
+        \begin{aligned}
+          \frac{\textrm{d} S_i}{\textrm{d}t} &= {\color{bc4b51}r S \left(1 - \frac{N}{K}\right)} - {\color{50b99a}\beta S I} + {\color{7b678e}\sum_j \Delta_{ij} S_j}\\
+          \frac{\textrm{d} E_i}{\textrm{d}t} &= {\color{50b99a}\beta S I} - {\color{0b6884}\sigma E} - {\color{bc4b51}r\frac{N}{K} E} - {\color{bc4b51}\mu E} + {\color{7b678e}\sum_j \Delta_{ij} E_j}\\
+          \frac{\textrm{d} I_i}{\textrm{d}t} &= {\color{0b6884}\sigma E} - {\color{ff5e5b}\nu I} - {\color{bc4b51}r\frac{N}{K} I} - {\color{bc4b51}\mu I + {\color{7b678e}\sum_j \Delta_{ij} I_j}}
+        \end{aligned}
+      $$
+    </div>
+
+    <ul class="fa-ul">
+      <li>${\color{bc4b51}r}$: growth (birth - death)</li>
+      <li>${\color{50b99a}\beta}$: infection</li>
+      <li>${\color{0b6884}\sigma}$: recovery</li>
+      <li>${\color{bc4b51}\mu}$: death</li>
+      <li>${\color{ff5e5b}\nu}$: disease-induced mortality</li>
+      <li style="margin-left: -1em;">${\color{7b678e}\Delta_{ij}}$: host movement between patches</li>
+    </ul>
+
+  </div>
+  <h4 id="citation" class="citwnotes">
+    <a href="https://www.nature.com/articles/289765a0">Anderson <i>et al.</i> 1981</a><br>
+    <a href="https://doi.org/10.1093/imammb/dqq007">Xiao, Zhou, &amp; Tang 2011</a>
+  </h4>
+  <aside class="notes">
+    
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter r-stack">
+    <img style="height: 90vh;" src="../figures/metapop/dampening-cycles_zero.svg">
+    <img class="fragment" data-fragment-index=1 style="height: 90vh;" src="../figures/metapop/dampening-cycles_one.svg">
+    <img class="fragment current-visible" data-fragment-index=2 style="height: 90vh;" src="../figures/metapop/dampening-cycles_one-prime.svg">
+    <img class="fragment" data-fragment-index=3 style="height: 90vh;" src="../figures/metapop/dampening-cycles_two.svg">
+    <img class="fragment" data-fragment-index=4 style="height: 90vh;" src="../figures/metapop/dampening-cycles_three.svg">
+    <img class="fragment" data-fragment-index=5 style="height: 90vh;" src="../figures/metapop/dampening-cycles_four.svg">
+  </div>
+</section>
+
+<section>
+
+  <section>
+    <div class="vcenter r-stack">
+      <img style="height:90vh;" src="../figures/metapop/two-pop-comparison_zero.svg">
+      <img class="fragment" data-fragment-index=1 style="height:90vh;" src="../figures/metapop/two-pop-comparison_one.svg">
+      <img class="fragment" data-fragment-index=2 style="height:90vh;" src="../figures/metapop/two-pop-comparison_two.svg">
+      <img class="fragment" data-fragment-index=3 style="height:90vh;" src="../figures/metapop/two-pop-comparison_three.svg">
+    </div>
+  </section>
+
+  <section>
+    <div class="vcenter">
+      <img src="../figures/metapop/variable-movement-rate.svg"></img>
+    </div>
+  </section>
+
+</section>
+  
+<section>
+
+  <section>
+    <div class="vcenter r-stack">
+      <img style="height: 90vh;" src="../figures/metapop/dynamics-hierarchy_zero.svg">
+      <img class="fragment" data-fragment-index=1 style="height: 90vh;" src="../figures/metapop/dynamics-hierarchy_one.svg">
+      <img class="fragment current-visible" data-fragment-index=2 style="height: 90vh;" src="../figures/metapop/dynamics-hierarchy_one-prime.svg">
+      <img class="fragment" data-fragment-index=3 style="height: 90vh;" src="../figures/metapop/dynamics-hierarchy_two.svg">
+    </div>
+  </section>
+
+  <section>
+    <div class="vcenter">
+      <img src="../figures/metapop/variable-movement-rate-two.svg"></img>
+    </div>
+  </section>
+
+</section>
+
+<section>
+  <div class="vcenter">
+    <div style="display:grid; grid-template-columns:1fr 1fr; align-items:center;">
+      <h3 style="font-family: Alegreya;"><u>Result (from small networks)</u></h3>
+      <h3 style="font-family: Alegreya;"><u>Prediction (in large networks)</u></h3>
+      <h4>Migration dampens cycles:</h4>
+      <p>Reduced cycle amplitude and disease prevalence in networks with longer chains</p>
+      <h4>Destinations inherit dynamics:</h4>
+      <p>Interconnected parts of the network should have similar dynamics</p>
+      <h4>Dynamics inherit asymmetrically:</h4>
+      <p>Preponderance of cyclical and chaotic dynamics</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="vcenter r-stack">
+    <img src="../figures/metapop/main_examplenets.svg" style="width: 90vw;">
+    <img class="fragment current-visible" src="../figures/metapop/large-network-triad-distributions.svg" style="width: 90vw;">
+    <img class="fragment" src="../figures/metapop/main_propdyn.svg" style="width: 90vw;">
+  </div>
+</section>
+
+<section>
+  <div class="vcenter">
+    <ul class="fa-ul">
+      <li class="fragment semi-fade-out" data-fragment-index=1><i class="fa-li fal fa-angle-right"></i>Simple patterns emerge in small metapopulation networks</li>
+      <ul class="fa-ul fragment semi-fade-out" data-fragment-index=1>
+        <li><i class="fa-li fal fa-angle-double-right"></i>When linked with migration, cyclical dynamics are dampened further down chains</li>
+        <li><i class="fa-li fal fa-angle-double-right"></i>Migration tends to lead to inheritance of dynamical regimes between populations</li>
+        <li><i class="fa-li fal fa-angle-double-right"></i>When multiple source populations are considered, more complicated dynamics (cycles and chaos) dominate the inheritance</li>
+      </ul>
+      <li class="fragment fade-in-then-semi-out" data-fragment-index=1><i class="fa-li fal fa-angle-right" data-fragment-index=2></i>While there are patterns in larger networks, they are not simple</li>
+      <ul class="fa-ul fragment fade-in-then-semi-out" data-fragment-index=1>
+        <li><i class="fa-li fal fa-angle-double-right"></i>Patches with no immigration tend to have higher pathogen variance than patches that have at least one source of incoming host movement</li>
+        <li><i class="fa-li fal fa-angle-double-right"></i>Most patches exhibit oscillatory dynamics</li>
+      </ul>
+      <li class="fragment fade-in" data-fragment-index=2><i class="fa-li fal fa-angle-right" data-fragment-index=3></i>Further research is needed to:</li>
+      <ul class="fa-ul fragment fade-in" data-fragment-index=2>
+        <li><i class="fa-li fal fa-angle-double-right"></i>Identify relationships between more complex network structures and disease dynamics</li>
+        <li><i class="fa-li fal fa-angle-double-right"></i>Fit to empirical data, including empirical network structures</li>
+      </ul>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="vcenter wnotes">
+    <div class="journaltitle" style="grid-template-columns: 1fr 2fr;">
+      <img style="max-width:100%; max-height:100%;" src="../images/royal_society_open_science.png">
+      <img style="max-width:100%; max-height:100%;" src="../images/lincs_journal_title.png">
+    </div>
+    <div id="coauthors">
+      <img src="../coauthors/E.Enns.jpg">
+      <h3>Eva Enns</h3>
+      <img src="../coauthors/L.White.jpg">
+      <h3>Lauren White</h3>
+      <img src="../coauthors/M.Gilbertson.jpg">
+      <h3>Marie Gilbertson</h3>
+      <img src="../coauthors/M.Craft.jpg">
+      <h3>Meggan Craft</h3>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>
+      The work presented here was done in collaboration with 
+      Eva UMN SPH
+      <a
+      href="https://scholar.google.com/citations?user=S-81O6EAAAAJ&hl=en">Marie
+      Gilbertson</a>, who is currently a postdoc at UW Madison,
+      Lauren White - CA DPH
+      and my advisor <a href="https://mcraftlab.wordpress.com/">Meggan Craft</a> at
+      the University of Minnesota.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <div class="wnotes vcenter">
+      <h2>What is contact?</h2>
+      <img src="../images/face_cough.png" width=50%>
+      <h2 data-fragment-index=0 class="fragment">What makes a contact network realistic?</h2>
+      <ul data-fragment-index=0 class="fragment fa-ul">
+        <li><i class="blue fa-li fal fa-house"></i>Home/Family</li>
+        <li><i class="green fa-li fal fa-school"></i>School</li>
+        <li><i class="orange fa-li fal fa-building"></i>Work</li>
+        <li><i style="padding-top:0.4em;" class="red fa-li fal fa-gopuram"></i>
+            <i style="margin-left:-2.7em; padding-top:0.4em;" class="red fal fa-church"></i>
+            <i style="margin-left:-2.65em; padding-top:0.4em;" class="red fal fa-mosque"></i>
+            <i style="margin-left:-2.8em; padding-top:0.4em;" class="red fal fa-vihara"></i><span style="margin-left:4.1em;">Religious institutions</span></li>
+        <li><i class="purple fa-li fal fa-hospital-alt"></i>Hospitals</li>
+        <li><i class="yellow fa-li fal fa-walker"></i>Nursing homes</li>
+      </ul>                
+  </div>
+  <h4 id="citation" class="citwnotes">image adapted from <a href="https://aip.scitation.org/doi/10.1063/5.0048746#"></a>Monroe <i>et al.</i> 2021</a></h4>
+  <aside class="notes">
+    <p>
+      To do this we had to answer a couple of basic questions, such as "What is a contact?"
+      The answer to this question is obviously context specific, but with COVID-19, with its
+      aerosolized transmission, we think about the risk of transmission increasing with the 
+      duration of people sharing the same air space.
+    </p> 
+    <span id="ns">next slide</span>
+    <p>
+      But of course the ways in which we are close to other people is also context dependent,
+      leading to the key insight for this project: the structure of our interactions with other
+      people is dependent on the different ways in which we interact with different facets of our
+      social network.
+    </p>
+    <p>
+      To put it more concretely, we interact with co-workers differently than we interact with
+      people at home, or at a religious institution. The differences in these interactions,
+      including the strength of interaction and the interacting group size, can have consequences
+      for the spread of disease.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <div class="wnotes vcenter">
+    <div style="display:grid; grid-template-columns:1fr 1fr;">
+      <h2>Interaction properties</h2>
+      <h2 class="fragment" data-fragment-index=3>Node properties</h2>
+      <div class="r-stack">
+        <img src="../figures/LINCS/edges_zero.svg" style="width:100%;" class="fragment fade-out" data-fragment-index=0>
+        <img src="../figures/LINCS/edges_one.svg" style="width:100%;" class="fragment current-visible" data-fragment-index=0>
+        <img src="../figures/LINCS/edges_two.svg" style="width:100%;" class="fragment current-visible" data-fragment-index=1>
+        <img src="../figures/LINCS/edges.svg" style="width:100%;" class="fragment" data-fragment-index=2>
+      </div>
+      <div class="r-stack">
+        <img src="../figures/LINCS/locale_demographic_comparison.svg" style="width:100%;" class="fragment fade-out" data-fragment-index="0">
+        <img src="../figures/LINCS/nodes.svg" style="width:100%;" class="fragment" data-fragment-index=3>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+
+    Population Structure<br>
+    Interaction Type<br>
+    Personal Vulnerability<br>
+    Risk Tolerance Behavior<br>
+
+    <p>
+      So, we begin to assemble our networks: starting with a collection of individuals, whose ages are
+      distributed according to some locality's census data and grouping them into households, based on
+      the empirical distribution of household sizes. We then successively layer additional interaction
+      types, including schools, 
+    </p> 
+    <span id="ns">next slide</span>
+    <p>
+      work-places,
+    </p> 
+    <span id="ns">next slide</span>
+    <p>
+      and possibly others (each likewise based on empirical data whenever possible).
+    </p> 
+    <span id="ns">next slide</span>
+    <p>
+      Importantly, because each node has an age associated with it, we can also classify some
+      individuals as being more vulnerable to adverse outcomes from COVID, using age-normalized
+      hospitalization rates. Here, we dichotomize individuals into "Vulnerable" or "Not" for simplicity.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <div class="wnotes vcenter">
+    <h2 style="margin-bottom:2em;">Disease Model</h2>
+    <div class="r-stack" style="width:85%;">
+      <img class="fragment fade-out" style="width:100%;" src="../images/model_subsets/infection.svg" data-fragment-index=0>
+      <img class="fragment" style="width:100%;" src="../images/model_subsets/exposure.svg" data-fragment-index=0>
+      <img class="fragment" style="width:100%;" src="../images/model_subsets/recovery.svg">
+      <img class="fragment" style="width:100%;" src="../images/model_subsets/death.svg">
+      <img class="fragment" style="width:100%;" src="../images/model_subsets/vulnerable.svg">              
+    </div>
+  </div>
+  <aside class="notes">
+    <p>
+      I want to take a minute to run through the underlying disease model, but since I'm
+      sure most of you have seen these types of models explained, and perhaps explained them
+      yourselves, multiple times, I will keep it very brief.
+    </p>
+    <p>
+      At each timestep in a simulation, every individual in the network has one of six states.
+      They start out as <span class="blue">S</span>usceptible to disease and can become infected when they share an edge,
+      representing a social contact, with an infectious individual.
+    </p>
+    <span id="ns">next slide</span>
+    <p>
+      Upon infection, they enter a latency period and are classified as <span class="green">E</span>xposed, but not yet infectious.
+      Over time, they transition to being <span class="yellow">I</span>/<span class="orange">I</span>nfectious, and some fraction will develop symptoms.
+    </p>
+    <span id="ns">next slide</span>
+    <p>
+      As more time passes, some of these will <span class="purple">R</span>ecover,
+    </p>
+    <span id="ns">next slide</span>
+    <p>
+      while others will sadly <span class="red">D</span>ie.
+    </p>
+    <span id="ns">next slide</span>
+    <p>
+      The final piece of the puzzle is that those individuals that we classified as vulnerable have 
+      both longer disease courses (slower recovery),
+    </p>
+    <span id="ns">next slide</span>
+    <p>
+      and are more likely to die, modifying these two parameters as shown.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <div class="wnotes vcenter">
+    <p>What does this look like in a single simulation?</p>
+    <img src="../figures/LINCS/dynamics_1.gif" style="max-height:67vh;">
+  </div>
+  <aside class="notes">
+    So, for a single simulated epidemic, we see nodes cycling through the various
+    disease states, and, on the right, the proportion of the population in each
+    class through time. Note that some individuals are able to escape infection,
+    even at the end of the simulation, if they are sparsely connected to the rest of the
+    network, or just very lucky.
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter">
+      <img src="../figures/LINCS/locale_comparison.png" style="width: 80vw; max-height:90vh;">
+  </div>
+</section>
+
+<section>
+  <div class="vcenter">
+      <img src="../figures/LINCS/inttype_comparison_simple.svg" style="width: 80vw; max-height:90vh;">
+  </div>
+</section>
+
+<section>
+  <div class="vcenter">
+    <div style="width:100%" class="r-stack">
+      <img src="../figures/LINCS/risk_comparison_zero.svg" style="width:100%;">
+      <img class="fragment fade-out" data-fragment-index=1 src="../figures/LINCS/risk_comparison_zero_prime.svg" style="width:100%;">
+      <img class="fragment" data-fragment-index=1 src="../figures/LINCS/risk_comparison_one.svg" style="width:100%;">
+      <img class="fragment current-visible" data-fragment-index=1 src="../figures/LINCS/risk_comparison_one_prime.svg" style="width:100%;">
+      <img class="fragment" data-fragment-index=2 src="../figures/LINCS/risk_comparison_two.svg" style="width:100%;">
+      <img class="fragment current-visible" data-fragment-index=2 src="../figures/LINCS/risk_comparison_two_prime.svg" style="width:100%;">
+      <img class="fragment" data-fragment-index=3 src="../figures/LINCS/risk_comparison_three.svg" style="width:100%;">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wnotes vcenter">
+    <h3>Conclusions</h3>
+    <ul style="width:min(1600px, 95vw);" class="fa-ul">
+      <li><i class="fa-li fal fa-angle-right"></i>Populations are highly interconnected, allowing disease to spread even to specific individuals that are taking precautions</li>
+      <li><i class="fa-li fal fa-angle-right"></i>Community action is needed to protect the most vulnerable</li>
+      <li><i class="fa-li fal fa-angle-right"></i>Demographic structure can have nuanced, contradictory effects on disease spread</li>
+    </ul>
+
+    <ul style="width:min(1600px, 95vw); padding-top:5vh;" class="fa-ul">
+      <li><i class="fa-li fal fa-angle-right"></i>Framework as an educational tool</li>
+    </ul>
+  </div>
+  <aside class="notes">
+
+  </aside>
+</section>
+
+<section>
+  <div class="wnotes vcenter">
+    <h1>
+      <a target="_blank" style="color: black;" href="https://z.umn.edu/LINCS">
+        <span class="blue">L</span><span class="hoverblue">ayered</span> 
+        <span class="green">I</span><span class="hovergreen">nteraction</span> 
+        <span class="red">N</span><span class="hoverred">etwork</span><br>
+        <span class="yellow">C</span><span class="hoveryellow">OVID-19</span> 
+        <span class="purple">S</span><span class="hoverpurple">imulator</span>
+      </a>
+    </h1>
+  </div>
+  <aside class="notes">
+    Without further ado, lets jump over into the app for the remainder of the time!
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter wnotes">
+    <h1>How do specific structures affect disease spread through networks?</h1>
+    <div id="coauthors">
+      <img src="../coauthors/E.Enns.jpg">
+      <h3>Eva Enns</h3>
+      <img src="../coauthors/M.Craft.jpg">
+      <h3>Meggan Craft</h3>
+    </div>
+  </div>
+  <h4 id="citation" class="citwnotes">In Prep</h4>
+  <aside class="notes">
+    <p>
+      The work presented here was done in collaboration with 
+      Eva UMN SPH
+      <a
+      href="https://scholar.google.com/citations?user=S-81O6EAAAAJ&hl=en">Marie
+      Gilbertson</a>, who is currently a postdoc at UW Madison,
+      Lauren White - CA DPH
+      and my advisor <a href="https://mcraftlab.wordpress.com/">Meggan Craft</a> at
+      the University of Minnesota.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter wnotes r-stack">
+    <img style="max-height:95vh;" class="fragment fade-out" data-fragment-index=1 src="../images/295fig2.jpg">
+    <img style="max-height:95vh;" class="fragment" data-fragment-index=1 src="../images/295fig3.jpg">
+  </div>
+  <h4 id="citation" class="citwnotes"><a href="https://doi.org/10.1098/rsif.2005.0051">Keeling &amp; Eames 2005</a></h4>
+  <aside class="notes">
+    
+    Figure 2 Five distinct network types containing 100 individuals. These are from left to right:
+    random, lattice, small world (top row), spatial and scale-free (bottom row). A network generated
+    by an exponential random graph model is not shown, as this flexible framework can encompass a
+    huge variety of network types. For the scale-free network, the bottom right-hand graph shows the
+    power-law distribution of individuals with a given degree from 1000 replicate networks; for this
+    example, the power-law exponent is -3.3. The random, spatial and scale-free networks all utilize
+    the same position of individuals, although for the random and scale-free network, the position
+    of the individuals is irrelevant for forming connections. In all five graphs, the average number
+    of contacts per individual is approximately four. For the scale-free network, individuals with
+    high numbers of contacts are represented by larger dots and are shaded grey.
+
+    Figure 3 Typical SIR epidemics on the five network types shown in figure 2. These are from left
+    to right: random, lattice, small world (top row), spatial and scale-free (bottom row). Each
+    graph shows 100 epidemic curves (grey) together with the average for all major epidemics (black)
+    for a single example of each network type; therefore, all variability within each graph is a
+    result of the stochastic nature of transmission and not variation in the network. All five
+    networks contain 10000 individuals, although all individuals are not necessarily interconnected
+    as part of a giant component. For the spatial and scale-free networks, approximately 88 and 74%
+    are part of the giant component and can therefore potentially become infected. For these
+    networks, the proportion of infectious individuals has been rescaled as a fraction of the giant
+    component. In all networks, the average number of contacts per individual is approximately 4,
+    although for the scale-free network, there is considerable heterogeneity with one individual
+    having 85 contacts. For consistency, the small-world network is formed from a two-dimensional
+    lattice (not a one-dimensional circle as shown in figure 2) with 10 additional random
+    'long-range' contacts. The dashed lines show the effect on the mean epidemic of increasing the
+    number of long-range contacts to 20 and 100. (τ=1, g=0.5, b=d=0).
+  
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter wnotes">
+    <div style="width:min(1400px, 100%); text-align:left;">
+      <h4 id="header">Network Structure</h4>
+      <dl>
+        <dt>degree</dt>
+          <dd>how many others do you interact with?</dd>
+        <dt class="fragment" data-fragment-index=1>triad participation</dt>
+          <dd class="fragment" data-fragment-index=1>what patterns of three-node subgraphs do you partake in?</dd>
+        <dt class="fragment" data-fragment-index=2>clustering</dt>
+          <dd class="fragment" data-fragment-index=2>do your neighbors also interact with one another?</dd>
+        <dt class="fragment" data-fragment-index=3>centralization</dt>
+          <dd class="fragment" data-fragment-index=3>how easily does energy/resource/information/disease flow across the network?</dd>
+        <dt class="fragment" data-fragment-index=4>modularity</dt>
+          <dd class="fragment" data-fragment-index=4>are there groups of nodes that tend to only interact with other members of the same group?</dd>
+        <dt class="fragment" data-fragment-index=5>mean path length</dt>
+          <dd class="fragment" data-fragment-index=5>how many steps does it usually take to get from one node to another?</dd>
+      </dl>
+    </div>
+  </div>
+  <aside class="notes">
+    So we know that disease dynamics on networks differ from those predicted by compartmental
+    models, and that predictions can differ between different kinds of networks, but what is
+    it about networks that allows for these differences? when comparing across networks, we 
+    tend to talk about "structure," by which we can mean many different things. For instance,
+    we could mean differences in degree, or ...
+    <br>
+    For the sake of this talk, I will be using these and many more metrics of network structure.
+    rather than focusing on what each of these means, however, it is sufficient here to simply
+    consider these as indicators we can use to distinguish between two or more networks.
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter wnotes">
+    <img src="../images/pcbi.1000736.g001.png">
+  </div>
+  <h4 id="citation" class="citwnotes"><a href="https://doi.org/10.1371/journal.pcbi.1000736">Salathé &amp; Jones 2010</a></h4>
+  <aside class="notes">
+
+    Figure 1. Effect of community structure, measured as modularity (Q) on epidemic dynamics.
+
+    Panels show effect of community structure on (a) final size, (b) duration and (c) peak
+    prevalence (i.e. maximum frequency of population infected). Each of the points represents the
+    average of maximally 2000 simulation runs (only simulations with a final size of at least 2% of
+    the population were included in calculating the averages). Error bars are omitted because the
+    ranges are less than the size of the plotting points. The different colors represent different
+    transmission rates: gray, β =0.05 (R0≈2.5); blue, β =0.06 (R0≈3); red, β =0.08 (R0≈4). Panel
+    (d) shows that the effect of a change in community structure on the squared coefficient of
+    variation of the degree distribution (CV)2 is negligible.
+
+</aside>
+</section>
+
+<section>
+  <div class="vcenter wnotes">
+    <img src="../images/Britton_fig1.png">
+  </div>
+  <h4 id="citation" class="citwnotes"><a href="https://doi.org/10.1239/jap/1222441827">Britton <i>et al.</i> 2016</a></h4>
+  <aside class="notes">
+
+    Figure 1: In the top plot, R0 is plotted against c for fixed μ = 4 and for three choices of p: p
+    = 0.2 (solid line), p = 0.3 (dashed line), and p = 0.5 (dash-dot line). The bottom plot shows
+    how the probability π of explosion in the epidemic varies with c for fixed μ = 4 and the same
+    choices of p as above.
+
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter wnotes">
+    <img src="../images/Gupta,Anderson,May_Fig4.png">
+  </div>
+  <h4 id="citation" class="citwnotes"><a href="https://doi.org/10.1097/00002030-198912000-00005">Gupta, Anderson, &amp; May 1989</a></h4>
+  <aside class="notes">
+
+    assortative w.r.t. group structure
+
+    Figure 4: The correlation between the peak number of people infected during the epidemic and the
+    'assortativeness' of the associated mixing matrix, measured by the number Q, under schemes of
+    behaviour change either restricted to the mixing matrix ([]) or confined to sexual activity
+    levels, with partner change rates constant in the fifth (<>) and the second (+) activity
+    classes.
+
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter wnotes">
+    <h4>Previous analyses have tended to</h4>
+    <ul class="fa-ul fragment semi-fade-out" data-fragment-index=1>
+      <li><i class="fa-li fal fa-angle-right"></i>Look at only one structural factor at a time</li>
+      <li><i class="fa-li fal fa-angle-right"></i>Failed to consider intrinsic correlations within network structure</li>
+      <li><i class="fa-li fal fa-angle-right"></i>Consider the impact on a single response variable</li>
+      <li><i class="fa-li fal fa-angle-right"></i>Insufficiently consider the breadth of possible network structure</li>
+    </ul>
+    <h4 style="padding-top:20px;" class="fragment" data-fragment-index=1>Be limited in scope</h4>
+  </div>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+  <div class="vcenter r-stack wnotes">
+    <img src="../images/project_schema_zero.svg" style="max-width:95%;">
+    <img class="fragment" src="../images/project_schema_one.svg" style="max-width:95%;">
+    <img class="fragment" src="../images/project_schema_two.svg" style="max-width:95%;">
+    <img class="fragment" src="../images/project_schema_three.svg" style="max-width:95%;">
+    <img class="fragment" src="../images/project_schema_four.svg" style="max-width:95%; z-index:-1">
+    <img class="fragment" src="../images/project_schema_four_one.svg" style="max-width:95%;">
+    <!-- <img class="fragment" src="../images/project_schema_four_two.svg" style="max-width:95%;"> -->
+  </div>
+  <aside class="notes">
+    look at only one structural factor at a time
+    <br>
+failed to consider intrinsic correlations within network structure
+<br>
+consider the impact on a single response variable
+<br>
+insufficiently consider the breadth of possible network structure
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter r-stack">
+    <img class="fragment fade-out" data-fragment-index=2 style="width:min(1024px,90vw);"  src="../figures/summary_networks_zero.svg">
+    <img class="fragment current-visible" data-fragment-index=1 style="width:min(1024px,90vw);"  src="../figures/summary_networks_one.svg">
+    <img class="fragment" data-fragment-index=2 style="max-height:90vh;" src="../figures/DNS/metric_distributions.svg">
+  </div>
+</section>
+
+<section>
+  <section>
+    <div class="vcenter">
+      <table>
+        <thead>
+          <tr>
+            <td>Metric</td>
+            <td>Description</td>
+            <td>Potential Significance</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>connectance</td>
+            <td>the proportion of possible links that are realized</td>
+            <td>more connections allows for faster spread</td>
+          </tr>
+          <tr>
+            <td>eigenvalues</td>
+            <td>the eigenvalues with the largest real parts, as well as those of the network's laplacian</td>
+            <td>related to dynamical stability and reactivity</td>
+          </tr>
+          <tr>
+            <td>algebraic connectivity</td>
+            <td>a measure of the overall connectivity of the network (also called the Fielder value)</td>
+            <td>related to robustness and synchronizability</td>
+          </tr>
+          <tr>
+            <td>clustering</td>
+            <td>the percentage of connected, three-node subgraphs that form triangles</td>
+            <td>more clustered networks spread quickly within clusters, but this often limits overall spread</td>
+          </tr>
+          <tr>
+            <td>degree assortativity</td>
+            <td>the correlation between degree (number of connections) between connected nodes</td>
+            <td>relates to how widely a pathogen can spread</td>
+          </tr>
+          <tr>
+            <td>degree heterogeneity</td>
+            <td>a measure of the variance in degree between nodes</td>
+            <td>related to specific node risk</td>
+          </tr>
+          <tr>
+            <td>k-core decomposition</td>
+            <td>the k-core value of a node is found by recursively eliminating all nodes with degree k or lower, we note the largest value for the network as well as the number of nodes in that maximal k-core</td>
+            <td>relevant for early infection dynamics</td>
+          </tr>
+          <tr>
+            <td>k-truss decomposition</td>
+            <td>the k-truss value of a edge is found by recursively eliminating all edges involved in k or fewer cycles of a given length (we consider cycles of length 3); we note the largest value in the network, as well as the number of nodes sharing edges in that maximal k-truss</td>
+            <td>can be used to identify a high-risk core of nodes</td>
+          </tr>
+          <tr>
+            <td>3-node subgraph counts</td>
+            <td>we count the number of each of the four possible undirected 3-node subgraphs in each network,</td>
+            <td>different meso-scale structures have different dynamical consequences; maybe easier to measure empirically</td>
+          </tr>
+          <tr>
+            <td>modularity</td>
+            <td>a measure of the tendency for nodes in the network to form groups wherein there are more connections between members of the same group and fewer connections to members of other groups</td>
+            <td>fast spread within modules, but indicates potential firewall links between modules</td>
+          </tr>
+          <tr>
+            <td>inverse participation ratio</td>
+            <td>quantifies uniformity in the distribution of nodes across communities</td>
+            <td>related to disease localization and predictability of epidemic thresholds</td>
+          </tr>
+          <tr>
+            <td>centralization measures</td>
+            <td>heuristics to calculate the cumulative importance of nodes within a network with respect to a particular flow regime</td>
+            <td>highly centralized networks might be expected to have greater disease spread (holds true in some cases for nodes)</td>
+          </tr>
+          <tr>
+            <td>mean path length</td>
+            <td>the average shortest path length between each pair of nodes in the network</td>
+            <td>smaller path lengths means fewer transmissions needed to get from any given node to another</td>
+          </tr>
+          <tr>
+            <td>diameter</td>
+            <td>the longest shortest path between each pair of nodes in the network</td>
+            <td>similar to mean path length</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="vcenter wnotes">
+      <img style="max-height:90vh;" src="../figures/DNS/metric_correlations.svg">
+    </div>
+    <aside class="notes">T201 omitted from axis labels</aside>
+  </section>
+</section>
+
+<section>
+  <div class="vcenter wnotes r-stack">
+    <img style="width:min(1024px, 95vw);" src="../figures/DNS_Sim_Lines_zero.svg">
+    <img style="width:min(1024px, 95vw);" class="fragment fade-out" src="../figures/DNS_Sim_Lines_zero_prime.svg">
+    <img style="width:min(1024px, 95vw);" class="fragment" src="../figures/DNS_Sim_Lines_one.svg">
+    <img style="width:min(1024px, 95vw);" class="fragment current-visible" src="../figures/DNS_Sim_Lines_mean.svg">
+    <img style="width:min(1024px, 95vw);" class="fragment current-visible" src="../figures/DNS_Sim_Lines_max.svg">
+    <img style="width:min(1024px, 95vw);" class="fragment current-visible" src="../figures/DNS_Sim_Lines_cv.svg">
+  </div>
+  <aside class="notes">
+    
+    note drop one sim (no infection), but mention future research
+
+    also note ttp for si(r) dynamics
+    
+  </aside>
+</section>
+
+<section>
+  <h4 id="header">Machine Learning</h4>
+  <div class="vcenter wnotes r-stack">
+    <div style="padding-bottom:20vh;" class="fragment fade-out" data-fragment-index=1>
+      <div id="black-box"></div>
+    </div>
+    <div class="fragment fade-out r-stack" data-fragment-index=3>
+      <img class="fragment fade-in" data-fragment-index=1 src="../images/ML.png">
+      <img class="fragment" data-fragment-index=2 src="../images/ML_emph.svg">
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; align-items:center;">
+      <h3 class="fragment" style="padding-bottom:0; margin-bottom:0;" data-fragment-index=3>Model Accuracy</h3>
+      <h3 class="fragment" style="padding-bottom:0; margin-bottom:0;" data-fragment-index=4>Feature Importance</h3>
+      <img class="fragment" style="padding:0 7vw; margin-top:0;" data-fragment-index=3 src="../figures/example_fit.svg">
+      <img class="fragment" style="padding:0 7vw; margin-top:0;" data-fragment-index=4 src="../figures/example_imp.svg">
+    </div>
+  </div>
+  <h4 id="citation" class="citwnotes fragment fade-out" data-fragment-index=3><a href="https://towardsdatascience.com/machine-learning-models-explained-to-a-five-year-old-f2f540d9dcea">Megan Dibble for "Towards Data Science"</a></h4>
+  <aside class="notes">
+    One final point about ml has to do with a difference between how it is used in ecology as
+    opposed to, for instance, in more applied data-science situations, and it has to do with this
+    idea of predictions as the key output of concern. While we do care about model accuracy, that is,
+    the relationship between a model's predictions and reality. We also care a lot about feature
+    importance, that is, what are the variables going into the model, and how do they relate
+    to the outputs we observe?
+  </aside>
+</section>
+
+<section>
+  <h4 id="header">Shapley Values</h4>
+  <div class="vcenter wnotes r-stack">
+    <h1 style="padding-bottom:70vh; font-size:7vmin;" class="fragment current-visible" data-fragment-index=2>
+      time to epidemic peak ~ network structure
+    </h1>
+    <h1 style="width:100%;" class="fragment fade-out" data-fragment-index=1>Why does the model predict X for one input and Y for another?</h1>
+    <div style="display:flex; gap:20%; width:100%;">
+      <img style="width:min(720px, 40%);" class="fragment fade-in-then-semi-out" data-fragment-index=1 src="../figures/example_shap_net_one.svg">
+      <img style="width:min(720px, 40%);" class="fragment fade-in-then-semi-out" data-fragment-index=1 src="../figures/example_shap_net_two.svg">
+    </div>
+    <div style="display:flex; gap:20vw; width:100%;">
+      <h1 style="width:min(720px, 40%);" class="fragment current-visible" data-fragment-index=2>peaks at 40 days</h1>
+      <h1 style="width:min(720px, 40%);" class="fragment current-visible" data-fragment-index=2>peaks at 50 days</h1>
+    </div>
+    <img style="height:95vh;" class="fragment" data-fragment-index=3 src="../figures/example_shap_effects.svg">
+  </div>
+  <aside class="notes">
+    TAKE YOUR TIME WITH THIS FIGURE!!
+    <br>
+    Shapley values capture the marginal contribution of each [feature] to the end result
+    <br>
+    the Shapley value is calculated by computing a weighted average payoff gain that player i
+    provides when included in all coalitions that exclude i.
+    <br>
+    Shapley value can be computed without any knowledge of the model's internal mechanics. This
+    makes it a model-agnostic technique, and also facilitates direct comparison of Shapley values
+    for input features across different model types.
+    <br>
+    In addition, because Shapley values can be computed with respect to an individual data point,
+    they provide the granularity of local explanations while simultaneously allowing for
+    extrapolation. By analyzing which features have higher Shapley values across multiple data
+    points, for example, this can give insight into the model's global reasoning.
+    <br>
+    <a href="https://towardsdatascience.com/the-shapley-value-for-ml-models-f1100bff78d1">Divya Gopinath and David Kurokawa for "Towards Data Science"</a>
+  </aside>
+</section>
+
+<section>
+  <h2 id="header">Model Accuracy</h2>
+  <div class="vcenter r-stack">
+    <img style="max-height:95vh;" class="fragment fade-out" data-fragment-index=1 src="../figures/DNS/predictability_full_without_disease_parameters.png">
+    <img style="max-height:95vh;" class="fragment" data-fragment-index=1 src="../figures/DNS/predictability.png">
+  </div>
+</section>
+
+<section>
+  <div class="vcenter">
+    <img src="../figures/DNS/model_fit_by_disease_params.svg">
+  </div>
+</section>
+
+<section>
+  <h2 id="header">Feature Importance</h2>
+  <div class="vcenter">
+    <img style="height:95vh;" src="../figures/DNS/feature_importance.svg">
+  </div>
+</section>
+
+<section>
+  <div class="wnotes vcenter">
+    <h3>Preliminary Conclusions</h3>
+    <ul style="width:min(1600px, 95vw);" class="fa-ul">
+      <li><i class="fa-li fal fa-angle-right"></i>Dynamics are dominated by disease parameters</li>
+      <li><i class="fa-li fal fa-angle-right"></i>But network structure is important for a given parameterization</li>
+      <li><i class="fa-li fal fa-angle-right"></i>Feature importance depends on the outcome of interest</li>
+    </ul>
+    <h3 style="padding-top:20px;">Future directions</h3>
+    <ul style="width:min(1600px, 95vw);" class="fa-ul">
+      <li><i class="fa-li fal fa-angle-right"></i>Investigate Shapley interaction terms to better explore multicollinearity</li>
+      <li><i class="fa-li fal fa-angle-right"></i>Consider categories of metrics (especially w.r.t. empirical data collection)</li>
+      <li><i class="fa-li fal fa-angle-right"></i>Explore more systematic ways of exhaustively, uniformly sampling network structure space</li>
+      <li><i class="fa-li fal fa-angle-right"></i>Consider where empirical networks fall within network structure space, and relate to model outputs</li>
+    </ul>
+  </div>
+  <aside class="notes">
+
+  </aside>
+</section>
+
+<section class="center">
+  <div class="wnotes vcenter">
+    <div style="display:flex;">
+      <h1 style="font-size:9vw; margin:4.5vw 0 0 2vw;">Thank you!</h1>
+      <h1 style="font-size:25vw; font-weight:normal; margin:0 -4vw 0 -4vw;">/</h1>
+      <h1 style="font-size:9vw; margin:18vw 2vw 0 0;">Questions?</h1>
+    </div>
+  </div>
+  <div style="position:absolute; bottom:0; left:5rem; width:100vw; display:flex;">
+    <img src="../../NSF_logo.png" style="height:5vw; margin-right: 2rem; margin-top:0; margin-bottom:0;">
+    <img src="../../UMN_logo.png" style="height:5vw; margin-top:0; margin-bottom:0;">
+  </div>
+  <aside class="notes">
+    <p>
+      Thanks for viewing this presentation, if you have any feedback or questions, please
+      <a href="mailto:michalsm@umn.edu">Email me</a>!
+    </p><p>
+      This work was funded by a <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2030509">National Science Foundation RAPID grant (DEB-2030509)</a> and
+      a <a href="https://clinicalaffairs.umn.edu/umn-covid-19-research/leveraging-network-science-help-decision-makers-and-public-understand-effects-implementation-and-relaxation-social-distancing-measures-covid-19-viral-spread">University of Minnesota Office of Academic Clinical Affairs CO:VID Grant</a>.
+
+      This work was funded through CVM Research Office UMN Ag Experiment Station General Ag
+      Research Funds #MINV-62-057.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter wnotes">
+    <h1>How much can individual (node)-level changes influence population-level disease spread?</h1>
+  </div>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+  <div class="vcenter wnotes r-stack">
+    <div style="font-size:5rem; display:grid; grid-template-columns:1fr 1fr 1fr; width:min(1600px, 95vw); justify-items:center; align-items:center;" class="fragment semi-fade-out" data-fragment-index=1>
+      <i class="fal fa-hands-wash"></i>
+      <i class="fal fa-theater-masks"></i>
+      <i class="fal fa-people-arrows"></i>
+    </div>
+    <img style="max-height:95vh;" class="fragment" data-fragment-index=1 src="../images/only_you.jpg">
+  </div>
+  <h4 id="citation" class="citwnotes">
+    <a href="https://twitter.com/City_Janesville/status/1247543530144350216?s=20&t=scsxuFvIFBtigfcyJAMLIg">@City_Janesville on twitter.com</a>
+  </h4>
+  <aside class="notes">
+    all focused on changing individual behavior, but how much does any one person really matter?
+  </aside>
+</section>
+
+<section data-background-image="../images/one-in-a-crowd.svg">
+</section>
+
+<section>
+  <div class="vcenter r-stack wnotes">
+    <img src="../figures/network_changes_one_node.svg">
+    <img src="../figures/network_changes_one_node_focus.svg">
+    <img class="fragment current-visible" src="../figures/network_changes_one_node_degree.svg">
+    <img class="fragment current-visible" src="../figures/network_changes_one_node_T102.svg">
+    <img class="fragment current-visible" src="../figures/network_changes_one_node_betweenness.svg">
+  </div>
+  <aside class="notes">
+    for instance take this yellow node.
+
+    if we were to sever all of this nodes connections in teh network, these other nodes would have their degree changed
+    
+    that is, the nodes that were connected to it
+
+    These other nodes would have their counts in this particular triad altered
+
+    and nearly (emph on nearly) the whole network would see changes in their betweenness centrality
+  </aside>
+</section>
+
+<section>
+  <div class="vcenter">
+    <img src="../figures/paired_simulations.gif" style="max-height:95vh;">
+  </div>
+</section>
+
+<section>
+  <div class="vcenter">
+    <div class="r-stack" style="width:100%;">
+      <img class="fragment fade-out" data-fragment-index=1 src="../figures/mean_prev_difference_half_strength_interaction.svg" style="width:min(1200px, 100%);">
+      <img class="fragment fade-in-then-out" data-fragment-index=1 src="../figures/delta.svg" style="width:min(1000px, 100%);">
+      <img class="fragment" data-fragment-index=2 src="../figures/paired_differences_half_strength_interaction.svg" style="width:min(1000px, 100%);">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="vcenter">
+    <h2 style="width:min(1400px, 95%); font-family:Alegreya Sans; font-size:5vmin; text-align:left;">Disease spread is context-specific</h2>
+    <ul style="width:min(1000px, 90%); font-family:Alegreya Sans; font-size:4vmin; padding-bottom:5vh;" class="fa-ul">
+      <li><i class="fa-li fal fa-angle-right"></i>It depends on properties of individuals and their connections</li>
+      <li><i class="fa-li fal fa-angle-right"></i>These many influences interact to produce non-trivial consequences on epidemic outcomes</li>
+    </ul>
+    
+    <h2 style="width:min(1400px, 95%); font-family:Alegreya Sans; font-size:5vmin; text-align:left;" class="fragment" data-fragment-index=1>Individuals are able to have an effect on disease spread because of network connections linking the community together</h2>
+    <ul style="width:min(1000px, 90%); font-family:Alegreya Sans; font-size:4vmin;" class="fa-ul fragment" data-fragment-index=1>
+      <li><i class="fa-li fal fa-angle-right"></i>These links can have negative consequences, making disease spread further and faster than we anticipate</li>
+      <li><i class="fa-li fal fa-angle-right"></i>But can also have positive aspects, in that personal choices do have real-world, quantifiable consequences on population-level disease spread</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wnotes vcenter">
+    <h3 style="padding-top:20px;">And next?</h3>
+    <ul style="width:min(1600px, 95vw);" class="fa-ul">
+      <li><i class="fa-li fal fa-angle-right"></i>Which properties (of individuals and communities) are related to being more (or less) consequential for population-level change?</li>
+      <li><i class="fa-li fal fa-angle-right"></i>How are individual's efforts combined (additively or otherwise)?</li>
+      <li><i class="fa-li fal fa-angle-right"></i>What thresholds of participation are needed to effectuate population-level change?</li>
+    </ul>
+  </div>
+  <aside class="notes">
+
+    on point one, rephrase as the network context
+
+  Thanks in part to this multidisciplinarity, I have had the pleasure of connecting with scientists
+  across a range of departments and institutions, taking advantage of the unifying methodologies of
+  network analysis, stochastic optimization, and large-scale simulation to contribute to projects
+  spanning multiple sub-disciplines of ecology, and reaching into more distant fields such as the
+  science-of-science. Thus, while strongly grounded in my own interests, I often find myself
+  additionally in the role of supporting colleague's research though the contribution of technical
+  expertise.
+</aside>
+</section>
+
+</div></div>
+
+<script src="../../../reveal.js/dist/reveal.js"></script>
+<script src="../../../reveal.js/plugin/math/math.js"></script>
+<script src="../../../reveal.js/plugin/notes/notes.js"></script>
+<script src="../../../reveal.js/plugin/highlight/highlight.js"></script>
+
+<script>
+  Reveal.initialize({
+    width: "100%",
+    height:"100%",
+    controls: false,
+    progress: true,
+    slideNumber: true,
+    history: true,
+    center: false,
+    transition: "slide", // none/fade/slide/convex/concave/zoom
+    // Optional reveal.js 
+    plugins: [RevealMath.KaTeX, RevealNotes, RevealHighlight]
+  });
+  // Notes Sidebar
+  $("aside.notes").toggleClass("hidden");
+  $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
+  $("section > #citation").toggleClass("citwnotes");
+  Reveal.addKeyBinding({ keyCode: 86, key: 'V', description: 'Show/Hide Notes'}, () => {
+    $("aside.notes").toggleClass("hidden");
+    $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
+    $("section > #citation").toggleClass("citwnotes");
+  });
+</script>
+</body>
+</html>
