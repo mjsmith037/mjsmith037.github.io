@@ -7,5 +7,5 @@ date: "2015-02-25"
 categories: slides presentation
 ---
 <head>
-  <meta http-equiv="refresh" content="0; URL='https://global.acs.org/international-center-events/acs-international-center-archives/global-scientific-collaboration-key-to-scientific-success/'"/>
+  <meta http-equiv="refresh" content="0; URL='https://global-staging.acs.org/international-center-events/acs-international-center-archives/global-scientific-collaboration-key-to-scientific-success/'"/>
 </head>
