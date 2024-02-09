@@ -1,0 +1,376 @@
+/*/////////////////////////////////// Font ///////////////////////////////////*/
+.reveal {
+  font-family: "Alegreya Sans", sans serif;
+  font-size: 4vh;
+}
+
+.reveal h1 {
+  font-family: "Alegreya", sans serif;
+  text-transform: none;
+}
+
+.reveal p {
+  font-family: "Alegreya Sans", sans serif;
+  text-transform: none;
+}
+
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Alegreya Sans SC", serif;
+  text-transform: none;
+}
+
+/*////////////////////////////// Header/Footer ///////////////////////////////*/
+#citation {
+  bottom:0;
+  right:2vw;
+  text-align:right;
+  position:absolute;
+  font-size:50%;
+  z-index:100;
+}
+
+#citation.citwnotes {
+  right:42vw;
+}
+
+#header {
+  top:0;
+  left:2vw;
+  position:absolute;
+  font-size:90%;
+  z-index:100;
+}
+
+#slide_position {
+  text-align:right;
+  top:1vh;
+  right:2vw;
+  position:absolute;
+  font-size:50%;
+  z-index:99;
+  color:#aaa;
+}
+
+/*/////////////////////////////// Slide Notes ////////////////////////////////*/
+.reveal aside.hidden {
+  display:none !important;
+}
+
+.fullwidth {
+  width:90vw !important;
+  text-align:center;
+}
+
+.fullwidth.tomiddle {
+  text-align:center;
+}
+.fullwidth.tomiddle.wnotes {
+  text-align:right;
+}
+
+img {
+  border: none;
+  box-shadow: none;
+  background-color:transparent;
+}
+
+.wnotes {
+  display: block;
+  position: absolute;
+  width:55vw;
+  left:1vw;
+}
+
+.reveal aside.notes {
+  position: absolute;
+  display: block;
+  text-align: left;
+  background-color: rgba(235, 235, 235, 0.8);
+  color: #000000;
+  right: 1vw;
+  top: 4vh;
+  width: 40vw;
+  height: 92vh;
+  font-size: 60%;
+  line-height: 120%;
+  overflow:auto;
+  padding: 2% 2%;
+}
+
+span.key {
+  border: 2px solid black;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-family: "Alegreya SC";
+  font-weight: bold;
+  padding: 0px 10px 0px 10px;
+  margin: 0 10px;
+  font-size: 75%;
+}
+
+#ns {
+  font-family: "Alegreya SC";
+  font-weight: bold;
+}
+
+table td {
+  border-bottom: 0 !important;
+}
+
+table {
+  font-size: 2vw !important;
+}
+
+/*////////////////////////////////// Colors //////////////////////////////////*/
+.reveal .slides section .fragment.highlight-yellow,
+.reveal .slides section .fragment.highlight-current-yellow,
+.reveal .slides section .fragment.highlight-purple,
+.reveal .slides section .fragment.highlight-current-purple,
+.reveal .slides section .fragment.unhighlight,
+.reveal .slides section .fragment.emph-bold {
+  opacity: 1;
+  visibility: visible; }
+
+.orange,
+a:hover .hoverorange,
+.reveal .slides section .fragment.highlight-orange.visible,
+.reveal .slides section .fragment.highlight-current-orange.current-fragment {
+  color: #ff5e5b;}
+.orange-fill {
+  background-color: #ff5e5b;}
+
+.red,
+a:hover .hoverred,
+.reveal .slides section .fragment.highlight-red.visible,
+.reveal .slides section .fragment.highlight-current-red.current-fragment {
+  color: #bc4b51;}
+.red-fill {
+  background-color: #bc4b51;}
+
+.green,
+a:hover .hovergreen,
+.reveal .slides section .fragment.highlight-green.visible,
+.reveal .slides section .fragment.highlight-current-green.current-fragment {
+  color: #50b99a;}
+.green-fill {
+  background-color: #50b99a;}
+
+.blue,
+a:hover .hoverblue,
+.reveal .slides section .fragment.highlight-blue.visible,
+.reveal .slides section .fragment.highlight-current-blue.current-fragment {
+  color: #0b6884;}
+.blue-fill {
+  background-color: #0b6884;}
+
+.purple,
+a:hover .hoverpurple,
+.reveal .slides section .fragment.highlight-purple.visible,
+.reveal .slides section .fragment.highlight-current-purple.current-fragment {
+  color: #7b678e;}
+.purple-fill {
+  background-color: #7b678e;}
+
+.yellow,
+a:hover .hoveryellow,
+.reveal .slides section .fragment.highlight-yellow.visible,
+.reveal .slides section .fragment.highlight-current-yellow.current-fragment {
+  color: #ffc847;}
+.yellow-fill {
+  background-color: #ffc847;}
+
+.reveal .slides section .fragment.unhighlight.visible {
+  color: #000000; }
+
+.reveal .slides section .fragment.emph-bold.current-fragment {
+  font-weight: bold;
+  visibility: visible; }
+
+/*////////////////////////////////////////////////////////////////////////*/
+.vcenter {
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+  align-items:center;
+  height:100%;
+}
+
+.fa-ul {
+  list-style-type:none !important;
+}
+
+.reveal .slides section img {
+	height: auto;
+  max-width:100vw;
+  max-height:100vh;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.reveal .slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.reveal .slides section {
+  height: 96vh;
+  width: 96vw;
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  margin: 0;
+  padding: 0;
+}
+
+ol>ul>li {
+  font-size:80% !important;
+}
+
+ul>ul>li {
+  font-size:80% !important;
+}
+
+ol>ul>ul>li {
+  font-size:60% !important;
+}
+
+.vcenter>ul {
+  max-width:66%;
+}
+
+.vcenter>ol {
+  max-width:66%;
+}
+
+
+
+/*/////////////////////////////// Coauthors ////////////////////////////////*/
+#coauthors {
+  display: grid;
+  grid-template-rows: auto auto;
+  column-gap: normal;
+  width: 95%;
+  justify-items: center;
+  justify-content: space-evenly;
+  grid-auto-flow: column;
+}
+
+#coauthors h3 {
+  font-size: 3vh;
+}
+
+#coauthors img {
+ height: 25vh;
+ width: 20vh;
+ object-fit: cover;
+}
+
+.journaltitle {
+  display:grid;
+  justify-items:start;
+  max-width: 80vw;
+  max-height: 45vh;
+  padding-bottom: 5vh;
+}
+
+.reveal .slides section .journaltitle img {
+  margin: 0px;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+#compartmental-model-explanation {
+  display:grid;
+  grid: "birth . . . . . ." 1fr
+        "S inf E prog I rec R" 1fr
+        "d1 . d2 . d3 . d4" 1fr
+        / 1fr 1fr 1fr;
+  justify-items:center;
+  align-items:center;
+}
+
+.disease-compartment {
+  border: 5px solid #000000;
+  border-radius: 2vw;
+  width: 10vw;
+  height: 10vw;
+  line-height: 10vw;
+  font-size: 10vw;
+  font-family: Alegreya;
+}
+
+.disease-arrow {
+  width: 10vw;
+  height: 10vw;
+  line-height: 10vw;
+  font-size: 10vw;
+}
+
+/*/////////////////////// TABLES ///////////////////////////////////////////*/
+
+table {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin: 25px 0;
+  min-width: 400px;
+  max-width: 95%;
+}
+
+thead tr {
+  font-size: 2rem;
+  background-color: #0b6884;
+  color: #ffffff;
+  text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+}
+
+tbody tr {
+  font-size: 1.25rem;
+  border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+  border-bottom: 2px solid #0b6884;
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+#black-box {
+  width: 25vh;
+  padding-bottom: 25vh;
+  transform-style: preserve-3d;
+  background: #000000;
+  transform: rotateX(60deg) rotateZ(45deg);
+}
+#black-box:before, #black-box:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: -2% -2%;
+  background: inherit;
+}
+#black-box:before {
+  top: 104%;
+  left: 0;
+  transform: rotateX(-90deg);
+}
+#black-box:after {
+  top: 0;
+  left: 104%;
+  transform: rotateY(90deg);
+}
