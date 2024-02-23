@@ -34,14 +34,31 @@
     </p>
   </div>
   <aside class="notes">
-    A theoretical, disease ecologist utilizing the tools of machine learning,
-    network analysis, and stochastic simulation to explore how network structure
-    informs ecological dynamics
+    <p>
+      This talk was given as part of the Developmental Biology Center's weekly seminar series
+      on the UMN Minneapolis campus in the spring of 2024. Text here will supplement slide material.
+    </p><p>
+      You can remove this pane (and get it back) by tapping <span class="key">v</span> on your keyboard.
+    </p><p>
+      Some of the slides will have animations which require advancing the
+      slide partway through these explanations. These will be indicated by
+      "<span id="ns">next slide</span>" in these notes.
+    </p><p>
+      Slides can be advanced by tapping<span class="key"><i class="fas fa-arrow-alt-right"></i></span>
+      to display only the core slides, or <span class="key">Spc</span>,
+      <span class="key">PgDn</span>, or <span class="key">n</span> to also show
+      some supplemental slides throughout the presentation.
+    </p><p>
+      Finally, this presentation will look best in full-screen, but should
+      be more or less intelligible on smaller screens (no guarantees about phone screens).
+      So, whenever you're ready...
+    </p>
+    <span id="ns">next slide</span>
   </aside>
 </section>
     
 <section>
-  <div class="vcenter r-stack">
+  <div class="wnotes vcenter r-stack">
     <img style="max-height:90vh;" class="fragment fade-out" data-fragment-index=2 src="figures/metapop/sample_network/sample_network_nodes_zero_prime2.png">
     <img style="max-height:90vh;" class="fragment" data-fragment-index=1 src="figures/metapop/sample_network/sample_network_edges_zero.png">
     <img style="max-height:90vh;" class="fragment current-visible" data-fragment-index=2 src="figures/metapop/sample_network/sample_network_nodes_zero_prime1.png">
@@ -50,6 +67,30 @@
     <img style="max-height:90vh;" class="fragment" data-fragment-index=5 src="figures/metapop/sample_network/sample_network_nodes_one.png">
     <img style="max-height:90vh;" class="fragment" data-fragment-index=5 src="figures/metapop/sample_network/sample_network_edges_one.png">
   </div>
+  <aside class="notes">
+    <p>
+      Because this talk was given to a non-network-focused audience, I begin with a brief explanation
+      of what a network is: namely, a set of nodes
+    </p><span id="ns">next slide</span><p>
+      connected by edges.
+    </p><p>
+      Because networks are intrinsically abstractions of real systems, there is flexibility
+      in what the nodes and edges represent, here I show two islands, perhaps with species
+      colonizing one from the other. But I could just as easily show animals moving between
+      fragmented forest patches
+    </p><span id="ns">next slide</span><p>
+      Or people travelling between cities
+    </p><span id="ns">next slide</span><p>
+      Or livestock being moved between farms
+    </p><span id="ns">next slide</span><p>
+      Critically, networks are usually not made up of just two things, but rather represent
+      many things connected through a sometimes complex web of relationships.
+    </p><span id="ns">next slide</span><p>
+      The relationship between the structure of these networks and the dynamics of the processes
+      these neworks represent has been the central focus of my research for the past decade.
+    </p>
+    </p>
+  </aside>
 </section>
 
 <section>
@@ -83,9 +124,23 @@
     </h1>
   </div>
   <aside class="notes">
-      Much of the my career thus far can be unified by a fascination with this, quite general,
-      question, which I've then interpreted in many different specific projects over the years.
-      For instance, ...
+    <p>
+      This question has been cast into a diversity of study systems. For instance,
+    </p><span id="ns">next slide</span><p>
+      Thinking about the microbes that live within plant leaves
+    </p><span id="ns">next slide</span><p>
+      Networks of who-eats-whom in a community
+    </p><span id="ns">next slide</span><p>
+      Networks with two discrete types of nodes, such as the ecological interactions of pollination or parasitism
+    </p><span id="ns">next slide</span><p>
+      Networks of competition, for isntance for space or resources
+    </p><span id="ns">next slide</span><p>
+      Networks where the nodes represent whole populations with individuals moving between patches
+    </p><span id="ns">next slide</span><p>
+      And networks of individuals interacting and transmitting disease between one another.
+    </p><p>
+      It is these last two, in the context of disease spread, that I will be focusing on in this presentation.
+    </p>
   </aside>
 </section>
 
@@ -102,10 +157,15 @@
       <h3>Meggan Craft</h3>
     </div>
   </div>
+  <aside class="notes">
+    First, I will talk about a paper I published with Kim VanderWaal in the College of Veterinary
+    Medicine at the University of Minnesota and my advisor Meggan Craft, who is now in Ecology, Evolution
+    and Behavior.
+  </aside>
 </section>
 
 <section>
-  <div class="vcenter r-stack">
+  <div class="wnotes vcenter r-stack">
     <img style="max-height:90vh;" src="figures/metapop/sample_network/sample_network_nodes_zero.png">
     <img style="max-height:90vh;" src="figures/metapop/sample_network/sample_network_nodes_one.png">
     <img style="max-height:90vh;" src="figures/metapop/sample_network/sample_network_edges_one.png">
@@ -113,16 +173,39 @@
     <img style="max-height:90vh;" class="fragment" src="figures/metapop/sample_network/sample_network_nodes_three.png">
     <img style="max-height:90vh;" class="fragment" src="figures/metapop/sample_network/sample_network_nodes_four.png">
     <img style="max-height:90vh;" class="fragment" src="figures/metapop/sample_network/sample_network_nodes_five.png">
-    <img style="max-height:90vh;" class="fragment" src="figures/metapop/sample_network/sample_network_nodes_six.png">
   </div>
+  <aside class="notes">
+    <p>
+      comping back to our network of farms, previous research has noted that disease spread through
+      agricultural systems can, in part, be predicted by the movement of individual animals between
+      farms as part of the production process.
+    </p><span id="ns">next slide</span><p>
+      When an infection starts in one farm, it can rapidly spread to another
+    </p><span id="ns">next slide</span><p>
+      and another
+    </p><span id="ns">next slide</span><p>
+      and another
+    </p><span id="ns">next slide</span><p>
+      To bettter understand how the structure of the connections between farms alters disease
+      dynamics, we began by focusing in on a subset of the whole network
+    </p>
+  </aside>
 </section>
 
 <section>
-  <div class="vcenter r-stack">
+  <div class="wnotes vcenter r-stack">
     <img style="width:80vw;" src="images/within-farm_zero.svg">
     <img style="width:80vw;" class="fragment fade-out" data-fragment-index=1 src="images/within-farm_one.svg">
     <img style="width:80vw;" class="fragment fade-in" data-fragment-index=1 src="images/within-farm_two.svg">
   </div>
+  <aside class="notes">
+    <p>
+      And, in particular, on the fact that farms are not really single-entities, but rather
+      represent a collection of individuals
+    </p><span id="ns">next slide</span><p>
+      each of which will have their own infection status
+    </p>
+  </aside>
 </section>
 
 <section>
@@ -150,7 +233,20 @@
       <a href="https://www.nature.com/articles/289765a0">Anderson <i>et al.</i> 1981</a>
     </h4>
     <aside class="notes">
-      
+      <p>
+        The second aspect we considered is that each farm might therefore have its own dynamics
+        of disease prevalence through time. To explore this possibility, we need a general disease
+        model capable of displaying varied dynamics. We found a candidate model in the fox rabies
+        model of <a href="https://www.nature.com/articles/289765a0">Anderson <i>et al.</i> 1981</a>.
+      </p><p>
+        Note, here, I have included some supplemental slides on the mathematics of how we adapted the model to
+        a metapopulation system. If that is interesting to you, tap
+        <span class="key"><i class="fas fa-arrow-down"></i></span>, <span class="key">Spc</span>,
+        <span class="key">PgDn</span>, or <span class="key">n</span>. Else, you can tap
+        <span class="key"><i class="fas fa-arrow-alt-right"></i></span> to simply proceed with the
+        talk as given. Note that I have not yet annotated these supplemental slides with notes.
+      </p>
+
     </aside>
   </section>
 
@@ -180,7 +276,7 @@
   </section>
 
   <section>
-    <div style="font-size:2vw; display: inline-grid; grid-template-columns:45% 45%; column-gap: 5%; width: 95vw; justify-items: center; align-items: center;" class="wnotes vcenter">
+    <div style="font-size:2vw; display: inline-grid; grid-template-columns:45% 45%; column-gap: 5%; width: 95vw; justify-items: center; align-items: center;" class="vcenter">
       <div>
         $$
           \begin{aligned}
@@ -205,9 +301,6 @@
       <a href="https://www.nature.com/articles/289765a0">Anderson <i>et al.</i> 1981</a><br>
       <a href="https://doi.org/10.1093/imammb/dqq007">Xiao, Zhou, &amp; Tang 2011</a>
     </h4>
-    <aside class="notes">
-      
-    </aside>
   </section>
 </section>
 
@@ -223,21 +316,40 @@
     <a href="https://www.nature.com/articles/289765a0">Anderson <i>et al.</i> 1981</a>
   </h4>
   <aside class="notes">
-    
+    <p>
+      As alluded previously, the key feature of this model for our purposes is that, depending
+      on the relationship between just two parameters, the model could exhibit a range of
+      possible disease dynamics, which we discretized into:
+    </p><span id="ns">next slide</span><p>
+      The <span style="color:#ff5e5b;">pathogen going extinct</span>,
+      the disease prevalence <span style="color:#0b6884;">approaching a steady level through time</span>,
+      and the disease prevalence exhibiting some <span style="color:#bc4b51;">oscillatory behavior through time</span> (i.e.
+      going through periods of high and low prevalence)
+    </p>
   </aside>
 </section>
 
 <section>
-  <div class="vcenter r-stack">
+  <div class="wnotes vcenter r-stack">
     <img style="width:80vw;" src="images/main_question_zero.svg">
     <img style="width:80vw;" class="fragment fade-in" data-fragment-index=1 src="images/main_question_one.svg">
     <img style="width:80vw;" class="fragment fade-in-then-out" data-fragment-index=1 src="images/main_question_two.svg">
     <img style="width:80vw;" class="fragment" src="images/main_question_three.svg">
   </div>
+  <aside class="notes">
+    <p>
+      Thus, the fundamental question of this project can be summed up as: given two farms with
+      known disease dynamics in isolation,
+    </p><span id="ns">next slide</span><p>
+      how do these dynamics change when we introduce host movement from one to the other?
+    </p><span id="ns">next slide</span><p>
+      and does this effect depend on the dynamics at the source of the movement?
+    </p>
+  </aside>
 </section>
 
 <section>
-  <div class="vcenter r-stack">
+  <div class="wnotes vcenter r-stack">
     <img style="width: 90vw;" src="figures/metapop/dampening-cycles_zero.svg">
     <img class="fragment" data-fragment-index=1 style="width: 90vw;" src="figures/metapop/dampening-cycles_one.svg">
     <img class="fragment current-visible" data-fragment-index=2 style="width: 90vw;" src="figures/metapop/dampening-cycles_one-prime.svg">
@@ -245,17 +357,59 @@
     <img class="fragment" data-fragment-index=4 style="width: 90vw;" src="figures/metapop/dampening-cycles_three.svg">
     <img class="fragment" data-fragment-index=5 style="width: 90vw;" src="figures/metapop/dampening-cycles_four.svg">
   </div>
+  <aside class="notes">
+    <p>
+      In the following slides, I will show timelines of disease prevalence to represent the
+      disease dynamics. In general, the specifics of these timelines do not matter as much as the
+      overall regime (oscillatory, steady-state, etc.) being shown. In these plots, I will use color
+      to distinguish between farms, rather than to show dynamics as in earlier slides.
+      First, we consider a toy system in which we have a set of farms parameterized to exhibit
+      identical dynamics in isolation
+    </p><span id="ns">next slide</span><p>
+      each showing the same oscillatory behavior.
+    </p><span id="ns">next slide</span><p>
+      However, when we introduce movement between the orange and blue farms,
+    </p><span id="ns">next slide</span><p>
+      we see a reduction in the cycle amplitude at the destination (blue) farm.
+    </p><span id="ns">next slide</span><p>
+      A trend that is repeated as we add more farms to the chain.
+    </p><span id="ns">next slide</span><p>
+      Remember, each of these farms would look like the orange one if there were no
+      host movement between farms.
+    </p>
+  </aside>
 </section>
-
 <section>
 
   <section>
-    <div class="vcenter r-stack">
+    <div class="wnotes vcenter r-stack">
       <img style="width:90vw;" src="figures/metapop/two-pop-comparison_zero.svg">
       <img class="fragment" data-fragment-index=1 style="width:90vw;" src="figures/metapop/two-pop-comparison_one.svg">
       <img class="fragment" data-fragment-index=2 style="width:90vw;" src="figures/metapop/two-pop-comparison_two.svg">
       <img class="fragment" data-fragment-index=3 style="width:90vw;" src="figures/metapop/two-pop-comparison_three.svg">
     </div>
+    <aside class="notes">
+      <p>
+        In the previous slide, we considered when identical farms were connected, but what if
+        the connected farms differed in their dynamical regimes
+      </p><span id="ns">next slide</span><p>
+        for instance, one having cyclical dynamics as before, but the other exhibiting steady
+        state dynamics. What happens when we introduce a flow of individuals between these
+        two populations?
+      </p><span id="ns">next slide</span><p>
+        When the flow of individuals is from the cycles to the steady, we see a somewhat expected
+        result: we introduce cycles to the blue farm. I say expected, because when prevalence is high
+        in the orange farm, a higher proportion of hosts moving to the blue farm will be infectious,
+        while it will be more susceptible and removed individuals when prevalence is low. Such variability
+        in movement might likewise introduce variability into the destination. The more interesting
+        result is that when the flow is reversed
+      </p><span id="ns">next slide</span><p>
+        we see not only a reduction in cycles, but a qualitative change in dynamics, making the orange
+        farm exhibit steady-state prevalence as well. In the supplementary slide below, we show that,
+        while the rate of movement required to elicit each of these changes differs, very small
+        rates of migration are needed to get this qualitative change.
+      </p>
+    </aside>
   </section>
 
   <section>
@@ -269,12 +423,28 @@
 <section>
 
   <section>
-    <div class="vcenter r-stack">
+    <div class="wnotes vcenter r-stack">
       <img style="width: 90vw;" src="figures/metapop/dynamics-hierarchy_zero.svg">
       <img class="fragment" data-fragment-index=1 style="width: 90vw;" src="figures/metapop/dynamics-hierarchy_one.svg">
       <img class="fragment current-visible" data-fragment-index=2 style="width: 90vw;" src="figures/metapop/dynamics-hierarchy_one-prime.svg">
       <img class="fragment" data-fragment-index=3 style="width: 90vw;" src="figures/metapop/dynamics-hierarchy_two.svg">
     </div>
+    <aside class="notes">
+      <p>
+        Observing that the dynamical change depends on the regime of the origin patch leads to
+        an obvious follow up question
+      </p><span id="ns">next slide</span><p>
+        what happens when we have two farms (of differing dynamical regime) both providing hosts
+        to a third populations?
+      </p><span id="ns">next slide</span><p>
+        which dynamics will win out?
+      </p><span id="ns">next slide</span><p>
+        We see that the cyclical dynamics almost always win out, basicaly regardless of any
+        asymmetry in the rates of movement from each of the two origin populations
+        (see the supplementary slide below for a quantitative representation of this claim).
+      </p>
+    </aside>
+
   </section>
 
   <section>
@@ -286,30 +456,71 @@
 </section>
 
 <section>
-  <div class="vcenter">
+  <div class="vcenter wnotes">
     <div style="display:grid; grid-template-columns:1fr 1fr; align-items:center;">
       <h3 style="font-family: Alegreya;"><u>Result (from small networks)</u></h3>
       <h3 style="font-family: Alegreya;"><u>Prediction (in large networks)</u></h3>
       <h4>Migration dampens cycles:</h4>
-      <p>Reduced cycle amplitude and disease prevalence in networks with longer chains</p>
+      <p class="fragment" data-fragment-index=1>
+        Reduced cycle amplitude and disease prevalence in networks with longer chains</p>
       <h4>Destinations inherit dynamics:</h4>
-      <p>Interconnected parts of the network should have similar dynamics</p>
+      <p class="fragment" data-fragment-index=2>
+        Interconnected parts of the network should have similar dynamics</p>
       <h4>Dynamics inherit asymmetrically:</h4>
-      <p>Preponderance of cyclical and chaotic dynamics</p>
+      <p class="fragment" data-fragment-index=3>
+        Preponderance of cyclical and chaotic dynamics</p>
     </div>
   </div>
+  <aside class="notes">
+    <p>
+      So, we have three results for our small, toy networks, but how do these results apply
+      in the context of larger, more realistic networks?
+    </p><span id="ns">next slide</span><p>
+      If migration in general reduces cycle amplitudes, we might expect networks with longer chains
+      to have less variance in prevalence
+    </p><span id="ns">next slide</span><p>
+      Since destination patches tend to inherit the dynamics of origin patches, interconnected
+      parts of the network should have similar dynamics.
+    </p><span id="ns">next slide</span><p>
+      But since there is an asymmetry in this inheritance, we expect there to be more cyclical
+      dynamics than steady-states in general
+    </p>
+  </aside>
 </section>
 
 <section>
-  <div class="vcenter r-stack">
+  <div class="wnotes vcenter r-stack">
     <img src="figures/metapop/main_examplenets.svg" style="width: 90vw;">
     <!-- <img class="fragment current-visible" src="figures/metapop/large-network-triad-distributions.svg" style="width: 90vw;"> -->
     <img class="fragment" src="figures/metapop/main_propdyn.svg" style="width: 90vw;">
   </div>
+  <aside class="notes">
+    <p>
+      To test these predictions, in the absence of good-quality, large empirical datasets, we
+      generated a suite of random networks according to five distinct random-graph generating
+      algorithms, an representative network of each is shown here. For each 100 random graphs
+      in each of these general types, we randomized local parameters in each patch and then
+      ran simulated epidemics and evaluated the qualitative dynamical regime of each patch
+      after a sufficiently long time for transient dynamics to have passed.
+    </p><span id="ns">next slide</span><p>
+      These are filled bar charts, where each patch in the network is a horizontal line, and
+      vertical lines represent unique simulation runs. if the bar is completely one color (e.g.
+      blue) from top to bottom, then every patch in the metapopulation had the same dynamics at
+      the end of the simulation (e.g. cycles). If, instead, the color varies from top to bottom,
+      then the dynamics vary across the network.
+    </p><p>
+      In accordance with our third prediction, we see mostly cyclical dynamics, but there was
+      also an interesting difference between the left three network types and the right two.
+      While the left networks tended to have either all cyclical or all steady state dynamics.
+      On the right, we see much more heterogeneity across the metapopulation. Further analysis
+      suggests that the key driver of this effect is variance in in-degree (i.e. some patches
+      receive migrants from few other patches, while others receive from many).
+    </p>
+  </aside>
 </section>
 
 <section>
-  <div class="vcenter">
+  <div class="wnotes vcenter">
     <ul class="fa-ul">
       <li class="fragment semi-fade-out" data-fragment-index=1><i class="fa-li fal fa-angle-right"></i>Simple patterns emerge in small metapopulation networks</li>
       <ul class="fa-ul fragment semi-fade-out" data-fragment-index=1>
@@ -329,6 +540,20 @@
       </ul>
     </ul>
   </div>
+  <aside class="notes">
+    <p>
+      In summary, we found relatively simple, clear patterns when we consider the case of just
+      a few patches connected in simple ways, as noted previously.
+    </p><span id="ns">next slide</span><p>
+      In contrast, the results for larger networks were more complicated. While they were in agreement
+      with some of our predictions from small networks, it is much more difficult to predict the dynamical
+      regime of patches because of the complex, transitive relationships in larger, more realistc networks.
+    </p><span id="ns">next slide</span><p>
+      Further research is really needed to dig into these complexities and identify relationships between
+      measures of network structure and the dynamical regimes we observe. Of course, the collection of
+      high-quality empirical data is also essential to assess the applicability of the theory outlined here.
+    </p>
+  </aside>
 </section>
 
 <section>
@@ -350,12 +575,13 @@
   </div>
   <aside class="notes">
     <p>
-      The work presented here was done in collaboration with 
-      Eva UMN SPH
+      For the second part of this talk, I will be shifting gears to consider
+      networks of individuals, presenting work done in collaboration with 
+      Eva in the School of Public Health at the University of Minnesota
       <a
       href="https://scholar.google.com/citations?user=S-81O6EAAAAJ&hl=en">Marie
       Gilbertson</a>, who is currently a postdoc at UW Madison,
-      Lauren White - CA DPH
+      Lauren White, who works for the CA Department of Public Health,
       and my advisor <a href="https://mcraftlab.wordpress.com/">Meggan Craft</a> at
       the University of Minnesota.
     </p>
@@ -375,17 +601,31 @@
     <a href="https://twitter.com/City_Janesville/status/1247543530144350216?s=20&t=scsxuFvIFBtigfcyJAMLIg">@City_Janesville on twitter.com</a>
   </h4>
   <aside class="notes">
-    all focused on changing individual behavior, but how much does any one person really matter?
+    This project arose out of an observation in the early days of the COVID-19 pandemic, where
+    the public health messaging of hand-washing, masking, and social distancing all seemed to
+    be focused on changing individual behavior,
+  </p><span id="ns">next slide</span><p>
+    but we know that people do not exist in isolation,
+    and the complex networks of social interactions we all take part in have important effects on
+    the spread of disease through a community.
   </aside>
 </section>
 
 <section>
-  <div class="vcenter">
+  <div class="wnotes vcenter">
     <img src="images/people_interacting.jpg" alt="">
   </div>
   <h4 id="citation" class="citwnotes">
     <a href="https://stock.adobe.com/search?creator_id=201085655">Art by Scusi</a>
   </h4>
+  <aside class="notes">
+    <p>
+      And, critically, the way we interact with others is highly context dependent. We interact
+      with family members differently than classmates, or coworkers, or acquaintances on the street.
+      With this in mind, we had to take a step back and consider how we could generate realistic
+      contact networks
+    </p>
+  </aside>
 </section>
 
 <section>
@@ -421,7 +661,7 @@
       social network.
     </p>
     <p>
-      To put it more concretely, we interact with co-workers differently than we interact with
+      To put it more concretely, interactions are structured differently among co-workers than among
       people at home, or at a religious institution. The differences in these interactions,
       including the strength of interaction and the interacting group size, can have consequences
       for the spread of disease.
@@ -447,25 +687,19 @@
     </div>
   </div>
   <aside class="notes">
-
-    Population Structure<br>
-    Interaction Type<br>
-    Personal Vulnerability<br>
-    Risk Tolerance Behavior<br>
-
     <p>
       So, we begin to assemble our networks: starting with a collection of individuals, whose ages are
       distributed according to some locality's census data and grouping them into households, based on
       the empirical distribution of household sizes. We then successively layer additional interaction
-      types, including schools, 
+      types, including schools
     </p> 
     <span id="ns">next slide</span>
     <p>
-      work-places,
+      (based on empirical classroom sizes), work-places
     </p> 
     <span id="ns">next slide</span>
     <p>
-      and possibly others (each likewise based on empirical data whenever possible).
+      (according to empirical distributions of work-place sizes), and possibly others.
     </p> 
     <span id="ns">next slide</span>
     <p>
@@ -489,9 +723,8 @@
   </div>
   <aside class="notes">
     <p>
-      I want to take a minute to run through the underlying disease model, but since I'm
-      sure most of you have seen these types of models explained, and perhaps explained them
-      yourselves, multiple times, I will keep it very brief.
+      I want to take a minute to run through the underlying disease model, but will keep this brief
+      as it is not the most important aspect of this project.
     </p>
     <p>
       At each timestep in a simulation, every individual in the network has one of six states.
@@ -515,9 +748,7 @@
     <p>
       The final piece of the puzzle is that those individuals that we classified as vulnerable have 
       both longer disease courses (slower recovery),
-    </p>
-    <span id="ns">next slide</span>
-    <p>
+    </p><span id="ns">next slide</span><p>
       and are more likely to die, modifying these two parameters as shown.
     </p>
   </aside>
@@ -538,19 +769,54 @@
 </section>
 
 <section>
-  <div class="vcenter">
+  <div class="wnotes vcenter">
       <img src="figures/LINCS/locale_comparison.png" style="width: 80vw; max-height:90vh;">
   </div>
+  <aside class="notes">
+    <p>
+      We can summarize the outcome of a single epidemic simulation in different ways, such as 
+      the epidemic peak (the maximum proportion of the population ever concurrently infectious),
+      the percentage of vulnerable individuals in the population that get sick at some point
+      during the simulation, or the total percent of the population that dies from the disease.
+    </p><p>
+      For these first results, we compare the two age/household-size distributions, a "Florida-like"
+      and a "Texas-like" population. The latter sees a higher epidemic peak and percentage of vulnerable
+      individuals infected. This is likely driven by the larger household sizes, driving faster and wider
+      pathogen spread.
+    </p><p>
+      Counter-intuitively, however, significantly more people die in the Florida-like population.
+      This is because, even though the epidemics are smaller, there is a much higher proportion of
+      vulnerable individuals in the Florida-like population, leading to higher mortality rates.
+    </p>
+  </aside>
 </section>
 
 <section>
-  <div class="vcenter">
+  <div class="wnotes vcenter">
       <img src="figures/LINCS/inttype_comparison_simple.svg" style="width: 80vw; max-height:90vh;">
   </div>
+  <aside class="notes">
+    <p>
+      We can also consider the relative contribution of each of our interaction network layers, here
+      focusing on the contrast of classmate and co-worker interactions. We focus on this comparison
+      because, at the time of writing, there was a large discussion about the relative merits of opening
+      schools or workplaces as a phasing out of widespread lockdowns.
+    </p><p>
+      Our results showed that workplaces were more consequential (higher absolute value of effect size)
+      for all measures of epidemic severity, including epidemic peak, total number of individuals
+      infected, and rate of epidemic spread.
+    </p><p>
+      This is certainly influenced by our assumptions of network construction: we have more co-worker
+      links in our networks than classmate. However, this decision of network construction is informed
+      by the real-world: there are more working-age individuals than school-age children in the populations
+      we consider and workplaces can be many times larger than schools and classrooms, so we do not view
+      this as a limiation of the analysis per se.
+    </p>
+  </aside>
 </section>
 
 <section>
-  <div class="vcenter">
+  <div class="wnotes vcenter">
     <div style="width:100%" class="r-stack">
       <img src="figures/LINCS/risk_comparison_zero.svg" style="width:100%;">
       <img class="fragment fade-out" data-fragment-index=1 src="figures/LINCS/risk_comparison_zero_prime.svg" style="width:100%;">
@@ -561,6 +827,32 @@
       <img class="fragment" data-fragment-index=3 src="figures/LINCS/risk_comparison_three.svg" style="width:100%;">
     </div>
   </div>
+  <aside class="notes">
+    <p>
+      Finally, we considered the effects of differential risk-tolerance through the population.
+      For all previous results, we considered a case where all individuals participated in all
+      of their respective interactions. Here we show the effect of different rates of transmission
+      between classmates or coworkers on the epidemic peak and the total number of vulnerable
+      individuals infected. As expected, higher rates of transmission result in more disease (top right
+      of each heatmap).
+    </p><span id="ns">next slide</span><p>
+      We next consider a situation where vulnerable individuals are less risk-tolerant, that is, 
+      they take steps to reduce their infection risk through avoiding school or workplace interactions.
+      In this case, we see a moderate reduction in disease, but mostly at low transmission rates.
+    </p><span id="ns">next slide</span><p>
+      We then asked, what if not only the vulnerable individuals themselves, but all members of their
+      households likewise isolated. This would be like you deciding to work remotely because you live
+      with your elderly parent/grandparent. In this case, we see a dramatic reduction in disease and a
+      near-complete elimination of disease among vulnerable individuals.
+    </p><p>
+      Astute viewers might at this point be thinking "of course there is less disease, you've just removed
+      a ton of links from the network!"
+    </p><span id="ns">next slide</span><p>
+      Yet, it is not the removal of links per-se, but rather the selective fragmentation of the contact
+      network that yields such dramatic effects. When we remove the same number of links randomly (i.e.
+      irrespective of relation to vulnerable individuals), we re-capture the no-difference levels of disease.
+    </p>
+  </aside>
 </section>
 
 <section>
@@ -577,7 +869,17 @@
     </ul>
   </div>
   <aside class="notes">
-
+    <p>
+      These results highlight how modern societies are highly interconnected, and how these connections
+      make public health an intrinsically community-level problem. Individuals are not able to protect
+      themselves, they need community action to be effective.
+    </p><p>
+      We also highlight how demography can have complex, sometimes counter-intuitive effects on
+      disease spread.
+    </p><p>
+      Finally, we have taken this modelling framework and built an educational tool to help understand
+      the relationship between network structure and disease spread
+    </p><span id="ns">next slide</span>
   </aside>
 </section>
 
@@ -594,7 +896,9 @@
     </h1>
   </div>
   <aside class="notes">
-    Without further ado, lets jump over into the app for the remainder of the time!
+    That we call the Layered Interaction Network COVID-19 Simulator: <a href="https://z.umn.edu/LINCS">https://z.umn.edu/LINCS</a>.
+    The app includes tutorials, a sandbox for trying out your own disease and population parameters,
+    and focused scenarios to explore trade-offs in intervention strategy.
   </aside>
 </section>
 
@@ -646,9 +950,9 @@
     plugins: [RevealMath.KaTeX, RevealNotes, RevealHighlight]
   });
   // Notes Sidebar
-  $("aside.notes").toggleClass("hidden");
-  $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
-  $("section > #citation").toggleClass("citwnotes");
+  //$("aside.notes").toggleClass("hidden");
+  //$("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
+  //$("section > #citation").toggleClass("citwnotes");
   Reveal.addKeyBinding({ keyCode: 86, key: 'V', description: 'Show/Hide Notes'}, () => {
     $("aside.notes").toggleClass("hidden");
     $("aside.notes").siblings().not("#header").not("#citation").not("#slide_position").not("#abs_pos").toggleClass("wnotes");
